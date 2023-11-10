@@ -157,11 +157,16 @@ function my_custom_mime_types( $mimes ) {
 	}
 
 function add_featured_image_column( $columns ) {
-		$new_columns = array();
-		$new_columns['featured_image'] = __('Миниатюра');
-		
-		// Слияние нового столбца с существующими
-		return array_merge($new_columns, $columns);
+		$new = array();
+		foreach($columns as $key => $title) {
+			if ($key == 'title') { // или 'cb' для чекбокса
+				$new[$key] = $title;
+				$new['featured_image'] = __('Миниатюра');
+			} else {
+				$new[$key] = $title;
+			}
+		}
+		return $new;
 	}
 add_filter('manage_posts_columns', 'add_featured_image_column');
 	
@@ -175,8 +180,11 @@ add_action('manage_posts_custom_column', 'featured_image_column', 10, 2);
 function my_admin_style() {
     echo '
     <style type="text/css">
+		.fixed .column-featured_image{
+			width: 10%;
+		}
         .column-featured_image img {
-            width: 100px; /* или любой другой размер */
+            max-width: 100px; /* или любой другой размер */
             height: auto;
         }
     </style>';
