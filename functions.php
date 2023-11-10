@@ -156,7 +156,18 @@ function my_custom_mime_types( $mimes ) {
 	return $graphs;
 	}
 
-
+function add_featured_image_column( $columns ) {
+		return array_merge( $columns, 
+			array( 'featured_image' => __( 'Миниатюра' ) ) );
+	}
+	add_filter( 'manage_posts_columns' , 'add_featured_image_column' );
+	
+function featured_image_column( $column, $post_id ) {
+		if ( $column == 'featured_image' ) {
+			echo get_the_post_thumbnail( $post_id, 'thumbnail' );
+		}
+	}
+	add_action( 'manage_posts_custom_column' , 'featured_image_column', 10, 2 );
 
 // function process_image_upload($attachment_ID) {
 // 		$image_path = get_attached_file($attachment_ID); // Получить путь к изображению
