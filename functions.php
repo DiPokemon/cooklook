@@ -157,17 +157,31 @@ function my_custom_mime_types( $mimes ) {
 	}
 
 function add_featured_image_column( $columns ) {
-		return array_merge( $columns, 
-			array( 'featured_image' => __( 'Миниатюра' ) ) );
+		$new_columns = array();
+		$new_columns['featured_image'] = __('Миниатюра');
+		
+		// Слияние нового столбца с существующими
+		return array_merge($new_columns, $columns);
 	}
-	add_filter( 'manage_posts_columns' , 'add_featured_image_column' );
+add_filter('manage_posts_columns', 'add_featured_image_column');
 	
-function featured_image_column( $column, $post_id ) {
-		if ( $column == 'featured_image' ) {
-			echo get_the_post_thumbnail( $post_id, 'thumbnail' );
-		}
-	}
-	add_action( 'manage_posts_custom_column' , 'featured_image_column', 10, 2 );
+function featured_image_column($column, $post_id) {
+    if ($column == 'featured_image') {
+        echo get_the_post_thumbnail($post_id, 'thumbnail');
+    }
+}
+add_action('manage_posts_custom_column', 'featured_image_column', 10, 2);
+
+function my_admin_style() {
+    echo '
+    <style type="text/css">
+        .column-featured_image img {
+            width: 100px; /* или любой другой размер */
+            height: auto;
+        }
+    </style>';
+}
+add_action('admin_head', 'my_admin_style');
 
 // function process_image_upload($attachment_ID) {
 // 		$image_path = get_attached_file($attachment_ID); // Получить путь к изображению
