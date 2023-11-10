@@ -159,7 +159,7 @@ function my_custom_mime_types( $mimes ) {
 function add_featured_image_column( $columns ) {
 		$new = array();
 		foreach($columns as $key => $title) {
-			if ($key == 'си') { // или 'cb' для чекбокса
+			if ($key == 'cb') { // или 'cb' для чекбокса
 				$new[$key] = $title;
 				$new['featured_image'] = __('Миниатюра');
 			} else {
