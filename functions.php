@@ -155,3 +155,31 @@ function my_custom_mime_types( $mimes ) {
 	}
 	return $graphs;
 	}
+
+
+
+function process_image_upload($attachment_ID) {
+		$image_path = get_attached_file($attachment_ID); // Получить путь к изображению
+	
+		// Создание объекта Imagick
+		$imagick = new Imagick($image_path);
+	
+		// Отзеркаливание изображения
+		$imagick->flopImage();
+	
+		// Добавление водяного знака
+		$watermark = new Imagick('cooklook/wp-content/themes/cooklook/static/watermark.png');
+		$imagick->compositeImage($watermark, Imagick::COMPOSITE_OVER, 0, 0);
+
+		// Конвертация в WebP
+		$imagick->setImageFormat('webp');
+		$imagick->setImageCompressionQuality(80); // Установка качества сжатия
+	
+		// Сохранение изменённого изображения
+		// Сохранение изменённого изображения
+		$new_image_path = preg_replace('/\.\w+$/', '.webp', $image_path);
+		$imagick->writeImage($new_image_path);
+	}
+	
+	// Подключение функции к хуку WordPress для обработки загруженных изображений
+	add_action('add_attachment', 'process_image_upload');

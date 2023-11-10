@@ -24,16 +24,18 @@ Container::make( 'post_meta', 'Receipies info' )
     ->add_tab( __( 'Energy value', 'cooklook' ), array(
         Field::make( 'text', 'recipe_calories', __( 'Calories', 'cooklook' ) )
             ->set_attribute('type', 'number')
-            ->set_width(25),
+            ->set_width(20),
         Field::make( 'text', 'recipe_protein', __( 'Protein', 'cooklook' ) )
             ->set_attribute('type', 'number')
-            ->set_width(25),
+            ->set_width(20),
         Field::make( 'text', 'recipe_fat', __( 'Fat', 'cooklook' ) )
             ->set_attribute('type', 'number')
-            ->set_width(25),
+            ->set_width(20),
         Field::make( 'text', 'recipe_carbs', __( 'Carbohydrates', 'cooklook' ) )
             ->set_attribute('type', 'number')
-            ->set_width(25),
+            ->set_width(20),
+        Field::make( 'text', 'recipe_region', __( 'Region', 'cooklook' ) )            
+            ->set_width(20),
     ) )    
     ->add_tab( __( 'Ingridients', 'cooklook' ), array(
             Field::make( 'complex', 'ingridients', __('Ingridients', 'cooklook') )
