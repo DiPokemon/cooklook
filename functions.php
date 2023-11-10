@@ -1,29 +1,107 @@
 <?php
-	require_once( get_template_directory().'/functions-parts/theme-settings.php' );
-    require_once( get_template_directory().'/functions-parts/breadcrumbs.php' );
-    require_once( get_template_directory().'/functions-parts/navmenu.php' );
-    require_once( get_template_directory().'/functions-parts/crb_init.php' );
-	require_once( get_template_directory().'/functions-parts/widget-areas.php' );
+/**
+ * cooklook functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package cooklook
+ */
 
-
-//Cuting excerpt for words number
-function custom_excerpt_length( $length ) {
-    return 10;
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '1.0.0' );
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-//Add custom logo
-add_theme_support( 'custom-logo' );
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
 
-//Miniatures
-add_theme_support('post-thumbnails');
+function cooklook_setup() {
+	/*
+		* Make theme available for translation.
+		* Translations can be filed in the /languages/ directory.
+		* If you're building a theme based on cooklook, use a find and replace
+		* to change 'cooklook' to the name of your theme in all the template files.
+		*/
+	load_theme_textdomain( 'cooklook', get_template_directory() . '/languages' );
 
-//Register menu areas
-register_nav_menus([
-	'middle_menu' => 'Top menu',
-    'main_menu' => 'Main menu',
-	'footer_right_menu' => 'Footer right menu'
-]);
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
+	/*
+		* Let WordPress manage the document title.
+		* By adding theme support, we declare that this theme does not use a
+		* hard-coded <title> tag in the document head, and expect WordPress to
+		* provide it for us.
+		*/
+	add_theme_support( 'title-tag' );
+
+	/*
+		* Enable support for Post Thumbnails on posts and pages.
+		*
+		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		*/
+	add_theme_support( 'post-thumbnails' );
+
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus(
+		array(
+			'main_menu' => esc_html__( 'Primary', 'cooklook' ),
+		)
+	);
+
+	/*
+		* Switch default core markup for search form, comment form, and comments
+		* to output valid HTML5.
+		*/
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'style',
+			'script',
+		)
+	);
+
+	// Set up the WordPress core custom background feature.
+	add_theme_support(
+		'custom-background',
+		apply_filters(
+			'cooklook_custom_background_args',
+			array(
+				'default-color' => 'ffffff',
+				'default-image' => '',
+			)
+		)
+	);
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	/**
+	 * Add support for core custom logo.
+	 *
+	 * @link https://codex.wordpress.org/Theme_Logo
+	 */
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 250,
+			'width'       => 250,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
+}
+add_action( 'after_setup_theme', 'cooklook_setup' );
 
 //Add class for logo
 add_filter( 'get_custom_logo', 'change_logo_class' );
@@ -33,206 +111,85 @@ function change_logo_class( $html ) {
     return $html;
 };
 
-//Register and load CSS
-function load_styles(){
-	wp_enqueue_style('fontawesome', get_template_directory_uri().'/static/fontawesome/css/all.css');
-  	wp_enqueue_style('style_min', get_template_directory_uri().'/static/css/style.min.css');
-  	wp_enqueue_style('slick', get_template_directory_uri().'/static/libs/slick/slick.min.css');
-  	wp_enqueue_style('slick_theme', get_template_directory_uri().'/static/libs/slick/slick-theme.min.css');
+//require_once( get_template_directory().'/functions-parts/theme-settings.php' );
+require_once( get_template_directory().'/functions-parts/breadcrumbs.php' );
+require_once( get_template_directory().'/functions-parts/navmenu.php' );
+require_once( get_template_directory().'/functions-parts/crb_init.php' );
+require_once( get_template_directory().'/functions-parts/widget-areas.php' );
+require_once( get_template_directory().'/functions-parts/styles_load.php' );
+require_once( get_template_directory().'/functions-parts/scripts_load.php' );
+require_once( get_template_directory().'/functions-parts/phones_format.php' );
 
-}; 
-add_action('wp_enqueue_scripts', 'load_styles', 10);
-
-//Register and load JS
-function load_scripts(){  
-  wp_enqueue_script('script', get_template_directory_uri() . '/static/js/script.js', array(), NULL, true);
-  wp_deregister_script( 'jquery' );
-  wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.6.4.min.js');
-  wp_enqueue_script( 'jquery' , array(), NULL, true);
-  wp_enqueue_script('slick', get_template_directory_uri() . '/static/libs/slick/slick.min.js', array('jquery'), NULL, true);
-  //wp_enqueue_script('inits', get_template_directory_uri().'/static/js/inits.js', array('slick','masonry','maskedinput'), NULL, true);
-  wp_enqueue_script('yamap_api', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', array(), NULL, true);  
-  wp_enqueue_script('map_init', get_template_directory_uri().'/static/js/map_init.js', array('yamap_api'), NULL, true); 
-  wp_enqueue_script('spincrement', get_template_directory_uri().'/static/js/spincrement.min.js', array('jquery'), NULL, true); 
-  //wp_enqueue_script('masonry', get_template_directory_uri().'/static/js/masonry.js', array('jquery'), NULL, true); 
-  wp_enqueue_script('maskedinput', get_template_directory_uri().'/static/js/maskedinput.min.js', array('jquery'), NULL, true); 
-  wp_enqueue_script('slick_init', get_template_directory_uri() . '/static/js/slick_init.js', array('slick'), NULL, true);
-} 
-add_action('wp_enqueue_scripts', 'load_scripts', 10);
-
-
-add_action('wp_head', 'phone_front', 1); 
-function phone_front($phone) {
-    $phone = trim($phone);  
-    $res = preg_replace(
-      array(
-        '/[\+]?([7|8])[-|\s]?\([-|\s]?(\d{3})[-|\s]?\)[-|\s]?(\d{3})[-|\s]?(\d{2})[-|\s]?(\d{2})/',
-        '/[\+]?([7|8])[-|\s]?(\d{3})[-|\s]?(\d{3})[-|\s]?(\d{2})[-|\s]?(\d{2})/',
-        '/[\+]?([7|8])[-|\s]?\([-|\s]?(\d{4})[-|\s]?\)[-|\s]?(\d{2})[-|\s]?(\d{2})[-|\s]?(\d{2})/',
-        '/[\+]?([7|8])[-|\s]?(\d{4})[-|\s]?(\d{2})[-|\s]?(\d{2})[-|\s]?(\d{2})/',	
-        '/[\+]?([7|8])[-|\s]?\([-|\s]?(\d{4})[-|\s]?\)[-|\s]?(\d{3})[-|\s]?(\d{3})/',
-        '/[\+]?([7|8])[-|\s]?(\d{4})[-|\s]?(\d{3})[-|\s]?(\d{3})/',					
-      ), 
-      array(
-        '+7 ($2) $3-$4-$5', 
-        '+7 ($2) $3-$4-$5', 
-        '+7 ($2) $3-$4-$5', 
-        '+7 ($2) $3-$4-$5', 	
-        '+7 ($2) $3-$4', 
-        '+7 ($2) $3-$4', 
-      ), 
-      $phone
-    );  
-    return $res;
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function cooklook_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'cooklook_content_width', 640 );
 }
+add_action( 'after_setup_theme', 'cooklook_content_width', 0 );
 
-add_action('wp_head', 'phone_href', 1); 
-function phone_href($phone) {
-    $phone = trim($phone); 
-	$res = preg_replace(
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function cooklook_widgets_init() {
+	register_sidebar(
 		array(
-			'/[\+]?([7|8])[-|\s]?\([-|\s]?(\d{3})[-|\s]?\)[-|\s]?(\d{3})[-|\s]?(\d{2})[-|\s]?(\d{2})/',
-			'/[\+]?([7|8])[-|\s]?(\d{3})[-|\s]?(\d{3})[-|\s]?(\d{2})[-|\s]?(\d{2})/',
-			'/[\+]?([7|8])[-|\s]?\([-|\s]?(\d{4})[-|\s]?\)[-|\s]?(\d{2})[-|\s]?(\d{2})[-|\s]?(\d{2})/',
-			'/[\+]?([7|8])[-|\s]?(\d{4})[-|\s]?(\d{2})[-|\s]?(\d{2})[-|\s]?(\d{2})/',	
-			'/[\+]?([7|8])[-|\s]?\([-|\s]?(\d{4})[-|\s]?\)[-|\s]?(\d{3})[-|\s]?(\d{3})/',
-			'/[\+]?([7|8])[-|\s]?(\d{4})[-|\s]?(\d{3})[-|\s]?(\d{3})/',					
-		), 
-		array(
-			'+7$2$3$4$5', 
-			'+7$2$3$4$5', 
-			'+7$2$3$4$5', 
-			'+7$2$3$4$5', 	
-			'+7$2$3$4', 
-			'+7$2$3$4', 
-		), 
-		$phone
-	); 
-	return $res;
+			'name'          => esc_html__( 'Sidebar', 'cooklook' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'cooklook' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
+add_action( 'widgets_init', 'cooklook_widgets_init' );
 
-add_action('wp_head', 'phone_wa', 1); 
-function phone_wa($phone) {
-    $phone = trim($phone); 
-	$res = preg_replace(
-		array(
-			'/[\+]?([7|8])[-|\s]?\([-|\s]?(\d{3})[-|\s]?\)[-|\s]?(\d{3})[-|\s]?(\d{2})[-|\s]?(\d{2})/',
-			'/[\+]?([7|8])[-|\s]?(\d{3})[-|\s]?(\d{3})[-|\s]?(\d{2})[-|\s]?(\d{2})/',
-			'/[\+]?([7|8])[-|\s]?\([-|\s]?(\d{4})[-|\s]?\)[-|\s]?(\d{2})[-|\s]?(\d{2})[-|\s]?(\d{2})/',
-			'/[\+]?([7|8])[-|\s]?(\d{4})[-|\s]?(\d{2})[-|\s]?(\d{2})[-|\s]?(\d{2})/',	
-			'/[\+]?([7|8])[-|\s]?\([-|\s]?(\d{4})[-|\s]?\)[-|\s]?(\d{3})[-|\s]?(\d{3})/',
-			'/[\+]?([7|8])[-|\s]?(\d{4})[-|\s]?(\d{3})[-|\s]?(\d{3})/',					
-		), 
-		array(
-			'7$2$3$4$5', 
-			'7$2$3$4$5', 
-			'7$2$3$4$5', 
-			'7$2$3$4$5', 	
-			'7$2$3$4', 
-			'7$2$3$4', 
-		), 
-		$phone
-	); 
-	return $res;
-}
+/**
+ * Enqueue scripts and styles.
+ */
+function cooklook_scripts() {
+	wp_enqueue_style( 'cooklook-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'cooklook-style', 'rtl', 'replace' );
 
-add_filter('wpcf7_autop_or_not', '__return_false');
+	wp_enqueue_script( 'cooklook-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
-function my_custom_mime_types( $mimes ) {
-	$mimes['csv'] = 'text/csv';
-	unset( $mimes['exe'] );
-	 return $mimes;
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
-	add_filter( 'upload_mimes', 'my_custom_mime_types' );
-
-//убирает ошибку в schema - query-input 
-	add_filter( 'aioseo_schema_output', 'aioseo_filter_schema_output' );
-	function aioseo_filter_schema_output( $graphs ) {
-		foreach ( $graphs as $index => $graph ) {
-		if ( 'WebSite' === $graph['@type'] ) {
-		unset( $graphs[ $index ]['potentialAction']["query-input"] );
-		}
-	}
-	return $graphs;
-	}
-
-function add_featured_image_column( $columns ) {
-		$new = array();
-		foreach($columns as $key => $title) {
-			if ($key == 'cb') { // или 'cb' для чекбокса
-				$new[$key] = $title;
-				$new['featured_image'] = __('Миниатюра');
-			} else {
-				$new[$key] = $title;
-			}
-		}
-		return $new;
-	}
-add_filter('manage_posts_columns', 'add_featured_image_column');
-	
-function featured_image_column($column, $post_id) {
-    if ($column == 'featured_image') {
-        echo get_the_post_thumbnail($post_id, 'thumbnail');
-    }
 }
-add_action('manage_posts_custom_column', 'featured_image_column', 10, 2);
+add_action( 'wp_enqueue_scripts', 'cooklook_scripts' );
 
-function my_admin_style() {
-    echo '
-    <style type="text/css">
-		.fixed .column-featured_image{
-			max-width: 100px
-		}
-        .column-featured_image img {
-            max-width: 100px; /* или любой другой размер */
-            height: auto;
-        }
-    </style>';
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
 }
-add_action('admin_head', 'my_admin_style');
-
-// function process_image_upload($attachment_ID) {
-// 		$image_path = get_attached_file($attachment_ID); // Получить путь к изображению
-	
-// 		// Создание объекта Imagick
-// 		$imagick = new Imagick($image_path);
-	
-// 		// Отзеркаливание изображения
-// 		$imagick->flopImage();
-	
-// 		// Добавление водяного знака
-// 		// $watermark = new Imagick('cooklook/wp-content/themes/cooklook/static/watermark.png');
-// 		// $imagick->compositeImage($watermark, Imagick::COMPOSITE_OVER, 0, 0);
-
-// 		// Конвертация в WebP
-// 		$imagick->setImageFormat('webp');
-// 		$imagick->setImageCompressionQuality(80); // Установка качества сжатия
-	
-// 		// Сохранение изменённого изображения
-// 		// Сохранение изменённого изображения
-// 		$new_image_path = preg_replace('/\.\w+$/', '.webp', $image_path);
-// 		$imagick->writeImage($new_image_path);
-// 	}
-	
-// 	// Подключение функции к хуку WordPress для обработки загруженных изображений
-// 	add_action('add_attachment', 'process_image_upload');
-
-function mirror_image_on_upload($attachment_ID) {
-    $image_path = get_attached_file($attachment_ID); // Получение пути к загруженному изображению
-
-    // Создание объекта Imagick для обработки изображения
-    $imagick = new Imagick($image_path);
-
-    // Отзеркаливание изображения
-    $imagick->flopImage();
-
-    // Сохранение изменений, замена оригинального файла
-    $imagick->writeImage($image_path);
-
-    // Очистка ресурсов
-    $imagick->clear();
-    $imagick->destroy();
-}
-
-// Добавление функции в WordPress хук, который срабатывает после загрузки изображения
-add_action('add_attachment', 'mirror_image_on_upload');
