@@ -168,8 +168,8 @@ function process_image_upload($attachment_ID) {
 		$imagick->flopImage();
 	
 		// Добавление водяного знака
-		$watermark = new Imagick('cooklook/wp-content/themes/cooklook/static/watermark.png');
-		$imagick->compositeImage($watermark, Imagick::COMPOSITE_OVER, 0, 0);
+		// $watermark = new Imagick('cooklook/wp-content/themes/cooklook/static/watermark.png');
+		// $imagick->compositeImage($watermark, Imagick::COMPOSITE_OVER, 0, 0);
 
 		// Конвертация в WebP
 		$imagick->setImageFormat('webp');
