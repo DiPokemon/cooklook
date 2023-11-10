@@ -181,7 +181,7 @@ function my_admin_style() {
     echo '
     <style type="text/css">
 		.fixed .column-featured_image{
-			max-width: 100px
+			width: 100px
 		}
         .column-featured_image img {
             max-width: 100px; /* или любой другой размер */
