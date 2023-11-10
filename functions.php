@@ -158,28 +158,48 @@ function my_custom_mime_types( $mimes ) {
 
 
 
-function process_image_upload($attachment_ID) {
-		$image_path = get_attached_file($attachment_ID); // Получить путь к изображению
+// function process_image_upload($attachment_ID) {
+// 		$image_path = get_attached_file($attachment_ID); // Получить путь к изображению
 	
-		// Создание объекта Imagick
-		$imagick = new Imagick($image_path);
+// 		// Создание объекта Imagick
+// 		$imagick = new Imagick($image_path);
 	
-		// Отзеркаливание изображения
-		$imagick->flopImage();
+// 		// Отзеркаливание изображения
+// 		$imagick->flopImage();
 	
-		// Добавление водяного знака
-		// $watermark = new Imagick('cooklook/wp-content/themes/cooklook/static/watermark.png');
-		// $imagick->compositeImage($watermark, Imagick::COMPOSITE_OVER, 0, 0);
+// 		// Добавление водяного знака
+// 		// $watermark = new Imagick('cooklook/wp-content/themes/cooklook/static/watermark.png');
+// 		// $imagick->compositeImage($watermark, Imagick::COMPOSITE_OVER, 0, 0);
 
-		// Конвертация в WebP
-		$imagick->setImageFormat('webp');
-		$imagick->setImageCompressionQuality(80); // Установка качества сжатия
+// 		// Конвертация в WebP
+// 		$imagick->setImageFormat('webp');
+// 		$imagick->setImageCompressionQuality(80); // Установка качества сжатия
 	
-		// Сохранение изменённого изображения
-		// Сохранение изменённого изображения
-		$new_image_path = preg_replace('/\.\w+$/', '.webp', $image_path);
-		$imagick->writeImage($new_image_path);
-	}
+// 		// Сохранение изменённого изображения
+// 		// Сохранение изменённого изображения
+// 		$new_image_path = preg_replace('/\.\w+$/', '.webp', $image_path);
+// 		$imagick->writeImage($new_image_path);
+// 	}
 	
-	// Подключение функции к хуку WordPress для обработки загруженных изображений
-	add_action('add_attachment', 'process_image_upload');
+// 	// Подключение функции к хуку WordPress для обработки загруженных изображений
+// 	add_action('add_attachment', 'process_image_upload');
+
+function mirror_image_on_upload($attachment_ID) {
+    $image_path = get_attached_file($attachment_ID); // Получение пути к загруженному изображению
+
+    // Создание объекта Imagick для обработки изображения
+    $imagick = new Imagick($image_path);
+
+    // Отзеркаливание изображения
+    $imagick->flopImage();
+
+    // Сохранение изменений, замена оригинального файла
+    $imagick->writeImage($image_path);
+
+    // Очистка ресурсов
+    $imagick->clear();
+    $imagick->destroy();
+}
+
+// Добавление функции в WordPress хук, который срабатывает после загрузки изображения
+add_action('add_attachment', 'mirror_image_on_upload');
