@@ -26,7 +26,10 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cooklook' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
+		<div class="container">
+		 <div class="header_menu">	
+	       <div class="logo_img"><?php the_custom_logo() ?></div>
+		   <div class="site-branding">
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
@@ -43,9 +46,9 @@
 				?>
 				<p class="site-description"><?php echo $cooklook_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
-		</div><!-- .site-branding -->
+		   </div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
+		   <nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'cooklook' ); ?></button>
 			<?php
 			wp_nav_menu(
@@ -55,5 +58,7 @@
 				)
 			);
 			?>
-		</nav><!-- #site-navigation -->
+		   </nav><!-- #site-navigation -->
+		 </div>
+		</div>
 	</header><!-- #masthead -->
