@@ -61,3 +61,9 @@ $basic_options_container = Container::make( 'theme_options', __( 'Theme options'
     //         ->set_attribute( 'placeholder', '[contact-form-7 id="1" title="Contact form 1"]' ),        
     // ) );
 
+Container::make( 'term_meta', __( 'Category Meta' ) )
+    ->where( 'term_taxonomy', '=', 'category' ) // Применить только к таксономии 'category'
+    ->add_fields( array(
+        Field::make( 'image', 'category_image', __( 'Миниатюра' ) )
+            ->set_value_type( 'url' )
+    ));

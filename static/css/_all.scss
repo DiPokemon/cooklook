@@ -11,7 +11,7 @@ $breakfast: #FFD130;
 $broth: #F0C980;
 $appetizers: #F451C7;
 $drinks: #B850E9;
-$main_courses: $red;
+$main_courses: #EB5757;
 $pasta_pizza: #FF800B;
 $risotto: #DBC174;
 $salads: #27AE60;
@@ -34,6 +34,10 @@ body{
     width: 100%;
     padding: 10px;
     margin: 0 auto;
+}
+
+.section_title{
+    font-family: $second_font;
 }
 
 .flex{
@@ -72,5 +76,89 @@ body{
     &:hover{
         background: $green;
         color: $white;
+    }
+}
+
+.breakfast{
+    background-color: $breakfast;
+    &.category_item{
+        background-color: lighten($breakfast, 30%);
+    }
+}
+
+.broth{
+    background-color: $broth;
+    &.category_item{
+        background-color: lighten($broth, 30%);
+    }
+}
+
+.appetizers{
+    background-color: $appetizers;
+    &.category_item{
+        background-color: lighten($appetizers, 30%);
+    }
+}
+
+.drinks{
+    background-color: $drinks;
+    &.category_item{
+        background-color: lighten($drinks, 30%);
+    }
+}
+
+.main_courses{
+    background-color: $main_courses;
+    &.category_item{
+        background-color: lighten($main_courses, 30%);
+    }
+}
+
+.pasta_pizza{
+    background-color: $pasta_pizza;
+    &.category_item{
+        background-color: lighten($pasta_pizza, 30%);
+    }
+}
+
+.risotto{
+    background-color: $risotto;
+    &.category_item{
+        background-color: lighten($risotto, 30%);
+    }
+}
+
+.salads{
+    background-color: $salads;
+    &.category_item{
+        background-color: lighten($salads, 30%);
+    }
+}
+
+.sauces_marinades{
+    background-color: $sauces_marinades;
+    &.category_item{
+        background-color: lighten($sauces_marinades, 30%);
+    }
+}
+
+.soups{
+    background-color: $soups;
+    &.category_item{
+        background-color: lighten($soups, 30%);
+    }
+}
+
+.sandwiches{
+    background-color: $sandwiches;
+    &.category_item{
+        background-color: lighten($sandwiches, 30%);
+    }
+}
+
+.pastries_desserts{
+    background-color: $pastries_desserts;
+    &.category_item{
+        background-color: lighten($pastries_desserts, 30%);
     }
 }

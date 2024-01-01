@@ -2,7 +2,21 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-
+Container::make( 'post_meta', __( 'Homepage Settings' ) )
+	->where( 'post_type', '=', 'page' )
+	->where( 'post_template', '=', 'home.php' )
+	->add_tab( __( 'Популярные категории', 'cooklook' ), array(
+        Field::make( 'text', 'popular_cats_title', __( 'Заголовок', 'cooklook' ) ),
+        Field::make( 'association', 'popular_cats', __( 'Категории' ) )
+        ->set_types( array(
+            array(
+                'type' => 'term',
+                'taxonomy' => 'category',
+            )
+        ) )
+        ->set_duplicates_allowed( false )
+        ->set_max( 5 )
+    ) );
 
 
 

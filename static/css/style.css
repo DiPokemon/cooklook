@@ -146,6 +146,10 @@ body {
   margin: 0 auto;
 }
 
+.section_title {
+  font-family: "Gerhaus";
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -183,6 +187,90 @@ body {
 .btn_nonbg:hover {
   background: #2DBE64;
   color: #fff;
+}
+
+.breakfast {
+  background-color: #FFD130;
+}
+.breakfast.category_item {
+  background-color: #fff3c9;
+}
+
+.broth {
+  background-color: #F0C980;
+}
+.broth.category_item {
+  background-color: white;
+}
+
+.appetizers {
+  background-color: #F451C7;
+}
+.appetizers.category_item {
+  background-color: #fde1f5;
+}
+
+.drinks {
+  background-color: #B850E9;
+}
+.drinks.category_item {
+  background-color: #efd8fa;
+}
+
+.main_courses {
+  background-color: #EB5757;
+}
+.main_courses.category_item {
+  background-color: #fbe0e0;
+}
+
+.pasta_pizza {
+  background-color: #FF800B;
+}
+.pasta_pizza.category_item {
+  background-color: #ffd0a4;
+}
+
+.risotto {
+  background-color: #DBC174;
+}
+.risotto.category_item {
+  background-color: #faf7ee;
+}
+
+.salads {
+  background-color: #27AE60;
+}
+.salads.category_item {
+  background-color: #89e5b0;
+}
+
+.sauces_marinades {
+  background-color: #5158F4;
+}
+.sauces_marinades.category_item {
+  background-color: #e1e2fd;
+}
+
+.soups {
+  background-color: #FEB120;
+}
+.soups.category_item {
+  background-color: #ffe6b8;
+}
+
+.sandwiches {
+  background-color: #DA8639;
+}
+.sandwiches.category_item {
+  background-color: #f2d5ba;
+}
+
+.pastries_desserts {
+  background-color: #E4B763;
+}
+.pastries_desserts.category_item {
+  background-color: #fbf3e5;
 }
 
 .site-header .container {
@@ -239,4 +327,35 @@ body {
 }
 .site-header .container .header_right a:hover .icon path {
   fill: #2DBE64;
+}
+
+/* MAIN POPULAR CATEGORIES */
+#popular_categories .section_title {
+  font-size: 64px;
+}
+#popular_categories .popular_categories-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+}
+#popular_categories .popular_categories-grid .category_item {
+  border-radius: 20px;
+  padding: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#popular_categories .popular_categories-grid .category_item .category_item-title {
+  font-family: "Gerhaus";
+  font-size: 24px;
+  text-align: center;
+  color: #292D32;
+}
+#popular_categories .popular_categories-grid .category_item:nth-child(2),
+#popular_categories .popular_categories-grid .category_item:nth-child(4) {
+  grid-row: span 2;
+}
+#popular_categories .popular_categories-grid .category_item.ads {
+  background-color: #F8F8FA;
 }/*# sourceMappingURL=style.css.map */

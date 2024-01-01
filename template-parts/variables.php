@@ -34,4 +34,7 @@
   $cf_subtitle = carbon_get_theme_option( 'cf_subtitle' );
   $cf_shortcode = carbon_get_theme_option( 'cf_shortcode' );
 
+  /* MAIN PAGE */
+  $popular_cats_title =  carbon_get_the_post_meta( 'popular_cats_title' );
+  $popular_cats = carbon_get_the_post_meta( 'popular_cats' );
 ?>

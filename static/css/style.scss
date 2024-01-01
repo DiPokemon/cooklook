@@ -72,6 +72,43 @@
     }
 }
 
+/* MAIN POPULAR CATEGORIES */
+#popular_categories{
+    .section_title{
+        font-size: 64px;
+    }
+
+    .popular_categories-grid{
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);    
+
+        .category_item{
+            border-radius: 20px;
+            padding: 20px;
+            justify-content: center;
+
+            .category_item-title{
+                font-family: $second_font;
+                font-size:24px;
+                text-align: center;
+                color: $black;
+            }
+        }
+
+        .category_item:nth-child(2),
+        .category_item:nth-child(4){
+            grid-row: span 2;
+        }
+
+        .category_item.ads{
+            background-color: $gray;
+        }
+    }
+}
+    
+
 
 
 
