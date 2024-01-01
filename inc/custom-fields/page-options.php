@@ -16,6 +16,9 @@ Container::make( 'post_meta', __( 'Homepage Settings' ) )
         ) )
         ->set_duplicates_allowed( false )
         ->set_max( 5 )
+    ) )
+    ->add_tab( __( 'Новые рецепты', 'cooklook' ), array(
+        Field::make( 'text', 'new_recipes_title', __( 'Заголовок', 'cooklook' ) ),        
     ) );
 
 

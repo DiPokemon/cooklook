@@ -107,7 +107,36 @@
         }
     }
 }
+
+/* MAIN NEW RECIPES */
+.recipes_grid{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
     
+    .recipe_loop-item{
+        grid-column: span 2;
+
+        .img_block{
+            position: relative;
+            border-radius: 30px;            
+
+            .recipe_meta{
+                position: absolute;
+                padding: 24px;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+                
+
+            }
+        }
+    }
+
+    .recipe_loop-item:nth-child(4),
+    .recipe_loop-item:nth-child(5){
+        grid-column: span 3;
+    }
+}
 
 
 

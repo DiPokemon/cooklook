@@ -358,4 +358,29 @@ body {
 }
 #popular_categories .popular_categories-grid .category_item.ads {
   background-color: #F8F8FA;
+}
+
+/* MAIN NEW RECIPES */
+.recipes_grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, auto);
+}
+.recipes_grid .recipe_loop-item {
+  grid-column: span 2;
+}
+.recipes_grid .recipe_loop-item .img_block {
+  position: relative;
+  border-radius: 30px;
+}
+.recipes_grid .recipe_loop-item .img_block .recipe_meta {
+  position: absolute;
+  padding: 24px;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3)));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+.recipes_grid .recipe_loop-item:nth-child(4),
+.recipes_grid .recipe_loop-item:nth-child(5) {
+  grid-column: span 3;
 }/*# sourceMappingURL=style.css.map */
