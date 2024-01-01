@@ -1,10 +1,11 @@
 $green: #2DBE64;
 $dark_green: #0AAF60;
+$btn_hover_green: #2CA75B;
 $gray: #F8F8FA;
 $dark_gray: #F2F2F2;
 $red: #EB5757;
 $white: #fff;
-
+$black: #292D32;
 
 $breakfast: #FFD130;
 $broth: #F0C980;
@@ -19,10 +20,12 @@ $soups: #FEB120;
 $sandwiches: #DA8639;
 $pastries_desserts: #E4B763;
 
-$main_font: "Montserrat";
+$main_font: "Mulish";
+$second_font: "Gerhaus";
 
 body{
     font-family: $main_font;
+    font-weight: 400;
     overflow-x: hidden;
 }
 
@@ -33,24 +36,6 @@ body{
     margin: 0 auto;
 }
 
-a:hover{
-    color: $orange;
-}
-
-section{
-    display: flex;
-    justify-content: center;
-
-    .container{
-        h2{
-            padding-bottom: 20px;
-            color:$orange;
-        }
-    }
-}
-
-
-
 .flex{
     display: flex;
 }
@@ -59,55 +44,33 @@ section{
     width: 50%;
 }
 
-.btn{
-    background: linear-gradient(135deg, $blue 50%, $orange 50%);
-    background-size: 300%;
-}
+.btn_bg{
+    padding: 14px 16px;   
+    gap: 10px;
+    border-radius: 30px;
+    background: $green;
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
 
-
-
-body *:not(.slick-track):not(.slick-list){
-    transition: all 0.2s;
-}
-// *{
-//     transition: all 0.2s;
-// }
-
-section:not(:first-child){
-    margin: 50px 0;
-}
-
-section.related.products{
-    margin: 0;
-}
-
-.page_header{
-    padding-top: 50px;
-    padding-bottom: 50px;
-
-    h1{
-        color: $orange;
-        text-transform: uppercase;
-        text-decoration: underline;
-        text-decoration-style: dotted;
-        font-weight: 300;
-        padding-bottom: 10px;
+    &:hover{
+        background: $btn_hover_green;
+        color: $white;
     }
+}
 
-    .page-header__breadcrumbs{
+.btn_nonbg{
+    padding: 14px 16px;   
+    gap: 10px;
+    border-radius: 30px;
+    border: 2px solid $green;
+    background: $white;
+    color: $green;
+    font-size: 16px;
+    font-weight: 500;
 
-        span{
-            color: $orange;
-
-            &.breadcrumbs__current{
-                color: $blue
-            }
-
-           
-        }
-
-        &>span:last-child{
-            color: $blue
-        }
+    &:hover{
+        background: $green;
+        color: $white;
     }
 }

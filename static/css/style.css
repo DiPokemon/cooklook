@@ -71,39 +71,71 @@ hr {
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/MontserratLight.eot");
-  src: url("../fonts/MontserratLight.eot?#iefix") format("embedded-opentype"), url("../fonts/MontserratLight.woff2") format("woff2"), url("../fonts/MontserratLight.woff") format("woff"), url("../fonts/MontserratLight.ttf") format("truetype");
+  font-family: "Mulish";
+  src: url("../fonts/mulish/Mulish-200.woff2") format("woff2"), url("../fonts/mulish/Mulish-200.woff") format("woff"), url("../fonts/mulish/Mulish-200.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Mulish";
+  src: url("../fonts/mulish/Mulish-300.woff2") format("woff2"), url("../fonts/mulish/Mulish-300.woff") format("woff"), url("../fonts/mulish/Mulish-300.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/MontserratRegular.eot");
-  src: url("../fonts/MontserratRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/MontserratRegular.woff2") format("woff2"), url("../fonts/MontserratRegular.woff") format("woff"), url("../fonts/MontserratRegular.ttf") format("truetype");
+  font-family: "Mulish";
+  src: url("../fonts/mulish/Mulish-400.woff2") format("woff2"), url("../fonts/mulish/Mulish-400.woff") format("woff"), url("../fonts/mulish/Mulish-400.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/MontserratMedium.eot");
-  src: url("../fonts/MontserratMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/MontserratMedium.woff2") format("woff2"), url("../fonts/MontserratMedium.woff") format("woff"), url("../fonts/MontserratMedium.ttf") format("truetype");
+  font-family: "Mulish";
+  src: url("../fonts/mulish/Mulish-500.woff2") format("woff2"), url("../fonts/mulish/Mulish-500.woff") format("woff"), url("../fonts/mulish/Mulish-500.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/MontserratSemiBold.eot");
-  src: url("../fonts/MontserratSemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/MontserratSemiBold.woff2") format("woff2"), url("../fonts/MontserratSemiBold.woff") format("woff"), url("../fonts/MontserratSemiBold.ttf") format("truetype");
+  font-family: "Mulish";
+  src: url("../fonts/mulish/Mulish-600.woff2") format("woff2"), url("../fonts/mulish/Mulish-600.woff") format("woff"), url("../fonts/mulish/Mulish-600.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
 }
+@font-face {
+  font-family: "Mulish";
+  src: url("../fonts/mulish/Mulish-700.woff2") format("woff2"), url("../fonts/mulish/Mulish-700.woff") format("woff"), url("../fonts/mulish/Mulish-700.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Mulish";
+  src: url("../fonts/mulish/Mulish-800.woff2") format("woff2"), url("../fonts/mulish/Mulish-800.woff") format("woff"), url("../fonts/mulish/Mulish-800.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Mulish";
+  src: url("../fonts/mulish/Mulish-900.woff2") format("woff2"), url("../fonts/mulish/Mulish-900.woff") format("woff"), url("../fonts/mulish/Mulish-900.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Gerhaus";
+  src: url("../fonts/gerhaus/Gerhaus.woff2") format("woff2"), url("../fonts/gerhaus/Gerhaus.woff") format("woff"), url("../fonts/gerhaus/Gerhaus.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+}
 body {
-  font-family: "Montserrat";
+  font-family: "Mulish";
+  font-weight: 400;
   overflow-x: hidden;
 }
 
@@ -112,23 +144,6 @@ body {
   width: 100%;
   padding: 10px;
   margin: 0 auto;
-}
-
-a:hover {
-  color: #ffa500;
-}
-
-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-section .container h2 {
-  padding-bottom: 20px;
-  color: #ffa500;
 }
 
 .flex {
@@ -141,49 +156,87 @@ section .container h2 {
   width: 50%;
 }
 
-.btn {
-  background: linear-gradient(135deg, #2467ef 50%, #ffa500 50%);
-  background-size: 300%;
+.btn_bg {
+  padding: 14px 16px;
+  gap: 10px;
+  border-radius: 30px;
+  background: #2DBE64;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+.btn_bg:hover {
+  background: #2CA75B;
+  color: #fff;
 }
 
-body *:not(.slick-track):not(.slick-list) {
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+.btn_nonbg {
+  padding: 14px 16px;
+  gap: 10px;
+  border-radius: 30px;
+  border: 2px solid #2DBE64;
+  background: #fff;
+  color: #2DBE64;
+  font-size: 16px;
+  font-weight: 500;
+}
+.btn_nonbg:hover {
+  background: #2DBE64;
+  color: #fff;
 }
 
-section:not(:first-child) {
-  margin: 50px 0;
+.site-header .container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 37px 0px;
 }
-
-section.related.products {
-  margin: 0;
+.site-header .container .header_left,
+.site-header .container .header_right {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 24px;
 }
-
-.page_header {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-.page_header h1 {
-  color: #ffa500;
-  text-transform: uppercase;
-  text-decoration: underline;
-  -webkit-text-decoration-style: dotted;
-          text-decoration-style: dotted;
-  font-weight: 300;
-  padding-bottom: 10px;
-}
-.page_header .page-header__breadcrumbs span {
-  color: #ffa500;
-}
-.page_header .page-header__breadcrumbs span.breadcrumbs__current {
-  color: #2467ef;
-}
-.page_header .page-header__breadcrumbs > span:last-child {
-  color: #2467ef;
-}
-
-.site-header .header_menu {
+.site-header .container .header_left .main-navigation .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 24px;
+}
+.site-header .container .header_left .main-navigation .menu a {
+  color: #292D32;
+  font-size: 16px;
+}
+.site-header .container .header_left .main-navigation .menu .menu-item {
+  padding: 2px 5px;
+  border-radius: 6px;
+}
+.site-header .container .header_left .main-navigation .menu .menu-item:hover {
+  background-color: #F8F8FA;
+}
+.site-header .container .header_right a.header_account {
+  gap: 6px;
+  color: #292D32;
+}
+.site-header .container .header_right a.header_account:hover {
+  color: #2DBE64;
+}
+.site-header .container .header_right a .icon {
+  width: 24px;
+  height: 24px;
+}
+.site-header .container .header_right a .icon path {
+  fill: #292D32;
+}
+.site-header .container .header_right a:hover .icon path {
+  fill: #2DBE64;
 }/*# sourceMappingURL=style.css.map */

@@ -5,8 +5,70 @@
 
 // ---------------------header---------------
 .site-header {
-    .header_menu {
-        display: flex;
+    .container {
+        justify-content: space-between;
+        padding: 37px 0px;
+
+        .header_left,
+        .header_right{
+            flex-direction: row;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .header_left{
+            .main-navigation{
+                .menu{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 24px;
+
+                    a{
+                        color: $black;
+                        font-size: 16px;
+                    }                    
+
+                    .menu-item{
+                        padding: 2px 5px;
+                        border-radius: 6px;
+
+                        &:hover{
+                            background-color: $gray;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header_right{
+            a{                
+                &.header_account{
+                    gap: 6px;
+                    color: $black;
+
+                    &:hover{
+                        color:  $green;
+                    }
+                }
+
+                .icon{
+                    width: 24px;
+                    height: 24px;
+
+                    path{
+                        fill: $black;
+                    }
+                }
+
+                &:hover{ 
+                    .icon{                        
+                        path{
+                            fill: $green;
+                        }                      
+                    }
+                }
+            }
+        }
     }
 }
 
