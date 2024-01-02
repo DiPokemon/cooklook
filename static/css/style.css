@@ -139,15 +139,32 @@ body {
   overflow-x: hidden;
 }
 
+section {
+  padding-bottom: 120px;
+}
+section .section_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 48px;
+}
+section .section_header .section_title {
+  font-family: "Gerhaus";
+  font-size: 48px;
+  line-height: 120%;
+}
+
 .container {
   max-width: 1140px;
   width: 100%;
   padding: 10px;
   margin: 0 auto;
-}
-
-.section_title {
-  font-family: "Gerhaus";
 }
 
 .flex {
@@ -168,6 +185,9 @@ body {
   color: #fff;
   font-size: 16px;
   font-weight: 500;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .btn_bg:hover {
   background: #2CA75B;
@@ -183,6 +203,9 @@ body {
   color: #2DBE64;
   font-size: 16px;
   font-weight: 500;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .btn_nonbg:hover {
   background: #2DBE64;
@@ -330,6 +353,9 @@ body {
 }
 
 /* MAIN POPULAR CATEGORIES */
+#popular_categories {
+  padding-top: 100px;
+}
 #popular_categories .section_title {
   font-size: 64px;
 }

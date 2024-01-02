@@ -29,15 +29,28 @@ body{
     overflow-x: hidden;
 }
 
+section{
+    padding-bottom: 120px;    
+
+        .section_header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 48px;
+
+            .section_title{
+                font-family: $second_font;
+                font-size: 48px;
+                line-height: 120%;                
+            }
+        }      
+}
+
 .container{
     max-width: 1140px;
     width: 100%;
     padding: 10px;
     margin: 0 auto;
-}
-
-.section_title{
-    font-family: $second_font;
 }
 
 .flex{
@@ -56,6 +69,7 @@ body{
     color: $white;
     font-size: 16px;
     font-weight: 500;
+    height: fit-content;
 
     &:hover{
         background: $btn_hover_green;
@@ -72,6 +86,7 @@ body{
     color: $green;
     font-size: 16px;
     font-weight: 500;
+    height: fit-content;
 
     &:hover{
         background: $green;

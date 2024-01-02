@@ -39,7 +39,7 @@ get_header();
             <div class="container">
                 <div class="section_header flex">
                     <h2 class="section_title"><?= $new_recipes_title ?></h2>
-                    <a href="#" class="btn">Смотреть все рецепты</a>
+                    <a href="#" class="btn_bg">Смотреть все рецепты</a>
                 </div>
                 <div class="recipes_grid">
                     <?php
