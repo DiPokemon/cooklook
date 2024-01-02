@@ -54,8 +54,24 @@ get_header();
                             while ($the_query->have_posts()) {
                                 $the_query->the_post();
                                 $categories = get_the_category();
+
                                 $main_category = $categories[0];
+                                $post_id = get_the_ID();
+                                
+                                $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');                                
+                                $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_likes');
+                                $rating = calculate_rating($recipe_likes, $recipe_dislikes);
+                                $time = carbon_get_post_meta($post_id, 'recipe_time');
+                                $portions = carbon_get_post_meta($post_id, 'recipe_portions');
+                                $comments = get_comments_number();
+
                                 set_query_var( 'main_category', $main_category );
+                                set_query_var('post_id', $post_id);
+                                set_query_var('rating', $rating);
+                                set_query_var('time', $time);
+                                set_query_var('portions', $portions);
+                                set_query_var('comments', $comments);
+
                                 get_template_part('template-parts/recipe-loop-item');
                             }
                         } else {

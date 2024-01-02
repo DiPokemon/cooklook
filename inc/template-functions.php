@@ -83,6 +83,17 @@ function my_admin_style() {
 }
 add_action('admin_head', 'my_admin_style');
 
+/* функция рассчета рейтинга рецепта */
+function calculate_rating($likes, $dislikes) {
+    if ($likes + $dislikes == 0) {
+        return 0;
+    }
+    $total_votes = $likes + $dislikes;
+    $like_ratio = $likes / $total_votes;
+    $rating = $like_ratio * 5;
+    return round($rating, 1);
+}
+
 
 // function process_image_upload($attachment_ID) {
 // 		$image_path = get_attached_file($attachment_ID); // Получить путь к изображению
@@ -129,3 +140,5 @@ function mirror_image_on_upload($attachment_ID) {
 
 // Добавление функции в WordPress хук, который срабатывает после загрузки изображения
 add_action('add_attachment', 'mirror_image_on_upload');
+
+
