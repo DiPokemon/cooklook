@@ -53,6 +53,9 @@ get_header();
                         if ($the_query->have_posts()) {
                             while ($the_query->have_posts()) {
                                 $the_query->the_post();
+                                $categories = get_the_category();
+                                $main_category = $categories[0];
+                                set_query_var( 'main_category', $main_category );
                                 get_template_part('template-parts/recipe-loop-item');
                             }
                         } else {
