@@ -14,7 +14,9 @@ get_header();
 
 		<section id="popular_categories">
 			<div class="container">
-				<h2 class="section_title"><?= $popular_cats_title ?></h2>
+                <div class="section_header">
+                    <h2 class="section_title"><?= $popular_cats_title ?></h2>
+                </div>				
                 <div class="popular_categories-grid">
                     <?php
                         $counter = 0;
@@ -39,7 +41,7 @@ get_header();
             <div class="container">
                 <div class="section_header flex">
                     <h2 class="section_title"><?= $new_recipes_title ?></h2>
-                    <a href="#" class="btn_bg">Смотреть все рецепты</a>
+                    <a href="#" class="btn_bg"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
                 </div>
                 <div class="recipes_grid">
                     <?php
@@ -54,23 +56,39 @@ get_header();
                             while ($the_query->have_posts()) {
                                 $the_query->the_post();
                                 $categories = get_the_category();
-
-                                $main_category = $categories[0];
                                 $post_id = get_the_ID();
-                                
-                                $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');                                
+                                $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
                                 $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_likes');
                                 $rating = calculate_rating($recipe_likes, $recipe_dislikes);
                                 $time = carbon_get_post_meta($post_id, 'recipe_time');
                                 $portions = carbon_get_post_meta($post_id, 'recipe_portions');
                                 $comments = get_comments_number();
+                                $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
+                                $tags = get_the_tags();
 
-                                set_query_var( 'main_category', $main_category );
+                                if(get_the_excerpt()){
+                                    $description = get_the_excerpt();
+                                }
+                                else if(get_the_content()){
+                                    $description = get_the_content();
+                                }
+                                else {
+                                    $description = $recipe_steps[0]['recipe_step_text'];
+                                }
+                               
+                                $words = explode(' ', $description);
+                                $first_fifteen_words = array_slice($words, 0, 15);
+                                $description = implode(' ', $first_fifteen_words);
+                                $description .= ' ...';
+
+                                set_query_var('categories', $categories);
                                 set_query_var('post_id', $post_id);
                                 set_query_var('rating', $rating);
                                 set_query_var('time', $time);
                                 set_query_var('portions', $portions);
                                 set_query_var('comments', $comments);
+                                set_query_var('description', $description);
+                                set_query_var('tags', $tags);
 
                                 get_template_part('template-parts/recipe-loop-item');
                             }

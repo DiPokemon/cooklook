@@ -91,12 +91,21 @@
             padding: 20px;
             justify-content: center;
 
-            .category_item-title{
-                font-family: $second_font;
-                font-size:24px;
-                text-align: center;
-                color: $black;
-            }
+            .category_item-wrapper{
+                flex-direction: column;
+                justify-content: space-between;
+
+                &::before{
+                    content: '';
+                }
+
+                .category_item-title{
+                    font-family: $second_font;
+                    font-size:24px;
+                    text-align: center;
+                    color: $black;
+                }
+            }            
         }
 
         .category_item:nth-child(2),
@@ -199,15 +208,66 @@
                             color: $white;
                             line-height: 160%;
                         }
-                    }
-                    
+                    }                    
                 }
-                
-                
-
-
-
             }
+        }
+
+        .recipe_loop-content{
+            padding-top: 16px;
+            gap: 10px;
+            flex-direction: column;
+
+            .categories{                
+                gap: 6px;
+                
+                .recipe_category-item{
+                    color: #828282;
+                    font-size: 14px;
+                    line-height: 160%;
+                    text-decoration: underline;
+                    gap: 6px;
+                    align-items: center;
+
+                    &:last-child{
+                        svg{
+                            display: none;
+                        }
+                    }
+
+                    &:hover{
+                        color: darken(#828282, 30%);
+                    }
+                }
+            }
+
+            .recipe_title{
+                font-size: 24px;
+                font-weight: 800;
+                line-height: 140%;
+            }
+
+            .recipe_desc{
+                font-size: 16px;
+                line-height: 140%;
+            }
+
+            .recipe_ingridients{                
+                font-size: 12px;
+                line-height: 160%;
+                column-gap: 12px;
+                flex-wrap: wrap;        
+
+                .recipe_ingridients-item{
+                    color: #828282;
+                    text-decoration: underline;
+
+                    &:hover{
+                        color: darken(#828282, 30%);
+                    }
+                }
+            }
+
         }
     }
 

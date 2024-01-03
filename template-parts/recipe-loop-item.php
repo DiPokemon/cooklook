@@ -2,12 +2,14 @@
 /*
 * Template name: Карточка рецепта
 */
-$main_category = get_query_var('main_category');
+$categories = get_query_var('categories');
 $post_id = get_query_var('post_id');
 $rating = get_query_var('rating');
 $time = get_query_var('time');
 $portions = get_query_var('portions');
 $comments = get_query_var('comments');
+$description = get_query_var('description');
+$tags = get_query_var('tags');
 ?>
 
 <div class="recipe_loop-item">
@@ -16,7 +18,7 @@ $comments = get_query_var('comments');
             <img src="<?= get_the_post_thumbnail_url(null, 'medium') ?>" alt="<?= __('Новый рецепт', 'cooklook') ?> <?= the_title() ?>">
             <div class="recipe_meta">
                 <div class="top_meta">
-                    <a class="meta_category <?= $main_category->slug ?>" href="<?= get_category_link( $main_category->term_id ) ?>"><?= $main_category->name?></a>
+                    <a class="meta_category <?= $categories[0]->slug ?>" href="<?= get_category_link( $categories[0]->term_id ) ?>"><?= $categories[0]->name ?></a>
                     <a href="" class="bookmark">                    
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <title><?= __('Добавить рецепт в избранное', 'cooklook') ?></title>
@@ -61,11 +63,30 @@ $comments = get_query_var('comments');
                 </div>
             </div>
         </div>
-        <div class="recipe_loop-content">
-            <div class="categories"></div>
-            <h3 class="recipe_title"></h3>
-            <div class="recipe_desc"></div>
-            <div class="recipe_ingridients"></div>
+        <div class="recipe_loop-content flex">
+            <div class="categories flex">
+                <?php foreach($categories as $category) : ?>
+                    <a class ="recipe_category-item flex" href="<?= get_category_link($category->term_id) ?>"><?= $category->cat_name ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6.66699 5.33325L9.33366 7.99992L6.66699 10.6666" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                <?php endforeach ?>
+            </div>
+            <h3 class="recipe_title">
+                <?= get_the_title() ?>
+            </h3>
+            <div class="recipe_desc">
+                <?= $description ?>
+            </div>
+            <?php if ($tags) : ?>
+                <div class="recipe_ingridients flex">
+                    <?= __('Ингридиенты:','cooklook') ?>
+                    <?php foreach ($tags as $tag) : ?>
+                        <a href="<?= get_tag_link($tag->term_id) ?>" class="recipe_ingridients-item"><?= $tag->name ?></a>
+                    <?php endforeach ?>
+                </div>
+            <?php endif ?>
         </div>
     </div>
     <pre>
