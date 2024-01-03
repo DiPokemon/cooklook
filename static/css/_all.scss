@@ -94,6 +94,10 @@ section{
     }
 }
 
+.meta_category{
+    background-color: lighten($black, 30%);
+}
+
 .breakfast{
     background-color: $breakfast;
     &.category_item{

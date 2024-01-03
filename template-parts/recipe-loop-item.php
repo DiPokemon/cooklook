@@ -15,7 +15,7 @@ $tags = get_query_var('tags');
 <div class="recipe_loop-item">
     <div class="recipe_loop-wrapper">
         <div class="img_block">
-            <img src="<?= get_the_post_thumbnail_url(null, 'medium') ?>" alt="<?= __('Новый рецепт', 'cooklook') ?> <?= the_title() ?>">
+            <img src="<?= get_the_post_thumbnail_url(null, 'medium') ?>" alt="<?= __('Рецепт', 'cooklook') ?> <?= the_title() ?> на <?= $portions ?> порций">
             <div class="recipe_meta">
                 <div class="top_meta">
                     <a class="meta_category <?= $categories[0]->slug ?>" href="<?= get_category_link( $categories[0]->term_id ) ?>"><?= $categories[0]->name ?></a>
@@ -89,8 +89,5 @@ $tags = get_query_var('tags');
             <?php endif ?>
         </div>
     </div>
-    <pre>
-        
-    </pre>
 </div>
 

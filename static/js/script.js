@@ -32,14 +32,31 @@ function closeCartPanelMobile() {
 }
 
 jQuery(document).ready(function() {
-    jQuery('.products').each(function() {
-        var highestBox = 0;
-        jQuery(this).find('.woocommerce-loop-product__title').each(function() {
-            if (jQuery(this).height() > highestBox) {
-                highestBox = jQuery(this).height();
+    jQuery('.recipes_grid').each(function() {
+        var heightTitle = 0;        
+        var heightDesc = 0;
+        var heightCats = 0;
+
+        jQuery(this).find('.recipe_loop-content .recipe_title').each(function() {
+            if (jQuery(this).height() > heightTitle) {
+                heightTitle = jQuery(this).height();
             }
         });
-        jQuery(this).find('.woocommerce-loop-product__title').height(highestBox);
+        jQuery(this).find('.recipe_loop-content .recipe_title').height(heightTitle);
+
+        jQuery(this).find('.recipe_loop-content .recipe_desc').each(function() {
+            if (jQuery(this).height() > heightDesc) {
+                heightDesc = jQuery(this).height();
+            }
+        });
+        jQuery(this).find('.recipe_loop-content .recipe_desc').height(heightDesc);
+
+        jQuery(this).find('.recipe_loop-content .recipe_ingridients').each(function() {
+            if (jQuery(this).height() > heightCats) {
+                heightCats = jQuery(this).height();
+            }
+        });
+        jQuery(this).find('.recipe_loop-content .recipe_ingridients').height(heightCats);
     });
 });
 
