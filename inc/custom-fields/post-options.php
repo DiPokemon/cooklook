@@ -20,6 +20,9 @@ Container::make( 'post_meta', 'Receipies info' )
         Field::make( 'text', 'recipe_dislikes', __( 'Dislikes', 'cooklook' ) )
             ->set_attribute('type', 'number')
             ->set_width(33),
+        Field::make( 'text', 'recipe_views', __( 'Views', 'cooklook' ) )
+            ->set_attribute('type', 'number')
+            ->set_default_value(0)       
     ) )
     ->add_tab( __( 'Energy value', 'cooklook' ), array(
         Field::make( 'text', 'recipe_calories', __( 'Calories', 'cooklook' ) )

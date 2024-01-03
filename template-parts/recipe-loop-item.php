@@ -73,12 +73,14 @@ $tags = get_query_var('tags');
                     </a>
                 <?php endforeach ?>
             </div>
-            <h3 class="recipe_title">
-                <?= get_the_title() ?>
-            </h3>
-            <div class="recipe_desc">
+            <a href="<?= get_permalink() ?>" class="recipe_title">
+                <h3>
+                    <?= get_the_title() ?>
+                </h3>
+            </a>
+            <a href="<?= get_permalink() ?>" class="recipe_desc">
                 <?= $description ?>
-            </div>
+            </a>
             <?php if ($tags) : ?>
                 <div class="recipe_ingridients flex">
                     <?= __('Ингридиенты:','cooklook') ?>

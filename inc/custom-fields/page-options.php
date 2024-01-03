@@ -19,6 +19,9 @@ Container::make( 'post_meta', __( 'Homepage Settings' ) )
     ) )
     ->add_tab( __( 'Новые рецепты', 'cooklook' ), array(
         Field::make( 'text', 'new_recipes_title', __( 'Заголовок', 'cooklook' ) ),        
+    ) )
+    ->add_tab( __( 'Популярные рецепты', 'cooklook' ), array(
+        Field::make( 'text', 'popular_recipes_title', __( 'Заголовок', 'cooklook' ) ),        
     ) );
 
 

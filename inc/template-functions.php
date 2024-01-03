@@ -94,6 +94,17 @@ function calculate_rating($likes, $dislikes) {
     return round($rating, 1);
 }
 
+/* увеличивает полу recipe_views у рецепта при каждом просмотре (используется для вывода популярных рецептов) */
+function increase_post_views() {
+    if ( is_single() ) {
+        $post_id = get_the_ID();
+        $views = carbon_get_post_meta( $post_id, 'recipe_views' );
+        $views++;
+        carbon_set_post_meta( $post_id, 'recipe_views', $views );
+    }
+}
+add_action( 'wp_head', 'increase_post_views' );
+
 
 // function process_image_upload($attachment_ID) {
 // 		$image_path = get_attached_file($attachment_ID); // Получить путь к изображению

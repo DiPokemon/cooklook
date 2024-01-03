@@ -139,6 +139,13 @@ body {
   overflow-x: hidden;
 }
 
+.adv_block {
+  border-radius: 30px;
+  border: 1px solid #F2F2F2;
+  background-color: #F8F8FA;
+  height: 350px;
+}
+
 section {
   padding-bottom: 120px;
 }
@@ -476,13 +483,19 @@ section .section_header .section_title {
   display: -ms-flexbox;
   display: flex;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(41, 45, 50, 0.1);
 }
 .recipes_grid .recipe_loop-item .img_block .recipe_meta .top_meta .bookmark svg path {
   fill: #BDBDBD;
 }
 .recipes_grid .recipe_loop-item .img_block .recipe_meta .top_meta .bookmark:hover svg path {
+  fill: #2DBE64;
+}
+.recipes_grid .recipe_loop-item .img_block .recipe_meta .top_meta .bookmark.added {
+  background-color: #fff;
+}
+.recipes_grid .recipe_loop-item .img_block .recipe_meta .top_meta .bookmark.added svg path {
   fill: #2DBE64;
 }
 .recipes_grid .recipe_loop-item .img_block .recipe_meta .bottom_meta {
@@ -539,10 +552,12 @@ section .section_header .section_title {
   font-size: 24px;
   font-weight: 800;
   line-height: 140%;
+  color: #292D32;
 }
 .recipes_grid .recipe_loop-item .recipe_loop-content .recipe_desc {
   font-size: 16px;
   line-height: 140%;
+  color: #292D32;
 }
 .recipes_grid .recipe_loop-item .recipe_loop-content .recipe_ingridients {
   font-size: 12px;

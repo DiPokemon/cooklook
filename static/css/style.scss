@@ -177,7 +177,7 @@
                         padding: 8px;
                         display: flex;
                         border-radius: 50%;
-                        background-color: transparentize($white, 0.1);
+                        background-color: transparentize($white, 0.5);
                         border: 1px solid transparentize($black, 0.9);
 
                         svg{
@@ -190,6 +190,16 @@
                             svg{
                                 path{
                                    fill: $green;
+                                }
+                            }
+                        }
+
+                        &.added{
+                            background-color: $white;
+
+                            svg{
+                                path{
+                                    fill: $green;
                                 }
                             }
                         }
@@ -253,11 +263,13 @@
                 font-size: 24px;
                 font-weight: 800;
                 line-height: 140%;
+                color: $black;
             }
 
             .recipe_desc{
                 font-size: 16px;
                 line-height: 140%;
+                color: $black;
             }
 
             .recipe_ingridients{                
