@@ -24,11 +24,15 @@ function add_menu_link_class( $atts, $item, $args ) {
   add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
 
 /* add Schema.Org in NavMenu */
-function filter_wp_nav_menu($nav_menu,$args) {
-    global $schemaURL;
+function filter_wp_nav_menu($nav_menu, $args) {
+    libxml_use_internal_errors(true);
     $dom = new DOMDocument();
-    @$dom->loadHTML('<?xml encoding="utf-8" ?>' . $nav_menu);
+    $dom->loadHTML(mb_convert_encoding($nav_menu, 'HTML-ENTITIES', 'UTF-8'));
     $x = new DOMXPath($dom);
+    foreach($x->query("//nav") as $node) {
+        $node->setAttribute("itemscope", "");	
+		$node->setAttribute("itemtype", "http://schema.org/SiteNavigationElement");	
+    }
     foreach($x->query("//a") as $node) {
         $node->setAttribute("itemprop","url");
     }
@@ -36,6 +40,16 @@ function filter_wp_nav_menu($nav_menu,$args) {
         $node->setAttribute("itemprop","itemListElement");
 		$node->setAttribute("itemscope","");
 		$node->setAttribute("itemtype","http://schema.org/ItemList");
+        $anchor = $x->query(".//a", $node)->item(0);
+        if ($anchor) {
+            $menuName = $anchor->nodeValue; // Имя пункта меню
+
+            // Создаем и добавляем meta элемент
+            $meta = $dom->createElement('meta');
+            $meta->setAttribute("itemprop", "name");
+            $meta->setAttribute("content", $menuName);
+            $node->appendChild($meta);
+        }
     }
     foreach($x->query("//ul") as $node) {        
         $node->setAttribute("itemprop","about");
@@ -46,12 +60,8 @@ function filter_wp_nav_menu($nav_menu,$args) {
         $node->setAttribute("itemprop","itemListElement");
 		$node->setAttribute("itemscope","");
 		$node->setAttribute("itemtype","http://schema.org/ItemList");
-    }
-    foreach($x->query("//nav") as $node) {
-        $node->setAttribute("itemscope", "");	
-		$node->setAttribute("itemtype", "http://schema.org/SiteNavigationElement");	
-    }	
-    $nav_menu = $node->c14n();
-    return $nav_menu ;
+    }    	
+    $nav_menu = $dom->saveHTML();
+    return $nav_menu;
 }
-add_filter( 'wp_nav_menu', 'filter_wp_nav_menu', 10, 2 );
+add_filter('wp_nav_menu', 'filter_wp_nav_menu', 9999, 2);

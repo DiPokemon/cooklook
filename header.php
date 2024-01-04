@@ -8,15 +8,14 @@
  *
  * @package cooklook
  */
-
+ include 'template-parts/variables.php';
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<?php include 'template-parts/variables.php' ?>
+	<link rel="profile" href="https://gmpg.org/xfn/11">	
 	<?php wp_head(); ?>
 </head>
 
@@ -29,10 +28,10 @@
 		<div class="container flex">
 			<div class="header_left flex">
 				<?php the_custom_logo(); ?>
-				<nav id="site-navigation" class="main-navigation">					
+				<nav id="site-navigation" class="main-navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">					
 					<?php
 						wp_nav_menu(
-							array(
+							array(								
 								'theme_location' => 'main_menu',
 								'menu_id'        => 'primary-menu',
 							)

@@ -14,12 +14,13 @@
   $contacts_main_phone_href = phone_href(carbon_get_theme_option( 'main_phone' ));
   $contacts_add_phone_href = phone_href(carbon_get_theme_option( 'second_phone' ));
 
-  $contacts_mail = carbon_get_theme_option( 'email' );
-  $contacts_vk = carbon_get_theme_option( 'vk' );
-  $contacts_wa = phone_wa(carbon_get_theme_option( 'wa' ));
-  $contacts_tg = carbon_get_theme_option( 'tg' );
-  $contacts_inst = carbon_get_theme_option( 'inst' );
-  $contacts_fb = carbon_get_theme_option( 'fb' );
+  $email = carbon_get_theme_option( 'email' );
+  $ads_email = carbon_get_theme_option( 'ads_email' );
+  // $contacts_vk = carbon_get_theme_option( 'vk' );
+  // $contacts_wa = phone_wa(carbon_get_theme_option( 'wa' ));
+  // $contacts_tg = carbon_get_theme_option( 'tg' );
+  // $contacts_inst = carbon_get_theme_option( 'inst' );
+  // $contacts_fb = carbon_get_theme_option( 'fb' );
 
   $address_city = carbon_get_theme_option( 'address_city' );
   $address_street = carbon_get_theme_option( 'address_street' );

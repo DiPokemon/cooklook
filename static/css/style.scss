@@ -323,10 +323,10 @@
 
             &.hidden{
                 display: none;
-                transition: all 0.5s ease;
+                transition: all 0.5s ease;                
                 opacity: 0; 
                 max-height: 0; 
-                overflow: hidden;
+                overflow: hidden;               
             }
 
             &.visible{
@@ -401,6 +401,26 @@
         }
     }
 }
+
+/* FOOTER */
+footer{
+    padding: 100px 0px 30px 0px;
+    background-color: $gray;
+
+    .container{
+        .footer_top{
+            justify-content: space-between;
+
+            .footer_logo{
+                img{
+                    height: 25px;
+                    width: auto;                    
+                }
+            }
+        }
+    }
+}
+
 
 
 

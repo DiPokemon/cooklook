@@ -51,6 +51,7 @@ function cooklook_setup() {
 	register_nav_menus(
 		array(
 			'main_menu' => esc_html__( 'Primary', 'cooklook' ),
+			'footer_links' => esc_html__( 'Footer links', 'cooklook' ),
 		)
 	);
 
@@ -119,6 +120,7 @@ require_once( get_template_directory().'/functions-parts/widget-areas.php' );
 require_once( get_template_directory().'/functions-parts/styles_load.php' );
 require_once( get_template_directory().'/functions-parts/scripts_load.php' );
 require_once( get_template_directory().'/functions-parts/phones_format.php' );
+require_once( get_template_directory().'/template-parts/schema.php' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
