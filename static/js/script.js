@@ -63,6 +63,7 @@ jQuery(document).ready(function() {
 
 
 
+
 jQuery(document).ready(function() {
     jQuery('.featured_products .slick-track').each(function() {
         var highestBox = 0;
@@ -77,9 +78,18 @@ jQuery(document).ready(function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.body.addEventListener('click', function(event) {
-        if (event.target.classList.contains('facetwp-page')) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    var showMoreButtons = document.querySelectorAll('.show_more');
+
+    showMoreButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            // Находим все скрытые элементы в том же списке
+            var hiddenItems = this.parentElement.querySelectorAll('.hidden');
+            hiddenItems.forEach(function(item) {
+                item.classList.remove('hidden'); // Удалить класс 'hidden'
+                item.classList.add('visible'); // Добавить класс 'visible' для начала анимации
+            });
+            this.style.display = 'none'; // Скрываем кнопку "Показать еще"
+        });
     });
+
 });

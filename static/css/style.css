@@ -170,7 +170,6 @@ section .section_header .section_title {
 .container {
   max-width: 1140px;
   width: 100%;
-  padding: 10px;
   margin: 0 auto;
 }
 
@@ -584,4 +583,99 @@ section .section_header .section_title {
   height: 380px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+/* CATEGORIES LIST GRID */
+.categories_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.categories_grid .category_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+.categories_grid .category_list .category_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.categories_grid .category_list .category_item.hidden {
+  display: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+.categories_grid .category_list .category_item.visible {
+  opacity: 1;
+  max-height: unset;
+}
+.categories_grid .category_list .parent_category .category_item .category_name h3 {
+  color: #292D32;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 140%;
+  letter-spacing: 0.72px;
+}
+.categories_grid .category_list .parent_category .category_item .category_name:hover h3 {
+  color: #2DBE64;
+}
+.categories_grid .category_list .parent_category .category_item .category_post_count {
+  color: #292D32;
+  font-size: 14px;
+}
+.categories_grid .category_list .child_categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.categories_grid .category_list .child_categories .category_item .category_name h3 {
+  color: #292D32;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.64px;
+}
+.categories_grid .category_list .child_categories .category_item .category_name:hover h3 {
+  color: #2DBE64;
+}
+.categories_grid .category_list .child_categories .category_item .category_post_count {
+  color: #828282;
+  font-size: 12px;
+}
+.categories_grid .category_list .child_categories .show_more {
+  color: #2DBE64;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 6px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

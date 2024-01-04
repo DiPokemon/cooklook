@@ -175,6 +175,37 @@ get_header();
             </div>			
 		</section>
 
+        <section>
+            <div class="container">
+                <div class="section_header">
+                    <h2 class="section_title"><?= $recipes_categories_title ?></h2>
+                </div>
+                <div class="categories_grid">
+                    <?php
+                        $parent_cats = get_categories(
+                            array( 
+                            'parent'  => 0 
+                        ));
+
+                        foreach ($parent_cats as $parent_cat) {
+                            $child_cats = get_categories(array(
+                                'parent' => $parent_cat->term_id
+                            ));
+                            set_query_var('parent_cat', $parent_cat);
+                            set_query_var('child_cats', $child_cats);
+                            get_template_part('template-parts/category-list');
+                        }
+                    ?>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container adv_block">
+                РЕКЛАМНЫЙ БЛОК
+            </div>
+        </section>
+
 		
 
 	</main><!-- #main -->
