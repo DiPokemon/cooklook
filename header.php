@@ -62,8 +62,8 @@
 					<?= __('Войти', 'cooklook')?>
 				</a>
 				<a href="#" class="header_add_recipe btn_bg"><?= __('Добавить рецепт', 'cooklook') ?></a>
-			</div>
-			
+			</div>			
 		</div>		
 	</header><!-- #masthead -->
+	<?php get_template_part('template-parts/modal-search'); ?>
 	

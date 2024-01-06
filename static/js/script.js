@@ -101,4 +101,34 @@ document.addEventListener('DOMContentLoaded', function() {
           header.classList.remove('fixed');
         }
     }
+
+    var searchButton = document.querySelector('.header_search');
+    var modal_overlay = document.querySelector('.search_modal_overlay');
+    var closeModal = document.querySelector('.close_modal');
+    var body = document.body
+
+    // Функция для открытия модального окна
+    function openModal() {
+        modal_overlay.classList.add('active');
+        body.style.overflow = 'hidden';
+    }
+
+    // Функция для закрытия модального окна
+    function closeModalFunction() {
+        modal_overlay.classList.remove('active');
+        body.style.overflow = '';
+    }
+
+    // Слушатель событий для открытия модального окна
+    searchButton.addEventListener('click', openModal);
+
+    // Слушатель событий для закрытия модального окна
+    closeModal.addEventListener('click', closeModalFunction);
+
+    // Закрыть модальное окно при клике вне его
+    window.addEventListener('click', function(event) {
+        if (event.target == modal_overlay) {
+            closeModalFunction();
+        }
+    });
 });
