@@ -187,3 +187,12 @@ section{
         background-color: lighten($pastries_desserts, 30%);
     }
 }
+
+@keyframes slideDown {
+    from {
+      top: -100px;
+    }
+    to {
+      top: 0;
+    }
+}

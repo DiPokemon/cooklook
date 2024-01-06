@@ -92,4 +92,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
+    window.onscroll = function() {
+        var header = document.querySelector('.site-header');
+        if (window.pageYOffset > 100) {          
+          header.classList.add('fixed');
+        } else {          
+          header.classList.remove('fixed');
+        }
+    }
 });

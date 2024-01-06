@@ -7,7 +7,7 @@
 .site-header {
     .container {
         justify-content: space-between;
-        padding: 37px 0px;
+        padding: 22px 0px;
 
         .header_left,
         .header_right{
@@ -70,6 +70,20 @@
             }
         }
     }
+
+    &.fixed{
+        background: $white;        
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.08);
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        top: -100px;
+        animation: slideDown 0.5s forwards;
+
+        .container{
+            padding: 10px 0px;
+        }
+    }    
 }
 
 /* MAIN POPULAR CATEGORIES */
@@ -404,19 +418,86 @@
 
 /* FOOTER */
 footer{
-    padding: 100px 0px 30px 0px;
+    padding-top: 100px;
     background-color: $gray;
 
     .container{
         .footer_top{
             justify-content: space-between;
+            padding-bottom: 32px;
 
             .footer_logo{
-                img{
-                    height: 25px;
-                    width: auto;                    
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                .logo_img-link{
+                    img{
+                        height: 25px;
+                        width: auto;                    
+                    }                    
                 }
             }
+
+            .footer_menu{
+                .footer_menu_list{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+    
+                    .menu_link{
+                        color: $black;
+                        font-size: 16px;
+                        line-height: 140%;
+                        letter-spacing: 0.64px;
+    
+                        &:hover{
+                            color: $green;
+                        }
+                    }
+                }
+            }
+
+            .footer_contacts{
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .contacts_item{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+
+                    .footer_contacts-title{
+                        color: $green;
+                        font-size: 16px;                        
+                        font-weight: 900;
+                        line-height: 140%;
+                        letter-spacing: 0.64px;
+                        text-transform: uppercase;
+                    }
+
+                    .footer_contacts-link{
+                        color: $black;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 140%;
+                        letter-spacing: 0.64px;
+
+                        &:hover{
+                            color: $green;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .footer_bottom{
+            padding: 30px 0px;
+            color: $black;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 140%;
+            letter-spacing: 0.56px;
         }
     }
 }
