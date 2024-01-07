@@ -1,0 +1,18 @@
+@import "reset";
+@import "fonts";
+@import "all";
+
+.search_moderation{
+    .search_moderation-item{
+        display: flex;
+        gap: 10px;
+    
+        .search_value{
+            color: $black;
+            font-size: 16px;
+            line-height: 140%; 
+            letter-spacing: 0.64px;
+            text-transform: uppercase;
+        }
+    }
+}

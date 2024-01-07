@@ -4,9 +4,25 @@ add_action('wp_ajax_nopriv_ajax_search', 'my_ajax_search');
 add_action('wp_ajax_ajax_search', 'my_ajax_search');
 
 function my_ajax_search() {
-    // Убедитесь, что Relevanssi активен
+    global $wpdb;
     if (function_exists('relevanssi_do_query')) {
         $search_term = sanitize_text_field($_POST['search']);
+        $rejected_query = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$wpdb->prefix}rejected_searches WHERE query = %s", $search_term));
+        $existing_pending_query = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$wpdb->prefix}pending_searches WHERE query = %s", $search_term));
+        
+        if ($rejected_query == 0 && $existing_pending_query == 0) {
+            $wpdb->insert(
+                $wpdb->prefix . 'pending_searches', // Имя таблицы
+                array(
+                    'query' => $search_term,
+                    'status' => 'awaiting_approval'
+                ),
+                array(
+                    '%s', // Формат значения для 'query'
+                    '%s'  // Формат значения для 'status'
+                )
+            );
+        }
 
         // WP_Query с использованием Relevanssi
         $search_query = new WP_Query();
@@ -25,5 +41,7 @@ function my_ajax_search() {
     }
     wp_die(); // Завершает PHP-скрипт
 }
+
+
 
 ?>

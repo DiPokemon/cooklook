@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var searchInput = document.getElementById('ajax-search-input');
     var searchResults = document.getElementById('search_results');
+    var timeout = null; // Инициализация переменной для таймаута
 
     // Функция для выполнения AJAX-запроса
     function fetchSearchResults(searchValue) {
@@ -23,10 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Обработка ввода в поле поиска
     searchInput.addEventListener('input', function() {
         var searchValue = this.value;
-        if (searchValue.length > 2) {
-            fetchSearchResults(searchValue);
-        } else {
-            searchResults.innerHTML = '';
-        }
+        
+        // Очищаем предыдущий таймаут, если он существует
+        clearTimeout(timeout);
+
+        // Устанавливаем новый таймаут
+        timeout = setTimeout(function() {
+            if (searchValue.length > 3) {
+                fetchSearchResults(searchValue);
+            } else {
+                searchResults.innerHTML = '';
+            }
+        }, 1000); // Таймаут в 500 миллисекунд (0.5 секунды)
     });
 });

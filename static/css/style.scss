@@ -536,8 +536,10 @@ footer{
             width: 100%;
 
             #ajax-search-form{
+                width: 100%;
+
                 input{
-                    border: none;
+                    border: none;                    
                 }
 
                 #ajax-search-input{
@@ -634,10 +636,6 @@ footer{
                 }
             }
         }
-
-        
-
-
     }    
 }
 

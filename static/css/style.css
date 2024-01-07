@@ -844,6 +844,9 @@ footer .container .footer_bottom {
   position: relative;
   width: 100%;
 }
+.search_modal_overlay .search_modal .search_form #ajax-search-form {
+  width: 100%;
+}
 .search_modal_overlay .search_modal .search_form #ajax-search-form input {
   border: none;
 }
