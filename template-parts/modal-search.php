@@ -17,7 +17,7 @@
                 </svg>
             </button>
         </div>
-        <div class="popular_search_query">
+        <div id="popular_queries" class="popular_search_query">
             <span class="popular_searches-title"><?= __('Популярные запросы:', 'cooklook') ?></span>
         <?php
             global $wpdb;

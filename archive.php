@@ -16,9 +16,13 @@ get_header();
 
 			<header class="page-header">
 				<?php
+				if (function_exists('breadcrumbs')) breadcrumbs(); 
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
+				<div class="filters">
+					
+				</div>
 			</header><!-- .page-header -->
 
 			<?php
