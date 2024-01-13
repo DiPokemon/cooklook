@@ -826,6 +826,14 @@ footer .container .footer_bottom {
   border-radius: 30px;
   background-color: #fff;
   z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
 }
 .search_modal_overlay .search_modal .search_form {
   display: -webkit-box;
@@ -924,6 +932,33 @@ footer .container .footer_bottom {
 }
 .search_modal_overlay .search_modal .search_form .close_modal:hover svg path {
   fill: #2DBE64;
+}
+.search_modal_overlay .search_modal .popular_search_query .popular_searches-title {
+  color: #292D32;
+  font-size: 18px;
+  font-weight: 800;
+}
+.search_modal_overlay .search_modal .popular_search_query .popular_search-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.search_modal_overlay .search_modal .popular_search_query .popular_search-items .popular_search_item {
+  border-radius: 30px;
+  padding: 8px 16px;
+  color: #292D32;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #F8F8FA;
+  cursor: pointer;
+}
+.search_modal_overlay .search_modal .popular_search_query .popular_search-items .popular_search_item:hover {
+  background-color: #2CA75B;
+  color: #fff;
 }
 .search_modal_overlay .search_modal #search_results .search_result {
   display: -webkit-box;

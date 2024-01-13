@@ -20,6 +20,7 @@ function create_custom_tables() {
         $sql1 = "CREATE TABLE $pending_searches_table (
             id INT AUTO_INCREMENT PRIMARY KEY,
             query TEXT NOT NULL,
+            count INT DEFAULT 1,
             status VARCHAR(20) DEFAULT 'awaiting_approval'
         ) $charset_collate;";
         // Выполняем SQL запрос с помощью dbDelta
@@ -30,7 +31,8 @@ function create_custom_tables() {
         // SQL для создания таблицы rejected_searches
         $sql2 = "CREATE TABLE $rejected_searches_table (
             id INT AUTO_INCREMENT PRIMARY KEY,
-            query TEXT NOT NULL
+            query TEXT NOT NULL,
+            count INT DEFAULT 1
         ) $charset_collate;";
         // Выполняем SQL запрос с помощью dbDelta
         dbDelta($sql2);
@@ -82,20 +84,20 @@ function approve_search_request() {
 
     if($query_info) {
         // Проверяем, существует ли уже такой запрос в популярных
-        $existing = $wpdb->get_row($wpdb->prepare("SELECT id, count FROM {$wpdb->prefix}popular_searches WHERE query = %s", $query_info->query));
+        $existing = $wpdb->get_row($wpdb->prepare("SELECT id, query, count FROM {$wpdb->prefix}popular_searches WHERE query = %s", $query_info->query));
         
         if($existing) {
-            // Если существует, увеличиваем счетчик
+            // Если существует, обновляем запись в popular_searches с сохранением query и увеличиваем счетчик
             $wpdb->update(
                 "{$wpdb->prefix}popular_searches",
                 array('count' => $existing->count + 1), // Увеличиваем счетчик
                 array('id' => $existing->id) // Условие для обновления
             );
         } else {
-            // Если нет, добавляем новый запрос с count = 1
+            // Если нет, добавляем новый запрос с query и count из pending_searches
             $wpdb->insert(
                 "{$wpdb->prefix}popular_searches",
-                array('query' => $query_info->query, 'count' => 1),
+                array('query' => $query_info->query, 'count' => $query_info->count),
                 array('%s', '%d')
             );
         }
@@ -107,6 +109,7 @@ function approve_search_request() {
     wp_redirect(admin_url('admin.php?page=search-moderation')); // Перенаправляем обратно на страницу модерации
     exit;
 }
+
 
 // Функция отклонения запроса
 function reject_search_request() {
@@ -136,7 +139,7 @@ function reject_search_request() {
 add_action('admin_post_approve_search', 'approve_search_request');
 add_action('admin_post_reject_search', 'reject_search_request');
 
-function get_popular_searches($limit = 10) {
+function get_popular_searches($limit = 6) {
     global $wpdb;
     $popular_searches = $wpdb->get_results($wpdb->prepare("
         SELECT query, count 

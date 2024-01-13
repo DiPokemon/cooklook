@@ -38,3 +38,20 @@ function closeModalFunction() {
             closeModalFunction();
         }
     });
+
+document.addEventListener("DOMContentLoaded", function () {
+    var searchInput = document.getElementById("ajax-search-input");
+    var popularSearchItems = document.querySelectorAll(".popular-search-item");
+
+    popularSearchItems.forEach(function (item) {
+        item.addEventListener("click", function () {
+            var query = item.getAttribute("data-query");
+            searchInput.value = query;
+        });
+    });
+});
+
+function setSearchQuery(query) {
+    var searchInput = document.getElementById("ajax-search-input");
+    searchInput.value = query;
+}

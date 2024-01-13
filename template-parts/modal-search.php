@@ -18,6 +18,22 @@
             </button>
         </div>
         <div class="popular_search_query">
+            <span class="popular_searches-title"><?= __('Популярные запросы:', 'cooklook') ?></span>
+        <?php
+            global $wpdb;
+            $popular_searches_table = $wpdb->prefix . 'popular_searches'; // Замените на имя вашей таблицы
+            //$results = $wpdb->get_results("SELECT query, count FROM $popular_searches_table ORDER BY count DESC LIMIT 6");            
+            $results =  get_popular_searches();
+            if ($results) :
+        ?>   
+            <div class="popular_search-items">
+                <?php foreach ($results as $result) : ?>
+                    <?php $query = esc_html($result->query); ?>
+                    <a class="popular_search_item" href="javascript:void(0);" onclick="setSearchQuery('<?= $query ?>')"><?= $query ?></a>
+                    
+                <?php endforeach; ?>  
+            </div>                                       
+        <?php endif; ?>
 
         </div>
         <div id="search_results" class="search_results">

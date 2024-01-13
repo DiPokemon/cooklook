@@ -37,4 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 1000); // Таймаут в 500 миллисекунд (0.5 секунды)
     });
+
+    // Обработка клика на элементе списка .popular_search_query
+    var popularSearchItems = document.querySelectorAll('.popular_search_query a');
+    popularSearchItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            var query = item.textContent;
+            searchInput.value = query;
+            fetchSearchResults(query); // Вызываем функцию с выбранным запросом
+        });
+    });
 });
