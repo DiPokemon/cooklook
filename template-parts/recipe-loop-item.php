@@ -18,7 +18,25 @@ $tags = get_query_var('tags');
             <img src="<?= get_the_post_thumbnail_url(null, 'medium') ?>" alt="<?= __('Рецепт', 'cooklook') ?> <?= the_title() ?> на <?= $portions ?> порций">
             <div class="recipe_meta">
                 <div class="top_meta">
-                    <a class="meta_category <?= $categories[0]->slug ?>" href="<?= get_category_link( $categories[0]->term_id ) ?>"><?= $categories[0]->name ?></a>
+                    <?php
+                        $recipe_categories = get_the_terms(get_the_ID(), 'recipe_category'); // 'recipe_category' - это таксономия для кастомных категорий рецептов
+
+                        if ($recipe_categories && !is_wp_error($recipe_categories)) {
+                            $parent_category = get_term($recipe_categories[0]->parent, 'recipe_category'); // Получаем родительскую категорию
+                            
+                            if ($parent_category && !is_wp_error($parent_category)) {
+                                $category_id = $parent_category->term_id;
+                                $category_name = $parent_category->name;
+                                $category_slug = $parent_category->slug;
+                            } else {
+                                $category_id = $recipe_categories[0]->term_id;
+                                $category_name = $recipe_categories[0]->name;
+                                $category_slug = $recipe_categories[0]->slug;
+                            } ?>
+                            
+                            <a class="meta_category <?= esc_attr($category_slug) ?>" href="<?= esc_url(get_term_link($category_id)) ?>"><?= esc_html($category_name) ?></a>
+                        
+                    <?php } ?>                    
                     <a href="" class="bookmark">                    
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <title><?= __('Добавить рецепт в избранное', 'cooklook') ?></title>
@@ -65,13 +83,7 @@ $tags = get_query_var('tags');
         </div>
         <div class="recipe_loop-content flex">
             <div class="categories flex">
-                <?php foreach($categories as $category) : ?>
-                    <a class ="recipe_category-item flex" href="<?= get_category_link($category->term_id) ?>"><?= $category->cat_name ?>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M6.66699 5.33325L9.33366 7.99992L6.66699 10.6666" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                <?php endforeach ?>
+                <?php display_recipe_categories_hierarchy($categories); ?>             
             </div>
             <a href="<?= get_permalink() ?>" class="recipe_title">
                 <h3>

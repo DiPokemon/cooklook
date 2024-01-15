@@ -193,6 +193,28 @@ section{
     }
 }
 
+.page-header__breadcrumbs{
+    font-size: 14px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+
+    span{
+        display: flex;
+    }
+
+    a{
+        color: $black;
+    }
+
+    .breadcrumbs__current{
+        color: #828282
+    }
+
+
+}
+
+
 @keyframes slideDown {
     from {
       top: -100px;

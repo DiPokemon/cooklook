@@ -5,20 +5,6 @@ if (! defined ('ABSPATH')){
 
 //Breadcrumbs with Schema.ORG
 function breadcrumbs() {
-	if (is_product_category()){
-		woocommerce_breadcrumb($args);
-			$args = array(
-				'delimiter' => '/',
-				'wrap_before' => '<div class="page-header__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">',
-				'wrap_after' => '</div>',
-				'before' => '<span class="breadcrumbs__current">',
-				'after' => '</span>',
-				'home' => '/'
-			);
-		
-	}
-
-	else {
 		/* === ОПЦИИ === */
 		$text['home']     = 'Главная'; // текст ссылки "Главная"
 		$text['category'] = '%s'; // текст для страницы рубрики
@@ -30,7 +16,7 @@ function breadcrumbs() {
 		$text['cpage']    = 'Страница комментариев %s'; // текст 'Страница комментариев N'
 		$wrap_before    = '<div class="page-header__breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
 		$wrap_after     = '</div><!-- .breadcrumbs -->'; // закрывающий тег обертки
-		$sep            = '<span class="breadcrumbs__separator"> / </span>'; // разделитель между "крошками"
+		$sep            = '<span class="breadcrumbs__separator"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6.66797 5.33325L9.33464 7.99992L6.66797 10.6666" stroke="#292D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>'; // разделитель между "крошками"
 		$before         = '<span class="breadcrumbs__current">'; // тег перед текущей "крошкой"
 		$after          = '</span>'; // тег после текущей "крошки"
 		$show_on_home   = 0; // 1 - показывать "хлебные крошки" на главной странице, 0 - не показывать
@@ -72,6 +58,26 @@ function breadcrumbs() {
 					if ( $show_current ) {
 						if ( $position >= 1 ) echo $sep;
 						echo $before . sprintf( $text['category'], single_cat_title( '', false ) ) . $after;
+					} elseif ( $show_last_sep ) echo $sep;
+				}
+			} elseif ( is_post_type_archive('recipe') ){
+				$position += 1;
+            	if ( $position > 1 ) echo $sep;
+				echo $before . __('Каталог рецептов', 'cooklook') . $after;
+			} elseif ( is_tax('recipe_category') ) {
+				$term = get_term_by( 'slug', get_query_var( 'term' ), 'recipe_category' );
+				if ( $term ) {
+					echo $sep . sprintf( $link, get_post_type_archive_link( get_post_type()), __('Каталог рецептов', 'cooklook') , $position );
+					$parents = get_ancestors( $term->term_id, 'recipe_category' );
+					foreach ( array_reverse( $parents ) as $cat ) {
+						$position += 1;
+						if ( $position > 1 ) echo $sep;
+						$term = get_term( $cat, 'recipe_category' );
+						echo sprintf( $link, get_term_link( $term ), $term->name, $position );
+					}
+					if ( $show_current ) {
+						if ( $position >= 1 ) echo $sep;
+						echo $before . single_term_title( '', false ) . $after;
 					} elseif ( $show_last_sep ) echo $sep;
 				}
 			} elseif ( is_search() ) {
@@ -202,6 +208,5 @@ function breadcrumbs() {
 				echo get_post_format_string( get_post_format() );
 			}
 			echo $wrap_after;
-		}
-	}
+		}	
 }

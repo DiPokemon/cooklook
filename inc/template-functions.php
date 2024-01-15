@@ -47,7 +47,6 @@ function aioseo_filter_schema_output( $graphs ) {
 return $graphs;
 }
 
-
 function add_featured_image_column( $columns ) {
 	$new = array();
 	foreach($columns as $key => $title) {
@@ -133,23 +132,74 @@ add_action( 'wp_head', 'increase_post_views' );
 // 	add_action('add_attachment', 'process_image_upload');
 
 function mirror_image_on_upload($attachment_ID) {
-    $image_path = get_attached_file($attachment_ID); // Получение пути к загруженному изображению
+    // Получите информацию о загруженном файле
+    $attachment_data = wp_get_attachment_metadata($attachment_ID);
+    
+    // Убедитесь, что файл - изображение (например, jpg, png и т. д.)
+    if (is_array($attachment_data) && isset($attachment_data['file'])) {
+        $image_path = get_attached_file($attachment_ID); // Получение пути к загруженному изображению
 
-    // Создание объекта Imagick для обработки изображения
-    $imagick = new Imagick($image_path);
+        // Создание объекта Imagick для обработки изображения
+        try {
+            $imagick = new Imagick($image_path);
 
-    // Отзеркаливание изображения
-    $imagick->flopImage();
+            // Отзеркаливание изображения
+            $imagick->flopImage();
 
-    // Сохранение изменений, замена оригинального файла
-    $imagick->writeImage($image_path);
+            // Сохранение изменений, замена оригинального файла
+            $imagick->writeImage($image_path);
 
-    // Очистка ресурсов
-    $imagick->clear();
-    $imagick->destroy();
+            // Очистка ресурсов
+            $imagick->clear();
+            $imagick->destroy();
+        } catch (Exception $e) {
+            // Логирование ошибки
+            error_log('Imagick error: ' . $e->getMessage());
+        }
+    }
 }
 
 // Добавление функции в WordPress хук, который срабатывает после загрузки изображения
 add_action('add_attachment', 'mirror_image_on_upload');
 
+
+//Вывод категорий у рецепта согласно иерархии
+function display_recipe_categories_hierarchy($categories, $parent_id = 0) {                    
+    foreach ($categories as $category) : ?>
+        <?php if ($category->parent == $parent_id) : ?> 
+            <a class ="recipe_category-item flex" href="<?= get_term_link($category) ?>">
+                <?= $category->name ?>
+                <?php if (has_children_recipe_categories($categories, $category->term_id)) : ?>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6.66699 5.33325L9.33366 7.99992L6.66699 10.6666" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                <?php else: ?>
+                    ,
+                <?php endif; ?>
+            </a>
+            <?php display_recipe_categories_hierarchy($categories, $category->term_id); ?>
+        <?php endif; ?>
+    <?php endforeach;                         
+}
+
+function has_children_recipe_categories($categories, $parent_id) {
+    foreach ($categories as $category) {
+        if ($category->parent == $parent_id) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// убирает префикс у заголовков в архивах "Категория:", "Архив:" 
+function remove_archive_prefix($title) {
+    if (is_archive() && !is_category() && !is_tag() && !is_tax()) {
+        $title = single_cat_title('', false);
+    }
+    return $title;
+}
+add_filter('get_the_archive_title', 'remove_archive_prefix');
+
+
+ 
 

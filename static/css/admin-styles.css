@@ -306,6 +306,28 @@ section .section_header .section_title {
   background-color: #fbf3e5;
 }
 
+.page-header__breadcrumbs {
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 6px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page-header__breadcrumbs span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.page-header__breadcrumbs a {
+  color: #292D32;
+}
+.page-header__breadcrumbs .breadcrumbs__current {
+  color: #828282;
+}
+
 @-webkit-keyframes slideDown {
   from {
     top: -100px;

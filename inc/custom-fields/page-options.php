@@ -11,7 +11,7 @@ Container::make( 'post_meta', __( 'Homepage Settings' ) )
         ->set_types( array(
             array(
                 'type' => 'term',
-                'taxonomy' => 'category',
+                'taxonomy' => 'recipe_category',
             )
         ) )
         ->set_duplicates_allowed( false )

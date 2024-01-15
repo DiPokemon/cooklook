@@ -46,7 +46,7 @@ get_header();
                 <div class="recipes_grid">
                     <?php
                         $args = array(
-                            'post_type' => 'post', // Тип записи, для стандартных записей это 'post'.
+                            'post_type' => 'recipe', // Тип записи, для стандартных записей это 'post'.
                             'posts_per_page' => 5, // Количество записей для показа.
                             'orderby' => 'date', // Сортировка по дате.
                             'order' => 'DESC' // Сортировка по убыванию.
@@ -55,7 +55,7 @@ get_header();
                         if ($the_query->have_posts()) {
                             while ($the_query->have_posts()) {
                                 $the_query->the_post();
-                                $categories = get_the_category();
+                                $categories = get_the_terms(get_the_ID(), 'recipe_category');
                                 $post_id = get_the_ID();
                                 $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
                                 $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_likes');
@@ -64,7 +64,7 @@ get_header();
                                 $portions = carbon_get_post_meta($post_id, 'recipe_portions');
                                 $comments = get_comments_number();
                                 $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
-                                $tags = get_the_tags();
+                                $tags = get_the_terms($post_id, 'recipe_tags');
 
                                 if(get_the_excerpt()){
                                     $description = get_the_excerpt();
@@ -166,7 +166,6 @@ get_header();
                             }
                         } else {
                             echo 'No posts found.';
-                            var_dump($the_query->posts);
                         }
                         
                         wp_reset_postdata();
@@ -211,5 +210,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

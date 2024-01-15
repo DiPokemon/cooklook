@@ -3,7 +3,7 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 Container::make( 'post_meta', 'Receipies info' )
-    ->where( 'post_type', '=', 'post' )
+    ->where( 'post_type', '=', 'recipe' )
     ->add_tab( __( 'Meta info', 'cooklook' ), array(
         Field::make( 'text', 'recipe_portions', __( 'Portions', 'cooklook' ) )
             ->set_attribute('type', 'number')
