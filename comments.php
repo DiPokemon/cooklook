@@ -20,44 +20,30 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
-			<?php
-			$cooklook_comment_count = get_comments_number();
-			if ( '1' === $cooklook_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'cooklook' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $cooklook_comment_count, 'comments title', 'cooklook' ) ),
-					number_format_i18n( $cooklook_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
+
+	<?php if ( have_comments() ) : ?>		
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<div class="comment-list">
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
+					'style'      => 'div',
 					'short_ping' => true,
+					'avatar_size'=> 60,
+					'callback'          => 'commentsHTML5', //функция в template-functions.php
+					'reply_text' => __('Ответить','cooklook'),
+					'per_page'   => 10,
+					'reverse_top_level' => true,
+					'login_text' => __('Войдите или зарегистрируйтесь чтобы оставить комментарий', 'cooklook'),
+					'format' => 'html5',
+					'max_depth'         => ''
 				)
 			);
 			?>
-		</ol><!-- .comment-list -->
+		</div><!-- .comment-list -->
 
 		<?php
 		the_comments_navigation();
@@ -74,4 +60,4 @@ if ( post_password_required() ) {
 	comment_form();
 	?>
 
-</div><!-- #comments -->
+<!-- #comments -->

@@ -124,6 +124,10 @@ require_once( get_template_directory().'/template-parts/schema.php' );
 require_once( get_template_directory().'/search-ajax-handler.php' );
 require_once( get_template_directory().'/functions-parts/search_moderation_function.php' );
 require_once( get_template_directory().'/functions-parts/custom_post_types.php' );
+require_once( get_template_directory().'/filters-handler.php' );
+require_once( get_template_directory().'/functions-parts/recipe_rating.php' );
+
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

@@ -200,6 +200,81 @@ function remove_archive_prefix($title) {
 }
 add_filter('get_the_archive_title', 'remove_archive_prefix');
 
+add_filter( 'facetwp_is_main_query', function( $is_main_query, $query ) {
+    if ( $query->is_archive() && $query->is_main_query() ) {
+      $is_main_query = false;
+    }
+    return $is_main_query;
+  }, 10, 2 );
 
- 
+function add_ingredients_to_js() {
+    $ingridients = get_terms(array(
+        'taxonomy' => 'recipe_tags',
+        'hide_empty' => false,
+    ));
 
+    $availableIngredients = array();
+
+    foreach ($ingridients as $ingredient) {
+        $availableIngredients[] = $ingredient->name;
+    }
+
+    // Преобразуйте массив в формат JSON
+    $availableIngredientsJson = json_encode($availableIngredients);
+
+    // Передайте данные в JavaScript с помощью localize_script
+    wp_localize_script('filter-ingridients', 'availableIngredients', array(
+        'ingredients' => $availableIngredients,
+    ));
+}
+add_action('wp_enqueue_scripts', 'add_ingredients_to_js');
+
+// Function for comment template
+function commentsHTML5(){
+    $comment = get_comment();
+    $id = $comment->comment_ID;
+    $author = $comment->comment_author;
+    //$author_id = get_comment_author_id();
+    $avatar = get_avatar($author_id, 32);
+    $date = get_comment_date();
+    $localized_date = date_i18n( 'j F Y', strtotime( $date ) );
+    $content = $comment->comment_content;
+    
+
+    ?>
+        <div id="comment-<?= $id ?>" class="comment">
+            <div class="comment_header">                
+                <?php 
+                    $args = [
+                        'class' => 'comment_avatar',
+                    ];
+                    echo get_avatar( $id, '60', '', $author, $args );
+                ?>
+                
+                <div class="comment_meta">
+                    <span class="comment_meta-author">
+                        <?= $author ?>
+                    </span>
+                    <span class="comment_meta-date">
+                        <?= $localized_date ?>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="comment_body">
+                <?= $content ?>
+            </div>
+            <div class="comment_footer">
+                <?php    
+                    comment_reply_link( [
+                        'add_below' => true,
+                        'depth'     => 20,
+                        'max_depth' => 200,
+                        'before'    => '<div class="reply">',
+                        'after'     => '</div>'
+                    ] ); 
+                ?>
+            </div>
+        <!-- accordling to codex don't close the last tag -->
+    <?php
+}

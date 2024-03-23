@@ -10,6 +10,11 @@
 
 get_header();
 ?>
+    
+
+
+
+
 
 	<main id="primary" class="site-main">
 		<?php if ( have_posts() ) : ?>
@@ -37,8 +42,58 @@ get_header();
                             }					
 						?>
 						<div class="filters">
-							<?php echo do_shortcode('[facetwp facet="category"]') ?>
-							<?php echo do_shortcode('[facetwp facet="region"]') ?>
+                            <form id="recipe-filter">
+                                <select id="recipe_category" name="recipe_category">
+                                    <option value=""><?= __('Любая категория', 'cooklook') ?></option>
+                                    <?php
+                                    // Получаем список категорий
+                                        $categories = get_terms(array(
+                                            'taxonomy' => 'recipe_category',
+                                            'hide_empty' => false,
+                                            'parent' => 0,
+                                        ));
+
+                                        foreach ($categories as $category) {
+                                            echo '<option value="' . esc_attr($category->term_id) . '">' . esc_html($category->name) . '</option>';
+                                        }
+                                    ?>
+                                </select>
+
+                                <select id="recipe_subcategory" name="recipe_subcategory" disabled>
+                                    <option value=""><?= __('Любое блюдо', 'cooklook') ?></option>
+                                </select>
+
+                                <select id="recipe_region" name="recipe_region">
+                                    <option value=""><?= __('Любое меню', 'cooklook') ?></option>
+                                    <?php                                
+                                        $regions = get_posts(array(
+                                            'post_type' => 'recipe', // Замените 'recipes' на свой тип записи
+                                            'posts_per_page' => -1,
+                                            'meta_key' => '_recipe_region', // Замените 'recipe_region' на ваше кастомное поле
+                                            'fields' => 'ids',
+                                        ));
+
+                                        $regions = array_unique($regions); // Убираем дубликаты
+
+                                        foreach ($regions as $region_id) {
+                                            $region_name = carbon_get_post_meta($region_id, 'recipe_region'); // Замените на ваше кастомное поле
+                                            if ($region_name) :
+                                            ?>
+                                                <option value="<?= esc_attr($region_name) ?>"><?= esc_html($region_name) ?></option>
+                                            <?php endif;
+                                        }
+                                ?>
+                                    
+                                </select>
+
+                                <?php get_template_part('template-parts/filter-ingridients'); ?>
+
+                                <button class="btn_nonbg ingridients_btn"><?= __('Ингридиенты', 'cooklook') ?></button>
+                                
+                                <button class="btn_bg" type="submit"><?= __('Применить фильтр', 'cooklook') ?></button>
+                            </form>
+
+
 						</div>
 					</header><!-- .page-header -->
 				</div>
@@ -48,14 +103,36 @@ get_header();
 
 			<section>
 				<div class="container">
-                <div class="recipes_grid facetwp-template">
+                <div id="response" class="recipes_grid">
                     <?php
                         $args = array(
                             'post_type' => 'recipe', // Тип записи, для стандартных записей это 'post'.                            
                             'posts_per_page' => 10, // Количество записей для показа.
                             'orderby' => 'date', // Сортировка по дате.
-                            'order' => 'DESC' // Сортировка по убыванию.
+                            'order' => 'DESC', // Сортировка по убыванию.                            
                         );
+
+                        // Добавляем фильтрацию по категории и подкатегории, если они выбраны в форме
+                        $category_id = isset($_GET['recipe_category']) ? intval($_GET['recipe_category']) : 0;
+                        $subcategory_id = isset($_GET['recipe_subcategory']) ? intval($_GET['recipe_subcategory']) : 0;
+
+                        if ($category_id) {
+                            $args['tax_query'] = array(
+                                array(
+                                    'taxonomy' => 'recipe_category',
+                                    'field' => 'id',
+                                    'terms' => $category_id,
+                                ),
+                            );
+                        }
+
+                        if ($subcategory_id) {
+                            $args['tax_query'][] = array(
+                                'taxonomy' => 'recipe_category',
+                                'field' => 'id',
+                                'terms' => $subcategory_id,
+                            );
+                        }
                         $the_query = new WP_Query($args);
                         if ($the_query->have_posts()) {
                             while ($the_query->have_posts()) {
@@ -98,7 +175,7 @@ get_header();
                                 get_template_part('template-parts/recipe-loop-item');
                             }
                         } else {
-                            echo 'No posts found.';
+                            get_template_part('template-parts/recipe-loop-nothing');
                         }
                         
                         wp_reset_postdata();

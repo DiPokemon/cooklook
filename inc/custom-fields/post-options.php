@@ -22,7 +22,12 @@ Container::make( 'post_meta', 'Receipies info' )
             ->set_width(33),
         Field::make( 'text', 'recipe_views', __( 'Views', 'cooklook' ) )
             ->set_attribute('type', 'number')
-            ->set_default_value(0)       
+            ->set_default_value(0),
+        Field::make( 'text', 'recipe_rating', __( 'Rating', 'cooklook' ) )   
+            ->set_attribute('type', 'number')         
+            ->set_attribute('min', 1)
+            ->set_attribute('max', 5)
+            ->set_attribute('step', 0.1),
     ) )
     ->add_tab( __( 'Energy value', 'cooklook' ), array(
         Field::make( 'text', 'recipe_calories', __( 'Calories', 'cooklook' ) )

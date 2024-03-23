@@ -81,6 +81,7 @@ section{
     font-size: 16px;
     font-weight: 500;
     height: fit-content;
+    cursor: pointer;
 
     &:hover{
         background: $btn_hover_green;
@@ -98,11 +99,16 @@ section{
     font-size: 16px;
     font-weight: 500;
     height: fit-content;
+    cursor: pointer;
 
     &:hover{
         background: $green;
         color: $white;
     }
+}
+
+button{
+    border: none;
 }
 
 .meta_category{

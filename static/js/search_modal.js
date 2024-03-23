@@ -1,6 +1,6 @@
 var searchButton = document.querySelector('.header_search');
-var modal_overlay = document.querySelector('.search_modal_overlay');
-var closeModal = document.querySelector('.close_modal');
+var searchModalOverlay = document.querySelector('.search_modal_overlay');
+var closeSearchModal = document.getElementById('close_search');
 var body = document.body;
 var scrollOffset = window.innerWidth - document.documentElement.clientWidth;
 
@@ -8,7 +8,7 @@ var scrollOffset = window.innerWidth - document.documentElement.clientWidth;
 function openModal(event) {
     var headerFixed = document.querySelector('.site-header.fixed');
     event.preventDefault();
-    modal_overlay.classList.add('active');
+    searchModalOverlay.classList.add('active');
     body.style.overflowY = 'hidden';
     body.style.paddingRight = scrollOffset + 'px';
     if (headerFixed) { 
@@ -19,7 +19,7 @@ function openModal(event) {
 // Функция для закрытия модального окна
 function closeModalFunction() {
     var headerFixed = document.querySelector('.site-header.fixed');
-    modal_overlay.classList.remove('active');
+    searchModalOverlay.classList.remove('active');
     body.style.overflowY = '';        
     body.style.paddingRight = '';
     if (headerFixed) { 
@@ -31,26 +31,26 @@ function closeModalFunction() {
     searchButton.addEventListener('click', openModal);
 
 // Слушатель событий для закрытия модального окна
-    closeModal.addEventListener('click', closeModalFunction);
+    closeSearchModal.addEventListener('click', closeModalFunction);
 
 // Закрыть модальное окно при клике вне его
     window.addEventListener('click', function(event) {
-        if (event.target == modal_overlay) {
+        if (event.target == searchModalOverlay) {
             closeModalFunction();
         }
     });
 
-document.addEventListener("DOMContentLoaded", function () {
-    var searchInput = document.getElementById("ajax-search-input");
-    var popularSearchItems = document.querySelectorAll(".popular-search-item");
+// document.addEventListener("DOMContentLoaded", function () {
+//     var searchInput = document.getElementById("ajax-search-input");
+//     var popularSearchItems = document.querySelectorAll(".popular-search-item");
 
-    popularSearchItems.forEach(function (item) {
-        item.addEventListener("click", function () {
-            var query = item.getAttribute("data-query");
-            searchInput.value = query;
-        });
-    });
-});
+//     popularSearchItems.forEach(function (item) {
+//         item.addEventListener("click", function () {
+//             var query = item.getAttribute("data-query");
+//             searchInput.value = query;
+//         });
+//     });
+// });
 
 function setSearchQuery(query) {
     var searchInput = document.getElementById("ajax-search-input");

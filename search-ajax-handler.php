@@ -15,11 +15,9 @@ function my_ajax_search() {
         relevanssi_do_query($search_query);
 
         if ($search_query->have_posts()) {
-            echo '<strong>' . count($search_query) . '</strong>';
             while ($search_query->have_posts()) {
                 $search_query->the_post();
-                
-                load_template(get_template_directory() . '/template-parts/ajax-search-result-item.php');
+                get_template_part('/template-parts/ajax-search-result-item');
             }
         } else {
             echo 'Nothing.';

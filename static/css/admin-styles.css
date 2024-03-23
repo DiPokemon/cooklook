@@ -194,6 +194,7 @@ section .section_header .section_title {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  cursor: pointer;
 }
 .btn_bg:hover {
   background: #2CA75B;
@@ -212,10 +213,15 @@ section .section_header .section_title {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  cursor: pointer;
 }
 .btn_nonbg:hover {
   background: #2DBE64;
   color: #fff;
+}
+
+button {
+  border: none;
 }
 
 .meta_category {

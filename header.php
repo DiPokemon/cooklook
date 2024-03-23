@@ -41,7 +41,7 @@
 		   		</nav><!-- #site-navigation -->
 			</div>
 			<div class="header_right flex">
-				<a href="#" class="header_search flex">					
+				<a href="#" class="header_search flex">
 					<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 						<title><?= __('Поиск рецептов на сайте', 'cooklook') ?></title>
 						<path d="M11.5 21.75C5.85 21.75 1.25 17.15 1.25 11.5C1.25 5.85 5.85 1.25 11.5 1.25C17.15 1.25 21.75 5.85 21.75 11.5C21.75 17.15 17.15 21.75 11.5 21.75ZM11.5 2.75C6.67 2.75 2.75 6.68 2.75 11.5C2.75 16.32 6.67 20.25 11.5 20.25C16.33 20.25 20.25 16.32 20.25 11.5C20.25 6.68 16.33 2.75 11.5 2.75Z" />
