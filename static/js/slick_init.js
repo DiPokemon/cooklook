@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $('.slider_wrapper').each(function (index, sliderWrap) {
-    var $main_banner = $(sliderWrap).find('.main_banner');
+    var $related_recipes = $(sliderWrap).find('.related_recipes.recipes_slider');
+
     var $featured_products = $(sliderWrap).find('.featured_products');
     var $advantages = $(sliderWrap).find('.advantages');
     var $testimonials = $(sliderWrap).find('.testimonials');
@@ -10,14 +11,28 @@ $(document).ready(function () {
     var $buy_icons = $(sliderWrap).find('.buy_icons');
     var $opt_products = $(sliderWrap).find('.opt_products');
 
-    $main_banner.slick({
+    $related_recipes.slick({
       infinite: true,
       autoplay: true,
       dots: false,
-      arrows: false,
+      arrows: true,
       //cssEase: 'linear',
-      slidesToShow: 1,
+      slidesToShow: 3,
       slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
     });
 
     $featured_products.slick({

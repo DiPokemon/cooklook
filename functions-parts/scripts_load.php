@@ -25,15 +25,15 @@ function load_scripts(){
 } 
 add_action('wp_enqueue_scripts', 'load_scripts', 10);
 
-function enqueue_recipe_rating_script() {
+function recipe_rating_script() {
   // Проверяем, является ли текущая страница типом "рецепты"
-  if (is_singular('recipes')) {
+  if (is_singular('recipe')) {
       // Если да, то подключаем скрипт для оценки рецептов
-      wp_enqueue_script('recipe-rating-script', get_template_directory_uri() . '/js/recipe-rating.js', array('jquery'), null, true);
+      wp_enqueue_script('recipe-rating-script', get_template_directory_uri() . '/static/js/recipe-rating.js', array('jquery'), null, true);
       
       // Передаем данные JavaScript скрипту, используя wp_localize_script,
       // например, URL для AJAX запроса
-      wp_localize_script('recipe-rating-script', 'recipe_rating_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
+      wp_localize_script('recipe-rating-script', 'rating', array('ajax_url' => admin_url('admin-ajax.php')));
   }
 }
-add_action('wp_enqueue_scripts', 'enqueue_recipe_rating_script');
+add_action('wp_enqueue_scripts', 'recipe_rating_script');

@@ -1,57 +1,77 @@
 <?php
-function handle_recipe_like() {
-    // Получаем ID записи и тип лайка
-    $post_id = $_POST['post_id'];
-    $like_type = $_POST['like_type'];
+// Обновление количества лайков
+function update_recipe_likes() {
+    $recipe_id = $_POST['recipe_id'];
+    $recipe_likes = carbon_get_post_meta($recipe_id, 'recipe_likes');
+    $recipe_dislikes = carbon_get_post_meta($recipe_id, 'recipe_dislikes');
 
-    // Получаем ID пользователя
-    $user_id = get_current_user_id();
+    // Увеличиваем количество лайков
+    $recipe_likes++;
+    carbon_set_post_meta($recipe_id, 'recipe_likes', $recipe_likes);
 
-    // Проверяем, оценивал ли уже пользователь эту запись
-    $user_likes = get_user_meta($user_id, 'user_recipe_likes', true);
-    $user_dislikes = get_user_meta($user_id, 'user_recipe_dislikes', true);
+    // Проверяем, голосовал ли пользователь за эту запись
+    $user_vote = get_user_vote($recipe_id);
 
-    if ($like_type === 'like') {
-        if (!in_array($post_id, $user_likes)) {
-            // Если пользователь еще не поставил лайк, но поставил дизлайк - убираем дизлайк
-            if (in_array($post_id, $user_dislikes)) {
-                $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_dislikes');
-                carbon_set_post_meta($post_id, 'recipe_dislikes', $recipe_dislikes - 1);
-                $user_dislikes = array_diff($user_dislikes, array($post_id));
-                update_user_meta($user_id, 'user_recipe_dislikes', $user_dislikes);
-            }
-
-            // Добавляем лайк
-            $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
-            carbon_set_post_meta($post_id, 'recipe_likes', $recipe_likes + 1);
-            $user_likes[] = $post_id;
-            update_user_meta($user_id, 'user_recipe_likes', $user_likes);
-        }
-    } elseif ($like_type === 'dislike') {
-        if (!in_array($post_id, $user_dislikes)) {
-            // Если пользователь еще не поставил дизлайк, но поставил лайк - убираем лайк
-            if (in_array($post_id, $user_likes)) {
-                $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
-                carbon_set_post_meta($post_id, 'recipe_likes', $recipe_likes - 1);
-                $user_likes = array_diff($user_likes, array($post_id));
-                update_user_meta($user_id, 'user_recipe_likes', $user_likes);
-            }
-
-            // Добавляем дизлайк
-            $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_dislikes');
-            carbon_set_post_meta($post_id, 'recipe_dislikes', $recipe_dislikes + 1);
-            $user_dislikes[] = $post_id;
-            update_user_meta($user_id, 'user_recipe_dislikes', $user_dislikes);
-        }
-    }
-
-    // Возвращаем обновленные значения лайков и дизлайков
-    $response = array(
-        'likes' => carbon_get_post_meta($post_id, 'recipe_likes'),
-        'dislikes' => carbon_get_post_meta($post_id, 'recipe_dislikes')
-    );
-
-    wp_send_json($response);
+    // Возвращаем новые значения лайков и дизлайков, а также состояние голоса пользователя
+    echo json_encode(array('likes' => $recipe_likes, 'dislikes' => $recipe_dislikes, 'user_vote' => $user_vote));
     wp_die();
 }
+add_action('wp_ajax_update_recipe_likes', 'update_recipe_likes');
 
+// Обновление количества дизлайков
+function update_recipe_dislikes() {
+    $recipe_id = $_POST['recipe_id'];
+    $recipe_likes = carbon_get_post_meta($recipe_id, 'recipe_likes');
+    $recipe_dislikes = carbon_get_post_meta($recipe_id, 'recipe_dislikes');
+
+    // Увеличиваем количество дизлайков
+    $recipe_dislikes++;
+    carbon_set_post_meta($recipe_id, 'recipe_dislikes', $recipe_dislikes);
+
+    // Проверяем, голосовал ли пользователь за эту запись
+    $user_vote = get_user_vote($recipe_id);
+
+    // Возвращаем новые значения лайков и дизлайков, а также состояние голоса пользователя
+    echo json_encode(array('likes' => $recipe_likes, 'dislikes' => $recipe_dislikes, 'user_vote' => $user_vote));
+    wp_die();
+}
+add_action('wp_ajax_update_recipe_dislikes', 'update_recipe_dislikes');
+
+// Удаление голоса пользователя
+function remove_vote() {
+    $recipe_id = $_POST['recipe_id'];
+    $recipe_likes = carbon_get_post_meta($recipe_id, 'recipe_likes');
+    $recipe_dislikes = carbon_get_post_meta($recipe_id, 'recipe_dislikes');
+
+    // Убираем голос пользователя
+    delete_user_vote($recipe_id);
+
+    // Возвращаем новые значения лайков и дизлайков
+    echo json_encode(array('likes' => $recipe_likes, 'dislikes' => $recipe_dislikes));
+    wp_die();
+}
+add_action('wp_ajax_remove_vote', 'remove_vote');
+
+// Проверка голоса пользователя
+function check_user_vote() {
+    $recipe_id = $_POST['recipe_id'];
+    $user_vote = get_user_vote($recipe_id);
+
+    // Возвращаем состояние голоса пользователя
+    echo json_encode(array('user_vote' => $user_vote));
+    wp_die();
+}
+add_action('wp_ajax_check_user_vote', 'check_user_vote');
+
+// Функция для получения голоса пользователя
+function get_user_vote($recipe_id) {
+    $user_id = get_current_user_id();
+    $user_vote = get_post_meta($recipe_id, 'user_vote_' . $user_id, true);
+    return $user_vote ? $user_vote : 'none';
+}
+
+// Функция для удаления голоса пользователя
+function delete_user_vote($recipe_id) {
+    $user_id = get_current_user_id();
+    delete_post_meta($recipe_id, 'user_vote_' . $user_id);
+}

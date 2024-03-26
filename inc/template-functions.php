@@ -229,6 +229,10 @@ function add_ingredients_to_js() {
 }
 add_action('wp_enqueue_scripts', 'add_ingredients_to_js');
 
+
+
+
+
 // Function for comment template
 function commentsHTML5(){
     $comment = get_comment();
@@ -278,3 +282,50 @@ function commentsHTML5(){
         <!-- accordling to codex don't close the last tag -->
     <?php
 }
+
+function add_comment_placeholder($field) {
+    // Добавляем плейсхолдер к полю комментария
+    $field = str_replace(
+        '<textarea',
+        '<textarea placeholder="'. __('Ваш комментарий *', 'cooklook') .'"',
+        $field
+    );
+    return $field;
+}
+add_filter('comment_form_field_comment', 'add_comment_placeholder');
+
+function custom_comment_form_fields($fields) {
+    // Добавляем плейсхолдеры к полям
+    $fields['author'] = str_replace(
+        'id="author"',
+        'id="author" placeholder="'. __('Имя *', 'cooklook') .'"',
+        $fields['author']
+    );
+
+    $fields['email'] = str_replace(
+        'id="email"',
+        'id="email" placeholder="'. __('E-Mail *', 'cooklook') .'"',
+        $fields['email']
+    );
+
+    unset($fields['url']);
+    return $fields;
+}
+add_filter('comment_form_default_fields', 'custom_comment_form_fields');
+
+function change_comment_form_button($defaults) {
+    // Изменяем текст кнопки
+    $defaults['label_submit'] = __('Опубликовать', 'cooklook');
+    return $defaults;
+}
+add_filter('comment_form_defaults', 'change_comment_form_button');
+
+add_filter( 'comment_form_fields', function ( $fields ) {
+    $fields['cookies'] = sprintf(
+        '<p class="comment-form-cookies-consent">%s %s</p>',
+        '<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" checked="checked" />',
+        '<label for="wp-comment-cookies-consent">'. __('Согласен(а) с политикой конфиденциальности', 'cooklook') .'</label>',
+    );
+
+    return $fields;
+} );

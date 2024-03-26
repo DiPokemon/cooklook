@@ -2,7 +2,7 @@
     include 'variables.php';
     $post_id = get_the_ID();
     $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
-    $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_likes');
+    $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_dislikes');
     $rating = calculate_rating($recipe_likes, $recipe_dislikes);
     $time = carbon_get_post_meta($post_id, 'recipe_time');
     $portions = carbon_get_post_meta($post_id, 'recipe_portions');
@@ -210,14 +210,25 @@
                 <h2><?= __('Оцените этот рецепт', 'cooklook') ?></h2>
                           
                 <div class="like_dislike_block">
-                    <div class="recipe-likes">
-                        <span class="like-count"><?php echo $recipe_likes; ?></span>
-                        <button class="like-btn">Like</button>
+                    
+                        <button id="like_btn-<?= get_the_ID() ?>" class="like_btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="btn_icon" viewBox="0 0 512 512">
+                                <path d="M456 192l-156-12 23-89.4c6-26.6-.78-41.87-22.47-48.6l-34.69-9.85a4 4 0 00-4.4 1.72l-129 202.34a8 8 0 01-6.81 3.81H16V448h117.61a48 48 0 0115.18 2.46l76.3 25.43a80 80 0 0025.3 4.11h177.93c19 0 31.5-13.52 35.23-32.16L496 305.58V232c0-22.06-18-38-40-40z"/>                            
+                            </svg>
+                        </button>
+                    
+                    <div class="recipe_rating">
+                        <?= $rating ?>
                     </div>
-                    <div class="recipe-dislikes">
-                        <span class="dislike-count"><?php echo $recipe_dislikes; ?></span>
-                        <button class="dislike-btn">Dislike</button>
-                    </div>
+                    
+                        <button id="dislike_btn-<?= get_the_ID() ?>" class="dislike_btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="btn_icon" viewBox="0 0 512 512">
+                                <path d="M56 320l156.05 12-23 89.4c-6.08 26.6.7 41.87 22.39 48.62l34.69 9.85a4 4 0 004.4-1.72l129-202.34a8 8 0 016.81-3.81H496V64H378.39a48 48 0 01-15.18-2.46l-76.3-25.43a80 80 0 00-25.3-4.11H83.68c-19 0-31.5 13.52-35.23 32.16L16 206.42V280c0 22.06 18 38 40 40z"/>
+                                <path d="M378.45 273.93A15.84 15.84 0 01386 272a15.93 15.93 0 00-7.51 1.91zM337.86 343.22l-.13.22a2.53 2.53 0 01.13-.22c20.5-35.51 30.36-55 33.82-62-3.47 7.06-13.34 26.51-33.82 62z" fill="none"/>                                
+                                <path d="M372.66 279.16l-1 2a16.29 16.29 0 016.77-7.26 16.48 16.48 0 00-5.77 5.26z"/>
+                            </svg>
+                        </button>
+                    
                 </div>
             
                 <span>
@@ -270,36 +281,82 @@
         </div>
     </section>
 
-</article>
-<script>
-    jQuery(document).ready(function ($) {
-        var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
-        $('.like-btn').on('click', function () {
-            var postId = <?php echo get_the_ID(); ?>;
-            var data = {
-                action: 'handle_recipe_like',
-                post_id: postId,
-                like_type: 'like'
-            };
-            $.post(ajaxurl, data, function (response) {
-                // Обновляем количество лайков на странице
-                $('.like-count').text(response.likes);
-                $('.dislike-count').text(response.dislikes);
-            });
-        });
 
-        $('.dislike-btn').on('click', function () {
-            var postId = <?php echo get_the_ID(); ?>;
-            var data = {
-                action: 'handle_recipe_like',
-                post_id: postId,
-                like_type: 'dislike'
-            };
-            $.post(ajaxurl, data, function (response) {
-                // Обновляем количество дизлайков на странице
-                $('.like-count').text(response.likes);
-                $('.dislike-count').text(response.dislikes);
-            });
-        });
-    });
-</script>
+    <?php
+        $current_post_categories = wp_get_post_terms(get_the_ID(), 'recipe_category', array('fields' => 'ids'));
+
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 9, 
+            'post_status' => 'publish',
+            'orderby' => 'rand',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'recipe_category', // таксономия, по которой фильтруем
+                    'terms' => $current_post_categories, // текущие категории текущей записи
+                    'include_children' => false // не включать дочерние категории
+                )
+            ),
+            'post__not_in' => array( get_the_ID() )
+        );
+        $the_query = new WP_Query($args);
+    ?>
+
+    <?php if ($the_query->have_posts()) : ?>
+
+    <section>
+        <div class="container slider_wrapper">
+            <h2><?= __('Похожие рецепты','cooklook') ?></h2>
+            
+                <div class="related_recipes recipes_slider">
+                        <?php
+                            while ($the_query->have_posts()) {
+                                $the_query->the_post();
+                                $categories = get_the_category();
+                                $post_id = get_the_ID();
+                                $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
+                                $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_likes');
+                                $rating = calculate_rating($recipe_likes, $recipe_dislikes);
+                                $time = carbon_get_post_meta($post_id, 'recipe_time');
+                                $portions = carbon_get_post_meta($post_id, 'recipe_portions');
+                                $comments = get_comments_number();
+                                $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
+                                $tags = get_the_tags();
+
+                                if(get_the_excerpt()){
+                                    $description = get_the_excerpt();
+                                }
+                                else if(get_the_content()){
+                                    $description = get_the_content();
+                                }
+                                else {
+                                    $description = $recipe_steps[0]['recipe_step_text'];
+                                }
+                               
+                                $words = explode(' ', $description);
+                                $first_fifteen_words = array_slice($words, 0, 15);
+                                $description = implode(' ', $first_fifteen_words);
+                                $description .= ' ...';
+
+                                set_query_var('categories', $categories);
+                                set_query_var('post_id', $post_id);
+                                set_query_var('rating', $rating);
+                                set_query_var('time', $time);
+                                set_query_var('portions', $portions);
+                                set_query_var('comments', $comments);
+                                set_query_var('description', $description);
+                                set_query_var('tags', $tags);
+
+                                get_template_part('template-parts/recipe-loop-item');
+                            }
+                        ?>
+                </div>
+            
+        </div>
+    </section>
+    <?php
+        wp_reset_postdata();
+        endif;
+    ?>
+
+</article>
