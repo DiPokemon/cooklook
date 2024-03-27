@@ -793,11 +793,21 @@
                         fill: $dark_gray
                     }
                 }
+
+                
             }
 
             .like_btn{
                 border-right: 1px solid $gray;
                 padding-right: 10px;
+
+                &.active{
+                    .btn_icon{
+                        path{
+                            fill: $green
+                        }
+                    }
+                }
             }
 
             .recipe_rating{
@@ -809,6 +819,14 @@
             .dislike_btn{
                 border-left: 1px solid $gray;
                 padding-left: 10px;
+
+                &.active{
+                    .btn_icon{
+                        path{
+                            fill: $red
+                        }
+                    }
+                }
             }
 
 

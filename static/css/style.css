@@ -1142,6 +1142,9 @@ button {
   border-right: 1px solid #F8F8FA;
   padding-right: 10px;
 }
+.single-recipe .recipe_rating_wrapper .like_dislike_block .like_btn.active .btn_icon path {
+  fill: #2DBE64;
+}
 .single-recipe .recipe_rating_wrapper .like_dislike_block .recipe_rating {
   color: #2DBE64;
   font-weight: 500;
@@ -1150,6 +1153,9 @@ button {
 .single-recipe .recipe_rating_wrapper .like_dislike_block .dislike_btn {
   border-left: 1px solid #F8F8FA;
   padding-left: 10px;
+}
+.single-recipe .recipe_rating_wrapper .like_dislike_block .dislike_btn.active .btn_icon path {
+  fill: #EB5757;
 }
 .single-recipe .recipe_tags {
   padding-top: 32px;
