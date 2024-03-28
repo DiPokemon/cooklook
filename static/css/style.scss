@@ -331,6 +331,10 @@
                 }
             }
         }
+
+        &.adv_block{
+            height: 100%;
+        }
     }
 
     .recipe_loop-item:nth-child(4),
@@ -544,6 +548,7 @@
                 max-height: 400px;
                 position: relative;
                 border-radius: 30px;
+                width: 100%;
 
                 &:before{
                     content: '';
@@ -557,8 +562,9 @@
                 }
 
                 img{
-                    object-fit: cover;
+                    object-fit: contain;
                     border-radius: 30px;
+                    height: 100%;
                 }
 
                 .bookmark{
@@ -656,6 +662,7 @@
             height: unset;
             display: flex;
             flex: 5;
+
         }
     }
 
@@ -948,11 +955,13 @@
                             border-left: 2px solid $dark_gray;
                         }
                     }
+
+                    &+.comment-respond{
+                        padding-top: 24px;
+                    }
                 }
 
                 .comment-respond{
-                    padding-top: 24px;
-
                     #reply-title{
                         display: none;
                     }

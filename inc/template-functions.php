@@ -239,7 +239,7 @@ function commentsHTML5(){
     $id = $comment->comment_ID;
     $author = $comment->comment_author;
     //$author_id = get_comment_author_id();
-    $avatar = get_avatar($author_id, 32);
+    //$avatar = get_avatar($author_id, 32);
     $date = get_comment_date();
     $localized_date = date_i18n( 'j F Y', strtotime( $date ) );
     $content = $comment->comment_content;

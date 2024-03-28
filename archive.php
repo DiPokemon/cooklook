@@ -133,10 +133,12 @@ get_header();
                                 'terms' => $subcategory_id,
                             );
                         }
+                        $post_counter = 0;
                         $the_query = new WP_Query($args);
                         if ($the_query->have_posts()) {
                             while ($the_query->have_posts()) {
                                 $the_query->the_post();
+                                $post_counter++;
                                 $categories = get_the_terms(get_the_ID(), 'recipe_category');
                                 $post_id = get_the_ID();
                                 $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
@@ -172,7 +174,13 @@ get_header();
                                 set_query_var('description', $description);
                                 set_query_var('tags', $tags);
 
-                                get_template_part('template-parts/recipe-loop-item');
+
+                                if ($post_counter % 4 == 0) {
+                                    get_template_part('template-parts/recipe-loop-item-adv');
+                                }
+                                else {
+                                    get_template_part('template-parts/recipe-loop-item');
+                                }
                             }
                         } else {
                             get_template_part('template-parts/recipe-loop-nothing');
