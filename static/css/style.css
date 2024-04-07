@@ -71,6 +71,7 @@ hr {
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-200.woff2") format("woff2"), url("../fonts/mulish/Mulish-200.woff") format("woff"), url("../fonts/mulish/Mulish-200.ttf") format("truetype");
   font-weight: 200;
@@ -78,6 +79,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-300.woff2") format("woff2"), url("../fonts/mulish/Mulish-300.woff") format("woff"), url("../fonts/mulish/Mulish-300.ttf") format("truetype");
   font-weight: 300;
@@ -85,6 +87,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-400.woff2") format("woff2"), url("../fonts/mulish/Mulish-400.woff") format("woff"), url("../fonts/mulish/Mulish-400.ttf") format("truetype");
   font-weight: 400;
@@ -92,6 +95,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-500.woff2") format("woff2"), url("../fonts/mulish/Mulish-500.woff") format("woff"), url("../fonts/mulish/Mulish-500.ttf") format("truetype");
   font-weight: 500;
@@ -99,6 +103,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-600.woff2") format("woff2"), url("../fonts/mulish/Mulish-600.woff") format("woff"), url("../fonts/mulish/Mulish-600.ttf") format("truetype");
   font-weight: 600;
@@ -106,6 +111,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-700.woff2") format("woff2"), url("../fonts/mulish/Mulish-700.woff") format("woff"), url("../fonts/mulish/Mulish-700.ttf") format("truetype");
   font-weight: 700;
@@ -113,6 +119,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-800.woff2") format("woff2"), url("../fonts/mulish/Mulish-800.woff") format("woff"), url("../fonts/mulish/Mulish-800.ttf") format("truetype");
   font-weight: 800;
@@ -120,6 +127,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-900.woff2") format("woff2"), url("../fonts/mulish/Mulish-900.woff") format("woff"), url("../fonts/mulish/Mulish-900.ttf") format("truetype");
   font-weight: 900;
@@ -127,6 +135,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Gerhaus";
   src: url("../fonts/gerhaus/Gerhaus.woff2") format("woff2"), url("../fonts/gerhaus/Gerhaus.woff") format("woff"), url("../fonts/gerhaus/Gerhaus.ttf") format("truetype");
   font-weight: 900;
@@ -2026,6 +2035,9 @@ footer .container .footer_bottom {
 .filters #recipe-filter .select2-container--filters_select.select2-container--disabled {
   color: #828282;
 }
+.filters #recipe-filter button {
+  padding: 20px 16px;
+}
 .filters .ingridients_modal_overlay {
   position: fixed;
   top: 0;
@@ -2058,7 +2070,7 @@ footer .container .footer_bottom {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.filters .ingridients_modal_overlay .ingridients_modal .close_modal {
+.filters .ingridients_modal_overlay .ingridients_modal #close_ingridients {
   padding: 12px;
   border-radius: 50%;
   background-color: #F8F8FA;
@@ -2068,13 +2080,13 @@ footer .container .footer_bottom {
   cursor: pointer;
   margin: 0 0 0 auto;
 }
-.filters .ingridients_modal_overlay .ingridients_modal .close_modal svg path {
+.filters .ingridients_modal_overlay .ingridients_modal #close_ingridients svg path {
   fill: #828282;
 }
-.filters .ingridients_modal_overlay .ingridients_modal .close_modal:hover {
+.filters .ingridients_modal_overlay .ingridients_modal #close_ingridients:hover {
   background-color: #F2F2F2;
 }
-.filters .ingridients_modal_overlay .ingridients_modal .close_modal:hover svg path {
+.filters .ingridients_modal_overlay .ingridients_modal #close_ingridients:hover svg path {
   fill: #2DBE64;
 }
 .filters .ingridients_modal_overlay .ingridients_modal .ingridients_wrapper {

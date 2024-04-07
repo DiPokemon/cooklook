@@ -71,6 +71,7 @@ hr {
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-200.woff2") format("woff2"), url("../fonts/mulish/Mulish-200.woff") format("woff"), url("../fonts/mulish/Mulish-200.ttf") format("truetype");
   font-weight: 200;
@@ -78,6 +79,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-300.woff2") format("woff2"), url("../fonts/mulish/Mulish-300.woff") format("woff"), url("../fonts/mulish/Mulish-300.ttf") format("truetype");
   font-weight: 300;
@@ -85,6 +87,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-400.woff2") format("woff2"), url("../fonts/mulish/Mulish-400.woff") format("woff"), url("../fonts/mulish/Mulish-400.ttf") format("truetype");
   font-weight: 400;
@@ -92,6 +95,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-500.woff2") format("woff2"), url("../fonts/mulish/Mulish-500.woff") format("woff"), url("../fonts/mulish/Mulish-500.ttf") format("truetype");
   font-weight: 500;
@@ -99,6 +103,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-600.woff2") format("woff2"), url("../fonts/mulish/Mulish-600.woff") format("woff"), url("../fonts/mulish/Mulish-600.ttf") format("truetype");
   font-weight: 600;
@@ -106,6 +111,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-700.woff2") format("woff2"), url("../fonts/mulish/Mulish-700.woff") format("woff"), url("../fonts/mulish/Mulish-700.ttf") format("truetype");
   font-weight: 700;
@@ -113,6 +119,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-800.woff2") format("woff2"), url("../fonts/mulish/Mulish-800.woff") format("woff"), url("../fonts/mulish/Mulish-800.ttf") format("truetype");
   font-weight: 800;
@@ -120,6 +127,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mulish";
   src: url("../fonts/mulish/Mulish-900.woff2") format("woff2"), url("../fonts/mulish/Mulish-900.woff") format("woff"), url("../fonts/mulish/Mulish-900.ttf") format("truetype");
   font-weight: 900;
@@ -127,6 +135,7 @@ hr {
   font-stretch: normal;
 }
 @font-face {
+  font-display: swap;
   font-family: "Gerhaus";
   src: url("../fonts/gerhaus/Gerhaus.woff2") format("woff2"), url("../fonts/gerhaus/Gerhaus.woff") format("woff"), url("../fonts/gerhaus/Gerhaus.ttf") format("truetype");
   font-weight: 900;

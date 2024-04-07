@@ -53,11 +53,6 @@ $(document).ready(function() {
         var selectedRegion = $('#recipe_region').val();
         var selectedIncludeIngredients = $('#include_ingredients').val();
         var selectedExcludeIngredients = $('#exclude_ingredients').val();
-        console.log('cat: ' + selectedCategoryId);
-        console.log('sub_cat: ' + selectedSubcategoryId);
-        console.log('region: ' + selectedRegion);
-        console.log('ingINC: ' + selectedIncludeIngredients);
-        console.log('ingEX: ' + selectedExcludeIngredients);
 
         $.ajax({
             url: filter_obj.ajax_url,
