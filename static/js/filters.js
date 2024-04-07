@@ -1,79 +1,98 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var categorySelect = document.getElementById('recipe_category');
-    var subcategorySelect = document.getElementById('recipe_subcategory');
-    var form = document.getElementById('recipe-filter');
-    var ajaxurl = filter_obj.ajax_url; // Передаем URL до admin-ajax.php в JavaScript
-
-    categorySelect.addEventListener('change', function() {
-        var selectedCategoryId = categorySelect.value;
-        if (selectedCategoryId === '') {
-            subcategorySelect.disabled = true;
-            subcategorySelect.innerHTML = '<option value="">Выберите подкатегорию</option>';
-        } else {
-            subcategorySelect.disabled = false;
-            subcategorySelect.innerHTML = '<option value="">Загрузка...</option>';
-
-            // Выполните AJAX-запрос для получения подкатегорий на основе выбранной категории
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', ajaxurl + '?action=get_subcategories&category_id=' + selectedCategoryId, true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var data = JSON.parse(xhr.responseText);
-                    if (data.success) {
-                        subcategorySelect.innerHTML = data.data.options;
-                    } else {
-                        subcategorySelect.innerHTML = '<option value="">Ошибка при загрузке</option>';
-                    }
-                }
-            };
-            xhr.send();
+$(document).ready(function() {
+    // Инициализация Select2 для селектов с классом .filter_select
+    $('.filter_select').select2({
+        theme: 'filters_select',
+        language: {
+            noResults: function() {
+                var lang = $('html').attr('lang'); // Получаем текущий язык страницы
+                return lang === 'ru-RU' ? "Нет результатов" : "No results found";
+            }
         }
     });
 
-    document.getElementById("ingridients_submit").addEventListener("click", function() {
-        var headerFixed = document.querySelector('.site-header.fixed');
-        ingModalOverlay.classList.remove('active');
-        body.style.overflowY = '';        
-        body.style.paddingRight = '';
-        if (headerFixed) { 
-           headerFixed.style.paddingRight = ''; 
+    // Обработчик изменения выбора категории
+    $('#recipe_category').on('change', function() {
+        var selectedCategoryId = $(this).val();
+        var subcategorySelect = $('#recipe_subcategory');
+
+        if (selectedCategoryId === '') {
+            // Если категория не выбрана, делаем подкатегорию неактивной и очищаем ее
+            subcategorySelect.prop('disabled', true).empty().append('<option value="">Выберите подкатегорию</option>');
+        } else {
+            // Иначе делаем подкатегорию активной и отправляем AJAX-запрос для получения подкатегорий
+            subcategorySelect.prop('disabled', false).empty().append('<option value="">Загрузка...</option>');
+
+            $.ajax({
+                url: filter_obj.ajax_url,
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    action: 'get_subcategories',
+                    category_id: selectedCategoryId
+                },
+                success: function(data) {
+                    if (data.success) {
+                        subcategorySelect.empty().append(data.data.options).trigger('change');
+                    } else {
+                        subcategorySelect.empty().append('<option value="">Ошибка при загрузке</option>').trigger('change');
+                    }
+                },
+                error: function() {
+                    subcategorySelect.empty().append('<option value="">Ошибка при загрузке</option>').trigger('change');
+                }
+            });
         }
-        form.submit();
-    })
+    });
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();       
-        
-        var selectedCategoryId = categorySelect.value;
-        var selectedSubcategoryId = subcategorySelect.value;
-        var selectedRegion = document.getElementById('recipe_region').value;
-        var selectedIncludeIngredients = document.getElementById('include_ingredients').value;
-        var selectedExcludeIngredients = document.getElementById('exclude_ingredients').value;
-        var ingSubmitBtn = document.getElementById('ingridients_submit');
+    // Обработчик отправки формы
+    $('#recipe-filter').on('submit', function(event) {
+        event.preventDefault();
 
+        var selectedCategoryId = $('#recipe_category').val();
+        var selectedSubcategoryId = $('#recipe_subcategory').val();
+        var selectedRegion = $('#recipe_region').val();
+        var selectedIncludeIngredients = $('#include_ingredients').val();
+        var selectedExcludeIngredients = $('#exclude_ingredients').val();
+        console.log('cat: ' + selectedCategoryId);
+        console.log('sub_cat: ' + selectedSubcategoryId);
+        console.log('region: ' + selectedRegion);
+        console.log('ingINC: ' + selectedIncludeIngredients);
+        console.log('ingEX: ' + selectedExcludeIngredients);
 
-        // Выполните AJAX-запрос для фильтрации записей на сервере
-        var xhr = new XMLHttpRequest();
-        var url = ajaxurl + '?action=filter_recipes&category_id=' + selectedCategoryId + '&subcategory_id=' + selectedSubcategoryId + '&region=' + selectedRegion;
-
-        // Добавьте выбранные ингредиенты к URL
-        if (selectedIncludeIngredients.length > 0) {
-            url += '&include_ingredients=' + selectedIncludeIngredients.join(',');
-        }
-        if (selectedExcludeIngredients.length > 0) {
-            url += '&exclude_ingredients=' + selectedExcludeIngredients.join(',');
-        }
-
-        xhr.open('GET', url, true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var data = JSON.parse(xhr.responseText);
-
-                // Обновите список рецептов на странице с использованием данных из ответа
-                var responseContainer = document.getElementById('response');
-                responseContainer.innerHTML = data.data.html;
+        $.ajax({
+            url: filter_obj.ajax_url,
+            type: 'GET',
+            dataType: 'json',
+            data: {
+                action: 'filter_recipes',
+                category_id: selectedCategoryId,
+                subcategory_id: selectedSubcategoryId,
+                region: selectedRegion,
+                include_ingredients: selectedIncludeIngredients,
+                exclude_ingredients: selectedExcludeIngredients
+            },
+            
+            success: function (data) {
+                
+                if (data.success) {
+                    $('#response').html(data.data.html);
+                }
             }
-        };
-        xhr.send();
+        });
+    });
+
+    // Обработчик клика на кнопке submit
+    $('#ingridients_submit').on('click', function() {
+        var ingModalOverlay = $('.site-header.fixed');
+        var body = $('body');
+
+        ingModalOverlay.removeClass('active');
+        body.css({ overflowY: '', paddingRight: '' });
+
+        if (ingModalOverlay.length) {
+            ingModalOverlay.css('paddingRight', '');
+        }
+
+        $('#recipe-filter').submit();
     });
 });

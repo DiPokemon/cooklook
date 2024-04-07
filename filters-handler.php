@@ -14,7 +14,7 @@ function get_subcategories_callback() {
             'parent' => $selected_category_id,
         ));
 
-        $options = '<option value="">'.  __('Любое блюдо', 'cooklook') . '</option>';        
+        $options = '<option value="all">'.  __('Любое блюдо', 'cooklook') . '</option>';        
         foreach ($subcategories as $subcategory) {
             $options .= '<option value="' . esc_attr($subcategory->term_id) . '">' . esc_html($subcategory->name) . '</option>';
             

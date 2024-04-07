@@ -1596,189 +1596,293 @@ footer{
 }
 
 /* FILTER */
+.filters{
 
-.ingridients_modal_overlay{
-    position: fixed;
-    top: 0;    
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparentize($black, 0.4);
-    display: none;
-    z-index: 9;
-
-    &.active{
-        display: block;
-    }
-
-    .ingridients_modal {  
-        position: absolute;      
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 555px;
-        padding: 20px;
-        border-radius: 30px;
-        background-color: $white;
-        z-index: 1000;
+    #recipe-filter{
         display: flex;
-        flex-direction: column;
-        // gap: 32px;
+        gap: 16px;
+        justify-content: space-between;
 
-        .close_modal{
-            padding: 12px;
-            border-radius: 50%;
-            background-color: $gray;
-            height: 48px;
-            width: 48px;
-            border: none;
-            cursor: pointer;
-            margin: 0 0 0 auto;
+        #recipe_category,
+        #recipe_subcategory,
+        #recipe_region {
+           
+            
+            
 
-            svg{
-                path{
-                    fill: #828282;
-                }
-            }
-
-            &:hover{
-                background-color: $dark_gray;
-
-                svg{
-                    path{
-                        fill: $green;
-                    }
-                }
+            &:focus,
+            &:active{
+                background-image: url(../img/chevron-up.svg);
             }
         }
 
-        .ingridients_wrapper{
-            display: flex;
-            flex-direction: row;
-            gap: 16px;
-            justify-content: space-between;
-            align-items: center;
+        .filter_select{
             position: relative;
+            display: block;
+            max-width: 240px;
             width: 100%;
-            padding-bottom: 32px;
 
-            .ing_wrap{
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                width: 360px;
+            .new-select {
+                position: relative;
+                border: none;
+                appearance: none;
+                padding: 20px 24px;
+                background-color: $gray;
+                border-radius:10px;
+                background-image: url(../img/chevron-down.svg);
+                background-repeat: no-repeat;
+                background-position: right 24px center;
+                cursor: pointer;
+                user-select: none;
 
-                label{
-                    font-size: 18px;
-                    font-weight: 800;
-                    line-height: 140%;
-                    letter-spacing: 0.72px;
-                    color: $black;                    
-                }
-
-                
-
-                .select2-selection{
-                    border: 0;
-                    background: $gray;
-                    padding: 10px 24px;
-                    border-radius: 8px;
-
-                    .select2-search{
-                        width: 100%;
-                        display: block;
-
-                        .select2-search__field{
-                            max-width: 360px;
-                            width: 100%;
-                            margin: 0;
-                        }
-                    }
-
-                    .select2-selection__rendered{
-                        display: flex;
-                        gap: 8px;
-
-                        .select2-selection__choice{
-                            background: $green;
-                            color: $white;
-                            margin: 0;
-                            border: 0;
-                            border-radius: 30px;
-                            width: fit-content;
-                            padding: 8px 16px;
-                            display: flex;
-
-                            .ing_tag{
-                                display: flex;
-                                align-items: center;
-                                gap: 8px;
-                            }                             
-
-                            &__remove{
-                                display: none;
-                            }
-                        }
-                    }
+                &.on{
+                    background-image: url(../img/chevron-up.svg);
                 }                
             }
-        }
 
-        .popular_ingridients{
-            padding-bottom: 48px;
+            .new-select__list {
+                position: absolute;
+                max-height: 200px;
+                overflow-y: scroll;
+                box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
+                top: 70px;
+                left: 0;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                width: 100%;
+                z-index: 2;
+                background: $white;
+                user-select: none;
+                scrollbar-width: thin;
 
-            .popular_ingridients-title{
-                color: $black;
-                font-size: 18px;
-                font-weight: 800;
-            }
-
-            .popular_ingridients-items{
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                margin-top: 16px;
-
-                .popular_ingridients-item{
-                    border-radius: 30px;
-                    padding: 8px 16px;
-                    color: $black;
-                    font-size: 16px;
-                    text-transform: uppercase;
-                    background-color: $gray;
-                    cursor: pointer;
+                .new-select__item span {
+                    display: block;
+                    padding: 10px 15px;
 
                     &:hover{
-                        background-color: $btn_hover_green;
-                        color: $white;
+                        color: #12b223;
+                    }
+                }                
+            }            
+        }
+
+        .select2-container--filters_select{
+            padding: 20px 24px;
+            background-color: $gray;
+            border-radius: 8px;
+
+            .select2-selection__rendered{
+                position: relative;
+
+                &:after{
+                    content: url(../img/chevron-down.svg);
+                    position: absolute;                    
+                    right: 0;
+                    bottom: -5px;       
+                    
+                }
+            }
+
+            &.select2-container--open{
+                .select2-selection__rendered{
+                    position: relative;
+    
+                    &:after{
+                        content: url(../img/chevron-up.svg);
                     }
                 }
             }
-        } 
-        
-        .ingridients_actions{
-            display: flex;
-            justify-content: center;
-            gap: 24px;
 
-            button{
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 140%;
-                letter-spacing: 0.64px;
-                cursor: pointer;
-            }
-
-            .clear_ingridients{
-                display: flex;
-                gap: 8px;
-                align-items: center;
-                background: none;
+            &.select2-container--disabled{
                 color: #828282;
             }
         }
     }    
+
+    .ingridients_modal_overlay{
+        position: fixed;
+        top: 0;    
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparentize($black, 0.4);
+        display: none;
+        z-index: 9;
+
+        &.active{
+            display: block;
+        }
+
+        .ingridients_modal {  
+            position: absolute;      
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 555px;
+            padding: 20px;
+            border-radius: 30px;
+            background-color: $white;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;            
+
+            .close_modal{
+                padding: 12px;
+                border-radius: 50%;
+                background-color: $gray;
+                height: 48px;
+                width: 48px;
+                border: none;
+                cursor: pointer;
+                margin: 0 0 0 auto;
+
+                svg{
+                    path{
+                        fill: #828282;
+                    }
+                }
+
+                &:hover{
+                    background-color: $dark_gray;
+
+                    svg{
+                        path{
+                            fill: $green;
+                        }
+                    }
+                }
+            }
+
+            .ingridients_wrapper{
+                display: flex;
+                flex-direction: row;
+                gap: 16px;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                width: 100%;
+                padding-bottom: 32px;
+
+                .ing_wrap{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    width: 360px;
+
+                    label{
+                        font-size: 18px;
+                        font-weight: 800;
+                        line-height: 140%;
+                        letter-spacing: 0.72px;
+                        color: $black;                    
+                    }
+
+                    
+
+                    .select2-selection{
+                        border: 0;
+                        background: $gray;
+                        padding: 10px 24px;
+                        border-radius: 8px;
+
+                        .select2-search{
+                            width: 100%;
+                            display: block;
+
+                            .select2-search__field{
+                                max-width: 360px;
+                                width: 100%;
+                                margin: 0;
+                            }
+                        }
+
+                        .select2-selection__rendered{
+                            display: flex;
+                            gap: 8px;
+
+                            .select2-selection__choice{
+                                background: $green;
+                                color: $white;
+                                margin: 0;
+                                border: 0;
+                                border-radius: 30px;
+                                width: fit-content;
+                                padding: 8px 16px;
+                                display: flex;
+
+                                .ing_tag{
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 8px;
+                                }                             
+
+                                &__remove{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }                
+                }
+            }
+
+            .popular_ingridients{
+                padding-bottom: 48px;
+
+                .popular_ingridients-title{
+                    color: $black;
+                    font-size: 18px;
+                    font-weight: 800;
+                }
+
+                .popular_ingridients-items{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    margin-top: 16px;
+
+                    .popular_ingridients-item{
+                        border-radius: 30px;
+                        padding: 8px 16px;
+                        color: $black;
+                        font-size: 16px;
+                        text-transform: uppercase;
+                        background-color: $gray;
+                        cursor: pointer;
+
+                        &:hover{
+                            background-color: $btn_hover_green;
+                            color: $white;
+                        }
+                    }
+                }
+            } 
+            
+            .ingridients_actions{
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+
+                button{
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 140%;
+                    letter-spacing: 0.64px;
+                    cursor: pointer;
+                }
+
+                .clear_ingridients{
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                    background: none;
+                    color: #828282;
+                }
+            }
+        }    
+    }
 }
+
 
 
 
@@ -1841,6 +1945,78 @@ footer{
         }
     }
 
+    .select2-container--filters_select.select2-container--open{
+        .select2-dropdown{
+            top: 40px;
+            border: none;
+            border-radius: 8px;            
+            box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
+
+            .select2-search{
+                .select2-search__field{
+                    border: 1px solid $green;
+                    border-radius: 8px;
+
+                    &:focus{
+                        border: 2px solid $green;
+                        outline: none;
+                    }
+                }
+            }
+    
+            .select2-results{
+                padding: 16px 5px 16px 24px;                               
+               
+                &__options{
+                    max-height: 230px;
+                    overflow-y: scroll;
+                    
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background-color: $gray;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #e0e0e0;
+                        border-radius: 10px; 
+                        height: 150px;
+                    }     
+                }
+    
+                &__option{
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 140%;
+                    letter-spacing: 0.64px;
+                    padding: 0;
+                    margin-bottom: 10px;
+                    padding: 3px;
+                    margin-right: 10px;
+                    border-radius: 5px;
+
+                    &:last-child{
+                        padding-bottom: 0px;
+                    }
+
+                    &--selectable{
+                        background-color: $white;
+                        color: $black;
+                    }
+                    &--highlighted{
+                        background-color: $white;
+                        color: $green;
+                    }
+                    &--selected{
+                        color: $black;
+                        background-color: transparentize($green, 0.9);
+                    }
+                }
+            }
+        }
+    }
 
 
 
@@ -1850,4 +2026,5 @@ footer{
 
 
 
-@import "adaptive"
+
+@import "adaptive";

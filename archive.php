@@ -43,8 +43,8 @@ get_header();
 						?>
 						<div class="filters">
                             <form id="recipe-filter">
-                                <select id="recipe_category" name="recipe_category">
-                                    <option value=""><?= __('Любая категория', 'cooklook') ?></option>
+                                <select id="recipe_category" name="recipe_category" class="filter_select" data-placeholder="<?= __('Любая категория', 'cooklook') ?>">
+                                    <option value="all"><?= __('Любая категория', 'cooklook') ?></option>
                                     <?php
                                     // Получаем список категорий
                                         $categories = get_terms(array(
@@ -59,11 +59,11 @@ get_header();
                                     ?>
                                 </select>
 
-                                <select id="recipe_subcategory" name="recipe_subcategory" disabled>
-                                    <option value=""><?= __('Любое блюдо', 'cooklook') ?></option>
+                                <select id="recipe_subcategory" name="recipe_subcategory" class="filter_select" data-placeholder="<?= __('Любое блюдо', 'cooklook') ?>" disabled>
+                                    <option value="all"><?= __('Любое блюдо', 'cooklook') ?></option>
                                 </select>
 
-                                <select id="recipe_region" name="recipe_region">
+                                <select id="recipe_region" name="recipe_region" class="filter_select" data-placeholder="<?= __('Любое меню', 'cooklook') ?>">
                                     <option value=""><?= __('Любое меню', 'cooklook') ?></option>
                                     <?php                                
                                         $regions = get_posts(array(

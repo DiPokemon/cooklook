@@ -2,6 +2,7 @@ $(document).ready(function() {
     // Инициализация Select2 с передачей списка ингредиентов
 
     $('#include_ingredients').select2({
+        
         tags: true,
         tokenSeparators: [',', ' '], // Разделители между ингредиентами
         data: availableIngredients.ingredients.map(function(ingredient) {
@@ -19,7 +20,7 @@ $(document).ready(function() {
             return { id: ingredient, text: ingredient };
         })
     });
-});
+
 
 var ingridientsButton = document.querySelector('.ingridients_btn');
 var ingModalOverlay = document.querySelector('.ingridients_modal_overlay');
@@ -68,7 +69,7 @@ function closeIngModalFunction() {
 //     ingrientsSelect.value = query;
 // }
 
-
+});
 
 
 // Добавление ингредиента из популярных включаемых ингредиентов
