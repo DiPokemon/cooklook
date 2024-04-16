@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var searchInput = document.getElementById('ajax-search-input');
     var searchResults = document.getElementById('search_results');
     var popularQueries = document.getElementById('popular_queries');
+    var searchForm = document.getElementById('ajax-search-form');
     var timeout = null; // Инициализация переменной для таймаута
 
     // Функция для выполнения AJAX-запроса
@@ -24,6 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         xhr.send('action=ajax_search&search=' + encodeURIComponent(searchValue));
     }
+
+    searchForm.addEventListener('submit', function (event) { 
+        event.preventDefault();
+
+        window.location.href = '/?s=' + encodeURIComponent(searchInput.value);
+    })
 
     // Функция для скрытия блока с популярными запросами
     function hidePopularQueries() {

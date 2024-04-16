@@ -33,13 +33,14 @@ function custom_recipe_post_type() {
             'singular_name' => 'Рецепт',
         ),
         'public' => true,
-        'has_archive' => true,
+        'has_archive' => 'recipes',
         'show_ui' => true,
         'menu_icon' => 'dashicons-carrot', // Иконка для меню
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments', 'revisions', 'page-attributes', 'post-formats'),
         'taxonomies' => array('recipe_category', 'recipe_tags'), // Включаем стандартные категории и нашу кастомную
     );
     register_post_type('recipe', $args);
+    //add_rewrite_rule('^recipes/?$', 'index.php?post_type=recipe', 'top');
 }
 add_action('init', 'custom_recipe_post_type');
 

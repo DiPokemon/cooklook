@@ -15,7 +15,7 @@ $tags = get_query_var('tags');
 <div class="recipe_loop-item">
     <div class="recipe_loop-wrapper">
         <div class="img_block">
-            <img src="<?= get_the_post_thumbnail_url(null, 'medium') ?>" alt="<?= __('Рецепт', 'cooklook') ?> <?= the_title() ?> на <?= $portions ?> порций">
+            <img loading="lazy" src="<?= get_the_post_thumbnail_url(null, 'large') ?>" alt="<?= __('Рецепт', 'cooklook') ?> <?= the_title() ?> на <?= $portions ?> порций">
             <div class="recipe_meta">
                 <div class="top_meta">
                     <?php

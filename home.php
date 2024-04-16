@@ -41,7 +41,7 @@ get_header();
             <div class="container">
                 <div class="section_header flex">
                     <h2 class="section_title"><?= $new_recipes_title ?></h2>
-                    <a href="#" class="btn_bg"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
+                    <a href="<?= home_url('/recipes/') ?>" class="btn_bg"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
                 </div>
                 <div class="recipes_grid">
                     <?php
@@ -103,8 +103,10 @@ get_header();
 		</section>
 
         <section>
-            <div class="container adv_block">
-                РЕКЛАМНЫЙ БЛОК
+            <div class="container">
+                <div class="adv_block">
+                    РЕКЛАМНЫЙ БЛОК
+                </div>                
             </div>
         </section>
 
@@ -112,12 +114,12 @@ get_header();
             <div class="container">
                 <div class="section_header flex">
                     <h2 class="section_title"><?= $popular_recipes_title ?></h2>
-                    <a href="#" class="btn_bg"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
+                    <a href="<?= home_url('/recipes/') ?>" class="btn_bg"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
                 </div>
                 <div class="recipes_grid">
                     <?php
                         $args = array(
-                            'post_type' => 'post',
+                            'post_type' => 'recipe',
                             'posts_per_page' => 5,
                             'meta_key' => '_recipe_views',
                             'orderby' => 'meta_value_num', 
@@ -185,6 +187,7 @@ get_header();
                             array( 
                             'parent'  => 0 
                         ));
+                        $parent_cat_count = count($parent_cats);
 
                         foreach ($parent_cats as $parent_cat) {
                             $child_cats = get_categories(array(
@@ -195,13 +198,28 @@ get_header();
                             get_template_part('template-parts/category-list');
                         }
                     ?>
+                    
+                </div>
+                <div class="categories_grid-controls">
+                    <button class="categories_grid-controls-prev btn_bg" type="button">
+                        <img src="<?=  get_template_directory_uri() ?>/static/img/chevron-left.svg">
+                    </button>
+                    <div id="categories_grid_slider-counter" class="categories_grid-controls-count">
+                        <span class="count_current">1</span> / <span class="count_total"><?= $parent_cat_count ?></span>
+                    </div>
+                    <button class="categories_grid-controls-next btn_bg" type="button">
+                        <img src="<?=  get_template_directory_uri() ?>/static/img/chevron-right.svg">
+                    </button>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="container adv_block">
-                РЕКЛАМНЫЙ БЛОК
+            <div class="container">
+                <div class="adv_block">
+                    РЕКЛАМНЫЙ БЛОК
+                </div>
+                
             </div>
         </section>
 

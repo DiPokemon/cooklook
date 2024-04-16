@@ -271,10 +271,6 @@
                         <div class="adv_block">
                             Реклама
                         </div>
-
-                        <div class="adv_block">
-                            Реклама
-                        </div>
                     </div>
                 </div>
                 
@@ -286,7 +282,7 @@
         $current_post_categories = wp_get_post_terms(get_the_ID(), 'recipe_category', array('fields' => 'ids'));
 
         $args = array(
-            'post_type' => 'post',
+            'post_type' => 'recipe',
             'posts_per_page' => 9, 
             'post_status' => 'publish',
             'orderby' => 'rand',
@@ -294,7 +290,7 @@
                 array(
                     'taxonomy' => 'recipe_category', // таксономия, по которой фильтруем
                     'terms' => $current_post_categories, // текущие категории текущей записи
-                    'include_children' => false // не включать дочерние категории
+                    'include_children' => true // не включать дочерние категории
                 )
             ),
             'post__not_in' => array( get_the_ID() )

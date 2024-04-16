@@ -74,6 +74,10 @@ jQuery(document).ready(function() {
         });
         jQuery(this).find('.featured_product_wrapper').height(highestBox);
     });
+
+    $('#mobile_filters-open').click(function() {
+        $('.filters').css('display', 'flex');
+    });
 });
 
 

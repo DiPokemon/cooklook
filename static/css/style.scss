@@ -5,6 +5,7 @@
 
 // ---------------------header---------------
 .site-header {
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.08);
     .container {
         justify-content: space-between;
         padding: 22px 0px;
@@ -73,7 +74,7 @@
 
     &.fixed{
         background: $white;        
-        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.08);
+        
         position: fixed;
         width: 100%;
         z-index: 999;
@@ -175,7 +176,7 @@
                         border-radius: 10px;
                         color: $white;
                         padding: 4px 8px;
-                        text-shadow: 0 0 3px $black;
+                        text-shadow: 0 0 1px $gray;
                         font-size: 14px;
                         font-weight: 500;
                         height: fit-content;
@@ -445,6 +446,10 @@
                 cursor: pointer;
             }
         }
+    }
+
+    & + .categories_grid-controls{
+        display: none;
     }
 }
 
@@ -1107,7 +1112,7 @@
                                 border-radius: 10px;
                                 color: $white;
                                 padding: 4px 8px;
-                                text-shadow: 0 0 3px $black;
+                                text-shadow: 0 0 1px $gray;
                                 font-size: 14px;
                                 font-weight: 500;
                                 height: fit-content;
@@ -1217,6 +1222,10 @@
                         font-size: 16px;
                         line-height: 140%;
                         color: $black;
+
+                        .excerpt_part{
+                            display: block;
+                        }
                     }
         
                     .recipe_ingridients{                
@@ -1336,6 +1345,44 @@
 }
 
 /* FOOTER */
+.bottom_menu{
+    // display: none;
+    position: fixed;
+    bottom: 0;    
+    flex-direction: row;
+    background-color: $white;
+    padding: 8px 12px;
+    width: 100%;
+    justify-content: space-around;
+    box-shadow: 0px -7px 16px 0px rgba(0, 0, 0, 0.08);
+
+    &-item{
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+
+        svg{
+            path{
+                fill: #828282;
+
+            }
+        }
+
+        color: #828282;
+
+        &:hover{
+            svg{
+                path{
+                    fill: $green;    
+                }
+            }
+            color: $green;
+        }
+    }
+
+}
+
 footer{
     padding-top: 100px;
     background-color: $gray;
@@ -1594,6 +1641,10 @@ footer{
 }
 
 /* FILTER */
+.filters_wrapper_mob{
+    display: none;
+}
+
 .filters{
 
     #recipe-filter{

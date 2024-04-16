@@ -182,6 +182,10 @@ section .section_header .section_title {
   margin: 0 auto;
 }
 
+.mobile_display {
+  display: none;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
