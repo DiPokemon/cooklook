@@ -10,6 +10,10 @@
         display: block;
     }
 
+    .hide_mobile{
+        display: none;
+    }
+
     section{
         padding-bottom: 64px;
 
@@ -93,6 +97,16 @@
         }    
     }
 
+
+    .page-header__breadcrumbs{
+        overflow-x: scroll;
+        padding-bottom: 5px;
+        span{
+            white-space: nowrap;
+        }
+        
+    }
+
     #popular_categories{
         padding-top: 64px;
         
@@ -144,6 +158,7 @@
         row-gap: 32px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: unset;
+        padding-bottom: 32px;
         
         .recipe_loop-item{            
             grid-column: span 1;
@@ -212,8 +227,7 @@
 
     /* CATEGORIES LIST GRID */
     .categories_grid{
-        display: block;        
-
+        display: block;
         .category_list{            
             gap: 16px;
 
@@ -426,111 +440,46 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 375px;
+        left: 0;
+        width: 100%;
+        max-width: 375px;
         padding: 24px 16px;
         flex-direction: column;
         background: $white;
+        z-index: 99;
+        box-shadow: 12px 0px 16px 0px rgba(0, 0, 0, 0.08);
+
+        .filters_header{
+            font-size: 24px;
+            font-weight: 800;  
+            line-height: 140%;
+            letter-spacing: 0.96px;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 32px;
+
+            #close_ingridients{
+                background: none;
+                svg{
+                    path{
+                        fill: $black;
+                    }
+                }
+            }
+        }
 
         #recipe-filter{
-            display: flex;
-            gap: 16px;
-            justify-content: space-between;
-    
-            #recipe_category,
-            #recipe_subcategory,
-            #recipe_region {    
-                &:focus,
-                &:active{
-                    background-image: url(../img/chevron-up.svg);
-                }
-            }
-    
-            .filter_select{
-                position: relative;
-                display: block;
-                max-width: 240px;
-                width: 100%;
-    
-                .new-select {
-                    position: relative;
-                    border: none;
-                    appearance: none;
-                    padding: 20px 24px;
-                    background-color: $gray;
-                    border-radius:10px;
-                    background-image: url(../img/chevron-down.svg);
-                    background-repeat: no-repeat;
-                    background-position: right 24px center;
-                    cursor: pointer;
-                    user-select: none;
-    
-                    &.on{
-                        background-image: url(../img/chevron-up.svg);
-                    }                
-                }
-    
-                .new-select__list {
-                    position: absolute;
-                    max-height: 200px;
-                    overflow-y: scroll;
-                    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
-                    top: 70px;
-                    left: 0;
-                    border: none;
-                    border-radius: 8px;
-                    cursor: pointer;
-                    width: 100%;
-                    z-index: 2;
-                    background: $white;
-                    user-select: none;
-                    scrollbar-width: thin;
-    
-                    .new-select__item span {
-                        display: block;
-                        padding: 10px 15px;
-    
-                        &:hover{
-                            color: #12b223;
-                        }
-                    }                
-                }            
-            }
+            flex-direction: column;
     
             .select2-container--filters_select{
-                padding: 20px 24px;
+                padding: 16px;
                 background-color: $gray;
                 border-radius: 8px;
-    
-                .select2-selection__rendered{
-                    position: relative;
-    
-                    &:after{
-                        content: url(../img/chevron-down.svg);
-                        position: absolute;                    
-                        right: 0;
-                        bottom: -5px;       
-                        
-                    }
-                }
-    
-                &.select2-container--open{
-                    .select2-selection__rendered{
-                        position: relative;
-        
-                        &:after{
-                            content: url(../img/chevron-up.svg);
-                        }
-                    }
-                }
-    
-                &.select2-container--disabled{
-                    color: #828282;
-                }
             }
     
             button{
-                padding: 20px 16px;
-                
+                padding: 16px;
+                border-radius: 8px;
             }
         }    
     
@@ -759,6 +708,14 @@
         display: flex;
     }
 
+    .select2-container--filters_select.select2-container--open{
+        .select2-dropdown{
+            .select2-results{
+                padding: 16px 5px 16px 5px;
+            }
+        }
+    }
+
     
 }
 
@@ -777,6 +734,37 @@
         }
     }
 
+    .recipes_grid{         
+        gap: 32px;
+        grid-template-columns: repeat(1, 1fr);
+        
+        
+        .recipe_loop-item{
+            display: block;
+            grid-column: span 1;
+    
+            .img_block{
+                img{
+                    height: 235px;
+                }
+            }           
+        }
+    
+        .recipe_loop-item:nth-child(4),
+        .recipe_loop-item:nth-child(5){
+            grid-column: span 1;
+    
+            .img_block{
+                img{
+                    height: 235px;
+                }
+            }
+        }
+    }
+
+
+    
+
 
 
     .bottom_menu{
@@ -790,4 +778,91 @@
     
     }
 
+    footer{
+        padding-top: 60px;
+    
+        .container{          
+
+            .footer_top{
+                padding-bottom: 0px;
+                flex-direction: column;
+                
+
+                .footer_logo{
+                    align-items: center;
+                    gap: 14px;
+                }
+    
+                .footer_menu{
+                    width: 100%;
+                    padding-bottom: 16px;
+                    text-align: center;
+
+                    .footer_menu_list{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+        
+                        .menu_link{
+                            color: $black;
+                            font-size: 16px;
+                            line-height: 140%;
+                            letter-spacing: 0.64px;
+        
+                            &:hover{
+                                color: $green;
+                            }
+                        }
+                    }
+                }
+    
+                .footer_contacts{
+                    padding-top: 24px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    align-items: center;
+    
+                    .contacts_item{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 6px;
+                        align-items: center;
+    
+                        .footer_contacts-title{
+                            color: $green;
+                            font-size: 16px;                        
+                            font-weight: 900;
+                            line-height: 140%;
+                            letter-spacing: 0.64px;
+                            text-transform: uppercase;
+                        }
+    
+                        .footer_contacts-link{
+                            color: $black;
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 140%;
+                            letter-spacing: 0.64px;
+    
+                            &:hover{
+                                color: $green;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .footer_bottom{
+                padding: 40px 0px 32px;
+                text-align: center;
+                color: $black;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 140%;
+                letter-spacing: 0.56px;
+            }
+        }
+    }
 }

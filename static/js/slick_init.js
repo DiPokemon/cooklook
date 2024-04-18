@@ -51,14 +51,20 @@ $(document).ready(function () {
     if ($(window).width() < 1024) {
       $slider.slick({        
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           autoplay: true,
-          autoplaySpeed: 2000,
-          arrows: true,
-          //dots: true,
-          
+          autoplaySpeed: 3000,
+          arrows: true,          
           prevArrow: $('.categories_grid-controls-prev'),
-          nextArrow: $('.categories_grid-controls-next'),          
+          nextArrow: $('.categories_grid-controls-next'),    
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2
+              }
+            }
+          ]
         })          
     }
   
@@ -66,13 +72,21 @@ $(document).ready(function () {
       if ($(window).width() < 1024) {
         $slider.slick({        
             slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 3000,
             arrows: true,
             //dots: true,
             prevArrow: $('.categories_grid-controls-prev'),
             nextArrow: $('.categories_grid-controls-next'),
+            responsive: [
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 2
+                }
+              }
+            ]
         });
       } else {
           // Если экран становится больше 1024px, отключаем Slick slider

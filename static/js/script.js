@@ -77,7 +77,15 @@ jQuery(document).ready(function() {
 
     $('#mobile_filters-open').click(function() {
         $('.filters').css('display', 'flex');
+        $('body').css('overflow', 'hidden');
     });
+
+    $('#close_ingridients').click(function() {
+        $('.filters').css('display', 'none');
+        $('body').css('overflow', '');
+    });
+
+    
 });
 
 

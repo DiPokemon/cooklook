@@ -2019,54 +2019,6 @@ footer .container .footer_bottom {
   max-width: 240px;
   width: 100%;
 }
-.filters #recipe-filter .filter_select .new-select {
-  position: relative;
-  border: none;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  padding: 20px 24px;
-  background-color: #F8F8FA;
-  border-radius: 10px;
-  background-image: url(../img/chevron-down.svg);
-  background-repeat: no-repeat;
-  background-position: right 24px center;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.filters #recipe-filter .filter_select .new-select.on {
-  background-image: url(../img/chevron-up.svg);
-}
-.filters #recipe-filter .filter_select .new-select__list {
-  position: absolute;
-  max-height: 200px;
-  overflow-y: scroll;
-  -webkit-box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
-  top: 70px;
-  left: 0;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  z-index: 2;
-  background: #fff;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  scrollbar-width: thin;
-}
-.filters #recipe-filter .filter_select .new-select__list .new-select__item span {
-  display: block;
-  padding: 10px 15px;
-}
-.filters #recipe-filter .filter_select .new-select__list .new-select__item span:hover {
-  color: #12b223;
-}
 .filters #recipe-filter .select2-container--filters_select {
   padding: 20px 24px;
   background-color: #F8F8FA;
@@ -2336,7 +2288,7 @@ footer .container .footer_bottom {
 }
 
 .select2-container--filters_select.select2-container--open .select2-dropdown {
-  top: 40px;
+  top: 10px;
   border: none;
   border-radius: 8px;
   -webkit-box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
@@ -2404,6 +2356,9 @@ footer .container .footer_bottom {
   .mobile_display {
     display: block;
   }
+  .hide_mobile {
+    display: none;
+  }
   section {
     padding-bottom: 64px;
   }
@@ -2469,6 +2424,13 @@ footer .container .footer_bottom {
   .site-header.fixed .container {
     padding: 6px 20px;
   }
+  .page-header__breadcrumbs {
+    overflow-x: scroll;
+    padding-bottom: 5px;
+  }
+  .page-header__breadcrumbs span {
+    white-space: nowrap;
+  }
   #popular_categories {
     padding-top: 64px;
   }
@@ -2522,6 +2484,7 @@ footer .container .footer_bottom {
     row-gap: 32px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: unset;
+    padding-bottom: 32px;
   }
   .recipes_grid .recipe_loop-item {
     grid-column: span 1;
@@ -2764,109 +2727,52 @@ footer .container .footer_bottom {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 375px;
+    left: 0;
+    width: 100%;
+    max-width: 375px;
     padding: 24px 16px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     background: #fff;
+    z-index: 99;
+    -webkit-box-shadow: 12px 0px 16px 0px rgba(0, 0, 0, 0.08);
+            box-shadow: 12px 0px 16px 0px rgba(0, 0, 0, 0.08);
   }
-  .filters #recipe-filter {
+  .filters .filters_header {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 140%;
+    letter-spacing: 0.96px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 16px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding-bottom: 32px;
   }
-  .filters #recipe-filter #recipe_category:focus, .filters #recipe-filter #recipe_category:active,
-  .filters #recipe-filter #recipe_subcategory:focus,
-  .filters #recipe-filter #recipe_subcategory:active,
-  .filters #recipe-filter #recipe_region:focus,
-  .filters #recipe-filter #recipe_region:active {
-    background-image: url(../img/chevron-up.svg);
+  .filters .filters_header #close_ingridients {
+    background: none;
   }
-  .filters #recipe-filter .filter_select {
-    position: relative;
-    display: block;
-    max-width: 240px;
-    width: 100%;
+  .filters .filters_header #close_ingridients svg path {
+    fill: #292D32;
   }
-  .filters #recipe-filter .filter_select .new-select {
-    position: relative;
-    border: none;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    padding: 20px 24px;
-    background-color: #F8F8FA;
-    border-radius: 10px;
-    background-image: url(../img/chevron-down.svg);
-    background-repeat: no-repeat;
-    background-position: right 24px center;
-    cursor: pointer;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-  }
-  .filters #recipe-filter .filter_select .new-select.on {
-    background-image: url(../img/chevron-up.svg);
-  }
-  .filters #recipe-filter .filter_select .new-select__list {
-    position: absolute;
-    max-height: 200px;
-    overflow-y: scroll;
-    -webkit-box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
-            box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
-    top: 70px;
-    left: 0;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    z-index: 2;
-    background: #fff;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    scrollbar-width: thin;
-  }
-  .filters #recipe-filter .filter_select .new-select__list .new-select__item span {
-    display: block;
-    padding: 10px 15px;
-  }
-  .filters #recipe-filter .filter_select .new-select__list .new-select__item span:hover {
-    color: #12b223;
+  .filters #recipe-filter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .filters #recipe-filter .select2-container--filters_select {
-    padding: 20px 24px;
+    padding: 16px;
     background-color: #F8F8FA;
     border-radius: 8px;
   }
-  .filters #recipe-filter .select2-container--filters_select .select2-selection__rendered {
-    position: relative;
-  }
-  .filters #recipe-filter .select2-container--filters_select .select2-selection__rendered:after {
-    content: url(../img/chevron-down.svg);
-    position: absolute;
-    right: 0;
-    bottom: -5px;
-  }
-  .filters #recipe-filter .select2-container--filters_select.select2-container--open .select2-selection__rendered {
-    position: relative;
-  }
-  .filters #recipe-filter .select2-container--filters_select.select2-container--open .select2-selection__rendered:after {
-    content: url(../img/chevron-up.svg);
-  }
-  .filters #recipe-filter .select2-container--filters_select.select2-container--disabled {
-    color: #828282;
-  }
   .filters #recipe-filter button {
-    padding: 20px 16px;
+    padding: 16px;
+    border-radius: 8px;
   }
   .filters .ingridients_modal_overlay {
     position: fixed;
@@ -3103,6 +3009,9 @@ footer .container .footer_bottom {
     display: -ms-flexbox;
     display: flex;
   }
+  .select2-container--filters_select.select2-container--open .select2-dropdown .select2-results {
+    padding: 16px 5px 16px 5px;
+  }
 }
 @media (max-width: 768px) {
   #popular_categories {
@@ -3115,9 +3024,123 @@ footer .container .footer_bottom {
   #popular_categories .popular_categories-grid .category_item {
     padding: 24px 15px;
   }
+  .recipes_grid {
+    gap: 32px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .recipes_grid .recipe_loop-item {
+    display: block;
+    grid-column: span 1;
+  }
+  .recipes_grid .recipe_loop-item .img_block img {
+    height: 235px;
+  }
+  .recipes_grid .recipe_loop-item:nth-child(4),
+  .recipes_grid .recipe_loop-item:nth-child(5) {
+    grid-column: span 1;
+  }
+  .recipes_grid .recipe_loop-item:nth-child(4) .img_block img,
+  .recipes_grid .recipe_loop-item:nth-child(5) .img_block img {
+    height: 235px;
+  }
   .bottom_menu-item span {
     font-size: 12px;
     line-height: 140%;
     letter-spacing: 0.48px;
+  }
+  footer {
+    padding-top: 60px;
+  }
+  footer .container .footer_top {
+    padding-bottom: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .container .footer_top .footer_logo {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 14px;
+  }
+  footer .container .footer_top .footer_menu {
+    width: 100%;
+    padding-bottom: 16px;
+    text-align: center;
+  }
+  footer .container .footer_top .footer_menu .footer_menu_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 16px;
+  }
+  footer .container .footer_top .footer_menu .footer_menu_list .menu_link {
+    color: #292D32;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+  }
+  footer .container .footer_top .footer_menu .footer_menu_list .menu_link:hover {
+    color: #2DBE64;
+  }
+  footer .container .footer_top .footer_contacts {
+    padding-top: 24px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 16px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .container .footer_top .footer_contacts .contacts_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 6px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .container .footer_top .footer_contacts .contacts_item .footer_contacts-title {
+    color: #2DBE64;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+    text-transform: uppercase;
+  }
+  footer .container .footer_top .footer_contacts .contacts_item .footer_contacts-link {
+    color: #292D32;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+  }
+  footer .container .footer_top .footer_contacts .contacts_item .footer_contacts-link:hover {
+    color: #2DBE64;
+  }
+  footer .container .footer_bottom {
+    padding: 40px 0px 32px;
+    text-align: center;
+    color: #292D32;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.56px;
   }
 }/*# sourceMappingURL=style.css.map */

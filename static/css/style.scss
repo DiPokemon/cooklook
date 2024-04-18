@@ -135,7 +135,7 @@
 }
 
 /* MAIN NEW RECIPES */
-.recipes_grid{
+.recipes_grid{ 
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(6, 1fr);
@@ -1669,51 +1669,7 @@ footer{
             position: relative;
             display: block;
             max-width: 240px;
-            width: 100%;
-
-            .new-select {
-                position: relative;
-                border: none;
-                appearance: none;
-                padding: 20px 24px;
-                background-color: $gray;
-                border-radius:10px;
-                background-image: url(../img/chevron-down.svg);
-                background-repeat: no-repeat;
-                background-position: right 24px center;
-                cursor: pointer;
-                user-select: none;
-
-                &.on{
-                    background-image: url(../img/chevron-up.svg);
-                }                
-            }
-
-            .new-select__list {
-                position: absolute;
-                max-height: 200px;
-                overflow-y: scroll;
-                box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
-                top: 70px;
-                left: 0;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                width: 100%;
-                z-index: 2;
-                background: $white;
-                user-select: none;
-                scrollbar-width: thin;
-
-                .new-select__item span {
-                    display: block;
-                    padding: 10px 15px;
-
-                    &:hover{
-                        color: #12b223;
-                    }
-                }                
-            }            
+            width: 100%;          
         }
 
         .select2-container--filters_select{
@@ -2001,7 +1957,7 @@ footer{
 
     .select2-container--filters_select.select2-container--open{
         .select2-dropdown{
-            top: 40px;
+            top: 10px;
             border: none;
             border-radius: 8px;            
             box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);

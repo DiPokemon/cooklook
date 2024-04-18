@@ -41,7 +41,7 @@ get_header();
             <div class="container">
                 <div class="section_header flex">
                     <h2 class="section_title"><?= $new_recipes_title ?></h2>
-                    <a href="<?= home_url('/recipes/') ?>" class="btn_bg"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
+                    <a href="<?= home_url('/recipes/') ?>" class="btn_bg hide_mobile"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
                 </div>
                 <div class="recipes_grid">
                     <?php
@@ -99,6 +99,7 @@ get_header();
                         wp_reset_postdata();
                     ?>
                 </div>
+                <a href="<?= home_url('/recipes/') ?>" class="btn_bg display_mobile"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
             </div>			
 		</section>
 
@@ -114,7 +115,7 @@ get_header();
             <div class="container">
                 <div class="section_header flex">
                     <h2 class="section_title"><?= $popular_recipes_title ?></h2>
-                    <a href="<?= home_url('/recipes/') ?>" class="btn_bg"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
+                    <a href="<?= home_url('/recipes/') ?>" class="btn_bg hide_mobile"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
                 </div>
                 <div class="recipes_grid">
                     <?php
@@ -173,6 +174,8 @@ get_header();
                         wp_reset_postdata();
                     ?>
                 </div>
+                <a href="<?= home_url('/recipes/') ?>" class="btn_bg display_mobile"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
+                
             </div>			
 		</section>
 
