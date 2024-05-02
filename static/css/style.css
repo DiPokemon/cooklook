@@ -2153,6 +2153,8 @@ footer .container .footer_bottom {
   display: -ms-flexbox;
   display: flex;
   gap: 8px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .filters .ingridients_modal_overlay .ingridients_modal .ingridients_wrapper .ing_wrap .select2-selection .select2-selection__rendered .select2-selection__choice {
   background: #2DBE64;
@@ -2167,6 +2169,7 @@ footer .container .footer_bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 8px;
 }
 .filters .ingridients_modal_overlay .ingridients_modal .ingridients_wrapper .ing_wrap .select2-selection .select2-selection__rendered .select2-selection__choice .ing_tag {
   display: -webkit-box;
@@ -2177,8 +2180,26 @@ footer .container .footer_bottom {
           align-items: center;
   gap: 8px;
 }
-.filters .ingridients_modal_overlay .ingridients_modal .ingridients_wrapper .ing_wrap .select2-selection .select2-selection__rendered .select2-selection__choice__remove {
+.filters .ingridients_modal_overlay .ingridients_modal .ingridients_wrapper .ing_wrap .select2-selection .select2-selection__rendered .select2-selection__choice .ing_tag svg {
   display: none;
+}
+.filters .ingridients_modal_overlay .ingridients_modal .ingridients_wrapper .ing_wrap .select2-selection .select2-selection__rendered .select2-selection__choice__remove {
+  color: #fff;
+  background-color: unset;
+  border-right: none;
+  position: unset;
+  padding: 0px !important;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 100%;
+}
+.filters .ingridients_modal_overlay .ingridients_modal .ingridients_wrapper .ing_wrap .select2-selection .select2-selection__rendered .select2-selection__choice__remove span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .filters .ingridients_modal_overlay .ingridients_modal .popular_ingridients {
   padding-bottom: 48px;
@@ -2723,11 +2744,13 @@ footer .container .footer_bottom {
     width: auto;
   }
   .filters {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: -400px;
     width: 100%;
     max-width: 375px;
     padding: 24px 16px;
@@ -2739,6 +2762,11 @@ footer .container .footer_bottom {
     z-index: 99;
     -webkit-box-shadow: 12px 0px 16px 0px rgba(0, 0, 0, 0.08);
             box-shadow: 12px 0px 16px 0px rgba(0, 0, 0, 0.08);
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .filters.active {
+    left: 0;
   }
   .filters .filters_header {
     font-size: 24px;
@@ -2753,11 +2781,14 @@ footer .container .footer_bottom {
             justify-content: space-between;
     padding-bottom: 32px;
   }
-  .filters .filters_header #close_ingridients {
+  .filters .filters_header #close_filter-mobile {
     background: none;
   }
-  .filters .filters_header #close_ingridients svg path {
+  .filters .filters_header #close_filter-mobile svg path {
     fill: #292D32;
+  }
+  .filters .filters_header .clear_ingridients:visited {
+    color: #828282;
   }
   .filters #recipe-filter {
     -webkit-box-orient: vertical;
@@ -2765,39 +2796,77 @@ footer .container .footer_bottom {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .filters #recipe-filter .filter_select {
+    max-width: 100%;
+  }
   .filters #recipe-filter .select2-container--filters_select {
     padding: 16px;
     background-color: #F8F8FA;
     border-radius: 8px;
+    width: 100%;
   }
   .filters #recipe-filter button {
     padding: 16px;
     border-radius: 8px;
   }
   .filters .ingridients_modal_overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(41, 45, 50, 0.6);
-    display: none;
-    z-index: 9;
+    position: absolute;
+    bottom: 0;
+    left: -400px;
+    top: 90px;
+    background-color: unset;
+    display: block;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
   }
   .filters .ingridients_modal_overlay.active {
-    display: block;
+    left: 0;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
   }
   .filters .ingridients_modal_overlay .ingridients_modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    min-width: 555px;
-    padding: 20px;
-    border-radius: 30px;
-    background-color: #fff;
-    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 375px;
+    padding: 0px 16px 24px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: #fff;
+    z-index: 99;
+    border-radius: 0;
+    -webkit-transform: none;
+            transform: none;
+    min-width: unset;
+  }
+  .filters .ingridients_modal_overlay .ingridients_modal .ingridients_filter-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 32px;
+  }
+  .filters .ingridients_modal_overlay .ingridients_modal .ingridients_filter-header #close_ingridients-mobile {
+    padding: 0;
+    background: unset;
+    color: #292D32;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .filters .ingridients_modal_overlay .ingridients_modal .ingridients_wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2805,34 +2874,6 @@ footer .container .footer_bottom {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-  .filters .ingridients_modal_overlay .ingridients_modal #close_ingridients {
-    padding: 12px;
-    border-radius: 50%;
-    background-color: #F8F8FA;
-    height: 48px;
-    width: 48px;
-    border: none;
-    cursor: pointer;
-    margin: 0 0 0 auto;
-  }
-  .filters .ingridients_modal_overlay .ingridients_modal #close_ingridients svg path {
-    fill: #828282;
-  }
-  .filters .ingridients_modal_overlay .ingridients_modal #close_ingridients:hover {
-    background-color: #F2F2F2;
-  }
-  .filters .ingridients_modal_overlay .ingridients_modal #close_ingridients:hover svg path {
-    fill: #2DBE64;
-  }
-  .filters .ingridients_modal_overlay .ingridients_modal .ingridients_wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
     gap: 16px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -2853,7 +2894,7 @@ footer .container .footer_bottom {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 16px;
-    width: 360px;
+    width: 100%;
   }
   .filters .ingridients_modal_overlay .ingridients_modal .ingridients_wrapper .ing_wrap label {
     font-size: 18px;
@@ -2956,15 +2997,7 @@ footer .container .footer_bottom {
     cursor: pointer;
   }
   .filters .ingridients_modal_overlay .ingridients_modal .ingridients_actions .clear_ingridients {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 8px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background: none;
-    color: #828282;
+    display: none;
   }
   .filters_wrapper_mob {
     display: -webkit-box;
@@ -3001,6 +3034,76 @@ footer .container .footer_bottom {
   .filters_wrapper_mob select {
     width: 50%;
   }
+  .search_modal_overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    max-width: 375px;
+    height: 100vh;
+    background-color: #fff;
+    width: 100%;
+    left: -400px;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .search_modal_overlay.active {
+    left: 0;
+  }
+  .search_modal_overlay .search_modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 375px;
+    padding: 24px 16px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: #fff;
+    z-index: 99;
+    -webkit-box-shadow: 12px 0px 16px 0px rgba(0, 0, 0, 0.08);
+            box-shadow: 12px 0px 16px 0px rgba(0, 0, 0, 0.08);
+    -webkit-transform: none;
+            transform: none;
+    min-width: unset;
+    border-radius: 0px;
+  }
+  .search_modal_overlay .search_modal .search_header {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 140%;
+    letter-spacing: 0.96px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .search_modal_overlay .search_modal .search_header #close_search-mobile {
+    padding: 0;
+    background: unset;
+    color: #292D32;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.64px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .search_modal_overlay .search_modal .search_header #close_search-mobile svg path {
+    fill: #292d32;
+  }
   footer {
     padding-bottom: 68px;
   }
@@ -3011,6 +3114,15 @@ footer .container .footer_bottom {
   }
   .select2-container--filters_select.select2-container--open .select2-dropdown .select2-results {
     padding: 16px 5px 16px 5px;
+  }
+  .select2-container--default.select2-container--open .select2-dropdown {
+    top: 10px;
+  }
+  .select2-container--default.select2-container--open .select2-dropdown .select2-results {
+    padding: 5px;
+  }
+  .select2-container--default.select2-container--open .select2-dropdown .select2-results__option {
+    margin-bottom: 5px;
   }
 }
 @media (max-width: 768px) {

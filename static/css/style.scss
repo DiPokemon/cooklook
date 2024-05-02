@@ -1810,6 +1810,7 @@ footer{
                         .select2-selection__rendered{
                             display: flex;
                             gap: 8px;
+                            flex-wrap: wrap;
 
                             .select2-selection__choice{
                                 background: $green;
@@ -1820,15 +1821,33 @@ footer{
                                 width: fit-content;
                                 padding: 8px 16px;
                                 display: flex;
+                                gap: 8px;
 
                                 .ing_tag{
                                     display: flex;
                                     align-items: center;
                                     gap: 8px;
+
+                                    svg{
+                                        display: none;
+                                    }
                                 }                             
 
                                 &__remove{
-                                    display: none;
+                                    color: $white;
+                                    background-color: unset;
+                                    border-right: none;
+                                    position: unset;
+                                    padding: 0px!important;
+                                    order: 1;
+                                    font-size: 20px;
+                                    font-weight: 400;
+                                    line-height: 100%;
+
+                                    span{
+                                        display: flex;
+                                    }
+                                    
                                 }
                             }
                         }
