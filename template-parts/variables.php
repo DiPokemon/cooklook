@@ -29,7 +29,11 @@
   $address_latitude = carbon_get_theme_option( 'address_latitude' );
   $address_longitude = carbon_get_theme_option( 'address_longitude' );
 
+  $title_404 = carbon_get_theme_option( 'title_404' );
+  $subtitle_404 = carbon_get_theme_option( 'subtitle_404' );
   $text_404 = carbon_get_theme_option( 'text_404' );
+  $img_404 = carbon_get_theme_option( 'image_404' );
+  $btn_404 = carbon_get_theme_option( 'btn_404' );
 
   $cf_title = carbon_get_theme_option( 'cf_title' );
   $cf_subtitle = carbon_get_theme_option( 'cf_subtitle' );

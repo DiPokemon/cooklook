@@ -11,10 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<section class="page_header">
+            <section class="page_header">
 				<div class="container">
 					<header>
 						<?php
@@ -42,6 +39,10 @@ get_header();
 					</header><!-- .page-header -->
 				</div>
 			</section>
+
+		<?php if ( have_posts() ) : ?>
+
+			
 
 
 			<section>
@@ -108,13 +109,15 @@ get_header();
 				</div>
 			</section>
 
-			<?php
-
-			else :	get_template_part('template-parts/recipe-loop-nothing');
-
-			endif;
-
-			?>
+			<?php else : ?>
+                <section>
+				    <div class="container">
+                        <div id="response" class="recipes_grid">
+                            <?php get_template_part('template-parts/recipe-loop-nothing'); ?>
+                        </div>
+                    </div>
+                </section>
+			<?php endif; ?>
 
 			
 

@@ -6,55 +6,40 @@
  *
  * @package cooklook
  */
-
+include 'template-parts/variables.php';
 get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
 		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'cooklook' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'cooklook' ); ?></p>
-
+			<div class="container">
+				<div class="page-content wrapper_404 flex">
 					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
+						$img_src = !empty($img_404) ? $img_404 : get_template_directory_uri().'/static/img/onion.png';
 					?>
+					
+					<div class="image_404">
+						<img src="<?= $img_src ?>" alt="Страница не найдена">
+					</div>
+					<div class="content_404">
+						<span class="title_404">
+							<?php echo !empty($title_404) ? $title_404 : __('ОЙ!', 'cooklook');	?>
+						</span>
+						<span class="subtitle_404">
+							<?php echo !empty($subtitle_404) ? $subtitle_404 : __('Похоже эта страница потерялась', 'cooklook'); ?>
+						</span>
+						<span class="text_404">
+							<?php echo !empty($text_404) ? $text_404 : __('Может попробуем вернуться на главную и поискать что-нибудь другое?', 'cooklook'); ?>
+						</span>
+						<a href="<?= home_url() ?>" class="btn_bg">
+							<?php echo !empty($btn_404) ? $btn_404 : __('На главную', 'cooklook'); ?>
+						</a>
+					</div>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'cooklook' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$cooklook_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'cooklook' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$cooklook_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
+				</div>
+			</div>
+		</section>
+	</main>
 
 <?php
 get_footer();
