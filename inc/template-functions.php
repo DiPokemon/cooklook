@@ -329,3 +329,4 @@ add_filter( 'comment_form_fields', function ( $fields ) {
 
     return $fields;
 } );
+

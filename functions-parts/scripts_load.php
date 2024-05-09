@@ -37,3 +37,16 @@ function archive_filters_scripts(){
   }
 }
 add_action('wp_enqueue_scripts', 'archive_filters_scripts');
+
+
+function enqueue_sorting_scripts() {
+    wp_enqueue_script('sorting', get_template_directory_uri() . '/static/js/sorting.js', array('jquery'), null, true);
+    wp_localize_script('sorting', 'sorting_ajax', admin_url('admin-ajax.php'));
+}
+add_action('wp_enqueue_scripts', 'enqueue_sorting_scripts');
+
+function enqueue_favorite_scripts() {
+  wp_enqueue_script('favorite', get_template_directory_uri() . '/static/js/favorite_recipes.js', array('jquery'), null, true);
+  wp_localize_script('favorite', 'favorite_ajax', admin_url('admin-ajax.php'));
+}
+add_action('wp_enqueue_scripts', 'enqueue_favorite_scripts');

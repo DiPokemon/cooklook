@@ -1,4 +1,7 @@
 <?php 
+if (! defined ('ABSPATH')){
+    exit;
+}
 
 add_action('wp_head', 'phone_front', 1); 
 function phone_front($phone) {

@@ -1,4 +1,8 @@
 <?php
+if (! defined ('ABSPATH')){
+    exit;
+}
+
 function custom_recipe_taxonomy() {
     $args = array(
         'labels' => array(

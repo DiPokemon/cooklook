@@ -1,5 +1,9 @@
 <?php
 
+if (! defined ('ABSPATH')){
+    exit;
+}
+
 function create_custom_tables() {
     global $wpdb;
 

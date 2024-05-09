@@ -1,4 +1,8 @@
 <?php
+if (! defined ('ABSPATH')){
+    exit;
+}
+
 // Проверка голоса пользователя
 // Проверка голоса пользователя
 function check_user_vote() {

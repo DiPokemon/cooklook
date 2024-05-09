@@ -1,8 +1,9 @@
 <?php
     include 'variables.php';
     $post_id = get_the_ID();
-    $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
-    $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_dislikes');
+    $recipe_likes = intval(carbon_get_post_meta($post_id, 'recipe_likes'));
+    $recipe_dislikes = intval(carbon_get_post_meta($post_id, 'recipe_dislikes'));
+    $rating_counter = $recipe_likes + $recipe_dislikes;
     $rating = calculate_rating($recipe_likes, $recipe_dislikes);
     $time = carbon_get_post_meta($post_id, 'recipe_time');
     $portions = carbon_get_post_meta($post_id, 'recipe_portions');
@@ -13,7 +14,8 @@
     $recipe_protein = carbon_get_post_meta($post_id, 'recipe_protein');
     $recipe_carbs = carbon_get_post_meta($post_id, 'recipe_carbs');
     $recipe_fat = carbon_get_post_meta($post_id, 'recipe_fat');
-    $recipe_calories = carbon_get_post_meta($post_id, 'recipe_calories');    
+    $recipe_calories = carbon_get_post_meta($post_id, 'recipe_calories');   
+    $recipe_region = carbon_get_post_meta($post_id, 'recipe_region');   
 
     if (has_excerpt()) {
         $description = get_the_excerpt();
@@ -21,8 +23,8 @@
         $description = get_the_content();
     }
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <section>
         <div class="container recipe_main-info flex">
             <div class="left_side">
@@ -102,7 +104,7 @@
                         Изображение не найдено.
                     <?php endif ?>
 
-                    <a href="" class="bookmark">                    
+                    <a href="#" data-recipe-id="<?= get_the_ID(); ?>"s class="bookmark">                    
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <title><?= __('Добавить рецепт в избранное', 'cooklook') ?></title>
                             <path d="M16.8203 2H7.18031C5.05031 2 3.32031 3.74 3.32031 5.86V19.95C3.32031 21.75 4.61031 22.51 6.19031 21.64L11.0703 18.93C11.5903 18.64 12.4303 18.64 12.9403 18.93L17.8203 21.64C19.4003 22.52 20.6903 21.76 20.6903 19.95V5.86C20.6803 3.74 18.9503 2 16.8203 2Z"/>
@@ -167,7 +169,7 @@
                     <div class="recipe_instructions_left flex">
                         <?php foreach ($recipe_steps as $index => $step) : ?>
                             
-                            <div class="recipe_instructions_left-step step_<?= ($index+1) ?>">
+                            <div id="step_<?= ($index+1) ?>" class="recipe_instructions_left-step step_<?= ($index+1) ?>">
                                 <span class="step_number">
                                     <b><?= __('Шаг', 'cooklook').' '.($index+1) ?></b> / <?= $steps_count ?>
                                 </span>
@@ -276,6 +278,97 @@
                 
         </div>
     </section>
+
+    <?php
+        $images_urls = array();
+        $ingridients_list_keywords = array();
+        $ingridients_list = array();
+
+        $post_thumbnail_url = esc_url(get_the_post_thumbnail_url());
+        if ($post_thumbnail_url) {
+            $images_urls[] = '"' . $post_thumbnail_url . '"';
+        }
+        if ($recipe_steps) {
+            foreach ($recipe_steps as $step) {
+                $step_image_url = esc_url($step['recipe_step_image']);
+                if ($step_image_url) {
+                    $images_urls[] = '"' . $step_image_url . '"';
+                }
+            }
+        }
+        $images_string = implode(', ', $images_urls);
+
+        if ($recipe_ingridients) {
+            foreach ($recipe_ingridients as $ingridient) {
+                $ing_name = $ingridient['ingridient_name'];
+                $ing_value = $ingridient['ingridient_value'];
+                if ($ing_name) {
+                    $ingridients_list_keywords[] = '"' . $ing_name . '"';
+                    $ingridients_list[] = '"' . $ing_name . ' - ' . $ing_value . '"';
+                }
+            }
+        }
+        $ingridients_keywords = implode(', ', $ingridients_list_keywords);
+        $ingridients_list = implode(', ', $ingridients_list);
+        
+        
+                
+        
+    ?>
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org/",
+        "@type": "Recipe",
+        "name": "<?= get_the_title() ?>",
+        "image": [
+            <?= $images_string ?>            
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "<?= get_the_author() ?>"
+        },
+        "datePublished": "<?= get_the_date('Y-m-d') ?>",
+        <?php if($description):?>
+        "description": "<?= $description ?>",
+        <?php endif; ?>
+        "recipeCuisine": "<?= $recipe_region ?>",
+        "cookTime": "PT<?= $time ?>M",
+        "keywords": [<?= $ingridients_keywords ?>],
+        "recipeYield": "<?= $portions ?> порции",
+        "recipeCategory": "<?= $category_name ?>",
+        "nutrition": {
+            "@type": "NutritionInformation",
+            "calories": "<?= $recipe_calories ?> ккал",
+            "carbohydrateContent": "<?= $recipe_carbs ?> г",
+            "proteinContent": "<?= $recipe_protein ?> г",
+            "fatContent": "<?= $recipe_fat ?> г"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "<?= $rating ?>",
+            "ratingCount": "<?= $rating_counter ?>"
+        },
+        "recipeIngredient": [<?= $ingridients_list  ?>],
+        "recipeInstructions": [
+            <?php 
+                $count = count($recipe_steps); // Определяем количество элементов в массиве
+                foreach ($recipe_steps as $index => $steps) :
+            ?>
+                    {
+                        "@type": "HowToStep",
+                        "name": "Шаг <?= ($index+1) ?>",
+                        "text": "<?= $steps['recipe_step_text'] ?>",
+                        "url": "<?= get_permalink() ?>#step_<?= ($index+1) ?>"
+                        <?php if( $steps['recipe_step_image'] ) : ?>
+                            ,
+                            "image": "<?= $steps['recipe_step_image'] ?>"
+                        <?php endif; ?>
+                    }<?php if ($index < $count - 1) echo ','; ?>
+                <?php endforeach; ?>       
+        ]        
+        }
+    </script>
 
 
     <?php

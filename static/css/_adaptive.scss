@@ -3,6 +3,16 @@
         padding: 0px 20px;
     }
 
+    #filters{
+        #recipe-filter{
+            gap: 10px;
+
+            button{
+                white-space: nowrap;
+            }
+        }
+    }
+
 }
 
 @media(max-width: 1024px){
@@ -703,8 +713,39 @@
             }
         }
 
-        select{
+        .sorting{
             width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 0px;
+            background: $gray;
+            justify-content: center;
+            border-radius: 8px;
+        
+            span{
+                display: none;
+            }
+        
+            #sort_form-mobile{                
+                padding: 16px;
+                background: $gray;
+        
+                select{
+                    background: $gray;
+                    border: none;
+                    font-size: 16px;
+                    color: $black;
+                    font-weight: 500;
+                    line-height: 140%;
+                    letter-spacing: 0.56px;
+
+                    option{
+                        padding: 5px;
+                    }
+                }
+            }
         }
     }
 
@@ -875,6 +916,20 @@
                     height: 235px;
                 }
             }
+        }
+    }
+
+    .filters_wrapper_mob{
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 32px;
+
+        #mobile_filters-open{
+            width: 100%;
+        }
+
+        .sorting{
+            width: 100%;
         }
     }
 

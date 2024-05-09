@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: Архив с рецептами
+ * Template name: Избранные рецепты
  * The template for displaying archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -9,40 +9,43 @@
  */
 
 get_header();
+
+
+$current_user = wp_get_current_user();
+global $wpdb;
+$table_name = $wpdb->prefix . 'favorite_recipes';
+$favorites = $wpdb->get_results(
+    $wpdb->prepare(
+        "SELECT recipe_id FROM $table_name WHERE user_id = %d",
+        $current_user->ID
+    )
+);
+$recipe_ids = array();
+foreach ($favorites as $favorite) {
+    $recipe_ids[] = $favorite->recipe_id;
+}
 ?>
+            <pre>
+                <?php 
+                    print_r($current_user);
+                    echo '<br>';
+                    echo $current_user->ID;
+                    echo '<br>';
+                    print_r( $recipe_ids);
+                ?>
+            </pre>
+
 	<main id="primary" class="site-main">
-		<?php if ( have_posts() ) : ?>
+
+
+		<?php if ( !empty($recipe_ids) ) : ?>
+            
+            
 			<section class="page_header">
 				<div class="container">
 					<header>
-						<?php
-							if (function_exists('breadcrumbs')) breadcrumbs(); 
-
-                            if (is_archive()) {
-                                if (is_post_type_archive('recipe')) {
-                                    // Если это архив для кастомного типа записи "Рецепты"
-                                    echo '<h1 class="page_title">'.__('Каталог рецептов', 'cooklook').'</h1>';
-                                } elseif (is_tax('recipe_category')) {
-                                    // Если это архив категории
-                                    $term = get_queried_object();
-                                    $parent_term = get_term($term->parent, 'recipe_category');
-                            
-                                    // Если есть родительская категория, выводим ее название вместе с текущей категорией
-                                    if ($parent_term instanceof WP_Term) {
-                                        echo '<h1 class="page_title">' . $parent_term->name . ' / ' . $term->name . '</h1>';
-                                    } else {
-                                        echo '<h1 class="page_title">' . $term->name . '</h1>';
-                                    }
-                                } elseif (is_tag()) {
-                                    // Если это архив тега
-                                    echo '<h1 class="page_title">'.__('Рецепты с ','cooklook') . single_tag_title('', false).'</h1>';
-                                } else {
-                                    // Другие случаи архивов
-                                    echo '<h1 class="page_title">'.__('Архив', 'cooklook').'</h1>';
-                                }
-                            }
-                            		
-						?>
+						<?php if (function_exists('breadcrumbs')) breadcrumbs(); ?>
+                        <h1 class="page_title"><?= __('Избранные рецепты', 'cooklook') ?></h1>
 						<div id="filters" class="filters">
 
                             <div class="filters_header mobile_display">
@@ -144,11 +147,12 @@ get_header();
                     <div id="response" class="recipes_grid">
                         <?php
                             $args = array(
-                                'post_type' => 'recipe', // Тип записи, для стандартных записей это 'post'.                            
-                                'posts_per_page' => 10, // Количество записей для показа.
-                                'orderby' => 'date', // Сортировка по дате.
-                                'order' => 'DESC', // Сортировка по убыванию.                            
+                                'post_type' => 'recipe', // Тип записи "recipe"
+                                'post__in' => $recipe_ids, // Массив ID рецептов
+                                'orderby' => 'post__in' // Сортировка по порядку ID
                             );
+                            
+                                                    
 
                             // Добавляем фильтрацию по категории и подкатегории, если они выбраны в форме
                             $category_id = isset($_GET['recipe_category']) ? intval($_GET['recipe_category']) : 0;
@@ -172,7 +176,7 @@ get_header();
                                 );
                             }
                             $post_counter = 0;
-                            $the_query = new WP_Query($args);
+                            $the_query = new WP_Query( $args );
                             if ($the_query->have_posts()) {
                                 while ($the_query->have_posts()) {
                                     $the_query->the_post();

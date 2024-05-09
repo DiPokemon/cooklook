@@ -97,7 +97,7 @@ get_header();
                                     set_query_var('tags', $tags);
 
 
-                                    if ($post_counter % 7 == 0) {
+                                    if ($post_counter % 4 == 0) {
                                         get_template_part('template-parts/recipe-loop-item-adv');
                                     }
                                     else {
