@@ -84,6 +84,10 @@ add_action('admin_head', 'my_admin_style');
 
 /* функция рассчета рейтинга рецепта */
 function calculate_rating($likes, $dislikes) {
+    // Преобразование в целые числа
+    $likes = intval($likes);
+    $dislikes = intval($dislikes);
+
     if ($likes + $dislikes == 0) {
         return 0;
     }
@@ -92,6 +96,7 @@ function calculate_rating($likes, $dislikes) {
     $rating = $like_ratio * 5;
     return round($rating, 1);
 }
+
 
 /* увеличивает полу recipe_views у рецепта при каждом просмотре (используется для вывода популярных рецептов) */
 function increase_post_views() {

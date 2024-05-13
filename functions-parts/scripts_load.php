@@ -30,7 +30,7 @@ function recipe_rating_script() {
 add_action('wp_enqueue_scripts', 'recipe_rating_script');
 
 function archive_filters_scripts(){
-  if (is_archive()) {
+  if (is_archive() || is_page_template('my-favorites.php')) {
     wp_enqueue_script('filter-ingridients', get_template_directory_uri() . '/static/js/filter-ingridients.js', array('jquery', 'select2', 'filter'), NULL, true);
     wp_enqueue_script('filter', get_template_directory_uri() . '/static/js/filters.js', array('jquery'), NULL, true); 
     wp_localize_script( 'filter', 'filter_obj', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );

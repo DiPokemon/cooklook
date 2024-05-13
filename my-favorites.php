@@ -10,14 +10,19 @@
 
 get_header();
 
-
 $current_user = wp_get_current_user();
 global $wpdb;
 $table_name = $wpdb->prefix . 'favorite_recipes';
+if (is_user_logged_in()) {
+    $user_id = get_current_user_id();
+} else {
+    $user_id = $_COOKIE['user_id'] ?? '0'; // '0' или другое значение по умолчанию, если cookie нет
+}
+
 $favorites = $wpdb->get_results(
     $wpdb->prepare(
         "SELECT recipe_id FROM $table_name WHERE user_id = %d",
-        $current_user->ID
+        $user_id
     )
 );
 $recipe_ids = array();
@@ -25,105 +30,17 @@ foreach ($favorites as $favorite) {
     $recipe_ids[] = $favorite->recipe_id;
 }
 ?>
-            <pre>
-                <?php 
-                    print_r($current_user);
-                    echo '<br>';
-                    echo $current_user->ID;
-                    echo '<br>';
-                    print_r( $recipe_ids);
-                ?>
-            </pre>
 
 	<main id="primary" class="site-main">
 
-
-		<?php if ( !empty($recipe_ids) ) : ?>
-            
+		<?php if ( !empty($recipe_ids) ) : ?>            
             
 			<section class="page_header">
 				<div class="container">
 					<header>
 						<?php if (function_exists('breadcrumbs')) breadcrumbs(); ?>
                         <h1 class="page_title"><?= __('Избранные рецепты', 'cooklook') ?></h1>
-						<div id="filters" class="filters">
-
-                            <div class="filters_header mobile_display">
-                                <span><?= __('Фильтры', 'cooklook') ?></span>
-
-                                <button id="close_filter-mobile" class="close_modal">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                        <path d="M13.3002 0.70998C13.2077 0.617276 13.0978 0.543728 12.9768 0.493547C12.8559 0.443366 12.7262 0.417535 12.5952 0.417535C12.4643 0.417535 12.3346 0.443366 12.2136 0.493547C12.0926 0.543728 11.9827 0.617276 11.8902 0.70998L7.00022 5.58998L2.11022 0.699979C2.01764 0.607397 1.90773 0.533957 1.78677 0.483852C1.6658 0.433747 1.53615 0.407959 1.40522 0.407959C1.27429 0.407959 1.14464 0.433747 1.02368 0.483852C0.902716 0.533957 0.792805 0.607397 0.700223 0.699979C0.607642 0.792561 0.534202 0.902472 0.484097 1.02344C0.433992 1.1444 0.408203 1.27405 0.408203 1.40498C0.408203 1.53591 0.433992 1.66556 0.484097 1.78652C0.534202 1.90749 0.607642 2.0174 0.700223 2.10998L5.59022 6.99998L0.700223 11.89C0.607642 11.9826 0.534202 12.0925 0.484097 12.2134C0.433992 12.3344 0.408203 12.464 0.408203 12.595C0.408203 12.7259 0.433992 12.8556 0.484097 12.9765C0.534202 13.0975 0.607642 13.2074 0.700223 13.3C0.792805 13.3926 0.902716 13.466 1.02368 13.5161C1.14464 13.5662 1.27429 13.592 1.40522 13.592C1.53615 13.592 1.6658 13.5662 1.78677 13.5161C1.90773 13.466 2.01764 13.3926 2.11022 13.3L7.00022 8.40998L11.8902 13.3C11.9828 13.3926 12.0927 13.466 12.2137 13.5161C12.3346 13.5662 12.4643 13.592 12.5952 13.592C12.7262 13.592 12.8558 13.5662 12.9768 13.5161C13.0977 13.466 13.2076 13.3926 13.3002 13.3C13.3928 13.2074 13.4662 13.0975 13.5163 12.9765C13.5665 12.8556 13.5922 12.7259 13.5922 12.595C13.5922 12.464 13.5665 12.3344 13.5163 12.2134C13.4662 12.0925 13.3928 11.9826 13.3002 11.89L8.41022 6.99998L13.3002 2.10998C13.6802 1.72998 13.6802 1.08998 13.3002 0.70998Z" />
-                                    </svg>
-                                </button>
-                            </div>
-                            
-                            <form id="recipe-filter">
-                                <select id="recipe_category" name="recipe_category" class="filter_select" data-placeholder="<?= __('Любая категория', 'cooklook') ?>">
-                                    <option value="all"><?= __('Любая категория', 'cooklook') ?></option>
-                                    <?php
-                                    // Получаем список категорий
-                                        $categories = get_terms(array(
-                                            'taxonomy' => 'recipe_category',
-                                            'hide_empty' => false,
-                                            'parent' => 0,
-                                        ));
-
-                                        foreach ($categories as $category) {
-                                            echo '<option value="' . esc_attr($category->term_id) . '">' . esc_html($category->name) . '</option>';
-                                        }
-                                    ?>
-                                </select>
-
-                                <select id="recipe_subcategory" name="recipe_subcategory" class="filter_select" data-placeholder="<?= __('Любое блюдо', 'cooklook') ?>" disabled>
-                                    <option value="all"><?= __('Любое блюдо', 'cooklook') ?></option>
-                                </select>
-
-                                <select id="recipe_region" name="recipe_region" class="filter_select" data-placeholder="<?= __('Любое меню', 'cooklook') ?>">
-                                    <option value=""><?= __('Любое меню', 'cooklook') ?></option>
-                                    <?php                                
-                                        $regions = get_posts(array(
-                                            'post_type' => 'recipe', // Замените 'recipes' на свой тип записи
-                                            'posts_per_page' => -1,
-                                            'meta_key' => '_recipe_region', // Замените 'recipe_region' на ваше кастомное поле
-                                            'fields' => 'ids',
-                                        ));
-
-                                        $regions = array_unique($regions); // Убираем дубликаты
-
-                                        foreach ($regions as $region_id) {
-                                            $region_name = carbon_get_post_meta($region_id, 'recipe_region'); // Замените на ваше кастомное поле
-                                            if ($region_name) :
-                                            ?>
-                                                <option value="<?= esc_attr($region_name) ?>"><?= esc_html($region_name) ?></option>
-                                            <?php endif;
-                                        }
-                                    ?>                                    
-                                </select>
-                                <?php get_template_part('template-parts/filter-ingridients'); ?>
-                                <button class="btn_nonbg ingridients_btn"><?= __('Ингридиенты', 'cooklook') ?></button>
-                                
-                                <button class="btn_bg" type="submit"><?= __('Применить фильтр', 'cooklook') ?></button>
-                            </form>
-						</div>
-
-                        <div class="filters_wrapper_mob">
-                            <button id="mobile_filters-open">
-                                <img src="<?=  get_template_directory_uri() ?>/static/img/filter.svg">
-                                <?= __('Фильтры', 'cooklook') ?>
-                            </button>
-
-                            <div class="sorting mobile_display">
-                                <form id="sort_form-mobile">
-                                    <select name="sort_by" id="sort_by-mobile">
-                                        <option value=""><?= __('Сортировка', 'cooklook') ?></option>
-                                        <option value="date"><?= __('Дата добавления', 'cooklook') ?></option>
-                                        <option value="recipe_views"><?= __('Просмотры', 'cooklook') ?></option>
-                                        <option value="recipe_time"><?= __('Время приготовления', 'cooklook') ?></option>
-                                    </select>
-                                </form>
-                            </div>                            
-                        </div>
+						
 					</header><!-- .page-header -->
 				</div>
 			</section>
@@ -131,28 +48,13 @@ foreach ($favorites as $favorite) {
 			<section>
 				<div class="container">
 
-                    <div class="sorting hide_mobile">
-                        <span><?= __('Сортировать по', 'cooklook') ?>:</span>
-                        <form id="sort_form">
-                            <select name="sort_by" id="sort_by">
-                                <option value="date">Дата добавления</option>
-                                <option value="recipe_views">Просмотры</option>
-                                <option value="recipe_time">Время приготовления</option>
-                            </select>
-                        </form>
-                    </div>
-                    
-
-
                     <div id="response" class="recipes_grid">
                         <?php
                             $args = array(
                                 'post_type' => 'recipe', // Тип записи "recipe"
                                 'post__in' => $recipe_ids, // Массив ID рецептов
                                 'orderby' => 'post__in' // Сортировка по порядку ID
-                            );
-                            
-                                                    
+                            );                    
 
                             // Добавляем фильтрацию по категории и подкатегории, если они выбраны в форме
                             $category_id = isset($_GET['recipe_category']) ? intval($_GET['recipe_category']) : 0;
@@ -235,6 +137,5 @@ foreach ($favorites as $favorite) {
 			</section>
 		<?php endif; ?>
 	</main><!-- #main -->
-
 <?php
 get_footer();

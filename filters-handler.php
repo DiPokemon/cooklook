@@ -32,18 +32,51 @@ add_action('wp_ajax_filter_recipes', 'filter_recipes');
 add_action('wp_ajax_nopriv_filter_recipes', 'filter_recipes');
 
 function filter_recipes() {
+
+    if(is_page_template('my-favorites.php')){
+        $current_user = wp_get_current_user();
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'favorite_recipes';
+        if (is_user_logged_in()) {
+            $user_id = get_current_user_id();
+        } else {
+            $user_id = $_COOKIE['user_id'] ?? '0';
+        }
+
+        $favorites = $wpdb->get_results(
+            $wpdb->prepare(
+                "SELECT recipe_id FROM $table_name WHERE user_id = %d",
+                $user_id
+            )
+        );
+        $recipe_ids = array();
+        foreach ($favorites as $favorite) {
+            $recipe_ids[] = $favorite->recipe_id;
+        }
+    }
+
     $category_id = isset($_GET['category_id']) ? intval($_GET['category_id']) : 0;
     $subcategory_id = isset($_GET['subcategory_id']) ? intval($_GET['subcategory_id']) : 0;
     $region = isset($_GET['region']) ? sanitize_text_field($_GET['region']) : '';
     $include_ingredients = isset($_GET['include_ingredients']) ? $_GET['include_ingredients'] : array();
     $exclude_ingredients = isset($_GET['exclude_ingredients']) ? $_GET['exclude_ingredients'] : array();
 
-    $args = array(
-        'post_type' => 'recipe',
-        'posts_per_page' => -1,
-        'orderby' => 'date',
-        'order' => 'DESC',
-    );
+
+    if(is_page_template('my-favorites.php')){
+        $args = array(
+            'post_type' => 'recipe', // Тип записи "recipe"
+            'post__in' => $recipe_ids, // Массив ID рецептов
+            'orderby' => 'post__in' // Сортировка по порядку ID
+        );
+    }
+    else{
+        $args = array(
+            'post_type' => 'recipe',
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'DESC',
+        );
+    }    
 
     if ($category_id) {
         $args['tax_query'] = array(
@@ -92,7 +125,7 @@ function filter_recipes() {
     }
 
     $recipe_query = new WP_Query($args);
-
+    
     ob_start();
 
     if ($recipe_query->have_posts()) {
@@ -132,7 +165,7 @@ function filter_recipes() {
             set_query_var('comments', $comments);
             set_query_var('description', $description);
             set_query_var('tags', $tags);
-
+            
             get_template_part('template-parts/recipe-loop-item');
         }
     } else {
