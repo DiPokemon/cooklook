@@ -11,6 +11,9 @@ Container::make( 'post_meta', 'Receipies info' )
         Field::make( 'text', 'recipe_time', __( 'Cooking time', 'cooklook' ) )
             ->set_attribute('type', 'number')
             ->set_width(50),
+        Field::make( 'text', 'recipe_prep', __( 'Prepare time', 'cooklook' ) )
+            ->set_attribute('type', 'number')
+            ->set_width(50),
         Field::make( 'text', 'recipe_id', __( 'ID', 'cooklook' ) )
             ->set_attribute('type', 'number')
             ->set_width(34),
@@ -23,11 +26,16 @@ Container::make( 'post_meta', 'Receipies info' )
         Field::make( 'text', 'recipe_views', __( 'Views', 'cooklook' ) )
             ->set_attribute('type', 'number')
             ->set_default_value(0),
+            ->set_width(33),
         Field::make( 'text', 'recipe_rating', __( 'Rating', 'cooklook' ) )   
             ->set_attribute('type', 'number')         
             ->set_attribute('min', 1)
             ->set_attribute('max', 5)
             ->set_attribute('step', 0.1),
+            ->set_width(33),
+        Field::make( 'text', 'recipe_url', __( 'Recipe URL', 'cooklook' ) )
+            ->set_attribute('type', 'text')
+            ->set_width(34),
     ) )
     ->add_tab( __( 'Energy value', 'cooklook' ), array(
         Field::make( 'text', 'recipe_calories', __( 'Calories', 'cooklook' ) )

@@ -1,77 +1,115 @@
 <?php
-require_once('wp-load.php');
+/**
+ * Plugin Name: Recipe Importer
+ * Description: Импорт рецептов из CSV файла в кастомный тип записи 'recipe'.
+ * Version: 1.0
+ * Author: Ваше имя
+ */
 
-$csv = fopen('EXAMPLE.csv', 'r');
-$headers = fgetcsv($csv);
-
-while ($row = fgetcsv($csv)) {
-    $data = array_combine($headers, $row);
-
-    $post_id = wp_insert_post([
-        'post_title'    => $data['title'],
-        'post_content'  => $data['about'],
-        'post_status'   => 'publish',
-        'post_type'     => 'recipe',
-        'meta_input'    => [
-            'recipe_portions' => $data['portions'],
-            'recipe_time'     => $data['recipe_time'],
-            'recipe_id'       => $data['recipe_id'],
-            'recipe_likes'    => $data['recipe_like'],
-            'recipe_dislikes' => $data['recipe_dislike'],
-            'recipe_views'    => $data['recipe_views'],
-            'recipe_rating'   => $data['recipe_rating'],
-            'recipe_calories' => $data['recipe_calories'],
-            'recipe_protein'  => $data['recipe_protein'],
-            'recipe_fat'      => $data['recipe_fat'],
-            'recipe_carbs'    => $data['recipe_carbs'],
-            'recipe_region'   => $data['recipe_region'],
-        ]
-    ]);
-
-    if ($post_id) {
-        // Импорт изображения
-        if (!empty($data['image'])) {
-            $image_id = media_sideload_image($data['image'], $post_id, null, 'id');
-            if (!is_wp_error($image_id)) {
-                set_post_thumbnail($post_id, $image_id);
-            }
-        }
-
-        // Добавление категории
-        if (!empty($data['categories'])) {
-            wp_set_object_terms($post_id, explode('>', $data['categories']), 'recipe_category');
-        }
-
-        // Добавление тегов
-        if (!empty($data['ingredients_tags'])) {
-            wp_set_object_terms($post_id, explode(',', $data['ingredients_tags']), 'recipe_tags');
-        }
-
-        // Импорт ингредиентов
-        $ingredients = [];
-        for ($i = 1; isset($data["ingridient_name_$i"]); $i++) {
-            if (!empty($data["ingridient_name_$i"]) && !empty($data["ingridient_value_$i"])) {
-                $ingredients[] = [
-                    'ingridient_name'  => $data["ingridient_name_$i"],
-                    'ingridient_value' => $data["ingridient_value_$i"]
-                ];
-            }
-        }
-        carbon_set_post_meta($post_id, 'ingridients', $ingredients);
-
-        // Импорт шагов приготовления
-        $steps = [];
-        for ($i = 1; $i <= 26; $i++) {
-            if (!empty($data["recipe_step_text_list_$i"])) {
-                $steps[] = [
-                    'recipe_step_text'  => $data["recipe_step_text_list_$i"],
-                    'recipe_step_image' => $data["recipe_step_image_url_list_$i"]
-                ];
-            }
-        }
-        carbon_set_post_meta($post_id, 'recipe_step', $steps);
-    }
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
 }
 
-fclose($csv);
-?>
+// Подключение Carbon Fields
+add_action( 'after_setup_theme', 'crb_load' );
+function crb_load() {
+    require_once( 'carbon-fields/vendor/autoload.php' );
+    \Carbon_Fields\Carbon_Fields::boot();
+}
+
+// Добавление страницы плагина в админку
+function recipe_importer_menu() {
+    add_menu_page( 'Recipe Importer', 'Recipe Importer', 'manage_options', 'recipe-importer', 'recipe_importer_page' );
+}
+add_action( 'admin_menu', 'recipe_importer_menu' );
+
+// Страница плагина
+function recipe_importer_page() {
+    ?>
+    <div class="wrap">
+        <h1>Импорт рецептов из CSV</h1>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="csv_file" accept=".csv">
+            <?php submit_button( 'Импортировать' ); ?>
+        </form>
+        <?php
+        if ( ! empty( $_FILES['csv_file']['tmp_name'] ) ) {
+            recipe_import_from_csv( $_FILES['csv_file']['tmp_name'] );
+        }
+        ?>
+    </div>
+    <?php
+}
+
+// Функция импорта CSV файла
+function recipe_import_from_csv( $file_path ) {
+    if ( ! file_exists( $file_path ) || ! is_readable( $file_path ) ) {
+        return false;
+    }
+
+    $header = null;
+    $data = array();
+    if ( ( $handle = fopen( $file_path, 'r' ) ) !== false ) {
+        while ( ( $row = fgetcsv( $handle, 1000, ',' ) ) !== false ) {
+            if ( ! $header ) {
+                $header = $row;
+            } else {
+                $data[] = array_combine( $header, $row );
+            }
+        }
+        fclose( $handle );
+    }
+
+    foreach ( $data as $recipe_data ) {
+        $post_id = wp_insert_post( array(
+            'post_title'   => $recipe_data['title'],
+            'post_content' => $recipe_data['about'],
+            'post_type'    => 'recipe',
+            'post_status'  => 'publish',
+        ) );
+
+        if ( ! is_wp_error( $post_id ) ) {
+            // Используем Carbon Fields для сохранения мета-полей
+            carbon_set_post_meta( $post_id, 'recipe_portions', $recipe_data['portions'] );
+            carbon_set_post_meta( $post_id, 'recipe_time', $recipe_data['recipe_time'] );
+            carbon_set_post_meta( $post_id, 'recipe_id', $recipe_data['recipe_id'] );
+            carbon_set_post_meta( $post_id, 'recipe_likes', $recipe_data['recipe_like'] );
+            carbon_set_post_meta( $post_id, 'recipe_dislikes', $recipe_data['recipe_dislike'] );
+            carbon_set_post_meta( $post_id, 'recipe_calories', $recipe_data['recipe_calories'] );
+            carbon_set_post_meta( $post_id, 'recipe_protein', $recipe_data['recipe_protein'] );
+            carbon_set_post_meta( $post_id, 'recipe_fat', $recipe_data['recipe_fat'] );
+            carbon_set_post_meta( $post_id, 'recipe_carbs', $recipe_data['recipe_carbs'] );
+            carbon_set_post_meta( $post_id, 'recipe_region', $recipe_data['recipe_region'] );
+
+            // Обработка ингредиентов
+            if ( ! empty( $recipe_data['ingredients_names'] ) && ! empty( $recipe_data['ingredients_quantities'] ) ) {
+                $ingredients_names = explode( ' | ', $recipe_data['ingredients_names'] );
+                $ingredients_quantities = explode( ' | ', $recipe_data['ingredients_quantities'] );
+                $ingredients = array();
+                for ( $i = 0; $i < count( $ingredients_names ); $i++ ) {
+                    $ingredients[] = array(
+                        'ingridient_name'  => $ingredients_names[ $i ],
+                        'ingridient_value' => $ingredients_quantities[ $i ],
+                    );
+                }
+                carbon_set_post_meta( $post_id, 'ingridients', $ingredients );
+            }
+
+            // Обработка шагов
+            if ( ! empty( $recipe_data['steps_texts'] ) && ! empty( $recipe_data['steps_images'] ) ) {
+                $steps_texts = explode( ' | ', $recipe_data['steps_texts'] );
+                $steps_images = explode( ' | ', $recipe_data['steps_images'] );
+                $steps = array();
+                for ( $i = 0; $i < count( $steps_texts ); $i++ ) {
+                    $steps[] = array(
+                        'recipe_step_image' => $steps_images[ $i ],
+                        'recipe_step_text'  => $steps_texts[ $i ],
+                    );
+                }
+                carbon_set_post_meta( $post_id, 'recipe_step', $steps );
+            }
+        }
+    }
+
+    echo '<div class="updated"><p>Импорт завершен!</p></div>';
+}

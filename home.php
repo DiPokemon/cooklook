@@ -99,7 +99,7 @@ get_header();
                         wp_reset_postdata();
                     ?>
                 </div>
-                <a href="<?= home_url('/recipes/') ?>" class="btn_bg display_mobile"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
+                <a href="<?= home_url('/recipes/') ?>" class="view_all btn_bg mobile_display"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
             </div>			
 		</section>
 
@@ -174,7 +174,7 @@ get_header();
                         wp_reset_postdata();
                     ?>
                 </div>
-                <a href="<?= home_url('/recipes/') ?>" class="btn_bg display_mobile"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
+                <a href="<?= home_url('/recipes/') ?>" class="view_all btn_bg mobile_display"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
                 
             </div>			
 		</section>

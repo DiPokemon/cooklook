@@ -8,9 +8,13 @@
     
     // Функция для закрытия модального окна фильтров
     function closeFiltersModal() {
-        filters.classList.remove('active');
-        body.style.overflowY = '';
+        if (filters && filters.classList.contains('active')) {
+            filters.classList.remove('active');
+            body.style.overflowY = '';
+        }
     }
+    
+
 
     // Функция для открытия модального окна
     function openModal(event) {

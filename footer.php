@@ -26,7 +26,7 @@ include 'template-parts/variables.php';
 			<span><?= __('Рецепты', 'cooklook') ?></span>
 		</a>
 
-		<a href="<?= home_url('/#') ?>" class="bottom_menu-item">
+		<a href="<?= home_url('/my-favorites/') ?>" class="bottom_menu-item">
 			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
 				<path d="M17.3008 2H7.66078C5.53078 2 3.80078 3.74 3.80078 5.86V19.95C3.80078 21.75 5.09078 22.51 6.67078 21.64L11.5508 18.93C12.0708 18.64 12.9108 18.64 13.4208 18.93L18.3008 21.64C19.8808 22.52 21.1708 21.76 21.1708 19.95V5.86C21.1608 3.74 19.4308 2 17.3008 2Z"/>
 			</svg>

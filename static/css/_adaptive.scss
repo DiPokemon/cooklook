@@ -163,6 +163,11 @@
     }
 
     /* MAIN NEW RECIPES */
+    .view_all{
+        width: fit-content;
+        margin: 0 auto;
+    }
+
     .recipes_grid{        
         column-gap: 20px;
         row-gap: 32px;
@@ -762,6 +767,7 @@
         width: 100%;
         left: -400px;
         transition: all 1s ease;
+        z-index: 9999;
 
         &.active{
             left: 0;
@@ -811,9 +817,13 @@
                         }
                     }
                 }
+            }            
+        }
+
+        &.active{
+            .search_modal{
+                position: fixed;
             }
-    
-            
         }
     }
 
@@ -878,6 +888,11 @@
 
 
 @media(max-width: 768px){
+    .view_all{
+        width: 100%;
+        text-align: center;
+    }
+
     #popular_categories{
         padding-top: 48px;
     

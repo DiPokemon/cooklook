@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap");
 *,
 *::before,
 *::after {
@@ -70,70 +71,6 @@ hr {
   margin: 0;
 }
 
-@font-face {
-  font-display: swap;
-  font-family: "Mulish";
-  src: url("../fonts/mulish/Mulish-200.woff2") format("woff2"), url("../fonts/mulish/Mulish-200.woff") format("woff"), url("../fonts/mulish/Mulish-200.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-stretch: normal;
-}
-@font-face {
-  font-display: swap;
-  font-family: "Mulish";
-  src: url("../fonts/mulish/Mulish-300.woff2") format("woff2"), url("../fonts/mulish/Mulish-300.woff") format("woff"), url("../fonts/mulish/Mulish-300.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-}
-@font-face {
-  font-display: swap;
-  font-family: "Mulish";
-  src: url("../fonts/mulish/Mulish-400.woff2") format("woff2"), url("../fonts/mulish/Mulish-400.woff") format("woff"), url("../fonts/mulish/Mulish-400.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-}
-@font-face {
-  font-display: swap;
-  font-family: "Mulish";
-  src: url("../fonts/mulish/Mulish-500.woff2") format("woff2"), url("../fonts/mulish/Mulish-500.woff") format("woff"), url("../fonts/mulish/Mulish-500.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-}
-@font-face {
-  font-display: swap;
-  font-family: "Mulish";
-  src: url("../fonts/mulish/Mulish-600.woff2") format("woff2"), url("../fonts/mulish/Mulish-600.woff") format("woff"), url("../fonts/mulish/Mulish-600.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-}
-@font-face {
-  font-display: swap;
-  font-family: "Mulish";
-  src: url("../fonts/mulish/Mulish-700.woff2") format("woff2"), url("../fonts/mulish/Mulish-700.woff") format("woff"), url("../fonts/mulish/Mulish-700.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-stretch: normal;
-}
-@font-face {
-  font-display: swap;
-  font-family: "Mulish";
-  src: url("../fonts/mulish/Mulish-800.woff2") format("woff2"), url("../fonts/mulish/Mulish-800.woff") format("woff"), url("../fonts/mulish/Mulish-800.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-stretch: normal;
-}
-@font-face {
-  font-display: swap;
-  font-family: "Mulish";
-  src: url("../fonts/mulish/Mulish-900.woff2") format("woff2"), url("../fonts/mulish/Mulish-900.woff") format("woff"), url("../fonts/mulish/Mulish-900.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-stretch: normal;
-}
 @font-face {
   font-display: swap;
   font-family: "Gerhaus";
@@ -692,6 +629,7 @@ button {
   height: 380px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 30px;
 }
 
 /* CATEGORIES LIST GRID */
@@ -2591,6 +2529,12 @@ footer .container .footer_bottom {
             order: 2;
   }
   /* MAIN NEW RECIPES */
+  .view_all {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
   .recipes_grid {
     -webkit-column-gap: 20px;
        -moz-column-gap: 20px;
@@ -3174,6 +3118,7 @@ footer .container .footer_bottom {
     left: -400px;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
+    z-index: 9999;
   }
   .search_modal_overlay.active {
     left: 0;
@@ -3232,6 +3177,9 @@ footer .container .footer_bottom {
   .search_modal_overlay .search_modal .search_header #close_search-mobile svg path {
     fill: #292d32;
   }
+  .search_modal_overlay.active .search_modal {
+    position: fixed;
+  }
   footer {
     padding-bottom: 68px;
   }
@@ -3268,6 +3216,10 @@ footer .container .footer_bottom {
   }
 }
 @media (max-width: 768px) {
+  .view_all {
+    width: 100%;
+    text-align: center;
+  }
   #popular_categories {
     padding-top: 48px;
   }
