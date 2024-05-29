@@ -2132,6 +2132,81 @@ footer{
             }
         }
 
+        /* login page */
+        #login {
+            h1 a {
+                background-image: url('../img/logo.svg');
+                background-size: contain;
+                width: 100%;
+                height: 50px;
+                margin: 0;
+            }
+        
+            #loginform,
+            #registerform {
+                background-color: $gray;
+                border: 1px solid $dark_gray;
+                box-shadow: 0 0 10px rgba(0,0,0,.13);
+                border-radius: 30px;
+        
+                label{
+                    color: $black;
+                    font-family: $main_font;
+                    font-size: 14px;
+                }
+
+                input{
+                    border: 1px solid $dark_gray;
+                    font-size: 18px;
+                    line-height: 20px;
+
+                    &:focus{
+                        border-color: $green;
+                        box-shadow: 0 0 2px 0 $green;
+                        outline: 2px solid transparent;
+                    }
+                }
+
+                .button-primary{
+                    border-radius: 10px;
+                    background-color: $green;
+                    padding: 10px;
+                }
+
+                .button-secondary{
+                    color: $dark_green;
+                }
+            }
+
+            #nav{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                a{
+                    color: $black;
+                    font-size: 16px;
+                    &:hover{
+                        color: $green;
+                    }
+                }
+            }
+
+            .message {
+                border-radius: 10px;
+                margin-top: 10px;
+            }
+
+            
+        }
+
+        .language-switcher,
+        #backtoblog{
+            display: none;
+        }
+
+
+
 
 
 

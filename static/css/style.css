@@ -2393,6 +2393,79 @@ footer .container .footer_bottom {
   width: fit-content;
 }
 
+/* login page */
+#login h1 a {
+  background-image: url("../img/logo.svg");
+  background-size: contain;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+}
+#login #loginform,
+#login #registerform {
+  background-color: #F8F8FA;
+  border: 1px solid #F2F2F2;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+  border-radius: 30px;
+}
+#login #loginform label,
+#login #registerform label {
+  color: #292D32;
+  font-family: "Mulish";
+  font-size: 14px;
+}
+#login #loginform input,
+#login #registerform input {
+  border: 1px solid #F2F2F2;
+  font-size: 18px;
+  line-height: 20px;
+}
+#login #loginform input:focus,
+#login #registerform input:focus {
+  border-color: #2DBE64;
+  -webkit-box-shadow: 0 0 2px 0 #2DBE64;
+          box-shadow: 0 0 2px 0 #2DBE64;
+  outline: 2px solid transparent;
+}
+#login #loginform .button-primary,
+#login #registerform .button-primary {
+  border-radius: 10px;
+  background-color: #2DBE64;
+  padding: 10px;
+}
+#login #loginform .button-secondary,
+#login #registerform .button-secondary {
+  color: #0AAF60;
+}
+#login #nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#login #nav a {
+  color: #292D32;
+  font-size: 16px;
+}
+#login #nav a:hover {
+  color: #2DBE64;
+}
+#login .message {
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.language-switcher,
+#backtoblog {
+  display: none;
+}
+
 @media (max-width: 1140px) {
   .container {
     padding: 0px 20px;
@@ -3390,5 +3463,19 @@ footer .container .footer_bottom {
   }
   .error-404 .wrapper_404 .content_404 .text_404 {
     text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .single-recipe .recipe_main-info .left_side .recipe_meta {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .single-recipe .recipe_main-info .left_side .recipe_meta .cook_time {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .single-recipe .recipe_energy .energy_values-table {
+    grid-template-columns: repeat(2, 1fr);
   }
 }/*# sourceMappingURL=style.css.map */

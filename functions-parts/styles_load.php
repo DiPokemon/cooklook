@@ -20,3 +20,8 @@ function load_custom_admin_style() {
 
 // Добавляем хук для админ-страницы
 add_action('admin_enqueue_scripts', 'load_custom_admin_style');
+
+function custom_login_styles() {
+	wp_enqueue_style('custom-login', get_template_directory_uri() . '/static/css/style.min.css');
+  }
+  add_action('login_enqueue_scripts', 'custom_login_styles');

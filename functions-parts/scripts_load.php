@@ -50,3 +50,4 @@ function enqueue_favorite_scripts() {
   wp_localize_script('favorite', 'favorite_ajax', admin_url('admin-ajax.php'));
 }
 add_action('wp_enqueue_scripts', 'enqueue_favorite_scripts');
+

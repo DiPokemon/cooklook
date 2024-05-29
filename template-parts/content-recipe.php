@@ -5,7 +5,21 @@
     $recipe_dislikes = intval(carbon_get_post_meta($post_id, 'recipe_dislikes'));
     $rating_counter = $recipe_likes + $recipe_dislikes;
     $rating = calculate_rating($recipe_likes, $recipe_dislikes);
-    $time = carbon_get_post_meta($post_id, 'recipe_time');
+
+    $cook_time = carbon_get_post_meta($post_id, 'recipe_time');
+    $prep_time = carbon_get_post_meta($post_id, 'recipe_prep');
+    $cook_time = (int)$cook_time;
+    $prep_time = (int)$prep_time;
+    $total_time = $cook_time + $prep_time;
+
+    $cook_time_schema = schema_time($cook_time);
+    $prep_time_schema = !empty($prep_time) ? schema_time($prep_time) : null;    
+    $total_time_schema = schema_time($total_time);
+
+    $cook_time_convert = convert_time_to_string($cook_time);
+    $prep_time_convert = !empty($prep_time) ? convert_time_to_string($prep_time) : null;    
+    $total_time_convert = convert_time_to_string($total_time);
+
     $portions = carbon_get_post_meta($post_id, 'recipe_portions');
     $comments_count = get_comments_number();
     $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
@@ -84,7 +98,9 @@
                             <title><?= __('Время приготовления', 'cooklook') ?></title>
                             <path d="M6 20C5.16667 20 4.45834 19.7083 3.875 19.125C3.29167 18.5417 3 17.8333 3 17V9C3 8.71667 3.096 8.479 3.288 8.287C3.48 8.095 3.71734 7.99934 4 8H20C20.2833 8 20.521 8.096 20.713 8.288C20.905 8.48 21.0007 8.71734 21 9V17C21 17.8333 20.7083 18.5417 20.125 19.125C19.5417 19.7083 18.8333 20 18 20H6ZM9 5V4C9 3.71667 9.096 3.479 9.288 3.287C9.48 3.095 9.71734 2.99934 10 3H14C14.2833 3 14.521 3.096 14.713 3.288C14.905 3.48 15.0007 3.71734 15 4V5H20C20.2833 5 20.521 5.096 20.713 5.288C20.905 5.48 21.0007 5.71734 21 6C21 6.28334 20.904 6.521 20.712 6.713C20.52 6.905 20.2827 7.00067 20 7H4C3.71667 7 3.479 6.904 3.287 6.712C3.095 6.52 2.99934 6.28267 3 6C3 5.71667 3.096 5.479 3.288 5.287C3.48 5.095 3.71734 4.99934 4 5H9Z" />
                         </svg>
-                        <span class="meta-value"><?= $time ?></span>
+                        <span class="meta-value">
+                            <?= $prep_time_convert ? $prep_time_convert . ' + ' . $cook_time_convert : $cook_time_convert; ?>                            
+                        </span>
                     </div>
 
                     <div class="persons meta-item">
@@ -337,7 +353,11 @@
         "description": "<?= $description ?>",
         <?php endif; ?>
         "recipeCuisine": "<?= $recipe_region ?>",
-        "cookTime": "PT<?= $time ?>M",
+        <?php if($prep_time_schema): ?>
+            "prepTime": "$prep_time_schema",
+        <?php endif; ?>
+        "cookTime": "<?= $cook_time_schema ?>",
+        "totalTime": "<?= $total_time_schema ?>",
         "keywords": [<?= $ingridients_keywords ?>],
         "recipeYield": "<?= $portions ?> порции",
         "recipeCategory": "<?= $category_name ?>",

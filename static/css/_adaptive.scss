@@ -1074,3 +1074,23 @@
         }
     }
 }
+
+@media(max-width:600px){
+    .single-recipe{
+        .recipe_main-info{
+            .left_side{
+                .recipe_meta{
+                    flex-wrap: wrap;
+                    .cook_time{
+                        order: 2;
+                    }
+                }
+            } 
+        } 
+        .recipe_energy{
+            .energy_values-table{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        } 
+    } 
+}

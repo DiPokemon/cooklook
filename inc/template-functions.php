@@ -97,6 +97,44 @@ function calculate_rating($likes, $dislikes) {
     return round($rating, 1);
 }
 
+// Функция для конвертации времени из минут формат shema.org
+function schema_time($cook_time) {
+    // Вычисление количества часов и минут
+    $hours = floor($cook_time / 60);
+    $minutes = $cook_time % 60;
+
+    // Формирование строки в формате PTXHYM
+    $formatted_time = "PT";
+    if ($hours > 0) {
+        $formatted_time .= "{$hours}H";
+    }
+    if ($minutes > 0) {
+        $formatted_time .= "{$minutes}M";
+    }
+
+    // В случае если ни часов, ни минут нет
+    if ($hours == 0 && $minutes == 0) {
+        $formatted_time .= "0M";
+    }
+
+    return $formatted_time;
+}
+
+//Конвертация минут в человекопонятный формат "2 часа 30 минут"
+function convert_time_to_string($cook_time) {
+    // Вычисление количества часов и минут
+    $hours = floor($cook_time / 60);
+    $minutes = $cook_time % 60;
+
+    // Формирование строки с тернарными операторами
+    $time_string = ($hours > 0 ? $hours . ' ч.' : '') .
+                   ($hours > 0 && $minutes > 0 ? ' ' : '') .
+                   ($minutes > 0 ? $minutes . ' мин.' : '');
+
+    // Если ни часов, ни минут нет
+    return $time_string ?: '0 минут';
+}
+
 
 /* увеличивает полу recipe_views у рецепта при каждом просмотре (используется для вывода популярных рецептов) */
 function increase_post_views() {
@@ -334,4 +372,20 @@ add_filter( 'comment_form_fields', function ( $fields ) {
 
     return $fields;
 } );
+
+// Изменение URL логотипа
+function custom_login_logo_url() {
+    return home_url();
+}
+add_filter('login_headerurl', 'custom_login_logo_url');
+
+// Изменение заголовка логотипа
+function custom_login_logo_url_title() {
+    return 'Cook-Look';
+}
+add_filter('login_headertitle', 'custom_login_logo_url_title');
+
+
+
+
 
