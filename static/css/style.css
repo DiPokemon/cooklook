@@ -1151,6 +1151,12 @@ button {
 .single-recipe .recipe_rating_wrapper .like_dislike_block .dislike_btn.active .btn_icon path {
   fill: #EB5757;
 }
+.single-recipe .recipe_rating_wrapper .login_message a {
+  color: #2DBE64;
+}
+.single-recipe .recipe_rating_wrapper .login_message a:hover {
+  color: #0AAF60;
+}
 .single-recipe .recipe_tags {
   padding-top: 32px;
   display: -webkit-box;

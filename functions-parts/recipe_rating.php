@@ -96,6 +96,19 @@ function update_user_vote_meta($user_id, $recipe_id, $vote_type) {
     update_user_meta($user_id, 'user_votes', $user_votes);
 }
 
+add_action('wp_ajax_get_recipe_rating', 'get_recipe_rating');
+add_action('wp_ajax_nopriv_get_recipe_rating', 'get_recipe_rating');
+function get_recipe_rating() {
+
+    $recipe_id = intval($_POST['recipe_id']);
+    $recipe_likes = intval(carbon_get_post_meta($recipe_id, 'recipe_likes'));
+    $recipe_dislikes = intval(carbon_get_post_meta($recipe_id, 'recipe_dislikes'));
+    $rating = calculate_rating($recipe_likes, $recipe_dislikes);
+    
+    echo json_encode(['rating' => $rating]);
+    wp_die();
+}
+
 add_action('wp_ajax_check_user_vote', 'check_user_vote');
 add_action('wp_ajax_update_user_vote', 'update_user_vote');
 

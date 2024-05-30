@@ -28,6 +28,22 @@ jQuery(document).ready(function ($) {
             });
         });
     }
+
+    // Функция для обновления рейтинга рецепта
+    function updateRating(recipeID) {
+        $.ajax({
+            type: 'POST',
+            url: rating.ajax_url,
+            data: {
+                action: 'get_recipe_rating',
+                recipe_id: recipeID
+            },
+            success: function (response) {
+                response = JSON.parse(response);
+                $('#recipe_rating-' + recipeID).text(response.rating);
+            }
+        });
+    }
     
 
     // Вызываем функцию checkUserVote() при загрузке страницы
@@ -54,6 +70,7 @@ jQuery(document).ready(function ($) {
                 if (userVote === 'like') {
                     button.addClass('active');
                 }
+                updateRating(recipeID);
             }
         });
     });
@@ -83,6 +100,7 @@ jQuery(document).ready(function ($) {
                 if (userVote === 'dislike') {
                     button.addClass('active');
                 }
+                updateRating(recipeID);
             }
         });
     });

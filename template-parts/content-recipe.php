@@ -230,33 +230,41 @@
         <div class="container">
             <div class="recipe_rating_wrapper">
                 <h2><?= __('Оцените этот рецепт', 'cooklook') ?></h2>
-                          
-                <div class="like_dislike_block">
-                    
+                <?php if ( is_user_logged_in() ) : ?>          
+                    <div class="like_dislike_block">                    
                         <button id="like_btn-<?= get_the_ID() ?>" class="like_btn">
                             <svg xmlns="http://www.w3.org/2000/svg" class="btn_icon" viewBox="0 0 512 512">
                                 <path d="M456 192l-156-12 23-89.4c6-26.6-.78-41.87-22.47-48.6l-34.69-9.85a4 4 0 00-4.4 1.72l-129 202.34a8 8 0 01-6.81 3.81H16V448h117.61a48 48 0 0115.18 2.46l76.3 25.43a80 80 0 0025.3 4.11h177.93c19 0 31.5-13.52 35.23-32.16L496 305.58V232c0-22.06-18-38-40-40z"/>                            
                             </svg>
                         </button>
-                    
-                    <div class="recipe_rating">
-                        <?= $rating ?>
-                    </div>
-                    
+                        
+                        <div id="recipe_rating-<?= get_the_ID() ?>" class="recipe_rating">
+                            <?= $rating ?>
+                        </div>
+                        
                         <button id="dislike_btn-<?= get_the_ID() ?>" class="dislike_btn">
                             <svg xmlns="http://www.w3.org/2000/svg" class="btn_icon" viewBox="0 0 512 512">
                                 <path d="M56 320l156.05 12-23 89.4c-6.08 26.6.7 41.87 22.39 48.62l34.69 9.85a4 4 0 004.4-1.72l129-202.34a8 8 0 016.81-3.81H496V64H378.39a48 48 0 01-15.18-2.46l-76.3-25.43a80 80 0 00-25.3-4.11H83.68c-19 0-31.5 13.52-35.23 32.16L16 206.42V280c0 22.06 18 38 40 40z"/>
                                 <path d="M378.45 273.93A15.84 15.84 0 01386 272a15.93 15.93 0 00-7.51 1.91zM337.86 343.22l-.13.22a2.53 2.53 0 01.13-.22c20.5-35.51 30.36-55 33.82-62-3.47 7.06-13.34 26.51-33.82 62z" fill="none"/>                                
                                 <path d="M372.66 279.16l-1 2a16.29 16.29 0 016.77-7.26 16.48 16.48 0 00-5.77 5.26z"/>
                             </svg>
-                        </button>
-                    
-                </div>
-            
-                <span>
-                    <?= __('Чтобы оценить рецепт войдите или зарегистрируйтесь', 'cooklook') ?>
-                </span>
-            
+                        </button>                   
+                    </div>
+                <?php else: ?>
+                    <span class="login_message">
+                        <?php
+                            $login_url = home_url().'/login/'; // URL для страницы входа
+                            $register_url = home_url().'/login/?action=register/'; // URL для страницы регистрации
+
+                            $message_template = __('Чтобы оценить рецепт %s или %s', 'cooklook');
+                            $login_link = '<a href="' . $login_url . '">' . __('войдите', 'cooklook') . '</a>';
+                            $register_link = '<a href="' . $register_url . '">' . __('зарегистрируйтесь', 'cooklook') . '</a>';
+
+                            $message = sprintf($message_template, $login_link, $register_link);
+                            echo $message;
+                        ?>
+                    </span>  
+                <?php endif ?>          
             </div>
 
             <div class="recipe_tags">
@@ -270,16 +278,13 @@
                         ?>
                         <a class="meta_category <?= esc_attr($category_slug) ?>" href="<?= esc_url(get_term_link($category_id)) ?>"><?= esc_html($category_name) ?></a>
                     <?php endforeach ?>
-                </div>
-                
+                </div>                
             </div>
-        </div>
-        
+        </div>        
     </section>
 
     <section>
-        <div class="container recipe_comments">            
-            
+        <div class="container recipe_comments">
                 <h2><?= __('Комментарии', 'cooklook') ?> (<?= $comments_count ?>):</h2>
                 <div class="recipe_comments_wrapper">
                 
@@ -294,8 +299,7 @@
                             Реклама
                         </div>
                     </div>
-                </div>
-                
+                </div>                
         </div>
     </section>
 
@@ -303,7 +307,6 @@
         $images_urls = array();
         $ingridients_list_keywords = array();
         $ingridients_list = array();
-
         $post_thumbnail_url = esc_url(get_the_post_thumbnail_url());
         if ($post_thumbnail_url) {
             $images_urls[] = '"' . $post_thumbnail_url . '"';
@@ -317,7 +320,6 @@
             }
         }
         $images_string = implode(', ', $images_urls);
-
         if ($recipe_ingridients) {
             foreach ($recipe_ingridients as $ingridient) {
                 $ing_name = $ingridient['ingridient_name'];
@@ -329,11 +331,7 @@
             }
         }
         $ingridients_keywords = implode(', ', $ingridients_list_keywords);
-        $ingridients_list = implode(', ', $ingridients_list);
-        
-        
-                
-        
+        $ingridients_list = implode(', ', $ingridients_list);        
     ?>
 
     <script type="application/ld+json">
@@ -393,7 +391,6 @@
         ]        
         }
     </script>
-
 
     <?php
         $current_post_categories = wp_get_post_terms(get_the_ID(), 'recipe_category', array('fields' => 'ids'));

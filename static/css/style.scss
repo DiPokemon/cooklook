@@ -873,8 +873,16 @@
                     }
                 }
             }
+        }
 
+        .login_message{
+            a{
+                color: $green;
 
+                &:hover{
+                    color: $dark_green
+                }
+            }
         }
     }
 

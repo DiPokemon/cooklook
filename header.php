@@ -54,6 +54,7 @@
 						<path d="M16.5 2H6.86C4.73 2 3 3.74 3 5.86V19.95C3 21.75 4.29 22.51 5.87 21.64L10.75 18.93C11.27 18.64 12.11 18.64 12.62 18.93L17.5 21.64C19.08 22.52 20.37 21.76 20.37 19.95V5.86C20.36 3.74 18.63 2 16.5 2Z"/>
 					</svg>
 				</a>
+				<?php if ( !is_user_logged_in() ) : ?>
 				<a href="#" class="header_account flex">					
 					<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 						<title><?= __('Войти в аккаунт', 'cooklook') ?></title>
@@ -62,7 +63,8 @@
 					</svg>
 					<?= __('Войти', 'cooklook')?>
 				</a>
-				<a href="#" class="header_add_recipe btn_bg"><?= __('Добавить рецепт', 'cooklook') ?></a>
+				<?php endif; ?>
+				<!--<a href="#" class="header_add_recipe btn_bg"><?= __('Добавить рецепт', 'cooklook') ?></a>-->
 			</div>			
 		</div>		
 	</header><!-- #masthead -->
