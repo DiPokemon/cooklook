@@ -128,6 +128,7 @@ require_once( get_template_directory().'/filters-handler.php' );
 require_once( get_template_directory().'/functions-parts/recipe_rating.php' );
 require_once( get_template_directory().'/functions-parts/sorting.php' );
 require_once( get_template_directory().'/functions-parts/favorite_recipes.php' );
+require_once( get_template_directory().'/functions-parts/process_img.php' );
 
 
 

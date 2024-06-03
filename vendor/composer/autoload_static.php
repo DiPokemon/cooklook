@@ -44,6 +44,7 @@ class ComposerStaticInitbdcfae9b7070136310d12b15b11066a5
         ),
         'C' => 
         array (
+            'Carbon_Fields_Yoast\\' => 20,
             'Carbon_Fields\\' => 14,
         ),
     );
@@ -80,6 +81,10 @@ class ComposerStaticInitbdcfae9b7070136310d12b15b11066a5
         'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
         array (
             0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
+        ),
+        'Carbon_Fields_Yoast\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/htmlburger/carbon-fields-yoast/core',
         ),
         'Carbon_Fields\\' => 
         array (

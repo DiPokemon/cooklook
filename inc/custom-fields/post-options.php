@@ -72,3 +72,64 @@ Container::make( 'post_meta', 'Receipies info' )
                     ->set_width(80),                
             ) ),
     ) ) ;   
+
+
+
+// Регистрация кастомной переменной для Yoast SEO
+add_action('wpseo_register_extra_replacements', 'register_yoast_custom_replacements');
+function register_yoast_custom_replacements() {
+    wpseo_register_var_replacement('%%recipe_step_text%%', 'replace_recipe_step_text', 'advanced', 'First recipe step text');
+    wpseo_register_var_replacement('%%recipe_tags%%', 'replace_recipe_tags', 'advanced', 'Recipe tags');
+}
+
+// Замена переменной на значение кастомного поля
+function replace_recipe_step_text() {
+    if (is_singular('recipe')) {
+        $recipe_steps = carbon_get_the_post_meta('recipe_step');
+        if (!empty($recipe_steps) && isset($recipe_steps[0]['recipe_step_text'])) {
+            return $recipe_steps[0]['recipe_step_text'];
+        }
+    }
+    return '';
+}
+
+// Добавление переменной в список доступных переменных Yoast
+add_filter('wpseo_replacements', 'add_custom_yoast_replacement_variables');
+function add_custom_yoast_replacement_variables($replacements) {
+    if (is_singular('recipe')) {
+        $recipe_steps = carbon_get_the_post_meta('recipe_step');
+        if (!empty($recipe_steps) && isset($recipe_steps[0]['recipe_step_text'])) {
+            $replacements['%%recipe_step_text%%'] = $recipe_steps[0]['recipe_step_text'];
+        } else {
+            $replacements['%%recipe_step_text%%'] = '';
+        }
+    }
+    return $replacements;
+}
+
+// Замена переменной на значение кастомных тегов
+function replace_recipe_tags() {
+    if (is_singular('recipe')) {
+        $tags = get_the_terms(get_the_ID(), 'recipe_tags');
+        if (!empty($tags) && !is_wp_error($tags)) {
+            $tag_names = wp_list_pluck($tags, 'name');
+            return implode(', ', $tag_names);
+        }
+    }
+    return '';
+}
+
+// Добавление переменной в список доступных переменных Yoast
+add_filter('wpseo_replacements', 'add_custom_yoast_tag_replacement_variables');
+function add_custom_yoast_tag_replacement_variables($replacements) {
+    if (is_singular('recipe')) {
+        $tags = get_the_terms(get_the_ID(), 'recipe_tags');
+        if (!empty($tags) && !is_wp_error($tags)) {
+            $tag_names = wp_list_pluck($tags, 'name');
+            $replacements['%%recipe_tags%%'] = implode(', ', $tag_names);
+        } else {
+            $replacements['%%recipe_tags%%'] = '';
+        }
+    }
+    return $replacements;
+}

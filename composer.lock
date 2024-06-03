@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e91630ce1305b785093ee57a77e26f3",
+    "content-hash": "9a6f6dd222bf0bbb09859c346bc3a1af",
     "packages": [
         {
             "name": "htmlburger/carbon-fields",
@@ -145,6 +145,37 @@
                 "source": "https://github.com/htmlburger/carbon-fields"
             },
             "time": "2023-11-28T15:52:46+00:00"
+        },
+        {
+            "name": "htmlburger/carbon-fields-yoast",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/htmlburger/carbon-fields-yoast.git",
+                "reference": "9fceee862838d36674086b285749816e3758feb6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/htmlburger/carbon-fields-yoast/zipball/9fceee862838d36674086b285749816e3758feb6",
+                "reference": "9fceee862838d36674086b285749816e3758feb6",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Carbon_Fields_Yoast\\": "core/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "description": "Helper library that allows developers to choose which fields from Carbon Fields to include in the Yoast readability score meter",
+            "support": {
+                "issues": "https://github.com/htmlburger/carbon-fields-yoast/issues",
+                "source": "https://github.com/htmlburger/carbon-fields-yoast/tree/master"
+            },
+            "time": "2019-03-07T14:12:22+00:00"
         }
     ],
     "packages-dev": [

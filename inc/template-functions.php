@@ -147,65 +147,6 @@ function increase_post_views() {
 }
 add_action( 'wp_head', 'increase_post_views' );
 
-
-// function process_image_upload($attachment_ID) {
-// 		$image_path = get_attached_file($attachment_ID); // Получить путь к изображению
-	
-// 		// Создание объекта Imagick
-// 		$imagick = new Imagick($image_path);
-	
-// 		// Отзеркаливание изображения
-// 		$imagick->flopImage();
-	
-// 		// Добавление водяного знака
-// 		// $watermark = new Imagick('cooklook/wp-content/themes/cooklook/static/watermark.png');
-// 		// $imagick->compositeImage($watermark, Imagick::COMPOSITE_OVER, 0, 0);
-
-// 		// Конвертация в WebP
-// 		$imagick->setImageFormat('webp');
-// 		$imagick->setImageCompressionQuality(80); // Установка качества сжатия
-	
-// 		// Сохранение изменённого изображения
-// 		// Сохранение изменённого изображения
-// 		$new_image_path = preg_replace('/\.\w+$/', '.webp', $image_path);
-// 		$imagick->writeImage($new_image_path);
-// 	}
-	
-// 	// Подключение функции к хуку WordPress для обработки загруженных изображений
-// 	add_action('add_attachment', 'process_image_upload');
-
-function mirror_image_on_upload($attachment_ID) {
-    // Получите информацию о загруженном файле
-    $attachment_data = wp_get_attachment_metadata($attachment_ID);
-    
-    // Убедитесь, что файл - изображение (например, jpg, png и т. д.)
-    if (is_array($attachment_data) && isset($attachment_data['file'])) {
-        $image_path = get_attached_file($attachment_ID); // Получение пути к загруженному изображению
-
-        // Создание объекта Imagick для обработки изображения
-        try {
-            $imagick = new Imagick($image_path);
-
-            // Отзеркаливание изображения
-            $imagick->flopImage();
-
-            // Сохранение изменений, замена оригинального файла
-            $imagick->writeImage($image_path);
-
-            // Очистка ресурсов
-            $imagick->clear();
-            $imagick->destroy();
-        } catch (Exception $e) {
-            // Логирование ошибки
-            error_log('Imagick error: ' . $e->getMessage());
-        }
-    }
-}
-
-// Добавление функции в WordPress хук, который срабатывает после загрузки изображения
-add_action('add_attachment', 'mirror_image_on_upload');
-
-
 //Вывод категорий у рецепта согласно иерархии
 function display_recipe_categories_hierarchy($categories, $parent_id = 0) {                    
     foreach ($categories as $category) : ?>
