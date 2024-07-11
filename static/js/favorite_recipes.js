@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
 
         $.ajax({
             type: 'POST',
-            url: favorite_ajax,
+            url: favorite_ajax.ajax_url,
             data: {
                 action: 'add_to_favorites',
                 recipe_id: recipe_id,

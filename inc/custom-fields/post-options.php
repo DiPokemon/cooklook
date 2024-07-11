@@ -36,6 +36,9 @@ Container::make( 'post_meta', 'Receipies info' )
         Field::make( 'text', 'recipe_url', __( 'Recipe URL', 'cooklook' ) )
             ->set_attribute('type', 'text')
             ->set_width(34),
+        Field::make( 'image', 'recipe_pin_img', __( 'Pinterest image', 'cooklook' ) )  
+            ->set_value_type( 'url' )                  
+            ->set_width(20),
     ) )
     ->add_tab( __( 'Energy value', 'cooklook' ), array(
         Field::make( 'text', 'recipe_calories', __( 'Calories', 'cooklook' ) )
@@ -71,7 +74,14 @@ Container::make( 'post_meta', 'Receipies info' )
                 Field::make( 'textarea', 'recipe_step_text', __( 'Step text', 'cooklook' ) )
                     ->set_width(80),                
             ) ),
-    ) ) ;   
+    ) )    
+    ->add_tab( __( 'Original Cooking steps', 'cooklook' ), array(
+        Field::make( 'complex', 'original_recipe_step',  __('Original Step', 'cooklook') )
+            ->add_fields( array(                
+                Field::make( 'textarea', 'original_recipe_step_text', __( 'Original Step text', 'cooklook' ) )
+                    ->set_width(80),                
+            ) ),
+    ) ) ; 
 
 
 

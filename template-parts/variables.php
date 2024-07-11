@@ -9,10 +9,10 @@
   $policy_text = carbon_get_theme_option( 'policy_privacy_text' );
   $copyright = carbon_get_theme_option( 'copyright' );
 
-  $contacts_main_phone_front = phone_front(carbon_get_theme_option( 'main_phone' ));
-  $contacts_add_phone_front = phone_front(carbon_get_theme_option( 'second_phone' ));
-  $contacts_main_phone_href = phone_href(carbon_get_theme_option( 'main_phone' ));
-  $contacts_add_phone_href = phone_href(carbon_get_theme_option( 'second_phone' ));
+  // $contacts_main_phone_front = phone_front(carbon_get_theme_option( 'main_phone' ));
+  // $contacts_add_phone_front = phone_front(carbon_get_theme_option( 'second_phone' ));
+  // $contacts_main_phone_href = phone_href(carbon_get_theme_option( 'main_phone' ));
+  // $contacts_add_phone_href = phone_href(carbon_get_theme_option( 'second_phone' ));
 
   $email = carbon_get_theme_option( 'email' );
   $ads_email = carbon_get_theme_option( 'ads_email' );
