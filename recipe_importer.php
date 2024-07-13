@@ -192,17 +192,17 @@ function ajax_recipe_import_batch() {
             $post_id = get_the_ID();
 
             // Используем Carbon Fields для сохранения мета-полей
-            carbon_set_post_meta( $post_id, 'recipe_portions', sanitize_text_field( $recipe_data['portions'] ) );
-            carbon_set_post_meta( $post_id, 'prep_time', sanitize_text_field( $recipe_data['prep_time'] ) );
-            carbon_set_post_meta( $post_id, 'cook_time', sanitize_text_field( $recipe_data['cook_time'] ) );
-            carbon_set_post_meta( $post_id, 'recipe_likes', sanitize_text_field( $recipe_data['recipe_like'] ) );
-            carbon_set_post_meta( $post_id, 'recipe_dislikes', sanitize_text_field( $recipe_data['recipe_dislike'] ) );
-            carbon_set_post_meta( $post_id, 'recipe_calories', sanitize_text_field( $recipe_data['recipe_calories'] ) );
-            carbon_set_post_meta( $post_id, 'recipe_protein', sanitize_text_field( $recipe_data['recipe_protein'] ) );
-            carbon_set_post_meta( $post_id, 'recipe_fat', sanitize_text_field( $recipe_data['recipe_fat'] ) );
-            carbon_set_post_meta( $post_id, 'recipe_carbs', sanitize_text_field( $recipe_data['recipe_carbs'] ) );
-            carbon_set_post_meta( $post_id, 'recipe_region', sanitize_text_field( $recipe_data['recipe_region'] ) );
-            carbon_set_post_meta( $post_id, 'recipe_url', esc_url_raw( $recipe_data['recipe_url'] ) );
+            //carbon_set_post_meta( $post_id, 'recipe_portions', sanitize_text_field( $recipe_data['portions'] ) );
+            //carbon_set_post_meta( $post_id, 'prep_time', sanitize_text_field( $recipe_data['prep_time'] ) );
+            //carbon_set_post_meta( $post_id, 'cook_time', sanitize_text_field( $recipe_data['cook_time'] ) );
+            //carbon_set_post_meta( $post_id, 'recipe_likes', sanitize_text_field( $recipe_data['recipe_like'] ) );
+            //carbon_set_post_meta( $post_id, 'recipe_dislikes', sanitize_text_field( $recipe_data['recipe_dislike'] ) );
+            //carbon_set_post_meta( $post_id, 'recipe_calories', sanitize_text_field( $recipe_data['recipe_calories'] ) );
+            //carbon_set_post_meta( $post_id, 'recipe_protein', sanitize_text_field( $recipe_data['recipe_protein'] ) );
+            //carbon_set_post_meta( $post_id, 'recipe_fat', sanitize_text_field( $recipe_data['recipe_fat'] ) );
+            //carbon_set_post_meta( $post_id, 'recipe_carbs', sanitize_text_field( $recipe_data['recipe_carbs'] ) );
+            //carbon_set_post_meta( $post_id, 'recipe_region', sanitize_text_field( $recipe_data['recipe_region'] ) );
+            //carbon_set_post_meta( $post_id, 'recipe_url', esc_url_raw( $recipe_data['recipe_url'] ) );
 
             if ( ! empty( $recipe_data['image'] ) ) {
                 set_post_thumbnail_from_url( $post_id, esc_url_raw( $recipe_data['image'] ) );
