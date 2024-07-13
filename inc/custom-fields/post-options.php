@@ -7,16 +7,16 @@ Container::make( 'post_meta', 'Receipies info' )
     ->add_tab( __( 'Meta info', 'cooklook' ), array(
         Field::make( 'text', 'recipe_portions', __( 'Portions', 'cooklook' ) )
             ->set_attribute('type', 'number')
-            ->set_width(50),
+            ->set_width(25),
         Field::make( 'text', 'recipe_time', __( 'Cooking time', 'cooklook' ) )
             ->set_attribute('type', 'number')
-            ->set_width(50),
+            ->set_width(25),
         Field::make( 'text', 'recipe_prep', __( 'Prepare time', 'cooklook' ) )
             ->set_attribute('type', 'number')
-            ->set_width(50),
+            ->set_width(25),
         Field::make( 'text', 'recipe_id', __( 'ID', 'cooklook' ) )
             ->set_attribute('type', 'number')
-            ->set_width(34),
+            ->set_width(25),
         Field::make( 'text', 'recipe_likes', __( 'Likes', 'cooklook' ) )
             ->set_attribute('type', 'number')
             ->set_width(33),

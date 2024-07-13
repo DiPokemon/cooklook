@@ -145,7 +145,9 @@ function ajax_recipe_import_from_csv() {
 
                         // Используем Carbon Fields для сохранения мета-полей
                         carbon_set_post_meta( $post_id, 'recipe_portions', sanitize_text_field( $recipe_data['portions'] ) );
-                        carbon_set_post_meta( $post_id, 'recipe_time', sanitize_text_field( $recipe_data['recipe_time'] ) );
+                        //carbon_set_post_meta( $post_id, 'recipe_time', sanitize_text_field( $recipe_data['recipe_time'] ) );
+                        carbon_set_post_meta( $post_id, 'prep_time', sanitize_text_field( $recipe_data['prep_time'] ) );
+                        carbon_set_post_meta( $post_id, 'cook_time', sanitize_text_field( $recipe_data['cook_time'] ) );
                         carbon_set_post_meta( $post_id, 'recipe_likes', sanitize_text_field( $recipe_data['recipe_like'] ) );
                         carbon_set_post_meta( $post_id, 'recipe_dislikes', sanitize_text_field( $recipe_data['recipe_dislike'] ) );
                         carbon_set_post_meta( $post_id, 'recipe_calories', sanitize_text_field( $recipe_data['recipe_calories'] ) );
