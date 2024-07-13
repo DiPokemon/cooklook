@@ -144,16 +144,16 @@ function custom_process_attachment($attachment_id) {
     unlink($temp_output_path);
 
     // Проверяем, является ли пост типом recipe
-    if (get_post_type($post_id) == 'recipe') {
+    //if (get_post_type($post_id) == 'recipe') {
         // Путь для сохранения нового изображения в формате 2:3
-        $recipe_pin_output_path = dirname($image_path) . '/recipe_pin_' . basename($image_path);
+        //$recipe_pin_output_path = dirname($image_path) . '/recipe_pin_' . basename($image_path);
 
         // Обрабатываем изображение для recipe_pin_img
-        process_recipe_pin_image($image_path, $recipe_pin_output_path, $watermark_path, $post_title);
+       // process_recipe_pin_image($image_path, $recipe_pin_output_path, $watermark_path, $post_title);
 
         // Сохраняем путь обработанного изображения в кастомное поле Carbon Fields
-        carbon_set_post_meta($post_id, 'recipe_pin_img', wp_get_attachment_url($attachment_id));
-    }
+       // carbon_set_post_meta($post_id, 'recipe_pin_img', wp_get_attachment_url($attachment_id));
+    //}
 }
 add_action('add_attachment', 'custom_process_attachment');
 ?>
