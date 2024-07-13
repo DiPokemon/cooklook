@@ -16,17 +16,6 @@ function recipe_manager_menu() {
 }
 add_action( 'admin_menu', 'recipe_manager_menu' );
 
-// Подключение Carbon Fields
-add_action( 'after_setup_theme', 'crb_load' );
-
-function crb_missing_plugin_notice() {
-    ?>
-    <div class="notice notice-error">
-        <p><?php _e( 'Carbon Fields library is required for the Recipe Importer plugin to work. Please make sure it is installed.', 'recipe-importer' ); ?></p>
-    </div>
-    <?php
-}
-
 // Функция для отображения страницы управления рецептами
 function recipe_manager_page() {
     ?>
