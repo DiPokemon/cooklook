@@ -144,18 +144,7 @@ function ajax_recipe_import_from_csv() {
                         $post_id = get_the_ID();
 
                         // Используем Carbon Fields для сохранения мета-полей
-                        // carbon_set_post_meta( $post_id, 'recipe_portions', sanitize_text_field( $recipe_data['portions'] ) );
-                        //carbon_set_post_meta( $post_id, 'recipe_time', sanitize_text_field( $recipe_data['recipe_time'] ) );
-                        // carbon_set_post_meta( $post_id, 'prep_time', sanitize_text_field( $recipe_data['prep_time'] ) );
-                        // carbon_set_post_meta( $post_id, 'cook_time', sanitize_text_field( $recipe_data['cook_time'] ) );
-                        // carbon_set_post_meta( $post_id, 'recipe_likes', sanitize_text_field( $recipe_data['recipe_like'] ) );
-                        // carbon_set_post_meta( $post_id, 'recipe_dislikes', sanitize_text_field( $recipe_data['recipe_dislike'] ) );
-                        // carbon_set_post_meta( $post_id, 'recipe_calories', sanitize_text_field( $recipe_data['recipe_calories'] ) );
-                        // carbon_set_post_meta( $post_id, 'recipe_protein', sanitize_text_field( $recipe_data['recipe_protein'] ) );
-                        // carbon_set_post_meta( $post_id, 'recipe_fat', sanitize_text_field( $recipe_data['recipe_fat'] ) );
-                        // carbon_set_post_meta( $post_id, 'recipe_carbs', sanitize_text_field( $recipe_data['recipe_carbs'] ) );
-                        // carbon_set_post_meta( $post_id, 'recipe_region', sanitize_text_field( $recipe_data['recipe_region'] ) );
-                        // carbon_set_post_meta( $post_id, 'recipe_url', esc_url_raw( $recipe_data['recipe_url'] ) );
+                        //update_recipe_meta_fields($post_id, $recipe_data);
 
                         // Установить изображение записи
                         if ( ! empty( $recipe_data['image'] ) ) {
@@ -175,11 +164,11 @@ function ajax_recipe_import_from_csv() {
                             $ingredients = array();
                             for ( $i = 0; $i < count( $ingredients_names ); $i++ ) {
                                 $ingredients[] = array(
-                                    'ingridient_name'  => $ingredients_names[ $i ],
-                                    'ingridient_value' => $ingredients_quantities[ $i ],
+                                    'ingredient_name'  => $ingredients_names[ $i ],
+                                    'ingredient_value' => $ingredients_quantities[ $i ],
                                 );
                             }
-                            carbon_set_post_meta( $post_id, 'ingridients', $ingredients );
+                            carbon_set_post_meta( $post_id, 'ingredients', $ingredients );
                         }
 
                         // Обработка шагов
@@ -217,6 +206,30 @@ function ajax_recipe_import_from_csv() {
     }
 
     wp_send_json_success( array( 'message' => 'Импорт завершен.' ) );
+}
+
+// Функция для обновления мета-полей рецепта
+function update_recipe_meta_fields( $post_id, $recipe_data ) {
+    $meta_fields = array(
+        'recipe_portions' => 'portions',
+        'recipe_time' => 'recipe_time',
+        'prep_time' => 'prep_time',
+        'cook_time' => 'cook_time',
+        'recipe_likes' => 'recipe_like',
+        'recipe_dislikes' => 'recipe_dislike',
+        'recipe_calories' => 'recipe_calories',
+        'recipe_protein' => 'recipe_protein',
+        'recipe_fat' => 'recipe_fat',
+        'recipe_carbs' => 'recipe_carbs',
+        'recipe_region' => 'recipe_region',
+        'recipe_url' => 'recipe_url'
+    );
+
+    foreach ( $meta_fields as $meta_key => $csv_key ) {
+        if ( ! empty( $recipe_data[ $csv_key ] ) ) {
+            carbon_set_post_meta( $post_id, $meta_key, sanitize_text_field( $recipe_data[ $csv_key ] ) );
+        }
+    }
 }
 
 // Добавление AJAX обработчика
