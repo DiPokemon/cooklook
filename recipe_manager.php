@@ -40,15 +40,44 @@ function recipe_manager_page() {
             #recipe-manager-container table tr td.original_text{
                 padding-right: 50px;
             }
+
+            #recipe-info .recipe_header{
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+
+            }
+
+            #recipe-info .recipe_header img{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            #recipe_time{
+                display: flex;
+                gap: 10px;
+            }
         </style>
         <p><?php echo sprintf( __( 'Черновиков: %d | Опубликовано: %d | Процент опубликованных: %.2f%%', 'recipe-manager' ), $draft_count, $published_count, $published_percentage ); ?></p>
         
         <div id="recipe-info">
-            <h2 id="recipe-title"></h2>
+            <div class="recipe_header">
+                <img id="recipe-image" src="" alt="" style="max-width: 100px; display: none;">
+                <h2 id="recipe-title"></h2>
+            </div>
+            
+            
             <p id="recipe-ingredients"></p>
         </div>
 
         <form id="editable-steps-form">
+            <div id="recipe_time">
+
+            </div>
+
+
             <div id="recipe-manager-container" style="padding: 50px 0px;">
                 <table style="width: 100%;">
                     <thead>
@@ -89,6 +118,11 @@ function recipe_manager_page() {
                             $('#current-recipe-id').val(recipe.ID);
                             $('#recipe-title').html('<a href="' + recipe.edit_link + '" target="_blank">' + recipe.title + '</a>');
                             $('#recipe-ingredients').text('Ингредиенты: ' + recipe.ingredients.join(', '));
+                            if (recipe.image) {
+                                $('#recipe-image').attr('src', recipe.image).show();
+                            } else {
+                                $('#recipe-image').hide();
+                            }
                             $('#steps-table-body').empty();
 
                             recipe.original_steps.forEach(function(step, index) {
@@ -98,6 +132,16 @@ function recipe_manager_page() {
                                 row += '</tr>';
                                 $('#steps-table-body').append(row);
                             });
+
+                            if (recipe.time === 0) {
+                                $('#recipe_time').append(
+                                    
+                                    '<input placeholder="Время приготовления" type="number" name="recipe_time" min="0" >' +
+                                    '<input placeholder="Время подготовки" type="number" name="recipe_prep" min="0" >' +
+                                    '<a href="' + recipe.url + '" target="_blank">Оригинальный рецепт</a>'
+                                    
+                                );
+                            }
 
                             $('textarea').each(function() {
                                 adjustTextareaHeight(this);
@@ -164,7 +208,13 @@ function get_random_draft_recipe() {
         'post_type' => 'recipe',
         'post_status' => 'draft',
         'posts_per_page' => 1,
-        'orderby' => 'rand'
+        'orderby' => 'rand',
+        'meta_query' => array(
+            array(
+                'key' => '_thumbnail_id',
+                'compare' => 'EXISTS'
+            )
+        )
     );
     $query = new WP_Query($args);
 
@@ -175,13 +225,21 @@ function get_random_draft_recipe() {
         $steps = carbon_get_post_meta($post_id, 'recipe_step');
         $ingredients = wp_get_post_terms($post_id, 'recipe_tags', array('fields' => 'names'));
         $edit_link = get_edit_post_link($post_id);
+        $image = get_the_post_thumbnail_url($post_id, 'medium');
+        $recipe_time = get_post_meta($post_id, '_recipe_time', true);
+        $recipe_prep = get_post_meta($post_id, '_recipe_prep', true);
+        $recipe_url = get_post_meta($post_id, '_recipe_url', true);
         $data = array(
             'ID' => $post_id,
             'title' => get_the_title(),
             'original_steps' => wp_list_pluck($original_steps, 'original_recipe_step_text'),
             'steps' => wp_list_pluck($steps, 'recipe_step_text'),
             'ingredients' => $ingredients,
-            'edit_link' => $edit_link
+            'edit_link' => $edit_link,
+            'image' => $image,
+            'time' => $recipe_time ? $recipe_time : 0,
+            'prep' => $recipe_prep ? $recipe_prep : 0,
+            'url' => $recipe_url
         );
         wp_send_json_success($data);
     } else {
@@ -196,6 +254,8 @@ function save_recipe_steps() {
     if (isset($_POST['recipe_id']) && isset($_POST['steps_texts'])) {
         $post_id = intval($_POST['recipe_id']);
         $steps_texts = array_map('sanitize_textarea_field', $_POST['steps_texts']);
+        $recipe_time = isset($_POST['recipe_time']) ? intval($_POST['recipe_time']) : 0;
+        $recipe_prep = isset($_POST['recipe_prep']) ? intval($_POST['recipe_prep']) : 0;
 
         // Проверка на пустые шаги
         foreach ($steps_texts as $step) {
@@ -211,6 +271,10 @@ function save_recipe_steps() {
             $steps[] = array('recipe_step_text' => $text);
         }
         carbon_set_post_meta($post_id, 'recipe_step', $steps);
+
+        // Обновляем время приготовления и подготовки
+        update_post_meta($post_id, '_recipe_time', $recipe_time);
+        update_post_meta($post_id, '_recipe_prep', $recipe_prep);
 
         // Изменяем статус на "Опубликовано"
         wp_update_post(array(
