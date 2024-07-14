@@ -45,7 +45,6 @@ function recipe_manager_page() {
                 display: flex;
                 flex-direction: row;
                 gap: 10px;
-
             }
 
             #recipe-info .recipe_header img{
@@ -67,16 +66,11 @@ function recipe_manager_page() {
                 <img id="recipe-image" src="" alt="" style="max-width: 100px; display: none;">
                 <h2 id="recipe-title"></h2>
             </div>
-            
-            
             <p id="recipe-ingredients"></p>
         </div>
 
         <form id="editable-steps-form">
-            <div id="recipe_time">
-
-            </div>
-
+            <div id="recipe_time"></div>
 
             <div id="recipe-manager-container" style="padding: 50px 0px;">
                 <table style="width: 100%;">
@@ -124,6 +118,7 @@ function recipe_manager_page() {
                                 $('#recipe-image').hide();
                             }
                             $('#steps-table-body').empty();
+                            $('#recipe_time').empty();
 
                             recipe.original_steps.forEach(function(step, index) {
                                 var row = '<tr>';
@@ -135,11 +130,9 @@ function recipe_manager_page() {
 
                             if (recipe.time === 0) {
                                 $('#recipe_time').append(
-                                    
-                                    '<input placeholder="Время приготовления" type="number" name="recipe_time" min="0" >' +
-                                    '<input placeholder="Время подготовки" type="number" name="recipe_prep" min="0" >' +
+                                    '<input placeholder="Время приготовления" type="number" name="recipe_time" min="0">' +
+                                    '<input placeholder="Время подготовки" type="number" name="recipe_prep" min="0">' +
                                     '<a href="' + recipe.url + '" target="_blank">Оригинальный рецепт</a>'
-                                    
                                 );
                             }
 
@@ -150,6 +143,7 @@ function recipe_manager_page() {
                             $('#recipe-title').text('');
                             $('#recipe-ingredients').text('');
                             $('#steps-table-body').html('<tr><td colspan="2">' + response.data + '</td></tr>');
+                            $('#recipe_time').empty();
                         }
                     }
                 });
@@ -157,7 +151,7 @@ function recipe_manager_page() {
 
             $('#save-steps').on('click', function() {
                 var formData = $('#editable-steps-form').serializeArray();
-                var stepsEmpty = false;                
+                var stepsEmpty = false;
 
                 formData.forEach(function(item) {
                     if (item.name === 'steps_texts[]' && item.value.trim() === '') {
@@ -263,7 +257,7 @@ function save_recipe_steps() {
                 wp_send_json_error('Шаги рецепта не могут быть пустыми.');
                 wp_die();
             }
-        }        
+        }
 
         // Обновляем шаги рецепта
         $steps = array();
@@ -284,7 +278,7 @@ function save_recipe_steps() {
 
         wp_send_json_success('Шаги рецепта сохранены и рецепт опубликован.');
     } else {
-        wp_send_json_error('Недостаточно данных для сохранения.');               
+        wp_send_json_error('Недостаточно данных для сохранения.');
     }
     wp_die();
 }
