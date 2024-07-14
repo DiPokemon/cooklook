@@ -11,7 +11,7 @@ function create_favorite_recipes_table() {
 
     $sql = "CREATE TABLE IF NOT EXISTS $table_name (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        user_id VARCHAR(255), // Изменено с INT на VARCHAR
+        user_id VARCHAR(255),
         recipe_id INT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     ) $charset_collate;";
