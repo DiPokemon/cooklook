@@ -151,7 +151,7 @@
                     <?php if ($recipe_fat) : ?>
                         <div class="energy_value recipe_fat">
                             <h3 class="energy_value-name"><?= __('Жиры','cooklook')  ?></h3>
-                            <span class="energy_value-value"><?= $recipe_protein ?></span>
+                            <span class="energy_value-value"><?= $recipe_fat ?></span>
                             <span class="energy_value-mesure"><?= __('Грамм','cooklook') ?></span>
                         </div>
                     <?php endif ?>
@@ -159,7 +159,7 @@
                     <?php if ($recipe_carbs) : ?>
                         <div class="energy_value recipe_carbs">
                             <h3 class="energy_value-name"><?= __('Углеводы','cooklook')  ?></h3>
-                            <span class="energy_value-value"><?= $recipe_protein ?></span>
+                            <span class="energy_value-value"><?= $recipe_carbs ?></span>
                             <span class="energy_value-mesure"><?= __('Грамм','cooklook') ?></span>
                         </div>
                     <?php endif ?>
@@ -167,7 +167,7 @@
                     <?php if ($recipe_calories) : ?>
                         <div class="energy_value recipe_calories">
                             <h3 class="energy_value-name"><?= __('Калорийность','cooklook')  ?></h3>
-                            <span class="energy_value-value"><?= $recipe_protein ?></span>
+                            <span class="energy_value-value"><?= $recipe_calories ?></span>
                             <span class="energy_value-mesure"><?= __('Ккал','cooklook') ?></span>
                         </div>
                     <?php endif ?>
