@@ -175,7 +175,16 @@
                 </div>
             </div>
             <div class="adv_block">
-                РЕКЛАМНЫЙ БЛОК
+                <!-- Yandex.RTB R-A-8833792-5 -->
+                <div id="yandex_rtb_R-A-8833792-5"></div>
+                <script>
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-8833792-5",
+                    "renderTo": "yandex_rtb_R-A-8833792-5"
+                    })
+                })
+                </script>
             </div>
         </div>
     </section>
@@ -297,7 +306,16 @@
 
                     <div class="recipe_comments_wrapper_right">
                         <div class="adv_block">
-                            Реклама
+                            <!-- Yandex.RTB R-A-8833792-6 -->
+                            <div id="yandex_rtb_R-A-8833792-6"></div>
+                            <script>
+                            window.yaContextCb.push(() => {
+                                Ya.Context.AdvManager.render({
+                                    "blockId": "R-A-8833792-6",
+                                "renderTo": "yandex_rtb_R-A-8833792-6"
+                                })
+                            })
+                            </script>
                         </div>
                     </div>
                 </div>                
@@ -473,7 +491,16 @@
     <section>
         <div class="container">
             <div class="adv_block">
-                РЕКЛАМНЫЙ БЛОК
+                <!-- Yandex.RTB R-A-8833792-7 -->
+                <div id="yandex_rtb_R-A-8833792-7"></div>
+                <script>
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-8833792-7",
+                    "renderTo": "yandex_rtb_R-A-8833792-7"
+                    })
+                })
+                </script>
             </div>
         </div>
     </section>
