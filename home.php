@@ -27,7 +27,16 @@ get_header();
                             if($counter == 3) {
                         ?>
                                 <div class="category_item ads">
-                                    Реклама
+                                    <!-- Yandex.RTB R-A-8833792-4 -->
+                                    <div id="yandex_rtb_R-A-8833792-4"></div>
+                                    <script>
+                                    window.yaContextCb.push(() => {
+                                        Ya.Context.AdvManager.render({
+                                            "blockId": "R-A-8833792-4",
+                                        "renderTo": "yandex_rtb_R-A-8833792-4"
+                                        })
+                                    })
+                                    </script>
                                 </div>
                         <?php   
                             }
@@ -106,7 +115,17 @@ get_header();
         <section>
             <div class="container">
                 <div class="adv_block">
-                    РЕКЛАМНЫЙ БЛОК
+                    <!-- Yandex.RTB R-A-8833792-2 -->
+                    <div id="yandex_rtb_R-A-8833792-2"></div>
+                    <script>
+                    window.yaContextCb.push(() => {
+                        Ya.Context.AdvManager.render({
+                            "blockId": "R-A-8833792-2",
+                        "renderTo": "yandex_rtb_R-A-8833792-2",
+                        "type": "feed"
+                        })
+                    })
+                    </script>
                 </div>                
             </div>
         </section>
@@ -220,7 +239,17 @@ get_header();
         <section>
             <div class="container">
                 <div class="adv_block">
-                    РЕКЛАМНЫЙ БЛОК
+                    <!-- Yandex.RTB R-A-8833792-3 -->
+                    <div id="yandex_rtb_R-A-8833792-3"></div>
+                    <script>
+                    window.yaContextCb.push(() => {
+                        Ya.Context.AdvManager.render({
+                            "blockId": "R-A-8833792-3",
+                        "renderTo": "yandex_rtb_R-A-8833792-3",
+                        "type": "feed"
+                        })
+                    })
+                    </script>
                 </div>
                 
             </div>
