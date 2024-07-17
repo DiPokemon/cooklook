@@ -336,6 +336,10 @@
 
         &.adv_block{
             height: 100%;
+            display: flex;
+            background: unset;
+            align-items: center;
+
         }
     }
 
@@ -706,8 +710,6 @@
     }
 
     .recipe_instructions{
-        
-
         h2{
             padding-bottom: 48px;
             font-size: 36px;
@@ -1097,10 +1099,6 @@
                                 }
                             }
                         }
-
-
-
-
                     }
                 }
             }
@@ -1111,9 +1109,7 @@
                 gap: 24px;
                 flex: 4;
             }
-        }
-
-        
+        }        
     }
 
     .related_recipes{
@@ -1127,9 +1123,11 @@
                 .img_block{
                     position: relative;
                     border-radius: 30px;
+
                     img{
                         height: 246px;
                         object-fit: cover;
+                        border-radius: 30px;
                     }
         
                     .recipe_meta{

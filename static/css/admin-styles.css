@@ -85,13 +85,6 @@ body {
   overflow-x: hidden;
 }
 
-.adv_block {
-  border-radius: 30px;
-  border: 1px solid #F2F2F2;
-  background-color: #F8F8FA;
-  height: 350px;
-}
-
 section {
   padding-bottom: 120px;
 }
