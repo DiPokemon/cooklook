@@ -9,9 +9,7 @@
 include 'template-parts/variables.php';
 get_header();
 ?>
-
 	<main id="primary" class="site-main">
-
 		<section id="popular_categories">
 			<div class="container">
                 <div class="section_header">

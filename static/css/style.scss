@@ -357,6 +357,40 @@
     }
 }
 
+.pagination{
+    .nav-links{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 50px 0px;
+
+        .page-numbers{
+            font-size: 18px;
+            font-weight: 500;
+            color:$green;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; 
+            transition: 0.5s ease-in-out; 
+            
+            &:not(.dots):hover{
+                border: 1px solid $green; 
+                              
+            }
+
+            &.current{
+                border: 1px solid $green;
+                color: $white;
+                background-color: $green;
+            }
+        }
+    }
+    
+}
+
 /* CATEGORIES LIST GRID */
 .categories_grid{
     display: grid;
@@ -603,7 +637,7 @@
                 }
 
                 img{
-                    object-fit: contain;
+                    object-fit: cover;
                     border-radius: 30px;
                     height: 100%;
                 }
