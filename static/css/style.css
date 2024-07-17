@@ -438,6 +438,7 @@ button {
   height: 246px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 30px;
 }
 .recipes_grid .recipe_loop-item .img_block .recipe_meta {
   position: absolute;

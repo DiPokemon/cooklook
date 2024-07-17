@@ -1,6 +1,7 @@
 <?php
     include 'variables.php';
     $post_id = get_the_ID();
+    
     $recipe_likes = intval(carbon_get_post_meta($post_id, 'recipe_likes'));
     $recipe_dislikes = intval(carbon_get_post_meta($post_id, 'recipe_dislikes'));
     $rating_counter = $recipe_likes + $recipe_dislikes;

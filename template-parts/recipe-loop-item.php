@@ -4,7 +4,10 @@
 */
 $categories = get_query_var('categories');
 $post_id = get_query_var('post_id');
-$rating = get_query_var('rating');
+$recipe_likes = intval(carbon_get_post_meta($post_id, 'recipe_likes'));
+$recipe_dislikes = intval(carbon_get_post_meta($post_id, 'recipe_dislikes'));
+$rating_counter = $recipe_likes + $recipe_dislikes;
+$rating = calculate_rating($recipe_likes, $recipe_dislikes);
 $time = get_query_var('time');
 $portions = get_query_var('portions');
 $comments = get_query_var('comments');
