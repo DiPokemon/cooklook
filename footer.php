@@ -68,7 +68,7 @@ include 'template-parts/variables.php';
 					echo $temp_menu;
 				?>
 				
-				<?php
+				<!--<?php
 					$args = array(
 						'container'       => 'nav',          
 						'container_class' => 'footer_menu menu',           
@@ -82,7 +82,7 @@ include 'template-parts/variables.php';
 					);
 					$temp_menu = wp_nav_menu($args);
 					echo $temp_menu;
-				?>
+				?>-->
 				
 
 				<div class="footer_contacts">
