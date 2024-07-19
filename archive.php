@@ -33,9 +33,9 @@ get_header();
                                     } else {
                                         echo '<h1 class="page_title">' . $term->name . '</h1>';
                                     }
-                                } elseif (is_tag()) {
+                                } elseif (is_tax('recipe_tags')) {
                                     // Если это архив тега
-                                    echo '<h1 class="page_title">'.__('Рецепты с ','cooklook') . single_tag_title('', false).'</h1>';
+                                    echo '<h1 class="page_title">'.__('Рецепты с "','cooklook') . single_tag_title('', false).'"</h1>';
                                 } else {
                                     // Другие случаи архивов
                                     echo '<h1 class="page_title">'.__('Архив', 'cooklook').'</h1>';
