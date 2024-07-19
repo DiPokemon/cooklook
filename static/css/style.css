@@ -1690,6 +1690,11 @@ button {
   font-weight: 500;
 }
 
+/* MY FAVORITES */
+.page-template-my-favorites .empty_favorites {
+  margin-top: 120px;
+}
+
 /* FOOTER */
 .bottom_menu {
   position: fixed;

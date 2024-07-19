@@ -135,6 +135,27 @@ foreach ($favorites as $favorite) {
                     </div>
 				</div>
 			</section>
+        <?php else: ?>
+            <section class="empty_favorites">
+				<div class="container">
+                    <div id="response" class="recipes_grid">
+                        <div class="recipe_loop-item recipe_loop-item-nothing">
+                            <div class="recipe_loop-wrapper">
+                                <div class="img_block">
+                                    <img src="<?=  get_template_directory_uri() ?>/static/img/onion.png" >            
+                                </div>
+                                <div class="recipe_loop-content flex">
+                                    <span>
+                                        <?= __('Ничего не найдено', 'cooklook') ?>
+                                    </span>
+                                    <p><?= __('Вы не добавили ни одного рецепта в избранные. Вам ничего не понравилось? :(', 'cooklook')?> </p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 		<?php endif; ?>
 	</main><!-- #main -->
 <?php

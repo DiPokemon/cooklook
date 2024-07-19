@@ -122,7 +122,7 @@
                         <?php $thumbnail_url = get_the_post_thumbnail_url(); ?>
                         <img src="<?= esc_url($thumbnail_url) ?>" alt="<?= sprintf(__('Рецепт %s', 'cooklook'), get_the_title()); ?>">
                     <?php else : ?>
-                        Изображение не найдено.
+                        <img src="<?= get_template_directory_uri() . '/static/img/no_image.png'  ?>" alt="<?= sprintf(__('Рецепт %s', 'cooklook'), get_the_title()); ?>">
                     <?php endif ?>
 
                     <a href="#" data-recipe-id="<?= get_the_ID(); ?>" class="bookmark <?= $favorite_class ?>">                    

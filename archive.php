@@ -169,7 +169,20 @@ get_header();
                                     'field' => 'id',
                                     'terms' => $subcategory_id,
                                 );
+                            }    
+                            
+                            if (is_tax('recipe_tags')) {
+                                $tag = get_queried_object();
+                                $args['tax_query'][] = array(
+                                    'taxonomy' => 'recipe_tags',
+                                    'field' => 'slug',
+                                    'terms' => $tag->slug,
+                                );
                             }
+                            
+                            
+
+
                             $post_counter = 0;
                             $the_query = new WP_Query($args);
                             if ($the_query->have_posts()) {

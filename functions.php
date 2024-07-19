@@ -181,6 +181,16 @@ function cooklook_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cooklook_scripts' );
 
+function default_post_thumbnail($html, $post_id, $post_thumbnail_id, $size, $attr) {
+    if (empty($html)) {
+        $default_image = get_template_directory_uri() . '/static/img/no_image.png';
+        $html = '<img src="' . $default_image . '" alt="Default Image" />';
+    }
+    return $html;
+}
+add_filter('post_thumbnail_html', 'default_post_thumbnail', 10, 5);
+
+
 /**
  * Implement the Custom Header feature.
  */

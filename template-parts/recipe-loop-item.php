@@ -31,7 +31,11 @@ $total_time_convert = convert_time_to_string($total_time);
 <div class="recipe_loop-item">
     <div class="recipe_loop-wrapper">
         <div class="img_block">
-            <img loading="lazy" src="<?= get_the_post_thumbnail_url(null, 'large') ?>" alt="<?= __('Рецепт', 'cooklook') ?> <?= the_title() ?> на <?= $portions ?> порций">
+            <?php if (get_the_post_thumbnail_url(null, 'large')) : ?>
+                <img loading="lazy" src="<?= get_the_post_thumbnail_url(null, 'large') ?>" alt="<?= __('Рецепт', 'cooklook') ?> <?= the_title() ?> на <?= $portions ?> порций">
+            <?php else: ?>
+                <img loading="lazy" src="<?= get_template_directory_uri() . '/static/img/no_image.png' ?>" alt="<?= __('Рецепт', 'cooklook') ?> <?= the_title() ?> на <?= $portions ?> порций">
+            <?php endif; ?>
             <div class="recipe_meta">
                 <div class="top_meta">
                     <?php
