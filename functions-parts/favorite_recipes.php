@@ -1,5 +1,5 @@
 <?php
-if (!defined('ABSPATH')) {
+if (! defined ('ABSPATH')){
     exit;
 }
 
@@ -29,11 +29,7 @@ function add_to_favorites() {
     global $wpdb;
     $table_name = $wpdb->prefix . 'favorite_recipes';
     $recipe_id = $_POST['recipe_id'];
-    $user_id = $_POST['user_id'];
-
-    if (empty($recipe_id) || empty($user_id)) {
-        wp_send_json_error('Недостаточно данных.');
-    }
+    $user_id = get_current_user_id();
 
     // Проверяем, есть ли уже такая запись
     $exists = is_recipe_favorite($recipe_id, $user_id);
@@ -41,15 +37,16 @@ function add_to_favorites() {
     if ($exists) {
         // Удаление из избранного
         $wpdb->delete($table_name, ['user_id' => $user_id, 'recipe_id' => $recipe_id]);
-        wp_send_json_success('removed');
+        echo 'removed';
     } else {
         // Добавление в избранное
         $wpdb->insert($table_name, ['user_id' => $user_id, 'recipe_id' => $recipe_id]);
-        wp_send_json_success('added');
+        echo 'added';
     }
-
     wp_die();
 }
+
+
 
 function is_recipe_favorite($recipe_id, $user_id) {
     global $wpdb;
@@ -62,4 +59,3 @@ function is_recipe_favorite($recipe_id, $user_id) {
 
     return ($exists > 0);
 }
-?>
