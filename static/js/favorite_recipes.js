@@ -4,6 +4,11 @@ jQuery(document).ready(function($) {
         var $this = $(this);
         var recipe_id = $this.data('recipe-id');
 
+        if (!recipe_id) {
+            console.error('Recipe ID not found.');
+            return;
+        }
+
         // Проверка существования cookie
         var user_id = getCookie('user_id');
         if (!user_id) {
@@ -20,12 +25,18 @@ jQuery(document).ready(function($) {
                 user_id: user_id
             },
             success: function(response) {
-                if(response === 'added') {
-                    $this.addClass('added');
+                if (response.success) {
+                    if (response.data === 'added') {
+                        $this.addClass('added');
+                    } else {
+                        $this.removeClass('added');
+                    }
                 } else {
-                    $this.removeClass('added');
-                    
+                    console.error('Error:', response.data);
                 }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error:', status, error);
             }
         });
     });
