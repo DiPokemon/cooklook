@@ -248,18 +248,20 @@ function commentsHTML5($comment, $args, $depth) {
         <div class="comment_body">
             <?= $content ?>
         </div>
-        <div class="comment_footer">
-            <?php    
-                comment_reply_link(array_merge($args, [
-                    'add_below' => 'comment',
-                    'depth'     => $depth,
-                    'max_depth' => $args['max_depth'],
-                    'before'    => '<div class="reply">',
-                    'after'     => '</div>',
-                    'respond_id'=> 'respond'
-                ]));
-            ?>
-        </div>
+        <?php if (is_user_logged_in()) : ?>
+            <div class="comment_footer">
+                <?php    
+                    comment_reply_link(array_merge($args, [
+                        'add_below' => 'comment',
+                        'depth'     => $depth,
+                        'max_depth' => $args['max_depth'],
+                        'before'    => '<div class="reply">',
+                        'after'     => '</div>',
+                        'respond_id'=> 'respond'
+                    ]));
+                ?>
+            </div>
+        <?php endif ?>
     
     <?php
 }

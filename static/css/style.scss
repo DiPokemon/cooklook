@@ -965,12 +965,22 @@
                     flex-direction: column;
                     gap: 24px;
                     padding-bottom: 24px;
-                    border-bottom: 1px solid $gray;
+                    // border-bottom: 1px solid $gray;
     
+
+                    &>.comment:after{
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        border-bottom: 2px solid $gray; 
+                    }
+                 
                     .comment{
                         display: flex;
                         flex-direction: column;
                         gap: 16px;
+
+                        
     
                         &_header{
                             display: flex;
