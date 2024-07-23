@@ -1412,6 +1412,26 @@ button {
 .single-recipe .recipe_comments_wrapper_left .comment-respond #commentform .form-submit #submit:hover {
   background: #0AAF60;
 }
+.single-recipe .recipe_comments_wrapper_left #comment-success-message {
+  border: 1px solid #2DBE64;
+  padding: 10px;
+  color: #2DBE64;
+  -webkit-box-shadow: 0px 0px 20px 0px #F2F2F2;
+          box-shadow: 0px 0px 20px 0px #F2F2F2;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.single-recipe .recipe_comments_wrapper_left #comment-error-message {
+  border: 1px solid #EB5757;
+  padding: 10px;
+  color: #EB5757;
+  -webkit-box-shadow: 0px 0px 20px 0px #F2F2F2;
+          box-shadow: 0px 0px 20px 0px #F2F2F2;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .single-recipe .recipe_comments_wrapper_right {
   display: -webkit-box;
   display: -ms-flexbox;

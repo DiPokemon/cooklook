@@ -218,54 +218,103 @@ add_action('wp_enqueue_scripts', 'add_ingredients_to_js');
 
 
 // Function for comment template
-function commentsHTML5(){
-    $comment = get_comment();
+function commentsHTML5($comment, $args, $depth) {
     $id = $comment->comment_ID;
     $author = $comment->comment_author;
-    //$author_id = get_comment_author_id();
-    //$avatar = get_avatar($author_id, 32);
     $date = get_comment_date();
-    $localized_date = date_i18n( 'j F Y', strtotime( $date ) );
+    $localized_date = date_i18n('j F Y', strtotime($date));
     $content = $comment->comment_content;
-    
-
     ?>
-        <div id="comment-<?= $id ?>" class="comment">
-            <div class="comment_header">                
-                <?php 
-                    $args = [
-                        'class' => 'comment_avatar',
-                    ];
-                    echo get_avatar( $id, '60', '', $author, $args );
-                ?>
-                
-                <div class="comment_meta">
-                    <span class="comment_meta-author">
-                        <?= $author ?>
-                    </span>
-                    <span class="comment_meta-date">
-                        <?= $localized_date ?>
-                    </span>
-                </div>
-            </div>
+
+    <div id="comment-<?= $id ?>" class="comment">
+        <div class="comment_header">                
+            <?php 
+                $avatar_args = [
+                    'class' => 'comment_avatar',
+                ];
+                echo get_avatar($comment, 60, '', $author, $avatar_args);
+            ?>
             
-            <div class="comment_body">
-                <?= $content ?>
+            <div class="comment_meta">
+                <span class="comment_meta-author">
+                    <?= $author ?>
+                </span>
+                <span class="comment_meta-date">
+                    <?= $localized_date ?>
+                </span>
             </div>
-            <div class="comment_footer">
-                <?php    
-                    comment_reply_link( [
-                        'add_below' => true,
-                        'depth'     => 20,
-                        'max_depth' => 200,
-                        'before'    => '<div class="reply">',
-                        'after'     => '</div>'
-                    ] ); 
-                ?>
-            </div>
-        <!-- accordling to codex don't close the last tag -->
+        </div>
+        
+        <div class="comment_body">
+            <?= $content ?>
+        </div>
+        <div class="comment_footer">
+            <?php    
+                comment_reply_link(array_merge($args, [
+                    'add_below' => 'comment',
+                    'depth'     => $depth,
+                    'max_depth' => $args['max_depth'],
+                    'before'    => '<div class="reply">',
+                    'after'     => '</div>',
+                    'respond_id'=> 'respond'
+                ]));
+            ?>
+        </div>
+    
     <?php
 }
+
+
+function commentsHTML5_end(){
+    echo '</div>';
+}
+
+function handle_ajax_comment() {
+    $comment = wp_handle_comment_submission( wp_unslash( $_POST ) );
+    if ( is_wp_error( $comment ) ) {
+        $data = array(
+            'status' => 'error',
+            'message' => $comment->get_error_message()
+        );
+        echo json_encode($data);
+        wp_die();
+    }
+
+    $user = wp_get_current_user();
+    do_action( 'set_comment_cookies', $comment, $user );
+
+    // Generate comment HTML
+    $comment_html = '';
+    ob_start();
+    wp_list_comments(array(
+        'callback' => 'commentsHTML5',
+        'end-callback' => 'commentsHTML5_end',
+        'style' => 'div',
+        'short_ping' => true,
+        'avatar_size' => 60,
+        'reverse_top_level' => false,
+        'max_depth' => 3,
+        'per_page' => 1,
+        'page' => 1,
+        'echo' => true
+    ), array($comment));
+    $comment_html = ob_get_clean();
+
+    $data = array(
+        'status' => 'success',
+        'message' => __( 'Comment submitted successfully!' ),
+        'comment_ID' => $comment->comment_ID,
+        'comment_html' => $comment_html
+    );
+    echo json_encode($data);
+    wp_die();
+}
+add_action( 'wp_ajax_nopriv_ajaxcomments', 'handle_ajax_comment' );
+add_action( 'wp_ajax_ajaxcomments', 'handle_ajax_comment' );
+
+
+
+
 
 function add_comment_placeholder($field) {
     // Добавляем плейсхолдер к полю комментария

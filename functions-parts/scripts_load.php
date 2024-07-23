@@ -53,3 +53,16 @@ function enqueue_favorite_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_favorite_scripts');
 
+function enqueue_comment_reply_ajax() {
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+      wp_enqueue_script( 'comment-reply' );
+  }
+
+  wp_enqueue_script( 'ajax-comment', get_template_directory_uri() . '/static/js/ajax-comment.js', array( 'jquery' ), '1.0', true );
+
+  wp_localize_script( 'ajax-comment', 'ajax_comment_params', array(
+      'ajaxurl' => admin_url( 'admin-ajax.php' ),
+      'success_message' => __( 'Ваш комментарий был успешно добавлен!' ),
+  ) );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_comment_reply_ajax' );
