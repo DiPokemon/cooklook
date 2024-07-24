@@ -128,6 +128,7 @@ get_header();
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
                     $args = array(
+                        'post_status' => 'publish',
                         'post_type' => 'recipe',
                         'posts_per_page' => 11,
                         'orderby' => 'date',

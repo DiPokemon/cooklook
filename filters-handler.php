@@ -67,6 +67,7 @@ function filter_recipes() {
 
     if(is_page_template('my-favorites.php')){
         $args = array(
+            'post_status' => 'publish',
             'post_type' => 'recipe', // Тип записи "recipe"
             'post__in' => $recipe_ids, // Массив ID рецептов
             'orderby' => 'post__in' // Сортировка по порядку ID
@@ -74,6 +75,7 @@ function filter_recipes() {
     }
     else{
         $args = array(
+            'post_status' => 'publish',
             'post_type' => 'recipe',
             'posts_per_page' => 11,
             'paged' => $paged,
