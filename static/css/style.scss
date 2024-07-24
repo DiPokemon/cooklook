@@ -385,8 +385,12 @@
                 border: 1px solid $green;
                 color: $white;
                 background-color: $green;
-            }
+            }            
         }
+        .prev,
+            .next{
+                display: none;
+            }
     }
     
 }

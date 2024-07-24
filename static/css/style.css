@@ -670,6 +670,10 @@ button {
   color: #fff;
   background-color: #2DBE64;
 }
+.pagination .nav-links .prev,
+.pagination .nav-links .next {
+  display: none;
+}
 
 /* CATEGORIES LIST GRID */
 .categories_grid {

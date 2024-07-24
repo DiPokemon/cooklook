@@ -31,8 +31,12 @@ function get_subcategories_callback() {
 add_action('wp_ajax_filter_recipes', 'filter_recipes');
 add_action('wp_ajax_nopriv_filter_recipes', 'filter_recipes');
 
-function filter_recipes() {
+add_action('wp_ajax_filter_recipes', 'filter_recipes');
+add_action('wp_ajax_nopriv_filter_recipes', 'filter_recipes');
 
+function filter_recipes() {
+    $paged = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
+    
     if(is_page_template('my-favorites.php')){
         $current_user = wp_get_current_user();
         global $wpdb;
@@ -61,7 +65,6 @@ function filter_recipes() {
     $include_ingredients = isset($_GET['include_ingredients']) ? $_GET['include_ingredients'] : array();
     $exclude_ingredients = isset($_GET['exclude_ingredients']) ? $_GET['exclude_ingredients'] : array();
 
-
     if(is_page_template('my-favorites.php')){
         $args = array(
             'post_type' => 'recipe', // Тип записи "recipe"
@@ -72,19 +75,18 @@ function filter_recipes() {
     else{
         $args = array(
             'post_type' => 'recipe',
-            'posts_per_page' => -1,
+            'posts_per_page' => 11,
+            'paged' => $paged,
             'orderby' => 'date',
             'order' => 'DESC',
         );
-    }    
+    }
 
     if ($category_id) {
-        $args['tax_query'] = array(
-            array(
-                'taxonomy' => 'recipe_category',
-                'field' => 'id',
-                'terms' => $category_id,
-            ),
+        $args['tax_query'][] = array(
+            'taxonomy' => 'recipe_category',
+            'field' => 'id',
+            'terms' => $category_id,
         );
     }
 
@@ -97,12 +99,10 @@ function filter_recipes() {
     }
 
     if ($region) {
-        $args['meta_query'] = array(
-            array(
-                'key' => '_recipe_region', // Замените на ваше кастомное поле
-                'value' => $region,
-                'compare' => '=',
-            ),
+        $args['meta_query'][] = array(
+            'key' => '_recipe_region', // Замените на ваше кастомное поле
+            'value' => $region,
+            'compare' => '=',
         );
     }
 
@@ -177,6 +177,8 @@ function filter_recipes() {
     wp_send_json_success(array('html' => $html));
     wp_die();
 }
+
+                
 
 
 ?>

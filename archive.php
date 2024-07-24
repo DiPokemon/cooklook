@@ -221,10 +221,12 @@ get_header();
                 <?php
                 the_posts_pagination(array(
                     'mid_size' => 2,
-                    'prev_text' => '',
-                    'next_text' => '',
+                    'prev_text' => __('', 'cooklook'),
+                    'next_text' => __('', 'cooklook'),
                     'screen_reader_text' => __('Пагинация', 'cooklook'),
+                    'format' => '?paged=%#%',
                 ));
+                
                 ?>
             </div>
         </section>
