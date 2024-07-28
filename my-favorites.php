@@ -22,10 +22,10 @@ if (is_user_logged_in()) {
             $user_id
         )
     );
-    $recipe_ids = array(41370);
-    // foreach ($favorites as $favorite) {
-    //     $recipe_ids[] = $favorite->recipe_id;
-    // }
+    $recipe_ids = array();
+    foreach ($favorites as $favorite) {
+        $recipe_ids[] = $favorite->recipe_id;
+    }
 }
 ?>
 
@@ -63,31 +63,10 @@ if (is_user_logged_in()) {
                         $args = array(
                             'post_type' => 'recipe', // Тип записи "recipe"
                             'post__in' => $recipe_ids, // Массив ID рецептов
-                            'orderby' => 'post__in' // Сортировка по порядку ID
-                        );                    
-
-                        // Добавляем фильтрацию по категории и подкатегории, если они выбраны в форме
-                        //$category_id = isset($_GET['recipe_category']) ? intval($_GET['recipe_category']) : 0;
-                        //$subcategory_id = isset($_GET['recipe_subcategory']) ? intval($_GET['recipe_subcategory']) : 0;
-
-                        if ($category_id) {
-                            $args['tax_query'] = array(
-                                array(
-                                    'taxonomy' => 'recipe_category',
-                                    'field' => 'id',
-                                    'terms' => $category_id,
-                                ),
-                            );
-                        }
-
-                        if ($subcategory_id) {
-                            $args['tax_query'][] = array(
-                                'taxonomy' => 'recipe_category',
-                                'field' => 'id',
-                                'terms' => $subcategory_id,
-                            );
-                        }
-
+                            'orderby' => 'post__in', // Сортировка по порядку ID
+                            'posts_per_page' => 2
+                        );
+                        
                         $post_counter = 0;
                         $the_query = new WP_Query($args);
                         if ($the_query->have_posts()) {
