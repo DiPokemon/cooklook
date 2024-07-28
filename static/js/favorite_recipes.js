@@ -16,7 +16,6 @@ jQuery(document).ready(function($) {
                     $this.addClass('added');
                 } else {
                     $this.removeClass('added');
-                    
                 }
             }
         });

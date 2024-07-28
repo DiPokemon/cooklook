@@ -1,5 +1,5 @@
 <?php
-if (! defined ('ABSPATH')){
+if (!defined('ABSPATH')) {
     exit;
 }
 
@@ -11,7 +11,7 @@ function create_favorite_recipes_table() {
 
     $sql = "CREATE TABLE IF NOT EXISTS $table_name (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        user_id VARCHAR(255),
+        user_id INT,
         recipe_id INT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     ) $charset_collate;";
@@ -23,12 +23,15 @@ add_action('after_switch_theme', 'create_favorite_recipes_table');
 
 // AJAX обработчик для добавления страницы в избранное
 add_action('wp_ajax_add_to_favorites', 'add_to_favorites');
-add_action('wp_ajax_nopriv_add_to_favorites', 'add_to_favorites'); // Для анонимных пользователей
 
 function add_to_favorites() {
+    if (!is_user_logged_in()) {
+        wp_die('Not authorized');
+    }
+
     global $wpdb;
     $table_name = $wpdb->prefix . 'favorite_recipes';
-    $recipe_id = $_POST['recipe_id'];
+    $recipe_id = intval($_POST['recipe_id']);
     $user_id = get_current_user_id();
 
     // Проверяем, есть ли уже такая запись
@@ -43,19 +46,19 @@ function add_to_favorites() {
         $wpdb->insert($table_name, ['user_id' => $user_id, 'recipe_id' => $recipe_id]);
         echo 'added';
     }
+
     wp_die();
 }
-
-
 
 function is_recipe_favorite($recipe_id, $user_id) {
     global $wpdb;
     $table_name = $wpdb->prefix . 'favorite_recipes';
     $exists = $wpdb->get_var($wpdb->prepare(
-        "SELECT COUNT(*) FROM $table_name WHERE recipe_id = %d AND user_id = %s",
+        "SELECT COUNT(*) FROM $table_name WHERE recipe_id = %d AND user_id = %d",
         $recipe_id,
         $user_id
     ));
 
     return ($exists > 0);
 }
+?>
