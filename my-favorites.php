@@ -67,8 +67,8 @@ if (is_user_logged_in()) {
                         );                    
 
                         // Добавляем фильтрацию по категории и подкатегории, если они выбраны в форме
-                        $category_id = isset($_GET['recipe_category']) ? intval($_GET['recipe_category']) : 0;
-                        $subcategory_id = isset($_GET['recipe_subcategory']) ? intval($_GET['recipe_subcategory']) : 0;
+                        //$category_id = isset($_GET['recipe_category']) ? intval($_GET['recipe_category']) : 0;
+                        //$subcategory_id = isset($_GET['recipe_subcategory']) ? intval($_GET['recipe_subcategory']) : 0;
 
                         if ($category_id) {
                             $args['tax_query'] = array(
