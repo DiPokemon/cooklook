@@ -59,13 +59,15 @@ if (is_user_logged_in()) {
         <section>
             <div class="container">
                 <div id="response" class="recipes_grid">
+
                     <?php
+                    
                         $arguments = array(
                             'post_type' => 'recipe', // Тип записи "recipe"
                             'post__in' => $recipe_ids, // Массив ID рецептов
                             'orderby' => 'post__in', // Сортировка по порядку ID
-                            'posts_per_page' => 2,
-                            'ignore_sticky_posts' => true
+                            'posts_per_page' => count($recipe_ids), // Количество записей равное количеству ID
+                            'ignore_sticky_posts' => true // Игнорировать закрепленные записи
                         );
                         
                         $post_counter = 0;
