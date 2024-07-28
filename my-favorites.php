@@ -22,10 +22,10 @@ if (is_user_logged_in()) {
             $user_id
         )
     );
-    $recipe_ids = array();
-    foreach ($favorites as $favorite) {
-        $recipe_ids[] = $favorite->recipe_id;
-    }
+    $recipe_ids = array(41370);
+    // foreach ($favorites as $favorite) {
+    //     $recipe_ids[] = $favorite->recipe_id;
+    // }
 }
 ?>
 
