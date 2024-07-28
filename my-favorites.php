@@ -31,7 +31,7 @@ if (is_user_logged_in()) {
 
 <pre>
     <?php
-        echo 'current_user: '.$current_user.'</br>';
+        //echo 'current_user: '.$current_user.'</br>';
         echo 'table: '.$table_name.'</br>';
         echo 'user_id: '.$user_id.'</br>';
         echo 'favorites array: ';
