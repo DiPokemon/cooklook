@@ -29,6 +29,18 @@ if (is_user_logged_in()) {
 }
 ?>
 
+<pre>
+    <?php
+        echo 'current_user: '.$current_user.'</br>';
+        echo 'table: '.$table_name.'</br>';
+        echo 'user_id: '.$user_id.'</br>';
+        echo 'favorites array: ';
+        print_r($favorites);
+        echo '</br>';
+        echo 'recipe_ids: '.$recipe_ids.'</br>';
+    ?>
+</pre>
+
 <main id="primary" class="site-main">
 
     <?php if (is_user_logged_in() && !empty($recipe_ids)) : ?>            
