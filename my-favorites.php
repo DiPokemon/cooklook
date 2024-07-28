@@ -37,7 +37,9 @@ if (is_user_logged_in()) {
         echo 'favorites array: ';
         print_r($favorites);
         echo '</br>';
-        echo 'recipe_ids: '.$recipe_ids.'</br>';
+        echo 'recipe_ids: ';
+        print_r($recipe_ids);
+        echo '</br>';
     ?>
 </pre>
 
