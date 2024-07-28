@@ -64,7 +64,8 @@ if (is_user_logged_in()) {
                             'post_type' => 'recipe', // Тип записи "recipe"
                             'post__in' => $recipe_ids, // Массив ID рецептов
                             'orderby' => 'post__in', // Сортировка по порядку ID
-                            'posts_per_page' => 2
+                            'posts_per_page' => 2,
+                            'ignore_sticky_posts' => true
                         );
                         
                         $post_counter = 0;
