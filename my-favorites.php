@@ -60,7 +60,7 @@ if (is_user_logged_in()) {
             <div class="container">
                 <div id="response" class="recipes_grid">
                     <?php
-                        $args = array(
+                        $arguments = array(
                             'post_type' => 'recipe', // Тип записи "recipe"
                             'post__in' => $recipe_ids, // Массив ID рецептов
                             'orderby' => 'post__in', // Сортировка по порядку ID
@@ -68,10 +68,10 @@ if (is_user_logged_in()) {
                         );
                         
                         $post_counter = 0;
-                        $the_query = new WP_Query($args);
-                        if ($the_query->have_posts()) {
-                            while ($the_query->have_posts()) {
-                                $the_query->the_post();
+                        $favorites_query = new WP_Query($arguments);
+                        if ($favorites_query->have_posts()) {
+                            while ($favorites_query->have_posts()) {
+                                $favorites_query->the_post();
                                 $post_counter++;
                                 $categories = get_the_terms(get_the_ID(), 'recipe_category');
                                 $post_id = get_the_ID();
