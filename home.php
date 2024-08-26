@@ -24,14 +24,13 @@ get_header();
                             get_template_part('template-parts/category-loop-item', null, array('current_cat_id' => $cat_id));
                             if($counter == 3) {
                         ?>
-                                <div class="category_item ads">
-                                    <!-- Yandex.RTB R-A-8833792-4 -->
-                                    <div id="yandex_rtb_R-A-8833792-4"></div>
+                                <div class="category_item qwert">                                    
+                                    <div id="bvbfuo_R-A-8833792-4"></div>
                                     <script>
-                                    window.yaContextCb.push(() => {
+                                        window.yaContextCb.push(() => {
                                         Ya.Context.AdvManager.render({
                                             "blockId": "R-A-8833792-4",
-                                        "renderTo": "yandex_rtb_R-A-8833792-4"
+                                            "renderTo": "bvbfuo_R-A-8833792-4"
                                         })
                                     })
                                     </script>
@@ -112,15 +111,13 @@ get_header();
 
         <section>
             <div class="container">
-                <div class="adv_block">
-                    <!-- Yandex.RTB R-A-8833792-2 -->
-                    <div id="yandex_rtb_R-A-8833792-2"></div>
+                <div class="qwert_block">
+                    <div id="qazwer_R-A-8833792-8"></div>
                     <script>
                     window.yaContextCb.push(() => {
                         Ya.Context.AdvManager.render({
-                            "blockId": "R-A-8833792-2",
-                        "renderTo": "yandex_rtb_R-A-8833792-2",
-                        "type": "feed"
+                            "blockId": "R-A-8833792-8",
+                            "renderTo": "qazwer_R-A-8833792-8"
                         })
                     })
                     </script>
@@ -236,15 +233,13 @@ get_header();
 
         <section>
             <div class="container">
-                <div class="adv_block">
-                    <!-- Yandex.RTB R-A-8833792-3 -->
-                    <div id="yandex_rtb_R-A-8833792-3"></div>
+                <div class="qwert_block">                    
+                    <div id="gfgret_R-A-8833792-9"></div>
                     <script>
-                    window.yaContextCb.push(() => {
+                        window.yaContextCb.push(() => {
                         Ya.Context.AdvManager.render({
-                            "blockId": "R-A-8833792-3",
-                        "renderTo": "yandex_rtb_R-A-8833792-3",
-                        "type": "feed"
+                            "blockId": "R-A-8833792-9",
+                            "renderTo": "gfgret_R-A-8833792-9"
                         })
                     })
                     </script>

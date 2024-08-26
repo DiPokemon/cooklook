@@ -408,7 +408,7 @@ button {
 #popular_categories .popular_categories-grid .category_item:nth-child(4) {
   grid-row: span 2;
 }
-#popular_categories .popular_categories-grid .category_item.ads {
+#popular_categories .popular_categories-grid .category_item.qwert {
   background-color: #F8F8FA;
 }
 
@@ -611,7 +611,7 @@ button {
   text-align: center;
   font-weight: 500;
 }
-.recipes_grid .recipe_loop-item.adv_block {
+.recipes_grid .recipe_loop-item.qwert_block {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1026,7 +1026,7 @@ button {
   letter-spacing: 0.96px;
   color: #2DBE64;
 }
-.single-recipe .recipe_energy .adv_block {
+.single-recipe .recipe_energy .qwert_block {
   height: unset;
   display: -webkit-box;
   display: -ms-flexbox;

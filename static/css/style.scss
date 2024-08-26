@@ -128,7 +128,7 @@
             grid-row: span 2;
         }
 
-        .category_item.ads{
+        .category_item.qwert{
             background-color: $gray;
         }
     }
@@ -334,7 +334,7 @@
             }
         }
 
-        &.adv_block{
+        &.qwert_block{
             height: 100%;
             display: flex;
             background: unset;
@@ -739,7 +739,7 @@
             }
         }
 
-        .adv_block{        
+        .qwert_block{        
             height: unset;
             display: flex;
             flex: 5;
@@ -1758,7 +1758,7 @@ footer{
 /* FILTER */
 .filters_wrapper_mob{
     display: none;
-    
+
 }
 
 .filters{
