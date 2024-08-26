@@ -97,6 +97,7 @@ jQuery(document).ready(function () {
 
 document.addEventListener('DOMContentLoaded', function() {
     var showMoreButtons = document.querySelectorAll('.show_more');
+    var imgBlocks = document.querySelectorAll('.img_block');
 
     showMoreButtons.forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -118,6 +119,25 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {          
           header.classList.remove('fixed');
         }
-    }    
+    }  
+
+
+    imgBlocks.forEach(function(block) {
+        block.addEventListener('click', function() {
+            window.location.href = block.getAttribute('data-permalink');
+        });
+
+        // Добавляем обработчик клика для кнопки добавления в избранное
+        // var bookmarkButton = block.querySelector('.bookmark');
+        // if (bookmarkButton) {
+        //     bookmarkButton.addEventListener('click', function(event) {
+        //         event.stopPropagation(); // Останавливаем всплытие события, чтобы не происходил переход по ссылке
+        //         // Логика добавления в избранное здесь
+        //     });
+        // }
+    });
+
+    
+
 });
 
