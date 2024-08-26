@@ -1,63 +1,9 @@
 <?php
-
-add_action( 'wp_ajax_get_subcategories', 'get_subcategories_callback');
-add_action( 'wp_ajax_nopriv_get_subcategories', 'get_subcategories_callback');
-
-function get_subcategories_callback() {
-    $selected_category_id = isset($_GET['category_id']) ? intval($_GET['category_id']) : 0;
-
-    if ($selected_category_id) {
-        // Получите подкатегории на основе выбранной категории
-        $subcategories = get_terms(array(
-            'taxonomy' => 'recipe_category',
-            'hide_empty' => false,
-            'parent' => $selected_category_id,
-        ));
-
-        $options = '<option value="all">'.  __('Любое блюдо', 'cooklook') . '</option>';        
-        foreach ($subcategories as $subcategory) {
-            $options .= '<option value="' . esc_attr($subcategory->term_id) . '">' . esc_html($subcategory->name) . '</option>';
-            
-        }
-    } else {
-        $options = '<option value="">'.  __('Любое блюдо', 'cooklook') . '</option>';
-    }
-
-    // Верните данные в формате JSON
-    wp_send_json_success(array('options' => $options));
-    wp_die();
-}
-
-add_action('wp_ajax_filter_recipes', 'filter_recipes');
-add_action('wp_ajax_nopriv_filter_recipes', 'filter_recipes');
-
 add_action('wp_ajax_filter_recipes', 'filter_recipes');
 add_action('wp_ajax_nopriv_filter_recipes', 'filter_recipes');
 
 function filter_recipes() {
     $paged = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
-    
-    if(is_page_template('my-favorites.php')){
-        $current_user = wp_get_current_user();
-        global $wpdb;
-        $table_name = $wpdb->prefix . 'favorite_recipes';
-        if (is_user_logged_in()) {
-            $user_id = get_current_user_id();
-        } else {
-            $user_id = $_COOKIE['user_id'] ?? '0';
-        }
-
-        $favorites = $wpdb->get_results(
-            $wpdb->prepare(
-                "SELECT recipe_id FROM $table_name WHERE user_id = %d",
-                $user_id
-            )
-        );
-        $recipe_ids = array();
-        foreach ($favorites as $favorite) {
-            $recipe_ids[] = $favorite->recipe_id;
-        }
-    }
 
     $category_id = isset($_GET['category_id']) ? intval($_GET['category_id']) : 0;
     $subcategory_id = isset($_GET['subcategory_id']) ? intval($_GET['subcategory_id']) : 0;
@@ -65,34 +11,33 @@ function filter_recipes() {
     $include_ingredients = isset($_GET['include_ingredients']) ? $_GET['include_ingredients'] : array();
     $exclude_ingredients = isset($_GET['exclude_ingredients']) ? $_GET['exclude_ingredients'] : array();
 
-    if(is_page_template('my-favorites.php')){
-        $args = array(
-            'post_status' => 'publish',
-            'post_type' => 'recipe', // Тип записи "recipe"
-            'post__in' => $recipe_ids, // Массив ID рецептов
-            'orderby' => 'post__in' // Сортировка по порядку ID
-        );
-    }
-    else{
-        $args = array(
-            'post_status' => 'publish',
-            'post_type' => 'recipe',
-            'posts_per_page' => 11,
-            'paged' => $paged,
-            'orderby' => 'date',
-            'order' => 'DESC',
-        );
-    }
+    $current_category = isset($_GET['current_category']) ? intval($_GET['current_category']) : 0;
+    $current_tag = isset($_GET['current_tag']) ? sanitize_text_field($_GET['current_tag']) : '';
 
-    if ($category_id) {
+    $args = array(
+        'post_status' => 'publish',
+        'post_type' => 'recipe',
+        'posts_per_page' => 11,
+        'paged' => $paged,
+        'orderby' => 'date',
+        'order' => 'DESC',
+    );
+
+    if ($category_id && $category_id !== 'all') {
         $args['tax_query'][] = array(
             'taxonomy' => 'recipe_category',
             'field' => 'id',
             'terms' => $category_id,
         );
+    } elseif ($current_category) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'recipe_category',
+            'field' => 'id',
+            'terms' => $current_category,
+        );
     }
 
-    if ($subcategory_id) {
+    if ($subcategory_id && $subcategory_id !== 'all') {
         $args['tax_query'][] = array(
             'taxonomy' => 'recipe_category',
             'field' => 'id',
@@ -102,13 +47,12 @@ function filter_recipes() {
 
     if ($region) {
         $args['meta_query'][] = array(
-            'key' => '_recipe_region', // Замените на ваше кастомное поле
+            'key' => '_recipe_region',
             'value' => $region,
             'compare' => '=',
         );
     }
 
-    // Фильтрация по выбранным ингредиентам из таксономии "recipe_tags"
     if (!empty($include_ingredients)) {
         $args['tax_query'][] = array(
             'taxonomy' => 'recipe_tags',
@@ -126,8 +70,16 @@ function filter_recipes() {
         );
     }
 
+    if ($current_tag) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'recipe_tags',
+            'field' => 'slug',
+            'terms' => $current_tag,
+        );
+    }
+
     $recipe_query = new WP_Query($args);
-    
+
     ob_start();
 
     if ($recipe_query->have_posts()) {
@@ -176,11 +128,16 @@ function filter_recipes() {
 
     $html = ob_get_clean();
 
-    wp_send_json_success(array('html' => $html));
+    ob_start();
+    the_posts_pagination(array(
+        'mid_size' => 2,
+        'prev_text' => __('', 'cooklook'),
+        'next_text' => __('', 'cooklook'),
+        'screen_reader_text' => __('Пагинация', 'cooklook'),
+        'format' => '?paged=%#%',
+    ));
+    $pagination = ob_get_clean();
+
+    wp_send_json_success(array('html' => $html, 'pagination' => $pagination));
     wp_die();
 }
-
-                
-
-
-?>

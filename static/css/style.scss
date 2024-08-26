@@ -1758,9 +1758,12 @@ footer{
 /* FILTER */
 .filters_wrapper_mob{
     display: none;
+    
 }
 
 .filters{
+
+    display: none;
 
     #recipe-filter{
         display: flex;

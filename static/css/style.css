@@ -2048,6 +2048,9 @@ footer .container .footer_bottom {
   display: none;
 }
 
+.filters {
+  display: none;
+}
 .filters #recipe-filter {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3190,9 +3193,6 @@ footer .container .footer_bottom {
     display: none;
   }
   .filters_wrapper_mob {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     gap: 20px;
   }
   .filters_wrapper_mob #mobile_filters-open {

@@ -9,6 +9,8 @@
  */
 
 get_header();
+
+
 ?>
 <main id="primary" class="site-main">
     <?php if (have_posts()) : ?>
@@ -166,6 +168,20 @@ get_header();
                         );
                     }
 
+                    if (is_tax('recipe_category')) {
+                        $category = get_queried_object();
+                        $args = array(
+                            'post_type' => 'recipe',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'recipe_category',
+                                    'field' => 'slug',
+                                    'terms' => $category->slug,
+                                ),
+                            ),
+                        );
+                    }
+
                     $post_counter = 0;
                     $the_query = new WP_Query($args);
                     if ($the_query->have_posts()) {
@@ -219,16 +235,17 @@ get_header();
                     ?>
                 </div>
 
-                <?php
-                the_posts_pagination(array(
-                    'mid_size' => 2,
-                    'prev_text' => __('', 'cooklook'),
-                    'next_text' => __('', 'cooklook'),
-                    'screen_reader_text' => __('Пагинация', 'cooklook'),
-                    'format' => '?paged=%#%',
-                ));
-                
-                ?>
+                <div class="pagination">
+                    <?php
+                    the_posts_pagination(array(
+                        'mid_size' => 2,
+                        'prev_text' => __('Previous', 'cooklook'),
+                        'next_text' => __('Next', 'cooklook'),
+                        'screen_reader_text' => __('Пагинация', 'cooklook'),
+                        'format' => '?paged=%#%',
+                    ));
+                    ?>
+                </div>
             </div>
         </section>
     <?php endif; ?>

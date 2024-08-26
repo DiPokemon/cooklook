@@ -15,7 +15,7 @@ $(document).ready(function() {
         var selectedCategoryId = $(this).val();
         var subcategorySelect = $('#recipe_subcategory');
 
-        if (selectedCategoryId === '') {
+        if (selectedCategoryId === '' || selectedCategoryId === 'all') {
             // Если категория не выбрана, делаем подкатегорию неактивной и очищаем ее
             subcategorySelect.prop('disabled', true).empty().append('<option value="">Выберите подкатегорию</option>');
         } else {
@@ -82,11 +82,31 @@ $(document).ready(function() {
         var selectedExcludeIngredients = $('#exclude_ingredients').val();
 
         var urlParams = new URLSearchParams(window.location.search);
-        urlParams.set('category_id', selectedCategoryId);
-        urlParams.set('subcategory_id', selectedSubcategoryId);
-        urlParams.set('region', selectedRegion);
-        urlParams.set('include_ingredients', selectedIncludeIngredients);
-        urlParams.set('exclude_ingredients', selectedExcludeIngredients);
+        if (selectedCategoryId && selectedCategoryId !== 'all') {
+            urlParams.set('category_id', selectedCategoryId);
+        } else {
+            urlParams.delete('category_id');
+        }
+        if (selectedSubcategoryId && selectedSubcategoryId !== 'all') {
+            urlParams.set('subcategory_id', selectedSubcategoryId);
+        } else {
+            urlParams.delete('subcategory_id');
+        }
+        if (selectedRegion) {
+            urlParams.set('region', selectedRegion);
+        } else {
+            urlParams.delete('region');
+        }
+        if (selectedIncludeIngredients) {
+            urlParams.set('include_ingredients', selectedIncludeIngredients);
+        } else {
+            urlParams.delete('include_ingredients');
+        }
+        if (selectedExcludeIngredients) {
+            urlParams.set('exclude_ingredients', selectedExcludeIngredients);
+        } else {
+            urlParams.delete('exclude_ingredients');
+        }
         urlParams.set('paged', page);
 
         window.history.pushState(null, null, '?' + urlParams.toString());
@@ -98,24 +118,33 @@ $(document).ready(function() {
         var selectedRegion = $('#recipe_region').val();
         var selectedIncludeIngredients = $('#include_ingredients').val();
         var selectedExcludeIngredients = $('#exclude_ingredients').val();
-
+    
+        // Проверка на наличие фильтров
+        var hasFilters = selectedCategoryId !== 'all' || selectedSubcategoryId !== 'all' || selectedRegion || selectedIncludeIngredients || selectedExcludeIngredients;
+    
+        if (!hasFilters && (!filter_obj.current_category || !filter_obj.current_tag)) {
+            return; // Если фильтры не выбраны и нет текущей категории или тега, не выполняем запрос
+        }
+    
         $.ajax({
             url: filter_obj.ajax_url,
             type: 'GET',
             dataType: 'json',
             data: {
                 action: 'filter_recipes',
-                category_id: selectedCategoryId,
-                subcategory_id: selectedSubcategoryId,
+                category_id: selectedCategoryId !== 'all' ? selectedCategoryId : '',
+                subcategory_id: selectedSubcategoryId !== 'all' ? selectedSubcategoryId : '',
                 region: selectedRegion,
                 include_ingredients: selectedIncludeIngredients,
                 exclude_ingredients: selectedExcludeIngredients,
-                paged: page
+                paged: page,
+                current_category: filter_obj.current_category, // Передаем текущую категорию
+                current_tag: filter_obj.current_tag // Передаем текущий тег
             },
-            
             success: function (data) {
                 if (data.success) {
-                    $('#response').html(data.data.html);
+                    $('#response').html(data.data.html).addClass('filtred');
+                    $('.pagination').html(data.data.pagination); // Обновляем блок пагинации
                 }
             }
         });
@@ -127,12 +156,16 @@ $(document).ready(function() {
     function initializeFiltersFromURL() {
         var urlParams = new URLSearchParams(window.location.search);
 
-        $('#recipe_category').val(urlParams.get('category_id')).trigger('change');
-        $('#recipe_subcategory').val(urlParams.get('subcategory_id')).trigger('change');
-        $('#recipe_region').val(urlParams.get('region')).trigger('change');
-        $('#include_ingredients').val(urlParams.get('include_ingredients')).trigger('change');
-        $('#exclude_ingredients').val(urlParams.get('exclude_ingredients')).trigger('change');
+        var hasFilterParams = urlParams.has('category_id') || urlParams.has('subcategory_id') || urlParams.has('region') || urlParams.has('include_ingredients') || urlParams.has('exclude_ingredients');
 
-        filterRecipes(urlParams.get('paged') || 1);
+        if (hasFilterParams) {
+            $('#recipe_category').val(urlParams.get('category_id')).trigger('change');
+            $('#recipe_subcategory').val(urlParams.get('subcategory_id')).trigger('change');
+            $('#recipe_region').val(urlParams.get('region')).trigger('change');
+            $('#include_ingredients').val(urlParams.get('include_ingredients')).trigger('change');
+            $('#exclude_ingredients').val(urlParams.get('exclude_ingredients')).trigger('change');
+
+            filterRecipes(urlParams.get('paged') || 1);
+        }
     }
 });
