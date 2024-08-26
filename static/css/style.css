@@ -424,6 +424,7 @@ button {
   grid-column: span 2;
 }
 .recipes_grid .recipe_loop-item .img_block {
+  cursor: pointer;
   position: relative;
   border-radius: 30px;
 }
@@ -624,6 +625,10 @@ button {
 .recipes_grid .recipe_loop-item:nth-child(4),
 .recipes_grid .recipe_loop-item:nth-child(5) {
   grid-column: span 3;
+}
+.recipes_grid .recipe_loop-item:nth-child(4) .img_block,
+.recipes_grid .recipe_loop-item:nth-child(5) .img_block {
+  cursor: pointer;
 }
 .recipes_grid .recipe_loop-item:nth-child(4) .img_block img,
 .recipes_grid .recipe_loop-item:nth-child(5) .img_block img {
@@ -1462,6 +1467,7 @@ button {
   padding: 0px 20px;
 }
 .single-recipe .related_recipes.recipes_slider .recipe_loop-item .img_block {
+  cursor: pointer;
   position: relative;
   border-radius: 30px;
 }

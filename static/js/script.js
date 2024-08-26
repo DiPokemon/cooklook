@@ -128,13 +128,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Добавляем обработчик клика для кнопки добавления в избранное
-        // var bookmarkButton = block.querySelector('.bookmark');
-        // if (bookmarkButton) {
-        //     bookmarkButton.addEventListener('click', function(event) {
-        //         event.stopPropagation(); // Останавливаем всплытие события, чтобы не происходил переход по ссылке
-        //         // Логика добавления в избранное здесь
-        //     });
-        // }
+        var bookmarkButton = block.querySelector('.bookmark');
+        if (bookmarkButton) {
+            bookmarkButton.addEventListener('click', function(event) {
+                 event.stopPropagation(); // Останавливаем всплытие события, чтобы не происходил переход по ссылке
+                 // Логика добавления в избранное здесь
+             });
+         }
     });
 
     

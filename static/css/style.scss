@@ -146,6 +146,7 @@
         grid-column: span 2;
 
         .img_block{
+            cursor:pointer;
             position: relative;
             border-radius: 30px;
             img{
@@ -348,6 +349,7 @@
         grid-column: span 3;
 
         .img_block{
+            cursor: pointer;
             img{
                 height: 380px;
                 object-fit: cover;
@@ -1189,6 +1191,7 @@
                 padding: 0px 20px;         
         
                 .img_block{
+                    cursor: pointer;
                     position: relative;
                     border-radius: 30px;
 
