@@ -242,7 +242,7 @@ get_header();
                         'prev_text' => __('Previous', 'cooklook'),
                         'next_text' => __('Next', 'cooklook'),
                         'screen_reader_text' => __('Пагинация', 'cooklook'),
-                        'format' => '?paged=%#%',
+                        
                     ));
                     ?>
                 </div>
