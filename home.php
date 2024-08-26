@@ -200,15 +200,18 @@ get_header();
                 </div>
                 <div class="categories_grid">
                     <?php
-                        $parent_cats = get_categories(
-                            array( 
-                            'parent'  => 0 
+                        $parent_cats = get_terms(array(
+                            'taxonomy' => 'recipe_category', // Замените на вашу кастомную таксономию
+                            'parent' => 0,
+                            'hide_empty' => true, // Устанавливаем false, чтобы показывать категории, даже если они пустые
                         ));
                         $parent_cat_count = count($parent_cats);
 
                         foreach ($parent_cats as $parent_cat) {
-                            $child_cats = get_categories(array(
-                                'parent' => $parent_cat->term_id
+                            $child_cats = get_terms(array(
+                                'taxonomy' => 'recipe_category',
+                                'parent' => $parent_cat->term_id,
+                                'hide_empty' => true,
                             ));
                             set_query_var('parent_cat', $parent_cat);
                             set_query_var('child_cats', $child_cats);
