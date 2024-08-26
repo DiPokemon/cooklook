@@ -29,6 +29,7 @@ if (is_user_logged_in()) {
 }
 ?>
 
+<!--
 <pre>
     <?php
         //echo 'current_user: '.$current_user.'</br>';
@@ -42,6 +43,7 @@ if (is_user_logged_in()) {
         echo '</br>';
     ?>
 </pre>
+-->
 
 <main id="primary" class="site-main">
 
@@ -50,7 +52,7 @@ if (is_user_logged_in()) {
         <section class="page_header">
             <div class="container">
                 <header>
-                    <?php if (function_exists('breadcrumbs')) breadcrumbs(); ?>
+                    <?php //if (function_exists('breadcrumbs')) breadcrumbs(); ?>
                     <h1 class="page_title"><?= __('Избранные рецепты', 'cooklook') ?></h1>
                 </header><!-- .page-header -->
             </div>
