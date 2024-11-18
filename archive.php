@@ -132,7 +132,7 @@ get_header();
                     $args = array(
                         'post_status' => 'publish',
                         'post_type' => 'recipe',
-                        'posts_per_page' => 16,
+                        'posts_per_page' => 11,
                         'orderby' => 'date',
                         'order' => 'DESC',
                         'paged' => $paged,
