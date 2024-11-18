@@ -187,7 +187,7 @@ get_header();
                     }
 
                     $post_counter = 0; // Счетчик записей
-
+                    $the_query = new WP_Query($args);
                     if ($the_query->have_posts()) {
                         while ($the_query->have_posts()) {
                             $the_query->the_post();
