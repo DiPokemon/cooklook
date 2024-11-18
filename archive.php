@@ -186,11 +186,14 @@ get_header();
                         );
                     }
 
-                    $post_counter = 0;
-                    $the_query = new WP_Query($args);
+                    $post_counter = 0; // Счетчик записей
+
                     if ($the_query->have_posts()) {
                         while ($the_query->have_posts()) {
                             $the_query->the_post();
+                            $post_counter++;
+
+                            // Получаем данные записи
                             $categories = get_the_terms(get_the_ID(), 'recipe_category');
                             $post_id = get_the_ID();
                             $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
@@ -201,7 +204,8 @@ get_header();
                             $comments = get_comments_number();
                             $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
                             $tags = get_the_terms($post_id, 'recipe_tags');
-                        
+
+                            // Формируем описание
                             if (get_the_excerpt()) {
                                 $description = get_the_excerpt();
                             } else if (get_the_content()) {
@@ -209,11 +213,12 @@ get_header();
                             } else {
                                 $description = $recipe_steps[0]['recipe_step_text'];
                             }
-                        
+
                             $words = explode(' ', $description);
                             $first_fifteen_words = array_slice($words, 0, 15);
                             $description = implode(' ', $first_fifteen_words) . ' ...';
-                        
+
+                            // Устанавливаем данные для шаблона
                             set_query_var('categories', $categories);
                             set_query_var('post_id', $post_id);
                             set_query_var('rating', $rating);
@@ -222,49 +227,33 @@ get_header();
                             set_query_var('comments', $comments);
                             set_query_var('description', $description);
                             set_query_var('tags', $tags);
-                        
+
                             // Вывод записи
                             get_template_part('template-parts/recipe-loop-item');
+
+                            // Вставляем шаблонную запись после каждой четвертой записи
+                            if ($post_counter % 4 == 0) {
+                                get_template_part('template-parts/recipe-loop-item-adv');
+                            }
                         }
                     } else {
+                        // Если записей нет, выводим шаблон отсутствия записей
                         get_template_part('template-parts/recipe-loop-nothing');
                     }
 
                     wp_reset_postdata();
-
-                    $post_counter = 0;
-                    foreach ($the_query->posts as $key => $post) {
-                        $post_counter++;
-
-                        // Проверка на вывод шаблона
-                        if ($post_counter % 4 == 0) {
-                            get_template_part('template-parts/recipe-loop-item-adv');
-                        }
-                    }
                     ?>
                 </div>
 
-                
-
                 <div class="pagination">
                     <?php
-                    $the_query = new WP_Query($args);
-
-                    $total_pages = $the_query->max_num_pages;
-                    
                     the_posts_pagination(array(
-                        'total' => $total_pages,
                         'mid_size' => 2,
                         'prev_text' => __('Previous', 'cooklook'),
                         'next_text' => __('Next', 'cooklook'),
-                    ));
-                    // the_posts_pagination(array(
-                    //     'mid_size' => 2,
-                    //     'prev_text' => __('Previous', 'cooklook'),
-                    //     'next_text' => __('Next', 'cooklook'),
-                    //     'screen_reader_text' => __('Пагинация', 'cooklook'),
+                        'screen_reader_text' => __('Пагинация', 'cooklook'),
                         
-                    // ));
+                    ));
                     ?>
                 </div>
             </div>
