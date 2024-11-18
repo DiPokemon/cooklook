@@ -147,6 +147,7 @@ get_header();
                                 'taxonomy' => 'recipe_category',
                                 'field' => 'id',
                                 'terms' => $category_id,
+                                'paged' => $paged,
                             ),
                         );
                     }
@@ -156,6 +157,7 @@ get_header();
                             'taxonomy' => 'recipe_category',
                             'field' => 'id',
                             'terms' => $subcategory_id,
+                            'paged' => $paged,
                         );
                     }
 
@@ -165,6 +167,7 @@ get_header();
                             'taxonomy' => 'recipe_tags',
                             'field' => 'slug',
                             'terms' => $tag->slug,
+                            'paged' => $paged,
                         );
                     }
 
@@ -179,6 +182,7 @@ get_header();
                                     'terms' => $category->slug,
                                 ),
                             ),
+                            'paged' => $paged,
                         );
                     }
 
