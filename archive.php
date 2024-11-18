@@ -132,7 +132,7 @@ get_header();
                     $args = array(
                         'post_status' => 'publish',
                         'post_type' => 'recipe',
-                        'posts_per_page' => 11,
+                        'posts_per_page' => 8,
                         'orderby' => 'date',
                         'order' => 'DESC',
                         'paged' => $paged,
@@ -186,18 +186,16 @@ get_header();
                         );
                     }
 
-                    $post_counter = 0; // Счетчик записей
+                    $post_counter = 0;
                     $the_query = new WP_Query($args);
                     if ($the_query->have_posts()) {
                         while ($the_query->have_posts()) {
                             $the_query->the_post();
                             $post_counter++;
-
-                            // Получаем данные записи
                             $categories = get_the_terms(get_the_ID(), 'recipe_category');
                             $post_id = get_the_ID();
                             $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
-                            $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_dislikes');
+                            $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_likes');
                             $rating = calculate_rating($recipe_likes, $recipe_dislikes);
                             $time = carbon_get_post_meta($post_id, 'recipe_time');
                             $portions = carbon_get_post_meta($post_id, 'recipe_portions');
@@ -205,7 +203,6 @@ get_header();
                             $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
                             $tags = get_the_terms($post_id, 'recipe_tags');
 
-                            // Формируем описание
                             if (get_the_excerpt()) {
                                 $description = get_the_excerpt();
                             } else if (get_the_content()) {
@@ -216,9 +213,9 @@ get_header();
 
                             $words = explode(' ', $description);
                             $first_fifteen_words = array_slice($words, 0, 15);
-                            $description = implode(' ', $first_fifteen_words) . ' ...';
+                            $description = implode(' ', $first_fifteen_words);
+                            $description .= ' ...';
 
-                            // Устанавливаем данные для шаблона
                             set_query_var('categories', $categories);
                             set_query_var('post_id', $post_id);
                             set_query_var('rating', $rating);
@@ -228,16 +225,13 @@ get_header();
                             set_query_var('description', $description);
                             set_query_var('tags', $tags);
 
-                            // Вывод записи
-                            get_template_part('template-parts/recipe-loop-item');
-
-                            // Вставляем шаблонную запись после каждой четвертой записи
                             if ($post_counter % 4 == 0) {
                                 get_template_part('template-parts/recipe-loop-item-adv');
+                            } else {
+                                get_template_part('template-parts/recipe-loop-item');
                             }
                         }
                     } else {
-                        // Если записей нет, выводим шаблон отсутствия записей
                         get_template_part('template-parts/recipe-loop-nothing');
                     }
 
