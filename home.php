@@ -25,15 +25,9 @@ get_header();
                             if($counter == 3) {
                         ?>
                                 <div class="category_item qwert">                                    
-                                    <div id="bvbfuo_R-A-8833792-4"></div>
-                                    <script>
-                                        window.yaContextCb.push(() => {
-                                        Ya.Context.AdvManager.render({
-                                            "blockId": "R-A-8833792-4",
-                                            "renderTo": "bvbfuo_R-A-8833792-4"
-                                        })
-                                    })
-                                    </script>
+                                    <a class="adv_block" href="https://kursy-tut.ru/1637509?erid=2bL9aMPo2e4BA5qnNGCKd2CXSG">
+                                        <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_categories.jpg" alt="">
+                                    </a>
                                 </div>
                         <?php   
                             }
@@ -111,16 +105,22 @@ get_header();
 
         <section>
             <div class="container">
-                <div class="qwert_block">
-                    <div id="qazwer_R-A-8833792-8"></div>
-                    <script>
-                    window.yaContextCb.push(() => {
-                        Ya.Context.AdvManager.render({
-                            "blockId": "R-A-8833792-8",
-                            "renderTo": "qazwer_R-A-8833792-8"
-                        })
-                    })
-                    </script>
+                <div class="main_big_block">
+                    
+                        <a class="adv_block" href="https://kursy-tut.ru/1637554?erid=2bL9aMPo2e4BA5qnNGCKd2CXpF">
+                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_square_1.jpg" alt="">
+                        </a>
+                    
+                   
+                        <a class="adv_block" href="https://kursy-tut.ru/1637501?erid=2bL9aMPo2e4BA5qnNGCKd2CXS8">
+                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_square_2.jpg" alt="">
+                        </a>
+                    
+                    
+                        <a class="adv_block" href="https://kursy-tut.ru/1637591?erid=2bL9aMPo2e4BA5qnNGCKd2CY7r">
+                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_square_3.jpg" alt="">
+                        </a>
+                    
                 </div>                
             </div>
         </section>

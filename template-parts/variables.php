@@ -46,4 +46,6 @@
   $new_recipes_title = carbon_get_the_post_meta( 'new_recipes_title' );
   $popular_recipes_title = carbon_get_the_post_meta( 'popular_recipes_title' );
   $recipes_categories_title = carbon_get_the_post_meta( 'recipes_categories_title' );
+
+  
 ?>

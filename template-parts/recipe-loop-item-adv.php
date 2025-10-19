@@ -1,11 +1,5 @@
 <div class="recipe_loop-item qwert_block">
-    <div id="rhousj_R-A-8833792-1"></div>
-    <script>
-        window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.render({
-            "blockId": "R-A-8833792-1",
-            "renderTo": "rhousj_R-A-8833792-1"
-        })
-    })
-    </script>
+    <a class="adv_block" href="https://kursy-tut.ru/1637554?erid=2bL9aMPo2e4BA5qnNGCKd2CXpF">
+        <img src="<?=  get_template_directory_uri() ?>/static/img/adv/recipe_archive_1.jpg" alt="">
+    </a>
 </div>

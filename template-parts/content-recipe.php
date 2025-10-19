@@ -176,15 +176,9 @@
                 </div>
             </div>
             <div class="qwert_block">
-                <div id="piortwe_R-A-8833792-5"></div>
-                <script>
-                    window.yaContextCb.push(() => {
-                    Ya.Context.AdvManager.render({
-                        "blockId": "R-A-8833792-5",
-                        "renderTo": "piortwe_R-A-8833792-5"
-                    })
-                })
-                </script>
+                <a class="adv_block" href="https://kursy-tut.ru/1637470?erid=2bL9aMPo2e4BA5qnNGCKd2CCV5">
+                    <img src="<?=  get_template_directory_uri() ?>/static/img/adv/recipe_page.jpg" alt="">
+                </a>
             </div>
         </div>
     </section>
@@ -305,17 +299,9 @@
                     <?php endif; ?>
 
                     <div class="recipe_comments_wrapper_right">
-                        <div class="qwert_block">                            
-                            <div id="mfywk_R-A-8833792-6"></div>
-                            <script>
-                                window.yaContextCb.push(() => {
-                                Ya.Context.AdvManager.render({
-                                    "blockId": "R-A-8833792-6",
-                                    "renderTo": "mfywk_R-A-8833792-6"
-                                })
-                            })
-                            </script>
-                        </div>
+                        <a class="adv_block" href="https://kursy-tut.ru/1637517?erid=2bL9aMPo2e4BA5qnNGCKd2CXWe">
+                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/recipe_page_square.jpg" alt="">
+                        </a>
                     </div>
                 </div>                
         </div>
