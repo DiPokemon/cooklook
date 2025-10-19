@@ -3565,6 +3565,12 @@ footer .container .footer_bottom {
   .error-404 .wrapper_404 .content_404 .text_404 {
     text-align: center;
   }
+  .main_bigadv_block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 @media (max-width: 600px) {
   .single-recipe .recipe_main-info .left_side .recipe_meta {

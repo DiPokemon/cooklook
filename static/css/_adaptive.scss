@@ -1074,6 +1074,10 @@
             }
         }
     }
+
+    .main_bigadv_block{
+        flex-direction: column;
+    }
 }
 
 @media(max-width:600px){
