@@ -386,6 +386,9 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
 }
+#popular_categories .popular_categories-grid .category_item.category_item-adv {
+  padding: 0;
+}
 #popular_categories .popular_categories-grid .category_item .category_item-wrapper {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -678,6 +681,18 @@ button {
 .pagination .nav-links .prev,
 .pagination .nav-links .next {
   display: none;
+}
+
+.main_bigadv_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.adv_block {
+  border-radius: 20px;
+  display: block;
 }
 
 /* CATEGORIES LIST GRID */

@@ -106,6 +106,10 @@
             padding: 20px;
             justify-content: center;
 
+            &.category_item-adv{
+                padding:0;
+            }
+
             .category_item-wrapper{
                 flex-direction: column;
                 justify-content: space-between;
@@ -395,6 +399,16 @@
             }
     }
     
+}
+
+.main_bigadv_block{
+    display: flex;
+    gap: 20px;
+}
+
+.adv_block{
+    border-radius: 20px;
+    display: block;
 }
 
 /* CATEGORIES LIST GRID */

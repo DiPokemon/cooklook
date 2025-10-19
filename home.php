@@ -24,7 +24,7 @@ get_header();
                             get_template_part('template-parts/category-loop-item', null, array('current_cat_id' => $cat_id));
                             if($counter == 3) {
                         ?>
-                                <div class="category_item qwert">                                    
+                                <div class="category_item category_item-adv">                                    
                                     <a class="adv_block" href="https://kursy-tut.ru/1637509?erid=2bL9aMPo2e4BA5qnNGCKd2CXSG">
                                         <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_categories.jpg" alt="">
                                     </a>
@@ -105,7 +105,7 @@ get_header();
 
         <section>
             <div class="container">
-                <div class="main_big_block">
+                <div class="main_bigadv_block">
                     
                         <a class="adv_block" href="https://kursy-tut.ru/1637554?erid=2bL9aMPo2e4BA5qnNGCKd2CXpF">
                             <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_square_1.jpg" alt="">
