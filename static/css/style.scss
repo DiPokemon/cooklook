@@ -404,6 +404,10 @@
 .main_bigadv_block{
     display: flex;
     gap: 20px;
+
+    .adv_block{
+        width: 33.33%;
+    }
 }
 
 .adv_block{

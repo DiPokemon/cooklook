@@ -689,6 +689,9 @@ button {
   display: flex;
   gap: 20px;
 }
+.main_bigadv_block .adv_block {
+  width: 33.33%;
+}
 
 .adv_block {
   border-radius: 20px;
@@ -3570,6 +3573,10 @@ footer .container .footer_bottom {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .main_bigadv_block .adv_block {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 600px) {

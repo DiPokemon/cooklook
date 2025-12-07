@@ -1077,6 +1077,11 @@
 
     .main_bigadv_block{
         flex-direction: column;
+
+        .adv_block{
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
 }
 
