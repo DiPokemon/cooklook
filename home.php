@@ -117,8 +117,8 @@ get_header();
                         </a>
                     
                     
-                        <a class="adv_block" href="https://kursy-tut.ru/1637591?erid=2bL9aMPo2e4BA5qnNGCKd2CY7r">
-                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_square_3.jpg" alt="">
+                        <a class="adv_block" href="https://kursy-tut.ru/1824237?erid=2bL9aMPo2e4BA5qnNGDKGkMiHc">
+                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/meat.jpg" alt="">
                         </a>
                     
                 </div>                
