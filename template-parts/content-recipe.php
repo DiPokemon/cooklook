@@ -299,7 +299,7 @@
                     <?php endif; ?>
 
                     <div class="recipe_comments_wrapper_right">
-                        <a class="adv_block" href="https://kursy-tut.ru/1637517?erid=2bL9aMPo2e4BA5qnNGCKd2CXWe">
+                        <a class="adv_block" href="https://kursy-tut.ru/2075248?erid=2bL9aMPo2e4BA5qnNJLpeahqHh">
                             <img src="<?=  get_template_directory_uri() ?>/static/img/adv/recipe_page_square.jpg" alt="">
                         </a>
                     </div>

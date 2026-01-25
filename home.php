@@ -107,7 +107,7 @@ get_header();
             <div class="container">
                 <div class="main_bigadv_block">
                     
-                        <a class="adv_block" href="https://kursy-tut.ru/1637554?erid=2bL9aMPo2e4BA5qnNGCKd2CXpF">
+                        <a class="adv_block" href="https://kursy-tut.ru/2075290?erid=2bL9aMPo2e4BA5qnNJLpeahqfd">
                             <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_square_1.jpg" alt="">
                         </a>
                     
@@ -117,8 +117,8 @@ get_header();
                         </a>
                     
                     
-                        <a class="adv_block" href="https://kursy-tut.ru/1824237?erid=2bL9aMPo2e4BA5qnNGDKGkMiHc">
-                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/meat.jpg" alt="">
+                        <a class="adv_block" href="https://kursy-tut.ru/2075326?erid=2bL9aMPo2e4BA5qnNJLpeaiAcm">
+                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_square_3.jpg" alt="">
                         </a>
                     
                 </div>                
