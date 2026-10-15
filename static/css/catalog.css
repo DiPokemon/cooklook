@@ -1,0 +1,164 @@
+/* Catalog controls supplement the shared theme styles and need no Sass build. */
+#filters {
+	display: block;
+}
+
+#recipe-filter > .select2-container {
+	flex: 1 1 0;
+	min-width: 0;
+	max-width: 240px;
+}
+
+#filters .ingridients_modal_overlay {
+	z-index: 1100;
+}
+
+#filters .ingridients_modal {
+	max-height: calc(100vh - 40px);
+	max-height: calc(100dvh - 40px);
+	overflow-y: auto;
+}
+
+#filters #recipe-filter .ingridients_wrapper {
+	align-items: flex-start;
+}
+
+#filters #recipe-filter .ing_wrap .select2-selection--multiple {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	min-height: 48px;
+	padding: 10px;
+}
+
+#filters #recipe-filter .ing_wrap .select2-selection__rendered {
+	gap: 6px;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#filters #recipe-filter .ing_wrap .select2-selection__rendered:empty {
+	display: none;
+}
+
+#filters #recipe-filter .ing_wrap .select2-search--inline {
+	display: flex;
+	flex: 1 1 120px;
+	width: auto;
+	min-width: 0;
+}
+
+#filters #recipe-filter .ing_wrap .select2-search__field {
+	display: block;
+	flex: 1;
+	min-width: 0;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+	font-family: inherit;
+	font-size: 16px;
+	line-height: 24px;
+	resize: none;
+}
+
+#filters #recipe-filter .ing_wrap .select2-selection__choice {
+	align-items: center;
+	gap: 4px;
+	max-width: 100%;
+	padding: 2px 8px;
+	border-radius: 16px;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+#filters #recipe-filter .ing_wrap .select2-selection__choice__display {
+	min-width: 0;
+	padding: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#filters #recipe-filter .select2-selection__choice__remove {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 24px;
+	min-height: 24px;
+	flex-shrink: 0;
+}
+
+/* The body-mounted dropdown must sit above both the modal and mobile filters. */
+.select2-container.cooklook-ingredients-dropdown-layer {
+	z-index: 1200;
+}
+
+.cooklook-ingredients-dropdown-layer.select2-container--open .cooklook-ingredients-dropdown {
+	top: 4px;
+	max-height: none;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 4px 16px rgb(0 0 0 / 16%);
+}
+
+.cooklook-ingredients-dropdown-layer.select2-container--open .cooklook-ingredients-dropdown.select2-dropdown--above {
+	top: -4px;
+}
+
+.cooklook-ingredients-dropdown-layer.select2-container--open .cooklook-ingredients-dropdown .select2-results {
+	padding: 6px;
+}
+
+.cooklook-ingredients-dropdown-layer.select2-container--open .cooklook-ingredients-dropdown .select2-results__options {
+	max-height: min(220px, 40vh);
+	max-height: min(220px, 40dvh);
+	overscroll-behavior: contain;
+}
+
+.cooklook-ingredients-dropdown-layer.select2-container--open .cooklook-ingredients-dropdown .select2-results__option {
+	margin: 0;
+	padding: 6px 8px;
+}
+
+@media (max-width: 1024px) {
+	.filters_wrapper_mob {
+		display: flex;
+	}
+
+	#filters {
+		display: none;
+		position: fixed;
+		left: 0;
+		height: 100vh;
+		height: 100dvh;
+		overflow-y: auto;
+		z-index: 1100;
+	}
+
+	#filters.active {
+		display: flex;
+	}
+
+	#recipe-filter > .select2-container {
+		flex: none;
+		max-width: none;
+	}
+
+	#filters .ingridients_modal_overlay {
+		position: fixed;
+		inset: 0;
+		display: none;
+		max-width: 375px;
+		background: white;
+	}
+
+	#filters .ingridients_modal_overlay.active {
+		display: block;
+	}
+
+	#filters .ingridients_modal {
+		height: 100%;
+		max-height: 100%;
+	}
+}

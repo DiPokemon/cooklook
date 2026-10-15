@@ -1,5 +1,6 @@
 <?php
 function process_recipe_pin_image($image_path, $output_path, $logo_path, $post_title) {
+    if (!class_exists('Imagick') || !is_readable($image_path) || !is_readable($logo_path)) { return false; }
     try {
         // Создаем объект Imagick для исходного изображения
         $image = new Imagick($image_path);
@@ -11,11 +12,11 @@ function process_recipe_pin_image($image_path, $output_path, $logo_path, $post_t
         // Создаем новое изображение в формате 2:3
         $aspect_ratio = 2 / 3;
         $new_width = $image_width;
-        $new_height = (int)($image_width * $aspect_ratio);
+        $new_height = (int)($image_width / $aspect_ratio);
 
         if ($new_height > $image_height) {
             $new_height = $image_height;
-            $new_width = (int)($image_height / $aspect_ratio);
+            $new_width = (int)($image_height * $aspect_ratio);
         }
 
         $new_image = new Imagick();
@@ -60,12 +61,15 @@ function process_recipe_pin_image($image_path, $output_path, $logo_path, $post_t
         $gradient->destroy();
         $logo->clear();
         $logo->destroy();
+        return true;
     } catch (Exception $e) {
-        error_log('Ошибка при обработке изображения: ' . $e->getMessage());
+        error_log('Cooklook: image processing failed.');
+        return false;
     }
 }
 
 function process_image($image_path, $watermark_path, $output_path, $corner_watermark_path) {
+    if (!class_exists('Imagick') || !is_readable($image_path) || !is_readable($watermark_path) || !is_readable($corner_watermark_path)) { return false; }
     try {
         // Создаем объект Imagick для исходного изображения
         $image = new Imagick($image_path);
@@ -114,46 +118,27 @@ function process_image($image_path, $watermark_path, $output_path, $corner_water
         $watermark->destroy();
         $corner_watermark->clear();
         $corner_watermark->destroy();
+        return true;
     } catch (Exception $e) {
-        error_log('Ошибка при обработке изображения: ' . $e->getMessage());
+        error_log('Cooklook: image processing failed.');
+        return false;
     }
 }
 
 function custom_process_attachment($attachment_id) {
-    // Получаем путь к загруженному изображению
+    $attachment = get_post($attachment_id);
+    if (!$attachment || 'recipe' !== get_post_type($attachment->post_parent) || !wp_attachment_is_image($attachment_id) || !class_exists('Imagick')) {
+        return;
+    }
     $image_path = get_attached_file($attachment_id);
-
-    // Путь к водяному знаку
-    $watermark_path = __DIR__ . '/../static/img/watermark.png';
-
-    // Путь к водяному знаку для угла
-    $corner_watermark_path = __DIR__ . '/../static/img/watermark_2.png';
-
-    // Получаем название записи
-    $post_id = attachment_url_to_postid(wp_get_attachment_url($attachment_id));
-    $post_title = get_the_title($post_id);
-
-    // Временный путь для сохранения обработанного изображения
-    $temp_output_path = dirname($image_path) . '/processed_' . basename($image_path);
-
-    // Обрабатываем изображение
-    process_image($image_path, $watermark_path, $temp_output_path, $corner_watermark_path);
-
-    // Замена оригинального изображения на обработанное
-    copy($temp_output_path, $image_path);
-    unlink($temp_output_path);
-
-    // Проверяем, является ли пост типом recipe
-    //if (get_post_type($post_id) == 'recipe') {
-        // Путь для сохранения нового изображения в формате 2:3
-        //$recipe_pin_output_path = dirname($image_path) . '/recipe_pin_' . basename($image_path);
-
-        // Обрабатываем изображение для recipe_pin_img
-       // process_recipe_pin_image($image_path, $recipe_pin_output_path, $watermark_path, $post_title);
-
-        // Сохраняем путь обработанного изображения в кастомное поле Carbon Fields
-       // carbon_set_post_meta($post_id, 'recipe_pin_img', wp_get_attachment_url($attachment_id));
-    //}
+    if (!$image_path || !is_readable($image_path) || !is_writable($image_path)) { return; }
+    $watermark = get_template_directory() . '/static/img/watermark.png';
+    $corner = get_template_directory() . '/static/img/watermark_2.png';
+    $output = dirname($image_path) . '/' . wp_unique_filename(dirname($image_path), 'processed_' . basename($image_path));
+    if (process_image($image_path, $watermark, $output, $corner) && is_file($output) && filesize($output) > 0 && wp_getimagesize($output)) {
+        // Replace only a fully generated, decodable image; a failed conversion leaves the source intact.
+        rename($output, $image_path);
+    }
+    if (is_file($output)) { wp_delete_file($output); }
 }
 add_action('add_attachment', 'custom_process_attachment');
-?>

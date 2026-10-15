@@ -1,63 +1,36 @@
-    var searchButton = document.querySelector('.header_search');
-    var searchModalOverlay = document.querySelector('.search_modal_overlay');
-    var closeSearchModal = document.getElementById('close_search');
-    var closeSearchModalMob = document.getElementById('close_search-mobile');
-    var filters = document.getElementById('filters');
-    var body = document.body;
-    var scrollOffset = window.innerWidth - document.documentElement.clientWidth;
-    
-    // Функция для закрытия модального окна фильтров
-    function closeFiltersModal() {
-        if (filters && filters.classList.contains('active')) {
-            filters.classList.remove('active');
-            body.style.overflowY = '';
-        }
-    }
-    
-
-
-    // Функция для открытия модального окна
-    function openModal(event) {
-        var headerFixed = document.querySelector('.site-header.fixed');
-        event.preventDefault();
-        
-        searchModalOverlay.classList.add('active');
-        body.style.overflowY = 'hidden';
-        body.style.paddingRight = scrollOffset + 'px';
-        if (headerFixed) { 
-            headerFixed.style.paddingRight = scrollOffset + 'px';
-        }
-        closeFiltersModal();
-    }
-    
-    
-
-    // Функция для закрытия модального окна
-    function closeModalFunction() {
-        var headerFixed = document.querySelector('.site-header.fixed');
-        searchModalOverlay.classList.remove('active');
-        body.style.overflowY = '';        
-        body.style.paddingRight = '';
-        if (headerFixed) { 
-        headerFixed.style.paddingRight = ''; 
-        }
-    }
-
-    // Слушатель событий для открытия модального окна
-    searchButton.addEventListener('click', openModal);
-
-    // Слушатель событий для закрытия модального окна
-    closeSearchModal.addEventListener('click', closeModalFunction);
-    closeSearchModalMob.addEventListener('click', closeModalFunction);
-
-    // Закрыть модальное окно при клике вне его
-    window.addEventListener('click', function(event) {
-        if (event.target == searchModalOverlay) {
-            closeModalFunction();
-        }
-    });
-
-    function setSearchQuery(query) {
-        var searchInput = document.getElementById("ajax-search-input");
-        searchInput.value = query;
-    }
+document.addEventListener('DOMContentLoaded', function () {
+	var button = document.querySelector('.header_search');
+	var overlay = document.querySelector('.search_modal_overlay');
+	if (!button || !overlay) return;
+	var previous;
+	function close() {
+		overlay.classList.remove('active');
+		document.body.style.overflowY = '';
+		document.body.style.paddingRight = '';
+		if (previous) previous.focus();
+	}
+	button.addEventListener('click', function (event) {
+		event.preventDefault();
+		previous = document.activeElement;
+		var filters = document.getElementById('filters');
+		if (filters) filters.classList.remove('active');
+		overlay.classList.add('active');
+		document.body.style.overflowY = 'hidden';
+		document.body.style.paddingRight = (window.innerWidth - document.documentElement.clientWidth) + 'px';
+		var input = document.getElementById('ajax-search-input');
+		if (input) input.focus();
+	});
+	overlay.querySelectorAll('#close_search, #close_search-mobile').forEach(function (element) { element.addEventListener('click', close); });
+	overlay.addEventListener('click', function (event) { if (event.target === overlay) close(); });
+	document.addEventListener('keydown', function (event) {
+		if (!overlay.classList.contains('active')) return;
+		if (event.key === 'Escape') close();
+		if (event.key === 'Tab') {
+			var controls = Array.from(overlay.querySelectorAll('a, button, input, select, textarea')).filter(function (element) { return element.offsetParent !== null && !element.disabled; });
+			if (!controls.length) return;
+			var first = controls[0], last = controls[controls.length - 1];
+			if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+			else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+		}
+	});
+});

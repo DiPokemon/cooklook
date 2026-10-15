@@ -1,70 +1,140 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# Cooklook
 
-_s
-===
+Классическая тема WordPress для сайта рецептов. Основной код находится в PHP-шаблонах, `functions-parts/`, `inc/` и `static/js/`. Рабочие стили — `static/css/style.min.css`; исходники — `static/css/*.scss`.
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+## Документация
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+- [Технический SEO-аудит и оптимизация для AI-поиска от 16 октября 2026 года](docs/technical-seo-audit.md) — подтверждённые находки, приоритеты исправлений, GEO/AEO, рекомендации и проверки перед публикацией.
 
-* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A custom header implementation in `inc/custom-header.php`. Just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/template-functions.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample layouts in `sass/layouts/` made using CSS Grid for a sidebar on either side of your content. Just uncomment the layout of your choice in `sass/style.scss`.
-Note: `.no-sidebar` styles are automatically loaded.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Full support for `WooCommerce plugin` integration with hooks in `inc/woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+## Модель данных и совместимость
 
-Installation
----------------
+Рефакторинг сохраняет существующие имена полей, публичные URL и способы хранения.
 
-### Requirements
+| Данные | Хранение |
+| --- | --- |
+| Рецепты | Тип записи `recipe`, архив `/recipes/` |
+| Блог | Тип записи `blog_post` |
+| Категории / ингредиенты для фильтра | `recipe_category` / `recipe_tags` |
+| Порции, время, питание, регион, внешний ID | Поля Carbon Fields `recipe_*`; простые значения находятся в `_recipe_*` в postmeta |
+| Состав рецепта | Complex-поле `ingridients`: `ingridient_name`, `ingridient_value` |
+| Шаги | `recipe_step`: `recipe_step_text`, `recipe_step_image` |
+| Исходные шаги | `original_recipe_step`: `original_recipe_step_text` |
+| Голос пользователя | usermeta `user_votes`, карта ID рецепта → `like` / `dislike` / `none` |
+| Избранное | Таблица `{prefix}favorite_recipes` |
+| Поисковые запросы | `{prefix}pending_searches`, `{prefix}popular_searches`, `{prefix}rejected_searches` |
 
-`_s` requires the following dependencies:
+Опечатки в именах ингредиентов сохранены намеренно. Complex-поля читаются и сохраняются через Carbon Fields. Простой текст и числа читаются из штатного кеша метаданных WordPress с теми же ключами. Существующие голоса, счётчики, идентификаторы, термины и связи не пересчитываются и не мигрируют.
 
-- [Node.js](https://nodejs.org/)
-- [Composer](https://getcomposer.org/)
+При активации темы или первом входе администратора создаются только отсутствующие служебные таблицы. Существующие таблицы не перестраиваются; добавляется служебная опция `cooklook_tables_checked`. Все записи в базе во время автоматических тестов заменены данными в памяти.
 
-### Quick Start
+## Устройство
 
-Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
+- `inc/recipe-helpers.php`: чтение данных, нормализация входных значений, проверка AJAX nonce, блокировки конкурентных изменений, общий цикл карточек.
+- `inc/recipe-query.php`: единые фильтры, сортировка, публичная видимость рецептов и пагинация. Пустые метаданные не исключают рецепты из сортировки.
+- `filters-handler.php`: каталог и загрузка подкатегорий. `sort_posts` сохранён как совместимое имя действия и возвращает тот же JSON-конверт, что `filter_recipes`.
+- `functions-parts/recipe_rating.php`: повторяемые без изменения результата запросы голосования; переключение голоса корректирует оба счётчика.
+- `functions-parts/favorite_recipes.php`: избранное только текущего авторизованного пользователя; список ID читается один раз за запрос.
+- `recipe_manager.php`, `recipe_importer.php`: административные действия с проверкой nonce, роли и права редактирования конкретной записи.
+- `template-parts/schema.php`: JSON-LD через `wp_json_encode`, без ручной конкатенации JSON.
+- `static/js/filters.js`: единое состояние сортировки, фильтров, страниц и URL; отмена старых запросов.
+- `static/css/catalog.css`: отображение фильтров, мобильной панели и выбора ингредиентов; подключается только в каталоге после общих стилей и не требует Sass.
+- `page-account.php`, `template-parts/account-profile.php`, `inc/account.php`: личный кабинет на существующей странице `/account/`, избранное, редактирование профиля и выход. Имя, фамилия, отображаемое имя, описание, почта и пароль используют штатные поля WordPress. Если шорткод WP-Recall зарегистрирован и присутствует в содержимом страницы, сохраняется кабинет плагина. Содержимое страницы в базе не переписывается.
+- Доступ к экранам `/wp-admin/` и панели WordPress разрешён только с правом `manage_options`. Проверка выполняется на `init`, до построения административного меню. Обычный пользователь перенаправляется в `/account/`; административные возможности существующих ролей в базе не меняются. `admin-ajax.php` и `admin-post.php` остаются доступны как служебные обработчики: каждый обработчик обязан самостоятельно проверять nonce и права. Это ограничение интерфейса не заменяет настройку ролей и прав REST API сторонних плагинов.
+- Формы кабинета проверяют nonce и берут ID исключительно из текущей сессии. Сохранение разрешает только перечисленные поля; переданный ID, роль и произвольные метаданные игнорируются. Почта и пароль требуют текущего пароля; новый адрес применяется только после подтверждения в той же учётной записи. Запрос хранится в стандартном `_new_email`, действует 24 часа, отменяется в кабинете. Ошибка отправки письма не меняет почту и восстанавливает предыдущий запрос. Пароли хешируются и сессия обновляется средствами WordPress; сами пароли не возвращаются в HTML.
+- `static/css/account.css` и `static/css/layout.css`: оформление кабинета и общие исправления, включая пропорции логотипа в футере; подключаются после скомпилированных стилей без сборки Sass.
+- `tests/`: проверки без подключения к рабочей базе.
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
-2. Search for `_s_` to capture all the functions names and replace with: `megatherium_is_awesome_`.
-3. Search for `Text Domain: _s` in `style.css` and replace with: `Text Domain: megatherium-is-awesome`.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
-5. Search for `_s-` to capture prefixed handles and replace with: `megatherium-is-awesome-`.
-6. Search for `_S_` (in uppercase) to capture constants and replace with: `MEGATHERIUM_IS_AWESOME_`.
+Публичный поиск использует Relevanssi, если он активен, и стандартный WordPress в остальных случаях. В обоих случаях выдаются опубликованные рецепты без пароля. Статистика учитывает отправленные поисковые запросы; ввод каждой буквы больше не создаёт записи модерации. Повторения и число записей ограничиваются; исходный IP в этой статистике не сохраняется.
 
-Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_s.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
+В каталоге включаемые ингредиенты объединяются условием AND: рецепт должен содержать все выбранные ингредиенты. Исключаемые ингредиенты используют NOT IN. Фильтры остаются в границах открытой категории или тега. Сортировка по времени идёт по возрастанию, по просмотрам — по убыванию.
 
-### Setup
+Кириллические slug и URL обрабатываются отдельно от обычного текста: `sanitize_text_field` удаляет из них процентную кодировку. На главной проверяется существование выбранных категорий; если все сохранённые ссылки устарели, показываются существующие корневые категории по числу рецептов. Настройки в базе при этом не переписываются.
 
-To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
+## Административные сценарии
+
+Обновление существующих рецептов открывается в меню «Обновление рецептов» (`admin.php?page=cooklook-recipe-importer`). Его функции и инициализация Carbon Fields имеют префикс темы, чтобы не конфликтовать с установленным отдельно плагином Recipe Importer.
+
+Менеджер публикует только черновики. Он сохраняет изображения и служебные данные шагов, проверяет непустой текст и не меняет время, если поле не передано. Ошибка публикации отдельно сообщает, что шаги уже сохранены.
+
+CSV обновляет только существующие рецепты по `recipe_id`. Неизвестный или неоднозначный ID пропускается. Формат: UTF-8, разделитель запятая, стандартные CSV-кавычки; BOM допустим. Ограничения: 2 МБ, 500 строк; клиент обрабатывает по 5 строк за запрос.
+
+Поддерживаемые колонки:
+
+- `recipe_id` — обязательная;
+- `image` — URL изображения;
+- `ingredients_names`, `ingredients_quantities` — парные списки одинаковой длины;
+- `steps_texts`, `original_steps_texts` — списки шагов.
+
+Разделитель списков — ` | `. Отсутствующие или пустые необязательные колонки не очищают данные. Тексты шагов обновляются с сохранением изображений по индексу; при изменении порядка шагов нужно проверить соответствие изображений. Время, счётчики, заголовки, статусы и таксономии импортёр автоматически не перезаписывает. Одна строка проверяется до записи; при прерывании партии ранее обработанные строки могут быть сохранены. Повторная загрузка обновляет записи по тому же ID; уже установленное изображение с тем же `_source_url` повторно не скачивается.
+
+Блокировки MySQL/MariaDB `GET_LOCK` защищают голоса, избранное, импорт и менеджер от параллельных изменений через эти обработчики. При занятой или недоступной блокировке операция отклоняется и предлагает повторить попытку. Это не транзакционная миграция и не защита от параллельных правок сторонними плагинами.
+
+Обработка изображений применяется только к изображениям, прикреплённым к рецепту, и только при наличии Imagick и файлов водяных знаков. Неудачная обработка не заменяет исходный файл. Существующая логика преобразования успешной загрузки сохранена.
+
+## Проверка
+
+Не требуется устанавливать JavaScript-зависимости для следующих команд:
 
 ```sh
-$ composer install
-$ npm install
+php tests/run.php
+php tests/account.php
+node tests/filters.test.cjs
+node tests/comments.test.cjs
+node tests/run-js.cjs
+php vendor/bin/parallel-lint --exclude .git --exclude vendor .
+php vendor/bin/phpcs --standard=phpcs-security.xml.dist
 ```
 
-### Available CLI commands
+Проверка настоящего генератора пагинации WordPress:
 
-`_s` comes packed with CLI commands tailored for WordPress theme development :
+```sh
+php tests/wordpress-core.php
+```
 
-- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `composer lint:php` : checks all PHP files for syntax errors.
-- `composer make-pot` : generates a .pot file in the `languages/` directory.
-- `npm run compile:css` : compiles SASS files to css.
-- `npm run compile:rtl` : generates an RTL stylesheet.
-- `npm run watch` : watches all SASS files and recompiles them to css when they change.
-- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
-- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
-- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+Она ищет WordPress над каталогом темы. Для другого расположения задайте `COOKLOOK_WP_ROOT`. Скрипт читает только файлы ядра, не загружает `wp-config.php` и не обращается к базе.
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+Набор регрессий проверяет в том числе повторные голоса, смену голоса и откат при ошибке записи; изоляцию избранного; сохранение изображений и времени; ошибки и длинные строки CSV; права доступа; модерацию комментариев; безопасный JSON-LD; мобильную сортировку; сброс фильтров и запоздавшие AJAX-ответы.
 
-Good luck!
+`phpcs.xml.dist` остаётся полным историческим набором WordPress/WPThemeReview: весь старый код ещё не приведён к каждому его требованию. Отдельный `phpcs-security.xml.dist` проверяет исправленные границы запросов.
+
+## Зависимости и выпуск
+
+PHP-зависимости зафиксированы в `composer.lock`, в том числе Carbon Fields 3.6.3. Каталог `vendor/` необходим на сервере; его нельзя исключать из архива темы. Для подготовки выпуска используйте отдельный каталог сборки и `composer install --no-dev --optimize-autoloader`; в рабочем каталоге разработки команда `--no-dev` удалит инструменты проверки.
+
+JavaScript использует jQuery из WordPress в режиме noConflict. URL AJAX формируется через `admin_url`, поэтому установка WordPress в подкаталоге поддерживается. Версии файлов основаны на времени изменения. После обновления PHP и JavaScript очищайте кеш страниц вместе: AJAX-контракты теперь используют nonce и JSON с `success/data`.
+
+Исходный npm-набор с `node-sass` не обновлялся в этом рефакторинге. Исправлены пути его команд; общие стили не пересобирались. Исправления отображения каталога находятся в отдельном `static/css/catalog.css`. Доступ к npm registry в текущей среде отсутствовал. Обновление Sass и остальных сборочных зависимостей требует отдельной проверки lock-файла и визуального сравнения CSS.
+
+## Проверка на запущенной копии сайта
+
+16 октября 2026 года выполнена браузерная проверка `http://cooklook/` после запуска OpenServer: WordPress 7.1.3, PHP 8.1.9. Проверены настольный экран 1440 × 1000 и мобильный 390 × 844.
+
+- Главная, каталог, архив категории и кириллического тега, полный рецепт, JSON-LD, гостевое избранное.
+- AJAX-загрузка подкатегорий, фильтр кухни и пустая выдача, два включённых ингредиента и один исключённый, обе сортировки, сброс и удаление отдельного ингредиента.
+- Пагинация и возврат браузером. Для кириллического тега результаты второй страницы после AJAX совпали с результатами после полной перезагрузки.
+- Автодополнение поиска с Relevanssi и отправка поисковой формы. Ошибок JavaScript в проверенных сценариях не обнаружено.
+- Запросы без корректного nonce к каталогу, голосованию, избранному и комментариям получили HTTP 403. Административные AJAX-действия без входа получили HTTP 400 без выдачи данных.
+
+После входа администратором дополнительно проверены:
+
+- Кабинет и футер на узком экране: доступные действия, карточки профиля, пропорции логотипа. Гостевой запрос к кабинету показывает вход без административных ссылок; ответ запрещает кеширование персональной страницы.
+- Добавление и удаление избранного с проверкой после перезагрузки; сохранение голоса, переключение и снятие оценки. Исходное избранное и оценка восстановлены.
+- Публикация комментария и вложенного ответа. Исправлена навигация только к фрагменту URL: теперь новая запись загружается с сервера. Проверены снятие одобрения, скрытие от гостя и повторное одобрение.
+- CSV-импорт ингредиентов и двух шагов в отдельный тестовый черновик: сохранились время и изображение первого шага. Публикация через менеджер сохранила данные и новое время; после публикации обновляются счётчики и остаётся сообщение об успехе.
+- Загрузка PNG через WordPress: пиксели загруженного файла отличаются от оригинала и совпадают с результатом `process_image` под PHP 8.1 с Imagick.
+
+Тестовые комментарии 19 и 20 и рецепт 10207 (`Cooklook QA — временный рецепт проверки 2026-10-16`, внешний `recipe_id=2026101601`) перемещены в корзину. Тестовое изображение 10209 (`cooklook-qa-image.png`) оставлено в медиатеке связанным с этим рецептом. Рабочие рецепты не импортировались и не публиковались. Миграции и правки настроек базы не выполнялись; обычные просмотры и поиск могут обновлять штатные счётчики.
+
+В двух независимых сессиях (`admin` во встроенном браузере, `dimon` в Chrome) дополнительно проверены:
+
+- Избранное: сохранение вторым пользователем не меняет список администратора; добавление и удаление того же рецепта администратором не удаляет сохранение второго пользователя.
+- Голоса: у одного пользователя сохраняется лайк, у другого — дизлайк; снятие одного голоса не затрагивает другой. После теста рейтинг рецепта 9897 снова 3.8, у обоих нет голоса.
+- Профиль: имя, отображаемое имя и описание второго пользователя сохраняются через форму; профиль администратора остаётся прежним. Исходные поля восстановлены. Итоговое избранное соответствует началу этого прогона: у администратора рецепт 9888, у второго пользователя пусто.
+- Прямые ссылки на `/wp-admin/`, штатный профиль, список рецептов, менеджер, импорт и модерацию возвращают второго пользователя в кабинет. Панель WordPress скрыта. Администратор по-прежнему открывает менеджер; AJAX избранного и голосования работает после введения ограничения.
+- Кабинет проверен на обычном настольном экране и при ширине 390 px: одна колонка полей, без горизонтального переполнения; логотип футера сохраняет размер 201.25 × 25 px.
+
+`tests/account.php` отдельно проверяет подмену ID/роли, отсутствие входа, неверные nonce, некорректные поля, текущий пароль, точность обработки символов пароля, одноразовое подтверждение почты, срок действия ссылки, конфликт адресов и ошибку почтового транспорта. Тесты не отправляют писем и не подключаются к базе. Реальная доставка подтверждений и смена паролей существующих аккаунтов этим прогоном не выполнялись. Ветка кабинета с активным WP-Recall локально не проверена: шорткод здесь не зарегистрирован.
+
+При диагностической загрузке WordPress обнаружены отдельные PHP notices о ранней загрузке переводов в установленных `wp-import-export-lite` и `wordpress-seo`. Они возникают в коде плагинов; их обновление и проверка совместимости требуют отдельной работы. Полная совместимость со сторонними плагинами и кешированием этим прогоном не подтверждается.
+
+Исторически повреждённые счётчики и поля, записанные старым импортёром под ошибочными именами, автоматически не исправляются: для этого нужно отдельно обследовать копию базы.

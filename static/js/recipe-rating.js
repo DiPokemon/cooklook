@@ -1,108 +1,33 @@
-jQuery(document).ready(function ($) {
-    // Функция для проверки состояния голоса пользователя и присвоения класса кнопке
-    function checkUserVote() {
-        $('.like_btn, .dislike_btn').removeClass('active'); // Убираем класс .active у всех кнопок перед началом проверки
-    
-        $('.like_btn, .dislike_btn').each(function () {
-            var button = $(this);
-            var recipeID = button.attr('id').split('-')[1];
-            $.ajax({
-                type: 'POST',
-                url: rating.ajax_url,
-                data: {
-                    action: 'check_user_vote',
-                    recipe_id: recipeID
-                },
-                success: function(response) {
-                    response = JSON.parse(response); // Преобразуем строку в объект
-    
-                    // Проверяем, есть ли класс .active у кнопки и соответствует ли он голосу пользователя
-                    var isActiveButton = button.hasClass('active');
-                    var isCorrectVote = (response.user_vote === 'like' && button.hasClass('like_btn')) ||
-                                        (response.user_vote === 'dislike' && button.hasClass('dislike_btn'));
-    
-                    if (isCorrectVote && !isActiveButton) {
-                        button.addClass('active'); // Добавляем класс .active только если кнопка соответствует голосу пользователя и не имеет этого класса
-                    }
-                }
-            });
-        });
-    }
-
-    // Функция для обновления рейтинга рецепта
-    function updateRating(recipeID) {
-        $.ajax({
-            type: 'POST',
-            url: rating.ajax_url,
-            data: {
-                action: 'get_recipe_rating',
-                recipe_id: recipeID
-            },
-            success: function (response) {
-                response = JSON.parse(response);
-                $('#recipe_rating-' + recipeID).text(response.rating);
-            }
-        });
-    }
-    
-
-    // Вызываем функцию checkUserVote() при загрузке страницы
-    checkUserVote();
-
-    // Обработчик клика по кнопке лайка
-    $('.like_btn').on('click', function () {
-        var button = $(this);
-        var recipeID = button.attr('id').split('-')[1];
-        var userVote = button.hasClass('active') ? 'remove_like' : 'like'; // Проверяем, стоит ли уже лайк от пользователя
-
-        $.ajax({
-            type: 'POST',
-            url: rating.ajax_url,
-            data: {
-                action: 'update_user_vote',
-                recipe_id: recipeID,
-                vote_type: userVote // Передаем тип голоса (лайк, дизлайк или удаление голоса)
-            },
-            success: function (response) {
-                // Убираем класс .active у всех кнопок
-                $('.like_btn, .dislike_btn').removeClass('active');
-                // Добавляем класс .active только к нажатой кнопке
-                if (userVote === 'like') {
-                    button.addClass('active');
-                }
-                updateRating(recipeID);
-            }
-        });
-    });
-
-    // Обработчик клика по кнопке дизлайка
-    $('.dislike_btn').on('click', function () {
-        var button = $(this);
-        var recipeID = button.attr('id').split('-')[1];
-        var userVote = button.hasClass('active') ? 'remove_dislike' : 'dislike'; // Проверяем, стоит ли уже дизлайк от пользователя
-
-        $.ajax({
-            type: 'POST',
-            url: rating.ajax_url,
-            data: {
-                action: 'update_user_vote',
-                recipe_id: recipeID,
-                vote_type: userVote // Передаем тип голоса (лайк, дизлайк или удаление голоса)
-            },
-            success: function(response) {
-                // Обновляем отображение количества лайков и дизлайков
-                // $('.like_count').text(response.likes);
-                // $('.dislike_count').text(response.dislikes);
-
-                // Убираем класс .active у всех кнопок
-                $('.like_btn, .dislike_btn').removeClass('active');
-                // Добавляем класс .active только к нажатой кнопке
-                if (userVote === 'dislike') {
-                    button.addClass('active');
-                }
-                updateRating(recipeID);
-            }
-        });
-    });
-
+jQuery(function ($) {
+	var blocks = $('.like_dislike_block');
+	function render(block, data) {
+		block.find('.like_btn').toggleClass('active', data.user_vote === 'like').attr('aria-pressed', String(data.user_vote === 'like'));
+		block.find('.dislike_btn').toggleClass('active', data.user_vote === 'dislike').attr('aria-pressed', String(data.user_vote === 'dislike'));
+		if (typeof data.rating !== 'undefined') {
+			block.find('.recipe_rating').text(data.rating);
+			$('.recipe_meta .rating .meta-value').text(data.rating);
+		}
+	}
+	blocks.each(function () {
+		var block = $(this);
+		var id = block.find('.like_btn').attr('id').split('-')[1];
+		block.find('button').prop('disabled', true);
+		$.post(rating.ajax_url, { action: 'check_user_vote', nonce: rating.nonce, recipe_id: id }, null, 'json')
+			.done(function (response) { if (response.success) render(block, response.data); })
+			.always(function () { block.find('button').prop('disabled', false); });
+	});
+	blocks.on('click', '.like_btn, .dislike_btn', function () {
+		var button = $(this), block = button.closest('.like_dislike_block');
+		var vote = button.hasClass('like_btn') ? 'like' : 'dislike';
+		if (button.hasClass('active')) vote = 'remove_' + vote;
+		block.find('button').prop('disabled', true);
+		$.ajax({
+			url: rating.ajax_url, method: 'POST', dataType: 'json',
+			data: { action: 'update_user_vote', nonce: rating.nonce, recipe_id: button.attr('id').split('-')[1], vote_type: vote }
+		}).done(function (response) {
+			if (response.success) render(block, response.data);
+		}).fail(function (xhr) {
+			window.alert(xhr.responseJSON && xhr.responseJSON.data || 'Не удалось сохранить голос. Повторите попытку.');
+		}).always(function () { block.find('button').prop('disabled', false); });
+	});
 });

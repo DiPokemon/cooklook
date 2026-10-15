@@ -1,43 +1,27 @@
 <?php
-/*
-* Template name: Карточка рецепта
-*/
-$categories = get_query_var('categories');
-$post_id = get_query_var('post_id');
-$recipe_likes = intval(carbon_get_post_meta($post_id, 'recipe_likes'));
-$recipe_dislikes = intval(carbon_get_post_meta($post_id, 'recipe_dislikes'));
-$rating_counter = $recipe_likes + $recipe_dislikes;
-$rating = calculate_rating($recipe_likes, $recipe_dislikes);
-$time = get_query_var('time');
-$portions = get_query_var('portions');
-$comments = get_query_var('comments');
-$description = get_query_var('description');
-$tags = get_query_var('tags');
-
-$user_id = is_user_logged_in() ? get_current_user_id() : ($_COOKIE['user_id'] ?? '0');
-$is_favorite = is_recipe_favorite($post_id, $user_id);
-$favorite_class = $is_favorite ? 'added' : '';
-
-$cook_time = carbon_get_post_meta($post_id, 'recipe_time');
-$prep_time = carbon_get_post_meta($post_id, 'recipe_prep');
-$cook_time = (int)$cook_time;
-$prep_time = (int)$prep_time;
-$total_time = $cook_time + $prep_time;
-$cook_time_convert = convert_time_to_string($cook_time);
-$prep_time_convert = !empty($prep_time) ? convert_time_to_string($prep_time) : null;    
-$total_time_convert = convert_time_to_string($total_time);
+$post_id = get_the_ID();
+$categories = cooklook_recipe_terms( $post_id, 'recipe_category' );
+$tags = cooklook_recipe_terms( $post_id, 'recipe_tags' );
+$recipe_likes = max( 0, (int) cooklook_recipe_value( $post_id, 'recipe_likes' ) );
+$recipe_dislikes = max( 0, (int) cooklook_recipe_value( $post_id, 'recipe_dislikes' ) );
+$rating = calculate_rating( $recipe_likes, $recipe_dislikes );
+$portions = cooklook_recipe_value( $post_id, 'recipe_portions' );
+$comments = get_comments_number( $post_id );
+$description = cooklook_recipe_description( $post_id, 15 );
+$favorite_class = is_recipe_favorite( $post_id, get_current_user_id() ) ? 'added' : '';
+$total_time_convert = convert_time_to_string( (int) cooklook_recipe_value( $post_id, 'recipe_time' ) + (int) cooklook_recipe_value( $post_id, 'recipe_prep' ) );
 ?>
 
 <div class="recipe_loop-item">
     <div class="recipe_loop-wrapper">
-        <div class="img_block" data-permalink="<?= get_permalink() ?>">
+        <div class="img_block" data-permalink="<?= esc_url(get_permalink()) ?>">
             <?php if (get_the_post_thumbnail_url(null, 'large')) : ?>
                
-                    <img loading="lazy" src="<?= get_the_post_thumbnail_url(null, 'large') ?>" alt="<?= __('Рецепт', 'cooklook') ?> <?= the_title() ?> на <?= $portions ?> порций">
+                    <img loading="lazy" src="<?= esc_url(get_the_post_thumbnail_url(null, 'large')) ?>" alt="<?= esc_attr(sprintf(__('Рецепт %s на %s порций', 'cooklook'), get_the_title(), $portions)) ?>">
                   
             <?php else: ?>
                 
-                    <img loading="lazy" src="<?= get_template_directory_uri() . '/static/img/no_image.png' ?>" alt="<?= __('Рецепт', 'cooklook') ?> <?= the_title() ?> на <?= $portions ?> порций">
+                    <img loading="lazy" src="<?= get_template_directory_uri() . '/static/img/no_image.png' ?>" alt="<?= esc_attr(sprintf(__('Рецепт %s на %s порций', 'cooklook'), get_the_title(), $portions)) ?>">
                 
             <?php endif; ?>
             <div class="recipe_meta">
@@ -86,7 +70,7 @@ $total_time_convert = convert_time_to_string($total_time);
                             <path d="M12.2816 3.75C7.72537 3.75 4.03125 7.44375 4.03125 12C4.03125 16.5559 7.72575 20.25 12.2816 20.25C16.8375 20.25 20.5316 16.5559 20.5316 12C20.5316 7.44375 16.8375 3.75 12.2816 3.75ZM12.2812 18C8.96737 18 6.28087 15.4046 6.28087 12.2021C6.28087 12.1339 6.29025 12.0675 6.2925 12C6.29025 11.9325 6.28087 11.8658 6.28087 11.7979C6.28087 8.59538 8.96775 6 12.2812 6C15.5951 6 18.2812 8.59538 18.2812 11.7979C18.2812 11.8658 18.2734 11.9325 18.2715 12C18.2737 12.0675 18.2812 12.1339 18.2812 12.2021C18.2809 15.4046 15.5951 18 12.2812 18Z"/>
                             <path d="M1.30554 2.78291C1.39554 2.43003 1.57366 2.77878 1.57366 2.77878C1.57366 2.77878 1.63591 6.43129 2.04091 6.47104C2.44591 6.51079 2.13391 2.71278 2.61316 2.64003C3.05866 2.56916 2.80441 6.53141 3.21016 6.49128C3.61441 6.44853 3.68266 2.79754 3.68266 2.79754C3.68266 2.79754 3.86266 2.44916 3.95154 2.79941C5.04954 7.11566 4.16116 8.88004 4.16116 8.88004C4.16116 8.88004 4.01116 9.25091 3.65491 9.25278C3.62154 9.25091 3.64666 19.5038 3.64441 20.8823C3.64516 21.5524 1.58191 21.5318 1.58304 20.8647C1.58454 19.4862 1.62466 9.23441 1.59241 9.23516C1.23504 9.23516 1.08541 8.86466 1.08541 8.86466C1.08541 8.86466 0.20041 7.10141 1.30554 2.78291ZM20.8577 2.62503C21.3219 2.62391 23.2479 4.01253 23.2502 9.17329C23.2524 10.8237 22.352 10.8233 22.3535 11.8557C22.355 12.8862 22.3607 21.0829 22.3607 21.0829C22.3607 21.0829 21.3729 21.7605 20.6387 21.0514L20.6252 2.77166C20.6259 2.77203 20.6233 2.62466 20.8577 2.62503Z" />
                         </svg>
-                        <span class="bottom_meta-value"><?= $portions ?></span>
+                        <span class="bottom_meta-value"><?= esc_html($portions) ?></span>
                     </div>
 
                     <div class="reviews bottom_meta-item">
@@ -113,19 +97,19 @@ $total_time_convert = convert_time_to_string($total_time);
             <div class="categories flex">
                 <?php display_recipe_categories_hierarchy($categories); ?>             
             </div>
-            <a href="<?= get_permalink() ?>" class="recipe_title">
+            <a href="<?= esc_url(get_permalink()) ?>" class="recipe_title">
                 <h3>
-                    <?= get_the_title() ?>
+                    <?= esc_html(get_the_title()) ?>
                 </h3>
             </a>
-            <a href="<?= get_permalink() ?>" class="recipe_desc">
-                <?= $description ?>
+            <a href="<?= esc_url(get_permalink()) ?>" class="recipe_desc">
+                <?= esc_html($description) ?>
             </a>
             <?php if ($tags) : ?>
                 <div class="recipe_ingridients flex">
                     <?= __('Ингридиенты:','cooklook') ?>
                     <?php foreach ($tags as $tag) : ?>
-                        <a href="<?= get_tag_link($tag->term_id) ?>" class="recipe_ingridients-item"><?= $tag->name ?></a>
+                        <a href="<?= esc_url(get_term_link($tag)) ?>" class="recipe_ingridients-item"><?= esc_html($tag->name) ?></a>
                     <?php endforeach ?>
                 </div>
             <?php endif ?>

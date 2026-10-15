@@ -1,116 +1,96 @@
 <?php
-if (! defined ('ABSPATH')){
-    exit;
+defined( 'ABSPATH' ) || exit;
+
+function get_user_vote_meta( $user_id, $recipe_id ) {
+	$votes = get_user_meta( $user_id, 'user_votes', true );
+	$vote = is_array( $votes ) && isset( $votes[ $recipe_id ] ) ? $votes[ $recipe_id ] : 'none';
+	return in_array( $vote, array( 'like', 'dislike' ), true ) ? $vote : 'none';
 }
 
-// Проверка голоса пользователя
-// Проверка голоса пользователя
+function get_button_type( $recipe_id, $user_vote ) {
+	return in_array( $user_vote, array( 'like', 'dislike' ), true ) ? $user_vote : '';
+}
+
+/** Repeated requests are idempotent. Removal only removes the matching vote. */
+function cooklook_vote_transition( $previous, $requested, $likes, $dislikes ) {
+	$previous = in_array( $previous, array( 'like', 'dislike' ), true ) ? $previous : 'none';
+	$next = $previous;
+	if ( in_array( $requested, array( 'like', 'dislike' ), true ) ) {
+		$next = $requested;
+	} elseif ( 'remove_' . $previous === $requested ) {
+		$next = 'none';
+	}
+	return array(
+		'user_vote' => $next,
+		'likes' => max( 0, (int) $likes + (int) ( 'like' === $next ) - (int) ( 'like' === $previous ) ),
+		'dislikes' => max( 0, (int) $dislikes + (int) ( 'dislike' === $next ) - (int) ( 'dislike' === $previous ) ),
+	);
+}
+
+function cooklook_recipe_rating_data( $post_id ) {
+	$likes = max( 0, (int) get_post_meta( $post_id, '_recipe_likes', true ) );
+	$dislikes = max( 0, (int) get_post_meta( $post_id, '_recipe_dislikes', true ) );
+	return array( 'likes' => $likes, 'dislikes' => $dislikes, 'rating' => calculate_rating( $likes, $dislikes ) );
+}
+
 function check_user_vote() {
-    $recipe_id = $_POST['recipe_id'];
-    $user_id = get_current_user_id();
-
-    // Получаем голос пользователя для данного рецепта
-    $user_vote = get_user_vote_meta($user_id, $recipe_id);
-
-    // Определяем тип кнопки на основе голоса пользователя
-    $button_type = 'none';
-    if ($user_vote === 'like') {
-        $button_type = 'like';
-    } elseif ($user_vote === 'dislike') {
-        $button_type = 'dislike';
-    }
-
-   
-    // Возвращаем состояние голоса пользователя и тип кнопки
-    echo json_encode(array('user_vote' => $user_vote, 'button_type' => $button_type));
-    wp_die();
+	cooklook_verify_ajax_nonce( 'cooklook_rating' );
+	$post_id = cooklook_ajax_recipe_id();
+	$vote = get_user_vote_meta( get_current_user_id(), $post_id );
+	wp_send_json_success( array( 'user_vote' => $vote, 'button_type' => get_button_type( $post_id, $vote ) ) );
 }
 
-
-// Функция для определения типа кнопки (лайк или дизлайк) на основе голоса пользователя
-function get_button_type($recipe_id, $user_vote) {
-    if ($user_vote === 'like') {
-        return 'like';
-    } elseif ($user_vote === 'dislike') {
-        return 'dislike';
-    } else {
-        // Если пользователь еще не проголосовал, возвращаем пустую строку
-        return '';
-    }
-}
-
-// Функция для получения голоса пользователя
-function get_user_vote_meta($user_id, $recipe_id) {
-    $user_votes = get_user_meta($user_id, 'user_votes', true);
-    return isset($user_votes[$recipe_id]) ? $user_votes[$recipe_id] : 'none';
-}
-
-// Обновление голоса пользователя
 function update_user_vote() {
-    $recipe_id = $_POST['recipe_id'];
-    $vote_type = $_POST['vote_type'];
-    $user_id = get_current_user_id();
-
-    // Получаем текущее количество лайков и дизлайков
-    $recipe_likes = carbon_get_post_meta($recipe_id, 'recipe_likes');
-    $recipe_dislikes = carbon_get_post_meta($recipe_id, 'recipe_dislikes');
-
-    if ($vote_type === 'like') {
-        // Если пользователь ставит лайк
-        $recipe_likes++;
-        // Если пользователь уже ставил дизлайк, уменьшаем количество дизлайков
-        if (get_user_vote_meta($user_id, $recipe_id) === 'dislike') {
-            $recipe_dislikes--;
-        }
-    } elseif ($vote_type === 'remove_like') {
-        // Если пользователь удаляет лайк
-        $recipe_likes--;
-    } elseif ($vote_type === 'dislike') {
-        // Если пользователь ставит дизлайк
-        $recipe_dislikes++;
-        // Если пользователь уже ставил лайк, уменьшаем количество лайков
-        if (get_user_vote_meta($user_id, $recipe_id) === 'like') {
-            $recipe_likes--;
-        }
-    } elseif ($vote_type === 'remove_dislike') {
-        // Если пользователь удаляет дизлайк
-        $recipe_dislikes--;
-    }
-
-    // Обновляем количество лайков и дизлайков в полях Carbon Fields
-    carbon_set_post_meta($recipe_id, 'recipe_likes', $recipe_likes);
-    carbon_set_post_meta($recipe_id, 'recipe_dislikes', $recipe_dislikes);
-
-    // Обновляем информацию о голосе пользователя в метаданных его профиля
-    update_user_vote_meta($user_id, $recipe_id, $vote_type);
-
-    // Возвращаем новые значения лайков и дизлайков
-    echo json_encode(array('likes' => $recipe_likes, 'dislikes' => $recipe_dislikes));
-    wp_die();
+	cooklook_verify_ajax_nonce( 'cooklook_rating' );
+	if ( ! is_user_logged_in() ) {
+		wp_send_json_error( __( 'Войдите, чтобы оценить рецепт.', 'cooklook' ), 401 );
+	}
+	$post_id = cooklook_ajax_recipe_id();
+	$user_id = get_current_user_id();
+	$requested = cooklook_request_text( $_POST, 'vote_type' );
+	if ( ! in_array( $requested, array( 'like', 'dislike', 'remove_like', 'remove_dislike' ), true ) ) {
+		wp_send_json_error( __( 'Недопустимый голос.', 'cooklook' ), 400 );
+	}
+	// Both the user's shared vote map and the recipe totals need serialization.
+	$result = cooklook_with_lock( 'votes-user-' . $user_id, function () use ( $user_id, $post_id, $requested ) {
+		return cooklook_with_lock( 'votes-recipe-' . $post_id, function () use ( $user_id, $post_id, $requested ) {
+			wp_cache_delete( $user_id, 'user_meta' );
+			wp_cache_delete( $post_id, 'post_meta' );
+			$old_votes = get_user_meta( $user_id, 'user_votes', true );
+			$votes = is_array( $old_votes ) ? $old_votes : array();
+			$previous = get_user_vote_meta( $user_id, $post_id );
+			$old = cooklook_recipe_rating_data( $post_id );
+			$next = cooklook_vote_transition( $previous, $requested, $old['likes'], $old['dislikes'] );
+			if ( $previous !== $next['user_vote'] ) {
+				$votes[ $post_id ] = $next['user_vote'];
+				if ( ! update_user_meta( $user_id, 'user_votes', $votes ) ) {
+					return new WP_Error( 'save_failed', __( 'Не удалось сохранить голос.', 'cooklook' ) );
+				}
+				foreach ( array( 'likes', 'dislikes' ) as $key ) {
+					if ( $old[ $key ] !== $next[ $key ] && ! update_post_meta( $post_id, '_recipe_' . $key, $next[ $key ] ) ) {
+						update_user_meta( $user_id, 'user_votes', $old_votes );
+						update_post_meta( $post_id, '_recipe_likes', $old['likes'] );
+						update_post_meta( $post_id, '_recipe_dislikes', $old['dislikes'] );
+						return new WP_Error( 'save_failed', __( 'Не удалось сохранить голос.', 'cooklook' ) );
+					}
+				}
+			}
+			$next['rating'] = calculate_rating( $next['likes'], $next['dislikes'] );
+			return $next;
+		} );
+	} );
+	if ( is_wp_error( $result ) ) {
+		wp_send_json_error( $result->get_error_message(), 'busy' === $result->get_error_code() ? 409 : 500 );
+	}
+	wp_send_json_success( $result );
 }
 
-// Функция для обновления голоса пользователя
-function update_user_vote_meta($user_id, $recipe_id, $vote_type) {
-    $user_votes = get_user_meta($user_id, 'user_votes', true) ?: array();
-    $user_votes[$recipe_id] = $vote_type;
-    update_user_meta($user_id, 'user_votes', $user_votes);
-}
-
-add_action('wp_ajax_get_recipe_rating', 'get_recipe_rating');
-add_action('wp_ajax_nopriv_get_recipe_rating', 'get_recipe_rating');
 function get_recipe_rating() {
-
-    $recipe_id = intval($_POST['recipe_id']);
-    $recipe_likes = intval(carbon_get_post_meta($recipe_id, 'recipe_likes'));
-    $recipe_dislikes = intval(carbon_get_post_meta($recipe_id, 'recipe_dislikes'));
-    $rating = calculate_rating($recipe_likes, $recipe_dislikes);
-    
-    echo json_encode(['rating' => $rating]);
-    wp_die();
+	cooklook_verify_ajax_nonce( 'cooklook_rating' );
+	wp_send_json_success( cooklook_recipe_rating_data( cooklook_ajax_recipe_id() ) );
 }
-
-add_action('wp_ajax_check_user_vote', 'check_user_vote');
-add_action('wp_ajax_update_user_vote', 'update_user_vote');
-
-add_action('wp_ajax_nopriv_check_user_vote', 'check_user_vote');
-add_action('wp_ajax_nopriv_update_user_vote', 'update_user_vote');
+foreach ( array( 'check_user_vote', 'update_user_vote', 'get_recipe_rating' ) as $cooklook_action ) {
+	add_action( 'wp_ajax_' . $cooklook_action, $cooklook_action );
+	add_action( 'wp_ajax_nopriv_' . $cooklook_action, $cooklook_action );
+}
+unset( $cooklook_action );

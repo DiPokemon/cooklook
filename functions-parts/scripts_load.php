@@ -1,89 +1,52 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 
-//Register and load JS
-function load_scripts(){  
-  wp_enqueue_script('script', get_template_directory_uri() . '/static/js/script.js', array(), NULL, true);
-  wp_deregister_script( 'jquery' );
-  wp_register_script( 'jquery', 'https://code.jquery.com/jquery-3.6.4.min.js');
-  wp_enqueue_script( 'jquery' , array(), NULL, true);
-  wp_enqueue_script('slick', get_template_directory_uri() . '/static/libs/slick/slick.min.js', array('jquery'), NULL, true);
-  //wp_enqueue_script('inits', get_template_directory_uri().'/static/js/inits.js', array('slick','masonry','maskedinput'), NULL, true);
-  //wp_enqueue_script('yamap_api', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', array(), NULL, true);  
-  //wp_enqueue_script('map_init', get_template_directory_uri().'/static/js/map_init.js', array('yamap_api'), NULL, true); 
-  //wp_enqueue_script('spincrement', get_template_directory_uri().'/static/js/spincrement.min.js', array('jquery'), NULL, true); 
-  //wp_enqueue_script('masonry', get_template_directory_uri().'/static/js/masonry.js', array('jquery'), NULL, true); 
-  wp_enqueue_script('maskedinput', get_template_directory_uri().'/static/js/maskedinput.min.js', array('jquery'), NULL, true); 
-  wp_enqueue_script('slick_init', get_template_directory_uri() . '/static/js/slick_init.js', array('slick'), NULL, true);
-  wp_enqueue_script('ajax-search', get_template_directory_uri() . '/static/js/ajax-search.js', array(), NULL, true);
-  wp_enqueue_script('search_modal', get_template_directory_uri() . '/static/js/search_modal.js', array(), NULL, true);
-  
-  wp_enqueue_script('select2', get_template_directory_uri() . '/static/libs/select2/select2.full.min.js', array('jquery'), NULL, true);
-} 
-add_action('wp_enqueue_scripts', 'load_scripts', 10);
-
-function recipe_rating_script() {
-  if (is_singular('recipe')) {
-      wp_enqueue_script('recipe-rating-script', get_template_directory_uri() . '/static/js/recipe-rating.js', array('jquery'), null, true);
-      wp_localize_script('recipe-rating-script', 'rating', array('ajax_url' => admin_url('admin-ajax.php')));
-  }
+function cooklook_asset_version( $path ) {
+	$file = get_template_directory() . '/' . $path;
+	return is_file( $file ) ? (string) filemtime( $file ) : _S_VERSION;
 }
-add_action('wp_enqueue_scripts', 'recipe_rating_script');
 
-// function archive_filters_scripts(){
-//   if (is_archive() || is_page_template('my-favorites.php')) {
-//     wp_enqueue_script('filter-ingridients', get_template_directory_uri() . '/static/js/filter-ingridients.js', array('jquery', 'select2', 'filter'), NULL, true);
-//     wp_enqueue_script('filter', get_template_directory_uri() . '/static/js/filters.js', array('jquery'), NULL, true); 
-//     wp_localize_script( 'filter', 'filter_obj', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-//   }
-// }
-// add_action('wp_enqueue_scripts', 'archive_filters_scripts');
-
-
-
-// function archive_filters_scripts(){
-//   if (is_archive() || is_page_template('my-favorites.php')) {
-//     wp_enqueue_script('filter-ingridients', get_template_directory_uri() . '/static/js/filter-ingridients.js', array('jquery', 'select2', 'filter'), NULL, true);
-//     wp_enqueue_script('filter', get_template_directory_uri() . '/static/js/filters.js', array('jquery'), NULL, true);
-
-    
-//     $current_category = (is_tax('recipe_category')) ? get_queried_object_id() : 0;
-//     $current_tag = (is_tax('recipe_tags')) ? get_queried_object()->slug : '';
-
-//     wp_localize_script( 'filter', 'filter_obj', array(
-//         'ajax_url' => admin_url( 'admin-ajax.php' ),
-//         'current_category' => $current_category,
-//         'current_tag' => $current_tag
-//     ));
-//   }
-// }
-// add_action('wp_enqueue_scripts', 'archive_filters_scripts');
-
-
-
-function enqueue_sorting_scripts() {
-    wp_enqueue_script('sorting', get_template_directory_uri() . '/static/js/sorting.js', array('jquery'), null, true);
-    //wp_localize_script('sorting', 'sorting_ajax', admin_url('admin-ajax.php'));
-    wp_localize_script( 'sorting', 'sorting_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+function cooklook_enqueue_script( $handle, $path, $dependencies = array( 'jquery' ) ) {
+	wp_enqueue_script( $handle, get_template_directory_uri() . '/' . $path, $dependencies, cooklook_asset_version( $path ), true );
 }
-add_action('wp_enqueue_scripts', 'enqueue_sorting_scripts');
 
-function enqueue_favorite_scripts() {
-  wp_enqueue_script('favorite', get_template_directory_uri() . '/static/js/favorite_recipes.js', array('jquery'), null, true);
-  //wp_localize_script('favorite', 'favorite_ajax', admin_url('admin-ajax.php'));
-  wp_localize_script( 'favorite', 'favorite_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+function load_scripts() {
+	// WordPress owns jQuery and its noConflict mode.
+	cooklook_enqueue_script( 'script', 'static/js/script.js' );
+	cooklook_enqueue_script( 'slick', 'static/libs/slick/slick.min.js' );
+	cooklook_enqueue_script( 'slick_init', 'static/js/slick_init.js', array( 'jquery', 'slick' ) );
+	cooklook_enqueue_script( 'ajax-search', 'static/js/ajax-search.js', array() );
+	wp_localize_script( 'ajax-search', 'cooklookSearch', array(
+		'ajax_url' => admin_url( 'admin-ajax.php' ),
+		'nonce' => wp_create_nonce( 'cooklook_search' ),
+	) );
+	cooklook_enqueue_script( 'search_modal', 'static/js/search_modal.js', array() );
+
+	if ( is_post_type_archive( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags' ) ) || is_page_template( 'archive.php' ) ) {
+		cooklook_enqueue_script( 'select2', 'static/libs/select2/select2.full.min.js' );
+		cooklook_enqueue_script( 'filter-ingridients', 'static/js/filter-ingridients.js', array( 'jquery', 'select2' ) );
+		cooklook_enqueue_script( 'filter', 'static/js/filters.js', array( 'jquery', 'select2', 'filter-ingridients' ) );
+		wp_localize_script( 'filter', 'filter_obj', array_merge( cooklook_recipe_context(), array(
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+			'nonce' => wp_create_nonce( 'cooklook_catalog' ),
+			'filters' => cooklook_recipe_filters( $_GET ),
+			'base_url' => remove_query_arg( array( 'paged', 'page' ), get_pagenum_link( 1, false ) ),
+		) ) );
+	}
+	if ( is_user_logged_in() ) {
+		cooklook_enqueue_script( 'favorite', 'static/js/favorite_recipes.js' );
+		wp_localize_script( 'favorite', 'favorite_ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'nonce' => wp_create_nonce( 'cooklook_favorites' ) ) );
+	}
+	if ( is_singular( 'recipe' ) && is_user_logged_in() ) {
+		cooklook_enqueue_script( 'recipe-rating-script', 'static/js/recipe-rating.js' );
+		wp_localize_script( 'recipe-rating-script', 'rating', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'nonce' => wp_create_nonce( 'cooklook_rating' ) ) );
+	}
+	if ( is_singular() && comments_open() ) {
+		cooklook_enqueue_script( 'ajax-comment', 'static/js/ajax-comment.js' );
+		wp_localize_script( 'ajax-comment', 'ajax_comment_params', array(
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			'nonce' => wp_create_nonce( 'cooklook_comment' ),
+		) );
+	}
 }
-add_action('wp_enqueue_scripts', 'enqueue_favorite_scripts');
-
-function enqueue_comment_reply_ajax() {
-  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-      wp_enqueue_script( 'comment-reply' );
-  }
-
-  wp_enqueue_script( 'ajax-comment', get_template_directory_uri() . '/static/js/ajax-comment.js', array( 'jquery' ), '1.0', true );
-
-  wp_localize_script( 'ajax-comment', 'ajax_comment_params', array(
-      'ajaxurl' => admin_url( 'admin-ajax.php' ),
-      'success_message' => __( 'Ваш комментарий был успешно добавлен!' ),
-  ) );
-}
-add_action( 'wp_enqueue_scripts', 'enqueue_comment_reply_ajax' );
+add_action( 'wp_enqueue_scripts', 'load_scripts' );

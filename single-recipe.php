@@ -3,7 +3,6 @@
 * Templae name: Страница рецепта
 */
 
-include 'template-parts/variables.php';
 get_header();
 
 ?>

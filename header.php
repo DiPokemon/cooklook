@@ -8,7 +8,6 @@
  *
  * @package cooklook
  */
- include 'template-parts/variables.php';
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -58,19 +57,17 @@
 					</a>
 				<?php endif ?>
 
-				<?php if ( !is_user_logged_in() ) : ?>
-				<a href="<?= wp_login_url() ?>" class="header_account flex">					
+				<a href="<?php echo esc_url( is_user_logged_in() ? home_url( '/account/' ) : wp_login_url( home_url( '/account/' ) ) ); ?>" class="header_account flex">
 					<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-						<title><?= __('Войти в аккаунт', 'cooklook') ?></title>
+						<title><?php echo esc_html( is_user_logged_in() ? __( 'Личный кабинет', 'cooklook' ) : __( 'Войти в аккаунт', 'cooklook' ) ); ?></title>
 						<path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"/>
 						<path d="M12.0002 14.5C6.99016 14.5 2.91016 17.86 2.91016 22C2.91016 22.28 3.13016 22.5 3.41016 22.5H20.5902C20.8702 22.5 21.0902 22.28 21.0902 22C21.0902 17.86 17.0102 14.5 12.0002 14.5Z"/>
 					</svg>
-					<?= __('Войти', 'cooklook')?>
+					<?php echo esc_html( is_user_logged_in() ? __( 'Аккаунт', 'cooklook' ) : __( 'Войти', 'cooklook' ) ); ?>
 				</a>
-				<?php endif; ?>
 				<!--<a href="#" class="header_add_recipe btn_bg"><?= __('Добавить рецепт', 'cooklook') ?></a>-->
 			</div>			
 		</div>		
 	</header><!-- #masthead -->
-	
+
 	

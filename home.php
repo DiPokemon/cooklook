@@ -6,19 +6,30 @@
  *
  * @package cooklook
  */
-include 'template-parts/variables.php';
+$settings_id = get_queried_object_id();
+$popular_cats = cooklook_recipe_rows( $settings_id, 'popular_cats' );
+$popular_cats_ids = array_filter( array_map( 'absint', wp_list_pluck( $popular_cats, 'id' ) ) );
+$popular_terms = $popular_cats_ids ? get_terms( array( 'taxonomy' => 'recipe_category', 'include' => $popular_cats_ids, 'hide_empty' => false, 'orderby' => 'include' ) ) : array();
+// Old homepage associations may refer to deleted terms after a data import.
+if ( ! is_array( $popular_terms ) || ! $popular_terms ) {
+    $popular_terms = get_terms( array( 'taxonomy' => 'recipe_category', 'parent' => 0, 'number' => 5, 'orderby' => 'count', 'order' => 'DESC' ) );
+}
+$popular_cats_ids = is_array( $popular_terms ) ? wp_list_pluck( $popular_terms, 'term_id' ) : array();
+$popular_cats_title = carbon_get_post_meta( $settings_id, 'popular_cats_title' );
+$new_recipes_title = carbon_get_post_meta( $settings_id, 'new_recipes_title' );
+$popular_recipes_title = carbon_get_post_meta( $settings_id, 'popular_recipes_title' );
+$recipes_categories_title = carbon_get_post_meta( $settings_id, 'recipes_categories_title' ) ?: __( 'Категории рецептов', 'cooklook' );
 get_header();
 ?>
 	<main id="primary" class="site-main">
 		<section id="popular_categories">
 			<div class="container">
                 <div class="section_header">
-                    <h2 class="section_title"><?= $popular_cats_title ?></h2>
+                    <h2 class="section_title"><?= esc_html($popular_cats_title) ?></h2>
                 </div>				
                 <div class="popular_categories-grid">
                     <?php
                         $counter = 0;
-                        $popular_cats_ids = wp_list_pluck( $popular_cats, 'id' );
                         foreach($popular_cats_ids as $cat_id) {   
                             $counter++;                    
                             get_template_part('template-parts/category-loop-item', null, array('current_cat_id' => $cat_id));
@@ -40,14 +51,17 @@ get_header();
 		<section>
             <div class="container">
                 <div class="section_header flex">
-                    <h2 class="section_title"><?= $new_recipes_title ?></h2>
+                    <h2 class="section_title"><?= esc_html($new_recipes_title) ?></h2>
                     <a href="<?= home_url('/recipes/') ?>" class="btn_bg hide_mobile"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
                 </div>
                 <div class="recipes_grid">
                     <?php
                         $args = array(
                             'post_type' => 'recipe', // Тип записи, для стандартных записей это 'post'.
-                            'posts_per_page' => 5, // Количество записей для показа.
+                            'posts_per_page' => 5,
+                            'post_status' => 'publish',
+                            'has_password' => false,
+                            'no_found_rows' => true, // Количество записей для показа.
                             'orderby' => 'date', // Сортировка по дате.
                             'order' => 'DESC' // Сортировка по убыванию.
                         );
@@ -55,41 +69,6 @@ get_header();
                         if ($the_query->have_posts()) {
                             while ($the_query->have_posts()) {
                                 $the_query->the_post();
-                                $categories = get_the_terms(get_the_ID(), 'recipe_category');
-                                $post_id = get_the_ID();
-                                $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
-                                $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_likes');
-                                $rating = calculate_rating($recipe_likes, $recipe_dislikes);
-                                $time = carbon_get_post_meta($post_id, 'recipe_time');
-                                $portions = carbon_get_post_meta($post_id, 'recipe_portions');
-                                $comments = get_comments_number();
-                                $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
-                                $tags = get_the_terms($post_id, 'recipe_tags');
-
-                                if(get_the_excerpt()){
-                                    $description = get_the_excerpt();
-                                }
-                                else if(get_the_content()){
-                                    $description = get_the_content();
-                                }
-                                else {
-                                    $description = $recipe_steps[0]['recipe_step_text'];
-                                }
-                               
-                                $words = explode(' ', $description);
-                                $first_fifteen_words = array_slice($words, 0, 15);
-                                $description = implode(' ', $first_fifteen_words);
-                                $description .= ' ...';
-
-                                set_query_var('categories', $categories);
-                                set_query_var('post_id', $post_id);
-                                set_query_var('rating', $rating);
-                                set_query_var('time', $time);
-                                set_query_var('portions', $portions);
-                                set_query_var('comments', $comments);
-                                set_query_var('description', $description);
-                                set_query_var('tags', $tags);
-
                                 get_template_part('template-parts/recipe-loop-item');
                             }
                         } else {
@@ -128,7 +107,7 @@ get_header();
         <section>
             <div class="container">
                 <div class="section_header flex">
-                    <h2 class="section_title"><?= $popular_recipes_title ?></h2>
+                    <h2 class="section_title"><?= esc_html($popular_recipes_title) ?></h2>
                     <a href="<?= home_url('/recipes/') ?>" class="btn_bg hide_mobile"><?= __('Смотреть все рецепты', 'cooklook') ?></a>
                 </div>
                 <div class="recipes_grid">
@@ -136,49 +115,16 @@ get_header();
                         $args = array(
                             'post_type' => 'recipe',
                             'posts_per_page' => 5,
-                            'meta_key' => '_recipe_views',
-                            'orderby' => 'meta_value_num', 
+                            'post_status' => 'publish',
+                            'has_password' => false,
+                            'no_found_rows' => true,
+                            'cooklook_sort_meta' => '_recipe_views',
                             'order' => 'DESC' 
                         );
                         $the_query = new WP_Query($args);
                         if ($the_query->have_posts()) {
                             while ($the_query->have_posts()) {
                                 $the_query->the_post();
-                                $categories = get_the_category();
-                                $post_id = get_the_ID();
-                                $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
-                                $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_likes');
-                                $rating = calculate_rating($recipe_likes, $recipe_dislikes);
-                                $time = carbon_get_post_meta($post_id, 'recipe_time');
-                                $portions = carbon_get_post_meta($post_id, 'recipe_portions');
-                                $comments = get_comments_number();
-                                $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
-                                $tags = get_the_tags();
-
-                                if(get_the_excerpt()){
-                                    $description = get_the_excerpt();
-                                }
-                                else if(get_the_content()){
-                                    $description = get_the_content();
-                                }
-                                else {
-                                    $description = $recipe_steps[0]['recipe_step_text'];
-                                }
-                               
-                                $words = explode(' ', $description);
-                                $first_fifteen_words = array_slice($words, 0, 15);
-                                $description = implode(' ', $first_fifteen_words);
-                                $description .= ' ...';
-
-                                set_query_var('categories', $categories);
-                                set_query_var('post_id', $post_id);
-                                set_query_var('rating', $rating);
-                                set_query_var('time', $time);
-                                set_query_var('portions', $portions);
-                                set_query_var('comments', $comments);
-                                set_query_var('description', $description);
-                                set_query_var('tags', $tags);
-
                                 get_template_part('template-parts/recipe-loop-item');
                             }
                         } else {
@@ -196,7 +142,7 @@ get_header();
         <section>
             <div class="container">
                 <div class="section_header">
-                    <h2 class="section_title"><?= $recipes_categories_title ?></h2>
+                    <h2 class="section_title"><?= esc_html($recipes_categories_title) ?></h2>
                 </div>
                 <div class="categories_grid">
                     <?php
@@ -205,6 +151,7 @@ get_header();
                             'parent' => 0,
                             'hide_empty' => true, // Устанавливаем false, чтобы показывать категории, даже если они пустые
                         ));
+                        $parent_cats = is_array($parent_cats) ? $parent_cats : array();
                         $parent_cat_count = count($parent_cats);
 
                         foreach ($parent_cats as $parent_cat) {
@@ -239,7 +186,7 @@ get_header();
                 <div class="qwert_block">                    
                     <div id="gfgret_R-A-8833792-9"></div>
                     <script>
-                        window.yaContextCb.push(() => {
+                        (window.yaContextCb = window.yaContextCb || []).push(() => {
                         Ya.Context.AdvManager.render({
                             "blockId": "R-A-8833792-9",
                             "renderTo": "gfgret_R-A-8833792-9"

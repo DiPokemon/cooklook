@@ -1,44 +1,33 @@
 <?php
-    include 'variables.php';
+    if ( post_password_required() ) { echo get_the_password_form(); return; }
     $post_id = get_the_ID();
     
-    $recipe_likes = intval(carbon_get_post_meta($post_id, 'recipe_likes'));
-    $recipe_dislikes = intval(carbon_get_post_meta($post_id, 'recipe_dislikes'));
-    $rating_counter = $recipe_likes + $recipe_dislikes;
+    $recipe_likes = intval(cooklook_recipe_value($post_id, 'recipe_likes'));
+    $recipe_dislikes = intval(cooklook_recipe_value($post_id, 'recipe_dislikes'));
     $rating = calculate_rating($recipe_likes, $recipe_dislikes);
 
-    $cook_time = carbon_get_post_meta($post_id, 'recipe_time');
-    $prep_time = carbon_get_post_meta($post_id, 'recipe_prep');
+    $cook_time = cooklook_recipe_value($post_id, 'recipe_time');
+    $prep_time = cooklook_recipe_value($post_id, 'recipe_prep');
     $cook_time = (int)$cook_time;
     $prep_time = (int)$prep_time;
     $total_time = $cook_time + $prep_time;
-
-    $cook_time_schema = schema_time($cook_time);
-    $prep_time_schema = !empty($prep_time) ? schema_time($prep_time) : null;    
-    $total_time_schema = schema_time($total_time);
 
     $cook_time_convert = convert_time_to_string($cook_time);
     $prep_time_convert = !empty($prep_time) ? convert_time_to_string($prep_time) : null;    
     $total_time_convert = convert_time_to_string($total_time);
 
-    $portions = carbon_get_post_meta($post_id, 'recipe_portions');
+    $portions = cooklook_recipe_value($post_id, 'recipe_portions');
     $comments_count = get_comments_number();
-    $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
-    $recipe_ingridients = carbon_get_post_meta($post_id, 'ingridients');
-    $tags = get_the_terms($post_id, 'recipe_tags');
-    $recipe_protein = carbon_get_post_meta($post_id, 'recipe_protein');
-    $recipe_carbs = carbon_get_post_meta($post_id, 'recipe_carbs');
-    $recipe_fat = carbon_get_post_meta($post_id, 'recipe_fat');
-    $recipe_calories = carbon_get_post_meta($post_id, 'recipe_calories');   
-    $recipe_region = carbon_get_post_meta($post_id, 'recipe_region');   
+    $recipe_steps = cooklook_recipe_rows($post_id, 'recipe_step');
+    $recipe_ingridients = cooklook_recipe_rows($post_id, 'ingridients');
+    $recipe_protein = cooklook_recipe_value($post_id, 'recipe_protein');
+    $recipe_carbs = cooklook_recipe_value($post_id, 'recipe_carbs');
+    $recipe_fat = cooklook_recipe_value($post_id, 'recipe_fat');
+    $recipe_calories = cooklook_recipe_value($post_id, 'recipe_calories');
 
-    if (has_excerpt()) {
-        $description = get_the_excerpt();
-    } else {
-        $description = get_the_content();
-    }
+    $description = cooklook_recipe_description( $post_id );
 
-    $user_id = is_user_logged_in() ? get_current_user_id() : ($_COOKIE['user_id'] ?? '0');
+    $user_id = get_current_user_id();
     $is_favorite = is_recipe_favorite($post_id, $user_id);
     $favorite_class = $is_favorite ? 'added' : '';
 ?>
@@ -49,7 +38,7 @@
             <div class="left_side">
                 <div class="top_meta">
                     <?php
-                        $recipe_categories = get_the_terms(get_the_ID(), 'recipe_category'); // 'recipe_category' - это таксономия для кастомных категорий рецептов
+                        $recipe_categories = cooklook_recipe_terms(get_the_ID(), 'recipe_category'); // 'recipe_category' - это таксономия для кастомных категорий рецептов
 
                         if ($recipe_categories && !is_wp_error($recipe_categories)) {
                             $parent_category = get_term($recipe_categories[0]->parent, 'recipe_category'); // Получаем родительскую категорию
@@ -69,11 +58,11 @@
                     <?php } ?>  
                 </div>
 
-                <h1> <?= get_the_title() ?> </h1>                
+                <h1> <?= esc_html(get_the_title()) ?> </h1>
                
                 <?php if ($description) : ?>
                     <div class="recipe_description">                        
-                        <?= $description ?>
+                        <?= wp_kses_post(wpautop($description)) ?>
                     </div>
                 <?php endif; ?>
 
@@ -111,7 +100,7 @@
                             <path d="M12.2816 3.75C7.72537 3.75 4.03125 7.44375 4.03125 12C4.03125 16.5559 7.72575 20.25 12.2816 20.25C16.8375 20.25 20.5316 16.5559 20.5316 12C20.5316 7.44375 16.8375 3.75 12.2816 3.75ZM12.2812 18C8.96737 18 6.28087 15.4046 6.28087 12.2021C6.28087 12.1339 6.29025 12.0675 6.2925 12C6.29025 11.9325 6.28087 11.8658 6.28087 11.7979C6.28087 8.59538 8.96775 6 12.2812 6C15.5951 6 18.2812 8.59538 18.2812 11.7979C18.2812 11.8658 18.2734 11.9325 18.2715 12C18.2737 12.0675 18.2812 12.1339 18.2812 12.2021C18.2809 15.4046 15.5951 18 12.2812 18Z"/>
                             <path d="M1.30554 2.78291C1.39554 2.43003 1.57366 2.77878 1.57366 2.77878C1.57366 2.77878 1.63591 6.43129 2.04091 6.47104C2.44591 6.51079 2.13391 2.71278 2.61316 2.64003C3.05866 2.56916 2.80441 6.53141 3.21016 6.49128C3.61441 6.44853 3.68266 2.79754 3.68266 2.79754C3.68266 2.79754 3.86266 2.44916 3.95154 2.79941C5.04954 7.11566 4.16116 8.88004 4.16116 8.88004C4.16116 8.88004 4.01116 9.25091 3.65491 9.25278C3.62154 9.25091 3.64666 19.5038 3.64441 20.8823C3.64516 21.5524 1.58191 21.5318 1.58304 20.8647C1.58454 19.4862 1.62466 9.23441 1.59241 9.23516C1.23504 9.23516 1.08541 8.86466 1.08541 8.86466C1.08541 8.86466 0.20041 7.10141 1.30554 2.78291ZM20.8577 2.62503C21.3219 2.62391 23.2479 4.01253 23.2502 9.17329C23.2524 10.8237 22.352 10.8233 22.3535 11.8557C22.355 12.8862 22.3607 21.0829 22.3607 21.0829C22.3607 21.0829 21.3729 21.7605 20.6387 21.0514L20.6252 2.77166C20.6259 2.77203 20.6233 2.62466 20.8577 2.62503Z" />
                         </svg>
-                        <span class="meta-value"><?= $portions ?></span>
+                        <span class="meta-value"><?= esc_html($portions) ?></span>
                     </div>
                 </div>
             </div>
@@ -120,9 +109,9 @@
                 <div class="recipe_img_wrapper">
                     <?php if (has_post_thumbnail()) : ?>
                         <?php $thumbnail_url = get_the_post_thumbnail_url(); ?>
-                        <img src="<?= esc_url($thumbnail_url) ?>" alt="<?= sprintf(__('Рецепт %s', 'cooklook'), get_the_title()); ?>">
+                        <img src="<?= esc_url($thumbnail_url) ?>" alt="<?= esc_attr(sprintf(__('Рецепт %s', 'cooklook'), get_the_title())); ?>">
                     <?php else : ?>
-                        <img src="<?= get_template_directory_uri() . '/static/img/no_image.png'  ?>" alt="<?= sprintf(__('Рецепт %s', 'cooklook'), get_the_title()); ?>">
+                        <img src="<?= get_template_directory_uri() . '/static/img/no_image.png'  ?>" alt="<?= esc_attr(sprintf(__('Рецепт %s', 'cooklook'), get_the_title())); ?>">
                     <?php endif ?>
                     <?php if (is_user_logged_in()) : ?>
                         <a href="#" data-recipe-id="<?= get_the_ID(); ?>" class="bookmark <?= $favorite_class ?>">                    
@@ -145,7 +134,7 @@
                     <?php if ($recipe_protein) : ?>
                         <div class="energy_value recipe_protein">
                             <h3 class="energy_value-name"><?= __('Белки','cooklook')  ?></h3>
-                            <span class="energy_value-value"><?= $recipe_protein ?></span>
+                            <span class="energy_value-value"><?= esc_html($recipe_protein) ?></span>
                             <span class="energy_value-mesure"><?= __('Грамм','cooklook') ?></span>
                         </div>
                     <?php endif ?>
@@ -153,7 +142,7 @@
                     <?php if ($recipe_fat) : ?>
                         <div class="energy_value recipe_fat">
                             <h3 class="energy_value-name"><?= __('Жиры','cooklook')  ?></h3>
-                            <span class="energy_value-value"><?= $recipe_fat ?></span>
+                            <span class="energy_value-value"><?= esc_html($recipe_fat) ?></span>
                             <span class="energy_value-mesure"><?= __('Грамм','cooklook') ?></span>
                         </div>
                     <?php endif ?>
@@ -161,7 +150,7 @@
                     <?php if ($recipe_carbs) : ?>
                         <div class="energy_value recipe_carbs">
                             <h3 class="energy_value-name"><?= __('Углеводы','cooklook')  ?></h3>
-                            <span class="energy_value-value"><?= $recipe_carbs ?></span>
+                            <span class="energy_value-value"><?= esc_html($recipe_carbs) ?></span>
                             <span class="energy_value-mesure"><?= __('Грамм','cooklook') ?></span>
                         </div>
                     <?php endif ?>
@@ -169,7 +158,7 @@
                     <?php if ($recipe_calories) : ?>
                         <div class="energy_value recipe_calories">
                             <h3 class="energy_value-name"><?= __('Калорийность','cooklook')  ?></h3>
-                            <span class="energy_value-value"><?= $recipe_calories ?></span>
+                            <span class="energy_value-value"><?= esc_html($recipe_calories) ?></span>
                             <span class="energy_value-mesure"><?= __('Ккал','cooklook') ?></span>
                         </div>
                     <?php endif ?>
@@ -198,7 +187,7 @@
                                     <b><?= __('Шаг', 'cooklook').' '.($index+1) ?></b> / <?= $steps_count ?>
                                 </span>
                                 <div class="step_description">
-                                    <?= $step['recipe_step_text'] ?>
+                                    <?= wp_kses_post(wpautop(isset($step['recipe_step_text']) ? $step['recipe_step_text'] : '')) ?>
                                 </div>
                             </div>
                             
@@ -219,8 +208,8 @@
                         <ul class="ingridients_list">
                             <?php foreach ($recipe_ingridients as $ingridient): ?>
                                 <li class="ingridients_list-item">
-                                    <span class="ingridients_list-item-name"><?= $ingridient['ingridient_name'] ?></span>
-                                    <span class="ingridients_list-item-value"><?= $ingridient['ingridient_value'] ?></span>
+                                    <span class="ingridients_list-item-name"><?= esc_html(isset($ingridient['ingridient_name']) ? $ingridient['ingridient_name'] : '') ?></span>
+                                    <span class="ingridients_list-item-value"><?= esc_html(isset($ingridient['ingridient_value']) ? $ingridient['ingridient_value'] : '') ?></span>
                                 </li>
                             <?php endforeach ?>
                         </ul>
@@ -236,7 +225,7 @@
                 <h2><?= __('Оцените этот рецепт', 'cooklook') ?></h2>
                 <?php if ( is_user_logged_in() ) : ?>          
                     <div class="like_dislike_block">                    
-                        <button id="like_btn-<?= get_the_ID() ?>" class="like_btn">
+                        <button type="button" aria-label="Нравится" id="like_btn-<?= get_the_ID() ?>" class="like_btn">
                             <svg xmlns="http://www.w3.org/2000/svg" class="btn_icon" viewBox="0 0 512 512">
                                 <path d="M456 192l-156-12 23-89.4c6-26.6-.78-41.87-22.47-48.6l-34.69-9.85a4 4 0 00-4.4 1.72l-129 202.34a8 8 0 01-6.81 3.81H16V448h117.61a48 48 0 0115.18 2.46l76.3 25.43a80 80 0 0025.3 4.11h177.93c19 0 31.5-13.52 35.23-32.16L496 305.58V232c0-22.06-18-38-40-40z"/>                            
                             </svg>
@@ -246,7 +235,7 @@
                             <?= $rating ?>
                         </div>
                         
-                        <button id="dislike_btn-<?= get_the_ID() ?>" class="dislike_btn">
+                        <button type="button" aria-label="Не нравится" id="dislike_btn-<?= get_the_ID() ?>" class="dislike_btn">
                             <svg xmlns="http://www.w3.org/2000/svg" class="btn_icon" viewBox="0 0 512 512">
                                 <path d="M56 320l156.05 12-23 89.4c-6.08 26.6.7 41.87 22.39 48.62l34.69 9.85a4 4 0 004.4-1.72l129-202.34a8 8 0 016.81-3.81H496V64H378.39a48 48 0 01-15.18-2.46l-76.3-25.43a80 80 0 00-25.3-4.11H83.68c-19 0-31.5 13.52-35.23 32.16L16 206.42V280c0 22.06 18 38 40 40z"/>
                                 <path d="M378.45 273.93A15.84 15.84 0 01386 272a15.93 15.93 0 00-7.51 1.91zM337.86 343.22l-.13.22a2.53 2.53 0 01.13-.22c20.5-35.51 30.36-55 33.82-62-3.47 7.06-13.34 26.51-33.82 62z" fill="none"/>                                
@@ -257,12 +246,12 @@
                 <?php else: ?>
                     <span class="login_message">
                         <?php
-                            $login_url = home_url().'/login/'; // URL для страницы входа
-                            $register_url = home_url().'/login/?action=register/'; // URL для страницы регистрации
+                            $login_url = wp_login_url(get_permalink()); // URL для страницы входа
+                            $register_url = wp_registration_url(); // URL для страницы регистрации
 
                             $message_template = __('Чтобы оценить рецепт %s или %s', 'cooklook');
-                            $login_link = '<a href="' . $login_url . '">' . __('войдите', 'cooklook') . '</a>';
-                            $register_link = '<a href="' . $register_url . '">' . __('зарегистрируйтесь', 'cooklook') . '</a>';
+                            $login_link = '<a href="' . esc_url($login_url) . '">' . __('войдите', 'cooklook') . '</a>';
+                            $register_link = '<a href="' . esc_url($register_url) . '">' . __('зарегистрируйтесь', 'cooklook') . '</a>';
 
                             $message = sprintf($message_template, $login_link, $register_link);
                             echo $message;
@@ -307,103 +296,18 @@
         </div>
     </section>
 
-    <?php
-        $images_urls = array();
-        $ingridients_list_keywords = array();
-        $ingridients_list = array();
-        $post_thumbnail_url = esc_url(get_the_post_thumbnail_url());
-        if ($post_thumbnail_url) {
-            $images_urls[] = '"' . $post_thumbnail_url . '"';
-        }
-        if ($recipe_steps) {
-            foreach ($recipe_steps as $step) {
-                $step_image_url = esc_url($step['recipe_step_image']);
-                if ($step_image_url) {
-                    $images_urls[] = '"' . $step_image_url . '"';
-                }
-            }
-        }
-        $images_string = implode(', ', $images_urls);
-        if ($recipe_ingridients) {
-            foreach ($recipe_ingridients as $ingridient) {
-                $ing_name = $ingridient['ingridient_name'];
-                $ing_value = $ingridient['ingridient_value'];
-                if ($ing_name) {
-                    $ingridients_list_keywords[] = '"' . $ing_name . '"';
-                    $ingridients_list[] = '"' . $ing_name . ' - ' . $ing_value . '"';
-                }
-            }
-        }
-        $ingridients_keywords = implode(', ', $ingridients_list_keywords);
-        $ingridients_list = implode(', ', $ingridients_list);        
-    ?>
-
-    <script type="application/ld+json">
-        {
-        "@context": "https://schema.org/",
-        "@type": "Recipe",
-        "name": "<?= get_the_title() ?>",
-        "image": [
-            <?= $images_string ?>            
-        ],
-        "author": {
-            "@type": "Person",
-            "name": "<?= get_the_author() ?>"
-        },
-        "datePublished": "<?= get_the_date('Y-m-d') ?>",
-        <?php if($description):?>
-        "description": "<?= $description ?>",
-        <?php endif; ?>
-        "recipeCuisine": "<?= $recipe_region ?>",
-        <?php if($prep_time_schema): ?>
-            "prepTime": "$prep_time_schema",
-        <?php endif; ?>
-        "cookTime": "<?= $cook_time_schema ?>",
-        "totalTime": "<?= $total_time_schema ?>",
-        "keywords": [<?= $ingridients_keywords ?>],
-        "recipeYield": "<?= $portions ?> порции",
-        "recipeCategory": "<?= $category_name ?>",
-        "nutrition": {
-            "@type": "NutritionInformation",
-            "calories": "<?= $recipe_calories ?> ккал",
-            "carbohydrateContent": "<?= $recipe_carbs ?> г",
-            "proteinContent": "<?= $recipe_protein ?> г",
-            "fatContent": "<?= $recipe_fat ?> г"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "<?= $rating ?>",
-            "ratingCount": "<?= $rating_counter ?>"
-        },
-        "recipeIngredient": [<?= $ingridients_list  ?>],
-        "recipeInstructions": [
-            <?php 
-                $count = count($recipe_steps); // Определяем количество элементов в массиве
-                foreach ($recipe_steps as $index => $steps) :
-            ?>
-                    {
-                        "@type": "HowToStep",
-                        "name": "Шаг <?= ($index+1) ?>",
-                        "text": "<?= $steps['recipe_step_text'] ?>",
-                        "url": "<?= get_permalink() ?>#step_<?= ($index+1) ?>"
-                        <?php if( $steps['recipe_step_image'] ) : ?>
-                            ,
-                            "image": "<?= $steps['recipe_step_image'] ?>"
-                        <?php endif; ?>
-                    }<?php if ($index < $count - 1) echo ','; ?>
-                <?php endforeach; ?>       
-        ]        
-        }
-    </script>
+    <?php cooklook_print_schema( cooklook_recipe_schema( get_the_ID() ) ); ?>
 
     <?php
-        $current_post_categories = wp_get_post_terms(get_the_ID(), 'recipe_category', array('fields' => 'ids'));
+        $current_post_categories = wp_list_pluck(cooklook_recipe_terms(get_the_ID(), 'recipe_category'), 'term_id');
 
         $args = array(
             'post_type' => 'recipe',
             'posts_per_page' => 9, 
             'post_status' => 'publish',
-            'orderby' => 'rand',
+            'orderby' => 'date',
+            'has_password' => false,
+            'no_found_rows' => true,
             'tax_query' => array(
                 array(
                     'taxonomy' => 'recipe_category', // таксономия, по которой фильтруем
@@ -426,41 +330,6 @@
                         <?php
                             while ($the_query->have_posts()) {
                                 $the_query->the_post();
-                                $categories = get_the_category();
-                                $post_id = get_the_ID();
-                                $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
-                                $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_likes');
-                                $rating = calculate_rating($recipe_likes, $recipe_dislikes);
-                                $time = carbon_get_post_meta($post_id, 'recipe_time');
-                                $portions = carbon_get_post_meta($post_id, 'recipe_portions');
-                                $comments = get_comments_number();
-                                $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
-                                $tags = get_the_tags();
-
-                                if(get_the_excerpt()){
-                                    $description = get_the_excerpt();
-                                }
-                                else if(get_the_content()){
-                                    $description = get_the_content();
-                                }
-                                else {
-                                    $description = $recipe_steps[0]['recipe_step_text'];
-                                }
-                               
-                                $words = explode(' ', $description);
-                                $first_fifteen_words = array_slice($words, 0, 15);
-                                $description = implode(' ', $first_fifteen_words);
-                                $description .= ' ...';
-
-                                set_query_var('categories', $categories);
-                                set_query_var('post_id', $post_id);
-                                set_query_var('rating', $rating);
-                                set_query_var('time', $time);
-                                set_query_var('portions', $portions);
-                                set_query_var('comments', $comments);
-                                set_query_var('description', $description);
-                                set_query_var('tags', $tags);
-
                                 get_template_part('template-parts/recipe-loop-item');
                             }
                         ?>
@@ -478,7 +347,7 @@
             <div class="qwert_block">                
                 <div id="voehw_R-A-8833792-7"></div>
                 <script>
-                    window.yaContextCb.push(() => {
+                    (window.yaContextCb = window.yaContextCb || []).push(() => {
                     Ya.Context.AdvManager.render({
                         "blockId": "R-A-8833792-7",
                         "renderTo": "voehw_R-A-8833792-7"

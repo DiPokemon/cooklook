@@ -17,8 +17,8 @@
         </div>
 
         <div class="search_form">
-            <form id="ajax-search-form" action="javascript:void(0);" method="post">
-                <input class="search_input" type="text" name="search" id="ajax-search-input" placeholder="<?= __('Поиск по сайту...', 'cooklook') ?>">
+            <form id="ajax-search-form" action="<?= esc_url(home_url('/')) ?>" method="get">
+                <input class="search_input" type="text" name="s" id="ajax-search-input" placeholder="<?= __('Поиск по сайту...', 'cooklook') ?>">
                 <input id="search_submit" type="submit" value="">
             </form>
             <button id="close_search" class="close_modal hide_mobile">
@@ -39,7 +39,7 @@
             <div class="popular_search-items">
                 <?php foreach ($results as $result) : ?>
                     <?php $query = esc_html($result->query); ?>
-                    <a class="popular_search_item" href="javascript:void(0);" onclick="setSearchQuery('<?= $query ?>')"><?= $query ?></a>
+                    <a class="popular_search_item" href="<?= esc_url(add_query_arg('s', $result->query, home_url('/'))) ?>"><?= $query ?></a>
                     
                 <?php endforeach; ?>  
             </div>                                       

@@ -8,7 +8,9 @@
  *
  * @package cooklook
  */
-include 'template-parts/variables.php';
+$email = sanitize_email(carbon_get_theme_option('email'));
+$ads_email = sanitize_email(carbon_get_theme_option('ads_email'));
+$copyright = carbon_get_theme_option('copyright');
 ?>
 	<div class="bottom_menu mobile_display">
 		<a href="<?= home_url() ?>" class="bottom_menu-item">
@@ -68,38 +70,24 @@ include 'template-parts/variables.php';
 					echo $temp_menu;
 				?>
 				
-				<!--<?php
-					$args = array(
-						'container'       => 'nav',          
-						'container_class' => 'footer_menu menu',           
-						'menu_class'      => 'footer_menu_list',          
-						'fallback_cb'     => 'wp_page_menu',            
-						'link_class'     => 'menu_link',           
-						'theme_location' => 'main_menu',
-						'menu_id'        => 'primary-menu-footer',
-						'add_li_class'    => 'menu_item',
-						'echo'          => false,               
-					);
-					$temp_menu = wp_nav_menu($args);
-					echo $temp_menu;
-				?>-->
+
 				
 
 				<div class="footer_contacts">
 					<div class="contacts_item">
 						<span class="footer_contacts-title"><?= __('Email', 'cooklook') ?></span>
-						<a href="mailto:<?= $email ?>" class="footer_contacts-link"><?= $email ?></a>
+						<a href="<?= esc_url('mailto:' . $email) ?>" class="footer_contacts-link"><?= esc_html($email) ?></a>
 					</div>
 
 					<div class="contacts_item">
 						<span class="footer_contacts-title"><?= __('Реклама на сайте', 'cooklook') ?></span>
-						<a href="mailto:<?= $ads_email ?>" class="footer_contacts-link"><?= $ads_email ?></a>
+						<a href="<?= esc_url('mailto:' . $ads_email) ?>" class="footer_contacts-link"><?= esc_html($ads_email) ?></a>
 					</div>				
 				</div>
 			</div>
 
 			<div class="footer_bottom">
-				© cook-look.ru, 2024. <?= __('Все права защищены', 'cooklook') ?>
+				<?= esc_html($copyright ?: '© ' . get_bloginfo('name') . ', ' . wp_date('Y') . '. ' . __('Все права защищены', 'cooklook')) ?>
 			</div>
 		</div>
 	</footer><!-- #colophon -->

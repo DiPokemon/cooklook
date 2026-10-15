@@ -1,0 +1,280 @@
+.cooklook-account {
+	padding: 64px 0 80px;
+	color: #292d32;
+}
+
+.cooklook-account .account-heading {
+	margin-bottom: 32px;
+}
+
+.cooklook-account h1 {
+	margin: 0 0 16px;
+	font: 400 clamp(30px, 4vw, 48px) / 1.2 "Gerhaus", sans-serif;
+	text-transform: uppercase;
+}
+
+.cooklook-account h2 {
+	margin: 0;
+	font-size: 24px;
+	font-weight: 800;
+	line-height: 1.3;
+}
+
+.cooklook-account p {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+.account-heading > p,
+.account-card > p,
+.account-admin > p {
+	color: #62676d;
+}
+
+.account-summary {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px 24px;
+	margin-bottom: 24px;
+	padding: 20px 24px;
+	border-radius: 16px;
+	background: #edf8f1;
+	overflow-wrap: anywhere;
+}
+
+.account-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.cooklook-account .account-card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 16px;
+	padding: 28px;
+	border: 1px solid #e7e8e9;
+	border-radius: 20px;
+}
+
+.account-card > p {
+	flex-grow: 1;
+}
+
+.account-card > a {
+	display: inline-flex;
+	justify-content: center;
+	max-width: 100%;
+	text-align: center;
+}
+
+.account-text-link,
+.account-admin a {
+	color: #187e40;
+	font-weight: 700;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.cooklook-account a:focus-visible {
+	outline: 2px solid #187e40;
+	outline-offset: 4px;
+}
+
+.cooklook-account .account-admin {
+	margin-top: 32px;
+	padding: 28px;
+	border-radius: 20px;
+	background: #f8f8fa;
+}
+
+.account-admin > p {
+	margin-top: 12px;
+}
+
+.account-admin nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px 28px;
+	margin-top: 20px;
+}
+
+.account-sign-in {
+	max-width: 640px;
+}
+
+.account-profile,
+.account-security {
+	margin-top: 32px;
+	padding: 28px;
+	border: 1px solid #e7e8e9;
+	border-radius: 20px;
+	scroll-margin-top: 100px;
+}
+
+.account-section-heading {
+	margin-bottom: 24px;
+}
+
+.account-section-heading > p {
+	margin-top: 8px;
+	color: #62676d;
+}
+
+.account-form,
+.account-field {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 8px;
+	min-width: 0;
+}
+
+.account-form {
+	gap: 20px;
+}
+
+.account-form-grid,
+.account-security-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 20px;
+}
+
+.account-field-wide {
+	grid-column: 1 / -1;
+}
+
+.account-field label,
+.account-security-card summary {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+.cooklook-account .account-field input,
+.cooklook-account .account-field textarea {
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 0;
+	min-height: 48px;
+	margin: 0;
+	padding: 12px 14px;
+	border: 1px solid #c9ced0;
+	border-radius: 10px;
+	background: #fff;
+	color: #292d32;
+	font: inherit;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.cooklook-account .account-field textarea {
+	resize: vertical;
+}
+
+.account-field small {
+	color: #62676d;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.cooklook-account :is(input, textarea, button, summary):focus-visible {
+	outline: 2px solid #187e40;
+	outline-offset: 3px;
+}
+
+.cooklook-account .account-form button,
+.cooklook-account .account-confirm-email button {
+	align-self: flex-start;
+	max-width: 100%;
+	min-height: 44px;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.cooklook-account .account-notice {
+	margin: 0 0 24px;
+	padding: 16px 20px;
+	border-left: 4px solid #187e40;
+	border-radius: 8px;
+	background: #edf8f1;
+	overflow-wrap: anywhere;
+}
+
+.cooklook-account .account-notice-error {
+	border-color: #b5372b;
+	background: #fff1ef;
+	color: #8a231b;
+}
+
+.account-confirm-email {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.account-confirm-email .account-text-link {
+	padding: 0;
+	border: 0;
+	background: transparent;
+}
+
+.account-security-grid {
+	align-items: start;
+}
+
+.account-security-card {
+	min-width: 0;
+	padding: 20px;
+	border-radius: 12px;
+	background: #f8f8fa;
+}
+
+.account-security-card summary {
+	cursor: pointer;
+}
+
+.account-security-card[open] summary {
+	margin-bottom: 20px;
+}
+
+.account-current-email {
+	overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+	.cooklook-account {
+		padding: 32px 0 48px;
+	}
+
+	.account-grid,
+	.account-form-grid,
+	.account-security-grid {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 16px;
+	}
+
+	.cooklook-account .account-card,
+	.cooklook-account .account-admin,
+	.account-profile,
+	.account-security,
+	.account-summary {
+		padding: 20px;
+	}
+
+	.account-security-card {
+		padding: 16px;
+	}
+
+	.account-admin nav {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}

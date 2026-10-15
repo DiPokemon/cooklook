@@ -107,12 +107,12 @@ add_action( 'after_setup_theme', 'cooklook_setup' );
 //Add class for logo
 add_filter( 'get_custom_logo', 'change_logo_class' );
 function change_logo_class( $html ) {
-		$html = str_replace( 'custom-logo', 'logo_img', $html );
-       $html = str_replace( 'custom-logo-link', 'header_logo_link', $html );
-    return $html;
-};
+    return str_replace( array( 'custom-logo-link', 'custom-logo' ), array( 'header_logo_link', 'logo_img' ), $html );
+}
 
-//require_once( get_template_directory().'/functions-parts/theme-settings.php' );
+require_once get_template_directory() . '/inc/recipe-helpers.php';
+require_once get_template_directory() . '/inc/recipe-query.php';
+require_once get_template_directory() . '/inc/account.php';
 require_once( get_template_directory().'/functions-parts/breadcrumbs.php' );
 require_once( get_template_directory().'/functions-parts/navmenu.php' );
 require_once( get_template_directory().'/functions-parts/crb_init.php' );
@@ -184,7 +184,7 @@ add_action( 'wp_enqueue_scripts', 'cooklook_scripts' );
 function default_post_thumbnail($html, $post_id, $post_thumbnail_id, $size, $attr) {
     if (empty($html)) {
         $default_image = get_template_directory_uri() . '/static/img/no_image.png';
-        $html = '<img src="' . $default_image . '" alt="Default Image" />';
+        $html = '<img src="' . esc_url($default_image) . '" alt="Default Image" />';
     }
     return $html;
 }

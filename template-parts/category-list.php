@@ -4,6 +4,7 @@
 */
 $parent_cat = get_query_var('parent_cat');
 $child_cats = get_query_var('child_cats');
+$child_cats = is_array($child_cats) ? $child_cats : array();
 ?>
 
 <div class="category_list">

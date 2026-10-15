@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<ruleset name="Cooklook request security">
+	<description>Focused checks for the refactored request boundary and recipe persistence.</description>
+	<arg name="extensions" value="php"/>
+	<file>inc/recipe-helpers.php</file>
+	<file>inc/recipe-query.php</file>
+	<file>recipe_manager.php</file>
+	<file>recipe_importer.php</file>
+	<file>filters-handler.php</file>
+	<file>search-ajax-handler.php</file>
+	<file>functions-parts/recipe_rating.php</file>
+	<file>functions-parts/favorite_recipes.php</file>
+	<file>page-account.php</file>
+	<file>inc/account.php</file>
+	<file>template-parts/account-profile.php</file>
+	<rule ref="WordPress.Security.EscapeOutput"/>
+	<rule ref="WordPress.Security.ValidatedSanitizedInput"/>
+	<rule ref="WordPress.Security.NonceVerification">
+		<properties>
+			<property name="customNonceVerificationFunctions" type="array">
+				<element value="cooklook_verify_ajax_nonce"/>
+				<element value="cooklook_manager_authorize"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

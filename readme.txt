@@ -1,39 +1,24 @@
-=== cooklook ===
-
-Contributors: automattic
+=== Cooklook ===
+Contributors: dimitriy
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-Requires at least: 4.5
-Tested up to: 5.4
-Requires PHP: 5.6
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
+License: GPL-2.0-or-later
 License URI: LICENSE
+Stable tag: 1.0.0
 
-A starter theme called cooklook.
-
-== Description ==
-
-Template for Cook-look.ru
+Классическая тема WordPress для сайта рецептов Cook-look.ru.
 
 == Installation ==
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+Установите тему вместе с runtime-зависимостями vendor/. Подготовка зависимостей,
+модель данных, ограничения импорта и команды проверки описаны в README.md.
+Для проверки интеграций используйте копию действующей базы.
 
-== Frequently Asked Questions ==
+== Dependencies ==
 
-= Does this theme support any plugins? =
-
-cooklook includes support for WooCommerce and for Infinite Scroll in Jetpack.
-
-== Changelog ==
-
-= 1.0 - May 12 2015 =
-* Initial release
+Carbon Fields (Composer). Relevanssi и Yoast SEO используются при наличии.
+Для преобразования изображений рецептов нужен Imagick.
 
 == Credits ==
 
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+Based on Underscores, Automattic, GPLv2 or later.
+normalize.css, Nicolas Gallagher and Jonathan Neal, MIT.

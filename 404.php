@@ -6,7 +6,11 @@
  *
  * @package cooklook
  */
-include 'template-parts/variables.php';
+$title_404 = carbon_get_theme_option('title_404');
+$subtitle_404 = carbon_get_theme_option('subtitle_404');
+$text_404 = carbon_get_theme_option('text_404');
+$img_404 = carbon_get_theme_option('image_404');
+$btn_404 = carbon_get_theme_option('btn_404');
 get_header();
 ?>
 
@@ -19,20 +23,20 @@ get_header();
 					?>
 					
 					<div class="image_404">
-						<img src="<?= $img_src ?>" alt="Страница не найдена">
+						<img src="<?= esc_url($img_src) ?>" alt="Страница не найдена">
 					</div>
 					<div class="content_404">
 						<span class="title_404">
-							<?php echo !empty($title_404) ? $title_404 : __('ОЙ!', 'cooklook');	?>
+							<?php echo esc_html(!empty($title_404) ? $title_404 : __('ОЙ!', 'cooklook'));	?>
 						</span>
 						<span class="subtitle_404">
-							<?php echo !empty($subtitle_404) ? $subtitle_404 : __('Похоже эта страница потерялась', 'cooklook'); ?>
+							<?php echo esc_html(!empty($subtitle_404) ? $subtitle_404 : __('Похоже эта страница потерялась', 'cooklook')); ?>
 						</span>
 						<span class="text_404">
-							<?php echo !empty($text_404) ? $text_404 : __('Может попробуем вернуться на главную и поискать что-нибудь другое?', 'cooklook'); ?>
+							<?php echo esc_html(!empty($text_404) ? $text_404 : __('Может попробуем вернуться на главную и поискать что-нибудь другое?', 'cooklook')); ?>
 						</span>
-						<a href="<?= home_url() ?>" class="btn_bg">
-							<?php echo !empty($btn_404) ? $btn_404 : __('На главную', 'cooklook'); ?>
+						<a href="<?= esc_url(home_url()) ?>" class="btn_bg">
+							<?php echo esc_html(!empty($btn_404) ? $btn_404 : __('На главную', 'cooklook')); ?>
 						</a>
 					</div>
 

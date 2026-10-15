@@ -9,30 +9,50 @@
  */
 
 get_header();
+global $wp_query;
+if ( ! is_post_type_archive( 'recipe' ) && ! is_tax( array( 'recipe_category', 'recipe_tags' ) ) && ! is_page_template( 'archive.php' ) ) {
+    echo '<main id="primary" class="site-main"><div class="container">';
+    the_archive_title( '<h1 class="page_title">', '</h1>' );
+    while ( have_posts() ) {
+        the_post();
+        get_template_part( 'template-parts/content', get_post_type() );
+    }
+    the_posts_pagination();
+    echo '</div></main>';
+    get_footer();
+    return;
+}
+$filters = cooklook_recipe_filters( $_GET );
+$catalog_query = $wp_query;
+if ( is_page_template( 'archive.php' ) ) {
+    $filters = cooklook_recipe_filters( $_GET );
+    $filters['paged'] = max( $filters['paged'], absint( get_query_var( 'paged' ) ), absint( get_query_var( 'page' ) ) );
+    $catalog_query = new WP_Query( cooklook_recipe_query_args( $filters ) );
+}
 
 
 ?>
 <main id="primary" class="site-main">
-    <?php if (have_posts()) : ?>
+
         <section class="page_header">
             <div class="container">
                 <header>
                     <?php
                     if (function_exists('breadcrumbs')) breadcrumbs();
 
-                    if (is_archive()) {
-                        if (is_post_type_archive('recipe')) {
+                    if (is_archive() || is_page_template('archive.php')) {
+                        if (is_post_type_archive('recipe') || is_page_template('archive.php')) {
                             echo '<h1 class="page_title">' . __('Каталог рецептов', 'cooklook') . '</h1>';
                         } elseif (is_tax('recipe_category')) {
                             $term = get_queried_object();
                             $parent_term = get_term($term->parent, 'recipe_category');
                             if ($parent_term instanceof WP_Term) {
-                                echo '<h1 class="page_title">' . $parent_term->name . ' / ' . $term->name . '</h1>';
+                                echo '<h1 class="page_title">' . esc_html($parent_term->name . ' / ' . $term->name) . '</h1>';
                             } else {
-                                echo '<h1 class="page_title">' . $term->name . '</h1>';
+                                echo '<h1 class="page_title">' . esc_html($term->name) . '</h1>';
                             }
                         } elseif (is_tax('recipe_tags')) {
-                            echo '<h1 class="page_title">' . __('Рецепты с "', 'cooklook') . single_tag_title('', false) . '"</h1>';
+                            echo '<h1 class="page_title">' . __('Рецепты с "', 'cooklook') . esc_html(single_term_title('', false)) . '"</h1>';
                         } else {
                             echo '<h1 class="page_title">' . __('Архив', 'cooklook') . '</h1>';
                         }
@@ -41,15 +61,15 @@ get_header();
                     <div id="filters" class="filters">
                         <div class="filters_header mobile_display">
                             <span><?= __('Фильтры', 'cooklook') ?></span>
-                            <button id="close_filter-mobile" class="close_modal">
+                            <button id="close_filter-mobile" class="close_modal" aria-label="<?= esc_attr__('Закрыть фильтры', 'cooklook') ?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                                     <path d="M13.3002 0.70998C13.2077 0.617276 13.0978 0.543728 12.9768 0.493547C12.8559 0.443366 12.7262 0.417535 12.5952 0.417535C12.4643 0.417535 12.3346 0.443366 12.2136 0.493547C12.0926 0.543728 11.9827 0.617276 11.8902 0.70998L7.00022 5.58998L2.11022 0.699979C2.01764 0.607397 1.90773 0.533957 1.78677 0.483852C1.6658 0.433747 1.53615 0.407959 1.40522 0.407959C1.27429 0.407959 1.14464 0.433747 1.02368 0.483852C0.902716 0.533957 0.792805 0.607397 0.700223 0.699979C0.607642 0.792561 0.534202 0.902472 0.484097 1.02344C0.433992 1.1444 0.408203 1.27405 0.408203 1.40498C0.408203 1.53591 0.433992 1.66556 0.484097 1.78652C0.534202 1.90749 0.607642 2.0174 0.700223 2.10998L5.59022 6.99998L0.700223 11.89C0.607642 11.9826 0.534202 12.0925 0.484097 12.2134C0.433992 12.3344 0.408203 12.464 0.408203 12.595C0.408203 12.7259 0.433992 12.8556 0.484097 12.9765C0.534202 13.0975 0.607642 13.2074 0.700223 13.3C0.792805 13.3926 0.902716 13.466 1.02368 13.5161C1.14464 13.5662 1.27429 13.592 1.40522 13.592C1.53615 13.592 1.6658 13.5662 1.78677 13.5161C1.90773 13.466 2.01764 13.3926 2.11022 13.3L7.00022 8.40998L11.8902 13.3C11.9828 13.3926 12.0927 13.466 12.2137 13.5161C12.3346 13.5662 12.4643 13.592 12.5952 13.592C12.7262 13.592 12.8558 13.5662 12.9768 13.5161C13.0977 13.466 13.2076 13.3926 13.3002 13.3C13.3928 13.2074 13.4662 13.0975 13.5163 12.9765C13.5665 12.8556 13.5922 12.7259 13.5922 12.595C13.5922 12.464 13.5665 12.3344 13.5163 12.2134C13.4662 12.0925 13.3928 11.9826 13.3002 11.89L8.41022 6.99998L13.3002 2.10998C13.6802 1.72998 13.6802 1.08998 13.3002 0.70998Z" />
                                 </svg>
                             </button>
                         </div>
 
-                        <form id="recipe-filter">
-                            <select id="recipe_category" name="recipe_category" class="filter_select" data-placeholder="<?= __('Любая категория', 'cooklook') ?>">
+                        <form id="recipe-filter" method="get">
+                            <select id="recipe_category" name="category_id" class="filter_select" data-placeholder="<?= __('Любая категория', 'cooklook') ?>">
                                 <option value="all"><?= __('Любая категория', 'cooklook') ?></option>
                                 <?php
                                 $categories = get_terms(array(
@@ -58,33 +78,37 @@ get_header();
                                     'parent' => 0,
                                 ));
 
-                                foreach ($categories as $category) {
-                                    echo '<option value="' . esc_attr($category->term_id) . '">' . esc_html($category->name) . '</option>';
+                                foreach (is_array($categories) ? $categories : array() as $category) {
+                                    echo '<option value="' . esc_attr($category->term_id) . '" ' . selected($filters['category_id'], $category->term_id, false) . '>' . esc_html($category->name) . '</option>';
                                 }
                                 ?>
                             </select>
 
-                            <select id="recipe_subcategory" name="recipe_subcategory" class="filter_select" data-placeholder="<?= __('Любое блюдо', 'cooklook') ?>" disabled>
+                            <?php $subcategories = $filters['category_id'] ? get_terms(array('taxonomy' => 'recipe_category', 'parent' => $filters['category_id'], 'hide_empty' => false)) : array(); ?>
+                            <select id="recipe_subcategory" name="subcategory_id" class="filter_select" data-placeholder="<?= __('Любое блюдо', 'cooklook') ?>" <?php disabled(!$filters['category_id']); ?>>
                                 <option value="all"><?= __('Любое блюдо', 'cooklook') ?></option>
+                                <?php foreach (is_array($subcategories) ? $subcategories : array() as $subcategory) : ?>
+                                    <option value="<?= esc_attr($subcategory->term_id) ?>" <?php selected($filters['subcategory_id'], $subcategory->term_id); ?>><?= esc_html($subcategory->name) ?></option>
+                                <?php endforeach; ?>
                             </select>
 
-                            <select id="recipe_region" name="recipe_region" class="filter_select" data-placeholder="<?= __('Любое меню', 'cooklook') ?>">
+                            <select id="recipe_region" name="region" class="filter_select" data-placeholder="<?= __('Любое меню', 'cooklook') ?>">
                                 <option value=""><?= __('Любое меню', 'cooklook') ?></option>
                                 <?php
                                 global $wpdb;
-                                $regions = $wpdb->get_col("SELECT DISTINCT meta_value FROM $wpdb->postmeta WHERE meta_key = '_recipe_region'");
+                                $regions = $wpdb->get_col("SELECT DISTINCT pm.meta_value FROM {$wpdb->postmeta} pm INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id WHERE pm.meta_key = '_recipe_region' AND p.post_type = 'recipe' AND p.post_status = 'publish' AND p.post_password = '' ORDER BY pm.meta_value");
 
                                 foreach ($regions as $region_name) {
                                     if ($region_name) :
                                 ?>
-                                        <option value="<?= esc_attr($region_name) ?>"><?= esc_html($region_name) ?></option>
+                                        <option value="<?= esc_attr($region_name) ?>" <?php selected($filters['region'], $region_name); ?>><?= esc_html($region_name) ?></option>
                                 <?php
                                     endif;
                                 }
                                 ?>
                             </select>
-                            <?php get_template_part('template-parts/filter-ingridients'); ?>
-                            <button class="btn_nonbg ingridients_btn"><?= __('Ингридиенты', 'cooklook') ?></button>
+                            <?php get_template_part('template-parts/filter-ingridients', null, array('filters' => $filters)); ?>
+                            <button type="button" class="btn_nonbg ingridients_btn"><?= __('Ингредиенты', 'cooklook') ?></button>
 
                             <button class="btn_bg" type="submit"><?= __('Применить фильтр', 'cooklook') ?></button>
                         </form>
@@ -100,9 +124,9 @@ get_header();
                             <form id="sort_form-mobile">
                                 <select name="sort_by" id="sort_by-mobile">
                                     <option value=""><?= __('Сортировка', 'cooklook') ?></option>
-                                    <option value="date"><?= __('Дата добавления', 'cooklook') ?></option>
-                                    <option value="recipe_views"><?= __('Просмотры', 'cooklook') ?></option>
-                                    <option value="recipe_time"><?= __('Время приготовления', 'cooklook') ?></option>
+                                    <option value="date" <?php selected($filters['sort_by'], 'date'); ?>><?= __('Дата добавления', 'cooklook') ?></option>
+                                    <option value="recipe_views" <?php selected($filters['sort_by'], 'recipe_views'); ?>><?= __('Просмотры', 'cooklook') ?></option>
+                                    <option value="recipe_time" <?php selected($filters['sort_by'], 'recipe_time'); ?>><?= __('Время приготовления', 'cooklook') ?></option>
                                 </select>
                             </form>
                         </div>
@@ -117,142 +141,27 @@ get_header();
                 <div class="sorting hide_mobile">
                     <span><?= __('Сортировать по', 'cooklook') ?>:</span>
                     <form id="sort_form">
-                        <select name="sort_by" id="sort_by">
-                            <option value="date">Дата добавления</option>
-                            <option value="recipe_views">Просмотры</option>
-                            <option value="recipe_time">Время приготовления</option>
+                        <select name="sort_by" id="sort_by" form="recipe-filter">
+                            <option value="date" <?php selected($filters['sort_by'], 'date'); ?>>Дата добавления</option>
+                            <option value="recipe_views" <?php selected($filters['sort_by'], 'recipe_views'); ?>>Просмотры</option>
+                            <option value="recipe_time" <?php selected($filters['sort_by'], 'recipe_time'); ?>>Время приготовления</option>
                         </select>
                     </form>
                 </div>
 
                 <div id="response" class="recipes_grid">
                     <?php
-                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-                    $args = array(
-                        'post_status' => 'publish',
-                        'post_type' => 'recipe',
-                        'posts_per_page' => 11,
-                        'orderby' => 'date',
-                        'order' => 'DESC',
-                        'paged' => $paged,
-                    );
-
-                    $category_id = isset($_GET['recipe_category']) ? intval($_GET['recipe_category']) : 0;
-                    $subcategory_id = isset($_GET['recipe_subcategory']) ? intval($_GET['recipe_subcategory']) : 0;
-
-                    if ($category_id) {
-                        $args['tax_query'] = array(
-                            array(
-                                'taxonomy' => 'recipe_category',
-                                'field' => 'id',
-                                'terms' => $category_id,
-                                'paged' => $paged,
-                            ),
-                        );
-                    }
-
-                    if ($subcategory_id) {
-                        $args['tax_query'][] = array(
-                            'taxonomy' => 'recipe_category',
-                            'field' => 'id',
-                            'terms' => $subcategory_id,
-                            'paged' => $paged,
-                        );
-                    }
-
-                    if (is_tax('recipe_tags')) {
-                        $tag = get_queried_object();
-                        $args['tax_query'][] = array(
-                            'taxonomy' => 'recipe_tags',
-                            'field' => 'slug',
-                            'terms' => $tag->slug,
-                            'paged' => $paged,
-                        );
-                    }
-
-                    if (is_tax('recipe_category')) {
-                        $category = get_queried_object();
-                        $args = array(
-                            'post_type' => 'recipe',
-                            'tax_query' => array(
-                                array(
-                                    'taxonomy' => 'recipe_category',
-                                    'field' => 'slug',
-                                    'terms' => $category->slug,
-                                ),
-                            ),
-                            'paged' => $paged,
-                        );
-                    }
-
-                    $post_counter = 0;
-                    $the_query = new WP_Query($args);
-                    if ($the_query->have_posts()) {
-                        while ($the_query->have_posts()) {
-                            $the_query->the_post();
-                            $post_counter++;
-                            $categories = get_the_terms(get_the_ID(), 'recipe_category');
-                            $post_id = get_the_ID();
-                            $recipe_likes = carbon_get_post_meta($post_id, 'recipe_likes');
-                            $recipe_dislikes = carbon_get_post_meta($post_id, 'recipe_likes');
-                            $rating = calculate_rating($recipe_likes, $recipe_dislikes);
-                            $time = carbon_get_post_meta($post_id, 'recipe_time');
-                            $portions = carbon_get_post_meta($post_id, 'recipe_portions');
-                            $comments = get_comments_number();
-                            $recipe_steps = carbon_get_post_meta($post_id, 'recipe_step');
-                            $tags = get_the_terms($post_id, 'recipe_tags');
-
-                            if (get_the_excerpt()) {
-                                $description = get_the_excerpt();
-                            } else if (get_the_content()) {
-                                $description = get_the_content();
-                            } else {
-                                $description = $recipe_steps[0]['recipe_step_text'];
-                            }
-
-                            $words = explode(' ', $description);
-                            $first_fifteen_words = array_slice($words, 0, 15);
-                            $description = implode(' ', $first_fifteen_words);
-                            $description .= ' ...';
-
-                            set_query_var('categories', $categories);
-                            set_query_var('post_id', $post_id);
-                            set_query_var('rating', $rating);
-                            set_query_var('time', $time);
-                            set_query_var('portions', $portions);
-                            set_query_var('comments', $comments);
-                            set_query_var('description', $description);
-                            set_query_var('tags', $tags);
-
-                            if ($post_counter % 4 == 0) {
-                                get_template_part('template-parts/recipe-loop-item-adv');
-                            } else {
-                                get_template_part('template-parts/recipe-loop-item');
-                            }
-                        }
-                    } else {
-                        get_template_part('template-parts/recipe-loop-nothing');
-                    }
-
-                    wp_reset_postdata();
+                    cooklook_render_recipes( $catalog_query, true );
                     ?>
                 </div>
 
                 <div class="pagination">
                     <?php
-                    the_posts_pagination(array(
-                        'mid_size' => 2,
-                        'prev_text' => __('Previous', 'cooklook'),
-                        'next_text' => __('Next', 'cooklook'),
-                        'screen_reader_text' => __('Пагинация', 'cooklook'),
-                        
-                    ));
+                    echo cooklook_recipe_pagination( $catalog_query );
                     ?>
                 </div>
             </div>
         </section>
-    <?php endif; ?>
 </main><!-- #main -->
 
 <?php
