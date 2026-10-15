@@ -22,7 +22,7 @@ function recipe_manager_page() {
 	}
 	$counts = wp_count_posts( 'recipe' );
 	?>
-	<div class="wrap">
+	<div class="wrap cooklook-recipe-manager">
 		<h1><?php esc_html_e( 'Управление рецептами', 'cooklook' ); ?></h1>
 		<p><?php esc_html_e( 'Черновиков:', 'cooklook' ); ?> <span id="manager-draft-count"><?php echo esc_html( $counts->draft ); ?></span> | <?php esc_html_e( 'Опубликовано:', 'cooklook' ); ?> <span id="manager-published-count"><?php echo esc_html( $counts->publish ); ?></span></p>
 		<div id="manager-message" role="status"></div>
@@ -33,7 +33,7 @@ function recipe_manager_page() {
 		<form id="editable-steps-form">
 			<input type="hidden" name="recipe_id" id="current-recipe-id">
 			<div id="recipe_time"></div>
-			<table class="widefat"><thead><tr><th>Оригинальные шаги</th><th>Редактируемые шаги</th></tr></thead><tbody id="steps-table-body"></tbody></table>
+			<table class="widefat cooklook-manager-steps"><thead><tr><th scope="col">Оригинальные шаги</th><th scope="col">Редактируемые шаги</th></tr></thead><tbody id="steps-table-body"></tbody></table>
 			<p><button type="submit" id="save-steps" class="button button-primary" disabled>Сохранить и опубликовать</button>
 			<button type="button" id="skip-recipe" class="button">Пропустить</button></p>
 		</form>

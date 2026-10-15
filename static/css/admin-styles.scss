@@ -1,18 +1,68 @@
-@import "reset";
-@import "fonts";
-@import "all";
+/* Keep front-end resets and typography out of the WordPress administration. */
+.search_moderation .search_moderation-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+}
 
-.search_moderation{
-    .search_moderation-item{
-        display: flex;
-        gap: 10px;
-    
-        .search_value{
-            color: $black;
-            font-size: 16px;
-            line-height: 140%; 
-            letter-spacing: 0.64px;
-            text-transform: uppercase;
-        }
-    }
+.search_moderation .search_value {
+	color: #292d32;
+	font-size: 16px;
+	line-height: 1.4;
+	letter-spacing: 0.64px;
+	text-transform: uppercase;
+	overflow-wrap: anywhere;
+}
+
+.cooklook-recipe-manager #recipe-info {
+	margin: 16px 0;
+}
+
+.cooklook-recipe-manager #recipe-image {
+	width: 100px;
+	max-width: 100%;
+	height: auto;
+}
+
+.cooklook-recipe-manager #recipe_time {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 16px;
+	margin: 16px 0;
+}
+
+.cooklook-recipe-manager #recipe_time label {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.cooklook-recipe-manager .cooklook-manager-steps {
+	width: 100%;
+	table-layout: fixed;
+}
+
+.cooklook-recipe-manager .cooklook-manager-steps th,
+.cooklook-recipe-manager .cooklook-manager-steps td {
+	box-sizing: border-box;
+	width: 50%;
+	padding: 12px;
+	vertical-align: top;
+	overflow-wrap: anywhere;
+}
+
+.cooklook-recipe-manager .cooklook-manager-steps td:first-child {
+	white-space: pre-wrap;
+}
+
+.cooklook-recipe-manager .cooklook-manager-steps textarea {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	min-height: 140px;
+	resize: vertical;
 }

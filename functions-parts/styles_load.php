@@ -21,7 +21,10 @@ function load_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'load_styles' );
 
-function load_custom_admin_style() {
+function load_custom_admin_style( $hook ) {
+	if ( ! in_array( $hook, array( 'toplevel_page_recipe-manager', 'toplevel_page_search-moderation' ), true ) ) {
+		return;
+	}
 	$path = 'static/css/admin-styles.css';
 	wp_enqueue_style( 'custom_admin_css', get_template_directory_uri() . '/' . $path, array(), cooklook_asset_version( $path ) );
 }

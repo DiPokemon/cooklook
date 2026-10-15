@@ -30,7 +30,7 @@ jQuery(function ($) {
 				for (var index = 0; index < count; index++) {
 					var row = $('<tr>');
 					$('<td>').text(recipe.original_steps[index] || '').appendTo(row);
-					$('<td>').append($('<textarea>', { name: 'steps_texts[]', rows: 5, required: true, css: { width: '100%' } }).val(recipe.steps[index] || '')).appendTo(row);
+					$('<td>').append($('<textarea>', { name: 'steps_texts[]', rows: 5, required: true, 'aria-label': 'Шаг ' + (index + 1) }).val(recipe.steps[index] || '')).appendTo(row);
 					$('#steps-table-body').append(row);
 				}
 				[['recipe_time', 'Время приготовления', recipe.time], ['recipe_prep', 'Время подготовки', recipe.prep]].forEach(function (field) {
