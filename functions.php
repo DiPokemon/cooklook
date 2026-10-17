@@ -111,7 +111,14 @@ function change_logo_class( $html ) {
 }
 
 require_once get_template_directory() . '/inc/recipe-helpers.php';
+require_once get_template_directory() . '/inc/recipe-regions.php';
 require_once get_template_directory() . '/inc/recipe-query.php';
+require_once get_template_directory() . '/inc/recipe-ingredients.php';
+require_once get_template_directory() . '/inc/recipe-views.php';
+require_once get_template_directory() . '/inc/recipe-seo.php';
+require_once get_template_directory() . '/inc/seo.php';
+require_once get_template_directory() . '/inc/seo-metadata.php';
+require_once get_template_directory() . '/inc/media.php';
 require_once get_template_directory() . '/inc/account.php';
 require_once( get_template_directory().'/functions-parts/breadcrumbs.php' );
 require_once( get_template_directory().'/functions-parts/navmenu.php' );

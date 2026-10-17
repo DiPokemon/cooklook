@@ -90,7 +90,7 @@ function calculate_rating($likes, $dislikes) {
 function schema_time($cook_time) {
     $cook_time = max(0, (int) $cook_time);
     // Вычисление количества часов и минут
-    $hours = floor($cook_time / 60);
+    $hours = intdiv($cook_time, 60);
     $minutes = $cook_time % 60;
 
     // Формирование строки в формате PTXHYM
@@ -126,20 +126,6 @@ function convert_time_to_string($cook_time) {
     return $time_string ?: '0 минут';
 }
 
-
-/* увеличивает полу recipe_views у рецепта при каждом просмотре (используется для вывода популярных рецептов) */
-function increase_post_views() {
-    if ( ! is_singular( 'recipe' ) || is_preview() || post_password_required() || 'GET' !== ( isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : '' ) ) {
-        return;
-    }
-    $post_id = get_queried_object_id();
-    cooklook_with_lock( 'views-' . $post_id, function () use ( $post_id ) {
-        wp_cache_delete( $post_id, 'post_meta' );
-        $views = max( 0, (int) get_post_meta( $post_id, '_recipe_views', true ) );
-        update_post_meta( $post_id, '_recipe_views', $views + 1 );
-    } );
-}
-add_action( 'template_redirect', 'increase_post_views' );
 
 //Вывод категорий у рецепта согласно иерархии
 function display_recipe_categories_hierarchy($categories, $parent_id = 0) {

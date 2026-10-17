@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-16T15:47:00+00:00",
+  "site": "http://cooklook/",
+  "recipe_id": 9885,
+  "database_writes": false,
+  "pre_html_counter_active": false,
+  "method": "Only the template_redirect view callback is measured, after WordPress and the single-recipe query. Metadata writes are intercepted before SQL; their time is not measured. Three passes in one process, no external cache flush. Not full-page TTFB.",
+  "runs": [
+    {
+      "pass": 1,
+      "sql_count": 0,
+      "blocked_metadata_write_attempts": 0,
+      "elapsed_ms": 0.001,
+      "callers": []
+    },
+    {
+      "pass": 2,
+      "sql_count": 0,
+      "blocked_metadata_write_attempts": 0,
+      "elapsed_ms": 0,
+      "callers": []
+    },
+    {
+      "pass": 3,
+      "sql_count": 0,
+      "blocked_metadata_write_attempts": 0,
+      "elapsed_ms": 0,
+      "callers": []
+    }
+  ]
+}

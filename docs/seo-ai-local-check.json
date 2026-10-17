@@ -1,0 +1,68 @@
+{
+  "checked_at": "2026-10-16T11:29:38+00:00",
+  "site": "http://cooklook/",
+  "database_writes": false,
+  "recipes": [
+    {
+      "id": 9923,
+      "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%83%d1%85%d0%be%d1%84%d1%80%d1%83%d0%ba%d1%82%d0%b0%d0%bc%d0%b8/",
+      "ingredients": 6,
+      "steps": 5
+    },
+    {
+      "id": 9922,
+      "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d0%b0%d1%80%d1%80%d0%b8-%d0%b8%d0%b7-%d0%b4%d0%b8%d0%ba%d0%be%d0%b3%d0%be-%d1%80%d0%b8%d1%81%d0%b0-%d1%81-%d0%ba%d1%80%d0%b5%d0%b2%d0%b5%d1%82%d0%ba%d0%b0/",
+      "ingredients": 12,
+      "steps": 6
+    },
+    {
+      "id": 9921,
+      "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%8b%d1%80%d0%be%d0%bc-%d0%b8-%d0%be%d0%b2%d0%be%d1%89%d0%b0%d0%bc%d0%b8/",
+      "ingredients": 7,
+      "steps": 6
+    },
+    {
+      "id": 9920,
+      "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b2-%d0%bf%d0%b0%d1%80%d0%be%d0%b2%d0%b0%d1%80%d0%ba%d0%b5-%d1%81-%d0%ba%d0%b0%d1%80%d0%b0%d0%bc%d0%b5%d0%bb%d0%b8/",
+      "ingredients": 8,
+      "steps": 8
+    },
+    {
+      "id": 9919,
+      "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%b2-%d0%bc%d1%83%d0%bb%d1%8c%d1%82%d0%b8%d0%b2%d0%b0%d1%80%d0%ba%d0%b5/",
+      "ingredients": 5,
+      "steps": 3
+    },
+    {
+      "id": 9918,
+      "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/",
+      "ingredients": 7,
+      "steps": 8
+    },
+    {
+      "id": 9917,
+      "url": "http://cooklook/recipe/%d1%81%d0%bb%d0%b0%d0%b4%d0%ba%d0%b0%d1%8f-%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+      "ingredients": 4,
+      "steps": 4
+    },
+    {
+      "id": 9916,
+      "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+      "ingredients": 4,
+      "steps": 2
+    },
+    {
+      "id": 9915,
+      "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b0-%d0%bb%d1%8f-%d0%bf%d0%b0%d0%bd%d0%bd%d0%b0%d0%ba%d0%be%d1%82%d1%82%d0%b0/",
+      "ingredients": 6,
+      "steps": 3
+    },
+    {
+      "id": 9914,
+      "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d0%be%d1%80%d0%b8%d1%87%d0%bd%d0%be-%d1%8f%d0%b1%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f/",
+      "ingredients": 4,
+      "steps": 5
+    }
+  ],
+  "fixtures": "PASS: ingredients without steps; steps without ingredients; CookLook organization author in HTML/Recipe; source attribution omitted; escaped fields; disabled/Yoast-owned graph"
+}

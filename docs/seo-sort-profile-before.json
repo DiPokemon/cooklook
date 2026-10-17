@@ -1,0 +1,2265 @@
+{
+  "checked_at": "2026-10-16T18:20:58+00:00",
+  "site": "http://cooklook/",
+  "wordpress": "7.1.3",
+  "database": "8.0.30",
+  "database_writes": false,
+  "external_object_cache": null,
+  "method": "Existing local data, retained DB buffers; no production connection or load simulation. Per scenario: uncached WP_Query generates SQL, then nine direct SELECT executions (median, excluding FOUND_ROWS and EXPLAIN), EXPLAIN and MySQL 8.0.18+ EXPLAIN ANALYZE. Final two WP_Query calls check per-process caching. Not full-page TTFB.",
+  "public_recipes": 80,
+  "postmeta_rows": 6429,
+  "sort_metadata": [
+    {
+      "meta_key": "_recipe_region",
+      "rows_count": "94",
+      "posts": "94"
+    },
+    {
+      "meta_key": "_recipe_time",
+      "rows_count": "94",
+      "posts": "94"
+    },
+    {
+      "meta_key": "_recipe_views",
+      "rows_count": "94",
+      "posts": "94"
+    }
+  ],
+  "postmeta_indexes": [
+    {
+      "Table": "wp_postmeta",
+      "Non_unique": "0",
+      "Key_name": "PRIMARY",
+      "Seq_in_index": "1",
+      "Column_name": "meta_id",
+      "Collation": "A",
+      "Cardinality": "7065",
+      "Sub_part": null,
+      "Packed": null,
+      "Null": "",
+      "Index_type": "BTREE",
+      "Comment": "",
+      "Index_comment": "",
+      "Visible": "YES",
+      "Expression": null
+    },
+    {
+      "Table": "wp_postmeta",
+      "Non_unique": "1",
+      "Key_name": "post_id",
+      "Seq_in_index": "1",
+      "Column_name": "post_id",
+      "Collation": "A",
+      "Cardinality": "443",
+      "Sub_part": null,
+      "Packed": null,
+      "Null": "",
+      "Index_type": "BTREE",
+      "Comment": "",
+      "Index_comment": "",
+      "Visible": "YES",
+      "Expression": null
+    },
+    {
+      "Table": "wp_postmeta",
+      "Non_unique": "1",
+      "Key_name": "meta_key",
+      "Seq_in_index": "1",
+      "Column_name": "meta_key",
+      "Collation": "A",
+      "Cardinality": "163",
+      "Sub_part": "191",
+      "Packed": null,
+      "Null": "YES",
+      "Index_type": "BTREE",
+      "Comment": "",
+      "Index_comment": "",
+      "Visible": "YES",
+      "Expression": null
+    }
+  ],
+  "cases": [
+    {
+      "case": "date_catalog",
+      "request": {
+        "sort_by": "date"
+      },
+      "found": 80,
+      "ids": [
+        9897,
+        9896,
+        9895,
+        9893,
+        9892,
+        9891,
+        9890,
+        9889,
+        9888,
+        9887,
+        9886
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts \n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t \n\t\t\t\t\t ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        0.507,
+        0.464,
+        0.455,
+        0.412,
+        0.418,
+        0.427,
+        0.431,
+        0.41,
+        0.4
+      ],
+      "median_ms": 0.427,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (cost=12.99 rows=8) (actual time=0.070..0.198 rows=11 loops=1)\n    -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.069..0.194 rows=80 loops=1)\n        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish'; iterate backwards)  (cost=12.99 rows=80) (actual time=0.069..0.184 rows=80 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "date_page_2",
+      "request": {
+        "paged": 2,
+        "sort_by": "date"
+      },
+      "found": 80,
+      "ids": [
+        9885,
+        9884,
+        9899,
+        9898,
+        9909,
+        9908,
+        9907,
+        9906,
+        9904,
+        9903,
+        9902
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts \n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t \n\t\t\t\t\t ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 11, 11",
+      "samples_ms": [
+        0.429,
+        0.454,
+        0.508,
+        0.59,
+        0.509,
+        0.502,
+        0.478,
+        0.451,
+        0.49
+      ],
+      "median_ms": 0.49,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        }
+      ],
+      "analyze": "-> Limit/Offset: 11/11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (cost=12.99 rows=0) (actual time=0.099..0.232 rows=11 loops=1)\n    -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.092..0.227 rows=80 loops=1)\n        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish'; iterate backwards)  (cost=12.99 rows=80) (actual time=0.090..0.217 rows=80 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "date_region",
+      "request": {
+        "region": "Русская кухня",
+        "sort_by": "date"
+      },
+      "found": 44,
+      "ids": [
+        9897,
+        9896,
+        9893,
+        9892,
+        9887,
+        9886,
+        9885,
+        9884,
+        9908,
+        9907,
+        9906
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  INNER JOIN wp_postmeta ON ( wp_posts.ID = wp_postmeta.post_id )\n\t\t\t\t\t WHERE 1=1  AND ( \n  ( wp_postmeta.meta_key LIKE '_recipe_region' AND wp_postmeta.meta_value = 'Русская кухня' )\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        14.091,
+        13.283,
+        14.137,
+        14.377,
+        13.001,
+        13.556,
+        14.006,
+        13.169,
+        13.254
+      ],
+      "median_ms": 13.556,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id",
+          "key": "post_id",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "15",
+          "filtered": "1.11",
+          "Extra": "Using where"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=13.836..13.841 rows=11 loops=1)\n    -> Sort: wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=13.835..13.837 rows=44 loops=1)\n        -> Table scan on <temporary>  (cost=1.77..2.51 rows=1) (actual time=13.799..13.804 rows=44 loops=1)\n            -> Temporary table with deduplication  (cost=59.56..60.30 rows=1) (actual time=13.797..13.797 rows=44 loops=1)\n                -> Nested loop inner join  (cost=57.65 rows=1) (actual time=0.372..13.741 rows=44 loops=1)\n                    -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.075..0.181 rows=80 loops=1)\n                        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.074..0.163 rows=80 loops=1)\n                    -> Filter: ((wp_postmeta.meta_key like '_recipe_region') and (wp_postmeta.meta_value = 'Русская кухня'))  (cost=3.99 rows=0.2) (actual time=0.106..0.169 rows=1 loops=80)\n                        -> Index lookup on wp_postmeta using post_id (post_id=wp_posts.ID)  (cost=3.99 rows=16) (actual time=0.004..0.158 rows=63 loops=80)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "date_category",
+      "request": {
+        "category_id": 5179,
+        "sort_by": "date"
+      },
+      "found": 62,
+      "ids": [
+        9896,
+        9893,
+        9891,
+        9890,
+        9889,
+        9888,
+        9885,
+        9884,
+        9899,
+        9898,
+        9909
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN wp_term_relationships ON (wp_posts.ID = wp_term_relationships.object_id)\n\t\t\t\t\t WHERE 1=1  AND ( \n  wp_term_relationships.term_taxonomy_id IN (5179,5180,5185,5209,5221,5238,5241,5318)\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        0.976,
+        0.874,
+        0.877,
+        0.844,
+        0.754,
+        0.752,
+        1.266,
+        0.951,
+        0.943
+      ],
+      "median_ms": 0.877,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "7",
+          "filtered": "18.18",
+          "Extra": "Using where; Using index"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.646..0.652 rows=11 loops=1)\n    -> Sort: wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.645..0.649 rows=62 loops=1)\n        -> Table scan on <temporary>  (cost=0.23..2.64 rows=11) (actual time=0.611..0.619 rows=62 loops=1)\n            -> Temporary table with deduplication  (cost=24.22..26.63 rows=11) (actual time=0.610..0.610 rows=62 loops=1)\n                -> Nested loop inner join  (cost=22.85 rows=11) (actual time=0.088..0.543 rows=124 loops=1)\n                    -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.080..0.162 rows=80 loops=1)\n                        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.079..0.146 rows=80 loops=1)\n                    -> Filter: (wp_term_relationships.term_taxonomy_id in (5179,5180,5185,5209,5221,5238,5241,5318))  (cost=0.47 rows=1) (actual time=0.003..0.004 rows=2 loops=80)\n                        -> Covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID)  (cost=0.47 rows=8) (actual time=0.002..0.004 rows=8 loops=80)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "date_ingredient",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "sort_by": "date"
+      },
+      "found": 59,
+      "ids": [
+        9897,
+        9895,
+        9893,
+        9892,
+        9891,
+        9890,
+        9889,
+        9886,
+        9885,
+        9884,
+        9899
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts \n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 1\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        0.614,
+        0.643,
+        0.645,
+        0.61,
+        0.616,
+        0.626,
+        0.709,
+        0.628,
+        0.632
+      ],
+      "median_ms": 0.628,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        },
+        {
+          "id": "2",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (cost=12.99 rows=8) (actual time=0.078..0.418 rows=11 loops=1)\n    -> Filter: (((select #2) = 1) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.077..0.414 rows=59 loops=1)\n        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish'; iterate backwards)  (cost=12.99 rows=80) (actual time=0.067..0.188 rows=80 loops=1)\n        -> Select #2 (subquery in condition; dependent)\n            -> Aggregate: count(1)  (cost=0.64 rows=1) (actual time=0.002..0.002 rows=1 loops=80)\n                -> Single-row covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID, term_taxonomy_id=5184)  (cost=0.54 rows=1) (actual time=0.002..0.002 rows=1 loops=80)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "date_ingredients_and",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c",
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ],
+        "sort_by": "date"
+      },
+      "found": 33,
+      "ids": [
+        9891,
+        9890,
+        9889,
+        9885,
+        9899,
+        9898,
+        9907,
+        9904,
+        9901,
+        9900,
+        9920
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts \n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5188,5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 2\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        0.745,
+        0.739,
+        0.739,
+        0.759,
+        0.758,
+        0.731,
+        0.738,
+        0.751,
+        0.742
+      ],
+      "median_ms": 0.742,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        },
+        {
+          "id": "2",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "7",
+          "filtered": "14.66",
+          "Extra": "Using where; Using index"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (cost=12.99 rows=8) (actual time=0.115..0.621 rows=11 loops=1)\n    -> Filter: (((select #2) = 2) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.115..0.618 rows=33 loops=1)\n        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish'; iterate backwards)  (cost=12.99 rows=80) (actual time=0.070..0.188 rows=80 loops=1)\n        -> Select #2 (subquery in condition; dependent)\n            -> Aggregate: count(1)  (cost=0.68 rows=1) (actual time=0.005..0.005 rows=1 loops=80)\n                -> Filter: (wp_term_relationships.term_taxonomy_id in (5188,5184))  (cost=0.56 rows=1) (actual time=0.003..0.004 rows=1 loops=80)\n                    -> Covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID)  (cost=0.56 rows=8) (actual time=0.002..0.004 rows=8 loops=80)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "date_include_exclude",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "exclude_ingredients": [
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ],
+        "sort_by": "date"
+      },
+      "found": 26,
+      "ids": [
+        9897,
+        9895,
+        9893,
+        9892,
+        9886,
+        9884,
+        9909,
+        9908,
+        9903,
+        9923,
+        9921
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts \n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 1 \n  AND \n  wp_posts.ID NOT IN (\n\t\t\t\tSELECT object_id\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5188)\n\t\t\t)\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        0.779,
+        0.764,
+        0.908,
+        0.827,
+        0.78,
+        0.757,
+        0.765,
+        0.88,
+        0.883
+      ],
+      "median_ms": 0.78,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<subquery3>",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "<auto_distinct_key>",
+          "key": "<auto_distinct_key>",
+          "key_len": "9",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using where; Not exists"
+        },
+        {
+          "id": "3",
+          "select_type": "MATERIALIZED",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "term_taxonomy_id",
+          "key_len": "8",
+          "ref": "const",
+          "rows": "4",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.533..0.536 rows=11 loops=1)\n    -> Sort: wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.532..0.534 rows=26 loops=1)\n        -> Table scan on <temporary>  (cost=0.09..2.90 rows=33) (actual time=0.514..0.518 rows=26 loops=1)\n            -> Temporary table with deduplication  (cost=20.45..23.26 rows=33) (actual time=0.513..0.513 rows=26 loops=1)\n                -> Nested loop antijoin  (cost=17.07 rows=33) (actual time=0.156..0.494 rows=26 loops=1)\n                    -> Filter: (((select #2) = 1) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.119..0.421 rows=59 loops=1)\n                        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.091..0.160 rows=80 loops=1)\n                        -> Select #2 (subquery in condition; dependent)\n                            -> Aggregate: count(1)  (cost=0.64 rows=1) (actual time=0.003..0.003 rows=1 loops=80)\n                                -> Single-row covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID, term_taxonomy_id=5184)  (cost=0.54 rows=1) (actual time=0.002..0.002 rows=1 loops=80)\n                    -> Single-row index lookup on <subquery3> using <auto_distinct_key> (object_id=wp_posts.ID)  (actual time=0.001..0.001 rows=1 loops=59)\n                        -> Materialize with deduplication  (cost=1.07..1.07 rows=4) (actual time=0.035..0.035 rows=41 loops=1)\n                            -> Filter: (wp_term_relationships.object_id is not null)  (cost=0.66 rows=4) (actual time=0.008..0.025 rows=41 loops=1)\n                                -> Covering index lookup on wp_term_relationships using term_taxonomy_id (term_taxonomy_id=5188)  (cost=0.66 rows=4) (actual time=0.008..0.021 rows=41 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "date_region_ingredient",
+      "request": {
+        "region": "Русская кухня",
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "sort_by": "date"
+      },
+      "found": 33,
+      "ids": [
+        9897,
+        9893,
+        9892,
+        9886,
+        9885,
+        9884,
+        9908,
+        9907,
+        9904,
+        9901,
+        9921
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  INNER JOIN wp_postmeta ON ( wp_posts.ID = wp_postmeta.post_id )\n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 1\n) AND ( \n  ( wp_postmeta.meta_key LIKE '_recipe_region' AND wp_postmeta.meta_value = 'Русская кухня' )\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        9.798,
+        10.288,
+        10.507,
+        9.954,
+        9.782,
+        9.799,
+        9.74,
+        9.74,
+        9.749
+      ],
+      "median_ms": 9.798,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id",
+          "key": "post_id",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "15",
+          "filtered": "1.11",
+          "Extra": "Using where"
+        },
+        {
+          "id": "2",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=9.905..9.909 rows=11 loops=1)\n    -> Sort: wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=9.905..9.907 rows=33 loops=1)\n        -> Table scan on <temporary>  (cost=1.77..2.51 rows=1) (actual time=9.876..9.880 rows=33 loops=1)\n            -> Temporary table with deduplication  (cost=59.56..60.30 rows=1) (actual time=9.874..9.874 rows=33 loops=1)\n                -> Nested loop inner join  (cost=57.65 rows=1) (actual time=0.379..9.838 rows=33 loops=1)\n                    -> Filter: (((select #2) = 1) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.084..0.440 rows=59 loops=1)\n                        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.072..0.152 rows=80 loops=1)\n                        -> Select #2 (subquery in condition; dependent)\n                            -> Aggregate: count(1)  (cost=0.64 rows=1) (actual time=0.003..0.003 rows=1 loops=80)\n                                -> Single-row covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID, term_taxonomy_id=5184)  (cost=0.54 rows=1) (actual time=0.002..0.002 rows=1 loops=80)\n                    -> Filter: ((wp_postmeta.meta_key like '_recipe_region') and (wp_postmeta.meta_value = 'Русская кухня'))  (cost=3.99 rows=0.2) (actual time=0.100..0.159 rows=1 loops=59)\n                        -> Index lookup on wp_postmeta using post_id (post_id=wp_posts.ID)  (cost=3.99 rows=16) (actual time=0.004..0.148 rows=65 loops=59)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_time_catalog",
+      "request": {
+        "sort_by": "recipe_time"
+      },
+      "found": 80,
+      "ids": [
+        9895,
+        9899,
+        9898,
+        9908,
+        9907,
+        9903,
+        9923,
+        9921,
+        9920,
+        9919,
+        9918
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t \n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        0.823,
+        0.806,
+        1.04,
+        1.104,
+        0.942,
+        0.913,
+        0.952,
+        0.856,
+        0.838
+      ],
+      "median_ms": 0.913,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.588..0.596 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)`, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.588..0.594 rows=80 loops=1)\n        -> Stream results  (cost=31.79 rows=0) (actual time=0.359..0.544 rows=80 loops=1)\n            -> Nested loop left join  (cost=31.79 rows=0) (actual time=0.356..0.504 rows=80 loops=1)\n                -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.069..0.144 rows=80 loops=1)\n                    -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.068..0.135 rows=80 loops=1)\n                -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.004..0.004 rows=1 loops=80)\n                    -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.284..0.284 rows=94 loops=1)\n                        -> Table scan on <temporary>  (actual time=0.237..0.248 rows=94 loops=1)\n                            -> Aggregate using temporary table  (actual time=0.236..0.236 rows=94 loops=1)\n                                -> Filter: (wp_postmeta.meta_key = '_recipe_time')  (cost=32.90 rows=94) (actual time=0.008..0.170 rows=94 loops=1)\n                                    -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_time')  (cost=32.90 rows=94) (actual time=0.008..0.148 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_time_page_2",
+      "request": {
+        "paged": 2,
+        "sort_by": "recipe_time"
+      },
+      "found": 80,
+      "ids": [
+        9917,
+        9915,
+        9914,
+        9913,
+        9912,
+        9911,
+        9910,
+        9962,
+        9958,
+        9949,
+        9955
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t \n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 11, 11",
+      "samples_ms": [
+        0.807,
+        0.846,
+        0.856,
+        0.812,
+        0.799,
+        0.799,
+        0.801,
+        0.795,
+        0.805
+      ],
+      "median_ms": 0.805,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit/Offset: 11/11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.568..0.575 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)`, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.566..0.572 rows=80 loops=1)\n        -> Stream results  (cost=31.79 rows=0) (actual time=0.348..0.525 rows=80 loops=1)\n            -> Nested loop left join  (cost=31.79 rows=0) (actual time=0.345..0.491 rows=80 loops=1)\n                -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.068..0.141 rows=80 loops=1)\n                    -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.067..0.131 rows=80 loops=1)\n                -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.004..0.004 rows=1 loops=80)\n                    -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.275..0.275 rows=94 loops=1)\n                        -> Table scan on <temporary>  (actual time=0.228..0.240 rows=94 loops=1)\n                            -> Aggregate using temporary table  (actual time=0.228..0.228 rows=94 loops=1)\n                                -> Filter: (wp_postmeta.meta_key = '_recipe_time')  (cost=32.90 rows=94) (actual time=0.008..0.161 rows=94 loops=1)\n                                    -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_time')  (cost=32.90 rows=94) (actual time=0.007..0.140 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_time_region",
+      "request": {
+        "region": "Русская кухня",
+        "sort_by": "recipe_time"
+      },
+      "found": 44,
+      "ids": [
+        9908,
+        9907,
+        9921,
+        9918,
+        9917,
+        9914,
+        9913,
+        9912,
+        9911,
+        9885,
+        9933
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  INNER JOIN wp_postmeta ON ( wp_posts.ID = wp_postmeta.post_id ) LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  ( wp_postmeta.meta_key LIKE '_recipe_region' AND wp_postmeta.meta_value = 'Русская кухня' )\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        13.22,
+        13.868,
+        13.399,
+        13.626,
+        13.335,
+        13.575,
+        13.333,
+        13.326,
+        13.351
+      ],
+      "median_ms": 13.351,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id",
+          "key": "post_id",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "15",
+          "filtered": "1.11",
+          "Extra": "Using where"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=13.459..13.463 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)`, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=13.458..13.462 rows=44 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=13.420..13.425 rows=44 loops=1)\n            -> Temporary table with deduplication  (cost=63.48..63.48 rows=0) (actual time=13.419..13.419 rows=44 loops=1)\n                -> Nested loop left join  (cost=60.98 rows=0) (actual time=0.728..13.372 rows=44 loops=1)\n                    -> Nested loop inner join  (cost=57.65 rows=1) (actual time=0.366..12.954 rows=44 loops=1)\n                        -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.073..0.164 rows=80 loops=1)\n                            -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.072..0.149 rows=80 loops=1)\n                        -> Filter: ((wp_postmeta.meta_key like '_recipe_region') and (wp_postmeta.meta_value = 'Русская кухня'))  (cost=3.99 rows=0.2) (actual time=0.100..0.160 rows=1 loops=80)\n                            -> Index lookup on wp_postmeta using post_id (post_id=wp_posts.ID)  (cost=3.99 rows=16) (actual time=0.003..0.149 rows=63 loops=80)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.009..0.009 rows=1 loops=44)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.360..0.360 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.314..0.326 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.313..0.313 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_time')  (cost=32.90 rows=94) (actual time=0.008..0.243 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_time')  (cost=32.90 rows=94) (actual time=0.007..0.220 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_time_category",
+      "request": {
+        "category_id": 5179,
+        "sort_by": "recipe_time"
+      },
+      "found": 62,
+      "ids": [
+        9899,
+        9898,
+        9907,
+        9923,
+        9920,
+        9919,
+        9918,
+        9917,
+        9914,
+        9912,
+        9962
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN wp_term_relationships ON (wp_posts.ID = wp_term_relationships.object_id) LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  wp_term_relationships.term_taxonomy_id IN (5179,5180,5185,5209,5221,5238,5241,5318)\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        1.263,
+        1.434,
+        1.361,
+        1.346,
+        1.47,
+        1.373,
+        1.321,
+        1.416,
+        1.296
+      ],
+      "median_ms": 1.361,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "7",
+          "filtered": "18.18",
+          "Extra": "Using where; Using index"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=1.056..1.062 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)`, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=1.055..1.060 rows=62 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=1.015..1.023 rows=62 loops=1)\n            -> Temporary table with deduplication  (cost=52.15..52.15 rows=0) (actual time=1.015..1.015 rows=62 loops=1)\n                -> Nested loop left join  (cost=49.65 rows=0) (actual time=0.362..0.947 rows=124 loops=1)\n                    -> Nested loop inner join  (cost=22.85 rows=11) (actual time=0.079..0.544 rows=124 loops=1)\n                        -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.073..0.153 rows=80 loops=1)\n                            -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.072..0.138 rows=80 loops=1)\n                        -> Filter: (wp_term_relationships.term_taxonomy_id in (5179,5180,5185,5209,5221,5238,5241,5318))  (cost=0.47 rows=1) (actual time=0.003..0.005 rows=2 loops=80)\n                            -> Covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID)  (cost=0.47 rows=8) (actual time=0.002..0.004 rows=8 loops=80)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.003..0.003 rows=1 loops=124)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.281..0.281 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.235..0.247 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.235..0.235 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_time')  (cost=32.90 rows=94) (actual time=0.009..0.171 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_time')  (cost=32.90 rows=94) (actual time=0.008..0.150 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_time_ingredient",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "sort_by": "recipe_time"
+      },
+      "found": 59,
+      "ids": [
+        9895,
+        9899,
+        9898,
+        9908,
+        9907,
+        9903,
+        9923,
+        9921,
+        9920,
+        9919,
+        9918
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 1\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        1.085,
+        1.196,
+        1.12,
+        1.235,
+        1.233,
+        1.139,
+        1.101,
+        1.203,
+        1.185
+      ],
+      "median_ms": 1.185,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "3",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.836..0.842 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)`, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.835..0.839 rows=59 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=0.796..0.804 rows=59 loops=1)\n            -> Temporary table with deduplication  (cost=34.29..34.29 rows=0) (actual time=0.796..0.796 rows=59 loops=1)\n                -> Nested loop left join  (cost=31.79 rows=0) (actual time=0.375..0.750 rows=59 loops=1)\n                    -> Filter: (((select #3) = 1) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.086..0.400 rows=59 loops=1)\n                        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.073..0.142 rows=80 loops=1)\n                        -> Select #3 (subquery in condition; dependent)\n                            -> Aggregate: count(1)  (cost=0.64 rows=1) (actual time=0.003..0.003 rows=1 loops=80)\n                                -> Single-row covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID, term_taxonomy_id=5184)  (cost=0.54 rows=1) (actual time=0.002..0.002 rows=1 loops=80)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.005..0.006 rows=1 loops=59)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.287..0.287 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.238..0.249 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.237..0.237 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_time')  (cost=32.90 rows=94) (actual time=0.009..0.171 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_time')  (cost=32.90 rows=94) (actual time=0.008..0.150 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_time_ingredients_and",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c",
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ],
+        "sort_by": "recipe_time"
+      },
+      "found": 33,
+      "ids": [
+        9899,
+        9898,
+        9907,
+        9920,
+        9919,
+        9918,
+        9917,
+        9915,
+        9912,
+        9962,
+        9958
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5188,5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 2\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        1.218,
+        1.238,
+        1.367,
+        1.318,
+        1.207,
+        1.258,
+        1.51,
+        1.394,
+        1.222
+      ],
+      "median_ms": 1.258,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "3",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "7",
+          "filtered": "14.66",
+          "Extra": "Using where; Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.995..0.999 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)`, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.995..0.995 rows=33 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=0.967..0.972 rows=33 loops=1)\n            -> Temporary table with deduplication  (cost=34.29..34.29 rows=0) (actual time=0.967..0.967 rows=33 loops=1)\n                -> Nested loop left join  (cost=31.79 rows=0) (actual time=0.389..0.933 rows=33 loops=1)\n                    -> Filter: (((select #3) = 2) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.100..0.609 rows=33 loops=1)\n                        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.076..0.146 rows=80 loops=1)\n                        -> Select #3 (subquery in condition; dependent)\n                            -> Aggregate: count(1)  (cost=0.68 rows=1) (actual time=0.005..0.005 rows=1 loops=80)\n                                -> Filter: (wp_term_relationships.term_taxonomy_id in (5188,5184))  (cost=0.56 rows=1) (actual time=0.003..0.005 rows=1 loops=80)\n                                    -> Covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID)  (cost=0.56 rows=8) (actual time=0.003..0.004 rows=8 loops=80)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.009..0.010 rows=1 loops=33)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.287..0.287 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.241..0.253 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.240..0.240 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_time')  (cost=32.90 rows=94) (actual time=0.009..0.174 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_time')  (cost=32.90 rows=94) (actual time=0.008..0.151 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_time_include_exclude",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "exclude_ingredients": [
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ],
+        "sort_by": "recipe_time"
+      },
+      "found": 26,
+      "ids": [
+        9895,
+        9908,
+        9903,
+        9923,
+        9921,
+        9913,
+        9910,
+        9949,
+        9884,
+        9893,
+        9892
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 1 \n  AND \n  wp_posts.ID NOT IN (\n\t\t\t\tSELECT object_id\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5188)\n\t\t\t)\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        1.222,
+        1.213,
+        1.108,
+        1.074,
+        1.078,
+        1.073,
+        1.153,
+        1.226,
+        1.202
+      ],
+      "median_ms": 1.153,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<subquery4>",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "<auto_distinct_key>",
+          "key": "<auto_distinct_key>",
+          "key_len": "9",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using where; Not exists"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "4",
+          "select_type": "MATERIALIZED",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "term_taxonomy_id",
+          "key_len": "8",
+          "ref": "const",
+          "rows": "4",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "3",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.820..0.823 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)`, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.820..0.822 rows=26 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=0.798..0.802 rows=26 loops=1)\n            -> Temporary table with deduplication  (cost=38.37..38.37 rows=0) (actual time=0.797..0.797 rows=26 loops=1)\n                -> Nested loop left join  (cost=35.87 rows=0) (actual time=0.397..0.773 rows=26 loops=1)\n                    -> Nested loop antijoin  (cost=17.07 rows=33) (actual time=0.113..0.459 rows=26 loops=1)\n                        -> Filter: (((select #3) = 1) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.084..0.394 rows=59 loops=1)\n                            -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.072..0.142 rows=80 loops=1)\n                            -> Select #3 (subquery in condition; dependent)\n                                -> Aggregate: count(1)  (cost=0.64 rows=1) (actual time=0.002..0.002 rows=1 loops=80)\n                                    -> Single-row covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID, term_taxonomy_id=5184)  (cost=0.54 rows=1) (actual time=0.002..0.002 rows=1 loops=80)\n                        -> Single-row index lookup on <subquery4> using <auto_distinct_key> (object_id=wp_posts.ID)  (actual time=0.001..0.001 rows=1 loops=59)\n                            -> Materialize with deduplication  (cost=1.07..1.07 rows=4) (actual time=0.027..0.027 rows=41 loops=1)\n                                -> Filter: (wp_term_relationships.object_id is not null)  (cost=0.66 rows=4) (actual time=0.004..0.019 rows=41 loops=1)\n                                    -> Covering index lookup on wp_term_relationships using term_taxonomy_id (term_taxonomy_id=5188)  (cost=0.66 rows=4) (actual time=0.004..0.016 rows=41 loops=1)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.012..0.012 rows=1 loops=26)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.282..0.282 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.236..0.249 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.236..0.236 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_time')  (cost=32.90 rows=94) (actual time=0.009..0.169 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_time')  (cost=32.90 rows=94) (actual time=0.008..0.148 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_time_region_ingredient",
+      "request": {
+        "region": "Русская кухня",
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "sort_by": "recipe_time"
+      },
+      "found": 33,
+      "ids": [
+        9908,
+        9907,
+        9921,
+        9918,
+        9917,
+        9913,
+        9912,
+        9885,
+        9933,
+        9960,
+        9884
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  INNER JOIN wp_postmeta ON ( wp_posts.ID = wp_postmeta.post_id ) LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 1\n) AND ( \n  ( wp_postmeta.meta_key LIKE '_recipe_region' AND wp_postmeta.meta_value = 'Русская кухня' )\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        10.584,
+        10.55,
+        10.887,
+        10.299,
+        10.158,
+        10.09,
+        10.25,
+        10.096,
+        10.431
+      ],
+      "median_ms": 10.299,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id",
+          "key": "post_id",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "15",
+          "filtered": "1.11",
+          "Extra": "Using where"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "3",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=10.032..10.036 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)`, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=10.032..10.035 rows=33 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=10.007..10.011 rows=33 loops=1)\n            -> Temporary table with deduplication  (cost=63.48..63.48 rows=0) (actual time=10.006..10.006 rows=33 loops=1)\n                -> Nested loop left join  (cost=60.98 rows=0) (actual time=0.718..9.964 rows=33 loops=1)\n                    -> Nested loop inner join  (cost=57.65 rows=1) (actual time=0.344..9.545 rows=33 loops=1)\n                        -> Filter: (((select #3) = 1) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.084..0.435 rows=59 loops=1)\n                            -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.073..0.145 rows=80 loops=1)\n                            -> Select #3 (subquery in condition; dependent)\n                                -> Aggregate: count(1)  (cost=0.64 rows=1) (actual time=0.003..0.003 rows=1 loops=80)\n                                    -> Single-row covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID, term_taxonomy_id=5184)  (cost=0.54 rows=1) (actual time=0.002..0.002 rows=1 loops=80)\n                        -> Filter: ((wp_postmeta.meta_key like '_recipe_region') and (wp_postmeta.meta_value = 'Русская кухня'))  (cost=3.99 rows=0.2) (actual time=0.097..0.154 rows=1 loops=59)\n                            -> Index lookup on wp_postmeta using post_id (post_id=wp_posts.ID)  (cost=3.99 rows=16) (actual time=0.003..0.143 rows=65 loops=59)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.012..0.012 rows=1 loops=33)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.372..0.372 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.326..0.337 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.325..0.325 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_time')  (cost=32.90 rows=94) (actual time=0.008..0.256 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_time')  (cost=32.90 rows=94) (actual time=0.007..0.233 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_views_catalog",
+      "request": {
+        "sort_by": "recipe_views"
+      },
+      "found": 80,
+      "ids": [
+        9889,
+        9888,
+        9897,
+        9955,
+        9885,
+        9922,
+        9884,
+        9950,
+        9886,
+        9923,
+        9918
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t \n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        0.785,
+        0.768,
+        0.749,
+        0.759,
+        0.754,
+        0.745,
+        0.781,
+        0.778,
+        0.757
+      ],
+      "median_ms": 0.759,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.540..0.549 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)` DESC, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.540..0.547 rows=80 loops=1)\n        -> Stream results  (cost=31.79 rows=0) (actual time=0.327..0.501 rows=80 loops=1)\n            -> Nested loop left join  (cost=31.79 rows=0) (actual time=0.325..0.469 rows=80 loops=1)\n                -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.066..0.137 rows=80 loops=1)\n                    -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.065..0.128 rows=80 loops=1)\n                -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.004..0.004 rows=1 loops=80)\n                    -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.257..0.257 rows=94 loops=1)\n                        -> Table scan on <temporary>  (actual time=0.212..0.225 rows=94 loops=1)\n                            -> Aggregate using temporary table  (actual time=0.211..0.211 rows=94 loops=1)\n                                -> Filter: (wp_postmeta.meta_key = '_recipe_views')  (cost=32.90 rows=94) (actual time=0.008..0.165 rows=94 loops=1)\n                                    -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_views')  (cost=32.90 rows=94) (actual time=0.007..0.142 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_views_page_2",
+      "request": {
+        "paged": 2,
+        "sort_by": "recipe_views"
+      },
+      "found": 80,
+      "ids": [
+        9953,
+        9896,
+        9895,
+        9893,
+        9892,
+        9891,
+        9890,
+        9887,
+        9899,
+        9898,
+        9909
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t \n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 11, 11",
+      "samples_ms": [
+        0.753,
+        0.75,
+        0.767,
+        0.764,
+        0.761,
+        0.777,
+        0.792,
+        0.797,
+        0.78
+      ],
+      "median_ms": 0.767,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit/Offset: 11/11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.553..0.561 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)` DESC, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.552..0.554 rows=80 loops=1)\n        -> Stream results  (cost=31.79 rows=0) (actual time=0.338..0.513 rows=80 loops=1)\n            -> Nested loop left join  (cost=31.79 rows=0) (actual time=0.335..0.480 rows=80 loops=1)\n                -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.066..0.139 rows=80 loops=1)\n                    -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.065..0.128 rows=80 loops=1)\n                -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.004..0.004 rows=1 loops=80)\n                    -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.267..0.267 rows=94 loops=1)\n                        -> Table scan on <temporary>  (actual time=0.222..0.234 rows=94 loops=1)\n                            -> Aggregate using temporary table  (actual time=0.222..0.222 rows=94 loops=1)\n                                -> Filter: (wp_postmeta.meta_key = '_recipe_views')  (cost=32.90 rows=94) (actual time=0.008..0.170 rows=94 loops=1)\n                                    -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_views')  (cost=32.90 rows=94) (actual time=0.008..0.148 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_views_region",
+      "request": {
+        "region": "Русская кухня",
+        "sort_by": "recipe_views"
+      },
+      "found": 44,
+      "ids": [
+        9897,
+        9885,
+        9884,
+        9886,
+        9918,
+        9896,
+        9893,
+        9892,
+        9887,
+        9908,
+        9907
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  INNER JOIN wp_postmeta ON ( wp_posts.ID = wp_postmeta.post_id ) LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  ( wp_postmeta.meta_key LIKE '_recipe_region' AND wp_postmeta.meta_value = 'Русская кухня' )\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        13.468,
+        14.374,
+        12.967,
+        13.828,
+        13.354,
+        13.497,
+        13.701,
+        13.486,
+        13.783
+      ],
+      "median_ms": 13.497,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id",
+          "key": "post_id",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "15",
+          "filtered": "1.11",
+          "Extra": "Using where"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=13.647..13.651 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)` DESC, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=13.646..13.650 rows=44 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=13.604..13.609 rows=44 loops=1)\n            -> Temporary table with deduplication  (cost=63.48..63.48 rows=0) (actual time=13.602..13.602 rows=44 loops=1)\n                -> Nested loop left join  (cost=60.98 rows=0) (actual time=0.736..13.548 rows=44 loops=1)\n                    -> Nested loop inner join  (cost=57.65 rows=1) (actual time=0.372..13.123 rows=44 loops=1)\n                        -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.079..0.178 rows=80 loops=1)\n                            -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.077..0.163 rows=80 loops=1)\n                        -> Filter: ((wp_postmeta.meta_key like '_recipe_region') and (wp_postmeta.meta_value = 'Русская кухня'))  (cost=3.99 rows=0.2) (actual time=0.102..0.162 rows=1 loops=80)\n                            -> Index lookup on wp_postmeta using post_id (post_id=wp_posts.ID)  (cost=3.99 rows=16) (actual time=0.003..0.151 rows=63 loops=80)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.009..0.009 rows=1 loops=44)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.362..0.362 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.318..0.330 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.317..0.317 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_views')  (cost=32.90 rows=94) (actual time=0.009..0.263 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_views')  (cost=32.90 rows=94) (actual time=0.008..0.240 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_views_category",
+      "request": {
+        "category_id": 5179,
+        "sort_by": "recipe_views"
+      },
+      "found": 62,
+      "ids": [
+        9889,
+        9888,
+        9955,
+        9885,
+        9922,
+        9884,
+        9950,
+        9923,
+        9918,
+        9953,
+        9896
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN wp_term_relationships ON (wp_posts.ID = wp_term_relationships.object_id) LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  wp_term_relationships.term_taxonomy_id IN (5179,5180,5185,5209,5221,5238,5241,5318)\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        1.21,
+        1.193,
+        1.203,
+        1.295,
+        1.229,
+        1.224,
+        1.201,
+        1.211,
+        1.237
+      ],
+      "median_ms": 1.211,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "7",
+          "filtered": "18.18",
+          "Extra": "Using where; Using index"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=1.049..1.055 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)` DESC, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=1.048..1.050 rows=62 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=1.007..1.014 rows=62 loops=1)\n            -> Temporary table with deduplication  (cost=52.15..52.15 rows=0) (actual time=1.006..1.006 rows=62 loops=1)\n                -> Nested loop left join  (cost=49.65 rows=0) (actual time=0.349..0.937 rows=124 loops=1)\n                    -> Nested loop inner join  (cost=22.85 rows=11) (actual time=0.077..0.549 rows=124 loops=1)\n                        -> Filter: (wp_posts.post_password = '')  (cost=12.99 rows=8) (actual time=0.070..0.153 rows=80 loops=1)\n                            -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.069..0.138 rows=80 loops=1)\n                        -> Filter: (wp_term_relationships.term_taxonomy_id in (5179,5180,5185,5209,5221,5238,5241,5318))  (cost=0.47 rows=1) (actual time=0.003..0.005 rows=2 loops=80)\n                            -> Covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID)  (cost=0.47 rows=8) (actual time=0.002..0.004 rows=8 loops=80)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.003..0.003 rows=1 loops=124)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.270..0.270 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.226..0.238 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.225..0.225 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_views')  (cost=32.90 rows=94) (actual time=0.009..0.178 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_views')  (cost=32.90 rows=94) (actual time=0.008..0.156 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_views_ingredient",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "sort_by": "recipe_views"
+      },
+      "found": 59,
+      "ids": [
+        9889,
+        9897,
+        9885,
+        9922,
+        9884,
+        9886,
+        9923,
+        9918,
+        9953,
+        9895,
+        9893
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 1\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        1.126,
+        1.122,
+        1.094,
+        1.045,
+        1.062,
+        1.057,
+        1.072,
+        1.084,
+        1.072
+      ],
+      "median_ms": 1.072,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "3",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.871..0.877 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)` DESC, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.870..0.874 rows=59 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=0.831..0.839 rows=59 loops=1)\n            -> Temporary table with deduplication  (cost=34.29..34.29 rows=0) (actual time=0.830..0.830 rows=59 loops=1)\n                -> Nested loop left join  (cost=31.79 rows=0) (actual time=0.403..0.783 rows=59 loops=1)\n                    -> Filter: (((select #3) = 1) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.089..0.408 rows=59 loops=1)\n                        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.075..0.145 rows=80 loops=1)\n                        -> Select #3 (subquery in condition; dependent)\n                            -> Aggregate: count(1)  (cost=0.64 rows=1) (actual time=0.003..0.003 rows=1 loops=80)\n                                -> Single-row covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID, term_taxonomy_id=5184)  (cost=0.54 rows=1) (actual time=0.002..0.002 rows=1 loops=80)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.006..0.006 rows=1 loops=59)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.312..0.312 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.269..0.281 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.268..0.268 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_views')  (cost=32.90 rows=94) (actual time=0.009..0.217 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_views')  (cost=32.90 rows=94) (actual time=0.009..0.195 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_views_ingredients_and",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c",
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ],
+        "sort_by": "recipe_views"
+      },
+      "found": 33,
+      "ids": [
+        9889,
+        9885,
+        9918,
+        9953,
+        9891,
+        9890,
+        9899,
+        9898,
+        9907,
+        9904,
+        9901
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5188,5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 2\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        1.162,
+        1.216,
+        1.189,
+        1.22,
+        1.362,
+        1.295,
+        1.21,
+        1.144,
+        1.24
+      ],
+      "median_ms": 1.216,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "3",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "7",
+          "filtered": "14.66",
+          "Extra": "Using where; Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=1.061..1.065 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)` DESC, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=1.060..1.062 rows=33 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=1.027..1.032 rows=33 loops=1)\n            -> Temporary table with deduplication  (cost=34.29..34.29 rows=0) (actual time=1.026..1.026 rows=33 loops=1)\n                -> Nested loop left join  (cost=31.79 rows=0) (actual time=0.429..0.989 rows=33 loops=1)\n                    -> Filter: (((select #3) = 2) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.128..0.652 rows=33 loops=1)\n                        -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.097..0.171 rows=80 loops=1)\n                        -> Select #3 (subquery in condition; dependent)\n                            -> Aggregate: count(1)  (cost=0.68 rows=1) (actual time=0.005..0.005 rows=1 loops=80)\n                                -> Filter: (wp_term_relationships.term_taxonomy_id in (5188,5184))  (cost=0.56 rows=1) (actual time=0.003..0.005 rows=1 loops=80)\n                                    -> Covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID)  (cost=0.56 rows=8) (actual time=0.003..0.004 rows=8 loops=80)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.010..0.010 rows=1 loops=33)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.298..0.298 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.253..0.265 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.252..0.252 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_views')  (cost=32.90 rows=94) (actual time=0.011..0.199 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_views')  (cost=32.90 rows=94) (actual time=0.011..0.175 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_views_include_exclude",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "exclude_ingredients": [
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ],
+        "sort_by": "recipe_views"
+      },
+      "found": 26,
+      "ids": [
+        9897,
+        9922,
+        9884,
+        9886,
+        9923,
+        9895,
+        9893,
+        9892,
+        9909,
+        9908,
+        9903
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 1 \n  AND \n  wp_posts.ID NOT IN (\n\t\t\t\tSELECT object_id\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5188)\n\t\t\t)\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        1.289,
+        1.136,
+        1.163,
+        1.123,
+        1.113,
+        1.091,
+        1.056,
+        1.11,
+        1.066
+      ],
+      "median_ms": 1.113,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<subquery4>",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "<auto_distinct_key>",
+          "key": "<auto_distinct_key>",
+          "key_len": "9",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using where; Not exists"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "4",
+          "select_type": "MATERIALIZED",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "term_taxonomy_id",
+          "key_len": "8",
+          "ref": "const",
+          "rows": "4",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "3",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=0.777..0.780 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)` DESC, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=0.776..0.777 rows=26 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=0.754..0.757 rows=26 loops=1)\n            -> Temporary table with deduplication  (cost=38.37..38.37 rows=0) (actual time=0.754..0.754 rows=26 loops=1)\n                -> Nested loop left join  (cost=35.87 rows=0) (actual time=0.360..0.731 rows=26 loops=1)\n                    -> Nested loop antijoin  (cost=17.07 rows=33) (actual time=0.102..0.447 rows=26 loops=1)\n                        -> Filter: (((select #3) = 1) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.074..0.385 rows=59 loops=1)\n                            -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.064..0.132 rows=80 loops=1)\n                            -> Select #3 (subquery in condition; dependent)\n                                -> Aggregate: count(1)  (cost=0.64 rows=1) (actual time=0.002..0.003 rows=1 loops=80)\n                                    -> Single-row covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID, term_taxonomy_id=5184)  (cost=0.54 rows=1) (actual time=0.002..0.002 rows=1 loops=80)\n                        -> Single-row index lookup on <subquery4> using <auto_distinct_key> (object_id=wp_posts.ID)  (actual time=0.001..0.001 rows=1 loops=59)\n                            -> Materialize with deduplication  (cost=1.07..1.07 rows=4) (actual time=0.026..0.026 rows=41 loops=1)\n                                -> Filter: (wp_term_relationships.object_id is not null)  (cost=0.66 rows=4) (actual time=0.004..0.020 rows=41 loops=1)\n                                    -> Covering index lookup on wp_term_relationships using term_taxonomy_id (term_taxonomy_id=5188)  (cost=0.66 rows=4) (actual time=0.004..0.015 rows=41 loops=1)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.010..0.011 rows=1 loops=26)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.256..0.256 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.214..0.226 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.213..0.213 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_views')  (cost=32.90 rows=94) (actual time=0.008..0.168 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_views')  (cost=32.90 rows=94) (actual time=0.008..0.145 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    },
+    {
+      "case": "recipe_views_region_ingredient",
+      "request": {
+        "region": "Русская кухня",
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "sort_by": "recipe_views"
+      },
+      "found": 33,
+      "ids": [
+        9897,
+        9885,
+        9884,
+        9886,
+        9918,
+        9893,
+        9892,
+        9908,
+        9907,
+        9904,
+        9901
+      ],
+      "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  INNER JOIN wp_postmeta ON ( wp_posts.ID = wp_postmeta.post_id ) LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND ( \n  (\n\t\t\t\tSELECT COUNT(1)\n\t\t\t\tFROM wp_term_relationships\n\t\t\t\tWHERE term_taxonomy_id IN (5184)\n\t\t\t\tAND object_id = wp_posts.ID\n\t\t\t) = 1\n) AND ( \n  ( wp_postmeta.meta_key LIKE '_recipe_region' AND wp_postmeta.meta_value = 'Русская кухня' )\n) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+      "samples_ms": [
+        10.72,
+        10.756,
+        11.263,
+        11.233,
+        11.074,
+        11.208,
+        10.903,
+        10.797,
+        11.549
+      ],
+      "median_ms": 11.074,
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id",
+          "key": "post_id",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "15",
+          "filtered": "1.11",
+          "Extra": "Using where"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "3",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "analyze": "-> Limit: 11 row(s) (no early end due to SQL_CALC_FOUND_ROWS)  (actual time=11.166..11.170 rows=11 loops=1)\n    -> Sort: `coalesce(cooklook_sort.``value``,0)` DESC, wp_posts.post_date DESC, wp_posts.ID DESC  (actual time=11.165..11.166 rows=33 loops=1)\n        -> Table scan on <temporary>  (cost=2.50..2.50 rows=0) (actual time=11.130..11.135 rows=33 loops=1)\n            -> Temporary table with deduplication  (cost=63.48..63.48 rows=0) (actual time=11.129..11.129 rows=33 loops=1)\n                -> Nested loop left join  (cost=60.98 rows=0) (actual time=0.768..11.064 rows=33 loops=1)\n                    -> Nested loop inner join  (cost=57.65 rows=1) (actual time=0.406..10.641 rows=33 loops=1)\n                        -> Filter: (((select #3) = 1) and (wp_posts.post_password = ''))  (cost=12.99 rows=8) (actual time=0.101..0.541 rows=59 loops=1)\n                            -> Index lookup on wp_posts using type_status_date (post_type='recipe', post_status='publish')  (cost=12.99 rows=80) (actual time=0.087..0.174 rows=80 loops=1)\n                            -> Select #3 (subquery in condition; dependent)\n                                -> Aggregate: count(1)  (cost=0.64 rows=1) (actual time=0.003..0.003 rows=1 loops=80)\n                                    -> Single-row covering index lookup on wp_term_relationships using PRIMARY (object_id=wp_posts.ID, term_taxonomy_id=5184)  (cost=0.54 rows=1) (actual time=0.003..0.003 rows=1 loops=80)\n                        -> Filter: ((wp_postmeta.meta_key like '_recipe_region') and (wp_postmeta.meta_value = 'Русская кухня'))  (cost=3.99 rows=0.2) (actual time=0.106..0.171 rows=1 loops=59)\n                            -> Index lookup on wp_postmeta using post_id (post_id=wp_posts.ID)  (cost=3.99 rows=16) (actual time=0.004..0.159 rows=65 loops=59)\n                    -> Index lookup on cooklook_sort using <auto_key0> (post_id=wp_posts.ID)  (actual time=0.012..0.012 rows=1 loops=33)\n                        -> Materialize  (cost=0.00..0.00 rows=0) (actual time=0.360..0.360 rows=94 loops=1)\n                            -> Table scan on <temporary>  (actual time=0.316..0.327 rows=94 loops=1)\n                                -> Aggregate using temporary table  (actual time=0.315..0.315 rows=94 loops=1)\n                                    -> Filter: (wp_postmeta.meta_key = '_recipe_views')  (cost=32.90 rows=94) (actual time=0.009..0.262 rows=94 loops=1)\n                                        -> Index lookup on wp_postmeta using meta_key (meta_key='_recipe_views')  (cost=32.90 rows=94) (actual time=0.009..0.239 rows=94 loops=1)\n",
+      "wp_query_sql_counts": [
+        2,
+        0
+      ]
+    }
+  ]
+}

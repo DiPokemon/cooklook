@@ -10,28 +10,48 @@ jQuery(function ($) {
 	});
 
 	function values() {
+		function ingredients(selector) {
+			return ($('#' + selector).val() || []).filter(function (item, index, list) {
+				return typeof item === 'string' && item !== '' && list.indexOf(item) === index;
+			}).sort();
+		}
 		return {
 			category_id: $('#recipe_category').val() || 'all',
 			subcategory_id: $('#recipe_subcategory').val() || 'all',
 			region: $('#recipe_region').val() || '',
-			include_ingredients: $('#include_ingredients').val() || [],
-			exclude_ingredients: $('#exclude_ingredients').val() || [],
+			include_ingredients: ingredients('include_ingredients'),
+			exclude_ingredients: ingredients('exclude_ingredients'),
 			sort_by: $('#sort_by').val() || 'date'
 		};
 	}
 	function pageURL(state, page) {
 		var url = new URL(filter_obj.base_url, window.location.href);
-		['recipe_category', 'recipe_subcategory', 'recipe_region', 'category_id', 'subcategory_id', 'region', 'sort_by', 'paged', 'include_ingredients', 'exclude_ingredients', 'include_ingredients[]', 'exclude_ingredients[]'].forEach(function (key) { url.searchParams.delete(key); });
+		var keys = ['recipe_category', 'recipe_subcategory', 'recipe_region', 'category_id', 'subcategory_id', 'region', 'sort_by', 'paged', 'page', 'include_ingredients', 'exclude_ingredients'];
+		// PHP serializes [] as [0], [1], etc. Remove every form before rebuilding.
+		Array.from(url.searchParams.keys()).forEach(function (key) {
+			if (keys.indexOf(key.split('[')[0]) !== -1) url.searchParams.delete(key);
+		});
 		Object.keys(state).forEach(function (key) {
 			var value = state[key];
 			if (Array.isArray(value)) value.forEach(function (item) { url.searchParams.append(key + '[]', item); });
-			else if (value && value !== 'all') url.searchParams.set(key, value);
+			else if (value && value !== 'all' && value !== '0' && !(key === 'sort_by' && value === 'date')) url.searchParams.set(key, value);
 		});
 		if (page > 1) url.searchParams.set('paged', page);
+		Object.keys(filter_obj.route_query || {}).forEach(function (key) {
+			url.searchParams.set(key, filter_obj.route_query[key]);
+		});
+		// PHP supplies the permalink pattern, including subdirectory/index.php settings.
+		if (filter_obj.pagination) {
+			url.searchParams.delete('paged');
+			var pattern = filter_obj.pagination;
+			var target = new URL(pattern.base.replace('%_%', page > 1 ? pattern.format.replace('%#%', page) : ''), window.location.href);
+			url.pathname = target.pathname;
+			if (target.searchParams.has('paged')) url.searchParams.set('paged', target.searchParams.get('paged'));
+		}
 		return url;
 	}
 	function load(page) {
-		page = Math.max(1, Number(page) || 1);
+		page = Math.max(1, Math.floor(Number(page)) || 1);
 		var state = values(), url = pageURL(state, page), sequence = ++requestNumber;
 		if (pending) pending.abort();
 		error.prop('hidden', true);
@@ -49,6 +69,17 @@ jQuery(function ($) {
 				$('#response').html(response.data.html).addClass('filtred');
 				$('.pagination').html(response.data.pagination || '');
 				window.history.pushState(null, '', url.href);
+				if (filter_obj.page_metadata) {
+					var metadata = filter_obj.page_metadata[page > 1 ? 'paged' : 'first'];
+					if (metadata.title) document.title = metadata.title.replace('%page%', page);
+					if (metadata.description) $('meta[name="description"]').attr('content', metadata.description.replace('%page%', page));
+					$('.page-header__breadcrumbs').replaceWith(metadata.breadcrumbs);
+					if (page > 1) {
+						$('.page-header__breadcrumbs .breadcrumbs__current').text(filter_obj.page_metadata.page_label.replace('%s', page));
+						$('.page-header__breadcrumbs .breadcrumbs__link').last().attr('href', pageURL(state, 1).href);
+					}
+				}
+				$('.archive_description').prop('hidden', page > 1);
 				$(document).trigger('cooklook:recipes-updated');
 			} else error.text(response.data || 'Не удалось загрузить рецепты.').prop('hidden', false);
 		}).fail(function (xhr, status) {
@@ -90,8 +121,9 @@ jQuery(function ($) {
 	$(document).on('click', '.pagination a', function (event) {
 		event.preventDefault();
 		var url = new URL(this.href);
-		var match = url.pathname.match(/\/page\/(\d+)\/?$/);
-		load(url.searchParams.get('paged') || (match && match[1]) || 1);
+		var parts = url.pathname.replace(/\/$/, '').split('/');
+		var page = parts[parts.length - 2] === (filter_obj.pagination_base || 'page') ? parts[parts.length - 1] : 1;
+		load(url.searchParams.get('paged') || page);
 	});
 	// Server rendering restores both controls and results on browser history navigation.
 	window.addEventListener('popstate', function () { window.location.reload(); });

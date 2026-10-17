@@ -3,13 +3,18 @@
 defined( 'ABSPATH' ) || exit;
 
 function cooklook_print_schema( $schema ) {
+	if ( ! $schema ) {
+		return;
+	}
 	echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE ) . '</script>';
 }
 
 function add_dynamic_schema_markup() {
+	if ( defined( 'WPSEO_VERSION' ) ) { return; }
 	$schema = array(
 		'@context' => 'https://schema.org',
 		'@type' => 'WebSite',
+		'@id' => home_url( '/' ) . '#website',
 		'name' => get_bloginfo( 'name' ),
 		'url' => home_url( '/' ),
 		'potentialAction' => array(
@@ -24,50 +29,40 @@ add_action( 'wp_head', 'add_dynamic_schema_markup' );
 
 function cooklook_recipe_schema( $post_id ) {
 	$post = get_post( $post_id );
+	$images = cooklook_recipe_images( $post_id );
+	if ( ! $post || post_password_required( $post ) || ! $images ) {
+		return array();
+	}
 	$schema = array(
 		'@context' => 'https://schema.org',
 		'@type' => 'Recipe',
+		'@id' => get_permalink( $post_id ) . '#recipe',
 		'name' => get_the_title( $post_id ),
 		'url' => get_permalink( $post_id ),
-		'author' => array( '@type' => 'Person', 'name' => get_the_author_meta( 'display_name', $post->post_author ) ),
+		'author' => cooklook_recipe_author(),
 		'datePublished' => get_the_date( 'c', $post_id ),
 		'dateModified' => get_the_modified_date( 'c', $post_id ),
-		'description' => wp_strip_all_tags( cooklook_recipe_description( $post_id ) ),
+		'description' => wp_strip_all_tags( cooklook_recipe_summary( $post_id ) ),
+		'image' => $images,
 	);
-	$images = array();
-	$image = get_the_post_thumbnail_url( $post_id, 'full' );
-	if ( $image ) {
-		$images[] = $image;
-	}
+	$facts = cooklook_recipe_facts( $post_id );
 	$steps = array();
-	foreach ( cooklook_recipe_rows( $post_id, 'recipe_step' ) as $index => $row ) {
-		if ( empty( $row['recipe_step_text'] ) ) {
-			continue;
-		}
-		$step = array( '@type' => 'HowToStep', 'text' => wp_strip_all_tags( $row['recipe_step_text'] ), 'url' => get_permalink( $post_id ) . '#step_' . ( $index + 1 ) );
-		if ( ! empty( $row['recipe_step_image'] ) && esc_url_raw( $row['recipe_step_image'] ) ) {
-			$step['image'] = esc_url_raw( $row['recipe_step_image'] );
-			$images[] = $step['image'];
+	foreach ( $facts['steps'] as $row ) {
+		$step = array( '@type' => 'HowToStep', 'text' => $row['text'], 'url' => get_permalink( $post_id ) . '#' . $row['anchor'] );
+		if ( $row['image'] ) {
+			$step['image'] = $row['image'];
 		}
 		$steps[] = $step;
-	}
-	if ( $images ) {
-		$schema['image'] = array_values( array_unique( $images ) );
 	}
 	if ( $steps ) {
 		$schema['recipeInstructions'] = $steps;
 	}
-	$ingredients = array();
-	foreach ( cooklook_recipe_rows( $post_id, 'ingridients' ) as $row ) {
-		if ( ! empty( $row['ingridient_name'] ) ) {
-			$ingredients[] = trim( $row['ingridient_name'] . ' ' . ( isset( $row['ingridient_value'] ) ? $row['ingridient_value'] : '' ) );
-		}
-	}
+	$ingredients = array_column( $facts['ingredients'], 'text' );
 	if ( $ingredients ) {
 		$schema['recipeIngredient'] = $ingredients;
 	}
-	$cook = max( 0, (int) cooklook_recipe_value( $post_id, 'recipe_time' ) );
-	$prep = max( 0, (int) cooklook_recipe_value( $post_id, 'recipe_prep' ) );
+	$cook = $facts['cook'];
+	$prep = $facts['prep'];
 	if ( $cook ) {
 		$schema['cookTime'] = schema_time( $cook );
 	}
@@ -77,11 +72,11 @@ function cooklook_recipe_schema( $post_id ) {
 	if ( $cook + $prep ) {
 		$schema['totalTime'] = schema_time( $cook + $prep );
 	}
-	$portions = cooklook_recipe_value( $post_id, 'recipe_portions' );
+	$portions = $facts['portions'];
 	if ( $portions ) {
 		$schema['recipeYield'] = (string) $portions;
 	}
-	$region = cooklook_recipe_value( $post_id, 'recipe_region' );
+	$region = $facts['cuisine'];
 	if ( $region ) {
 		$schema['recipeCuisine'] = $region;
 	}
@@ -93,19 +88,37 @@ function cooklook_recipe_schema( $post_id ) {
 	if ( $tags ) {
 		$schema['keywords'] = implode( ', ', $tags );
 	}
-	$nutrition = array( '@type' => 'NutritionInformation', 'servingSize' => '100 g' );
-	foreach ( array( 'recipe_calories' => 'calories', 'recipe_protein' => 'proteinContent', 'recipe_fat' => 'fatContent', 'recipe_carbs' => 'carbohydrateContent' ) as $key => $property ) {
-		$value = cooklook_recipe_value( $post_id, $key );
-		if ( is_numeric( $value ) && $value >= 0 ) {
-			$nutrition[ $property ] = $value . ( 'calories' === $property ? ' kcal' : ' g' );
-		}
-	}
-	if ( count( $nutrition ) > 2 ) {
-		$schema['nutrition'] = $nutrition;
-	}
+	// Legacy nutrition is labelled per 100 g, with no verified serving mass.
+	// Do not publish it as nutrition per serving or silently recalculate it.
 	$rating = cooklook_recipe_rating_data( $post_id );
 	if ( $rating['likes'] + $rating['dislikes'] > 0 ) {
 		$schema['aggregateRating'] = array( '@type' => 'AggregateRating', 'ratingValue' => $rating['rating'], 'ratingCount' => $rating['likes'] + $rating['dislikes'], 'bestRating' => 5, 'worstRating' => 0 );
 	}
 	return $schema;
+}
+
+/** Keep Yoast as the graph owner, linking Recipe to its actual WebPage ID. */
+function cooklook_recipe_schema_graph( $graph ) {
+	if ( ! is_singular( 'recipe' ) || ! is_array( $graph ) || ! $graph ) { return $graph; }
+	foreach ( $graph as $piece ) {
+		if ( in_array( 'Recipe', (array) ( $piece['@type'] ?? array() ), true ) ) { return $graph; }
+	}
+	$recipe = cooklook_recipe_schema( get_queried_object_id() );
+	if ( ! $recipe ) { return $graph; }
+	unset( $recipe['@context'] );
+	foreach ( $graph as &$piece ) {
+		if ( ! empty( $piece['@id'] ) && in_array( 'WebPage', (array) ( $piece['@type'] ?? array() ), true ) ) {
+			$recipe['mainEntityOfPage'] = array( '@id' => $piece['@id'] );
+			if ( empty( $piece['mainEntity'] ) ) { $piece['mainEntity'] = array( '@id' => $recipe['@id'] ); }
+			break;
+		}
+	}
+	unset( $piece );
+	$graph[] = $recipe;
+	return $graph;
+}
+add_filter( 'wpseo_schema_graph', 'cooklook_recipe_schema_graph', 20 );
+
+function cooklook_recipe_schema_fallback( $post_id ) {
+	if ( ! defined( 'WPSEO_VERSION' ) ) { cooklook_print_schema( cooklook_recipe_schema( $post_id ) ); }
 }

@@ -1,0 +1,466 @@
+{
+  "checked_at": "2026-10-16T11:46:49.791Z",
+  "deployment_date": null,
+  "language": "ru",
+  "region": "RU (planned; no provider run yet)",
+  "method": "Fixed baseline of ten real production recipes. Reference facts copied from existing Recipe JSON-LD; culinary accuracy and visible-content agreement still need editorial acceptance. No AI-provider answer or visibility statistic is inferred.",
+  "control_group": null,
+  "questions": [
+    {
+      "id": "cooklook-ai-01",
+      "question": "Как приготовить «Блины с водкой» по рецепту CookLook? Приведи ингредиенты, основные шаги и ссылку на рецепт.",
+      "source_url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "reference": {
+        "name": "Блины с водкой",
+        "ingredients": [
+          "Молоко ½ л",
+          "Куриное яйцо 2 штуки",
+          "Соль 1 чайная ложка",
+          "Сахар 2 столовые ложки",
+          "Пшеничная мука 10 столовых ложек",
+          "Растительное масло 3 столовые ложки",
+          "Водка 25 мл"
+        ],
+        "steps": [
+          {
+            "text": "Добавить яйца, соль и сахар в молоко. Перемешать все с помощью миксера. Затем постепенно добавить муку. Дать тесту отдохнуть в течение 30–40 минут.",
+            "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/#step_1"
+          },
+          {
+            "text": "Перед тем, как поставить в духовку, нужно добавить масло и водку в тесто, затем хорошо перемешать. Если нужно, дополнительно разбавить кипятком.",
+            "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/#step_2"
+          }
+        ],
+        "yield": "4",
+        "total_time": null
+      },
+      "observations": [],
+      "unbranded_question": "Как приготовить «Блины с водкой»? Приведи ингредиенты, основные шаги и ссылку на использованный рецепт."
+    },
+    {
+      "id": "cooklook-ai-02",
+      "question": "Как приготовить «Сладкая творожная масса, запеченная в духовке» по рецепту CookLook? Приведи ингредиенты, основные шаги и ссылку на рецепт.",
+      "source_url": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/",
+      "reference": {
+        "name": "Сладкая творожная масса, запеченная в духовке",
+        "ingredients": [
+          "Сливочное масло 100 г",
+          "Сметана 3 столовые ложки",
+          "Пшеничная мука 2 столовые ложки",
+          "Ванильный сахар 3 столовые ложки",
+          "Изюм без косточек 100 г",
+          "Куриное яйцо 1 штука",
+          "Панировочные сухари по вкусу",
+          "Кислое молоко 2 л"
+        ],
+        "steps": [
+          {
+            "text": "Влить прокисшее молоко (2 л) в кастрюлю. Довести до кипения и кипятить 3–5 минут. Процедить молоко через марлю или сито, хорошо отжать. Переложить готовый творог в тарелку и дать остыть. Можно также использовать примерно 250 г купленного творога.",
+            "url": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/#step_1"
+          },
+          {
+            "text": "Переложить творог в блендер и перетереть. Добавить 100 г размягченного сливочного масла и хорошо перетереть. Переложить смесь в кастрюлю.",
+            "url": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/#step_2"
+          },
+          {
+            "text": "Смешать яйцо с 3 столовыми ложками ванильного сахара и добавить к творогу с маслом. Затем добавить 2 столовые ложки муки и 3 столовые ложки сметаны. Тщательно перемешать деревянной лопаточкой. Добавить 100 г промытого изюма и перемешать, чтобы изюм равномерно распределился в творожной массе.",
+            "url": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/#step_3"
+          },
+          {
+            "text": "В форму для тортов выложить разрезанный по шву рукав для запекания (использовать как фольгу или бумагу для выпечки). Смазать форму 2 столовыми ложками растопленного сливочного масла. Выложить сладкую творожную массу в форму и разровнять поверхность. Сверху сбрызнуть 1 столовой ложкой растопленного сливочного масла и слегка посыпать панировочными сухарями.",
+            "url": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/#step_4"
+          },
+          {
+            "text": "Поставить в разогретую до 180 градусов духовку на 15 минут. Остудить перед подачей.",
+            "url": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/#step_5"
+          }
+        ],
+        "yield": "3",
+        "total_time": "PT2H"
+      },
+      "observations": [],
+      "unbranded_question": "Как приготовить «Сладкая творожная масса, запеченная в духовке»? Приведи ингредиенты, основные шаги и ссылку на использованный рецепт."
+    },
+    {
+      "id": "cooklook-ai-03",
+      "question": "Как приготовить «Крем брюле (Creme brûlée)» по рецепту CookLook? Приведи ингредиенты, основные шаги и ссылку на рецепт.",
+      "source_url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/",
+      "reference": {
+        "name": "Крем брюле (Creme brûlée)",
+        "ingredients": [
+          "Сливки 20%-ные 500 г",
+          "Яичный желток 4 штуки",
+          "Сахар 50 г",
+          "Ваниль 5 г",
+          "Сахарная пудра 10 г"
+        ],
+        "steps": [
+          {
+            "text": "Смешать желтки, сахар и ваниль (взбивать не нужно, просто смешать до однородной массы).",
+            "url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/#step_1"
+          },
+          {
+            "text": "Нагреть сливки, но не нежно доводить до кипения. Охладить до комнатной температуры.",
+            "url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/#step_2"
+          },
+          {
+            "text": "Смешайть сливки и яичную массу — пузырьков воздуха быть не должно.",
+            "url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/#step_3"
+          },
+          {
+            "text": "Разогрейть духовку до 150 градусов.",
+            "url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/#step_4"
+          },
+          {
+            "text": "Разделить заготовку по формам, поставить формочку в большую емкость и залить ее водой (должна получиться паровая баня).",
+            "url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/#step_5"
+          },
+          {
+            "text": "Выпекать в духовке 60 минут — заготовка должно приобрести консистенцию желе (потрусите формочку слегка для проверки).",
+            "url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/#step_6"
+          },
+          {
+            "text": "Охладить до комнатной температуры и поставить в холодильник на 3–4 часа.",
+            "url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/#step_7"
+          },
+          {
+            "text": "Перед подачей посыпать формочку сверху сахарной пудрой равномерным тонким слоем. Используя газовую горелку, создать карамельную корочку.",
+            "url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/#step_8"
+          }
+        ],
+        "yield": "4",
+        "total_time": "PT1H20M"
+      },
+      "observations": [],
+      "unbranded_question": "Как приготовить «Крем брюле (Creme brûlée)»? Приведи ингредиенты, основные шаги и ссылку на использованный рецепт."
+    },
+    {
+      "id": "cooklook-ai-04",
+      "question": "Как приготовить «Запеканка из творога» по рецепту CookLook? Приведи ингредиенты, основные шаги и ссылку на рецепт.",
+      "source_url": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/",
+      "reference": {
+        "name": "Запеканка из творога",
+        "ingredients": [
+          "Творог 150 г",
+          "Манная крупа 10 г",
+          "Сахар 15 г",
+          "Куриное яйцо 2 штуки",
+          "Сливочное масло 3 г",
+          "Изюм 15 г",
+          "Панировочные сухари 4 г",
+          "Сметана 30 г",
+          "Соль 10 г"
+        ],
+        "steps": [
+          {
+            "text": "Смешать протертый творог с манной крупой в одной чаше. Затем добавить яйца, сахар, соль и изюм в эту смесь, тщательно перемешивая.",
+            "url": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/#step_1"
+          },
+          {
+            "text": "Выложить подготовленную массу в форму, предварительно смазанную маслом и посыпанную сухарями. Разровнять поверхность массы и затем смазать её сметаной.",
+            "url": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/#step_2"
+          },
+          {
+            "text": "Выпекать в течение 20-30 минут при температуре 200 градусов до появления золотистой корочки.",
+            "url": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/#step_3"
+          },
+          {
+            "text": "При подаче следует порезать на кусочки и полить сметаной либо сладким соусом.",
+            "url": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/#step_4"
+          }
+        ],
+        "yield": "6",
+        "total_time": null
+      },
+      "observations": [],
+      "unbranded_question": "Как приготовить «Запеканка из творога»? Приведи ингредиенты, основные шаги и ссылку на использованный рецепт."
+    },
+    {
+      "id": "cooklook-ai-05",
+      "question": "Как приготовить «Запеканка из обезжиренного творога с курагой» по рецепту CookLook? Приведи ингредиенты, основные шаги и ссылку на рецепт.",
+      "source_url": "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/",
+      "reference": {
+        "name": "Запеканка из обезжиренного творога с курагой",
+        "ingredients": [
+          "Курага 15 штук",
+          "Обезжиренный творог 500 г",
+          "Куриное яйцо 10 штук"
+        ],
+        "steps": [
+          {
+            "text": "Прежде всего, поместить весь творог в миску. Затем добавить нарезанную на кубики курагу. Влить в миску 10 яичных белков и тщательно перемешать все ингредиенты. Вылить смесь в форму для выпечки, используя бумагу для выпекания вместо смазывания маслом, если придерживаешься диеты или здорового питания.",
+            "url": "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/#step_1"
+          },
+          {
+            "text": "Поместить форму в духовку и выпекать около 20 минут. Проверить готовность, убедившись, что центр запеканки не остается жидким при небольшом перемешивании формы.",
+            "url": "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/#step_2"
+          }
+        ],
+        "yield": "8",
+        "total_time": null
+      },
+      "observations": [],
+      "unbranded_question": "Как приготовить «Запеканка из обезжиренного творога с курагой»? Приведи ингредиенты, основные шаги и ссылку на использованный рецепт."
+    },
+    {
+      "id": "cooklook-ai-06",
+      "question": "Как приготовить «Кексы-пиццы» по рецепту CookLook? Приведи ингредиенты, основные шаги и ссылку на рецепт.",
+      "source_url": "https://cook-look.ru/recipe/keksy-piczczy/",
+      "reference": {
+        "name": "Кексы-пиццы",
+        "ingredients": [
+          "Молоко 1 стакан",
+          "Куриное яйцо 1 штука",
+          "Рафинированное масло 150 мл",
+          "Разрыхлитель 1 чайная ложка",
+          "Сосиски 3 штуки",
+          "Тертый сыр 100 г",
+          "Помидоры черри 10 штук",
+          "Томатная паста 3 столовые ложки",
+          "Кукурузная мука 1 стакан"
+        ],
+        "steps": [
+          {
+            "text": "Смешать \\\"мокрые\\\" ингредиенты, затем постепенно добавить в них \\\"сухие\\\".",
+            "url": "https://cook-look.ru/recipe/keksy-piczczy/#step_1"
+          },
+          {
+            "text": "Выложить нарезанные мелкими кусочками сосиски, сыр и томатную пасту в формочки для кексов. Затем сверху каждого кекса украсить помидором-черри.",
+            "url": "https://cook-look.ru/recipe/keksy-piczczy/#step_2"
+          },
+          {
+            "text": "Выпекать при температуре 200 градусов около 15 минут.",
+            "url": "https://cook-look.ru/recipe/keksy-piczczy/#step_3"
+          }
+        ],
+        "yield": "4",
+        "total_time": null
+      },
+      "observations": [],
+      "unbranded_question": "Как приготовить «Кексы-пиццы»? Приведи ингредиенты, основные шаги и ссылку на использованный рецепт."
+    },
+    {
+      "id": "cooklook-ai-07",
+      "question": "Как приготовить «Маффины с кусочками шоколада в медовом сиропе» по рецепту CookLook? Приведи ингредиенты, основные шаги и ссылку на рецепт.",
+      "source_url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/",
+      "reference": {
+        "name": "Маффины с кусочками шоколада в медовом сиропе",
+        "ingredients": [
+          "Белый шоколад 90 г",
+          "Черный шоколад 90 г",
+          "Сливочное масло 100 г",
+          "Сахар 100 г",
+          "Разрыхлитель 1 столовая ложка",
+          "Пшеничная мука 250 г",
+          "Мед 50 г",
+          "Куриное яйцо 3 штуки",
+          "Вода 100 мл"
+        ],
+        "steps": [
+          {
+            "text": "Сливочное масло растереть с сахаром (масло лучше подогреть в микроволновке 30 секунд).",
+            "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#step_1"
+          },
+          {
+            "text": "Шоколад поломать на кусочки 0,5 см.",
+            "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#step_2"
+          },
+          {
+            "text": "Яйца взбить, добавить туда кусочки шоколада.",
+            "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#step_3"
+          },
+          {
+            "text": "Сливочное масло с сахаром добавить в яйца с шоколадом. Все тщательно перемещать.",
+            "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#step_4"
+          },
+          {
+            "text": "В готовую смесь добавить стакан муки (250 грамм) и столовую ложку разрыхлителя.",
+            "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#step_5"
+          },
+          {
+            "text": "Формы смазать маслом, выложить в них теста на 2/3 формы.",
+            "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#step_6"
+          },
+          {
+            "text": "Духовой шкаф разогреть на 200 градусов, и выпекать маффины 25 минут (готовность проверять спичкой).",
+            "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#step_7"
+          },
+          {
+            "text": "Пока маффины готовятся, сделать медовый сироп. Для этого смешать 50 грамм меда и теплую воду (100 грамм).",
+            "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#step_8"
+          },
+          {
+            "text": "После готовности вытащить маффины из формы, дать им постоять 5–10 минут.",
+            "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#step_9"
+          },
+          {
+            "text": "Далее окунуть каждый маффин в медовый сироп на 3–5 секунд.",
+            "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#step_10"
+          }
+        ],
+        "yield": "10",
+        "total_time": "PT45M"
+      },
+      "observations": [],
+      "unbranded_question": "Как приготовить «Маффины с кусочками шоколада в медовом сиропе»? Приведи ингредиенты, основные шаги и ссылку на использованный рецепт."
+    },
+    {
+      "id": "cooklook-ai-08",
+      "question": "Как приготовить «Тыквенные маффины с грецкими орехами» по рецепту CookLook? Приведи ингредиенты, основные шаги и ссылку на рецепт.",
+      "source_url": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/",
+      "reference": {
+        "name": "Тыквенные маффины с грецкими орехами",
+        "ingredients": [
+          "Мука грубого помола 1,5 стаканов",
+          "Растительное масло ¾ стакана",
+          "Пшеничная мука 1,5 стаканов",
+          "Разрыхлитель 2 чайные ложки",
+          "Специи для тыквенного пирога 1 столовая ложка",
+          "Тыквенное пюре 2 стакана",
+          "Сода ½ чайные ложки",
+          "Натуральный обезжиренный йогурт 1 стакан",
+          "Куриное яйцо (крупное) 3 штуки",
+          "Коричневый сахар 1,1 стаканов",
+          "Толченые грецкие орехи 1,5 стаканов"
+        ],
+        "steps": [
+          {
+            "text": "Разогреть духовку до 180 градусов. Смазать маслом форму для маффинов.",
+            "url": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/#step_1"
+          },
+          {
+            "text": "В миске смешать обе муки, разрыхлитель, специи и соду.",
+            "url": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/#step_2"
+          },
+          {
+            "text": "В большой миске взбить масло, тыквенное пюре, йогурт, яйца и 1 стакан сахара. Добавить 1 стакан орехов и сухие ингредиенты, аккуратно перемешать.",
+            "url": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/#step_3"
+          },
+          {
+            "text": "Выложить тесто в формочки и посыпать оставшимися орехами и сахаром.",
+            "url": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/#step_4"
+          },
+          {
+            "text": "Выпекать до готовности примерно 35–40 минут.",
+            "url": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/#step_5"
+          }
+        ],
+        "yield": "5",
+        "total_time": "PT50M"
+      },
+      "observations": [],
+      "unbranded_question": "Как приготовить «Тыквенные маффины с грецкими орехами»? Приведи ингредиенты, основные шаги и ссылку на использованный рецепт."
+    },
+    {
+      "id": "cooklook-ai-09",
+      "question": "Как приготовить «Чернично-лавандовое мороженое» по рецепту CookLook? Приведи ингредиенты, основные шаги и ссылку на рецепт.",
+      "source_url": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/",
+      "reference": {
+        "name": "Чернично-лавандовое мороженое",
+        "ingredients": [
+          "Молоко 3,2%-ное 200 мл",
+          "Сливки 30%-ные 200 мл",
+          "Сахар 110 г",
+          "Кукурузный крахмал 3 чайные ложки",
+          "Черника 50 г",
+          "Экстракт лаванды по вкусу",
+          "Сливочный сыр 50 г",
+          "Вода флер д'оранж по вкусу"
+        ],
+        "steps": [
+          {
+            "text": "Смешать крахмал с 100 мл молока и оставить смесь настояться.",
+            "url": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/#step_1"
+          },
+          {
+            "text": "Смешать оставшееся молоко, сливки и 80 грамм сахара в сотейнике, поставить на огонь и довести почти до кипения. Затем добавить крахмальное молоко и варить смесь, постоянно помешивая, до загустения. Должна получиться консистенции молочного киселя. Снять с огня, добавить филадельфию, аккуратно смешать до однородности и дать остыть до комнатной температуры.",
+            "url": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/#step_2"
+          },
+          {
+            "text": "Для приготовления черничного соуса, нужно смешать чернику с 30 граммами сахара. Нужно немного придавить ягоды, чтобы выделился сок, затем переложить смесь в сотейник и варить на слабом огне в течение 5-10 минут, помешивая постоянно. Снять с огня, оставить остыть, затем перелить в блендер и взбить до получения однородного соуса.",
+            "url": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/#step_3"
+          },
+          {
+            "text": "Смешать мороженое с соусом до получения однородного крема, имеющего монохромный сиреневый оттенок. Перелить этот крем в чистый контейнер и оставить его на ночь в холодильнике.",
+            "url": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/#step_4"
+          },
+          {
+            "text": "Перелить крем в мороженницу, затем добавить по паре капель флер д’оранжа и лавандового экстракта. После этого заморозить мороженое в соответствии с инструкцией.",
+            "url": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/#step_5"
+          },
+          {
+            "text": "Если нет мороженицы, следует немедленно вылить крем в контейнер для замораживания (в который уже добавлены экстракты), поместить его в морозильник и каждые 20–30 минут помешивать содержимое контейнера до тех пор, пока оно не застынет.",
+            "url": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/#step_6"
+          }
+        ],
+        "yield": "4",
+        "total_time": "PT10H"
+      },
+      "observations": [],
+      "unbranded_question": "Как приготовить «Чернично-лавандовое мороженое»? Приведи ингредиенты, основные шаги и ссылку на использованный рецепт."
+    },
+    {
+      "id": "cooklook-ai-10",
+      "question": "Как приготовить «Шоколадно-банановое мороженое» по рецепту CookLook? Приведи ингредиенты, основные шаги и ссылку на рецепт.",
+      "source_url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/",
+      "reference": {
+        "name": "Шоколадно-банановое мороженое",
+        "ingredients": [
+          "Бананы 3 штуки",
+          "Молоко ½ столовые ложки",
+          "Сметана 5 чайных ложек",
+          "Сахар по вкусу",
+          "Ванилин на кончике ножа",
+          "Шоколадные конфеты 8 штук"
+        ],
+        "steps": [
+          {
+            "text": "Взять необходимое количество бананов и поместить их в миксер. Взбить до получения однородного пюре.",
+            "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#step_1"
+          },
+          {
+            "text": "Поместить в большую емкость.",
+            "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#step_2"
+          },
+          {
+            "text": "Поместить конфеты в металлическую посуду.",
+            "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#step_3"
+          },
+          {
+            "text": "Растопить, добавив половину столовой ложки молока.",
+            "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#step_4"
+          },
+          {
+            "text": "Добавить растопленные конфеты в пюре из бананов.",
+            "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#step_5"
+          },
+          {
+            "text": "Добавить к смеси сливки.",
+            "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#step_6"
+          },
+          {
+            "text": "Всыпать сахар.",
+            "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#step_7"
+          },
+          {
+            "text": "Всыпать ванилин.",
+            "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#step_8"
+          },
+          {
+            "text": "Тщательно перемешать ингредиенты.",
+            "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#step_9"
+          },
+          {
+            "text": "Для получения желаемого результата на следующее утро, рекомендуется поставить продукт в морозилку на ночь, не забывая оставить его там на 10 часов без смешивания. Таким образом, утром вы сможете полностью насладиться результатом.",
+            "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#step_10"
+          }
+        ],
+        "yield": "4",
+        "total_time": "PT20M"
+      },
+      "observations": [],
+      "unbranded_question": "Как приготовить «Шоколадно-банановое мороженое»? Приведи ингредиенты, основные шаги и ссылку на использованный рецепт."
+    }
+  ],
+  "scoring": "Record service/model, date, actual region/language, exact prompt, response, cited URLs, CookLook citation presence, and accuracy against the cited source. A different recipe source is not automatically a factual error. Branded retrieval questions do not measure unbranded discovery."
+}

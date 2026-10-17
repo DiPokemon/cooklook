@@ -1,0 +1,238 @@
+{
+  "checked_at": "2026-10-16T21:34:33.082Z",
+  "reviewed_on": "2026-10-17",
+  "timezone": "Europe/Moscow",
+  "site": "http://cooklook/",
+  "status": "local_selected_recipe_summaries_completed",
+  "batch": "docs/seo-editorial-batch.json",
+  "batch_sha256": "e7a9321ec77f53295e9c01814ede1f1d6c1e2351636aab9c1d470bb62d1509cd",
+  "application": {
+    "checked_at": "2026-10-16T21:29:51+00:00",
+    "site": "http://cooklook/",
+    "mode": "apply",
+    "pending_ids": [],
+    "applied_ids": [
+      9885,
+      9915,
+      9916,
+      9917,
+      9918,
+      9919,
+      9920,
+      9921,
+      9922,
+      9923
+    ],
+    "already_applied_ids": [],
+    "backup": "build/editorial-backup-20261016T212950Z-80a881.json",
+    "recipe_source_facts_unchanged": true,
+    "method": "Reviewed excerpts only, via wp_update_post. Existing source facts checked before and after; local site restriction, backup and transaction. Import housekeeping, external requests and mail disabled in this process."
+  },
+  "verification": {
+    "verified_ids": [
+      9885,
+      9915,
+      9916,
+      9917,
+      9918,
+      9919,
+      9920,
+      9921,
+      9922,
+      9923
+    ],
+    "source_content_facts_and_metadata_unchanged": true,
+    "missing_excerpt_issue_cleared_for_selected": true,
+    "repeat_apply": {
+      "applied": 0,
+      "already_applied": 10,
+      "post_modified_unchanged": true
+    },
+    "http": {
+      "checked_at": "2026-10-16T21:32:15+00:00",
+      "site": "http://cooklook/",
+      "method": "Unauthenticated GET requests without following redirects. Actual HTML checked with DOM/XPath and JSON-LD decoded. No browser JavaScript executed.",
+      "recipes": [
+        {
+          "id": 9885,
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/",
+          "status": 200,
+          "visible_excerpt": true,
+          "meta_description": true,
+          "recipe_description": true,
+          "durations_unchanged": true,
+          "local_noindex": true
+        },
+        {
+          "id": 9915,
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b0-%d0%bb%d1%8f-%d0%bf%d0%b0%d0%bd%d0%bd%d0%b0%d0%ba%d0%be%d1%82%d1%82%d0%b0/",
+          "status": 200,
+          "visible_excerpt": true,
+          "meta_description": true,
+          "recipe_description": true,
+          "durations_unchanged": true,
+          "local_noindex": true
+        },
+        {
+          "id": 9916,
+          "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+          "status": 200,
+          "visible_excerpt": true,
+          "meta_description": true,
+          "recipe_description": true,
+          "durations_unchanged": true,
+          "local_noindex": true
+        },
+        {
+          "id": 9917,
+          "url": "http://cooklook/recipe/%d1%81%d0%bb%d0%b0%d0%b4%d0%ba%d0%b0%d1%8f-%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+          "status": 200,
+          "visible_excerpt": true,
+          "meta_description": true,
+          "recipe_description": true,
+          "durations_unchanged": true,
+          "local_noindex": true
+        },
+        {
+          "id": 9918,
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/",
+          "status": 200,
+          "visible_excerpt": true,
+          "meta_description": true,
+          "recipe_description": true,
+          "durations_unchanged": true,
+          "local_noindex": true
+        },
+        {
+          "id": 9919,
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%b2-%d0%bc%d1%83%d0%bb%d1%8c%d1%82%d0%b8%d0%b2%d0%b0%d1%80%d0%ba%d0%b5/",
+          "status": 200,
+          "visible_excerpt": true,
+          "meta_description": true,
+          "recipe_description": true,
+          "durations_unchanged": true,
+          "local_noindex": true
+        },
+        {
+          "id": 9920,
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b2-%d0%bf%d0%b0%d1%80%d0%be%d0%b2%d0%b0%d1%80%d0%ba%d0%b5-%d1%81-%d0%ba%d0%b0%d1%80%d0%b0%d0%bc%d0%b5%d0%bb%d0%b8/",
+          "status": 200,
+          "visible_excerpt": true,
+          "meta_description": true,
+          "recipe_description": true,
+          "durations_unchanged": true,
+          "local_noindex": true
+        },
+        {
+          "id": 9921,
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%8b%d1%80%d0%be%d0%bc-%d0%b8-%d0%be%d0%b2%d0%be%d1%89%d0%b0%d0%bc%d0%b8/",
+          "status": 200,
+          "visible_excerpt": true,
+          "meta_description": true,
+          "recipe_description": true,
+          "durations_unchanged": true,
+          "local_noindex": true
+        },
+        {
+          "id": 9922,
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d0%b0%d1%80%d1%80%d0%b8-%d0%b8%d0%b7-%d0%b4%d0%b8%d0%ba%d0%be%d0%b3%d0%be-%d1%80%d0%b8%d1%81%d0%b0-%d1%81-%d0%ba%d1%80%d0%b5%d0%b2%d0%b5%d1%82%d0%ba%d0%b0/",
+          "status": 200,
+          "visible_excerpt": true,
+          "meta_description": true,
+          "recipe_description": true,
+          "durations_unchanged": true,
+          "local_noindex": true
+        },
+        {
+          "id": 9923,
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%83%d1%85%d0%be%d1%84%d1%80%d1%83%d0%ba%d1%82%d0%b0%d0%bc%d0%b8/",
+          "status": 200,
+          "visible_excerpt": true,
+          "meta_description": true,
+          "recipe_description": true,
+          "durations_unchanged": true,
+          "local_noindex": true
+        }
+      ],
+      "catalog_pages": 8,
+      "catalog_updated_cards": [
+        9885,
+        9915,
+        9917,
+        9918,
+        9919,
+        9920,
+        9921,
+        9923,
+        9916,
+        9922
+      ]
+    },
+    "seo_unit_tests": {
+      "passed": 16,
+      "failed": 0
+    },
+    "wordpress_ai_integration": {
+      "recipe_count": 10,
+      "fixtures": "PASS: ingredients without steps; steps without ingredients; CookLook organization author in HTML/Recipe; source attribution omitted; escaped fields; disabled/Yoast-owned graph",
+      "database_writes": false
+    },
+    "preflight_guards": [
+      {
+        "case": "wrong_site",
+        "exit_code": 1,
+        "rejected_before_writes": true
+      },
+      {
+        "case": "duplicate_id",
+        "exit_code": 1,
+        "rejected_before_writes": true
+      },
+      {
+        "case": "source_changed",
+        "exit_code": 1,
+        "rejected_before_writes": true
+      },
+      {
+        "case": "existing_excerpt_protected",
+        "exit_code": 1,
+        "rejected_before_writes": true
+      }
+    ]
+  },
+  "inventory": {
+    "checked": 80,
+    "missing_summaries_before": 80,
+    "missing_summaries_after": 70,
+    "issue_counts_after": {
+      "missing_dish_image": 41,
+      "nutrition_unverified": 72,
+      "missing_editorial_summary": 70,
+      "missing_image_crops": 39
+    }
+  },
+  "duration_review": {
+    "stored_values_require_confirmation": [
+      9885,
+      9916,
+      9922
+    ],
+    "missing_values": [
+      9915,
+      9917,
+      9918,
+      9919,
+      9920,
+      9921,
+      9923
+    ],
+    "automatic_time_changes": 0,
+    "notes_location": "docs/seo-editorial-batch.json"
+  },
+  "limitations": [
+    "Only 10 selected local recipes received excerpts; 70 remain without editorial summaries.",
+    "Duration review compares existing text and fields; actual preparation times were not measured or confirmed.",
+    "These editorial updates live in the WordPress database and are not included in the theme ZIP. Production content and search metrics were not changed.",
+    "WP-Import-Export-Lite is excluded in the CLI process to prevent unrelated housekeeping writes. The existing Yoast early translation notice remains."
+  ]
+}

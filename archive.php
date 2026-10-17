@@ -23,12 +23,7 @@ if ( ! is_post_type_archive( 'recipe' ) && ! is_tax( array( 'recipe_category', '
     return;
 }
 $filters = cooklook_recipe_filters( $_GET );
-$catalog_query = $wp_query;
-if ( is_page_template( 'archive.php' ) ) {
-    $filters = cooklook_recipe_filters( $_GET );
-    $filters['paged'] = max( $filters['paged'], absint( get_query_var( 'paged' ) ), absint( get_query_var( 'page' ) ) );
-    $catalog_query = new WP_Query( cooklook_recipe_query_args( $filters ) );
-}
+$catalog_query = cooklook_catalog_query();
 
 
 ?>
@@ -58,6 +53,13 @@ if ( is_page_template( 'archive.php' ) ) {
                         }
                     }
                     ?>
+                        <div class="archive_description" <?php if ( is_paged() ) { echo 'hidden'; } ?>>
+                            <?php if ( is_tax( array( 'recipe_category', 'recipe_tags' ) ) ) : ?>
+                                <?= wp_kses_post( term_description() ) ?>
+                            <?php else : ?>
+                                <p><?= esc_html( cooklook_catalog_intro() ) ?></p>
+                            <?php endif; ?>
+                        </div>
                     <div id="filters" class="filters">
                         <div class="filters_header mobile_display">
                             <span><?= __('Фильтры', 'cooklook') ?></span>
@@ -68,15 +70,14 @@ if ( is_page_template( 'archive.php' ) ) {
                             </button>
                         </div>
 
-                        <form id="recipe-filter" method="get">
+                        <form id="recipe-filter" method="get" action="<?= esc_url( strtok( get_pagenum_link( 1, false ), '?' ) ) ?>">
+                            <?php foreach ( cooklook_catalog_route_args() as $route_key => $route_value ) : ?>
+                                <input type="hidden" name="<?= esc_attr( $route_key ) ?>" value="<?= esc_attr( $route_value ) ?>">
+                            <?php endforeach; ?>
                             <select id="recipe_category" name="category_id" class="filter_select" data-placeholder="<?= __('Любая категория', 'cooklook') ?>">
                                 <option value="all"><?= __('Любая категория', 'cooklook') ?></option>
                                 <?php
-                                $categories = get_terms(array(
-                                    'taxonomy' => 'recipe_category',
-                                    'hide_empty' => false,
-                                    'parent' => 0,
-                                ));
+                                $categories = cooklook_recipe_category_choices( 0, $filters['category_id'] );
 
                                 foreach (is_array($categories) ? $categories : array() as $category) {
                                     echo '<option value="' . esc_attr($category->term_id) . '" ' . selected($filters['category_id'], $category->term_id, false) . '>' . esc_html($category->name) . '</option>';
@@ -84,8 +85,8 @@ if ( is_page_template( 'archive.php' ) ) {
                                 ?>
                             </select>
 
-                            <?php $subcategories = $filters['category_id'] ? get_terms(array('taxonomy' => 'recipe_category', 'parent' => $filters['category_id'], 'hide_empty' => false)) : array(); ?>
-                            <select id="recipe_subcategory" name="subcategory_id" class="filter_select" data-placeholder="<?= __('Любое блюдо', 'cooklook') ?>" <?php disabled(!$filters['category_id']); ?>>
+                            <?php $subcategories = cooklook_recipe_category_choices( $filters['category_id'] ?: null, $filters['subcategory_id'] ); ?>
+                            <select id="recipe_subcategory" name="subcategory_id" class="filter_select" data-placeholder="<?= __('Любое блюдо', 'cooklook') ?>" <?php disabled(!$filters['category_id'] && !$filters['subcategory_id']); ?>>
                                 <option value="all"><?= __('Любое блюдо', 'cooklook') ?></option>
                                 <?php foreach (is_array($subcategories) ? $subcategories : array() as $subcategory) : ?>
                                     <option value="<?= esc_attr($subcategory->term_id) ?>" <?php selected($filters['subcategory_id'], $subcategory->term_id); ?>><?= esc_html($subcategory->name) ?></option>
@@ -95,15 +96,12 @@ if ( is_page_template( 'archive.php' ) ) {
                             <select id="recipe_region" name="region" class="filter_select" data-placeholder="<?= __('Любое меню', 'cooklook') ?>">
                                 <option value=""><?= __('Любое меню', 'cooklook') ?></option>
                                 <?php
-                                global $wpdb;
-                                $regions = $wpdb->get_col("SELECT DISTINCT pm.meta_value FROM {$wpdb->postmeta} pm INNER JOIN {$wpdb->posts} p ON p.ID = pm.post_id WHERE pm.meta_key = '_recipe_region' AND p.post_type = 'recipe' AND p.post_status = 'publish' AND p.post_password = '' ORDER BY pm.meta_value");
+                                $regions = cooklook_recipe_region_choices( $filters['region'] );
 
                                 foreach ($regions as $region_name) {
-                                    if ($region_name) :
                                 ?>
                                         <option value="<?= esc_attr($region_name) ?>" <?php selected($filters['region'], $region_name); ?>><?= esc_html($region_name) ?></option>
                                 <?php
-                                    endif;
                                 }
                                 ?>
                             </select>
@@ -115,8 +113,8 @@ if ( is_page_template( 'archive.php' ) ) {
                     </div>
 
                     <div class="filters_wrapper_mob">
-                        <button id="mobile_filters-open">
-                            <img src="<?= get_template_directory_uri() ?>/static/img/filter.svg">
+                        <button id="mobile_filters-open" type="button">
+                            <img src="<?= esc_url( get_template_directory_uri() . '/static/img/filter.svg' ) ?>" alt="" width="20" height="20">
                             <?= __('Фильтры', 'cooklook') ?>
                         </button>
 

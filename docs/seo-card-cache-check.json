@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-16T15:27:31+00:00",
+  "site": "http://cooklook/",
+  "database_writes": false,
+  "recipes_compared": 80,
+  "description_and_steps_sql_per_pass": [
+    0,
+    0
+  ],
+  "result": "PASS: original rows, images, descriptions and rendered card order/links preserved; numeric group order, nested paths, changing/missing metadata and Carbon filters verified."
+}

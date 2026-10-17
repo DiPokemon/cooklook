@@ -1,0 +1,248 @@
+{
+  "checked_at": "2026-10-16T18:46:07.299Z",
+  "site": "http://cooklook",
+  "method": "Sequential local guest GETs. Lookup limits/encoding/errors; SSR selected options and AJAX recipe parity, recipe page 2 and taxonomy context. No browser view events.",
+  "lookup_checks": [
+    {
+      "input": {
+        "term": "ны",
+        "ingredient_page": 1
+      },
+      "status": 200,
+      "results": 20,
+      "bytes": 3874
+    },
+    {
+      "input": {
+        "term": "ны",
+        "ingredient_page": 2
+      },
+      "status": 200,
+      "results": 14,
+      "bytes": 2653
+    },
+    {
+      "input": {
+        "term": "ри",
+        "ingredient_page": 1
+      },
+      "status": 200,
+      "results": 20,
+      "bytes": 3373
+    },
+    {
+      "input": {
+        "term": "ко",
+        "ingredient_page": 1
+      },
+      "status": 200,
+      "results": 20,
+      "bytes": 3499
+    },
+    {
+      "input": {
+        "term": "мол",
+        "ingredient_page": 1
+      },
+      "status": 200,
+      "results": 10,
+      "bytes": 1761
+    },
+    {
+      "input": {
+        "term": "МОЛ",
+        "ingredient_page": 1
+      },
+      "status": 200,
+      "results": 10,
+      "bytes": 1761
+    },
+    {
+      "input": {
+        "term": "лук",
+        "ingredient_page": 1
+      },
+      "status": 200,
+      "results": 4,
+      "bytes": 547
+    },
+    {
+      "input": {
+        "term": "соль",
+        "ingredient_page": 1
+      },
+      "status": 200,
+      "results": 1,
+      "bytes": 133
+    },
+    {
+      "input": {
+        "term": "несуществующийингредиент",
+        "ingredient_page": 1
+      },
+      "status": 200,
+      "results": 0,
+      "bytes": 66
+    },
+    {
+      "input": {
+        "term": "%_",
+        "ingredient_page": 1
+      },
+      "status": 200,
+      "results": 0,
+      "bytes": 66
+    },
+    {
+      "input": {
+        "term": "' OR 1=1 --",
+        "ingredient_page": 1
+      },
+      "status": 200,
+      "results": 0,
+      "bytes": 66
+    },
+    {
+      "input": {
+        "term": ""
+      },
+      "status": 200,
+      "results": 0,
+      "bytes": 66
+    },
+    {
+      "input": {
+        "term": "я"
+      },
+      "status": 200,
+      "results": 0,
+      "bytes": 66
+    },
+    {
+      "input": {
+        "term": [
+          "milk"
+        ]
+      },
+      "status": 400,
+      "results": null,
+      "bytes": 409
+    },
+    {
+      "input": {
+        "term": "milk",
+        "ingredient_page": [
+          "1"
+        ]
+      },
+      "status": 400,
+      "results": null,
+      "bytes": 409
+    },
+    {
+      "input": {
+        "term": "milk",
+        "ingredient_page": 101
+      },
+      "status": 400,
+      "results": null,
+      "bytes": 409
+    },
+    {
+      "input": {
+        "term": "яяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяя"
+      },
+      "status": 400,
+      "results": null,
+      "bytes": 409
+    },
+    {
+      "input": {
+        "term": "milk"
+      },
+      "status": 403,
+      "results": null,
+      "bytes": 311
+    }
+  ],
+  "catalog_checks": [
+    {
+      "case": "blank",
+      "url": "http://cooklook/recipes/",
+      "cards": 11,
+      "selected_only_html": true,
+      "ajax_equal": true
+    },
+    {
+      "case": "include",
+      "url": "http://cooklook/recipes/?include_ingredients%5B0%5D=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c",
+      "cards": 11,
+      "selected_only_html": true,
+      "ajax_equal": true
+    },
+    {
+      "case": "include-page2",
+      "url": "http://cooklook/recipes/page/2/?include_ingredients%5B0%5D=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c",
+      "cards": 11,
+      "selected_only_html": true,
+      "ajax_equal": true
+    },
+    {
+      "case": "exclude",
+      "url": "http://cooklook/recipes/?exclude_ingredients%5B0%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be",
+      "cards": 11,
+      "selected_only_html": true,
+      "ajax_equal": true
+    },
+    {
+      "case": "exclude-page2",
+      "url": "http://cooklook/recipes/page/2/?exclude_ingredients%5B0%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be",
+      "cards": 11,
+      "selected_only_html": true,
+      "ajax_equal": true
+    },
+    {
+      "case": "combined",
+      "url": "http://cooklook/recipes/?include_ingredients%5B0%5D=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c&include_ingredients%5B1%5D=%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580&exclude_ingredients%5B0%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be",
+      "cards": 10,
+      "selected_only_html": true,
+      "ajax_equal": true
+    },
+    {
+      "case": "empty-selection",
+      "url": "http://cooklook/recipes/?include_ingredients%5B0%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be-25-%25d0%25bd%25d0%25be%25d0%25b5",
+      "cards": 0,
+      "selected_only_html": true,
+      "ajax_equal": true
+    },
+    {
+      "case": "time",
+      "url": "http://cooklook/recipes/?include_ingredients%5B0%5D=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c&include_ingredients%5B1%5D=%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580&exclude_ingredients%5B0%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be&sort_by=recipe_time",
+      "cards": 10,
+      "selected_only_html": true,
+      "ajax_equal": true
+    },
+    {
+      "case": "views",
+      "url": "http://cooklook/recipes/?include_ingredients%5B0%5D=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c&include_ingredients%5B1%5D=%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580&exclude_ingredients%5B0%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be&sort_by=recipe_views",
+      "cards": 10,
+      "selected_only_html": true,
+      "ajax_equal": true
+    },
+    {
+      "case": "recipe_category",
+      "url": "http://cooklook/recipe_category/%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0/?include_ingredients%5B0%5D=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c",
+      "cards": 11,
+      "selected_only_html": true,
+      "ajax_equal": true
+    },
+    {
+      "case": "recipe_tags",
+      "url": "http://cooklook/recipe_tags/%d0%bf%d0%b5%d1%80%d0%bb%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d1%80%d1%83%d0%bf%d0%b0/?include_ingredients%5B0%5D=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c",
+      "cards": 2,
+      "selected_only_html": true,
+      "ajax_equal": true
+    }
+  ],
+  "invalid_filters_status": 404
+}

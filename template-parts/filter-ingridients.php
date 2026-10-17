@@ -6,8 +6,7 @@
 
 
 $filter_values = isset($args['filters']) ? $args['filters'] : cooklook_recipe_filters(array());
-$ingridients = get_terms( array( 'taxonomy' => 'recipe_tags', 'hide_empty' => false ) );
-$ingridients = is_array( $ingridients ) ? $ingridients : array();
+$ingridients = cooklook_selected_ingredients( $filter_values );
 ?>
 
 <div id="ingridients_overlay" class="ingridients_modal_overlay">
@@ -23,35 +22,37 @@ $ingridients = is_array( $ingridients ) ? $ingridients : array();
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M12.5 5L7.5 10L12.5 15" stroke="#292D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <?= __('Назад', 'cooklook') ?>
+                <?= esc_html__('Назад', 'cooklook') ?>
             </button>
-            <a href="#" class="clear_ingridients"><?= __('Очистить все', 'cooklook') ?></a>
+            <a href="#" class="clear_ingridients"><?= esc_html__('Очистить все', 'cooklook') ?></a>
         </div>
 
         <div class="ingridients_wrapper">
             <div class="ing_wrap">
-                <label for="include_ingredients"><?= __('Включить ингредиенты', 'cooklook') ?></label>
-                <!-- <input type="text" id="include_ingredients" name="include_ingredients" class="ingredient_select" multiple="multiple">    
-                         -->
+                <label for="include_ingredients"><?= esc_html__('Включить ингредиенты', 'cooklook') ?></label>
                 <select id="include_ingredients" name="include_ingredients[]" multiple class="ingredient_select">
                     <?php foreach ($ingridients as $ingridient) : ?>
-                        <option value="<?= esc_attr($ingridient->slug) ?>" <?php selected(in_array($ingridient->slug, $filter_values['include_ingredients'], true)); ?>><?= esc_html($ingridient->name) ?></option>
+                        <?php if (in_array($ingridient->slug, $filter_values['include_ingredients'], true)) : ?>
+                            <option value="<?= esc_attr($ingridient->slug) ?>" selected><?= esc_html($ingridient->name) ?></option>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </select>
             </div>
            
             <div class="ing_wrap">
-                <label for="exclude_ingredients"><?= __('Исключить ингредиенты', 'cooklook') ?></label>
+                <label for="exclude_ingredients"><?= esc_html__('Исключить ингредиенты', 'cooklook') ?></label>
                 <select id="exclude_ingredients" name="exclude_ingredients[]" multiple class="ingredient_select">
                     <?php foreach ($ingridients as $ingridient) : ?>
-                        <option value="<?= esc_attr($ingridient->slug) ?>" <?php selected(in_array($ingridient->slug, $filter_values['exclude_ingredients'], true)); ?>><?= esc_html($ingridient->name) ?></option>
+                        <?php if (in_array($ingridient->slug, $filter_values['exclude_ingredients'], true)) : ?>
+                            <option value="<?= esc_attr($ingridient->slug) ?>" selected><?= esc_html($ingridient->name) ?></option>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </select>
             </div>
         </div>
 
         <div id="popular_ingridients" class="popular_ingridients">
-            <span class="popular_ingridients-title"><?= __('Популярные ингредиенты:', 'cooklook') ?></span>
+            <span class="popular_ingridients-title"><?= esc_html__('Популярные ингредиенты:', 'cooklook') ?></span>
             <div class="popular_ingridients-items">
                 <?php
                     $popular_tags = get_terms(array(
@@ -59,6 +60,7 @@ $ingridients = is_array( $ingridients ) ? $ingridients : array();
                         'orderby' => 'count',
                         'order' => 'DESC',
                         'number' => 6,
+                        'update_term_meta_cache' => false,
                     ));
                     foreach (is_array($popular_tags) ? $popular_tags : array() as $tag) :
                 ?>
@@ -70,13 +72,13 @@ $ingridients = is_array( $ingridients ) ? $ingridients : array();
 
         <div class="ingridients_actions">
             <button id="ingridients_submit" class="btn_bg" type="submit">
-                <?= __('Показать рецепты', 'cooklook') ?>
+                <?= esc_html__('Показать рецепты', 'cooklook') ?>
             </button>
             <button type="button" class="clear_ingridients hide_mobile">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M15.2492 4.75828C15.1721 4.68102 15.0805 4.61973 14.9797 4.57792C14.8789 4.5361 14.7708 4.51457 14.6617 4.51457C14.5526 4.51457 14.4445 4.5361 14.3437 4.57792C14.2429 4.61973 14.1513 4.68102 14.0742 4.75828L9.99921 8.82494L5.92421 4.74994C5.84706 4.67279 5.75547 4.61159 5.65466 4.56984C5.55386 4.52808 5.44582 4.50659 5.33671 4.50659C5.2276 4.50659 5.11956 4.52808 5.01876 4.56984C4.91795 4.61159 4.82636 4.67279 4.74921 4.74994C4.67206 4.82709 4.61086 4.91869 4.5691 5.01949C4.52735 5.12029 4.50586 5.22833 4.50586 5.33744C4.50586 5.44655 4.52735 5.55459 4.5691 5.6554C4.61086 5.7562 4.67206 5.84779 4.74921 5.92494L8.82421 9.99994L4.74921 14.0749C4.67206 14.1521 4.61086 14.2437 4.5691 14.3445C4.52735 14.4453 4.50586 14.5533 4.50586 14.6624C4.50586 14.7716 4.52735 14.8796 4.5691 14.9804C4.61086 15.0812 4.67206 15.1728 4.74921 15.2499C4.82636 15.3271 4.91795 15.3883 5.01876 15.43C5.11956 15.4718 5.2276 15.4933 5.33671 15.4933C5.44582 15.4933 5.55386 15.4718 5.65466 15.43C5.75547 15.3883 5.84706 15.3271 5.92421 15.2499L9.99921 11.1749L14.0742 15.2499C14.1514 15.3271 14.243 15.3883 14.3438 15.43C14.4446 15.4718 14.5526 15.4933 14.6617 15.4933C14.7708 15.4933 14.8789 15.4718 14.9797 15.43C15.0805 15.3883 15.1721 15.3271 15.2492 15.2499C15.3264 15.1728 15.3876 15.0812 15.4293 14.9804C15.4711 14.8796 15.4926 14.7716 15.4926 14.6624C15.4926 14.5533 15.4711 14.4453 15.4293 14.3445C15.3876 14.2437 15.3264 14.1521 15.2492 14.0749L11.1742 9.99994L15.2492 5.92494C15.5659 5.60828 15.5659 5.07494 15.2492 4.75828Z" fill="#828282"/>
                 </svg>
-                <?= __('Очистить все', 'cooklook') ?>
+                <?= esc_html__('Очистить все', 'cooklook') ?>
             </button>
         </div>
         

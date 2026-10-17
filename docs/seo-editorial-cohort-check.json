@@ -1,0 +1,421 @@
+{
+  "checked_at": "2026-10-16T23:19:10.233Z",
+  "reviewed_on": "2026-10-17",
+  "timezone": "Europe/Moscow",
+  "site": "http://cooklook/",
+  "status": "local_comparison_cohort_prepared_and_verified",
+  "scope": "Local preparation for comparing excerpt-only editorial changes. No recipe content, dates, metadata or theme runtime code changed in this task.",
+  "artifacts": [
+    {
+      "file": "docs/seo-editorial-cohort.json",
+      "sha256": "8e8ef2224e2baac436cadc8caf34a03160d77c6a82d4243956d3a466d09d6054"
+    },
+    {
+      "file": "docs/seo-cohort-inventory.json",
+      "sha256": "45769f57949cbb5c28d13551ee5cc28b8f892bbe66c32b00e2828b80a7c1b55a"
+    },
+    {
+      "file": "tools/seo-cohort-snapshot.php",
+      "sha256": "ab6ad27f07446fc6023b8391a77c8c2664c525854d0a0b3d1060ecb5af5a7f44"
+    },
+    {
+      "file": "tools/seo-cohort-check.cjs",
+      "sha256": "c1eb773b1feea19d19421a8aa273d06067c17a835b3e2cb2f7f86fafa44b3d7a"
+    },
+    {
+      "file": "tools/seo-cohort-http-check.php",
+      "sha256": "9f996f5f0933de25127edab064f2ef3734ff3bcecbced64eb517c58969c7feb0"
+    }
+  ],
+  "content_verification": {
+    "before_snapshot_at": "2026-10-16T23:11:10+00:00",
+    "after_snapshot_at": "2026-10-16T23:16:52+00:00",
+    "inventory_records_unchanged": 80,
+    "recipe_records_sha256_before": "d1d6f818c334f9ad43060c7892f950091834d0d083fd192b5073f7ed459cd612",
+    "recipe_records_sha256_after": "d1d6f818c334f9ad43060c7892f950091834d0d083fd192b5073f7ed459cd612",
+    "editorial_batch_excerpts_and_source_facts_verified": 10,
+    "empty_control_excerpts": 7,
+    "public_recipes_without_excerpt": 70,
+    "snapshot_sql_writes_blocked": true,
+    "note": "Source, excerpt, categories, ingredient/step features, image URLs, public editorial fields and publication/modification dates are compared. Counters and unrelated WordPress housekeeping are outside this inventory."
+  },
+  "validation": {
+    "checked_at": "2026-10-16T23:17:18.886Z",
+    "passed": true,
+    "inventory_generated_at": "2026-10-16T23:16:52+00:00",
+    "site": "http://cooklook/",
+    "public_recipes": 80,
+    "paired_recipes": 14,
+    "excluded_treatment_ids": [
+      9917,
+      9920,
+      9922
+    ],
+    "environment_changes": [],
+    "database_writes": false,
+    "search_metrics_available": false,
+    "interpretation": "Validates the recorded local selection and unchanged content, not equal search demand or an SEO effect. Environment changes are reported separately.",
+    "pairs": [
+      {
+        "pair_id": "cooklook-editorial-01",
+        "treatment_id": 9885,
+        "control_id": 9891,
+        "passed": true,
+        "deltas": {
+          "ingredients": 1,
+          "steps": 1,
+          "instruction_word_ratio": 1.3026315789473684,
+          "publication_gap_days": 0
+        }
+      },
+      {
+        "pair_id": "cooklook-editorial-02",
+        "treatment_id": 9915,
+        "control_id": 9887,
+        "passed": true,
+        "deltas": {
+          "ingredients": 2,
+          "steps": 0,
+          "instruction_word_ratio": 1.0266666666666666,
+          "publication_gap_days": 0.00003472222222222222
+        }
+      },
+      {
+        "pair_id": "cooklook-editorial-03",
+        "treatment_id": 9916,
+        "control_id": 9901,
+        "passed": true,
+        "deltas": {
+          "ingredients": 2,
+          "steps": 1,
+          "instruction_word_ratio": 1.5384615384615385,
+          "publication_gap_days": 5.866550925925926
+        }
+      },
+      {
+        "pair_id": "cooklook-editorial-04",
+        "treatment_id": 9918,
+        "control_id": 9899,
+        "passed": true,
+        "deltas": {
+          "ingredients": 0,
+          "steps": 2,
+          "instruction_word_ratio": 1.025974025974026,
+          "publication_gap_days": 0.000023148148148148147
+        }
+      },
+      {
+        "pair_id": "cooklook-editorial-05",
+        "treatment_id": 9919,
+        "control_id": 9890,
+        "passed": true,
+        "deltas": {
+          "ingredients": 1,
+          "steps": 1,
+          "instruction_word_ratio": 1.56,
+          "publication_gap_days": 0.00003472222222222222
+        }
+      },
+      {
+        "pair_id": "cooklook-editorial-06",
+        "treatment_id": 9921,
+        "control_id": 9892,
+        "passed": true,
+        "deltas": {
+          "ingredients": 3,
+          "steps": 4,
+          "instruction_word_ratio": 1.4324324324324325,
+          "publication_gap_days": 0.00003472222222222222
+        }
+      },
+      {
+        "pair_id": "cooklook-editorial-07",
+        "treatment_id": 9923,
+        "control_id": 9896,
+        "passed": true,
+        "deltas": {
+          "ingredients": 0,
+          "steps": 3,
+          "instruction_word_ratio": 1.271186440677966,
+          "publication_gap_days": 0.00003472222222222222
+        }
+      }
+    ],
+    "errors": [],
+    "inventory_sha256": "45769f57949cbb5c28d13551ee5cc28b8f892bbe66c32b00e2828b80a7c1b55a",
+    "cohort_sha256": "8e8ef2224e2baac436cadc8caf34a03160d77c6a82d4243956d3a466d09d6054"
+  },
+  "http": {
+    "checked_at": "2026-10-16T23:16:28+00:00",
+    "site": "http://cooklook/",
+    "passed": true,
+    "method": "Sequential unauthenticated local GETs, no redirects, cookies or JavaScript. Actual HTML/JSON-LD checked; no production crawling or search observations.",
+    "pages": [
+      {
+        "pair_id": "cooklook-editorial-01",
+        "group": "treatment",
+        "id": 9885,
+        "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "734df541e5d302f860aaa0d34a7a5dc7607f43d2ea5a8c1cf2efd24f757450fc",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-01",
+        "group": "control",
+        "id": 9891,
+        "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "ccf41390330c4ef43a44bca6b6b188cf8a9c34548c102572b32de8605f672d91",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-02",
+        "group": "treatment",
+        "id": 9915,
+        "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b0-%d0%bb%d1%8f-%d0%bf%d0%b0%d0%bd%d0%bd%d0%b0%d0%ba%d0%be%d1%82%d1%82%d0%b0/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "98ec3fea591f00b7ff7b67b81131a45b2da81bdb65f6f2c788d8ede8abd01009",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-02",
+        "group": "control",
+        "id": 9887,
+        "url": "http://cooklook/recipe/%d0%b3%d1%83%d1%80%d1%8c%d0%b5%d0%b2%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "2250a363165256fb4dc2a009f72add993f00a72b74063b0f8432b3501d0d5365",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-03",
+        "group": "treatment",
+        "id": 9916,
+        "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "6bccac7bafb3b6be01370fa59331f343fd4c67215e1625ecd06f737bf17f092d",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-03",
+        "group": "control",
+        "id": 9901,
+        "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "c64d6c829e5d7222b04aec10bb35ab671427298a2fda328ac7dd8f05e0bd4178",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-04",
+        "group": "treatment",
+        "id": 9918,
+        "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "d528f12b5e42f5117a216a1339c8afa05eae5a27c729b46f836317732e4f92ec",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-04",
+        "group": "control",
+        "id": 9899,
+        "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b1%d0%b5%d0%b7-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b0/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "ebf2c63c92f7fcddba5fb562b1c5c66c6315ca5185fdbf3fdaa2b539a7c81808",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-05",
+        "group": "treatment",
+        "id": 9919,
+        "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%b2-%d0%bc%d1%83%d0%bb%d1%8c%d1%82%d0%b8%d0%b2%d0%b0%d1%80%d0%ba%d0%b5/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "e9cce3959a986ec54e0998ed588f5d2869d7daf5e14854a280790cfa43d9ddfe",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-05",
+        "group": "control",
+        "id": 9890,
+        "url": "http://cooklook/recipe/%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "0c65e028fc0bcafd96b145018aa3f530b8738e6678c207fb967da98f9c2ea78f",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-06",
+        "group": "treatment",
+        "id": 9921,
+        "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%8b%d1%80%d0%be%d0%bc-%d0%b8-%d0%be%d0%b2%d0%be%d1%89%d0%b0%d0%bc%d0%b8/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "af11df7b0d55cce5666a8e886c3d2c3533bca010c9456b3c5dcd43b575acd43d",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-06",
+        "group": "control",
+        "id": 9892,
+        "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d1%81-%d0%b3%d1%80%d0%b8%d0%b1%d0%b0%d0%bc%d0%b8/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "787e559c342f9642c3a90a363405ac03e1795caaad580ed344745e8d263bc408",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-07",
+        "group": "treatment",
+        "id": 9923,
+        "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%83%d1%85%d0%be%d1%84%d1%80%d1%83%d0%ba%d1%82%d0%b0%d0%bc%d0%b8/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "89c29b352d8c3218ebf61f654ae185d42f65280f3d236e9588b6986b03c788c0",
+        "local_noindex": true,
+        "canonical": []
+      },
+      {
+        "pair_id": "cooklook-editorial-07",
+        "group": "control",
+        "id": 9896,
+        "url": "http://cooklook/recipe/%d1%8f%d0%b1%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+        "http_status": 200,
+        "h1_matches": true,
+        "recipe_nodes": 1,
+        "ingredients_steps_match": true,
+        "descriptions_agree": true,
+        "description_sha256": "a9b4e6fde0a29ceeab17f56496cc44f85cc789d2de98a0ff664d7f178812c376",
+        "local_noindex": true,
+        "canonical": []
+      }
+    ]
+  },
+  "guard_checks": {
+    "checked_at": "2026-10-16T23:15:41.752Z",
+    "valid_snapshot_passed": true,
+    "in_memory_only": true,
+    "cases": [
+      {
+        "name": "control reuse",
+        "rejected": true
+      },
+      {
+        "name": "missing pair member",
+        "rejected": true
+      },
+      {
+        "name": "control excerpt edited",
+        "rejected": true
+      },
+      {
+        "name": "source facts drift",
+        "rejected": true
+      },
+      {
+        "name": "photo drift",
+        "rejected": true
+      },
+      {
+        "name": "edited recipe used as control",
+        "rejected": true
+      },
+      {
+        "name": "lost exclusion",
+        "rejected": true
+      },
+      {
+        "name": "wrong local origin",
+        "rejected": true
+      }
+    ]
+  },
+  "static_checks": {
+    "php_81_lint": [
+      "tools/seo-cohort-snapshot.php",
+      "tools/seo-cohort-http-check.php"
+    ],
+    "node_syntax": [
+      "tools/seo-cohort-check.cjs"
+    ],
+    "tracked_diff_whitespace": "passed",
+    "new_files_whitespace_and_json": "passed",
+    "known_cli_notice": "Existing Yoast early translation loading notice; no HTTP warning/fatal observed."
+  },
+  "pending": {
+    "production_urls_verified": false,
+    "production_deployment_at": null,
+    "indexing_confirmed_at": null,
+    "pre_change_search_exposure_and_trends": null,
+    "before_period": null,
+    "after_period": null,
+    "actual_ai_observations": null,
+    "causal_effect_established": false
+  },
+  "limitations": [
+    "Seven nonrandom pairs selected from only 80 local recipes; three edited recipes excluded with reasons in the cohort manifest.",
+    "Same grain family, category and comparable text size do not prove equal query intent, search demand or outcome trends. Device, recipe variations and unresolved time fields differ in some pairs.",
+    "All 14 local pages remain noindex and have no canonical link. Published canonical URLs and indexability require a separate production check.",
+    "Controls are reserved by documented convention; there is no editing lock. Re-run the content checker before any measurement.",
+    "A shared theme release affects both groups. Existing production AI prompts target another set of recipes and were not overwritten.",
+    "No search-cabinet data, production crawling, external AI responses or visibility gains are claimed. Unknown values remain null."
+  ]
+}

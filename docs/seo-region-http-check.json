@@ -1,0 +1,99 @@
+{
+  "checked_at": "2026-10-16T16:07:10.994Z",
+  "site": "http://cooklook",
+  "method": "Sequential unauthenticated GETs on the local catalog and read-only filter endpoint. No browser JavaScript or view events. All nine regions; first and last pages.",
+  "visible_regions": 9,
+  "directory_values_labels_order_equal": true,
+  "invalid_ssr_status": 404,
+  "invalid_ajax_status": 404,
+  "cases": [
+    {
+      "region": "Авторская кухня",
+      "page": 1,
+      "status": 200,
+      "cards": 2,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    },
+    {
+      "region": "Американская кухня",
+      "page": 1,
+      "status": 200,
+      "cards": 1,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    },
+    {
+      "region": "Европейская кухня",
+      "page": 1,
+      "status": 200,
+      "cards": 11,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    },
+    {
+      "region": "Европейская кухня",
+      "page": 2,
+      "status": 200,
+      "cards": 3,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    },
+    {
+      "region": "Индийская кухня",
+      "page": 1,
+      "status": 200,
+      "cards": 2,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    },
+    {
+      "region": "Мексиканская кухня",
+      "page": 1,
+      "status": 200,
+      "cards": 2,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    },
+    {
+      "region": "Мировая",
+      "page": 1,
+      "status": 200,
+      "cards": 5,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    },
+    {
+      "region": "Русская кухня",
+      "page": 1,
+      "status": 200,
+      "cards": 11,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    },
+    {
+      "region": "Русская кухня",
+      "page": 4,
+      "status": 200,
+      "cards": 11,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    },
+    {
+      "region": "Шотландская кухня",
+      "page": 1,
+      "status": 200,
+      "cards": 1,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    },
+    {
+      "region": "Японская кухня",
+      "page": 1,
+      "status": 200,
+      "cards": 1,
+      "selected_region_correct": true,
+      "ajax_cards_equal": true
+    }
+  ]
+}

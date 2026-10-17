@@ -2,6 +2,8 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
+require_once dirname( __DIR__ ) . '/class-cooklook-cached-post-meta-datastore.php';
+
 Container::make( 'post_meta', 'Receipies info' )
     ->where( 'post_type', '=', 'recipe' )
     ->add_tab( __( 'Meta info', 'cooklook' ), array(
@@ -35,10 +37,25 @@ Container::make( 'post_meta', 'Receipies info' )
             ->set_width(33),
         Field::make( 'text', 'recipe_url', __( 'Recipe URL', 'cooklook' ) )
             ->set_attribute('type', 'text')
+            ->set_help_text( __( 'Служебный адрес. Первоисточник не выводится на странице рецепта и в Recipe JSON-LD.', 'cooklook' ) )
             ->set_width(34),
         Field::make( 'image', 'recipe_pin_img', __( 'Pinterest image', 'cooklook' ) )  
             ->set_value_type( 'url' )                  
             ->set_width(20),
+    ) )
+    ->add_tab( __( 'Авторство и пояснения', 'cooklook' ), array(
+        Field::make( 'html', 'recipe_authorship_policy' )
+            ->set_html( '<p>' . esc_html__( 'Автор рецептов — CookLook. Первоисточник не публикуется.', 'cooklook' ) . '</p>' ),
+        Field::make( 'text', 'recipe_public_reviewer', __( 'Проверяющий', 'cooklook' ) )
+            ->set_help_text( __( 'Только имя человека, который действительно проверил рецепт.', 'cooklook' ) ),
+        Field::make( 'textarea', 'recipe_public_adaptation_notes', __( 'Что изменено в адаптации', 'cooklook' ) ),
+        Field::make( 'textarea', 'recipe_public_notes', __( 'Проверенные советы по приготовлению', 'cooklook' ) )
+            ->set_help_text( __( 'Собственные наблюдения: посуда, замены, признаки готовности. Обычный текст; не добавляйте неподтверждённые советы о хранении, безопасности и диетах.', 'cooklook' ) ),
+        Field::make( 'textarea', 'recipe_public_change_notes', __( 'Последнее содержательное изменение', 'cooklook' ) )
+            ->set_help_text( __( 'Например, исправленные пропорции или уточнённое время. Не заполняйте для технического обновления шаблона.', 'cooklook' ) ),
+        Field::make( 'text', 'recipe_serving_mass', __( 'Измеренная масса порции, г', 'cooklook' ) )
+            ->set_attribute( 'type', 'number' )->set_attribute( 'min', 1 )->set_attribute( 'step', 1 )
+            ->set_help_text( __( 'Необязательно. Само по себе поле не подтверждает историческую пищевую ценность и не включает её в Recipe.', 'cooklook' ) ),
     ) )
     ->add_tab( __( 'Energy value', 'cooklook' ), array(
         Field::make( 'text', 'recipe_calories', __( 'Calories', 'cooklook' ) )
@@ -67,6 +84,7 @@ Container::make( 'post_meta', 'Receipies info' )
     ) )
     ->add_tab( __( 'Cooking steps', 'cooklook' ), array(
         Field::make( 'complex', 'recipe_step',  __('Step', 'cooklook') )
+            ->set_datastore( new Cooklook_Cached_Post_Meta_Datastore() )
             ->add_fields( array(
                 Field::make( 'image', 'recipe_step_image', __( 'Step image', 'cooklook' ) )  
                     ->set_value_type( 'url' )                  

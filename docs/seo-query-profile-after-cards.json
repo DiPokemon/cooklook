@@ -1,0 +1,673 @@
+{
+  "checked_at": "2026-10-16T15:24:33+00:00",
+  "site": "http://cooklook/",
+  "php": "8.1.9",
+  "wordpress": "7.1.3",
+  "database_writes": false,
+  "external_object_cache": false,
+  "method": "Three sequential query + 11-card render passes per case after WP bootstrap, in one process. Existing WP/DB caches retained. SQL excludes bootstrap and EXPLAIN; not full-page TTFB or production load capacity.",
+  "published_recipes": 80,
+  "postmeta_rows_all_post_types": 6429,
+  "cases": [
+    {
+      "case": "catalog",
+      "request": [],
+      "runs": [
+        {
+          "run": 1,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 8.668,
+          "render_ms": 24.54,
+          "sql_count": 30,
+          "query_sql_count": 6,
+          "render_sql_count": 24,
+          "sql_ms": 11.873,
+          "slowest_sql_ms": 3.229,
+          "html_bytes": 108557
+        },
+        {
+          "run": 2,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.415,
+          "render_ms": 14.33,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 108536
+        },
+        {
+          "run": 3,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.389,
+          "render_ms": 14.283,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 108536
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        }
+      ],
+      "repeat_sql_callers": []
+    },
+    {
+      "case": "page_2",
+      "request": {
+        "paged": 2
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 7.339,
+          "render_ms": 20.748,
+          "sql_count": 26,
+          "query_sql_count": 6,
+          "render_sql_count": 20,
+          "sql_ms": 9.558,
+          "slowest_sql_ms": 2.41,
+          "html_bytes": 104757
+        },
+        {
+          "run": 2,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.433,
+          "render_ms": 13.509,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 104757
+        },
+        {
+          "run": 3,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.401,
+          "render_ms": 12.488,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 104757
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        }
+      ],
+      "repeat_sql_callers": []
+    },
+    {
+      "case": "sort_time",
+      "request": {
+        "sort_by": "recipe_time"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 6.861,
+          "render_ms": 18.31,
+          "sql_count": 16,
+          "query_sql_count": 6,
+          "render_sql_count": 10,
+          "sql_ms": 7.886,
+          "slowest_sql_ms": 2.197,
+          "html_bytes": 109281
+        },
+        {
+          "run": 2,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.448,
+          "render_ms": 13.655,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 109281
+        },
+        {
+          "run": 3,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.407,
+          "render_ms": 14.358,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 109281
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "repeat_sql_callers": []
+    },
+    {
+      "case": "sort_views",
+      "request": {
+        "sort_by": "recipe_views"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 4.579,
+          "render_ms": 13.497,
+          "sql_count": 8,
+          "query_sql_count": 6,
+          "render_sql_count": 2,
+          "sql_ms": 3.824,
+          "slowest_sql_ms": 1.153,
+          "html_bytes": 106205
+        },
+        {
+          "run": 2,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.451,
+          "render_ms": 13.763,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 106205
+        },
+        {
+          "run": 3,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.421,
+          "render_ms": 13.044,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 106205
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "repeat_sql_callers": []
+    },
+    {
+      "case": "category",
+      "request": {
+        "category_id": 5201
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 2,
+          "rendered": 2,
+          "query_ms": 2.59,
+          "render_ms": 3.134,
+          "sql_count": 9,
+          "query_sql_count": 7,
+          "render_sql_count": 2,
+          "sql_ms": 2.057,
+          "slowest_sql_ms": 0.363,
+          "html_bytes": 19850
+        },
+        {
+          "run": 2,
+          "found": 2,
+          "rendered": 2,
+          "query_ms": 0.464,
+          "render_ms": 2.41,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 19850
+        },
+        {
+          "run": 3,
+          "found": 2,
+          "rendered": 2,
+          "query_ms": 0.43,
+          "render_ms": 2.212,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 19850
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "range",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "term_taxonomy_id",
+          "key_len": "8",
+          "ref": null,
+          "rows": "4",
+          "filtered": "100.00",
+          "Extra": "Using where; Using index; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "PRIMARY",
+          "key_len": "8",
+          "ref": "cooklook.wp_term_relationships.object_id",
+          "rows": "1",
+          "filtered": "5.00",
+          "Extra": "Using where"
+        }
+      ],
+      "repeat_sql_callers": []
+    },
+    {
+      "case": "ingredient",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ]
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 59,
+          "rendered": 11,
+          "query_ms": 1.899,
+          "render_ms": 17.23,
+          "sql_count": 3,
+          "query_sql_count": 3,
+          "render_sql_count": 0,
+          "sql_ms": 1.163,
+          "slowest_sql_ms": 0.708,
+          "html_bytes": 107476
+        },
+        {
+          "run": 2,
+          "found": 59,
+          "rendered": 11,
+          "query_ms": 0.991,
+          "render_ms": 14.864,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 107476
+        },
+        {
+          "run": 3,
+          "found": 59,
+          "rendered": 11,
+          "query_ms": 0.559,
+          "render_ms": 14.573,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 107476
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        },
+        {
+          "id": "2",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        }
+      ],
+      "repeat_sql_callers": []
+    },
+    {
+      "case": "ingredients_and",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c",
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ]
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 33,
+          "rendered": 11,
+          "query_ms": 4.898,
+          "render_ms": 14.804,
+          "sql_count": 11,
+          "query_sql_count": 7,
+          "render_sql_count": 4,
+          "sql_ms": 4.237,
+          "slowest_sql_ms": 0.915,
+          "html_bytes": 105154
+        },
+        {
+          "run": 2,
+          "found": 33,
+          "rendered": 11,
+          "query_ms": 0.816,
+          "render_ms": 14.824,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 105154
+        },
+        {
+          "run": 3,
+          "found": 33,
+          "rendered": 11,
+          "query_ms": 0.766,
+          "render_ms": 13.81,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 105154
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        },
+        {
+          "id": "2",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "7",
+          "filtered": "14.66",
+          "Extra": "Using where; Using index"
+        }
+      ],
+      "repeat_sql_callers": []
+    },
+    {
+      "case": "include_exclude",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "exclude_ingredients": [
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ]
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 26,
+          "rendered": 11,
+          "query_ms": 2.569,
+          "render_ms": 14.257,
+          "sql_count": 3,
+          "query_sql_count": 3,
+          "render_sql_count": 0,
+          "sql_ms": 1.613,
+          "slowest_sql_ms": 1.064,
+          "html_bytes": 108738
+        },
+        {
+          "run": 2,
+          "found": 26,
+          "rendered": 11,
+          "query_ms": 0.693,
+          "render_ms": 14.379,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 108738
+        },
+        {
+          "run": 3,
+          "found": 26,
+          "rendered": 11,
+          "query_ms": 0.654,
+          "render_ms": 13.951,
+          "sql_count": 0,
+          "query_sql_count": 0,
+          "render_sql_count": 0,
+          "sql_ms": 0,
+          "slowest_sql_ms": 0,
+          "html_bytes": 108738
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<subquery3>",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "<auto_distinct_key>",
+          "key": "<auto_distinct_key>",
+          "key_len": "9",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using where; Not exists"
+        },
+        {
+          "id": "3",
+          "select_type": "MATERIALIZED",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "term_taxonomy_id",
+          "key_len": "8",
+          "ref": "const",
+          "rows": "4",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        }
+      ],
+      "repeat_sql_callers": []
+    }
+  ]
+}

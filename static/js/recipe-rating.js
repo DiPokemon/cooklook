@@ -7,6 +7,11 @@ jQuery(function ($) {
 			block.find('.recipe_rating').text(data.rating);
 			$('.recipe_meta .rating .meta-value').text(data.rating);
 		}
+		if (typeof data.likes !== 'undefined' && typeof data.dislikes !== 'undefined') {
+			$('[data-recipe-likes]').text(data.likes);
+			$('[data-recipe-dislikes]').text(data.dislikes);
+			$('[data-recipe-votes]').text(Number(data.likes) + Number(data.dislikes));
+		}
 	}
 	blocks.each(function () {
 		var block = $(this);

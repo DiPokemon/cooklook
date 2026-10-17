@@ -1,20 +1,36 @@
 <?php
 require __DIR__ . '/bootstrap.php';
-foreach ( array( 'inc/recipe-helpers.php', 'inc/recipe-query.php', 'functions-parts/recipe_rating.php', 'functions-parts/favorite_recipes.php', 'recipe_manager.php', 'recipe_importer.php', 'inc/template-functions.php', 'template-parts/schema.php' ) as $file ) {
+foreach ( array( 'inc/recipe-helpers.php', 'inc/recipe-query.php', 'inc/recipe-seo.php', 'inc/seo-metadata.php', 'functions-parts/recipe_rating.php', 'functions-parts/favorite_recipes.php', 'recipe_manager.php', 'recipe_importer.php', 'inc/template-functions.php', 'template-parts/schema.php' ) as $file ) {
 	require dirname( __DIR__ ) . '/' . $file;
 }
+class WP_Term {
+	public $term_id; public $parent;
+	function __construct( $id, $parent ) { $this->term_id = $id; $this->parent = $parent; }
+}
+function get_term( $id, $taxonomy ) { return array( 1 => new WP_Term( 1, 0 ), 2 => new WP_Term( 2, 1 ), 3 => new WP_Term( 3, 2 ) )[ $id ] ?? null; }
+function get_terms( $args ) {
+	return array_values( array_filter( array( get_term( 1, 'recipe_category' ), get_term( 2, 'recipe_category' ), get_term( 3, 'recipe_category' ) ), function ( $term ) use ( $args ) { return $term->parent === $args['parent']; } ) );
+}
+test_case( 'Category dropdowns preserve accepted nested and parentless selections', function () {
+	expect( wp_list_pluck( cooklook_recipe_category_choices( 0, 2 ), 'term_id' ) === array( 1, 2 ), 'Nested category cannot be selected after reload' );
+	expect( wp_list_pluck( cooklook_recipe_category_choices( null, 2 ), 'term_id' ) === array( 2 ), 'Subcategory without parent cannot be restored' );
+	expect( wp_list_pluck( cooklook_recipe_category_choices( 1, 3 ), 'term_id' ) === array( 2, 3 ), 'Accepted descendant disappeared from child choices' );
+	expect( wp_list_pluck( cooklook_recipe_category_choices( 1, 2 ), 'term_id' ) === array( 2 ), 'Ordinary selected subcategory duplicated' );
+	expect( wp_list_pluck( cooklook_recipe_category_choices( 0, 999 ), 'term_id' ) === array( 1 ), 'Unknown term was manufactured' );
+	expect( cooklook_recipe_category_choices( null ) === array(), 'Empty subcategory list changed' );
+} );
 test_case( 'Filter aliases, malformed inputs and bounded ingredient lists', function () {
 	$filters = cooklook_recipe_filters( array( 'recipe_category' => '12', 'recipe_subcategory' => '21', 'region' => array( 'bad' ), 'paged' => '-2', 'sort_by' => 'SQL', 'include_ingredients' => array( 'milk', array(), 'milk', 'egg' ) ) );
 	expect( $filters['category_id'] === 12 && $filters['subcategory_id'] === 21, 'Legacy aliases lost' );
 	expect( $filters['region'] === '' && $filters['paged'] === 1 && $filters['sort_by'] === 'date', 'Malformed scalar input accepted' );
-	expect( $filters['include_ingredients'] === array( 'milk', 'egg' ), 'Ingredient normalization failed' );
+	expect( $filters['include_ingredients'] === array( 'egg', 'milk' ), 'Ingredient normalization failed' );
 	expect( count( cooklook_ingredient_slugs( range( 1, 100 ) ) ) === 20, 'Ingredient limit missing' );
 } );
 test_case( 'Sorting retains category, tag, region, ingredients and page', function () {
 	foreach ( array( 'date', 'recipe_views', 'recipe_time' ) as $sort ) {
 		$args = cooklook_recipe_query_args( cooklook_recipe_filters( array( 'category_id' => 1, 'subcategory_id' => 2, 'region' => 'Русская', 'include_ingredients' => 'milk,egg', 'exclude_ingredients' => array( 'nuts' ), 'paged' => 3, 'sort_by' => $sort ) ), array( 'current_category' => 9, 'current_tag' => 'soup' ) );
 		expect( $args['paged'] === 3 && $args['post_status'] === 'publish' && $args['has_password'] === false, 'Page or visibility lost' );
-		expect( count( $args['tax_query'] ) === 7 && $args['meta_query'][0]['value'] === 'Русская', 'Filters lost by sort' );
+		expect( count( $args['tax_query'] ) === 7 && $args['cooklook_recipe_region'] === 'Русская', 'Filters lost by sort' );
 		expect( $args['tax_query'][3]['terms'] === 'soup' && $args['tax_query'][4]['operator'] === 'AND', 'Tag context or ingredient AND lost' );
 	}
 } );

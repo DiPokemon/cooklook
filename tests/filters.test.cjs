@@ -24,6 +24,8 @@ function wrap(items) {
 		empty() { items.forEach(x => { x.html = ''; x.value = null; }); return this; },
 		append(option) { items.forEach(x => { if (x.value === null) x.value = option.value; }); return this; },
 		html(value) { items.forEach(x => x.html = value); return this; },
+		replaceWith(value) { items.forEach(x => x.html = value); return this; },
+		last() { return wrap(items.slice(-1)); },
 		text(value) { items.forEach(x => x.text = value); return this; },
 		insertBefore() { return this; }, addClass() { return this; }, removeClass() { return this; }, css() { return this; }
 	};
@@ -67,7 +69,7 @@ assert.equal(current.options.data.subcategory_id, '2');
 assert.equal(current.options.data.current_category, 9);
 assert.equal(current.options.data.current_tag, 'soup');
 assert.equal(current.options.data.region, 'Русская');
-assert.deepEqual(Array.from(current.options.data.include_ingredients), ['milk', 'egg']);
+assert.deepEqual(Array.from(current.options.data.include_ingredients), ['egg', 'milk']);
 current.resolve({ success: true, data: { html: 'filtered', pagination: 'pages' } });
 assert.equal(element('#response').html, 'filtered');
 assert.match(history.at(-1), /subsite\/recipes\//);
@@ -91,4 +93,62 @@ element('#include_ingredients').value = [];
 element('#exclude_ingredients').value = [];
 element('#recipe-filter').handlers.submit({ preventDefault() {} });
 assert.equal(requests.at(-1).options.data.category_id, 'all', 'reset still sends a request');
-console.log('PASS: catalog controller restores filters, synchronizes mobile sorting, paginates, resets and ignores stale responses.');
+context.filter_obj.base_url = 'https://example.test/subsite/recipe_tags/%D0%BC%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE/?include_ingredients%5B0%5D=milk&include_ingredients%5B7%5D=old&exclude_ingredients%5B0%5D=nuts&exclude_ingredients%5Bbad%5D=old&include_ingredients=old&sort_by=recipe_time&paged=9&region=old&utm_source=kept';
+element('#sort_by').value = 'date';
+element('#recipe-filter').handlers.submit({ preventDefault() {} });
+current = requests.at(-1);
+let clean = new URL(current.options.data.page_url);
+assert.deepEqual(Array.from(clean.searchParams.keys()), ['utm_source'], 'reset removes indexed, scalar, empty and default filter keys');
+assert.match(clean.pathname, /recipe_tags\/%D0%BC/, 'Cyrillic archive path preserved');
+current.resolve({ success: true, data: { html: 'reset', pagination: '' } });
+assert.equal(history.at(-1), clean.href, 'history records the same clean state as the request');
+element('#include_ingredients').value = ['%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be', 'egg', 'egg', ''];
+element('#exclude_ingredients').value = ['nuts', 'nuts'];
+element('#recipe-filter').handlers.submit({ preventDefault() {} });
+current = requests.at(-1);
+clean = new URL(current.options.data.page_url);
+assert.deepEqual(clean.searchParams.getAll('include_ingredients[]'), Array.from(current.options.data.include_ingredients), 'AJAX and reload have the same normalized ingredients');
+assert.equal(clean.searchParams.getAll('include_ingredients[]').length, 2);
+assert.deepEqual(clean.searchParams.getAll('exclude_ingredients[]'), ['nuts']);
+assert(!clean.href.includes('milk') && !clean.href.includes('old'), 'replacing selections never retains legacy values');
+for (const trailing of ['', '/']) {
+	context.filter_obj.base_url = 'https://example.test/subsite/index.php/recipes' + trailing;
+	context.filter_obj.pagination = { base: context.filter_obj.base_url + '%_%', format: (trailing ? '' : '/') + 'page/%#%' + trailing };
+	click.call({ href: 'https://example.test/subsite/index.php/recipes/page/4' + trailing }, { preventDefault() {} });
+	let url = new URL(requests.at(-1).options.data.page_url);
+	assert.equal(url.pathname, '/subsite/index.php/recipes/page/4' + trailing);
+	assert(!url.searchParams.has('paged'), 'pretty URL must not use query pagination');
+	element('#recipe-filter').handlers.submit({ preventDefault() {} });
+	url = new URL(requests.at(-1).options.data.page_url);
+	assert.equal(url.pathname, '/subsite/index.php/recipes' + trailing, 'filter submission returns to first page');
+}
+context.filter_obj.base_url = 'https://example.test/subsite/?post_type=recipe';
+context.filter_obj.pagination = { base: context.filter_obj.base_url + '%_%', format: '&paged=%#%' };
+click.call({ href: 'https://example.test/subsite/?post_type=recipe&paged=3' }, { preventDefault() {} });
+let plain = new URL(requests.at(-1).options.data.page_url);
+assert.equal(plain.searchParams.get('post_type'), 'recipe');
+assert.equal(plain.searchParams.get('paged'), '3');
+element('#recipe-filter').handlers.submit({ preventDefault() {} });
+assert(!new URL(requests.at(-1).options.data.page_url).searchParams.has('paged'));
+context.filter_obj.base_url = 'https://example.test/subsite/?recipe_category=soup';
+context.filter_obj.pagination = { base: context.filter_obj.base_url + '%_%', format: '&paged=%#%' };
+context.filter_obj.route_query = { recipe_category: 'soup' };
+click.call({ href: 'https://example.test/subsite/?recipe_category=soup&paged=2' }, { preventDefault() {} });
+plain = new URL(requests.at(-1).options.data.page_url);
+assert.equal(plain.searchParams.get('recipe_category'), 'soup', 'plain taxonomy route survives facet reset');
+assert.equal(plain.searchParams.get('paged'), '2');
+context.filter_obj.page_metadata = {
+	first: {title:'Catalog',description:'Catalog description',breadcrumbs:'First page breadcrumbs'},
+	paged: {title:'Catalog — page %page%',description:'Page %page%. Catalog description',breadcrumbs:'Paged breadcrumbs'},
+	page_label:'Page %s'
+};
+requests.at(-1).resolve({success:true,data:{html:'page 2',pagination:'pages'}});
+assert.equal(document.title, 'Catalog — page 2');
+assert.equal(element('.page-header__breadcrumbs .breadcrumbs__current').text, 'Page 2');
+assert.equal(element('.archive_description').props.hidden, true);
+element('#recipe-filter').handlers.submit({preventDefault(){}});
+requests.at(-1).resolve({success:true,data:{html:'page 1',pagination:'pages'}});
+assert.equal(document.title, 'Catalog');
+assert.equal(element('.page-header__breadcrumbs').html, 'First page breadcrumbs');
+assert.equal(element('.archive_description').props.hidden, false);
+console.log('PASS: catalog controller preserves plain/pretty URLs, filters, history, mobile sorting and cancels stale responses.');

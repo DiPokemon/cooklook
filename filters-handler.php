@@ -9,7 +9,14 @@ function filter_recipes() {
 		'current_category' => cooklook_request_id( $request, 'current_category' ),
 		'current_tag'      => cooklook_request_slug( $request, 'current_tag' ),
 	);
+	$valid = cooklook_validate_recipe_filters( $request, $filters, $context );
+	if ( is_wp_error( $valid ) ) {
+		wp_send_json_error( $valid->get_error_message(), 404 );
+	}
 	$query = new WP_Query( cooklook_recipe_query_args( $filters, $context ) );
+	if ( $filters['paged'] > 1 && $filters['paged'] > (int) $query->max_num_pages ) {
+		wp_send_json_error( __( 'Страница рецептов не найдена.', 'cooklook' ), 404 );
+	}
 	ob_start();
 	cooklook_render_recipes( $query, true );
 	$html = ob_get_clean();

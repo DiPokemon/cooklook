@@ -1,0 +1,35 @@
+{
+    "main_categories": {
+        "width": 600,
+        "height": 976,
+        "sources": {
+            "360": "main_categories-360.webp",
+            "600": "main_categories-600.webp"
+        }
+    },
+    "main_square_1": {
+        "width": 600,
+        "height": 600,
+        "sources": {
+            "360": "main_square_1-360.webp",
+            "600": "main_square_1-600.webp"
+        }
+    },
+    "main_square_2": {
+        "width": 731,
+        "height": 730,
+        "sources": {
+            "360": "main_square_2-360.webp",
+            "720": "main_square_2-720.webp",
+            "731": "main_square_2-731.webp"
+        }
+    },
+    "main_square_3": {
+        "width": 600,
+        "height": 600,
+        "sources": {
+            "360": "main_square_3-360.webp",
+            "600": "main_square_3-600.webp"
+        }
+    }
+}

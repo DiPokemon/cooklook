@@ -12,11 +12,8 @@ class Account_Redirect extends Exception {
 	function __construct( $url ) { $this->url = $url; }
 }
 function user_can( $user, $cap ) { return ! empty( $user->caps[ $cap ] ); }
-function home_url( $path = '' ) { return 'https://example.test/subsite' . $path; }
 function admin_url() { return home_url( '/wp-admin/' ); }
-function wp_parse_url( $url, $component ) { return parse_url( $url, $component ); }
 function untrailingslashit( $value ) { return rtrim( $value, '/\\' ); }
-function wp_doing_ajax() { return $GLOBALS['account_ajax']; }
 function is_admin() { return $GLOBALS['account_is_admin']; }
 function wp_safe_redirect( $url, $status = 302 ) { throw new Account_Redirect( $url ); }
 function wp_verify_nonce( $nonce, $action ) { return 'account-valid' === $nonce && 'cooklook_account' === $action; }
@@ -42,7 +39,7 @@ function account_input( $action, $data = array() ) { return array_merge( array( 
 function account_case( $name, $callback ) {
 	test_case( $name, function () use ( $callback ) {
 		$GLOBALS['test_accounts'] = array( 7 => new WP_User( 7, array( 'edit_posts' => true ) ), 8 => new WP_User( 8, array( 'manage_options' => true ) ) );
-		$GLOBALS['account_ajax'] = false; $GLOBALS['account_is_admin'] = true; $GLOBALS['pagenow'] = 'profile.php';
+		$GLOBALS['test_ajax'] = false; $GLOBALS['account_is_admin'] = true; $GLOBALS['pagenow'] = 'profile.php';
 		$GLOBALS['account_writes'] = array(); $GLOBALS['account_mails'] = array();
 		$GLOBALS['account_mail_success'] = true; $GLOBALS['account_write_failure'] = false;
 		$callback();
@@ -50,9 +47,9 @@ function account_case( $name, $callback ) {
 }
 account_case( 'Ordinary users leave admin screens; admins and service endpoints continue', function () {
 	try { cooklook_restrict_admin(); throw new RuntimeException( 'Admin screen accessible' ); } catch ( Account_Redirect $r ) { expect( $r->url === home_url( '/account/' ), 'Wrong redirect' ); }
-	$GLOBALS['account_ajax'] = true; cooklook_restrict_admin();
-	$GLOBALS['account_ajax'] = false; $GLOBALS['account_is_admin'] = false; cooklook_restrict_admin(); $GLOBALS['account_is_admin'] = true;
-	$GLOBALS['account_ajax'] = false; $GLOBALS['pagenow'] = 'admin-post.php'; cooklook_restrict_admin();
+	$GLOBALS['test_ajax'] = true; cooklook_restrict_admin();
+	$GLOBALS['test_ajax'] = false; $GLOBALS['account_is_admin'] = false; cooklook_restrict_admin(); $GLOBALS['account_is_admin'] = true;
+	$GLOBALS['test_ajax'] = false; $GLOBALS['pagenow'] = 'admin-post.php'; cooklook_restrict_admin();
 	$GLOBALS['pagenow'] = 'index.php'; $GLOBALS['test_user_id'] = 8; cooklook_restrict_admin();
 	expect( cooklook_account_admin_bar( true ) && ! cooklook_account_admin_bar( false ), 'Admin toolbar preference lost' );
 	$GLOBALS['test_user_id'] = 7;

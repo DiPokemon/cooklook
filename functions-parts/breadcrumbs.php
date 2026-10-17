@@ -16,7 +16,7 @@ function cooklook_breadcrumb_terms( $term ) {
 	return $items;
 }
 
-function breadcrumbs() {
+function breadcrumbs( $page = null ) {
 	if ( is_front_page() ) {
 		return;
 	}
@@ -70,8 +70,14 @@ function breadcrumbs() {
 	if ( $title ) {
 		$items[] = array( $title, '' );
 	}
-	$page = max( (int) get_query_var( 'paged' ), (int) get_query_var( 'cpage' ) );
+	$page = null === $page ? cooklook_seo_page_number() : $page;
 	if ( $page > 1 ) {
+		if ( $title ) {
+			$items[ count( $items ) - 1 ][1] = remove_query_arg(
+				array( 'paged', 'page', 'cpage' ),
+				is_singular() ? get_permalink() : get_pagenum_link( 1, false )
+			);
+		}
 		$items[] = array( sprintf( __( 'Страница %d', 'cooklook' ), $page ), '' );
 	}
 	echo '<div class="page-header__breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">';

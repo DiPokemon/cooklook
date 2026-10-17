@@ -1,0 +1,74 @@
+{
+  "checked_at": "2026-10-16T16:04:48+00:00",
+  "site": "http://cooklook/",
+  "recipe_writes": false,
+  "method": "Real database read comparison and hook registration check. Cache writes only; recipe lifecycle/invalidation/race cases run separately in memory.",
+  "raw_directory_equal": true,
+  "visible_regions": 9,
+  "registered_hooks": [
+    "added_post_meta",
+    "updated_post_meta",
+    "deleted_post_meta",
+    "wp_after_insert_post",
+    "deleted_post",
+    "after_switch_theme"
+  ],
+  "invalid_regions_rejected": true,
+  "validation_independent_of_directory_cache": true,
+  "cases": [
+    {
+      "region": "Авторская кухня",
+      "recipes": 2,
+      "pages": 1,
+      "ids_order_and_legacy_alias_match": true
+    },
+    {
+      "region": "Американская кухня",
+      "recipes": 1,
+      "pages": 1,
+      "ids_order_and_legacy_alias_match": true
+    },
+    {
+      "region": "Европейская кухня",
+      "recipes": 14,
+      "pages": 2,
+      "ids_order_and_legacy_alias_match": true
+    },
+    {
+      "region": "Индийская кухня",
+      "recipes": 2,
+      "pages": 1,
+      "ids_order_and_legacy_alias_match": true
+    },
+    {
+      "region": "Мексиканская кухня",
+      "recipes": 2,
+      "pages": 1,
+      "ids_order_and_legacy_alias_match": true
+    },
+    {
+      "region": "Мировая",
+      "recipes": 5,
+      "pages": 1,
+      "ids_order_and_legacy_alias_match": true
+    },
+    {
+      "region": "Русская кухня",
+      "recipes": 44,
+      "pages": 4,
+      "ids_order_and_legacy_alias_match": true
+    },
+    {
+      "region": "Шотландская кухня",
+      "recipes": 1,
+      "pages": 1,
+      "ids_order_and_legacy_alias_match": true
+    },
+    {
+      "region": "Японская кухня",
+      "recipes": 1,
+      "pages": 1,
+      "ids_order_and_legacy_alias_match": true
+    }
+  ]
+}

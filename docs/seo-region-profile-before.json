@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-10-16T15:59:55+00:00",
+  "site": "http://cooklook/",
+  "mode": "legacy",
+  "external_object_cache": null,
+  "recipe_writes": false,
+  "method": "Directory only, after WordPress bootstrap; three calls per process. Cold invalidates only this directory before timing. Warm must run in a separate process. Includes cache SQL, not full-page TTFB.",
+  "regions": [
+    null,
+    "Авторская кухня",
+    "Американская кухня",
+    "Европейская кухня",
+    "Индийская кухня",
+    "Мексиканская кухня",
+    "Мировая",
+    "Русская кухня",
+    "Шотландская кухня",
+    "Японская кухня"
+  ],
+  "runs": [
+    {
+      "pass": 1,
+      "sql_count": 1,
+      "directory_sql_count": 1,
+      "elapsed_ms": 1.092,
+      "queries": [
+        "SELECT DISTINCT pm.meta_value FROM wp_postmeta pm INNER JOIN wp_posts p ON p.ID = pm.post_id WHERE pm.meta_key = '_recipe_region' AND p.post_type = 'recipe' AND p.post_status = 'publish' AND p.post_password = '' ORDER BY pm.meta_value"
+      ]
+    },
+    {
+      "pass": 2,
+      "sql_count": 1,
+      "directory_sql_count": 1,
+      "elapsed_ms": 0.764,
+      "queries": [
+        "SELECT DISTINCT pm.meta_value FROM wp_postmeta pm INNER JOIN wp_posts p ON p.ID = pm.post_id WHERE pm.meta_key = '_recipe_region' AND p.post_type = 'recipe' AND p.post_status = 'publish' AND p.post_password = '' ORDER BY pm.meta_value"
+      ]
+    },
+    {
+      "pass": 3,
+      "sql_count": 1,
+      "directory_sql_count": 1,
+      "elapsed_ms": 0.716,
+      "queries": [
+        "SELECT DISTINCT pm.meta_value FROM wp_postmeta pm INNER JOIN wp_posts p ON p.ID = pm.post_id WHERE pm.meta_key = '_recipe_region' AND p.post_type = 'recipe' AND p.post_status = 'publish' AND p.post_password = '' ORDER BY pm.meta_value"
+      ]
+    }
+  ]
+}

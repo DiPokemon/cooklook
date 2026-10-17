@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-10-16T16:03:03+00:00",
+  "site": "http://cooklook/",
+  "mode": "warm",
+  "external_object_cache": null,
+  "recipe_writes": false,
+  "method": "Directory only, after WordPress bootstrap; three calls per process. Cold invalidates only this directory before timing. Warm must run in a separate process. Includes cache SQL, not full-page TTFB.",
+  "regions": [
+    null,
+    "Авторская кухня",
+    "Американская кухня",
+    "Европейская кухня",
+    "Индийская кухня",
+    "Мексиканская кухня",
+    "Мировая",
+    "Русская кухня",
+    "Шотландская кухня",
+    "Японская кухня"
+  ],
+  "runs": [
+    {
+      "pass": 1,
+      "sql_count": 2,
+      "directory_sql_count": 0,
+      "elapsed_ms": 0.633,
+      "queries": [
+        "SELECT option_value FROM wp_options WHERE option_name = 'cooklook_recipe_regions_version' LIMIT 1",
+        "SELECT option_name, option_value FROM wp_options WHERE option_name IN ('_transient_cooklook_recipe_regions_v1_49dc1d521a9514f1c9c63d6fbbf66c25','_transient_timeout_cooklook_recipe_regions_v1_49dc1d521a9514f1c9c63d6fbbf66c25')"
+      ]
+    },
+    {
+      "pass": 2,
+      "sql_count": 0,
+      "directory_sql_count": 0,
+      "elapsed_ms": 0.026,
+      "queries": []
+    },
+    {
+      "pass": 3,
+      "sql_count": 0,
+      "directory_sql_count": 0,
+      "elapsed_ms": 0.018,
+      "queries": []
+    }
+  ]
+}

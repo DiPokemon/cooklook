@@ -1,0 +1,350 @@
+{
+  "checked_at": "2026-10-16T11:12:44.835Z",
+  "site": "https://cook-look.ru",
+  "note": "User-Agent probes use our ordinary IP, not verified crawler IPs. Search Console, server logs and editorial claims are not verified.",
+  "robots_txt": "User-agent: *               \r\n                            \r\nDisallow: /cgi-bin         \r\nDisallow: /?                \r\nDisallow: /wp-              \r\n\r\nDisallow: *?unapproved=\r\nDisallow: *?moderation-hash=\r\nDisallow: *?s=              \r\nDisallow: *&s=              \r\nDisallow: /search/          \r\nDisallow: /author/          \r\nDisallow: /users/           \r\nDisallow: */trackback      \r\nDisallow: */feed           \r\nDisallow: */rss             \r\nDisallow: */embed           \r\nDisallow: /xmlrpc.php       \r\nDisallow: *utm*=            \r\nDisallow: *openstat=       \r\nAllow: */uploads            \r\n\r\nUser-agent: GoogleBot       \r\nDisallow: /cgi-bin\r\nDisallow: /?\r\nDisallow: /wp-\r\nDisallow: /wp/\r\nDisallow: *?unapproved=\r\nDisallow: *?moderation-hash=\r\nDisallow: *?s=\r\nDisallow: *&s=\r\nDisallow: /search/\r\nDisallow: /author/\r\nDisallow: /users/\r\nDisallow: */trackback\r\nDisallow: */feed\r\nDisallow: */rss\r\nDisallow: */embed\r\nDisallow: */wlwmanifest.xml\r\nDisallow: /xmlrpc.php\r\nDisallow: *utm*=\r\nDisallow: *openstat=\r\nAllow: */uploads\r\nAllow: /*/*.js             \r\nAllow: /*/*.css            \r\nAllow: /wp-*.png           \r\nAllow: /wp-*.jpg           \r\nAllow: /wp-*.jpeg          \r\nAllow: /wp-*.gif           \r\nAllow: /wp-admin/admin-ajax.php \r\n\r\nUser-agent: Yandex          \r\nDisallow: /cgi-bin\r\nDisallow: /?\r\nDisallow: /wp-\r\nDisallow: /wp/\r\nDisallow: *?unapproved=\r\nDisallow: *?moderation-hash=\r\nDisallow: *?s=\r\nDisallow: *&s=\r\nDisallow: /search/\r\nDisallow: /author/\r\nDisallow: /users/\r\nDisallow: */trackback\r\nDisallow: */feed\r\nDisallow: */rss\r\nDisallow: */embed\r\nDisallow: */wlwmanifest.xml\r\nDisallow: /xmlrpc.php\r\nAllow: */uploads\r\nAllow: /*/*.js\r\nAllow: /*/*.css\r\nAllow: /wp-*.png\r\nAllow: /wp-*.jpg\r\nAllow: /wp-*.jpeg\r\nAllow: /wp-*.gif\r\nAllow: /wp-admin/admin-ajax.php\r\nClean-Param: utm_source&utm_medium&utm_campaign\r\nClean-Param: unapproved&moderation-hash\r\n\r\n       \r\nClean-Param: openstat\r\n\r\nSitemap: https://cook-look.ru/sitemap.xml\r\n\r\nHost: https://cook-look.ru/",
+  "pages": [
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "agent": "Mozilla/5.0 (compatible; CooklookSEOCheck/1.0)",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/",
+      "agent": "Mozilla/5.0 (compatible; CooklookSEOCheck/1.0)",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/",
+      "agent": "Mozilla/5.0 (compatible; CooklookSEOCheck/1.0)",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/krem-bryule-creme-brulee/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/",
+      "agent": "Mozilla/5.0 (compatible; CooklookSEOCheck/1.0)",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/",
+      "agent": "Mozilla/5.0 (compatible; CooklookSEOCheck/1.0)",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/keksy-piczczy/",
+      "agent": "Mozilla/5.0 (compatible; CooklookSEOCheck/1.0)",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/keksy-piczczy/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/",
+      "agent": "Mozilla/5.0 (compatible; CooklookSEOCheck/1.0)",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/",
+      "agent": "Mozilla/5.0 (compatible; CooklookSEOCheck/1.0)",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/",
+      "agent": "Mozilla/5.0 (compatible; CooklookSEOCheck/1.0)",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/",
+      "agent": "Mozilla/5.0 (compatible; CooklookSEOCheck/1.0)",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    }
+  ],
+  "agent_probes": [
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "agent": "Googlebot",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "agent": "OAI-SearchBot",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "agent": "Claude-SearchBot",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "agent": "Claude-User",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "agent": "PerplexityBot",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "agent": "ChatGPT-User",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    },
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "agent": "Perplexity-User",
+      "status": 200,
+      "redirects": 0,
+      "x_robots_tag": null,
+      "robots": [
+        {
+          "name": "robots",
+          "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+      ],
+      "h1_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "data_nosnippet_count": 0
+    }
+  ]
+}

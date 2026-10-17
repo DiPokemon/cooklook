@@ -1,0 +1,329 @@
+{
+  "recorded_at": "2026-10-16T18:28:48.792Z",
+  "site": "http://cooklook/",
+  "database": "8.0.30",
+  "database_writes": false,
+  "method": "Exploratory comparison before the region fix. 15 alternating direct SELECT executions per variant, same local DB buffers; median milliseconds. Current is the existing derived MAX aggregation, joined is an outer grouped metadata join, correlated is a scalar per-recipe MAX subquery. Only non-filtered catalog comparisons are retained here; SQL and EXPLAIN are included for reproducibility. Not a production benchmark.",
+  "cases": {
+    "recipe_time_catalog": {
+      "current": {
+        "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t \n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+        "ids": [
+          9895,
+          9899,
+          9898,
+          9908,
+          9907,
+          9903,
+          9923,
+          9921,
+          9920,
+          9919,
+          9918
+        ],
+        "found": 80,
+        "plan": [
+          {
+            "id": "1",
+            "select_type": "PRIMARY",
+            "table": "wp_posts",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "type_status_date,type_status_author",
+            "key": "type_status_date",
+            "key_len": "164",
+            "ref": "const,const",
+            "rows": "80",
+            "filtered": "10.00",
+            "Extra": "Using where; Using temporary; Using filesort"
+          },
+          {
+            "id": "1",
+            "select_type": "PRIMARY",
+            "table": "<derived2>",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "<auto_key0>",
+            "key": "<auto_key0>",
+            "key_len": "8",
+            "ref": "cooklook.wp_posts.ID",
+            "rows": "9",
+            "filtered": "100.00",
+            "Extra": null
+          },
+          {
+            "id": "2",
+            "select_type": "DERIVED",
+            "table": "wp_postmeta",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "post_id,meta_key",
+            "key": "meta_key",
+            "key_len": "767",
+            "ref": "const",
+            "rows": "94",
+            "filtered": "100.00",
+            "Extra": "Using where; Using temporary"
+          }
+        ],
+        "median_ms": 0.933
+      },
+      "joined": {
+        "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN wp_postmeta cooklook_sort ON wp_posts.ID = cooklook_sort.post_id AND cooklook_sort.meta_key = '_recipe_time'\n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(MAX(CAST(cooklook_sort.meta_value AS DECIMAL(20,4))), 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+        "ids": [
+          9895,
+          9899,
+          9898,
+          9908,
+          9907,
+          9903,
+          9923,
+          9921,
+          9920,
+          9919,
+          9918
+        ],
+        "found": 80,
+        "plan": [
+          {
+            "id": "1",
+            "select_type": "SIMPLE",
+            "table": "wp_posts",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+            "key": "type_status_date",
+            "key_len": "164",
+            "ref": "const,const",
+            "rows": "80",
+            "filtered": "10.00",
+            "Extra": "Using where; Using temporary; Using filesort"
+          },
+          {
+            "id": "1",
+            "select_type": "SIMPLE",
+            "table": "cooklook_sort",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "post_id,meta_key",
+            "key": "post_id",
+            "key_len": "8",
+            "ref": "cooklook.wp_posts.ID",
+            "rows": "15",
+            "filtered": "100.00",
+            "Extra": "Using where"
+          }
+        ],
+        "median_ms": 12.664
+      },
+      "correlated": {
+        "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts \n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t \n\t\t\t\t\t ORDER BY COALESCE((SELECT MAX(CAST(cooklook_sort.meta_value AS DECIMAL(20,4))) FROM wp_postmeta cooklook_sort WHERE cooklook_sort.post_id = wp_posts.ID AND cooklook_sort.meta_key = '_recipe_time'), 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+        "ids": [
+          9895,
+          9899,
+          9898,
+          9908,
+          9907,
+          9903,
+          9923,
+          9921,
+          9920,
+          9919,
+          9918
+        ],
+        "found": 80,
+        "plan": [
+          {
+            "id": "1",
+            "select_type": "PRIMARY",
+            "table": "wp_posts",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "type_status_date,type_status_author",
+            "key": "type_status_date",
+            "key_len": "164",
+            "ref": "const,const",
+            "rows": "80",
+            "filtered": "10.00",
+            "Extra": "Using where; Using filesort"
+          },
+          {
+            "id": "2",
+            "select_type": "DEPENDENT SUBQUERY",
+            "table": "cooklook_sort",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "post_id,meta_key",
+            "key": "post_id",
+            "key_len": "8",
+            "ref": "cooklook.wp_posts.ID",
+            "rows": "15",
+            "filtered": "1.33",
+            "Extra": "Using where"
+          }
+        ],
+        "median_ms": 12.568
+      }
+    },
+    "recipe_views_catalog": {
+      "current": {
+        "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id\n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t \n\t\t\t\t\t ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+        "ids": [
+          9889,
+          9888,
+          9897,
+          9955,
+          9885,
+          9922,
+          9884,
+          9950,
+          9886,
+          9923,
+          9918
+        ],
+        "found": 80,
+        "plan": [
+          {
+            "id": "1",
+            "select_type": "PRIMARY",
+            "table": "wp_posts",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "type_status_date,type_status_author",
+            "key": "type_status_date",
+            "key_len": "164",
+            "ref": "const,const",
+            "rows": "80",
+            "filtered": "10.00",
+            "Extra": "Using where; Using temporary; Using filesort"
+          },
+          {
+            "id": "1",
+            "select_type": "PRIMARY",
+            "table": "<derived2>",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "<auto_key0>",
+            "key": "<auto_key0>",
+            "key_len": "8",
+            "ref": "cooklook.wp_posts.ID",
+            "rows": "9",
+            "filtered": "100.00",
+            "Extra": null
+          },
+          {
+            "id": "2",
+            "select_type": "DERIVED",
+            "table": "wp_postmeta",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "post_id,meta_key",
+            "key": "meta_key",
+            "key_len": "767",
+            "ref": "const",
+            "rows": "94",
+            "filtered": "100.00",
+            "Extra": "Using where; Using temporary"
+          }
+        ],
+        "median_ms": 0.884
+      },
+      "joined": {
+        "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts  LEFT JOIN wp_postmeta cooklook_sort ON wp_posts.ID = cooklook_sort.post_id AND cooklook_sort.meta_key = '_recipe_views'\n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t GROUP BY wp_posts.ID\n\t\t\t\t\t ORDER BY COALESCE(MAX(CAST(cooklook_sort.meta_value AS DECIMAL(20,4))), 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+        "ids": [
+          9889,
+          9888,
+          9897,
+          9955,
+          9885,
+          9922,
+          9884,
+          9950,
+          9886,
+          9923,
+          9918
+        ],
+        "found": 80,
+        "plan": [
+          {
+            "id": "1",
+            "select_type": "SIMPLE",
+            "table": "wp_posts",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+            "key": "type_status_date",
+            "key_len": "164",
+            "ref": "const,const",
+            "rows": "80",
+            "filtered": "10.00",
+            "Extra": "Using where; Using temporary; Using filesort"
+          },
+          {
+            "id": "1",
+            "select_type": "SIMPLE",
+            "table": "cooklook_sort",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "post_id,meta_key",
+            "key": "post_id",
+            "key_len": "8",
+            "ref": "cooklook.wp_posts.ID",
+            "rows": "15",
+            "filtered": "100.00",
+            "Extra": "Using where"
+          }
+        ],
+        "median_ms": 12.223
+      },
+      "correlated": {
+        "sql": "SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID\n\t\t\t\t\t FROM wp_posts \n\t\t\t\t\t WHERE 1=1  AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish'))\n\t\t\t\t\t \n\t\t\t\t\t ORDER BY COALESCE((SELECT MAX(CAST(cooklook_sort.meta_value AS DECIMAL(20,4))) FROM wp_postmeta cooklook_sort WHERE cooklook_sort.post_id = wp_posts.ID AND cooklook_sort.meta_key = '_recipe_views'), 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC\n\t\t\t\t\t LIMIT 0, 11",
+        "ids": [
+          9889,
+          9888,
+          9897,
+          9955,
+          9885,
+          9922,
+          9884,
+          9950,
+          9886,
+          9923,
+          9918
+        ],
+        "found": 80,
+        "plan": [
+          {
+            "id": "1",
+            "select_type": "PRIMARY",
+            "table": "wp_posts",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "type_status_date,type_status_author",
+            "key": "type_status_date",
+            "key_len": "164",
+            "ref": "const,const",
+            "rows": "80",
+            "filtered": "10.00",
+            "Extra": "Using where; Using filesort"
+          },
+          {
+            "id": "2",
+            "select_type": "DEPENDENT SUBQUERY",
+            "table": "cooklook_sort",
+            "partitions": null,
+            "type": "ref",
+            "possible_keys": "post_id,meta_key",
+            "key": "post_id",
+            "key_len": "8",
+            "ref": "cooklook.wp_posts.ID",
+            "rows": "15",
+            "filtered": "1.33",
+            "Extra": "Using where"
+          }
+        ],
+        "median_ms": 12.146
+      }
+    }
+  }
+}

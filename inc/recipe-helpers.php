@@ -19,6 +19,68 @@ function cooklook_recipe_terms( $post_id, $taxonomy ) {
 	return is_array( $terms ) ? $terms : array();
 }
 
+/** Normalize imported scalar text without guessing quantities or changing stored data. */
+function cooklook_recipe_plain_text( $value ) {
+	if ( ! is_scalar( $value ) ) { return ''; }
+	$text = preg_replace( '~</(?:p|div|li|h[1-6]|ul|ol|section)>|<br\s*/?>~i', ' ', strip_shortcodes( (string) $value ) );
+	$text = html_entity_decode( wp_strip_all_tags( $text ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+	return trim( preg_replace( '/\s+/u', ' ', $text ) );
+}
+
+/** Invalid, fractional or overflowing minute/count values must not become plausible integers. */
+function cooklook_recipe_positive_integer( $value ) {
+	if ( ! is_scalar( $value ) || ! preg_match( '/^[0-9]+$/D', trim( (string) $value ) ) ) { return 0; }
+	$value = filter_var( ltrim( trim( (string) $value ), '0' ), FILTER_VALIDATE_INT, array( 'options' => array( 'min_range' => 1, 'max_range' => intdiv( PHP_INT_MAX, 2 ) ) ) );
+	return false === $value ? 0 : $value;
+}
+
+/** One source for visible facts, ingredients, instructions and Recipe JSON-LD. */
+function cooklook_recipe_facts( $post_id ) {
+	$cook = cooklook_recipe_positive_integer( cooklook_recipe_value( $post_id, 'recipe_time' ) );
+	$prep = cooklook_recipe_positive_integer( cooklook_recipe_value( $post_id, 'recipe_prep' ) );
+	$facts = array(
+		'cook' => $cook, 'prep' => $prep, 'total' => $cook + $prep,
+		'portions' => cooklook_recipe_positive_integer( cooklook_recipe_value( $post_id, 'recipe_portions' ) ),
+		'serving_mass' => cooklook_recipe_positive_integer( cooklook_recipe_value( $post_id, 'recipe_serving_mass' ) ),
+		'cuisine' => cooklook_recipe_plain_text( cooklook_recipe_value( $post_id, 'recipe_region' ) ),
+		'ingredients' => array(), 'steps' => array(),
+	);
+	foreach ( cooklook_recipe_rows( $post_id, 'ingridients' ) as $row ) {
+		$name = cooklook_recipe_plain_text( $row['ingridient_name'] ?? '' );
+		$value = cooklook_recipe_plain_text( $row['ingridient_value'] ?? '' );
+		if ( '' !== $name ) {
+			$facts['ingredients'][] = array( 'name' => $name, 'value' => $value, 'text' => trim( $name . ' ' . $value ) );
+		}
+	}
+	foreach ( cooklook_recipe_rows( $post_id, 'recipe_step' ) as $index => $row ) {
+		$raw = $row['recipe_step_text'] ?? '';
+		$text = cooklook_recipe_plain_text( $raw );
+		if ( '' === $text ) { continue; }
+		$facts['steps'][] = array(
+			// Preserve historical incoming links even when preceding rows are empty.
+			'anchor' => 'step_' . ( $index + 1 ), 'text' => $text,
+			'content' => strip_shortcodes( (string) $raw ),
+			'image' => cooklook_recipe_step_image( $row ),
+		);
+	}
+	return $facts;
+}
+
+/** Site-wide authorship approved by the owner; no per-post or WordPress-account fallback. */
+function cooklook_recipe_author() {
+	return array( '@type' => 'Organization', 'name' => 'CookLook', 'url' => home_url( '/' ) );
+}
+
+/** Source attribution is not published under the owner's editorial policy. */
+function cooklook_recipe_editorial( $post_id ) {
+	$author = cooklook_recipe_author();
+	$data = array( 'author' => $author['name'] );
+	foreach ( array( 'reviewer', 'adaptation_notes', 'notes', 'change_notes' ) as $key ) {
+		$data[ $key ] = cooklook_recipe_plain_text( cooklook_recipe_value( $post_id, 'recipe_public_' . $key ) );
+	}
+	return $data;
+}
+
 function cooklook_recipe_description( $post_id, $words = 0 ) {
 	$post = get_post( $post_id );
 	if ( ! $post || post_password_required( $post ) ) {
@@ -31,6 +93,17 @@ function cooklook_recipe_description( $post_id, $words = 0 ) {
 	}
 	$text = strip_shortcodes( $text );
 	return $words ? wp_trim_words( wp_strip_all_tags( $text ), $words, ' …' ) : $text;
+}
+
+/** Keep the excerpt separate without repeating an introduction already in the body. */
+function cooklook_recipe_intro( $post_id ) {
+	$post = get_post( $post_id );
+	if ( ! $post || post_password_required( $post ) ) { return ''; }
+	$excerpt = trim( $post->post_excerpt );
+	$normalize = function ( $text ) { return trim( preg_replace( '/\s+/u', ' ', html_entity_decode( wp_strip_all_tags( strip_shortcodes( $text ) ), ENT_QUOTES, 'UTF-8' ) ) ); };
+	$plain = $normalize( $excerpt );
+	if ( '' !== $plain && 0 !== strpos( $normalize( $post->post_content ), $plain ) ) { return $excerpt; }
+	return '' === trim( $post->post_content ) && '' === $excerpt ? cooklook_recipe_summary( $post_id ) : '';
 }
 
 /** Reject arrays before passing request values to scalar PHP APIs. */
@@ -91,7 +164,7 @@ function cooklook_render_recipes( $query, $advertising = false ) {
 	}
 	while ( $query->have_posts() ) {
 		$query->the_post();
-		get_template_part( 'template-parts/recipe-loop-item' );
+		get_template_part( 'template-parts/recipe-loop-item', null, array( 'priority' => 0 === $position && ! wp_doing_ajax() ) );
 		$position++;
 		if ( $advertising && 0 === $position % 3 ) {
 			get_template_part( 'template-parts/recipe-loop-item-adv' );

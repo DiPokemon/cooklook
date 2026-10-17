@@ -1,0 +1,236 @@
+{
+  "checked_at": "2026-10-16T18:26:17.035Z",
+  "site": "http://cooklook",
+  "method": "Sequential local guest GETs; all 24 profiled combinations, SSR vs AJAX, desktop/mobile selected sort. Read-only filter endpoint, no browser JavaScript or view requests.",
+  "cases": [
+    {
+      "case": "date_catalog",
+      "url": "http://cooklook/recipes/",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "date_page_2",
+      "url": "http://cooklook/recipes/page/2/",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "date_region",
+      "url": "http://cooklook/recipes/?region=%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D1%83%D1%85%D0%BD%D1%8F",
+      "status": 200,
+      "redirects": [
+        301
+      ],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "date_category",
+      "url": "http://cooklook/recipes/?category_id=5179",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "date_ingredient",
+      "url": "http://cooklook/recipes/?include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "date_ingredients_and",
+      "url": "http://cooklook/recipes/?include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c%2C%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "date_include_exclude",
+      "url": "http://cooklook/recipes/?include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c&exclude_ingredients=%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "date_region_ingredient",
+      "url": "http://cooklook/recipes/?region=%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D1%83%D1%85%D0%BD%D1%8F&include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c",
+      "status": 200,
+      "redirects": [
+        301
+      ],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_time_catalog",
+      "url": "http://cooklook/recipes/?sort_by=recipe_time",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_time_page_2",
+      "url": "http://cooklook/recipes/page/2/?sort_by=recipe_time",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_time_region",
+      "url": "http://cooklook/recipes/?region=%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D1%83%D1%85%D0%BD%D1%8F&sort_by=recipe_time",
+      "status": 200,
+      "redirects": [
+        301
+      ],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_time_category",
+      "url": "http://cooklook/recipes/?category_id=5179&sort_by=recipe_time",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_time_ingredient",
+      "url": "http://cooklook/recipes/?include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c&sort_by=recipe_time",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_time_ingredients_and",
+      "url": "http://cooklook/recipes/?include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c%2C%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580&sort_by=recipe_time",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_time_include_exclude",
+      "url": "http://cooklook/recipes/?include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c&exclude_ingredients=%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580&sort_by=recipe_time",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_time_region_ingredient",
+      "url": "http://cooklook/recipes/?region=%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D1%83%D1%85%D0%BD%D1%8F&include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c&sort_by=recipe_time",
+      "status": 200,
+      "redirects": [
+        301
+      ],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_views_catalog",
+      "url": "http://cooklook/recipes/?sort_by=recipe_views",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_views_page_2",
+      "url": "http://cooklook/recipes/page/2/?sort_by=recipe_views",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_views_region",
+      "url": "http://cooklook/recipes/?region=%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D1%83%D1%85%D0%BD%D1%8F&sort_by=recipe_views",
+      "status": 200,
+      "redirects": [
+        301
+      ],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_views_category",
+      "url": "http://cooklook/recipes/?category_id=5179&sort_by=recipe_views",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_views_ingredient",
+      "url": "http://cooklook/recipes/?include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c&sort_by=recipe_views",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_views_ingredients_and",
+      "url": "http://cooklook/recipes/?include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c%2C%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580&sort_by=recipe_views",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_views_include_exclude",
+      "url": "http://cooklook/recipes/?include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c&exclude_ingredients=%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580&sort_by=recipe_views",
+      "status": 200,
+      "redirects": [],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    },
+    {
+      "case": "recipe_views_region_ingredient",
+      "url": "http://cooklook/recipes/?region=%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D1%83%D1%85%D0%BD%D1%8F&include_ingredients=%25d1%2581%25d0%25be%25d0%25bb%25d1%258c&sort_by=recipe_views",
+      "status": 200,
+      "redirects": [
+        301
+      ],
+      "cards": 11,
+      "desktop_mobile_sort_correct": true,
+      "ajax_order_equal": true
+    }
+  ],
+  "invalid_sort_status": 404
+}

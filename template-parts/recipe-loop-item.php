@@ -15,15 +15,7 @@ $total_time_convert = convert_time_to_string( (int) cooklook_recipe_value( $post
 <div class="recipe_loop-item">
     <div class="recipe_loop-wrapper">
         <div class="img_block" data-permalink="<?= esc_url(get_permalink()) ?>">
-            <?php if (get_the_post_thumbnail_url(null, 'large')) : ?>
-               
-                    <img loading="lazy" src="<?= esc_url(get_the_post_thumbnail_url(null, 'large')) ?>" alt="<?= esc_attr(sprintf(__('Рецепт %s на %s порций', 'cooklook'), get_the_title(), $portions)) ?>">
-                  
-            <?php else: ?>
-                
-                    <img loading="lazy" src="<?= get_template_directory_uri() . '/static/img/no_image.png' ?>" alt="<?= esc_attr(sprintf(__('Рецепт %s на %s порций', 'cooklook'), get_the_title(), $portions)) ?>">
-                
-            <?php endif; ?>
+            <?php echo cooklook_post_image( $post_id, 'medium_large', array( 'loading' => ! empty( $args['priority'] ) ? 'eager' : 'lazy' ) ); ?>
             <div class="recipe_meta">
                 <div class="top_meta">
                     <?php
@@ -107,7 +99,7 @@ $total_time_convert = convert_time_to_string( (int) cooklook_recipe_value( $post
             </a>
             <?php if ($tags) : ?>
                 <div class="recipe_ingridients flex">
-                    <?= __('Ингридиенты:','cooklook') ?>
+                    <?= __('Ингредиенты:','cooklook') ?>
                     <?php foreach ($tags as $tag) : ?>
                         <a href="<?= esc_url(get_term_link($tag)) ?>" class="recipe_ingridients-item"><?= esc_html($tag->name) ?></a>
                     <?php endforeach ?>

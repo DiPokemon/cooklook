@@ -1,0 +1,1230 @@
+{
+  "checked_at": "2026-10-17T01:15:09.471Z",
+  "checked_on": "2026-10-17",
+  "timezone": "Europe/Moscow",
+  "site": "http://cooklook/",
+  "status": "local_mobile_ingredient_filter_verified",
+  "method": "Real Chromium UI through the in-app browser; explicit viewport overrides, real guest AJAX requests, DOM geometry and screenshots. No touch/user-agent emulation, browser developer overrides or injected application state.",
+  "viewports": [
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 568
+    },
+    {
+      "width": 360,
+      "height": 640
+    },
+    {
+      "width": 844,
+      "height": 390
+    },
+    {
+      "width": 844,
+      "height": 320
+    }
+  ],
+  "code_changes_required": false,
+  "recipe_content_or_settings_edited": false,
+  "automatically_compared_checks": [
+    {
+      "name": "Include milk, exclude sugar and vanilla sugar: AJAX equals reload",
+      "passed": true
+    },
+    {
+      "name": "Clear both selections and restore the clean catalog URL",
+      "passed": true
+    },
+    {
+      "name": "Page 2: AJAX equals reload",
+      "passed": true
+    },
+    {
+      "name": "Browser Back and Forward restore results",
+      "passed": true
+    },
+    {
+      "name": "Mobile time sort resets to page 1 and survives reload",
+      "passed": true
+    },
+    {
+      "name": "Ingredient lookup scrolls from 20 results to 34 without duplicates",
+      "passed": true
+    },
+    {
+      "name": "Empty lookup displays a useful message",
+      "passed": true
+    },
+    {
+      "name": "Repeated popular selection does not duplicate milk; water can be added",
+      "passed": true
+    },
+    {
+      "name": "Show recipes submits two included values, closes panels and matches reload",
+      "passed": true
+    },
+    {
+      "name": "Recorded catalog states have no horizontal overflow and preserve local noindex",
+      "passed": true
+    },
+    {
+      "name": "No captured JavaScript warnings or errors",
+      "passed": true
+    }
+  ],
+  "manual_ui_checks": [
+    {
+      "name": "Open filters and ingredient panel at 390x844",
+      "result": "Passed: drawer and dropdown fit horizontally; lookup for мо returned visible selectable results."
+    },
+    {
+      "name": "320x568 scrolling and selection",
+      "result": "Passed: panel scroll exposes the submit button; Back closes ingredient selection while keeping filters open. Body scroll unlocks after form submission."
+    },
+    {
+      "name": "Short landscape viewports",
+      "result": "Passed: 844x390 and 844x320 panels scroll; at height 320 the long dropdown opens above the search field. Controls outside the viewport were reached by scrolling first."
+    },
+    {
+      "name": "Long selected name at width 320",
+      "result": "Passed: Черный рис (императорский) selected from the second result page; chip width 242.453125px, document width 320px. No horizontal overflow."
+    },
+    {
+      "name": "Shortened query",
+      "result": "Passed: shortening мо to м displays Введите не менее 2 символов."
+    }
+  ],
+  "search_pagination": {
+    "term": "ны",
+    "first_page_results": [
+      "Апельсины",
+      "Бананы",
+      "Бульонный кубик",
+      "Ванильный сахар",
+      "Ванильный стручок",
+      "Ванильный экстракт",
+      "Длиннозерный рис",
+      "Замороженные опята",
+      "Консервированные фрукты",
+      "Красный карри порошок",
+      "Красный лук",
+      "Куриные желудки",
+      "Куриные сердца",
+      "Куриный бульон",
+      "Лимонный сок",
+      "Мандарины",
+      "Миндальные лепестки",
+      "Молотый черный перец",
+      "Овсяные отруби",
+      "Овсяные хлопья"
+    ],
+    "all_results": [
+      "Апельсины",
+      "Бананы",
+      "Бульонный кубик",
+      "Ванильный сахар",
+      "Ванильный стручок",
+      "Ванильный экстракт",
+      "Длиннозерный рис",
+      "Замороженные опята",
+      "Консервированные фрукты",
+      "Красный карри порошок",
+      "Красный лук",
+      "Куриные желудки",
+      "Куриные сердца",
+      "Куриный бульон",
+      "Лимонный сок",
+      "Мандарины",
+      "Миндальные лепестки",
+      "Молотый черный перец",
+      "Овсяные отруби",
+      "Овсяные хлопья",
+      "Овсяные хлопья №1",
+      "Очищенный несоленый арахис",
+      "Очищенный фундук",
+      "Сливки 11%-ные",
+      "Сливки 20%-ные",
+      "Сливки 33%-ные",
+      "Сливки 35%-ные",
+      "Сливки 38%-ные",
+      "Сушеные белые грибы",
+      "Сушеные грибы",
+      "Томатный соус",
+      "Черный рис (императорский)",
+      "Шампиньоны",
+      "Шоколадные капли"
+    ]
+  },
+  "filtered_reload": {
+    "before": {
+      "cards": [
+        {
+          "title": "Молочная рисовая каша",
+          "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречневая каша на молоке",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Гречневая каша с молоком",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be%d0%bc/"
+        },
+        {
+          "title": "Овсяная каша с сухофруктами",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%83%d1%85%d0%be%d1%84%d1%80%d1%83%d0%ba%d1%82%d0%b0%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Каша рисовая с тыквой",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Овсяная каша с мандарином",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%b0%d0%bd%d0%b4%d0%b0%d1%80%d0%b8%d0%bd%d0%be%d0%bc/"
+        },
+        {
+          "title": "Каша из овсяных хлопьев",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%b8%d0%b7-%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d1%8b%d1%85-%d1%85%d0%bb%d0%be%d0%bf%d1%8c%d0%b5%d0%b2/"
+        },
+        {
+          "title": "Каша овсяная с пшеничными отрубями",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d1%81-%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d1%8b%d0%bc%d0%b8-%d0%be%d1%82%d1%80%d1%83%d0%b1%d1%8f%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Шоколадная манная каша с банановым муссом",
+          "url": "http://cooklook/recipe/%d1%88%d0%be%d0%ba%d0%be%d0%bb%d0%b0%d0%b4%d0%bd%d0%b0%d1%8f-%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%b1%d0%b0%d0%bd%d0%b0%d0%bd%d0%be%d0%b2%d1%8b%d0%bc-%d0%bc/"
+        },
+        {
+          "title": "Каша с тыквой и яблоками в горшочке",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9-%d0%b8-%d1%8f%d0%b1%d0%bb%d0%be%d0%ba%d0%b0%d0%bc%d0%b8-%d0%b2-%d0%b3%d0%be%d1%80%d1%88%d0%be%d1%87%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Кукурузная каша с грибами и шафраном",
+          "url": "http://cooklook/recipe/%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%b3%d1%80%d0%b8%d0%b1%d0%b0%d0%bc%d0%b8-%d0%b8-%d1%88%d0%b0%d1%84%d1%80%d0%b0%d0%bd%d0%be/"
+        }
+      ],
+      "pageWidth": 305,
+      "panelsOpen": 0,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": [
+            "Молоко"
+          ]
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": [
+            "Сахар",
+            "Ванильный сахар"
+          ]
+        }
+      ],
+      "url": "http://cooklook/recipes/?include_ingredients%5B%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be&exclude_ingredients%5B%5D=%25d0%25b2%25d0%25b0%25d0%25bd%25d0%25b8%25d0%25bb%25d1%258c%25d0%25bd%25d1%258b%25d0%25b9-%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580&exclude_ingredients%5B%5D=%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580",
+      "width": 320
+    },
+    "after": {
+      "cards": [
+        {
+          "title": "Молочная рисовая каша",
+          "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречневая каша на молоке",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Гречневая каша с молоком",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be%d0%bc/"
+        },
+        {
+          "title": "Овсяная каша с сухофруктами",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%83%d1%85%d0%be%d1%84%d1%80%d1%83%d0%ba%d1%82%d0%b0%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Каша рисовая с тыквой",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Овсяная каша с мандарином",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%b0%d0%bd%d0%b4%d0%b0%d1%80%d0%b8%d0%bd%d0%be%d0%bc/"
+        },
+        {
+          "title": "Каша из овсяных хлопьев",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%b8%d0%b7-%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d1%8b%d1%85-%d1%85%d0%bb%d0%be%d0%bf%d1%8c%d0%b5%d0%b2/"
+        },
+        {
+          "title": "Каша овсяная с пшеничными отрубями",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d1%81-%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d1%8b%d0%bc%d0%b8-%d0%be%d1%82%d1%80%d1%83%d0%b1%d1%8f%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Шоколадная манная каша с банановым муссом",
+          "url": "http://cooklook/recipe/%d1%88%d0%be%d0%ba%d0%be%d0%bb%d0%b0%d0%b4%d0%bd%d0%b0%d1%8f-%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%b1%d0%b0%d0%bd%d0%b0%d0%bd%d0%be%d0%b2%d1%8b%d0%bc-%d0%bc/"
+        },
+        {
+          "title": "Каша с тыквой и яблоками в горшочке",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9-%d0%b8-%d1%8f%d0%b1%d0%bb%d0%be%d0%ba%d0%b0%d0%bc%d0%b8-%d0%b2-%d0%b3%d0%be%d1%80%d1%88%d0%be%d1%87%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Кукурузная каша с грибами и шафраном",
+          "url": "http://cooklook/recipe/%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%b3%d1%80%d0%b8%d0%b1%d0%b0%d0%bc%d0%b8-%d0%b8-%d1%88%d0%b0%d1%84%d1%80%d0%b0%d0%bd%d0%be/"
+        }
+      ],
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": [
+            "Молоко"
+          ]
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": [
+            "Ванильный сахар",
+            "Сахар"
+          ]
+        }
+      ],
+      "url": "http://cooklook/recipes/?include_ingredients%5B0%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be&exclude_ingredients%5B0%5D=%25d0%25b2%25d0%25b0%25d0%25bd%25d0%25b8%25d0%25bb%25d1%258c%25d0%25bd%25d1%258b%25d0%25b9-%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580&exclude_ingredients%5B1%5D=%25d1%2581%25d0%25b0%25d1%2585%25d0%25b0%25d1%2580"
+    },
+    "selection_comparison": "Sets compared; server-rendered option order may differ."
+  },
+  "observations": [
+    {
+      "label": "clear_submit_verified",
+      "checked_at": "2026-10-17T01:10:28.028Z",
+      "bodyOverflow": "auto",
+      "busy": null,
+      "cards": [
+        {
+          "title": "Перловая каша с маслом",
+          "url": "http://cooklook/recipe/%d0%bf%d0%b5%d1%80%d0%bb%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%b0%d1%81%d0%bb%d0%be%d0%bc/"
+        },
+        {
+          "title": "Яблочная каша",
+          "url": "http://cooklook/recipe/%d1%8f%d0%b1%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречка по-купечески",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d0%bf%d0%be-%d0%ba%d1%83%d0%bf%d0%b5%d1%87%d0%b5%d1%81%d0%ba%d0%b8/"
+        },
+        {
+          "title": "Молочная рисовая каша",
+          "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречка с грибами",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d1%81-%d0%b3%d1%80%d0%b8%d0%b1%d0%b0%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Пшенная каша на молоке",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Кукурузная каша",
+          "url": "http://cooklook/recipe/%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Кремлевская каша",
+          "url": "http://cooklook/recipe/%d0%ba%d1%80%d0%b5%d0%bc%d0%bb%d0%b5%d0%b2%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Абрикосовая каша",
+          "url": "http://cooklook/recipe/%d0%b0%d0%b1%d1%80%d0%b8%d0%ba%d0%be%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гурьевская каша",
+          "url": "http://cooklook/recipe/%d0%b3%d1%83%d1%80%d1%8c%d0%b5%d0%b2%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречка с курицей",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d1%81-%d0%ba%d1%83%d1%80%d0%b8%d1%86%d0%b5%d0%b9/"
+        }
+      ],
+      "pageWidth": 829,
+      "pagination": [
+        {
+          "text": "2",
+          "url": "http://cooklook/recipes/page/2/"
+        },
+        {
+          "text": "3",
+          "url": "http://cooklook/recipes/page/3/"
+        },
+        {
+          "text": "8",
+          "url": "http://cooklook/recipes/page/8/"
+        },
+        {
+          "text": "Далее",
+          "url": "http://cooklook/recipes/page/2/"
+        }
+      ],
+      "panelsOpen": 0,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": []
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": []
+        }
+      ],
+      "url": "http://cooklook/recipes/",
+      "viewport": {
+        "height": 320,
+        "width": 844
+      }
+    },
+    {
+      "label": "page_2_ajax_360",
+      "checked_at": "2026-10-17T01:10:37.020Z",
+      "bodyOverflow": "auto",
+      "busy": null,
+      "cards": [
+        {
+          "title": "Пшенная молочная каша с тыквой",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Гречневая каша на молоке",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Манная каша без молока",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b1%d0%b5%d0%b7-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b0/"
+        },
+        {
+          "title": "Пшенная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречневая каша с молоком",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be%d0%bc/"
+        },
+        {
+          "title": "Простая пшенная каша с тыквой",
+          "url": "http://cooklook/recipe/%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%b0%d1%8f-%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Пшеничная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Рисовая каша со сгущенкой",
+          "url": "http://cooklook/recipe/%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81%d0%be-%d1%81%d0%b3%d1%83%d1%89%d0%b5%d0%bd%d0%ba%d0%be%d0%b9/"
+        },
+        {
+          "title": "Пшеничная каша с молоком",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be%d0%bc/"
+        },
+        {
+          "title": "Печеная тыква с кашей из маша",
+          "url": "http://cooklook/recipe/%d0%bf%d0%b5%d1%87%d0%b5%d0%bd%d0%b0%d1%8f-%d1%82%d1%8b%d0%ba%d0%b2%d0%b0-%d1%81-%d0%ba%d0%b0%d1%88%d0%b5%d0%b9-%d0%b8%d0%b7-%d0%bc%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Рисовая каша с яблоками",
+          "url": "http://cooklook/recipe/%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%8f%d0%b1%d0%bb%d0%be%d0%ba%d0%b0%d0%bc%d0%b8/"
+        }
+      ],
+      "pageWidth": 345,
+      "pagination": [
+        {
+          "text": "Назад",
+          "url": "http://cooklook/recipes/"
+        },
+        {
+          "text": "1",
+          "url": "http://cooklook/recipes/"
+        },
+        {
+          "text": "3",
+          "url": "http://cooklook/recipes/page/3/"
+        },
+        {
+          "text": "4",
+          "url": "http://cooklook/recipes/page/4/"
+        },
+        {
+          "text": "8",
+          "url": "http://cooklook/recipes/page/8/"
+        },
+        {
+          "text": "Далее",
+          "url": "http://cooklook/recipes/page/3/"
+        }
+      ],
+      "panelsOpen": 0,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": []
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": []
+        }
+      ],
+      "url": "http://cooklook/recipes/page/2/",
+      "viewport": {
+        "height": 640,
+        "width": 360
+      }
+    },
+    {
+      "label": "page_2_reload_360",
+      "checked_at": "2026-10-17T01:10:38.011Z",
+      "bodyOverflow": "auto",
+      "busy": null,
+      "cards": [
+        {
+          "title": "Пшенная молочная каша с тыквой",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Гречневая каша на молоке",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Манная каша без молока",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b1%d0%b5%d0%b7-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b0/"
+        },
+        {
+          "title": "Пшенная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречневая каша с молоком",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be%d0%bc/"
+        },
+        {
+          "title": "Простая пшенная каша с тыквой",
+          "url": "http://cooklook/recipe/%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%b0%d1%8f-%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Пшеничная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Рисовая каша со сгущенкой",
+          "url": "http://cooklook/recipe/%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81%d0%be-%d1%81%d0%b3%d1%83%d1%89%d0%b5%d0%bd%d0%ba%d0%be%d0%b9/"
+        },
+        {
+          "title": "Пшеничная каша с молоком",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be%d0%bc/"
+        },
+        {
+          "title": "Печеная тыква с кашей из маша",
+          "url": "http://cooklook/recipe/%d0%bf%d0%b5%d1%87%d0%b5%d0%bd%d0%b0%d1%8f-%d1%82%d1%8b%d0%ba%d0%b2%d0%b0-%d1%81-%d0%ba%d0%b0%d1%88%d0%b5%d0%b9-%d0%b8%d0%b7-%d0%bc%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Рисовая каша с яблоками",
+          "url": "http://cooklook/recipe/%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%8f%d0%b1%d0%bb%d0%be%d0%ba%d0%b0%d0%bc%d0%b8/"
+        }
+      ],
+      "pageWidth": 345,
+      "pagination": [
+        {
+          "text": "Назад",
+          "url": "http://cooklook/recipes/"
+        },
+        {
+          "text": "1",
+          "url": "http://cooklook/recipes/"
+        },
+        {
+          "text": "3",
+          "url": "http://cooklook/recipes/page/3/"
+        },
+        {
+          "text": "4",
+          "url": "http://cooklook/recipes/page/4/"
+        },
+        {
+          "text": "8",
+          "url": "http://cooklook/recipes/page/8/"
+        },
+        {
+          "text": "Далее",
+          "url": "http://cooklook/recipes/page/3/"
+        }
+      ],
+      "panelsOpen": 0,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": []
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": []
+        }
+      ],
+      "url": "http://cooklook/recipes/page/2/",
+      "viewport": {
+        "height": 640,
+        "width": 360
+      }
+    },
+    {
+      "label": "back_to_page_1",
+      "checked_at": "2026-10-17T01:10:45.049Z",
+      "bodyOverflow": "auto",
+      "busy": null,
+      "cards": [
+        {
+          "title": "Перловая каша с маслом",
+          "url": "http://cooklook/recipe/%d0%bf%d0%b5%d1%80%d0%bb%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%b0%d1%81%d0%bb%d0%be%d0%bc/"
+        },
+        {
+          "title": "Яблочная каша",
+          "url": "http://cooklook/recipe/%d1%8f%d0%b1%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречка по-купечески",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d0%bf%d0%be-%d0%ba%d1%83%d0%bf%d0%b5%d1%87%d0%b5%d1%81%d0%ba%d0%b8/"
+        },
+        {
+          "title": "Молочная рисовая каша",
+          "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречка с грибами",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d1%81-%d0%b3%d1%80%d0%b8%d0%b1%d0%b0%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Пшенная каша на молоке",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Кукурузная каша",
+          "url": "http://cooklook/recipe/%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Кремлевская каша",
+          "url": "http://cooklook/recipe/%d0%ba%d1%80%d0%b5%d0%bc%d0%bb%d0%b5%d0%b2%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Абрикосовая каша",
+          "url": "http://cooklook/recipe/%d0%b0%d0%b1%d1%80%d0%b8%d0%ba%d0%be%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гурьевская каша",
+          "url": "http://cooklook/recipe/%d0%b3%d1%83%d1%80%d1%8c%d0%b5%d0%b2%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречка с курицей",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d1%81-%d0%ba%d1%83%d1%80%d0%b8%d1%86%d0%b5%d0%b9/"
+        }
+      ],
+      "pageWidth": 345,
+      "pagination": [
+        {
+          "text": "2",
+          "url": "http://cooklook/recipes/page/2/"
+        },
+        {
+          "text": "3",
+          "url": "http://cooklook/recipes/page/3/"
+        },
+        {
+          "text": "8",
+          "url": "http://cooklook/recipes/page/8/"
+        },
+        {
+          "text": "Далее",
+          "url": "http://cooklook/recipes/page/2/"
+        }
+      ],
+      "panelsOpen": 0,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": []
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": []
+        }
+      ],
+      "url": "http://cooklook/recipes/",
+      "viewport": {
+        "height": 640,
+        "width": 360
+      }
+    },
+    {
+      "label": "forward_to_page_2",
+      "checked_at": "2026-10-17T01:10:46.107Z",
+      "bodyOverflow": "auto",
+      "busy": null,
+      "cards": [
+        {
+          "title": "Пшенная молочная каша с тыквой",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Гречневая каша на молоке",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Манная каша без молока",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b1%d0%b5%d0%b7-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b0/"
+        },
+        {
+          "title": "Пшенная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Гречневая каша с молоком",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be%d0%bc/"
+        },
+        {
+          "title": "Простая пшенная каша с тыквой",
+          "url": "http://cooklook/recipe/%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%b0%d1%8f-%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Пшеничная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Рисовая каша со сгущенкой",
+          "url": "http://cooklook/recipe/%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81%d0%be-%d1%81%d0%b3%d1%83%d1%89%d0%b5%d0%bd%d0%ba%d0%be%d0%b9/"
+        },
+        {
+          "title": "Пшеничная каша с молоком",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be%d0%bc/"
+        },
+        {
+          "title": "Печеная тыква с кашей из маша",
+          "url": "http://cooklook/recipe/%d0%bf%d0%b5%d1%87%d0%b5%d0%bd%d0%b0%d1%8f-%d1%82%d1%8b%d0%ba%d0%b2%d0%b0-%d1%81-%d0%ba%d0%b0%d1%88%d0%b5%d0%b9-%d0%b8%d0%b7-%d0%bc%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Рисовая каша с яблоками",
+          "url": "http://cooklook/recipe/%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%8f%d0%b1%d0%bb%d0%be%d0%ba%d0%b0%d0%bc%d0%b8/"
+        }
+      ],
+      "pageWidth": 345,
+      "pagination": [
+        {
+          "text": "Назад",
+          "url": "http://cooklook/recipes/"
+        },
+        {
+          "text": "1",
+          "url": "http://cooklook/recipes/"
+        },
+        {
+          "text": "3",
+          "url": "http://cooklook/recipes/page/3/"
+        },
+        {
+          "text": "4",
+          "url": "http://cooklook/recipes/page/4/"
+        },
+        {
+          "text": "8",
+          "url": "http://cooklook/recipes/page/8/"
+        },
+        {
+          "text": "Далее",
+          "url": "http://cooklook/recipes/page/3/"
+        }
+      ],
+      "panelsOpen": 0,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": []
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": []
+        }
+      ],
+      "url": "http://cooklook/recipes/page/2/",
+      "viewport": {
+        "height": 640,
+        "width": 360
+      }
+    },
+    {
+      "label": "sort_time_resets_page_1",
+      "checked_at": "2026-10-17T01:11:08.837Z",
+      "bodyOverflow": "auto",
+      "busy": null,
+      "cards": [
+        {
+          "title": "Гречка по-купечески",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d0%bf%d0%be-%d0%ba%d1%83%d0%bf%d0%b5%d1%87%d0%b5%d1%81%d0%ba%d0%b8/"
+        },
+        {
+          "title": "Манная каша без молока",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b1%d0%b5%d0%b7-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b0/"
+        },
+        {
+          "title": "Пшенная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Простая пшенная каша с тыквой",
+          "url": "http://cooklook/recipe/%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%b0%d1%8f-%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Пшеничная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Печеная тыква с кашей из маша",
+          "url": "http://cooklook/recipe/%d0%bf%d0%b5%d1%87%d0%b5%d0%bd%d0%b0%d1%8f-%d1%82%d1%8b%d0%ba%d0%b2%d0%b0-%d1%81-%d0%ba%d0%b0%d1%88%d0%b5%d0%b9-%d0%b8%d0%b7-%d0%bc%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Овсяная каша с сухофруктами",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%83%d1%85%d0%be%d1%84%d1%80%d1%83%d0%ba%d1%82%d0%b0%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Гречневая каша с сыром и овощами",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%8b%d1%80%d0%be%d0%bc-%d0%b8-%d0%be%d0%b2%d0%be%d1%89%d0%b0%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Овсяная каша в пароварке с карамелизованными фруктами",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b2-%d0%bf%d0%b0%d1%80%d0%be%d0%b2%d0%b0%d1%80%d0%ba%d0%b5-%d1%81-%d0%ba%d0%b0%d1%80%d0%b0%d0%bc%d0%b5%d0%bb%d0%b8/"
+        },
+        {
+          "title": "Каша кукурузная в мультиварке",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%b2-%d0%bc%d1%83%d0%bb%d1%8c%d1%82%d0%b8%d0%b2%d0%b0%d1%80%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Манная каша на молоке",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        }
+      ],
+      "pageWidth": 345,
+      "pagination": [
+        {
+          "text": "2",
+          "url": "http://cooklook/recipes/page/2/?sort_by=recipe_time"
+        },
+        {
+          "text": "3",
+          "url": "http://cooklook/recipes/page/3/?sort_by=recipe_time"
+        },
+        {
+          "text": "8",
+          "url": "http://cooklook/recipes/page/8/?sort_by=recipe_time"
+        },
+        {
+          "text": "Далее",
+          "url": "http://cooklook/recipes/page/2/?sort_by=recipe_time"
+        }
+      ],
+      "panelsOpen": 0,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": []
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": []
+        }
+      ],
+      "url": "http://cooklook/recipes/?sort_by=recipe_time",
+      "viewport": {
+        "height": 640,
+        "width": 360
+      }
+    },
+    {
+      "label": "sort_time_reload",
+      "checked_at": "2026-10-17T01:11:09.859Z",
+      "bodyOverflow": "auto",
+      "busy": null,
+      "cards": [
+        {
+          "title": "Гречка по-купечески",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d0%bf%d0%be-%d0%ba%d1%83%d0%bf%d0%b5%d1%87%d0%b5%d1%81%d0%ba%d0%b8/"
+        },
+        {
+          "title": "Манная каша без молока",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b1%d0%b5%d0%b7-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b0/"
+        },
+        {
+          "title": "Пшенная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Простая пшенная каша с тыквой",
+          "url": "http://cooklook/recipe/%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%b0%d1%8f-%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Пшеничная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Печеная тыква с кашей из маша",
+          "url": "http://cooklook/recipe/%d0%bf%d0%b5%d1%87%d0%b5%d0%bd%d0%b0%d1%8f-%d1%82%d1%8b%d0%ba%d0%b2%d0%b0-%d1%81-%d0%ba%d0%b0%d1%88%d0%b5%d0%b9-%d0%b8%d0%b7-%d0%bc%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Овсяная каша с сухофруктами",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%83%d1%85%d0%be%d1%84%d1%80%d1%83%d0%ba%d1%82%d0%b0%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Гречневая каша с сыром и овощами",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%8b%d1%80%d0%be%d0%bc-%d0%b8-%d0%be%d0%b2%d0%be%d1%89%d0%b0%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Овсяная каша в пароварке с карамелизованными фруктами",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b2-%d0%bf%d0%b0%d1%80%d0%be%d0%b2%d0%b0%d1%80%d0%ba%d0%b5-%d1%81-%d0%ba%d0%b0%d1%80%d0%b0%d0%bc%d0%b5%d0%bb%d0%b8/"
+        },
+        {
+          "title": "Каша кукурузная в мультиварке",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%b2-%d0%bc%d1%83%d0%bb%d1%8c%d1%82%d0%b8%d0%b2%d0%b0%d1%80%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Манная каша на молоке",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        }
+      ],
+      "pageWidth": 345,
+      "pagination": [
+        {
+          "text": "2",
+          "url": "http://cooklook/recipes/page/2/?sort_by=recipe_time"
+        },
+        {
+          "text": "3",
+          "url": "http://cooklook/recipes/page/3/?sort_by=recipe_time"
+        },
+        {
+          "text": "8",
+          "url": "http://cooklook/recipes/page/8/?sort_by=recipe_time"
+        },
+        {
+          "text": "Далее",
+          "url": "http://cooklook/recipes/page/2/?sort_by=recipe_time"
+        }
+      ],
+      "panelsOpen": 0,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": []
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": []
+        }
+      ],
+      "url": "http://cooklook/recipes/?sort_by=recipe_time",
+      "viewport": {
+        "height": 640,
+        "width": 360
+      }
+    },
+    {
+      "label": "popular_choices_no_duplicates_360",
+      "checked_at": "2026-10-17T01:13:35.252Z",
+      "bodyOverflow": "hidden",
+      "busy": null,
+      "cards": [
+        {
+          "title": "Гречка по-купечески",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d0%bf%d0%be-%d0%ba%d1%83%d0%bf%d0%b5%d1%87%d0%b5%d1%81%d0%ba%d0%b8/"
+        },
+        {
+          "title": "Манная каша без молока",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b1%d0%b5%d0%b7-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b0/"
+        },
+        {
+          "title": "Пшенная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Простая пшенная каша с тыквой",
+          "url": "http://cooklook/recipe/%d0%bf%d1%80%d0%be%d1%81%d1%82%d0%b0%d1%8f-%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/"
+        },
+        {
+          "title": "Пшеничная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Печеная тыква с кашей из маша",
+          "url": "http://cooklook/recipe/%d0%bf%d0%b5%d1%87%d0%b5%d0%bd%d0%b0%d1%8f-%d1%82%d1%8b%d0%ba%d0%b2%d0%b0-%d1%81-%d0%ba%d0%b0%d1%88%d0%b5%d0%b9-%d0%b8%d0%b7-%d0%bc%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Овсяная каша с сухофруктами",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%83%d1%85%d0%be%d1%84%d1%80%d1%83%d0%ba%d1%82%d0%b0%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Гречневая каша с сыром и овощами",
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%8b%d1%80%d0%be%d0%bc-%d0%b8-%d0%be%d0%b2%d0%be%d1%89%d0%b0%d0%bc%d0%b8/"
+        },
+        {
+          "title": "Овсяная каша в пароварке с карамелизованными фруктами",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b2-%d0%bf%d0%b0%d1%80%d0%be%d0%b2%d0%b0%d1%80%d0%ba%d0%b5-%d1%81-%d0%ba%d0%b0%d1%80%d0%b0%d0%bc%d0%b5%d0%bb%d0%b8/"
+        },
+        {
+          "title": "Каша кукурузная в мультиварке",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%b2-%d0%bc%d1%83%d0%bb%d1%8c%d1%82%d0%b8%d0%b2%d0%b0%d1%80%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Манная каша на молоке",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        }
+      ],
+      "pageWidth": 360,
+      "pagination": [
+        {
+          "text": "2",
+          "url": "http://cooklook/recipes/page/2/?sort_by=recipe_time"
+        },
+        {
+          "text": "3",
+          "url": "http://cooklook/recipes/page/3/?sort_by=recipe_time"
+        },
+        {
+          "text": "8",
+          "url": "http://cooklook/recipes/page/8/?sort_by=recipe_time"
+        },
+        {
+          "text": "Далее",
+          "url": "http://cooklook/recipes/page/2/?sort_by=recipe_time"
+        }
+      ],
+      "panelsOpen": 2,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": [
+            {
+              "text": "Вода",
+              "value": "%d0%b2%d0%be%d0%b4%d0%b0"
+            },
+            {
+              "text": "Молоко",
+              "value": "%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be"
+            }
+          ]
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": []
+        }
+      ],
+      "url": "http://cooklook/recipes/?sort_by=recipe_time",
+      "viewport": {
+        "height": 640,
+        "width": 360
+      }
+    },
+    {
+      "label": "show_recipes_two_included",
+      "checked_at": "2026-10-17T01:14:26.917Z",
+      "bodyOverflow": "auto",
+      "busy": null,
+      "cards": [
+        {
+          "title": "Пшенная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Пшеничная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Манная каша на молоке",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Овсяная каша с грушей и корицей",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%b3%d1%80%d1%83%d1%88%d0%b5%d0%b9-%d0%b8-%d0%ba%d0%be%d1%80%d0%b8%d1%86%d0%b5%d0%b9/"
+        },
+        {
+          "title": "Манная каша",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Манная каша с корицей",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%ba%d0%be%d1%80%d0%b8%d1%86%d0%b5%d0%b9/"
+        },
+        {
+          "title": "Молочная гречневая каша",
+          "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Молочная рисовая каша",
+          "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Пшенная каша на молоке",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Пшеничная каша с молоком",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be%d0%bc/"
+        },
+        {
+          "title": "Каша овсяная с пшеничными отрубями",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d1%81-%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d1%8b%d0%bc%d0%b8-%d0%be%d1%82%d1%80%d1%83%d0%b1%d1%8f%d0%bc%d0%b8/"
+        }
+      ],
+      "pageWidth": 345,
+      "pagination": [
+        {
+          "text": "2",
+          "url": "http://cooklook/recipes/page/2/?include_ingredients%5B0%5D=%25d0%25b2%25d0%25be%25d0%25b4%25d0%25b0&include_ingredients%5B1%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be&sort_by=recipe_time"
+        },
+        {
+          "text": "Далее",
+          "url": "http://cooklook/recipes/page/2/?include_ingredients%5B0%5D=%25d0%25b2%25d0%25be%25d0%25b4%25d0%25b0&include_ingredients%5B1%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be&sort_by=recipe_time"
+        }
+      ],
+      "panelsOpen": 0,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": [
+            {
+              "text": "Вода",
+              "value": "%d0%b2%d0%be%d0%b4%d0%b0"
+            },
+            {
+              "text": "Молоко",
+              "value": "%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be"
+            }
+          ]
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": []
+        }
+      ],
+      "url": "http://cooklook/recipes/?include_ingredients%5B%5D=%25d0%25b2%25d0%25be%25d0%25b4%25d0%25b0&include_ingredients%5B%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be&sort_by=recipe_time",
+      "viewport": {
+        "height": 640,
+        "width": 360
+      }
+    },
+    {
+      "label": "two_included_reload",
+      "checked_at": "2026-10-17T01:14:28.385Z",
+      "bodyOverflow": "auto",
+      "busy": null,
+      "cards": [
+        {
+          "title": "Пшенная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Пшеничная каша",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Манная каша на молоке",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Овсяная каша с грушей и корицей",
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%b3%d1%80%d1%83%d1%88%d0%b5%d0%b9-%d0%b8-%d0%ba%d0%be%d1%80%d0%b8%d1%86%d0%b5%d0%b9/"
+        },
+        {
+          "title": "Манная каша",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Манная каша с корицей",
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%ba%d0%be%d1%80%d0%b8%d1%86%d0%b5%d0%b9/"
+        },
+        {
+          "title": "Молочная гречневая каша",
+          "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Молочная рисовая каша",
+          "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d1%80%d0%b8%d1%81%d0%be%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/"
+        },
+        {
+          "title": "Пшенная каша на молоке",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/"
+        },
+        {
+          "title": "Пшеничная каша с молоком",
+          "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be%d0%bc/"
+        },
+        {
+          "title": "Каша овсяная с пшеничными отрубями",
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d1%81-%d0%bf%d1%88%d0%b5%d0%bd%d0%b8%d1%87%d0%bd%d1%8b%d0%bc%d0%b8-%d0%be%d1%82%d1%80%d1%83%d0%b1%d1%8f%d0%bc%d0%b8/"
+        }
+      ],
+      "pageWidth": 345,
+      "pagination": [
+        {
+          "text": "2",
+          "url": "http://cooklook/recipes/page/2/?include_ingredients%5B0%5D=%25d0%25b2%25d0%25be%25d0%25b4%25d0%25b0&include_ingredients%5B1%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be&sort_by=recipe_time"
+        },
+        {
+          "text": "Далее",
+          "url": "http://cooklook/recipes/page/2/?include_ingredients%5B0%5D=%25d0%25b2%25d0%25be%25d0%25b4%25d0%25b0&include_ingredients%5B1%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be&sort_by=recipe_time"
+        }
+      ],
+      "panelsOpen": 0,
+      "robots": "noindex, nofollow",
+      "selected": [
+        {
+          "id": "include_ingredients",
+          "values": [
+            {
+              "text": "Вода",
+              "value": "%d0%b2%d0%be%d0%b4%d0%b0"
+            },
+            {
+              "text": "Молоко",
+              "value": "%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be"
+            }
+          ]
+        },
+        {
+          "id": "exclude_ingredients",
+          "values": []
+        }
+      ],
+      "url": "http://cooklook/recipes/?include_ingredients%5B0%5D=%25d0%25b2%25d0%25be%25d0%25b4%25d0%25b0&include_ingredients%5B1%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be&sort_by=recipe_time",
+      "viewport": {
+        "height": 640,
+        "width": 360
+      }
+    }
+  ],
+  "console_warnings_and_errors": [],
+  "regressions": [
+    {
+      "command": "node tests/recipe-ingredients.test.cjs",
+      "result": "passed"
+    },
+    {
+      "command": "node tests/filters.test.cjs",
+      "result": "passed"
+    }
+  ],
+  "screenshot": "docs/seo-ingredient-mobile.jpg",
+  "limitations": [
+    "Viewport checks on desktop Chromium do not establish behavior on physical iOS/Android devices, touch input or the on-screen keyboard.",
+    "No production check, working-scale directory test, HTML-cache/nonce-expiry test or new LCP/INP/CLS measurement was performed.",
+    "Search traffic, AI visibility and production SQL performance remain unmeasured; existing external plan items stay open."
+  ]
+}

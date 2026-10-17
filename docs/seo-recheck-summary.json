@@ -1,0 +1,747 @@
+{
+  "checked_at": "2026-10-17T01:41:44.784Z",
+  "reviewed_on": "2026-10-17",
+  "timezone": "Europe/Moscow",
+  "site": "http://cooklook/",
+  "status": "local_recheck_and_fixes_verified",
+  "deployed": false,
+  "scope": "Current working theme, all local recipe URLs, sampled non-recipe templates, in-memory regression fixtures, read-only WordPress integration and an extracted production ZIP.",
+  "findings_fixed": [
+    "Shared Yoast HTML/social/WebPage metadata with manual overrides preserved",
+    "HTML block boundaries and entities in summaries",
+    "Context-specific pagination labels and breadcrumbs",
+    "Accepted region aliases and nested/parentless category selections survive navigation",
+    "Advisory checks for small/unknown original image dimensions",
+    "Decorative image geometry and accessible category controls"
+  ],
+  "crawl": {
+    "report": "docs/seo-recheck-local.json",
+    "pages": 104,
+    "recipes": 80,
+    "sitemaps": 8,
+    "sitemap_urls": 257,
+    "statuses": {
+      "200": 100,
+      "404": 4
+    },
+    "request_errors": 0,
+    "php_diagnostics": 0,
+    "invalid_jsonld": 0,
+    "bad_breadcrumbs": 0,
+    "successful_pages_with_wrong_h1_count": 0,
+    "all_local_pages_noindex": true,
+    "metadata_pages_compared": 83,
+    "webpage_mismatch_urls": [],
+    "open_graph_mismatch_urls": []
+  },
+  "tests": {
+    "php_runtime": "8.1.9",
+    "php_cases": 71,
+    "php_failures": 0,
+    "wordpress_url_suite": "PASS",
+    "js_suites": 4,
+    "js_syntax_files": 16,
+    "changed_php_syntax": "PASS",
+    "security_phpcs": "PASS",
+    "real_yoast_presentation_cases": 32,
+    "commands": [
+      "php tests/run.php",
+      "php tests/account.php",
+      "php tests/seo.php",
+      "php tests/recipe-schema.php",
+      "php tests/recipe-views.php",
+      "php tests/recipe-regions.php",
+      "php tests/recipe-ingredients.php",
+      "php tests/wordpress-core.php",
+      "node tests/filters.test.cjs",
+      "node tests/comments.test.cjs",
+      "node tests/recipe-views.test.cjs",
+      "node tests/recipe-ingredients.test.cjs",
+      "node tests/run-js.cjs",
+      "php vendor/squizlabs/php_codesniffer/bin/phpcs --standard=phpcs-security.xml.dist"
+    ],
+    "environment": "Direct commands used because npm launcher cannot access the user profile under sandbox. PHP 8.1 sys_temp_dir overridden to the writable build/seo-recheck-tmp directory."
+  },
+  "integration": {
+    "database_writes_allowed": false,
+    "transients": "process-local memory",
+    "card_recipes": 80,
+    "card_step_sql_per_pass": [
+      0,
+      0
+    ],
+    "region_directory": {
+      "checked_at": "2026-10-17T01:34:28+00:00",
+      "site": "http://cooklook/",
+      "recipe_writes": false,
+      "method": "Real database read comparison and hook registration check. Cache writes only; recipe lifecycle/invalidation/race cases run separately in memory.",
+      "raw_directory_equal": true,
+      "visible_regions": 9,
+      "registered_hooks": [
+        "added_post_meta",
+        "updated_post_meta",
+        "deleted_post_meta",
+        "wp_after_insert_post",
+        "deleted_post",
+        "after_switch_theme"
+      ],
+      "invalid_regions_rejected": true,
+      "validation_independent_of_directory_cache": true,
+      "cases": [
+        {
+          "region": "Авторская кухня",
+          "recipes": 2,
+          "pages": 1,
+          "ids_order_and_legacy_alias_match": true
+        },
+        {
+          "region": "Американская кухня",
+          "recipes": 1,
+          "pages": 1,
+          "ids_order_and_legacy_alias_match": true
+        },
+        {
+          "region": "Европейская кухня",
+          "recipes": 14,
+          "pages": 2,
+          "ids_order_and_legacy_alias_match": true
+        },
+        {
+          "region": "Индийская кухня",
+          "recipes": 2,
+          "pages": 1,
+          "ids_order_and_legacy_alias_match": true
+        },
+        {
+          "region": "Мексиканская кухня",
+          "recipes": 2,
+          "pages": 1,
+          "ids_order_and_legacy_alias_match": true
+        },
+        {
+          "region": "Мировая",
+          "recipes": 5,
+          "pages": 1,
+          "ids_order_and_legacy_alias_match": true
+        },
+        {
+          "region": "Русская кухня",
+          "recipes": 44,
+          "pages": 4,
+          "ids_order_and_legacy_alias_match": true
+        },
+        {
+          "region": "Шотландская кухня",
+          "recipes": 1,
+          "pages": 1,
+          "ids_order_and_legacy_alias_match": true
+        },
+        {
+          "region": "Японская кухня",
+          "recipes": 1,
+          "pages": 1,
+          "ids_order_and_legacy_alias_match": true
+        }
+      ]
+    },
+    "ingredient_lookup": {
+      "checked_at": "2026-10-17T01:34:29+00:00",
+      "site": "http://cooklook/",
+      "database_writes": false,
+      "method": "Search pages compared with complete reference queries on the same DB; SQL logging after bootstrap. No cache flush. Counts/times describe local data only.",
+      "cases": [
+        {
+          "term": "ны",
+          "matches": 34,
+          "pages": 2,
+          "elapsed_ms": [
+            1.145,
+            1.028
+          ],
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%ны%') OR (t.slug LIKE '%ны%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21",
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%ны%') OR (t.slug LIKE '%ны%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 20,21"
+          ]
+        },
+        {
+          "term": "ри",
+          "matches": 20,
+          "pages": 1,
+          "elapsed_ms": [
+            1.06
+          ],
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%ри%') OR (t.slug LIKE '%ри%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+          ]
+        },
+        {
+          "term": "ко",
+          "matches": 20,
+          "pages": 1,
+          "elapsed_ms": [
+            1.043
+          ],
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%ко%') OR (t.slug LIKE '%ко%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+          ]
+        },
+        {
+          "term": "мол",
+          "matches": 10,
+          "pages": 1,
+          "elapsed_ms": [
+            1.02
+          ],
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%мол%') OR (t.slug LIKE '%мол%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+          ]
+        },
+        {
+          "term": "МОЛ",
+          "matches": 10,
+          "pages": 1,
+          "elapsed_ms": [
+            0.951
+          ],
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%МОЛ%') OR (t.slug LIKE '%МОЛ%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+          ]
+        },
+        {
+          "term": "лук",
+          "matches": 4,
+          "pages": 1,
+          "elapsed_ms": [
+            1.024
+          ],
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%лук%') OR (t.slug LIKE '%лук%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+          ]
+        },
+        {
+          "term": "соль",
+          "matches": 1,
+          "pages": 1,
+          "elapsed_ms": [
+            0.947
+          ],
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%соль%') OR (t.slug LIKE '%соль%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+          ]
+        },
+        {
+          "term": "несуществующийингредиент",
+          "matches": 0,
+          "pages": 1,
+          "elapsed_ms": [
+            0.909
+          ],
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%несуществующийингредиент%') OR (t.slug LIKE '%несуществующийингредиент%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+          ]
+        },
+        {
+          "term": "%_",
+          "matches": 0,
+          "pages": 1,
+          "elapsed_ms": [
+            0.926
+          ],
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%\\\\%\\\\_%') OR (t.slug LIKE '%\\\\%\\\\_%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+          ]
+        },
+        {
+          "term": "' OR 1=1 --",
+          "matches": 0,
+          "pages": 1,
+          "elapsed_ms": [
+            0.893
+          ],
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%\\' OR 1=1 --%') OR (t.slug LIKE '%\\' OR 1=1 --%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+          ]
+        }
+      ],
+      "short_search_sql": 0,
+      "selected_options": 4,
+      "empty_selected_restored": true,
+      "http_cases": {
+        "include_ingredients": [
+          "2-%d0%bd%d0%be%d0%b5",
+          "5-%d0%bd%d0%be%d0%b5",
+          "%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be-25-%d0%bd%d0%be%d0%b5"
+        ],
+        "exclude_ingredients": [
+          "nutella"
+        ],
+        "empty": "%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be-25-%d0%bd%d0%be%d0%b5"
+      }
+    },
+    "sorting": {
+      "checked_at": "2026-10-17T01:34:30+00:00",
+      "site": "http://cooklook/",
+      "database_writes": false,
+      "method": "Current WP_Query vs original SQL on all local result pages; SELECT/UNION-only fixtures for numeric/visibility/duplicate/escaping edge cases. No stored test recipes.",
+      "real_cases": [
+        {
+          "case": "date_catalog",
+          "recipes": 80,
+          "pages": 8,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "date_page_2",
+          "recipes": 80,
+          "pages": 8,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "date_region",
+          "recipes": 44,
+          "pages": 4,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "date_category",
+          "recipes": 62,
+          "pages": 6,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "date_ingredient",
+          "recipes": 59,
+          "pages": 6,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "date_ingredients_and",
+          "recipes": 33,
+          "pages": 3,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "date_include_exclude",
+          "recipes": 26,
+          "pages": 3,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "date_region_ingredient",
+          "recipes": 33,
+          "pages": 3,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_time_catalog",
+          "recipes": 80,
+          "pages": 8,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_time_page_2",
+          "recipes": 80,
+          "pages": 8,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_time_region",
+          "recipes": 44,
+          "pages": 4,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_time_category",
+          "recipes": 62,
+          "pages": 6,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_time_ingredient",
+          "recipes": 59,
+          "pages": 6,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_time_ingredients_and",
+          "recipes": 33,
+          "pages": 3,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_time_include_exclude",
+          "recipes": 26,
+          "pages": 3,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_time_region_ingredient",
+          "recipes": 33,
+          "pages": 3,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_views_catalog",
+          "recipes": 80,
+          "pages": 8,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_views_page_2",
+          "recipes": 80,
+          "pages": 8,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_views_region",
+          "recipes": 44,
+          "pages": 4,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_views_category",
+          "recipes": 62,
+          "pages": 6,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_views_ingredient",
+          "recipes": 59,
+          "pages": 6,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_views_ingredients_and",
+          "recipes": 33,
+          "pages": 3,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_views_include_exclude",
+          "recipes": 26,
+          "pages": 3,
+          "all_ids_order_counts_equal": true
+        },
+        {
+          "case": "recipe_views_region_ingredient",
+          "recipes": 33,
+          "pages": 3,
+          "all_ids_order_counts_equal": true
+        }
+      ],
+      "fixtures": [
+        {
+          "sort": "date",
+          "region_filter": false,
+          "expected_ids": [
+            103,
+            102,
+            111,
+            110,
+            109,
+            108,
+            107,
+            106,
+            105,
+            104,
+            101
+          ],
+          "pages": 4,
+          "passed": true
+        },
+        {
+          "sort": "date",
+          "region_filter": true,
+          "expected_ids": [
+            103,
+            102,
+            110,
+            109,
+            108,
+            107,
+            106,
+            105,
+            104,
+            101
+          ],
+          "pages": 4,
+          "passed": true
+        },
+        {
+          "sort": "recipe_time",
+          "region_filter": false,
+          "expected_ids": [
+            108,
+            103,
+            102,
+            110,
+            109,
+            101,
+            104,
+            107,
+            111,
+            105,
+            106
+          ],
+          "pages": 4,
+          "passed": true
+        },
+        {
+          "sort": "recipe_time",
+          "region_filter": true,
+          "expected_ids": [
+            108,
+            103,
+            102,
+            110,
+            109,
+            101,
+            104,
+            107,
+            105,
+            106
+          ],
+          "pages": 4,
+          "passed": true
+        },
+        {
+          "sort": "recipe_views",
+          "region_filter": false,
+          "expected_ids": [
+            106,
+            105,
+            111,
+            107,
+            104,
+            103,
+            102,
+            110,
+            109,
+            101,
+            108
+          ],
+          "pages": 4,
+          "passed": true
+        },
+        {
+          "sort": "recipe_views",
+          "region_filter": true,
+          "expected_ids": [
+            106,
+            105,
+            107,
+            104,
+            103,
+            102,
+            110,
+            109,
+            101,
+            108
+          ],
+          "pages": 4,
+          "passed": true
+        }
+      ],
+      "fixture_coverage": [
+        "missing/empty/zero/null/nonnumeric/negative/decimal sort values",
+        "MAX of duplicate numeric rows",
+        "stable date/ID ties across pages",
+        "duplicate regions without duplicate recipes",
+        "exact region key excludes XrecipeYregion",
+        "quotes and LIKE wildcards in region value",
+        "draft/private/future/trash/password/other-post-type excluded"
+      ],
+      "unrelated_queries_unchanged": true,
+      "invalid_region_shape_fails_closed": true,
+      "core_metadata_cache_invalidation_registered": true
+    },
+    "views": {
+      "checked_at": "2026-10-17T01:34:30+00:00",
+      "site": "http://cooklook/",
+      "recipe_id": 9885,
+      "database_writes": false,
+      "simulated_counter_writes": 1,
+      "pre_html_counter_active": false,
+      "result": "PASS: actual WordPress hooks/configuration, nonce refresh, guest view, GET/HEAD rejection, zero-SQL bot rejection and foreign-origin rejection; real metadata writes intercepted."
+    },
+    "recipe_html": {
+      "checked_at": "2026-10-17T01:39:37+00:00",
+      "site": "http://cooklook/",
+      "database_writes": false,
+      "recipes": [
+        {
+          "id": 9923,
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%83%d1%85%d0%be%d1%84%d1%80%d1%83%d0%ba%d1%82%d0%b0%d0%bc%d0%b8/",
+          "ingredients": 6,
+          "steps": 5
+        },
+        {
+          "id": 9922,
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d0%b0%d1%80%d1%80%d0%b8-%d0%b8%d0%b7-%d0%b4%d0%b8%d0%ba%d0%be%d0%b3%d0%be-%d1%80%d0%b8%d1%81%d0%b0-%d1%81-%d0%ba%d1%80%d0%b5%d0%b2%d0%b5%d1%82%d0%ba%d0%b0/",
+          "ingredients": 12,
+          "steps": 6
+        },
+        {
+          "id": 9921,
+          "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%8b%d1%80%d0%be%d0%bc-%d0%b8-%d0%be%d0%b2%d0%be%d1%89%d0%b0%d0%bc%d0%b8/",
+          "ingredients": 7,
+          "steps": 6
+        },
+        {
+          "id": 9920,
+          "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b2-%d0%bf%d0%b0%d1%80%d0%be%d0%b2%d0%b0%d1%80%d0%ba%d0%b5-%d1%81-%d0%ba%d0%b0%d1%80%d0%b0%d0%bc%d0%b5%d0%bb%d0%b8/",
+          "ingredients": 8,
+          "steps": 8
+        },
+        {
+          "id": 9919,
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%b2-%d0%bc%d1%83%d0%bb%d1%8c%d1%82%d0%b8%d0%b2%d0%b0%d1%80%d0%ba%d0%b5/",
+          "ingredients": 5,
+          "steps": 3
+        },
+        {
+          "id": 9918,
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/",
+          "ingredients": 7,
+          "steps": 8
+        },
+        {
+          "id": 9917,
+          "url": "http://cooklook/recipe/%d1%81%d0%bb%d0%b0%d0%b4%d0%ba%d0%b0%d1%8f-%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+          "ingredients": 4,
+          "steps": 4
+        },
+        {
+          "id": 9916,
+          "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+          "ingredients": 4,
+          "steps": 2
+        },
+        {
+          "id": 9915,
+          "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b0-%d0%bb%d1%8f-%d0%bf%d0%b0%d0%bd%d0%bd%d0%b0%d0%ba%d0%be%d1%82%d1%82%d0%b0/",
+          "ingredients": 6,
+          "steps": 3
+        },
+        {
+          "id": 9914,
+          "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d0%be%d1%80%d0%b8%d1%87%d0%bd%d0%be-%d1%8f%d0%b1%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f/",
+          "ingredients": 4,
+          "steps": 5
+        }
+      ],
+      "fixtures": "PASS: ingredients without steps; steps without ingredients; CookLook organization author in HTML/Recipe; source attribution omitted; escaped fields; disabled/Yoast-owned graph"
+    },
+    "note": "Unrelated import housekeeping disabled in the CLI process. Existing early Yoast textdomain notice remains; no test failure."
+  },
+  "browser": {
+    "scenarios": [
+      "lowercase region plus recipe_time",
+      "subcategory_id=5185 without parent plus recipe_views",
+      "nested category_id=5185 plus recipe_time"
+    ],
+    "all_selections_preserved": true,
+    "ajax_matches_full_reload": true,
+    "console_warnings_or_errors": 0
+  },
+  "content": {
+    "report": "docs/seo-recheck-recipes.json",
+    "checked": 80,
+    "issue_counts": {
+      "missing_dish_image": 41,
+      "nutrition_unverified": 72,
+      "missing_editorial_summary": 70,
+      "missing_image_crops": 39
+    },
+    "existing_photos": 39,
+    "current_recipe_schema_count": 39,
+    "known_undersized_photos": 0,
+    "unknown_photo_dimensions": 0,
+    "note": "50K image area is a quality recommendation; a genuine small photo keeps its Recipe markup."
+  },
+  "release": {
+    "built_at": "2026-10-17T01:41:01+00:00",
+    "php": "8.3.0",
+    "archive": "build/release-20261017T014041Z-3620f6/cooklook.zip",
+    "extracted_theme": "build/release-20261017T014041Z-3620f6/extracted/cooklook",
+    "sha256": "fa08fdffd2a171d491151f927d9d3230fc8ee4990ca2c02f5a95f49ccacc1dc3",
+    "bytes": 13010214,
+    "composer_lock_sha256": "61fb7730da09e50dd6cd30ac85b86f1d6cfb175040732b0252f09af9da828fb5",
+    "packages": {
+      "htmlburger/carbon-fields": {
+        "version": "v3.6.3",
+        "reference": "d913a5148cb9dc61ed239719c747f4ebb513003f"
+      },
+      "htmlburger/carbon-fields-yoast": {
+        "version": "v1.0.1",
+        "reference": "9fceee862838d36674086b285749816e3758feb6"
+      }
+    },
+    "development_vendor_unchanged": true,
+    "archive_integrity": true,
+    "file_count": 2891,
+    "reviewed_runtime_hashes_match": true,
+    "wordpress_verification": {
+      "checked_at": "2026-10-17T01:41:44+00:00",
+      "wordpress": "7.1.3",
+      "php": "8.1.9",
+      "site": "http://cooklook/",
+      "method": "Read-only CLI boot of the extracted ZIP via process-local directory filters. Transients use the default in-memory WP_Object_Cache; wp-import-export-lite is excluded in this process because its bootstrap writes housekeeping data. Active theme/plugin options and site files unchanged. This is not a production, full plugin compatibility or browser measurement.",
+      "database_write_queries_allowed": false,
+      "loaded_from_release": {
+        "cooklook_recipe_query_args": "inc/recipe-query.php",
+        "cooklook_search_ingredients": "inc/recipe-ingredients.php",
+        "cooklook_recipe_schema": "template-parts/schema.php",
+        "cooklook_render_recipes": "inc/recipe-helpers.php",
+        "Carbon_Fields\\Carbon_Fields": "vendor/htmlburger/carbon-fields/core/Carbon_Fields.php",
+        "Carbon_Fields_Yoast\\Carbon_Fields_Yoast": "vendor/htmlburger/carbon-fields-yoast/core/Carbon_Fields_Yoast.php",
+        "Cooklook_Cached_Post_Meta_Datastore": "inc/class-cooklook-cached-post-meta-datastore.php"
+      },
+      "sorts": {
+        "date": {
+          "found": 80,
+          "cards": 11
+        },
+        "recipe_time": {
+          "found": 80,
+          "cards": 11
+        },
+        "recipe_views": {
+          "found": 80,
+          "cards": 11
+        }
+      },
+      "ingredient_search_results": 1,
+      "selected_options": 1,
+      "recipe_html_and_schema": 10,
+      "runtime_assets": [
+        "static/js/script.js",
+        "static/libs/slick/slick.min.js",
+        "static/js/slick_init.js",
+        "static/js/ajax-search.js",
+        "static/js/search_modal.js",
+        "static/libs/select2/select2.full.min.js",
+        "static/js/filter-ingridients.js",
+        "static/js/filters.js",
+        "static/js/favorite_recipes.js",
+        "static/js/recipe-rating.js",
+        "static/js/ajax-comment.js",
+        "static/css/style.min.css",
+        "static/css/layout.css",
+        "static/libs/slick/slick.min.css",
+        "static/libs/slick/slick-theme.min.css",
+        "static/css/account.css",
+        "static/libs/select2/select2.min.css",
+        "static/css/catalog.css",
+        "static/css/admin-styles.css",
+        "static/js/recipe-views.js"
+      ],
+      "development_packages": 0
+    }
+  },
+  "remaining": [
+    "Editorial photos, summaries, nutrition/time verification and recommended image crops",
+    "Production release and checks using the deployed theme and production database/cache",
+    "Google Rich Results Test, crawler/CDN logs, search and analytics data, field CWV and AI visibility"
+  ]
+}

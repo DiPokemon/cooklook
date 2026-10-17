@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-10-16T18:37:52+00:00",
+  "site": "http://cooklook/",
+  "method": "Modal HTML only after WP bootstrap, three calls per case in one process, no external cache flush. First blank pass precedes selected passes. Times are not full-page TTFB.",
+  "external_object_cache": null,
+  "ingredient_counts": {
+    "total": "140",
+    "nonempty": "138"
+  },
+  "cases": {
+    "blank": {
+      "request": [],
+      "runs": [
+        {
+          "pass": 1,
+          "elapsed_ms": 5.339,
+          "bytes": 50444,
+          "options": 280,
+          "sql_count": 3,
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags')\n\t\t\t ORDER BY t.name ASC\n\t\t\t ",
+            "SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.term_id IN (5334,5332,5303,5211,5269,5257,5304,5283,5207,5330,5240,5256,5290,5265,5196,5280,5262,5246,5181,5227,5327,5245,5273,5294,5312,5298,5225,5281,5324,5288,5279,5297,5268,5329,5217,5218,5208,5263,5274,5275,5276,5286,5222,5210,5204,5315,5314,5313,5270,5232,5229,5236,5247,5291,5287,5203,5250,5220,5206,5239,5214,5182,5331,5266,5333,5320,5252,5289,5199,5193,5258,5215,5326,5216,5264,5319,5234,5322,5328,5228,5309,5284,5306,5244,5277,5237,5267,5197,5285,5242,5251,5259,5186,5200,5192,5226,5254,5248,5188,5323,5219,5295,5231,5316,5255,5311,5302,5243,5299,5305,5253,5321,5205,5300,5272,5233,5278,5184,5213,5293,5296,5308,5249,5195,5307,5183,5187,5198,5212,5191,5271,5310,5301,5325,5194,5317,5224,5230,5292,5235)",
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0\n\t\t\t ORDER BY tt.count DESC\n\t\t\t LIMIT 6"
+          ]
+        },
+        {
+          "pass": 2,
+          "elapsed_ms": 1.836,
+          "bytes": 50444,
+          "options": 280,
+          "sql_count": 0,
+          "queries": []
+        },
+        {
+          "pass": 3,
+          "elapsed_ms": 1.7,
+          "bytes": 50444,
+          "options": 280,
+          "sql_count": 0,
+          "queries": []
+        }
+      ]
+    },
+    "selected": {
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c",
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ],
+        "exclude_ingredients": [
+          "%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be"
+        ]
+      },
+      "runs": [
+        {
+          "pass": 1,
+          "elapsed_ms": 1.73,
+          "bytes": 50504,
+          "options": 280,
+          "sql_count": 0,
+          "queries": []
+        },
+        {
+          "pass": 2,
+          "elapsed_ms": 1.799,
+          "bytes": 50504,
+          "options": 280,
+          "sql_count": 0,
+          "queries": []
+        },
+        {
+          "pass": 3,
+          "elapsed_ms": 1.79,
+          "bytes": 50504,
+          "options": 280,
+          "sql_count": 0,
+          "queries": []
+        }
+      ]
+    }
+  }
+}

@@ -24,6 +24,7 @@ function remove_filter( $tag, $callback, $priority = 10 ) { unset( $GLOBALS['tes
 function apply_filters( $tag, $value ) { return $value; }
 function __( $text ) { return $text; }
 function esc_html__( $text ) { return esc_html( $text ); }
+function home_url( $path = '' ) { return 'https://example.test/subsite' . $path; }
 function _x( $text ) { return $text; }
 function absint( $value ) { return abs( (int) $value ); }
 function wp_unslash( $value ) { return is_array( $value ) ? array_map( 'wp_unslash', $value ) : stripslashes( $value ); }
@@ -35,7 +36,10 @@ function wp_strip_all_tags( $value ) { return strip_tags( $value ); }
 function wp_trim_words( $value, $limit, $more ) { $words = preg_split( '/\s+/', trim( $value ) ); return implode( ' ', array_slice( $words, 0, $limit ) ) . ( count( $words ) > $limit ? $more : '' ); }
 function wp_check_invalid_utf8( $text, $strip = false ) { return preg_match( '//u', $text ) ? $text : ''; }
 function esc_html( $text ) { return htmlspecialchars( (string) $text, ENT_QUOTES, 'UTF-8' ); }
+function esc_attr( $text ) { return esc_html( $text ); }
+function esc_url( $url ) { return esc_html( esc_url_raw( $url ) ); }
 function esc_url_raw( $url ) { return preg_match( '#^https?://#', $url ) ? $url : ''; }
+function wp_parse_url( $url, $component = -1 ) { return parse_url( $url, $component ); }
 function wp_json_encode( $value, $flags = 0 ) { return json_encode( $value, $flags ); }
 function get_post( $id ) { return isset( $GLOBALS['test_posts'][ $id ] ) ? $GLOBALS['test_posts'][ $id ] : null; }
 function get_post_type( $id = 0 ) { $post = get_post( $id ); return $post ? $post->post_type : false; }
@@ -57,6 +61,7 @@ function check_ajax_referer( $action, $key, $die ) { return isset( $_REQUEST[ $k
 function get_post_type_object() { return (object) array( 'cap' => (object) array( 'publish_posts' => 'publish_posts' ) ); }
 function wp_update_post( $data, $error = false ) { $GLOBALS['test_posts'][ $data['ID'] ]->post_status = $data['post_status']; return $data['ID']; }
 function wp_cache_delete() {}
+function wp_doing_ajax() { return ! empty( $GLOBALS['test_ajax'] ); }
 function wp_handle_comment_submission() { return $GLOBALS['test_comment']; }
 function wp_get_current_user() { return $GLOBALS['test_accounts'][ get_current_user_id() ] ?? (object) array( 'ID' => get_current_user_id() ); }
 function get_comment_link( $comment ) { return 'https://example.test/recipe/42/#comment-' . $comment->comment_ID; }
@@ -64,18 +69,26 @@ function do_action( $name, ...$args ) { $GLOBALS['test_actions'][ $name ] = $arg
 function get_posts( $args ) {
 	$ids = array();
 	foreach ( $GLOBALS['test_posts'] as $id => $post ) {
-		if ( $post->post_type === $args['post_type'] && get_post_meta( $id, $args['meta_key'] ) === $args['meta_value'] ) $ids[] = $id;
+		if ( $post->post_type !== $args['post_type'] ) continue;
+		if ( isset( $args['meta_key'] ) && get_post_meta( $id, $args['meta_key'] ) !== $args['meta_value'] ) continue;
+		if ( isset( $args['post_name__in'] ) && ! in_array( $post->post_name, $args['post_name__in'], true ) ) continue;
+		if ( isset( $args['meta_query'] ) && ! in_array( get_post_meta( $id, $args['meta_query'][0]['key'] ), $args['meta_query'][0]['value'], true ) ) continue;
+		$ids[] = $id;
 	}
-	return array_slice( $ids, 0, $args['posts_per_page'] );
+	return isset( $args['posts_per_page'] ) && $args['posts_per_page'] > 0 ? array_slice( $ids, 0, $args['posts_per_page'] ) : $ids;
 }
 function get_the_terms( $id, $taxonomy ) { return isset( $GLOBALS['test_terms'][ $id ][ $taxonomy ] ) ? $GLOBALS['test_terms'][ $id ][ $taxonomy ] : false; }
 function wp_list_pluck( $list, $key ) { return array_map( function ( $row ) use ( $key ) { return is_object( $row ) ? $row->$key : $row[ $key ]; }, $list ); }
-function get_the_title( $id ) { return get_post( $id )->post_title; }
-function get_permalink( $id ) { return 'https://example.test/subsite/recipe/' . $id . '/'; }
+function get_the_title( $id ) { return ( is_object( $id ) ? $id : get_post( $id ) )->post_title; }
+function get_permalink( $id = null ) { return 'https://example.test/subsite/recipe/' . ( $id ?: 42 ) . '/'; }
 function get_the_author_meta() { return 'Author'; }
 function get_the_date() { return '2026-10-15T12:00:00+03:00'; }
 function get_the_modified_date() { return get_the_date(); }
 function get_the_post_thumbnail_url() { return false; }
+function get_post_thumbnail_id( $id ) { return get_post_meta( $id, '_thumbnail_id' ); }
+function wp_attachment_is_image( $id ) { return isset( $GLOBALS['test_images'][ $id ] ); }
+function wp_get_attachment_image_src( $id, $size ) { return $GLOBALS['test_images'][ $id ][ $size ] ?? false; }
+function wp_get_attachment_metadata( $id ) { return $GLOBALS['test_image_metadata'][ $id ] ?? array(); }
 function get_template_part( $part ) { $GLOBALS['test_rendered'][] = $part; }
 function wp_reset_postdata() { $GLOBALS['test_reset'] = true; }
 class WP_Query {
@@ -108,7 +121,12 @@ function reset_fixture() {
 	$GLOBALS['test_user_id'] = 7;
 	$GLOBALS['test_caps'] = array( 'manage_options' => true, 'edit_post' => true, 'publish_posts' => true, 'upload_files' => true );
 	$GLOBALS['test_posts'] = array( 42 => (object) array( 'ID' => 42, 'post_type' => 'recipe', 'post_status' => 'publish', 'post_password' => '', 'post_title' => 'Суп "с сыром" </script>', 'post_excerpt' => '', 'post_content' => '', 'post_author' => 7 ) );
-	$GLOBALS['test_meta'] = array( 42 => array( '_recipe_id' => 'external-42', '_recipe_likes' => 10, '_recipe_dislikes' => 2 ) );
+	$GLOBALS['test_meta'] = array( 42 => array( '_recipe_id' => 'external-42', '_recipe_likes' => 10, '_recipe_dislikes' => 2, '_thumbnail_id' => 100 ) );
+	$GLOBALS['test_images'] = array( 100 => array( 'full' => array( 'https://example.test/dish.jpg', 1500, 1000 ) ) );
+	$GLOBALS['test_image_metadata'] = array();
+	$GLOBALS['test_conditionals'] = array();
+	$GLOBALS['test_ajax'] = false;
+	$GLOBALS['test_query_vars'] = array();
 	$GLOBALS['test_users'] = array(); $GLOBALS['test_terms'] = array();
 	$_GET = array(); $_POST = array(); $_REQUEST = array( 'nonce' => 'test-valid', 'recipe_import_nonce' => 'test-valid' );
 	$GLOBALS['wpdb']->busy = false;

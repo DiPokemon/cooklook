@@ -1,0 +1,749 @@
+{
+  "version": 1,
+  "selected_on": "2026-10-17",
+  "timezone": "Europe/Moscow",
+  "status": "local_comparison_cohort_frozen",
+  "site": "http://cooklook/",
+  "scope": "Candidate comparison for excerpt-only editorial changes; excludes site-wide theme effects. No production or search-result comparison has been performed.",
+  "editorial_batch": "seo-editorial-batch.json",
+  "editorial_batch_sha256": "e7a9321ec77f53295e9c01814ede1f1d6c1e2351636aab9c1d470bb62d1509cd",
+  "inventory_generated_at": "2026-10-16T23:11:10+00:00",
+  "selection": {
+    "method": "Manual review of dish names and existing ingredient/structure features, before inspecting any search outcomes. Controls are unique and have no excerpt. This is not randomized assignment or proof of equal search demand.",
+    "reviewed_public_recipes": 80,
+    "recipes_with_recipe_schema": 39,
+    "untreated_with_recipe_schema": 29,
+    "rules": {
+      "same_grain_family": true,
+      "same_top_level_category": true,
+      "recipe_schema_and_image_required": true,
+      "empty_control_excerpt": true,
+      "no_identical_recipe_body": true,
+      "max_ingredient_count_difference": 3,
+      "max_step_count_difference": 4,
+      "max_instruction_word_ratio": 2,
+      "min_instruction_words": 30,
+      "max_publication_gap_days": 7
+    },
+    "priority": "Match dish type and category first. For competing semolina controls prefer equal portions and the presence of time fields, then recipe size. Stored minutes and cuisine labels are not treated as verified culinary facts."
+  },
+  "pairs": [
+    {
+      "pair_id": "cooklook-editorial-01",
+      "grain_family": "millet",
+      "treatment": {
+        "id": 9885,
+        "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/",
+        "title": "Пшенная молочная каша с тыквой",
+        "published_gmt": "2024-07-17 16:58:10",
+        "modified_gmt": "2026-10-16 21:29:50",
+        "categories": [
+          {
+            "id": 5179,
+            "parent": 0,
+            "name": "Завтраки",
+            "slug": "%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8"
+          },
+          {
+            "id": 5185,
+            "parent": 5179,
+            "name": "Каши",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8"
+          }
+        ],
+        "ingredient_names": [
+          "Пшено",
+          "Молоко",
+          "Тыква",
+          "Сахар",
+          "Соль"
+        ],
+        "ingredient_count": 5,
+        "step_count": 4,
+        "instruction_words": 76,
+        "portions": 4,
+        "time_present": true,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": true,
+        "excerpt_sha256": "734df541e5d302f860aaa0d34a7a5dc7607f43d2ea5a8c1cf2efd24f757450fc",
+        "source_sha256": "30bc7ae5be96e439dd67ad67d2b381ea2a049e9beea755aef5249d352f01ec5d",
+        "recipe_body_sha256": "f0a99f8767fcc54cd1a140cb54edfc85ab4d1499b2063b43ac57bfa308a4e0ec",
+        "matching_features_sha256": "9cd55782c0bc8528472a51192ce648cc28efe94d159bb2c1707683b9ba5fa5e2",
+        "image_urls_sha256": "58d415c64b5a163fe1f4d982a3ba9e29be44fad59b351b33222bc36e02f90597",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "control": {
+        "id": 9891,
+        "url": "http://cooklook/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/",
+        "title": "Пшенная каша на молоке",
+        "published_gmt": "2024-07-17 16:58:10",
+        "modified_gmt": "2024-07-19 21:53:17",
+        "categories": [
+          {
+            "id": 5179,
+            "parent": 0,
+            "name": "Завтраки",
+            "slug": "%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8"
+          },
+          {
+            "id": 5185,
+            "parent": 5179,
+            "name": "Каши",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8"
+          }
+        ],
+        "ingredient_names": [
+          "Пшено",
+          "Вода",
+          "Молоко",
+          "Соль",
+          "Сахар",
+          "Сливочное масло"
+        ],
+        "ingredient_count": 6,
+        "step_count": 5,
+        "instruction_words": 99,
+        "portions": 2,
+        "time_present": true,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": false,
+        "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source_sha256": "55ef0121d6a9066c03f32bd89ae1349192397fba9f638d5f9b7865d80ee7b619",
+        "recipe_body_sha256": "1ed9a3f87bf42b7be454b4ed5a485cc87bae419b42641fba645a3bda367fe342",
+        "matching_features_sha256": "181b497635a4fe294eef11a8688a91866afba67a66207b290427f90083d68384",
+        "image_urls_sha256": "623a324cfc5fe6ed926f76a445ab5ba56cb34ef505c7f695906b945ed330bf61",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "reason": "Пшённые молочные каши; одна категория, есть время и Recipe.",
+      "differences": "Тыква только в изменённом рецепте; количество порций 4 и 2.",
+      "production_urls_verified": false,
+      "search_metrics_before": null,
+      "search_metrics_after": null
+    },
+    {
+      "pair_id": "cooklook-editorial-02",
+      "grain_family": "semolina",
+      "treatment": {
+        "id": 9915,
+        "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b0-%d0%bb%d1%8f-%d0%bf%d0%b0%d0%bd%d0%bd%d0%b0%d0%ba%d0%be%d1%82%d1%82%d0%b0/",
+        "title": "Манная каша а-ля паннакотта",
+        "published_gmt": "2024-07-17 16:58:07",
+        "modified_gmt": "2026-10-16 21:29:51",
+        "categories": [
+          {
+            "id": 5201,
+            "parent": 0,
+            "name": "Выпечка и десерты",
+            "slug": "%d0%b2%d1%8b%d0%bf%d0%b5%d1%87%d0%ba%d0%b0-%d0%b8-%d0%b4%d0%b5%d1%81%d0%b5%d1%80%d1%82%d1%8b"
+          },
+          {
+            "id": 5202,
+            "parent": 5201,
+            "name": "Каши",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8-%d0%b2%d1%8b%d0%bf%d0%b5%d1%87%d0%ba%d0%b0-%d0%b8-%d0%b4%d0%b5%d1%81%d0%b5%d1%80%d1%82%d1%8b"
+          }
+        ],
+        "ingredient_names": [
+          "Манная крупа",
+          "Молоко",
+          "Ванильный сахар",
+          "Сахар",
+          "Соль",
+          "Варенье"
+        ],
+        "ingredient_count": 6,
+        "step_count": 3,
+        "instruction_words": 75,
+        "portions": 2,
+        "time_present": false,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": true,
+        "excerpt_sha256": "98ec3fea591f00b7ff7b67b81131a45b2da81bdb65f6f2c788d8ede8abd01009",
+        "source_sha256": "8dd0dacbf2a27cb256f19a6ddbe972dbbd906822ff556b5540bf87c17ad5f394",
+        "recipe_body_sha256": "0527985195711f131c2a69dbb153e68e51c4fc29886776cfb1eff47f9ecfd42c",
+        "matching_features_sha256": "21d6bea9a703d7854beddfc51198ef9bea58dea0b8fe928d535cca5fd6bb4615",
+        "image_urls_sha256": "ce49a2ee87332c78e82b10bab02696954f388e4dd9037d39a697ce07affd2976",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "control": {
+        "id": 9887,
+        "url": "http://cooklook/recipe/%d0%b3%d1%83%d1%80%d1%8c%d0%b5%d0%b2%d1%81%d0%ba%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+        "title": "Гурьевская каша",
+        "published_gmt": "2024-07-17 16:58:10",
+        "modified_gmt": "2024-07-19 21:53:17",
+        "categories": [
+          {
+            "id": 5201,
+            "parent": 0,
+            "name": "Выпечка и десерты",
+            "slug": "%d0%b2%d1%8b%d0%bf%d0%b5%d1%87%d0%ba%d0%b0-%d0%b8-%d0%b4%d0%b5%d1%81%d0%b5%d1%80%d1%82%d1%8b"
+          },
+          {
+            "id": 5202,
+            "parent": 5201,
+            "name": "Каши",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8-%d0%b2%d1%8b%d0%bf%d0%b5%d1%87%d0%ba%d0%b0-%d0%b8-%d0%b4%d0%b5%d1%81%d0%b5%d1%80%d1%82%d1%8b"
+          }
+        ],
+        "ingredient_names": [
+          "Манная крупа",
+          "Сахар",
+          "Куриное яйцо",
+          "Молоко",
+          "Сливочное масло",
+          "Миндаль",
+          "Ванилин",
+          "Консервированные фрукты"
+        ],
+        "ingredient_count": 8,
+        "step_count": 3,
+        "instruction_words": 77,
+        "portions": 4,
+        "time_present": true,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": false,
+        "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source_sha256": "2518842b97f8c16fbed84554597c0fe3d405fad72767c1617e730930abc75c40",
+        "recipe_body_sha256": "f0b345a63e4665cdc568bdb242dc53e764f47fad4c039b1e48bae2c3687abb12",
+        "matching_features_sha256": "92df52fc86cf90801333bd64ee5f09385ac52575caeebdbcb5cbab32676a4c66",
+        "image_urls_sha256": "eb1672f4949d8380ecd905d4c8f6b8a9be3e8c2ea371e2c9ac09e9f2f03fd06f",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "reason": "Десерты из манной крупы и молока; одна категория, по три шага, близкий объём инструкций.",
+      "differences": "Паннакотта охлаждается, гурьевская каша готовится иначе; различаются добавки и наличие времени.",
+      "production_urls_verified": false,
+      "search_metrics_before": null,
+      "search_metrics_after": null
+    },
+    {
+      "pair_id": "cooklook-editorial-03",
+      "grain_family": "semolina",
+      "treatment": {
+        "id": 9916,
+        "url": "http://cooklook/recipe/%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+        "title": "Молочная манная каша",
+        "published_gmt": "2024-07-11 20:10:18",
+        "modified_gmt": "2026-10-16 21:29:51",
+        "categories": [
+          {
+            "id": 5179,
+            "parent": 0,
+            "name": "Завтраки",
+            "slug": "%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8"
+          },
+          {
+            "id": 5185,
+            "parent": 5179,
+            "name": "Каши",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8"
+          }
+        ],
+        "ingredient_names": [
+          "Молоко",
+          "Манная крупа",
+          "Сахар",
+          "Соль"
+        ],
+        "ingredient_count": 4,
+        "step_count": 2,
+        "instruction_words": 39,
+        "portions": 4,
+        "time_present": true,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": true,
+        "excerpt_sha256": "6bccac7bafb3b6be01370fa59331f343fd4c67215e1625ecd06f737bf17f092d",
+        "source_sha256": "f77b6506650c6d96fad7074d9b7d2a31682dfaea73680831c6a5bdad6d74015d",
+        "recipe_body_sha256": "37ced29083d5a6b13e3c9ec483687f4ccfe06acbdc5f6860303003ab35c62ac9",
+        "matching_features_sha256": "f59fc6e44178447b4b34d561d46cdb6dbe4c894c94740bae2217fb78a5668b40",
+        "image_urls_sha256": "cf49ce566c5126c0da366d425a85abca61ee87568704eee539b8e9a9cd0a1c1e",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "control": {
+        "id": 9901,
+        "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+        "title": "Манная каша",
+        "published_gmt": "2024-07-17 16:58:08",
+        "modified_gmt": "2024-07-19 21:53:20",
+        "categories": [
+          {
+            "id": 5179,
+            "parent": 0,
+            "name": "Завтраки",
+            "slug": "%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8"
+          },
+          {
+            "id": 5221,
+            "parent": 5179,
+            "name": "Каши на молоке",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5"
+          }
+        ],
+        "ingredient_names": [
+          "Молоко",
+          "Вода",
+          "Манная крупа",
+          "Сливочное масло",
+          "Сахар",
+          "Соль"
+        ],
+        "ingredient_count": 6,
+        "step_count": 3,
+        "instruction_words": 60,
+        "portions": 4,
+        "time_present": true,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": false,
+        "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source_sha256": "dfbfa88f31d1acb1cf7e2fd725bd611bba1dbfbafcf96474a16b5a0bbbd6221f",
+        "recipe_body_sha256": "71da5dca5fe36dbf9f43566abb0ca900ed58f6419af900b2567472110faf20e8",
+        "matching_features_sha256": "f070cfd871ca88c0719f7456ddd6ca44e0afbaae63bc018e407346f8e20fac9c",
+        "image_urls_sha256": "d33e57bbdd7b1dd0286e96f2af5b60c20e01225d2777205d098d965ab21a7637",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "reason": "Манные молочные каши; одинаковые четыре порции и наличие времени, близкое число ингредиентов и шагов.",
+      "differences": "В контрольном рецепте есть вода и масло; фактические значения времени не подтверждены.",
+      "production_urls_verified": false,
+      "search_metrics_before": null,
+      "search_metrics_after": null
+    },
+    {
+      "pair_id": "cooklook-editorial-04",
+      "grain_family": "semolina",
+      "treatment": {
+        "id": 9918,
+        "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5/",
+        "title": "Манная каша на молоке",
+        "published_gmt": "2024-07-17 16:58:07",
+        "modified_gmt": "2026-10-16 21:29:51",
+        "categories": [
+          {
+            "id": 5179,
+            "parent": 0,
+            "name": "Завтраки",
+            "slug": "%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8"
+          },
+          {
+            "id": 5185,
+            "parent": 5179,
+            "name": "Каши",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8"
+          }
+        ],
+        "ingredient_names": [
+          "Манная крупа",
+          "Молоко",
+          "Вода",
+          "Сахар",
+          "Соль",
+          "Сливочное масло",
+          "Свежие ягоды"
+        ],
+        "ingredient_count": 7,
+        "step_count": 8,
+        "instruction_words": 79,
+        "portions": 3,
+        "time_present": false,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": true,
+        "excerpt_sha256": "d528f12b5e42f5117a216a1339c8afa05eae5a27c729b46f836317732e4f92ec",
+        "source_sha256": "052a3a36144e7bb990e98aebac4822fe16a3ce3e21620d3b2b3af1e2c56aab75",
+        "recipe_body_sha256": "34639da94aeb1d4dd183f40cfc83cd9ff8be0619009c00c8fa7629950ae955ab",
+        "matching_features_sha256": "faa146287cf49adda5b245153b1ac5fe771e793bf811337d4d8d42a1b1e1e7ae",
+        "image_urls_sha256": "51d53b6a6926977f10828944b6612928307293f7e7f6d176534d2951db3daf9f",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "control": {
+        "id": 9899,
+        "url": "http://cooklook/recipe/%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d0%b1%d0%b5%d0%b7-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b0/",
+        "title": "Манная каша без молока",
+        "published_gmt": "2024-07-17 16:58:09",
+        "modified_gmt": "2024-07-19 21:53:20",
+        "categories": [
+          {
+            "id": 5179,
+            "parent": 0,
+            "name": "Завтраки",
+            "slug": "%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8"
+          },
+          {
+            "id": 5238,
+            "parent": 5179,
+            "name": "Манная каша",
+            "slug": "%d0%bc%d0%b0%d0%bd%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0"
+          }
+        ],
+        "ingredient_names": [
+          "Миндальное молоко",
+          "Манная крупа",
+          "Сахар",
+          "Ванильный сахар",
+          "Соль",
+          "Миндаль",
+          "Свежие ягоды"
+        ],
+        "ingredient_count": 7,
+        "step_count": 6,
+        "instruction_words": 77,
+        "portions": 0,
+        "time_present": false,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": false,
+        "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source_sha256": "07be3eb7c2fc9e594f50307a39f57b29acba9b085602964c4b6ee304b534658a",
+        "recipe_body_sha256": "8c4e377b2948f12ba58c53203f411059906d56acb1e0f22cb18f5d10852b5963",
+        "matching_features_sha256": "279c463ba57532e13760570a33f55342a3eb2c793ea2c8f34502b654a45e8e22",
+        "image_urls_sha256": "eeb3fc1c3e092ee2d62d4c81086da0d9b8ccc48c30822b7f8affeca0901af954",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "reason": "Манные каши для завтрака; по семь ингредиентов, близкий объём инструкций, время отсутствует.",
+      "differences": "Коровье молоко с водой и миндальное молоко — разные варианты; у контроля не указаны порции.",
+      "production_urls_verified": false,
+      "search_metrics_before": null,
+      "search_metrics_after": null
+    },
+    {
+      "pair_id": "cooklook-editorial-05",
+      "grain_family": "corn",
+      "treatment": {
+        "id": 9919,
+        "url": "http://cooklook/recipe/%d0%ba%d0%b0%d1%88%d0%b0-%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%b2-%d0%bc%d1%83%d0%bb%d1%8c%d1%82%d0%b8%d0%b2%d0%b0%d1%80%d0%ba%d0%b5/",
+        "title": "Каша кукурузная в мультиварке",
+        "published_gmt": "2024-07-17 16:58:07",
+        "modified_gmt": "2026-10-16 21:29:51",
+        "categories": [
+          {
+            "id": 5179,
+            "parent": 0,
+            "name": "Завтраки",
+            "slug": "%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8"
+          },
+          {
+            "id": 5185,
+            "parent": 5179,
+            "name": "Каши",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8"
+          }
+        ],
+        "ingredient_names": [
+          "Кукурузная крупа",
+          "Молоко 2,5%-ное",
+          "Сливочное масло",
+          "Соль",
+          "Сахар"
+        ],
+        "ingredient_count": 5,
+        "step_count": 3,
+        "instruction_words": 50,
+        "portions": 4,
+        "time_present": false,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": true,
+        "excerpt_sha256": "e9cce3959a986ec54e0998ed588f5d2869d7daf5e14854a280790cfa43d9ddfe",
+        "source_sha256": "3a29039e17484a2b629e293edc8ea097894649ba372af997468563fa4d4a3367",
+        "recipe_body_sha256": "539e8a813d32b5ee4ea9d818a3f702ce4e7138c4ee1bc6505610cf73f3b8c28f",
+        "matching_features_sha256": "8efac656c7ee9b5ac58fbf705bf45578f109017fe58eb4cc74df8ae892ac844c",
+        "image_urls_sha256": "db665fe4b8453d10873608cd68513e89f053849dc8280fe08ba22cbda7a832bb",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "control": {
+        "id": 9890,
+        "url": "http://cooklook/recipe/%d0%ba%d1%83%d0%ba%d1%83%d1%80%d1%83%d0%b7%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+        "title": "Кукурузная каша",
+        "published_gmt": "2024-07-17 16:58:10",
+        "modified_gmt": "2024-07-19 21:53:17",
+        "categories": [
+          {
+            "id": 5179,
+            "parent": 0,
+            "name": "Завтраки",
+            "slug": "%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8"
+          },
+          {
+            "id": 5221,
+            "parent": 5179,
+            "name": "Каши на молоке",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8-%d0%bd%d0%b0-%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%b5"
+          }
+        ],
+        "ingredient_names": [
+          "Кукурузная крупа",
+          "Вода",
+          "Молоко",
+          "Сахар",
+          "Соль",
+          "Сливочное масло"
+        ],
+        "ingredient_count": 6,
+        "step_count": 4,
+        "instruction_words": 78,
+        "portions": 4,
+        "time_present": true,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": false,
+        "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source_sha256": "d95599480e315d10eaaee62d0b2bf9a32fb799425cc3cfcba9428a019401ba39",
+        "recipe_body_sha256": "cee8e096b09ce11c9cb519f20fe1c6e2f2a768eeabe73cc9042da56f478d2d17",
+        "matching_features_sha256": "98a395f1f65c6d9f9299a4762fcfc91da05bd45457b6ed47ae626fa9818a2a70",
+        "image_urls_sha256": "5a5c03c9a3feb069710fa526422fcf979eec0a6d8f8b0becdffc01c87bf8c24c",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "reason": "Кукурузные молочные каши для завтрака; по четыре порции и близкий размер рецепта.",
+      "differences": "Мультиварка и обычная варка различаются; наличие времени в полях не совпадает.",
+      "production_urls_verified": false,
+      "search_metrics_before": null,
+      "search_metrics_after": null
+    },
+    {
+      "pair_id": "cooklook-editorial-06",
+      "grain_family": "buckwheat",
+      "treatment": {
+        "id": 9921,
+        "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%bd%d0%b5%d0%b2%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%8b%d1%80%d0%be%d0%bc-%d0%b8-%d0%be%d0%b2%d0%be%d1%89%d0%b0%d0%bc%d0%b8/",
+        "title": "Гречневая каша с сыром и овощами",
+        "published_gmt": "2024-07-17 16:58:07",
+        "modified_gmt": "2026-10-16 21:29:51",
+        "categories": [
+          {
+            "id": 5189,
+            "parent": 0,
+            "name": "Основные блюда",
+            "slug": "%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0"
+          },
+          {
+            "id": 5190,
+            "parent": 5189,
+            "name": "Каши",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0"
+          }
+        ],
+        "ingredient_names": [
+          "Морковь",
+          "Гречневая крупа",
+          "Адыгейский сыр",
+          "Куркума",
+          "Цветная капуста",
+          "Смесь перцев",
+          "Соль"
+        ],
+        "ingredient_count": 7,
+        "step_count": 6,
+        "instruction_words": 74,
+        "portions": 4,
+        "time_present": false,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": true,
+        "excerpt_sha256": "af11df7b0d55cce5666a8e886c3d2c3533bca010c9456b3c5dcd43b575acd43d",
+        "source_sha256": "c02026fa4c7810f66614acaef4df1346caf25c6aa9ced95287a98ac63d3629ba",
+        "recipe_body_sha256": "590e164d136d4b0ea530e2a57481bb42581369105e459bfc2320b5810e561d54",
+        "matching_features_sha256": "1017abfcea652d9e0ee4cd9e9cf011bbdbd25e097d3a88b79200f56208799918",
+        "image_urls_sha256": "99d0528470ec2c961c0a797c9436d81ec3e7a642afdbd21872a48afadea43d9c",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "control": {
+        "id": 9892,
+        "url": "http://cooklook/recipe/%d0%b3%d1%80%d0%b5%d1%87%d0%ba%d0%b0-%d1%81-%d0%b3%d1%80%d0%b8%d0%b1%d0%b0%d0%bc%d0%b8/",
+        "title": "Гречка с грибами",
+        "published_gmt": "2024-07-17 16:58:10",
+        "modified_gmt": "2024-07-19 21:53:18",
+        "categories": [
+          {
+            "id": 5189,
+            "parent": 0,
+            "name": "Основные блюда",
+            "slug": "%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0"
+          },
+          {
+            "id": 5223,
+            "parent": 5189,
+            "name": "Каши на воде",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8-%d0%bd%d0%b0-%d0%b2%d0%be%d0%b4%d0%b5-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0"
+          }
+        ],
+        "ingredient_names": [
+          "Гречневая крупа",
+          "Вода",
+          "Репчатый лук",
+          "Морковь",
+          "Шампиньоны",
+          "Растительное масло",
+          "Сливочное масло",
+          "Зелень",
+          "Соль",
+          "Молотый черный перец"
+        ],
+        "ingredient_count": 10,
+        "step_count": 10,
+        "instruction_words": 106,
+        "portions": 4,
+        "time_present": true,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": false,
+        "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source_sha256": "378adb60fdd7af9f2f6b1d0ddc0af6434ce2b704d7ce20e2e55eec87c8e8bcc5",
+        "recipe_body_sha256": "8a156918753c9f35f6fa2bfeb05fa74056486b783ec9fe43f6fd71650262c059",
+        "matching_features_sha256": "fd7797388b21c2f84ab3d1889b46dbea6ea282d4992d73ca59ad055b6289c575",
+        "image_urls_sha256": "95b690d7cb81608f4197def0863009ac5bfd11e03f9ef2fe0cc3b670627f4600",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "reason": "Гречневая каша с овощными добавками в основных блюдах; близкое число ингредиентов, по четыре порции.",
+      "differences": "Адыгейский сыр и цветная капуста против грибов; шагов 6 и 10, наличие времени различается.",
+      "production_urls_verified": false,
+      "search_metrics_before": null,
+      "search_metrics_after": null
+    },
+    {
+      "pair_id": "cooklook-editorial-07",
+      "grain_family": "oat",
+      "treatment": {
+        "id": 9923,
+        "url": "http://cooklook/recipe/%d0%be%d0%b2%d1%81%d1%8f%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%81%d1%83%d1%85%d0%be%d1%84%d1%80%d1%83%d0%ba%d1%82%d0%b0%d0%bc%d0%b8/",
+        "title": "Овсяная каша с сухофруктами",
+        "published_gmt": "2024-07-17 16:58:07",
+        "modified_gmt": "2026-10-16 21:29:51",
+        "categories": [
+          {
+            "id": 5179,
+            "parent": 0,
+            "name": "Завтраки",
+            "slug": "%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8"
+          },
+          {
+            "id": 5185,
+            "parent": 5179,
+            "name": "Каши",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8"
+          }
+        ],
+        "ingredient_names": [
+          "Молоко",
+          "Геркулес",
+          "Курага",
+          "Сливочное масло",
+          "Изюм",
+          "Соль"
+        ],
+        "ingredient_count": 6,
+        "step_count": 5,
+        "instruction_words": 75,
+        "portions": 2,
+        "time_present": false,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": true,
+        "excerpt_sha256": "89c29b352d8c3218ebf61f654ae185d42f65280f3d236e9588b6986b03c788c0",
+        "source_sha256": "2a65d10b0b6024de27e7b314fca6459b36978cab5125b65f083ff50b355ccf23",
+        "recipe_body_sha256": "69fd8a7092c545cbaaa726ac89820634962b13d347cc769eeb5074859f29ead9",
+        "matching_features_sha256": "6222e10ae89da99116621dc3fa6de69d5952aaf2560590474621e1d4635e7894",
+        "image_urls_sha256": "4aae2f36726b81bca51f995c81d66386e2cf2eb63847d690b978979887288b74",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "control": {
+        "id": 9896,
+        "url": "http://cooklook/recipe/%d1%8f%d0%b1%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0/",
+        "title": "Яблочная каша",
+        "published_gmt": "2024-07-17 16:58:10",
+        "modified_gmt": "2024-07-19 21:53:20",
+        "categories": [
+          {
+            "id": 5179,
+            "parent": 0,
+            "name": "Завтраки",
+            "slug": "%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8"
+          },
+          {
+            "id": 5185,
+            "parent": 5179,
+            "name": "Каши",
+            "slug": "%d0%ba%d0%b0%d1%88%d0%b8"
+          }
+        ],
+        "ingredient_names": [
+          "Молоко",
+          "Сметана",
+          "Овсяные хлопья",
+          "Сахар",
+          "Яблоко",
+          "Лимонный сок"
+        ],
+        "ingredient_count": 6,
+        "step_count": 2,
+        "instruction_words": 59,
+        "portions": 1,
+        "time_present": true,
+        "image_count": 1,
+        "recipe_schema_present": true,
+        "excerpt_present": false,
+        "excerpt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source_sha256": "f53ca7b96403c507c4d46e3afa598f4f34bc917d8fba8e7d5cc137782e8712ec",
+        "recipe_body_sha256": "080492f8bb5dc98ffbe6896c28b1ea3566347883d294ffc0cb11432aed469a14",
+        "matching_features_sha256": "6c9df5e496416f72d2c0b632d4d95ca30cd52d2408a250bb6ebebba7016c5e6f",
+        "image_urls_sha256": "0ac9964c6b6286b3e312975fa22c8ea7e49b0f461f66b5519e399e678e132798",
+        "public_editorial_sha256": "dc8a6d41f29403870b0efd33e73201f5fe01e1a02cce914c30d89969fa3f0c80"
+      },
+      "reason": "Молочные каши с овсяной основой и фруктами для завтрака; по шесть ингредиентов и близкий объём инструкций.",
+      "differences": "Сухофрукты и яблоко со сметаной; различаются количество порций и наличие времени.",
+      "production_urls_verified": false,
+      "search_metrics_before": null,
+      "search_metrics_after": null
+    }
+  ],
+  "excluded_treatment": [
+    {
+      "id": 9917,
+      "title": "Сладкая манная каша",
+      "reason": "Четыре изменённых манных рецепта, но только три разных контроля с Recipe. Контроль 9901 закреплён за 9916: совпадают четыре порции и наличие времени. Повторное использование контроля не допускается."
+    },
+    {
+      "id": 9920,
+      "title": "Овсяная каша в пароварке с карамелизованными фруктами",
+      "reason": "У доступных овсяных контролей либо слишком короткие инструкции, либо слишком большая разница в числе шагов и объёме текста. Пара не сформирована."
+    },
+    {
+      "id": 9922,
+      "title": "Каша карри из дикого риса с креветками",
+      "reason": "Нет другого публичного рецепта с диким рисом и подходящей разметкой. Молочные рисовые каши не назначены контролем для блюда с карри и креветками."
+    }
+  ],
+  "measurement": {
+    "state": "not_started",
+    "deployment_at": null,
+    "indexing_confirmed_at": null,
+    "production_url_mapping": null,
+    "before_period": null,
+    "after_period": null,
+    "required_before_comparison": [
+      "Verify production canonical URLs and unchanged source facts for both groups before publishing excerpts.",
+      "Obtain equal complete periods with the same source timezone, country and device filters; align weekdays and consider seasonality.",
+      "Check pre-change exposure/trends and flag pairs with insufficient data or incomparable search demand. Do not replace missing values with zero.",
+      "Record actual publication and crawl/indexing dates. Start the post-change window after observed reprocessing, not after a guessed delay.",
+      "Record provider/model, date, language, region, exact prompt, citations and factual accuracy for each actual AI observation. No observations are synthesized."
+    ],
+    "channels": [
+      "GSC ordinary search",
+      "GSC Generative AI",
+      "Yandex Webmaster Alice AI",
+      "Bing AI Performance if available",
+      "Referral analytics if available",
+      "Recorded AI responses"
+    ],
+    "control_policy": "Reserve these control recipes from excerpt or other editorial edits during the comparison. This is a documented convention, not an edit lock. Re-run the checker after any relevant change; a shared theme release affects both groups.",
+    "interpretation": "Seven pairs are a small nonrandom local sample. Matching text structure does not establish equivalent search demand; without external baseline data no causal or visibility conclusion is supported."
+  },
+  "environment": {
+    "wordpress": "7.1.3",
+    "yoast": "22.8",
+    "php": "8.1.9"
+  }
+}

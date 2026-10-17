@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-10-16T15:48:28.667Z",
+  "site": "http://cooklook/",
+  "recipe_id": 9885,
+  "views_before": 8,
+  "views_after": 8,
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/",
+      "user_agent": "Mozilla/5.0",
+      "status": 200,
+      "view_script": true
+    },
+    {
+      "method": "HEAD",
+      "path": "/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/",
+      "user_agent": "Mozilla/5.0",
+      "status": 200,
+      "view_script": false
+    },
+    {
+      "method": "GET",
+      "path": "/recipe/%d0%bf%d1%88%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bc%d0%be%d0%bb%d0%be%d1%87%d0%bd%d0%b0%d1%8f-%d0%ba%d0%b0%d1%88%d0%b0-%d1%81-%d1%82%d1%8b%d0%ba%d0%b2%d0%be%d0%b9/",
+      "user_agent": "Googlebot/2.1",
+      "status": 200,
+      "view_script": true
+    },
+    {
+      "method": "GET",
+      "path": "/recipes/",
+      "user_agent": "Mozilla/5.0",
+      "status": 200,
+      "view_script": false
+    }
+  ],
+  "browser": {
+    "checked_at": "2026-10-16T15:53:17.501Z",
+    "browser": "Codex in-app browser",
+    "recipe_id": 9885,
+    "views_before": 8,
+    "views_after_open": 9,
+    "views_after_reload": 10,
+    "document_ready_state": "complete",
+    "visibility": "visible",
+    "view_script_count": 1,
+    "console_errors": [],
+    "note": "Two ordinary local browser loads were counted. HTTP-only probes did not change the counter. Event timing and retry behavior are covered by the JS test; a browser network timing trace was not available."
+  }
+}

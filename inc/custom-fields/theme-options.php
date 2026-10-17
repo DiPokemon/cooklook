@@ -47,6 +47,7 @@ $basic_options_container = Container::make( 'theme_options', __( 'Theme options'
 Container::make( 'term_meta', __( 'Category Meta' ) )
     ->where( 'term_taxonomy', '=', 'recipe_category' ) // Применить только к таксономии 'category'
     ->add_fields( array(
-        Field::make( 'image', 'category_image', __( 'Миниатюра' ) )
+        Field::make( 'image', 'category_image_id', __( 'Миниатюра из медиатеки', 'cooklook' ) ),
+        Field::make( 'image', 'category_image', __( 'Миниатюра (прежнее поле)', 'cooklook' ) )
             ->set_value_type( 'url' )
     ));

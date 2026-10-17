@@ -1,0 +1,689 @@
+{
+  "checked_at": "2026-10-16T15:19:42+00:00",
+  "site": "http://cooklook/",
+  "php": "8.1.9",
+  "wordpress": "7.1.3",
+  "database_writes": false,
+  "external_object_cache": false,
+  "method": "Three sequential query + 11-card render passes per case after WP bootstrap, in one process. Existing WP/DB caches retained. SQL excludes bootstrap and EXPLAIN; not full-page TTFB or production load capacity.",
+  "published_recipes": 80,
+  "postmeta_rows_all_post_types": 6429,
+  "cases": [
+    {
+      "case": "catalog",
+      "request": [],
+      "runs": [
+        {
+          "run": 1,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 37.542,
+          "render_ms": 131.59,
+          "sql_count": 41,
+          "query_sql_count": 6,
+          "render_sql_count": 35,
+          "sql_ms": 78.395,
+          "slowest_sql_ms": 22.931,
+          "html_bytes": 108557
+        },
+        {
+          "run": 2,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.457,
+          "render_ms": 20.648,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 5.308,
+          "slowest_sql_ms": 0.745,
+          "html_bytes": 108536
+        },
+        {
+          "run": 3,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.414,
+          "render_ms": 20.016,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 5.272,
+          "slowest_sql_ms": 0.697,
+          "html_bytes": 108536
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        }
+      ],
+      "repeat_sql_callers": {
+        "cooklook_render_recipes, get_template_part, locate_template, load_template, require('/themes/cooklook/template-parts/recipe-loop-item.php'), cooklook_recipe_description, cooklook_recipe_rows, carbon_get_post_meta, Carbon_Fields\\Helper\\Helper::get_post_meta, Carbon_Fields\\Helper\\Helper::get_value, Carbon_Fields\\Helper\\Helper::with_field_clone, Carbon_Fields\\Helper\\Helper::Carbon_Fields\\Helper\\{closure}, Carbon_Fields\\Field\\Field->load, Carbon_Fields\\Field\\Field->get_value_from_datastore, Carbon_Fields\\Datastore\\Key_Value_Datastore->load, Carbon_Fields\\Datastore\\Meta_Datastore->get_storage_array": 11
+      }
+    },
+    {
+      "case": "page_2",
+      "request": {
+        "paged": 2
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 7.419,
+          "render_ms": 47.894,
+          "sql_count": 37,
+          "query_sql_count": 6,
+          "render_sql_count": 31,
+          "sql_ms": 12.915,
+          "slowest_sql_ms": 3.062,
+          "html_bytes": 104757
+        },
+        {
+          "run": 2,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.388,
+          "render_ms": 16.458,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 3.787,
+          "slowest_sql_ms": 0.519,
+          "html_bytes": 104757
+        },
+        {
+          "run": 3,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.38,
+          "render_ms": 17.359,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 4.108,
+          "slowest_sql_ms": 0.537,
+          "html_bytes": 104757
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        }
+      ],
+      "repeat_sql_callers": {
+        "cooklook_render_recipes, get_template_part, locate_template, load_template, require('/themes/cooklook/template-parts/recipe-loop-item.php'), cooklook_recipe_description, cooklook_recipe_rows, carbon_get_post_meta, Carbon_Fields\\Helper\\Helper::get_post_meta, Carbon_Fields\\Helper\\Helper::get_value, Carbon_Fields\\Helper\\Helper::with_field_clone, Carbon_Fields\\Helper\\Helper::Carbon_Fields\\Helper\\{closure}, Carbon_Fields\\Field\\Field->load, Carbon_Fields\\Field\\Field->get_value_from_datastore, Carbon_Fields\\Datastore\\Key_Value_Datastore->load, Carbon_Fields\\Datastore\\Meta_Datastore->get_storage_array": 11
+      }
+    },
+    {
+      "case": "sort_time",
+      "request": {
+        "sort_by": "recipe_time"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 6.443,
+          "render_ms": 22.551,
+          "sql_count": 27,
+          "query_sql_count": 6,
+          "render_sql_count": 21,
+          "sql_ms": 11.473,
+          "slowest_sql_ms": 2.24,
+          "html_bytes": 109281
+        },
+        {
+          "run": 2,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.418,
+          "render_ms": 20.743,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 5.26,
+          "slowest_sql_ms": 0.586,
+          "html_bytes": 109281
+        },
+        {
+          "run": 3,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.41,
+          "render_ms": 18.694,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 4.609,
+          "slowest_sql_ms": 0.579,
+          "html_bytes": 109281
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "repeat_sql_callers": {
+        "cooklook_render_recipes, get_template_part, locate_template, load_template, require('/themes/cooklook/template-parts/recipe-loop-item.php'), cooklook_recipe_description, cooklook_recipe_rows, carbon_get_post_meta, Carbon_Fields\\Helper\\Helper::get_post_meta, Carbon_Fields\\Helper\\Helper::get_value, Carbon_Fields\\Helper\\Helper::with_field_clone, Carbon_Fields\\Helper\\Helper::Carbon_Fields\\Helper\\{closure}, Carbon_Fields\\Field\\Field->load, Carbon_Fields\\Field\\Field->get_value_from_datastore, Carbon_Fields\\Datastore\\Key_Value_Datastore->load, Carbon_Fields\\Datastore\\Meta_Datastore->get_storage_array": 11
+      }
+    },
+    {
+      "case": "sort_views",
+      "request": {
+        "sort_by": "recipe_views"
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 4.999,
+          "render_ms": 19.655,
+          "sql_count": 19,
+          "query_sql_count": 6,
+          "render_sql_count": 13,
+          "sql_ms": 8.942,
+          "slowest_sql_ms": 1.311,
+          "html_bytes": 106205
+        },
+        {
+          "run": 2,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.429,
+          "render_ms": 17.141,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 4.133,
+          "slowest_sql_ms": 0.483,
+          "html_bytes": 106205
+        },
+        {
+          "run": 3,
+          "found": 80,
+          "rendered": 11,
+          "query_ms": 0.405,
+          "render_ms": 17.162,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 4.2,
+          "slowest_sql_ms": 0.571,
+          "html_bytes": 106205
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "type_status_date,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<derived2>",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "<auto_key0>",
+          "key": "<auto_key0>",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "9",
+          "filtered": "100.00",
+          "Extra": null
+        },
+        {
+          "id": "2",
+          "select_type": "DERIVED",
+          "table": "wp_postmeta",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "post_id,meta_key",
+          "key": "meta_key",
+          "key_len": "767",
+          "ref": "const",
+          "rows": "94",
+          "filtered": "100.00",
+          "Extra": "Using where; Using temporary"
+        }
+      ],
+      "repeat_sql_callers": {
+        "cooklook_render_recipes, get_template_part, locate_template, load_template, require('/themes/cooklook/template-parts/recipe-loop-item.php'), cooklook_recipe_description, cooklook_recipe_rows, carbon_get_post_meta, Carbon_Fields\\Helper\\Helper::get_post_meta, Carbon_Fields\\Helper\\Helper::get_value, Carbon_Fields\\Helper\\Helper::with_field_clone, Carbon_Fields\\Helper\\Helper::Carbon_Fields\\Helper\\{closure}, Carbon_Fields\\Field\\Field->load, Carbon_Fields\\Field\\Field->get_value_from_datastore, Carbon_Fields\\Datastore\\Key_Value_Datastore->load, Carbon_Fields\\Datastore\\Meta_Datastore->get_storage_array": 11
+      }
+    },
+    {
+      "case": "category",
+      "request": {
+        "category_id": 5201
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 2,
+          "rendered": 2,
+          "query_ms": 2.691,
+          "render_ms": 3.557,
+          "sql_count": 11,
+          "query_sql_count": 7,
+          "render_sql_count": 4,
+          "sql_ms": 2.811,
+          "slowest_sql_ms": 0.525,
+          "html_bytes": 19850
+        },
+        {
+          "run": 2,
+          "found": 2,
+          "rendered": 2,
+          "query_ms": 0.535,
+          "render_ms": 3.1,
+          "sql_count": 2,
+          "query_sql_count": 0,
+          "render_sql_count": 2,
+          "sql_ms": 0.713,
+          "slowest_sql_ms": 0.4,
+          "html_bytes": 19850
+        },
+        {
+          "run": 3,
+          "found": 2,
+          "rendered": 2,
+          "query_ms": 0.41,
+          "render_ms": 2.872,
+          "sql_count": 2,
+          "query_sql_count": 0,
+          "render_sql_count": 2,
+          "sql_ms": 0.631,
+          "slowest_sql_ms": 0.316,
+          "html_bytes": 19850
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "range",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "term_taxonomy_id",
+          "key_len": "8",
+          "ref": null,
+          "rows": "4",
+          "filtered": "100.00",
+          "Extra": "Using where; Using index; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "SIMPLE",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "PRIMARY",
+          "key_len": "8",
+          "ref": "cooklook.wp_term_relationships.object_id",
+          "rows": "1",
+          "filtered": "5.00",
+          "Extra": "Using where"
+        }
+      ],
+      "repeat_sql_callers": {
+        "cooklook_render_recipes, get_template_part, locate_template, load_template, require('/themes/cooklook/template-parts/recipe-loop-item.php'), cooklook_recipe_description, cooklook_recipe_rows, carbon_get_post_meta, Carbon_Fields\\Helper\\Helper::get_post_meta, Carbon_Fields\\Helper\\Helper::get_value, Carbon_Fields\\Helper\\Helper::with_field_clone, Carbon_Fields\\Helper\\Helper::Carbon_Fields\\Helper\\{closure}, Carbon_Fields\\Field\\Field->load, Carbon_Fields\\Field\\Field->get_value_from_datastore, Carbon_Fields\\Datastore\\Key_Value_Datastore->load, Carbon_Fields\\Datastore\\Meta_Datastore->get_storage_array": 2
+      }
+    },
+    {
+      "case": "ingredient",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ]
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 59,
+          "rendered": 11,
+          "query_ms": 2.27,
+          "render_ms": 17.915,
+          "sql_count": 14,
+          "query_sql_count": 3,
+          "render_sql_count": 11,
+          "sql_ms": 6.127,
+          "slowest_sql_ms": 0.855,
+          "html_bytes": 107476
+        },
+        {
+          "run": 2,
+          "found": 59,
+          "rendered": 11,
+          "query_ms": 0.537,
+          "render_ms": 17.989,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 4.507,
+          "slowest_sql_ms": 0.647,
+          "html_bytes": 107476
+        },
+        {
+          "run": 3,
+          "found": 59,
+          "rendered": 11,
+          "query_ms": 0.531,
+          "render_ms": 17.785,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 4.429,
+          "slowest_sql_ms": 0.541,
+          "html_bytes": 107476
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        },
+        {
+          "id": "2",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        }
+      ],
+      "repeat_sql_callers": {
+        "cooklook_render_recipes, get_template_part, locate_template, load_template, require('/themes/cooklook/template-parts/recipe-loop-item.php'), cooklook_recipe_description, cooklook_recipe_rows, carbon_get_post_meta, Carbon_Fields\\Helper\\Helper::get_post_meta, Carbon_Fields\\Helper\\Helper::get_value, Carbon_Fields\\Helper\\Helper::with_field_clone, Carbon_Fields\\Helper\\Helper::Carbon_Fields\\Helper\\{closure}, Carbon_Fields\\Field\\Field->load, Carbon_Fields\\Field\\Field->get_value_from_datastore, Carbon_Fields\\Datastore\\Key_Value_Datastore->load, Carbon_Fields\\Datastore\\Meta_Datastore->get_storage_array": 11
+      }
+    },
+    {
+      "case": "ingredients_and",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c",
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ]
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 33,
+          "rendered": 11,
+          "query_ms": 4.395,
+          "render_ms": 18.769,
+          "sql_count": 22,
+          "query_sql_count": 7,
+          "render_sql_count": 15,
+          "sql_ms": 7.961,
+          "slowest_sql_ms": 0.852,
+          "html_bytes": 105154
+        },
+        {
+          "run": 2,
+          "found": 33,
+          "rendered": 11,
+          "query_ms": 0.58,
+          "render_ms": 17.581,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 4.085,
+          "slowest_sql_ms": 0.45,
+          "html_bytes": 105154
+        },
+        {
+          "run": 3,
+          "found": 33,
+          "rendered": 11,
+          "query_ms": 0.574,
+          "render_ms": 17.275,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 4.17,
+          "slowest_sql_ms": 0.436,
+          "html_bytes": 105154
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Backward index scan"
+        },
+        {
+          "id": "2",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "8",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "7",
+          "filtered": "14.66",
+          "Extra": "Using where; Using index"
+        }
+      ],
+      "repeat_sql_callers": {
+        "cooklook_render_recipes, get_template_part, locate_template, load_template, require('/themes/cooklook/template-parts/recipe-loop-item.php'), cooklook_recipe_description, cooklook_recipe_rows, carbon_get_post_meta, Carbon_Fields\\Helper\\Helper::get_post_meta, Carbon_Fields\\Helper\\Helper::get_value, Carbon_Fields\\Helper\\Helper::with_field_clone, Carbon_Fields\\Helper\\Helper::Carbon_Fields\\Helper\\{closure}, Carbon_Fields\\Field\\Field->load, Carbon_Fields\\Field\\Field->get_value_from_datastore, Carbon_Fields\\Datastore\\Key_Value_Datastore->load, Carbon_Fields\\Datastore\\Meta_Datastore->get_storage_array": 11
+      }
+    },
+    {
+      "case": "include_exclude",
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c"
+        ],
+        "exclude_ingredients": [
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ]
+      },
+      "runs": [
+        {
+          "run": 1,
+          "found": 26,
+          "rendered": 11,
+          "query_ms": 8.672,
+          "render_ms": 19.592,
+          "sql_count": 14,
+          "query_sql_count": 3,
+          "render_sql_count": 11,
+          "sql_ms": 12.796,
+          "slowest_sql_ms": 7.544,
+          "html_bytes": 108738
+        },
+        {
+          "run": 2,
+          "found": 26,
+          "rendered": 11,
+          "query_ms": 0.653,
+          "render_ms": 18.197,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 4.387,
+          "slowest_sql_ms": 0.524,
+          "html_bytes": 108738
+        },
+        {
+          "run": 3,
+          "found": 26,
+          "rendered": 11,
+          "query_ms": 0.671,
+          "render_ms": 17.409,
+          "sql_count": 11,
+          "query_sql_count": 0,
+          "render_sql_count": 11,
+          "sql_ms": 4.172,
+          "slowest_sql_ms": 0.508,
+          "html_bytes": 108738
+        }
+      ],
+      "explain": [
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "wp_posts",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,post_name,type_status_date,post_parent,post_author,type_status_author",
+          "key": "type_status_date",
+          "key_len": "164",
+          "ref": "const,const",
+          "rows": "80",
+          "filtered": "10.00",
+          "Extra": "Using where; Using temporary; Using filesort"
+        },
+        {
+          "id": "1",
+          "select_type": "PRIMARY",
+          "table": "<subquery3>",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "<auto_distinct_key>",
+          "key": "<auto_distinct_key>",
+          "key_len": "9",
+          "ref": "cooklook.wp_posts.ID",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using where; Not exists"
+        },
+        {
+          "id": "3",
+          "select_type": "MATERIALIZED",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "term_taxonomy_id",
+          "key_len": "8",
+          "ref": "const",
+          "rows": "4",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        },
+        {
+          "id": "2",
+          "select_type": "DEPENDENT SUBQUERY",
+          "table": "wp_term_relationships",
+          "partitions": null,
+          "type": "eq_ref",
+          "possible_keys": "PRIMARY,term_taxonomy_id",
+          "key": "PRIMARY",
+          "key_len": "16",
+          "ref": "cooklook.wp_posts.ID,const",
+          "rows": "1",
+          "filtered": "100.00",
+          "Extra": "Using index"
+        }
+      ],
+      "repeat_sql_callers": {
+        "cooklook_render_recipes, get_template_part, locate_template, load_template, require('/themes/cooklook/template-parts/recipe-loop-item.php'), cooklook_recipe_description, cooklook_recipe_rows, carbon_get_post_meta, Carbon_Fields\\Helper\\Helper::get_post_meta, Carbon_Fields\\Helper\\Helper::get_value, Carbon_Fields\\Helper\\Helper::with_field_clone, Carbon_Fields\\Helper\\Helper::Carbon_Fields\\Helper\\{closure}, Carbon_Fields\\Field\\Field->load, Carbon_Fields\\Field\\Field->get_value_from_datastore, Carbon_Fields\\Datastore\\Key_Value_Datastore->load, Carbon_Fields\\Datastore\\Meta_Datastore->get_storage_array": 11
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "checked_at": "2026-10-16T18:42:41+00:00",
+  "site": "http://cooklook/",
+  "database_writes": false,
+  "method": "Search pages compared with complete reference queries on the same DB; SQL logging after bootstrap. No cache flush. Counts/times describe local data only.",
+  "cases": [
+    {
+      "term": "ны",
+      "matches": 34,
+      "pages": 2,
+      "elapsed_ms": [
+        1.315,
+        1.138
+      ],
+      "queries": [
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%ны%') OR (t.slug LIKE '%ны%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21",
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%ны%') OR (t.slug LIKE '%ны%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 20,21"
+      ]
+    },
+    {
+      "term": "ри",
+      "matches": 20,
+      "pages": 1,
+      "elapsed_ms": [
+        1.127
+      ],
+      "queries": [
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%ри%') OR (t.slug LIKE '%ри%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+      ]
+    },
+    {
+      "term": "ко",
+      "matches": 20,
+      "pages": 1,
+      "elapsed_ms": [
+        1.065
+      ],
+      "queries": [
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%ко%') OR (t.slug LIKE '%ко%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+      ]
+    },
+    {
+      "term": "мол",
+      "matches": 10,
+      "pages": 1,
+      "elapsed_ms": [
+        1.009
+      ],
+      "queries": [
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%мол%') OR (t.slug LIKE '%мол%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+      ]
+    },
+    {
+      "term": "МОЛ",
+      "matches": 10,
+      "pages": 1,
+      "elapsed_ms": [
+        1.058
+      ],
+      "queries": [
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%МОЛ%') OR (t.slug LIKE '%МОЛ%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+      ]
+    },
+    {
+      "term": "лук",
+      "matches": 4,
+      "pages": 1,
+      "elapsed_ms": [
+        1.001
+      ],
+      "queries": [
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%лук%') OR (t.slug LIKE '%лук%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+      ]
+    },
+    {
+      "term": "соль",
+      "matches": 1,
+      "pages": 1,
+      "elapsed_ms": [
+        0.894
+      ],
+      "queries": [
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%соль%') OR (t.slug LIKE '%соль%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+      ]
+    },
+    {
+      "term": "несуществующийингредиент",
+      "matches": 0,
+      "pages": 1,
+      "elapsed_ms": [
+        0.937
+      ],
+      "queries": [
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%несуществующийингредиент%') OR (t.slug LIKE '%несуществующийингредиент%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+      ]
+    },
+    {
+      "term": "%_",
+      "matches": 0,
+      "pages": 1,
+      "elapsed_ms": [
+        0.975
+      ],
+      "queries": [
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%\\\\%\\\\_%') OR (t.slug LIKE '%\\\\%\\\\_%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+      ]
+    },
+    {
+      "term": "' OR 1=1 --",
+      "matches": 0,
+      "pages": 1,
+      "elapsed_ms": [
+        0.847
+      ],
+      "queries": [
+        "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0 AND ((t.name LIKE '%\\' OR 1=1 --%') OR (t.slug LIKE '%\\' OR 1=1 --%'))\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 21"
+      ]
+    }
+  ],
+  "short_search_sql": 0,
+  "selected_options": 4,
+  "empty_selected_restored": true,
+  "http_cases": {
+    "include_ingredients": [
+      "2-%d0%bd%d0%be%d0%b5",
+      "5-%d0%bd%d0%be%d0%b5",
+      "%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be-25-%d0%bd%d0%be%d0%b5"
+    ],
+    "exclude_ingredients": [
+      "nutella"
+    ],
+    "empty": "%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be-25-%d0%bd%d0%be%d0%b5"
+  }
+}

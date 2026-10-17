@@ -1,13 +1,20 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+function cooklook_enqueue_fonts() {
+	wp_enqueue_style( 'cooklook-fonts', 'https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap', array(), null );
+}
+
 function load_styles() {
+	cooklook_enqueue_fonts();
 	$styles = array(
 		'style_min' => 'static/css/style.min.css',
 		'cooklook-layout' => 'static/css/layout.css',
-		'slick' => 'static/libs/slick/slick.min.css',
-		'slick_theme' => 'static/libs/slick/slick-theme.min.css',
 	);
+	if ( cooklook_has_recipe_slider() ) {
+		$styles['slick'] = 'static/libs/slick/slick.min.css';
+		$styles['slick_theme'] = 'static/libs/slick/slick-theme.min.css';
+	}
 	if ( is_page( 'account' ) || is_page_template( 'page-account.php' ) ) {
 		$styles['cooklook-account'] = 'static/css/account.css';
 	}
@@ -31,6 +38,7 @@ function load_custom_admin_style( $hook ) {
 add_action( 'admin_enqueue_scripts', 'load_custom_admin_style' );
 
 function custom_login_styles() {
+	cooklook_enqueue_fonts();
 	$path = 'static/css/style.min.css';
 	wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/' . $path, array(), cooklook_asset_version( $path ) );
 }

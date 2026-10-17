@@ -1,0 +1,277 @@
+{
+  "checked_at": "2026-10-16T18:24:35+00:00",
+  "site": "http://cooklook/",
+  "database_writes": false,
+  "method": "Current WP_Query vs original SQL on all local result pages; SELECT/UNION-only fixtures for numeric/visibility/duplicate/escaping edge cases. No stored test recipes.",
+  "real_cases": [
+    {
+      "case": "date_catalog",
+      "recipes": 80,
+      "pages": 8,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "date_page_2",
+      "recipes": 80,
+      "pages": 8,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "date_region",
+      "recipes": 44,
+      "pages": 4,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "date_category",
+      "recipes": 62,
+      "pages": 6,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "date_ingredient",
+      "recipes": 59,
+      "pages": 6,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "date_ingredients_and",
+      "recipes": 33,
+      "pages": 3,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "date_include_exclude",
+      "recipes": 26,
+      "pages": 3,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "date_region_ingredient",
+      "recipes": 33,
+      "pages": 3,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_time_catalog",
+      "recipes": 80,
+      "pages": 8,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_time_page_2",
+      "recipes": 80,
+      "pages": 8,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_time_region",
+      "recipes": 44,
+      "pages": 4,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_time_category",
+      "recipes": 62,
+      "pages": 6,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_time_ingredient",
+      "recipes": 59,
+      "pages": 6,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_time_ingredients_and",
+      "recipes": 33,
+      "pages": 3,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_time_include_exclude",
+      "recipes": 26,
+      "pages": 3,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_time_region_ingredient",
+      "recipes": 33,
+      "pages": 3,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_views_catalog",
+      "recipes": 80,
+      "pages": 8,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_views_page_2",
+      "recipes": 80,
+      "pages": 8,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_views_region",
+      "recipes": 44,
+      "pages": 4,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_views_category",
+      "recipes": 62,
+      "pages": 6,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_views_ingredient",
+      "recipes": 59,
+      "pages": 6,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_views_ingredients_and",
+      "recipes": 33,
+      "pages": 3,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_views_include_exclude",
+      "recipes": 26,
+      "pages": 3,
+      "all_ids_order_counts_equal": true
+    },
+    {
+      "case": "recipe_views_region_ingredient",
+      "recipes": 33,
+      "pages": 3,
+      "all_ids_order_counts_equal": true
+    }
+  ],
+  "fixtures": [
+    {
+      "sort": "date",
+      "region_filter": false,
+      "expected_ids": [
+        103,
+        102,
+        111,
+        110,
+        109,
+        108,
+        107,
+        106,
+        105,
+        104,
+        101
+      ],
+      "pages": 4,
+      "passed": true
+    },
+    {
+      "sort": "date",
+      "region_filter": true,
+      "expected_ids": [
+        103,
+        102,
+        110,
+        109,
+        108,
+        107,
+        106,
+        105,
+        104,
+        101
+      ],
+      "pages": 4,
+      "passed": true
+    },
+    {
+      "sort": "recipe_time",
+      "region_filter": false,
+      "expected_ids": [
+        108,
+        103,
+        102,
+        110,
+        109,
+        101,
+        104,
+        107,
+        111,
+        105,
+        106
+      ],
+      "pages": 4,
+      "passed": true
+    },
+    {
+      "sort": "recipe_time",
+      "region_filter": true,
+      "expected_ids": [
+        108,
+        103,
+        102,
+        110,
+        109,
+        101,
+        104,
+        107,
+        105,
+        106
+      ],
+      "pages": 4,
+      "passed": true
+    },
+    {
+      "sort": "recipe_views",
+      "region_filter": false,
+      "expected_ids": [
+        106,
+        105,
+        111,
+        107,
+        104,
+        103,
+        102,
+        110,
+        109,
+        101,
+        108
+      ],
+      "pages": 4,
+      "passed": true
+    },
+    {
+      "sort": "recipe_views",
+      "region_filter": true,
+      "expected_ids": [
+        106,
+        105,
+        107,
+        104,
+        103,
+        102,
+        110,
+        109,
+        101,
+        108
+      ],
+      "pages": 4,
+      "passed": true
+    }
+  ],
+  "fixture_coverage": [
+    "missing/empty/zero/null/nonnumeric/negative/decimal sort values",
+    "MAX of duplicate numeric rows",
+    "stable date/ID ties across pages",
+    "duplicate regions without duplicate recipes",
+    "exact region key excludes XrecipeYregion",
+    "quotes and LIKE wildcards in region value",
+    "draft/private/future/trash/password/other-post-type excluded"
+  ],
+  "unrelated_queries_unchanged": true,
+  "invalid_region_shape_fails_closed": true,
+  "core_metadata_cache_invalidation_registered": true
+}

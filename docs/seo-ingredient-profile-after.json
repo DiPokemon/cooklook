@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-10-16T18:53:19+00:00",
+  "site": "http://cooklook/",
+  "method": "Modal HTML only after WP bootstrap, three calls per case in one process, no external cache flush. First blank pass precedes selected passes. Times are not full-page TTFB.",
+  "external_object_cache": null,
+  "ingredient_counts": {
+    "total": "140",
+    "nonempty": "138"
+  },
+  "cases": {
+    "blank": {
+      "request": [],
+      "runs": [
+        {
+          "pass": 1,
+          "elapsed_ms": 1.198,
+          "bytes": 6586,
+          "options": 0,
+          "sql_count": 2,
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND tt.count > 0\n\t\t\t ORDER BY tt.count DESC\n\t\t\t LIMIT 6",
+            "SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.term_id IN (5184,5188,5182,5196,5205,5181)"
+          ]
+        },
+        {
+          "pass": 2,
+          "elapsed_ms": 0.303,
+          "bytes": 6586,
+          "options": 0,
+          "sql_count": 0,
+          "queries": []
+        },
+        {
+          "pass": 3,
+          "elapsed_ms": 0.267,
+          "bytes": 6586,
+          "options": 0,
+          "sql_count": 0,
+          "queries": []
+        }
+      ]
+    },
+    "selected": {
+      "request": {
+        "include_ingredients": [
+          "%d1%81%d0%be%d0%bb%d1%8c",
+          "%d1%81%d0%b0%d1%85%d0%b0%d1%80"
+        ],
+        "exclude_ingredients": [
+          "%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be"
+        ]
+      },
+      "runs": [
+        {
+          "pass": 1,
+          "elapsed_ms": 0.791,
+          "bytes": 7234,
+          "options": 3,
+          "sql_count": 1,
+          "queries": [
+            "SELECT  t.term_id\n\t\t\t FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id\n\t\t\t WHERE tt.taxonomy IN ('recipe_tags') AND t.slug IN ('%d1%81%d0%b0%d1%85%d0%b0%d1%80', '%d1%81%d0%be%d0%bb%d1%8c', '%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be')\n\t\t\t ORDER BY t.name ASC\n\t\t\t LIMIT 3"
+          ]
+        },
+        {
+          "pass": 2,
+          "elapsed_ms": 0.455,
+          "bytes": 7234,
+          "options": 3,
+          "sql_count": 0,
+          "queries": []
+        },
+        {
+          "pass": 3,
+          "elapsed_ms": 0.447,
+          "bytes": 7234,
+          "options": 3,
+          "sql_count": 0,
+          "queries": []
+        }
+      ]
+    }
+  }
+}

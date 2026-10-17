@@ -22,6 +22,10 @@ $recipes_categories_title = carbon_get_post_meta( $settings_id, 'recipes_categor
 get_header();
 ?>
 	<main id="primary" class="site-main">
+		<header class="home_intro container">
+			<h1><?= esc_html__( 'Кулинарные рецепты с пошаговыми инструкциями', 'cooklook' ) ?></h1>
+			<p><?= esc_html( cooklook_home_intro() ) ?></p>
+		</header>
 		<section id="popular_categories">
 			<div class="container">
                 <div class="section_header">
@@ -32,12 +36,12 @@ get_header();
                         $counter = 0;
                         foreach($popular_cats_ids as $cat_id) {   
                             $counter++;                    
-                            get_template_part('template-parts/category-loop-item', null, array('current_cat_id' => $cat_id));
+                            get_template_part('template-parts/category-loop-item', null, array('current_cat_id' => $cat_id, 'priority' => $counter === 1));
                             if($counter == 3) {
                         ?>
                                 <div class="category_item category_item-adv">                                    
-                                    <a class="adv_block" href="https://kursy-tut.ru/1637509?erid=2bL9aMPo2e4BA5qnNGCKd2CXSG">
-                                        <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_categories.jpg" alt="">
+                                    <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/1637509?erid=2bL9aMPo2e4BA5qnNGCKd2CXSG">
+                                        <?php echo cooklook_banner( 'main_categories', '(max-width: 767px) 45vw, 260px', 'eager' ); ?>
                                     </a>
                                 </div>
                         <?php   
@@ -86,18 +90,18 @@ get_header();
             <div class="container">
                 <div class="main_bigadv_block">
                     
-                        <a class="adv_block" href="https://kursy-tut.ru/2075290?erid=2bL9aMPo2e4BA5qnNJLpeahqfd">
-                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_square_1.jpg" alt="">
+                        <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/2075290?erid=2bL9aMPo2e4BA5qnNJLpeahqfd">
+                            <?php echo cooklook_banner( 'main_square_1' ); ?>
                         </a>
                     
                    
-                        <a class="adv_block" href="https://kursy-tut.ru/1637501?erid=2bL9aMPo2e4BA5qnNGCKd2CXS8">
-                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_square_2.jpg" alt="">
+                        <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/1637501?erid=2bL9aMPo2e4BA5qnNGCKd2CXS8">
+                            <?php echo cooklook_banner( 'main_square_2' ); ?>
                         </a>
                     
                     
-                        <a class="adv_block" href="https://kursy-tut.ru/2075326?erid=2bL9aMPo2e4BA5qnNJLpeaiAcm">
-                            <img src="<?=  get_template_directory_uri() ?>/static/img/adv/main_square_3.jpg" alt="">
+                        <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/2075326?erid=2bL9aMPo2e4BA5qnNJLpeaiAcm">
+                            <?php echo cooklook_banner( 'main_square_3' ); ?>
                         </a>
                     
                 </div>                
@@ -168,14 +172,14 @@ get_header();
                     
                 </div>
                 <div class="categories_grid-controls">
-                    <button class="categories_grid-controls-prev btn_bg" type="button">
-                        <img src="<?=  get_template_directory_uri() ?>/static/img/chevron-left.svg">
+                    <button class="categories_grid-controls-prev btn_bg" type="button" aria-label="<?= esc_attr__( 'Предыдущие категории', 'cooklook' ) ?>">
+                        <img src="<?= esc_url( get_template_directory_uri() . '/static/img/chevron-left.svg' ) ?>" alt="" width="24" height="24">
                     </button>
                     <div id="categories_grid_slider-counter" class="categories_grid-controls-count">
                         <span class="count_current">1</span> / <span class="count_total"><?= $parent_cat_count ?></span>
                     </div>
-                    <button class="categories_grid-controls-next btn_bg" type="button">
-                        <img src="<?=  get_template_directory_uri() ?>/static/img/chevron-right.svg">
+                    <button class="categories_grid-controls-next btn_bg" type="button" aria-label="<?= esc_attr__( 'Следующие категории', 'cooklook' ) ?>">
+                        <img src="<?= esc_url( get_template_directory_uri() . '/static/img/chevron-right.svg' ) ?>" alt="" width="24" height="24">
                     </button>
                 </div>
             </div>

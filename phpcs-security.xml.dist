@@ -3,7 +3,15 @@
 	<description>Focused checks for the refactored request boundary and recipe persistence.</description>
 	<arg name="extensions" value="php"/>
 	<file>inc/recipe-helpers.php</file>
+	<file>inc/class-cooklook-cached-post-meta-datastore.php</file>
 	<file>inc/recipe-query.php</file>
+	<file>inc/recipe-ingredients.php</file>
+	<file>inc/recipe-regions.php</file>
+	<file>inc/recipe-views.php</file>
+	<file>inc/recipe-seo.php</file>
+	<file>inc/seo.php</file>
+	<file>inc/seo-metadata.php</file>
+	<file>inc/media.php</file>
 	<file>recipe_manager.php</file>
 	<file>recipe_importer.php</file>
 	<file>filters-handler.php</file>
@@ -13,6 +21,9 @@
 	<file>page-account.php</file>
 	<file>inc/account.php</file>
 	<file>template-parts/account-profile.php</file>
+	<file>template-parts/recipe-facts.php</file>
+	<file>template-parts/recipe-instructions.php</file>
+	<file>template-parts/filter-ingridients.php</file>
 	<rule ref="WordPress.Security.EscapeOutput"/>
 	<rule ref="WordPress.Security.ValidatedSanitizedInput"/>
 	<rule ref="WordPress.Security.NonceVerification">

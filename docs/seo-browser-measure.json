@@ -1,0 +1,106 @@
+{
+  "checked_on": "2026-10-16",
+  "production_is_previous_theme_version": true,
+  "method": "PageSpeed Insights UI, mobile Lighthouse 13.5.0, Moto G Power, slow 4G, initial navigation. One successful lab run per URL; not a before/after comparison. Anonymous PSI API returned 429; UI reports succeeded after retrying catalog/recipe navigation.",
+  "field_data": {
+    "source": "CrUX via PageSpeed Insights",
+    "scope": "origin https://cook-look.ru, PHONE; URL-level data unavailable",
+    "period": "Last 28 days displayed on 2026-10-16; exact collection bounds not exposed in the inspected view",
+    "percentile": 75,
+    "lcp_ms": 2300,
+    "inp_ms": null,
+    "cls": 0.07,
+    "fcp_ms": 2300,
+    "ttfb_ms": 1200,
+    "ui_assessment": "passed",
+    "limitation": "INP is displayed as a dash, not zero. Do not claim all three CWV were measured or attribute these pre-release data to local changes."
+  },
+  "mobile_lab": [
+    {
+      "url": "https://cook-look.ru/",
+      "report_url": "https://pagespeed.web.dev/analysis/https-cook-look-ru/y69c5qrfq0?form_factor=mobile",
+      "captured_at": "2026-10-16T14:37:42+03:00",
+      "performance_score": 77,
+      "fcp_ms_displayed": 2700,
+      "lcp_ms_displayed": 4100,
+      "tbt_ms_displayed": 240,
+      "cls": 0.005,
+      "speed_index_ms_displayed": 4100,
+      "image_savings_kib_estimated": 810,
+      "render_blocking_savings_ms_estimated": 2240
+    },
+    {
+      "url": "https://cook-look.ru/recipes/",
+      "report_url": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/bb31fohv4o?form_factor=mobile",
+      "captured_at": "2026-10-16T14:42:55+03:00",
+      "performance_score": 64,
+      "fcp_ms_displayed": 3500,
+      "lcp_ms_displayed": 7400,
+      "tbt_ms_displayed": 190,
+      "cls": 0,
+      "speed_index_ms_displayed": 4300,
+      "image_savings_kib_estimated": 372,
+      "render_blocking_savings_ms_estimated": 2200
+    },
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "report_url": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/dqvj2yze0x?form_factor=mobile",
+      "captured_at": "2026-10-16T14:42:49+03:00",
+      "performance_score": 56,
+      "fcp_ms_displayed": 3600,
+      "lcp_ms_displayed": 12200,
+      "tbt_ms_displayed": 280,
+      "cls": 0,
+      "speed_index_ms_displayed": 7200,
+      "lcp_element": "Recipe hero img https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg",
+      "image_savings_kib_estimated": 786,
+      "render_blocking_savings_ms_estimated": 1780
+    }
+  ],
+  "local_browser": {
+    "site": "http://cooklook/",
+    "viewport": { "width": 390, "height": 844 },
+    "pages": [
+      { "path": "/", "client_width": 375, "scroll_width": 375, "h1_count": 1 },
+      { "path": "/recipes/", "client_width": 375, "scroll_width": 375, "h1_count": 1 },
+      { "path": "/recipe/манная-каша-на-молоке/", "client_width": 375, "scroll_width": 375, "h1_count": 1 }
+    ],
+    "desktop_home": { "viewport_width": 1280, "client_width": 1265, "scroll_width": 1265 },
+    "sort_time_ajax_ssr_card_order_equal": true,
+    "back_restores_default_sort": true,
+    "forward_restores_sorted_card_order": true,
+    "recipe_instruction_anchor": { "hash": "#instructions", "top_px": 119.734375, "step_count": 8 },
+    "recipe_hero": { "width": 335, "height": 206, "natural_width": 360, "complete": true, "loading": "eager", "fetchpriority": "high" },
+    "recipe_console_errors": [],
+    "local_cwv": null,
+    "limitation": "Responsive geometry and interactions, not throttled mobile performance measurements."
+  },
+  "structured_data_validators": [
+    {
+      "validator": "https://validator.schema.org/",
+      "input": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "mode": "public URL",
+      "result": "No errors and no warnings. Four root items: WebPage, Recipe, BreadcrumbList, WebSite.",
+      "limitation": "Vocabulary validation does not establish culinary truth or rich-result eligibility. Production still has the old separate Recipe/WebSite."
+    },
+    {
+      "validator": "https://validator.schema.org/",
+      "input": "http://cooklook/recipe/манная-каша-на-молоке/",
+      "mode": "Actual JSON-LD script content copied into the code input",
+      "result": "Connected WebPage graph including Recipe: no errors, no warnings.",
+      "limitation": "External validator did not crawl the local page or its local images."
+    },
+    {
+      "validator": "https://search.google.com/test/rich-results",
+      "input": "Production recipe URL, then the actual local JSON-LD code",
+      "result": "incomplete",
+      "limitation": "The form remained visible after submission in both modes; no result report was returned in this session. Not counted as passed."
+    }
+  ],
+  "analytics_access": {
+    "google_search_console": "Owner confirms account availability; current browser redirected to public about/sign-in entry. Property statistics not accessed.",
+    "yandex_webmaster": "Owner confirms account availability; current browser redirected to /welcome/. Property statistics not accessed.",
+    "bing_ai_performance": "Account/data availability not confirmed.",
+    "verified_crawler_logs": "Not supplied. Ordinary UA probes are not verified bot traffic."
+  }
+}

@@ -1,0 +1,137 @@
+<?php
+/**
+ * Build an offline production ZIP without changing the development vendor directory.
+ * PHP 7.4+ with ZipArchive; php tools/build-release.php --composer=/path/to/composer.phar
+ * COOKLOOK_COMPOSER_PHAR may supply the same path for npm run bundle.
+ */
+if ( PHP_SAPI !== 'cli' ) { http_response_code( 404 ); exit; }
+
+function release_check( $condition, $message ) {
+	if ( ! $condition ) { throw new RuntimeException( $message ); }
+}
+
+function release_copy( $source, $destination ) {
+	release_check( ! is_link( $source ), 'Symbolic links are not allowed: ' . $source );
+	if ( is_dir( $source ) ) {
+		release_check( mkdir( $destination, 0755, true ), 'Cannot create staging directory.' );
+		foreach ( new DirectoryIterator( $source ) as $entry ) {
+			if ( $entry->isDot() || in_array( $entry->getFilename(), array( '.git', '.svn', '.hg' ), true ) ) { continue; }
+			release_copy( $entry->getPathname(), $destination . '/' . $entry->getFilename() );
+		}
+		return;
+	}
+	release_check( is_file( $source ) && copy( $source, $destination ), 'Cannot copy: ' . $source );
+	// Keep file-based asset versions consistent with the source theme.
+	release_check( touch( $destination, filemtime( $source ) ), 'Cannot preserve asset timestamp.' );
+}
+
+function release_packages( $packages ) {
+	$result = array();
+	foreach ( $packages as $package ) {
+		$result[ $package['name'] ] = array(
+			'version' => $package['version'],
+			'reference' => $package['dist']['reference'] ?? $package['source']['reference'] ?? null,
+		);
+	}
+	ksort( $result );
+	return $result;
+}
+
+try {
+	release_check( PHP_VERSION_ID >= 70400 && class_exists( 'ZipArchive' ), 'Use PHP 7.4+ with ZipArchive.' );
+	$options = getopt( '', array( 'composer:' ) );
+	$composer = realpath( $options['composer'] ?? getenv( 'COOKLOOK_COMPOSER_PHAR' ) ?: '' );
+	release_check( $composer && is_file( $composer ), 'Set --composer=/path/to/composer.phar or COOKLOOK_COMPOSER_PHAR.' );
+	$root = dirname( __DIR__ );
+	$lock = json_decode( file_get_contents( $root . '/composer.lock' ), true, 512, JSON_THROW_ON_ERROR );
+	$expected = release_packages( $lock['packages'] );
+	$installed = json_decode( file_get_contents( $root . '/vendor/composer/installed.json' ), true, 512, JSON_THROW_ON_ERROR );
+	$available = release_packages( $installed['packages'] );
+	foreach ( $expected as $name => $package ) {
+		release_check( isset( $available[ $name ] ) && $available[ $name ] === $package, 'Run composer install first: ' . $name );
+	}
+	$vendor_before = hash_file( 'sha256', $root . '/vendor/composer/installed.json' );
+	if ( ! is_dir( $root . '/build' ) ) { release_check( mkdir( $root . '/build', 0755 ), 'Cannot create build directory.' ); }
+	$build = str_replace( '\\', '/', realpath( $root . '/build' ) );
+	release_check( $build === str_replace( '\\', '/', realpath( $root ) ) . '/build', 'Build directory must stay inside this theme.' );
+	$id = gmdate( 'Ymd\THis\Z' ) . '-' . bin2hex( random_bytes( 3 ) );
+	$work = $build . '/release-' . $id;
+	$stage = $work . '/cooklook';
+	release_check( mkdir( $stage, 0755, true ), 'Cannot create isolated release directory.' );
+
+	// Only runtime directories and named theme entry points may enter the archive.
+	foreach ( array( 'functions-parts', 'inc', 'js', 'languages', 'static', 'template-parts', 'vendor' ) as $directory ) {
+		release_copy( $root . '/' . $directory, $stage . '/' . $directory );
+	}
+	foreach ( array(
+		'404.php', 'archive.php', 'comments.php', 'filters-handler.php', 'footer.php', 'functions.php',
+		'header.php', 'home.php', 'index.php', 'my-favorites.php', 'page-account.php', 'page.php',
+		'recipe_importer.php', 'recipe_manager.php', 'search-ajax-handler.php', 'search-moderation-template.php',
+		'search.php', 'sidebar.php', 'single-recipe.php', 'single.php', 'style.css', 'style-rtl.css',
+		'style_default.css', 'style-rtl_default.css', 'LICENSE', 'readme.txt', 'screenshot.png',
+	) as $name ) {
+		release_copy( $root . '/' . $name, $stage . '/' . $name );
+	}
+	foreach ( array( 'composer.json', 'composer.lock' ) as $name ) { release_copy( $root . '/' . $name, $stage . '/' . $name ); }
+
+	// Composer only operates on the disposable copy. Plugins, scripts and downloads are disabled.
+	putenv( 'COMPOSER_DISABLE_NETWORK=1' );
+	putenv( 'COMPOSER=composer.json' );
+	putenv( 'COMPOSER_VENDOR_DIR=vendor' );
+	putenv( 'COMPOSER_BIN_DIR=vendor/bin' );
+	putenv( 'COMPOSER_HOME=' . $work . '/composer-home' );
+	putenv( 'COMPOSER_CACHE_DIR=' . $work . '/composer-cache' );
+	$process = proc_open(
+		array( PHP_BINARY, $composer, 'install', '--no-dev', '--optimize-autoloader', '--no-plugins', '--no-scripts', '--no-interaction', '--no-progress' ),
+		array( 0 => array( 'pipe', 'r' ), 1 => array( 'file', $work . '/composer.log', 'a' ), 2 => array( 'file', $work . '/composer.log', 'a' ) ),
+		$pipes, $stage
+	);
+	release_check( is_resource( $process ), 'Cannot start Composer.' );
+	fclose( $pipes[0] );
+	release_check( 0 === proc_close( $process ), 'Composer failed; inspect ' . $work . '/composer.log' );
+	$production = json_decode( file_get_contents( $stage . '/vendor/composer/installed.json' ), true, 512, JSON_THROW_ON_ERROR );
+	release_check( false === $production['dev'] && $expected === release_packages( $production['packages'] ), 'Production dependencies do not match composer.lock.' );
+	release_check( $vendor_before === hash_file( 'sha256', $root . '/vendor/composer/installed.json' ), 'Development vendor unexpectedly changed.' );
+	foreach ( array( 'composer.json', 'composer.lock' ) as $name ) { release_check( unlink( $stage . '/' . $name ), 'Cannot remove build-only manifest.' ); }
+
+	$files = array();
+	$iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $stage, FilesystemIterator::SKIP_DOTS ) );
+	foreach ( $iterator as $file ) {
+		release_check( ! $file->isLink() && $file->isFile(), 'Unexpected non-file in staging.' );
+		$name = str_replace( '\\', '/', substr( $file->getPathname(), strlen( $stage ) + 1 ) );
+		release_check( ! preg_match( '~(?:^|/)(?:\.\.|\.git|\.env)(?:/|$)~', $name ), 'Unsafe archive entry: ' . $name );
+		$files[ $name ] = hash_file( 'sha256', $file->getPathname() );
+	}
+	ksort( $files );
+	foreach ( array( 'style.css', 'index.php', 'functions.php', 'vendor/autoload.php', 'static/css/style.min.css', 'static/js/filter-ingridients.js', 'static/js/recipe-views.js' ) as $name ) {
+		release_check( isset( $files[ $name ] ), 'Missing required runtime file: ' . $name );
+	}
+	$archive = $work . '/cooklook.zip';
+	$zip = new ZipArchive();
+	release_check( true === $zip->open( $archive, ZipArchive::CREATE | ZipArchive::EXCL ), 'Cannot create archive.' );
+	foreach ( $files as $name => $hash ) { release_check( $zip->addFile( $stage . '/' . $name, 'cooklook/' . $name ), 'Cannot archive: ' . $name ); }
+	release_check( $zip->close(), 'Cannot finish archive.' );
+	release_check( true === $zip->open( $archive, ZipArchive::CHECKCONS ), 'Archive integrity check failed.' );
+	release_check( $zip->numFiles === count( $files ), 'Unexpected archive file count.' );
+	foreach ( $files as $name => $hash ) {
+		release_check( $hash === hash( 'sha256', $zip->getFromName( 'cooklook/' . $name ) ), 'Archive content mismatch: ' . $name );
+	}
+	// The integration check boots this extracted copy, not the development theme.
+	release_check( mkdir( $work . '/extracted', 0755 ) && $zip->extractTo( $work . '/extracted' ), 'Cannot extract verification copy.' );
+	$zip->close();
+	$report = array(
+		'built_at' => gmdate( 'c' ), 'php' => PHP_VERSION,
+		'archive' => 'build/release-' . $id . '/cooklook.zip',
+		'extracted_theme' => 'build/release-' . $id . '/extracted/cooklook',
+		'sha256' => hash_file( 'sha256', $archive ), 'bytes' => filesize( $archive ),
+		'composer_lock_sha256' => hash_file( 'sha256', $root . '/composer.lock' ),
+		'packages' => $expected, 'development_vendor_unchanged' => true,
+		'archive_integrity' => true, 'file_count' => count( $files ), 'files' => $files,
+	);
+	release_check( false !== file_put_contents( $work . '/manifest.json', json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR ) . "\n" ), 'Cannot save release manifest.' );
+	unset( $report['files'] );
+	echo json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR ) . "\n";
+} catch ( Throwable $error ) {
+	fwrite( STDERR, $error->getMessage() . "\n" );
+	exit( 1 );
+}
