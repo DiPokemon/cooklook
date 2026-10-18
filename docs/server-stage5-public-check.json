@@ -1,0 +1,174 @@
+{
+  "checked_at": "2026-10-17T15:58:56.353Z",
+  "method": "One public GET per URL, concurrency two, no cookies, redirects not followed; elapsed_ms includes transfer and is not origin server processing time.",
+  "results": [
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "location": null,
+      "elapsed_ms": 1094,
+      "body_bytes": 1209,
+      "title": null
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "location": null,
+      "elapsed_ms": 2072,
+      "body_bytes": 345301,
+      "title": "Кулинарные рецепты - COOK-LOOK"
+    },
+    {
+      "path": "/sitemap_index.xml",
+      "status": 200,
+      "location": null,
+      "elapsed_ms": 1379,
+      "body_bytes": 1409,
+      "title": null
+    },
+    {
+      "path": "/recipe_category-sitemap.xml",
+      "status": 200,
+      "location": null,
+      "elapsed_ms": 1150,
+      "body_bytes": 88035,
+      "title": null
+    },
+    {
+      "path": "/recipes/",
+      "status": 200,
+      "location": null,
+      "elapsed_ms": 435,
+      "body_bytes": 189671,
+      "title": "Каталог рецептов по ингредиентам и категориям | COOK-LOOK"
+    },
+    {
+      "path": "/recipe/kapustnye-kotlety-v-duhovke/",
+      "status": 200,
+      "location": null,
+      "elapsed_ms": 501,
+      "body_bytes": 178204,
+      "title": "Капустные котлеты в духовке — пошаговый рецепт | COOK-LOOK"
+    },
+    {
+      "path": "/recipe/rulet-iz-shhekoviny/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 322,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/syrnyj-sous-na-majoneze/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 304,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe_tags-sitemap2.xml",
+      "status": 200,
+      "location": null,
+      "elapsed_ms": 2493,
+      "body_bytes": 126118,
+      "title": null
+    },
+    {
+      "path": "/recipe/stejk-traj-tip/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 274,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/batonchiki-myusli-s-yablokom-i-orehami/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 289,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/stejk-minon/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 313,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/sochnyj-salat-k-myasu-i-rybe/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 289,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/adzhapsandali-klassicheskij/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 326,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/dieticheskie-syrniki-s-jogurtovo-limonnym-sousom/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 294,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/bubert/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 315,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/farshirovannye-syrom-perczy-halapeno/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 349,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/pechenoe-veperevo-koleno-zapechennaya-svinaya-rulka/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 319,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/morskie-grebeshki-na-paru/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 320,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/kuricza-zapechennaya-v-duhovke/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 316,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    },
+    {
+      "path": "/recipe/leshh-farshirovannyj-kashej/",
+      "status": 404,
+      "location": null,
+      "elapsed_ms": 306,
+      "body_bytes": 42495,
+      "title": "Страница не найдена - COOK-LOOK"
+    }
+  ]
+}

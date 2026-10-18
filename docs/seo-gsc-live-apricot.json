@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-10-17T12:24:49.157Z",
+  "url": "https://cook-look.ru/recipe/abrikosovo-apelsinovoe-pesochnoe-pirozhnoe-s-mindalem/",
+  "status": 200,
+  "title": "Абрикосово-апельсиновое песочное пирожное с миндалем — пошаговый рецепт | COOK-LOOK",
+  "robots": "<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />",
+  "canonical": "<link rel=\"canonical\" href=\"https://cook-look.ru/recipe/abrikosovo-apelsinovoe-pesochnoe-pirozhnoe-s-mindalem/\" />",
+  "sitemaps": [
+    {
+      "url": "https://cook-look.ru/recipe-sitemap.xml",
+      "status": 200,
+      "containsTarget": true,
+      "entries": 1001
+    },
+    {
+      "url": "https://cook-look.ru/recipe-sitemap2.xml",
+      "status": 200,
+      "containsTarget": false,
+      "entries": 1000
+    },
+    {
+      "url": "https://cook-look.ru/recipe-sitemap3.xml",
+      "status": 200,
+      "containsTarget": false,
+      "entries": 1000
+    },
+    {
+      "url": "https://cook-look.ru/recipe-sitemap4.xml",
+      "status": 200,
+      "containsTarget": false,
+      "entries": 740
+    }
+  ]
+}

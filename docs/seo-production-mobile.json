@@ -1,0 +1,1277 @@
+{
+  "checkedOn": "2026-10-17",
+  "site": "https://cook-look.ru/",
+  "method": "Desktop Chromium responsive viewport; not physical-device touch emulation",
+  "checks": [
+    {
+      "page": "home",
+      "brokenImages": [],
+      "h1": [
+        "Кулинарные рецепты с пошаговыми инструкциями"
+      ],
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "page": "search",
+      "url": "https://cook-look.ru/?s=%D0%B1%D0%BB%D0%B8%D0%BD%D1%8B",
+      "cards": 11,
+      "h1": "Результаты поиска по запросу: «блины»",
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "name": "Include milk, exclude sugar: AJAX equals reload",
+      "passed": true,
+      "before": {
+        "cards": [
+          {
+            "title": "Бельгийские вафли с мороженным и взбитыми сливками",
+            "url": "https://cook-look.ru/recipe/belgijskie-vafli-s-morozhennym-i-vzbitymi-slivkami/"
+          },
+          {
+            "title": "Капкейки с творожным кремом и шоколадной начинкой",
+            "url": "https://cook-look.ru/recipe/kapkejki-s-tvorozhnym-kremom-i-shokoladnoj-nachinkoj/"
+          },
+          {
+            "title": "Киш лорен со шпинатом",
+            "url": "https://cook-look.ru/recipe/kish-loren-so-shpinatom/"
+          },
+          {
+            "title": "Творожное замороженное крем-брюле",
+            "url": "https://cook-look.ru/recipe/tvorozhnoe-zamorozhennoe-krem-bryule/"
+          },
+          {
+            "title": "Творожно-бисквитный слоёный десерт с черникой и орехами",
+            "url": "https://cook-look.ru/recipe/tvorozhno-biskvitnyj-sloyonyj-desert-s-chernikoj-i-orehami/"
+          },
+          {
+            "title": "Яичные лепешки в лаваше с сыром и томатами",
+            "url": "https://cook-look.ru/recipe/yaichnye-lepeshki-v-lavashe-s-syrom-i-tomatami/"
+          },
+          {
+            "title": "Сырное суфле с мускатным орехом",
+            "url": "https://cook-look.ru/recipe/syrnoe-sufle-s-muskatnym-orehom/"
+          },
+          {
+            "title": "Суфле из сыра с ветчиной",
+            "url": "https://cook-look.ru/recipe/sufle-iz-syra-s-vetchinoj/"
+          },
+          {
+            "title": "Суфле с макаронами и сыром",
+            "url": "https://cook-look.ru/recipe/sufle-s-makaronami-i-syrom/"
+          },
+          {
+            "title": "Суфле из грюйера",
+            "url": "https://cook-look.ru/recipe/sufle-iz-gryujera/"
+          },
+          {
+            "title": "Шоколадный мусс с перцем",
+            "url": "https://cook-look.ru/recipe/shokoladnyj-muss-s-perczem/"
+          }
+        ],
+        "scrollWidth": 375,
+        "selections": [
+          {
+            "id": "recipe_category",
+            "name": "category_id",
+            "selected": [
+              "Любая категория"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_subcategory",
+            "name": "subcategory_id",
+            "selected": [
+              "Любое блюдо"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_region",
+            "name": "region",
+            "selected": [
+              "Любое меню"
+            ],
+            "value": ""
+          },
+          {
+            "id": "include_ingredients",
+            "name": "include_ingredients[]",
+            "selected": [
+              "Молоко"
+            ],
+            "value": "moloko"
+          },
+          {
+            "id": "exclude_ingredients",
+            "name": "exclude_ingredients[]",
+            "selected": [
+              "Сахар"
+            ],
+            "value": "sahar"
+          },
+          {
+            "id": "sort_by-mobile",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "<redacted>"
+          },
+          {
+            "id": "sort_by",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "date"
+          }
+        ],
+        "url": "https://cook-look.ru/recipes/?include_ingredients%5B%5D=moloko&exclude_ingredients%5B%5D=sahar",
+        "width": 375
+      },
+      "after": {
+        "cards": [
+          {
+            "title": "Бельгийские вафли с мороженным и взбитыми сливками",
+            "url": "https://cook-look.ru/recipe/belgijskie-vafli-s-morozhennym-i-vzbitymi-slivkami/"
+          },
+          {
+            "title": "Капкейки с творожным кремом и шоколадной начинкой",
+            "url": "https://cook-look.ru/recipe/kapkejki-s-tvorozhnym-kremom-i-shokoladnoj-nachinkoj/"
+          },
+          {
+            "title": "Киш лорен со шпинатом",
+            "url": "https://cook-look.ru/recipe/kish-loren-so-shpinatom/"
+          },
+          {
+            "title": "Творожное замороженное крем-брюле",
+            "url": "https://cook-look.ru/recipe/tvorozhnoe-zamorozhennoe-krem-bryule/"
+          },
+          {
+            "title": "Творожно-бисквитный слоёный десерт с черникой и орехами",
+            "url": "https://cook-look.ru/recipe/tvorozhno-biskvitnyj-sloyonyj-desert-s-chernikoj-i-orehami/"
+          },
+          {
+            "title": "Яичные лепешки в лаваше с сыром и томатами",
+            "url": "https://cook-look.ru/recipe/yaichnye-lepeshki-v-lavashe-s-syrom-i-tomatami/"
+          },
+          {
+            "title": "Сырное суфле с мускатным орехом",
+            "url": "https://cook-look.ru/recipe/syrnoe-sufle-s-muskatnym-orehom/"
+          },
+          {
+            "title": "Суфле из сыра с ветчиной",
+            "url": "https://cook-look.ru/recipe/sufle-iz-syra-s-vetchinoj/"
+          },
+          {
+            "title": "Суфле с макаронами и сыром",
+            "url": "https://cook-look.ru/recipe/sufle-s-makaronami-i-syrom/"
+          },
+          {
+            "title": "Суфле из грюйера",
+            "url": "https://cook-look.ru/recipe/sufle-iz-gryujera/"
+          },
+          {
+            "title": "Шоколадный мусс с перцем",
+            "url": "https://cook-look.ru/recipe/shokoladnyj-muss-s-perczem/"
+          }
+        ],
+        "scrollWidth": 375,
+        "selections": [
+          {
+            "id": "recipe_category",
+            "name": "category_id",
+            "selected": [
+              "Любая категория"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_subcategory",
+            "name": "subcategory_id",
+            "selected": [
+              "Любое блюдо"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_region",
+            "name": "region",
+            "selected": [
+              "Любое меню"
+            ],
+            "value": ""
+          },
+          {
+            "id": "include_ingredients",
+            "name": "include_ingredients[]",
+            "selected": [
+              "Молоко"
+            ],
+            "value": "moloko"
+          },
+          {
+            "id": "exclude_ingredients",
+            "name": "exclude_ingredients[]",
+            "selected": [
+              "Сахар"
+            ],
+            "value": "sahar"
+          },
+          {
+            "id": "sort_by-mobile",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "<redacted>"
+          },
+          {
+            "id": "sort_by",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "date"
+          }
+        ],
+        "url": "https://cook-look.ru/recipes/?include_ingredients%5B0%5D=moloko&exclude_ingredients%5B0%5D=sahar",
+        "width": 375
+      }
+    },
+    {
+      "name": "Ingredient panel at 320x568 scrolls to Apply button",
+      "button": {
+        "height": 54.40625,
+        "width": 187.546875,
+        "x": 58.71875,
+        "y": 489.40625
+      },
+      "viewport": {
+        "height": 568,
+        "scrollWidth": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "Ingredient panel at 844x390 scrolls to Apply button",
+      "button": {
+        "height": 54.40625,
+        "width": 187.546875,
+        "x": 86.21875,
+        "y": 311.40625
+      },
+      "viewport": {
+        "height": 390,
+        "scrollWidth": 844,
+        "width": 844
+      }
+    },
+    {
+      "name": "Clear both ingredient selections",
+      "passed": true,
+      "state": {
+        "cards": [
+          {
+            "title": "Пахлава армянская",
+            "url": "https://cook-look.ru/recipe/pahlava-armyanskaya/"
+          },
+          {
+            "title": "Трубочки с ореховым кремом",
+            "url": "https://cook-look.ru/recipe/trubochki-s-orehovym-kremom/"
+          },
+          {
+            "title": "Базовые профитроли",
+            "url": "https://cook-look.ru/recipe/bazovye-profitroli/"
+          },
+          {
+            "title": "Крокембуш (Профитроли)",
+            "url": "https://cook-look.ru/recipe/krokembush-profitroli/"
+          },
+          {
+            "title": "Фокачча с соусом песто",
+            "url": "https://cook-look.ru/recipe/fokachcha-s-sousom-pesto/"
+          },
+          {
+            "title": "Чайная коврижка",
+            "url": "https://cook-look.ru/recipe/chajnaya-kovrizhka/"
+          },
+          {
+            "title": "Коврижка медовая с орехами и цукатами",
+            "url": "https://cook-look.ru/recipe/kovrizhka-medovaya-s-orehami-i-czukatami/"
+          },
+          {
+            "title": "Рогалики",
+            "url": "https://cook-look.ru/recipe/rogaliki/"
+          },
+          {
+            "title": "Розовый яблочный зефир",
+            "url": "https://cook-look.ru/recipe/rozovyj-yablochnyj-zefir/"
+          },
+          {
+            "title": "Зефир по ГОСТу",
+            "url": "https://cook-look.ru/recipe/zefir-po-gostu/"
+          },
+          {
+            "title": "Гигантский круассан",
+            "url": "https://cook-look.ru/recipe/gigantskij-kruassan/"
+          }
+        ],
+        "scrollWidth": 345,
+        "selections": [
+          {
+            "id": "recipe_category",
+            "name": "category_id",
+            "selected": [
+              "Любая категория"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_subcategory",
+            "name": "subcategory_id",
+            "selected": [
+              "Любое блюдо"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_region",
+            "name": "region",
+            "selected": [
+              "Любое меню"
+            ],
+            "value": ""
+          },
+          {
+            "id": "include_ingredients",
+            "name": "include_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "exclude_ingredients",
+            "name": "exclude_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "sort_by-mobile",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "<redacted>"
+          },
+          {
+            "id": "sort_by",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "date"
+          }
+        ],
+        "url": "https://cook-look.ru/recipes/",
+        "width": 345
+      }
+    },
+    {
+      "name": "Page 2: AJAX equals reload",
+      "passed": true,
+      "before": {
+        "cards": [
+          {
+            "title": "Круассан с тунцом, листьями салата и помидором",
+            "url": "https://cook-look.ru/recipe/kruassan-s-tunczom-listyami-salata-i-pomidorom/"
+          },
+          {
+            "title": "Мини-круассаны с корицей",
+            "url": "https://cook-look.ru/recipe/mini-kruassany-s-koriczej/"
+          },
+          {
+            "title": "Круассаны с нутеллой и шоколадом",
+            "url": "https://cook-look.ru/recipe/kruassany-s-nutelloj-i-shokoladom/"
+          },
+          {
+            "title": "Круассаны с марципановой начинкой",
+            "url": "https://cook-look.ru/recipe/kruassany-s-marczipanovoj-nachinkoj/"
+          },
+          {
+            "title": "Королевская ватрушка",
+            "url": "https://cook-look.ru/recipe/korolevskaya-vatrushka/"
+          },
+          {
+            "title": "Ватрушки из пресного теста",
+            "url": "https://cook-look.ru/recipe/vatrushki-iz-presnogo-testa/"
+          },
+          {
+            "title": "Ватрушки из слоеного теста с творогом",
+            "url": "https://cook-look.ru/recipe/vatrushki-iz-sloenogo-testa-s-tvorogom/"
+          },
+          {
+            "title": "Слойки с сыром или с корицей",
+            "url": "https://cook-look.ru/recipe/slojki-s-syrom-ili-s-koriczej/"
+          },
+          {
+            "title": "Сырные крекеры с васаби",
+            "url": "https://cook-look.ru/recipe/syrnye-krekery-s-vasabi/"
+          },
+          {
+            "title": "Кунжутные крекеры",
+            "url": "https://cook-look.ru/recipe/kunzhutnye-krekery/"
+          },
+          {
+            "title": "Крекеры с копченой форелью и лимонно-укропным майонезом",
+            "url": "https://cook-look.ru/recipe/krekery-s-kopchenoj-forelyu-i-limonno-ukropnym-majonezom/"
+          }
+        ],
+        "scrollWidth": 345,
+        "selections": [
+          {
+            "id": "recipe_category",
+            "name": "category_id",
+            "selected": [
+              "Любая категория"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_subcategory",
+            "name": "subcategory_id",
+            "selected": [
+              "Любое блюдо"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_region",
+            "name": "region",
+            "selected": [
+              "Любое меню"
+            ],
+            "value": ""
+          },
+          {
+            "id": "include_ingredients",
+            "name": "include_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "exclude_ingredients",
+            "name": "exclude_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "sort_by-mobile",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "<redacted>"
+          },
+          {
+            "id": "sort_by",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "date"
+          }
+        ],
+        "url": "https://cook-look.ru/recipes/page/2/",
+        "width": 345
+      },
+      "after": {
+        "cards": [
+          {
+            "title": "Круассан с тунцом, листьями салата и помидором",
+            "url": "https://cook-look.ru/recipe/kruassan-s-tunczom-listyami-salata-i-pomidorom/"
+          },
+          {
+            "title": "Мини-круассаны с корицей",
+            "url": "https://cook-look.ru/recipe/mini-kruassany-s-koriczej/"
+          },
+          {
+            "title": "Круассаны с нутеллой и шоколадом",
+            "url": "https://cook-look.ru/recipe/kruassany-s-nutelloj-i-shokoladom/"
+          },
+          {
+            "title": "Круассаны с марципановой начинкой",
+            "url": "https://cook-look.ru/recipe/kruassany-s-marczipanovoj-nachinkoj/"
+          },
+          {
+            "title": "Королевская ватрушка",
+            "url": "https://cook-look.ru/recipe/korolevskaya-vatrushka/"
+          },
+          {
+            "title": "Ватрушки из пресного теста",
+            "url": "https://cook-look.ru/recipe/vatrushki-iz-presnogo-testa/"
+          },
+          {
+            "title": "Ватрушки из слоеного теста с творогом",
+            "url": "https://cook-look.ru/recipe/vatrushki-iz-sloenogo-testa-s-tvorogom/"
+          },
+          {
+            "title": "Слойки с сыром или с корицей",
+            "url": "https://cook-look.ru/recipe/slojki-s-syrom-ili-s-koriczej/"
+          },
+          {
+            "title": "Сырные крекеры с васаби",
+            "url": "https://cook-look.ru/recipe/syrnye-krekery-s-vasabi/"
+          },
+          {
+            "title": "Кунжутные крекеры",
+            "url": "https://cook-look.ru/recipe/kunzhutnye-krekery/"
+          },
+          {
+            "title": "Крекеры с копченой форелью и лимонно-укропным майонезом",
+            "url": "https://cook-look.ru/recipe/krekery-s-kopchenoj-forelyu-i-limonno-ukropnym-majonezom/"
+          }
+        ],
+        "scrollWidth": 345,
+        "selections": [
+          {
+            "id": "recipe_category",
+            "name": "category_id",
+            "selected": [
+              "Любая категория"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_subcategory",
+            "name": "subcategory_id",
+            "selected": [
+              "Любое блюдо"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_region",
+            "name": "region",
+            "selected": [
+              "Любое меню"
+            ],
+            "value": ""
+          },
+          {
+            "id": "include_ingredients",
+            "name": "include_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "exclude_ingredients",
+            "name": "exclude_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "sort_by-mobile",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "<redacted>"
+          },
+          {
+            "id": "sort_by",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "date"
+          }
+        ],
+        "url": "https://cook-look.ru/recipes/page/2/",
+        "width": 345
+      }
+    },
+    {
+      "name": "Back restores page 1",
+      "passed": true,
+      "state": {
+        "cards": [
+          {
+            "title": "Пахлава армянская",
+            "url": "https://cook-look.ru/recipe/pahlava-armyanskaya/"
+          },
+          {
+            "title": "Трубочки с ореховым кремом",
+            "url": "https://cook-look.ru/recipe/trubochki-s-orehovym-kremom/"
+          },
+          {
+            "title": "Базовые профитроли",
+            "url": "https://cook-look.ru/recipe/bazovye-profitroli/"
+          },
+          {
+            "title": "Крокембуш (Профитроли)",
+            "url": "https://cook-look.ru/recipe/krokembush-profitroli/"
+          },
+          {
+            "title": "Фокачча с соусом песто",
+            "url": "https://cook-look.ru/recipe/fokachcha-s-sousom-pesto/"
+          },
+          {
+            "title": "Чайная коврижка",
+            "url": "https://cook-look.ru/recipe/chajnaya-kovrizhka/"
+          },
+          {
+            "title": "Коврижка медовая с орехами и цукатами",
+            "url": "https://cook-look.ru/recipe/kovrizhka-medovaya-s-orehami-i-czukatami/"
+          },
+          {
+            "title": "Рогалики",
+            "url": "https://cook-look.ru/recipe/rogaliki/"
+          },
+          {
+            "title": "Розовый яблочный зефир",
+            "url": "https://cook-look.ru/recipe/rozovyj-yablochnyj-zefir/"
+          },
+          {
+            "title": "Зефир по ГОСТу",
+            "url": "https://cook-look.ru/recipe/zefir-po-gostu/"
+          },
+          {
+            "title": "Гигантский круассан",
+            "url": "https://cook-look.ru/recipe/gigantskij-kruassan/"
+          }
+        ],
+        "scrollWidth": 345,
+        "selections": [
+          {
+            "id": "recipe_category",
+            "name": "category_id",
+            "selected": [
+              "Любая категория"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_subcategory",
+            "name": "subcategory_id",
+            "selected": [
+              "Любое блюдо"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_region",
+            "name": "region",
+            "selected": [
+              "Любое меню"
+            ],
+            "value": ""
+          },
+          {
+            "id": "include_ingredients",
+            "name": "include_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "exclude_ingredients",
+            "name": "exclude_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "sort_by-mobile",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "<redacted>"
+          },
+          {
+            "id": "sort_by",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "date"
+          }
+        ],
+        "url": "https://cook-look.ru/recipes/",
+        "width": 345
+      }
+    },
+    {
+      "name": "Forward restores page 2",
+      "passed": true,
+      "state": {
+        "cards": [
+          {
+            "title": "Круассан с тунцом, листьями салата и помидором",
+            "url": "https://cook-look.ru/recipe/kruassan-s-tunczom-listyami-salata-i-pomidorom/"
+          },
+          {
+            "title": "Мини-круассаны с корицей",
+            "url": "https://cook-look.ru/recipe/mini-kruassany-s-koriczej/"
+          },
+          {
+            "title": "Круассаны с нутеллой и шоколадом",
+            "url": "https://cook-look.ru/recipe/kruassany-s-nutelloj-i-shokoladom/"
+          },
+          {
+            "title": "Круассаны с марципановой начинкой",
+            "url": "https://cook-look.ru/recipe/kruassany-s-marczipanovoj-nachinkoj/"
+          },
+          {
+            "title": "Королевская ватрушка",
+            "url": "https://cook-look.ru/recipe/korolevskaya-vatrushka/"
+          },
+          {
+            "title": "Ватрушки из пресного теста",
+            "url": "https://cook-look.ru/recipe/vatrushki-iz-presnogo-testa/"
+          },
+          {
+            "title": "Ватрушки из слоеного теста с творогом",
+            "url": "https://cook-look.ru/recipe/vatrushki-iz-sloenogo-testa-s-tvorogom/"
+          },
+          {
+            "title": "Слойки с сыром или с корицей",
+            "url": "https://cook-look.ru/recipe/slojki-s-syrom-ili-s-koriczej/"
+          },
+          {
+            "title": "Сырные крекеры с васаби",
+            "url": "https://cook-look.ru/recipe/syrnye-krekery-s-vasabi/"
+          },
+          {
+            "title": "Кунжутные крекеры",
+            "url": "https://cook-look.ru/recipe/kunzhutnye-krekery/"
+          },
+          {
+            "title": "Крекеры с копченой форелью и лимонно-укропным майонезом",
+            "url": "https://cook-look.ru/recipe/krekery-s-kopchenoj-forelyu-i-limonno-ukropnym-majonezom/"
+          }
+        ],
+        "scrollWidth": 345,
+        "selections": [
+          {
+            "id": "recipe_category",
+            "name": "category_id",
+            "selected": [
+              "Любая категория"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_subcategory",
+            "name": "subcategory_id",
+            "selected": [
+              "Любое блюдо"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_region",
+            "name": "region",
+            "selected": [
+              "Любое меню"
+            ],
+            "value": ""
+          },
+          {
+            "id": "include_ingredients",
+            "name": "include_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "exclude_ingredients",
+            "name": "exclude_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "sort_by-mobile",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "<redacted>"
+          },
+          {
+            "id": "sort_by",
+            "name": "sort_by",
+            "selected": [
+              "Дата добавления"
+            ],
+            "value": "date"
+          }
+        ],
+        "url": "https://cook-look.ru/recipes/page/2/",
+        "width": 345
+      }
+    },
+    {
+      "name": "Time sort resets page and survives reload",
+      "passed": true,
+      "before": {
+        "cards": [
+          {
+            "title": "Базовые профитроли",
+            "url": "https://cook-look.ru/recipe/bazovye-profitroli/"
+          },
+          {
+            "title": "Фокачча с соусом песто",
+            "url": "https://cook-look.ru/recipe/fokachcha-s-sousom-pesto/"
+          },
+          {
+            "title": "Рогалики",
+            "url": "https://cook-look.ru/recipe/rogaliki/"
+          },
+          {
+            "title": "Зефир по ГОСТу",
+            "url": "https://cook-look.ru/recipe/zefir-po-gostu/"
+          },
+          {
+            "title": "Круассан с тунцом, листьями салата и помидором",
+            "url": "https://cook-look.ru/recipe/kruassan-s-tunczom-listyami-salata-i-pomidorom/"
+          },
+          {
+            "title": "Королевская ватрушка",
+            "url": "https://cook-look.ru/recipe/korolevskaya-vatrushka/"
+          },
+          {
+            "title": "Слойки с сыром или с корицей",
+            "url": "https://cook-look.ru/recipe/slojki-s-syrom-ili-s-koriczej/"
+          },
+          {
+            "title": "Эклеры с шоколадно-сливочным сыром",
+            "url": "https://cook-look.ru/recipe/eklery-s-shokoladno-slivochnym-syrom/"
+          },
+          {
+            "title": "Бискотти с орехами",
+            "url": "https://cook-look.ru/recipe/biskotti-s-orehami/"
+          },
+          {
+            "title": "Кабачковые оладьи с беконом",
+            "url": "https://cook-look.ru/recipe/kabachkovye-oladi-s-bekonom/"
+          },
+          {
+            "title": "Миндальные трюфели с корицей",
+            "url": "https://cook-look.ru/recipe/mindalnye-tryufeli-s-koriczej/"
+          }
+        ],
+        "scrollWidth": 345,
+        "selections": [
+          {
+            "id": "recipe_category",
+            "name": "category_id",
+            "selected": [
+              "Любая категория"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_subcategory",
+            "name": "subcategory_id",
+            "selected": [
+              "Любое блюдо"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_region",
+            "name": "region",
+            "selected": [
+              "Любое меню"
+            ],
+            "value": ""
+          },
+          {
+            "id": "include_ingredients",
+            "name": "include_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "exclude_ingredients",
+            "name": "exclude_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "sort_by-mobile",
+            "name": "sort_by",
+            "selected": [
+              "Время приготовления"
+            ],
+            "value": "<redacted>"
+          },
+          {
+            "id": "sort_by",
+            "name": "sort_by",
+            "selected": [
+              "Время приготовления"
+            ],
+            "value": "recipe_time"
+          }
+        ],
+        "url": "https://cook-look.ru/recipes/?sort_by=recipe_time",
+        "width": 345
+      },
+      "after": {
+        "cards": [
+          {
+            "title": "Базовые профитроли",
+            "url": "https://cook-look.ru/recipe/bazovye-profitroli/"
+          },
+          {
+            "title": "Фокачча с соусом песто",
+            "url": "https://cook-look.ru/recipe/fokachcha-s-sousom-pesto/"
+          },
+          {
+            "title": "Рогалики",
+            "url": "https://cook-look.ru/recipe/rogaliki/"
+          },
+          {
+            "title": "Зефир по ГОСТу",
+            "url": "https://cook-look.ru/recipe/zefir-po-gostu/"
+          },
+          {
+            "title": "Круассан с тунцом, листьями салата и помидором",
+            "url": "https://cook-look.ru/recipe/kruassan-s-tunczom-listyami-salata-i-pomidorom/"
+          },
+          {
+            "title": "Королевская ватрушка",
+            "url": "https://cook-look.ru/recipe/korolevskaya-vatrushka/"
+          },
+          {
+            "title": "Слойки с сыром или с корицей",
+            "url": "https://cook-look.ru/recipe/slojki-s-syrom-ili-s-koriczej/"
+          },
+          {
+            "title": "Эклеры с шоколадно-сливочным сыром",
+            "url": "https://cook-look.ru/recipe/eklery-s-shokoladno-slivochnym-syrom/"
+          },
+          {
+            "title": "Бискотти с орехами",
+            "url": "https://cook-look.ru/recipe/biskotti-s-orehami/"
+          },
+          {
+            "title": "Кабачковые оладьи с беконом",
+            "url": "https://cook-look.ru/recipe/kabachkovye-oladi-s-bekonom/"
+          },
+          {
+            "title": "Миндальные трюфели с корицей",
+            "url": "https://cook-look.ru/recipe/mindalnye-tryufeli-s-koriczej/"
+          }
+        ],
+        "scrollWidth": 345,
+        "selections": [
+          {
+            "id": "recipe_category",
+            "name": "category_id",
+            "selected": [
+              "Любая категория"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_subcategory",
+            "name": "subcategory_id",
+            "selected": [
+              "Любое блюдо"
+            ],
+            "value": "all"
+          },
+          {
+            "id": "recipe_region",
+            "name": "region",
+            "selected": [
+              "Любое меню"
+            ],
+            "value": ""
+          },
+          {
+            "id": "include_ingredients",
+            "name": "include_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "exclude_ingredients",
+            "name": "exclude_ingredients[]",
+            "selected": [],
+            "value": ""
+          },
+          {
+            "id": "sort_by-mobile",
+            "name": "sort_by",
+            "selected": [
+              "Время приготовления"
+            ],
+            "value": "<redacted>"
+          },
+          {
+            "id": "sort_by",
+            "name": "sort_by",
+            "selected": [
+              "Время приготовления"
+            ],
+            "value": "recipe_time"
+          }
+        ],
+        "url": "https://cook-look.ru/recipes/?sort_by=recipe_time",
+        "width": 345
+      }
+    },
+    {
+      "name": "Ingredient lookup loads another page without duplicates",
+      "passed": true,
+      "firstPage": [
+        "Вареное сгущенное молоко",
+        "Жирное молоко",
+        "Кислое молоко",
+        "Кокосовое молоко",
+        "Концентрированное молоко",
+        "Миндальное молоко",
+        "Молоко",
+        "Молоко 1%",
+        "Молоко 2,5%",
+        "Молоко 2%",
+        "Молоко 3,2%",
+        "Молоко 3,5%",
+        "Обезжиренное молоко",
+        "Обезжиренное сухое молоко",
+        "Растительное молоко",
+        "Рисовое ванильное молоко",
+        "Сгущенное молоко",
+        "Соевое ванильное молоко",
+        "Соевое молоко",
+        "Сухое молоко",
+        "Загрузка ингредиентов…"
+      ],
+      "allPages": [
+        "Вареное сгущенное молоко",
+        "Жирное молоко",
+        "Кислое молоко",
+        "Кокосовое молоко",
+        "Концентрированное молоко",
+        "Миндальное молоко",
+        "Молоко",
+        "Молоко 1%",
+        "Молоко 2,5%",
+        "Молоко 2%",
+        "Молоко 3,2%",
+        "Молоко 3,5%",
+        "Обезжиренное молоко",
+        "Обезжиренное сухое молоко",
+        "Растительное молоко",
+        "Рисовое ванильное молоко",
+        "Сгущенное молоко",
+        "Соевое ванильное молоко",
+        "Соевое молоко",
+        "Сухое молоко",
+        "Сухое солодовое молоко",
+        "Топленое молоко",
+        "Цельное молоко"
+      ]
+    },
+    {
+      "name": "No matching ingredient has a clear empty state",
+      "passed": true,
+      "text": "Ничего не найдено. Уточните название."
+    },
+    {
+      "name": "Recipe layout at 360x640",
+      "clientWidth": 345,
+      "height": 640,
+      "images": [
+        {
+          "currentSrc": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg",
+          "fetchpriority": "high",
+          "loading": "eager",
+          "naturalHeight": 220,
+          "naturalWidth": 330,
+          "picture": null,
+          "renderedWidth": 305,
+          "src": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg"
+        },
+        {
+          "currentSrc": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/recipe_page.jpg",
+          "fetchpriority": null,
+          "loading": "lazy",
+          "naturalHeight": 472,
+          "naturalWidth": 1084,
+          "picture": "<picture><img src=\"https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/recipe_page.jpg\" alt=\"\" width=\"1084\" height=\"472\" loading=\"lazy\" decoding=\"async\"></picture>",
+          "renderedWidth": 305,
+          "src": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/recipe_page.jpg"
+        },
+        {
+          "currentSrc": "",
+          "fetchpriority": null,
+          "loading": "lazy",
+          "naturalHeight": 0,
+          "naturalWidth": 0,
+          "picture": "<picture><img src=\"https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/recipe_page_square.jpg\" alt=\"\" width=\"878\" height=\"980\" loading=\"lazy\" decoding=\"async\"></picture>",
+          "renderedWidth": 305,
+          "src": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/recipe_page_square.jpg"
+        }
+      ],
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "name": "Recipe instructions anchor",
+      "passed": true,
+      "state": {
+        "hash": "#instructions",
+        "heading": "Приготовление",
+        "steps": 2,
+        "top": 120.390625
+      }
+    },
+    {
+      "name": "Recipe layout at 320x568",
+      "passed": false,
+      "clientWidth": 305,
+      "height": 568,
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "name": "Home layout at 320x568",
+      "passed": false,
+      "bodyMinWidth": "0px",
+      "bodyWidth": 305,
+      "clientWidth": 305,
+      "height": 568,
+      "scrollWidth": 321,
+      "width": 320
+    },
+    {
+      "name": "Recipe at 320 CSS px content width (335 px window minus 15 px scrollbar)",
+      "passed": true,
+      "clientWidth": 320,
+      "innerWidth": 335,
+      "scrollWidth": 320
+    },
+    {
+      "name": "Home at 320 CSS px content width (335 px window minus 15 px scrollbar)",
+      "passed": false,
+      "clientWidth": 320,
+      "innerWidth": 335,
+      "scrollWidth": 321
+    }
+  ],
+  "geometryNotes": {
+    "desktopScrollbarPx": 15,
+    "recipe320Content": {
+      "clientWidth": 320,
+      "innerWidth": 335,
+      "scrollWidth": 320
+    },
+    "home320Content": {
+      "clientWidth": 320,
+      "innerWidth": 335,
+      "scrollWidth": 321
+    },
+    "recipe305Content": {
+      "bodyMinWidth": "0px",
+      "bodyWidth": 305,
+      "clientWidth": 305,
+      "innerWidth": 320,
+      "overflow": [
+        {
+          "class": "",
+          "right": 385.125,
+          "tag": "SPAN",
+          "width": 132.046875
+        },
+        {
+          "class": "breadcrumbs__link",
+          "right": 385.125,
+          "tag": "A",
+          "width": 132.046875
+        },
+        {
+          "class": "",
+          "right": 385.125,
+          "tag": "SPAN",
+          "width": 132.046875
+        },
+        {
+          "class": "breadcrumbs__separator",
+          "right": 407.125,
+          "tag": "SPAN",
+          "width": 16
+        },
+        {
+          "class": "",
+          "right": 407.125,
+          "tag": "svg",
+          "width": 16
+        },
+        {
+          "class": "",
+          "right": 400.4596557617187,
+          "tag": "path",
+          "width": 2.66668701171875
+        },
+        {
+          "class": "",
+          "right": 457.953125,
+          "tag": "SPAN",
+          "width": 44.828125
+        },
+        {
+          "class": "breadcrumbs__link",
+          "right": 457.953125,
+          "tag": "A",
+          "width": 44.828125
+        }
+      ],
+      "scrollWidth": 320,
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+    },
+    "home305Content": {
+      "bodyMinWidth": "0px",
+      "bodyWidth": 305,
+      "clientWidth": 305,
+      "height": 568,
+      "scrollWidth": 321,
+      "width": 320
+    },
+    "interpretation": "Recipe passes at 320 CSS px content width. Home retains 1 px scrollWidth excess at 320 CSS px. At 305 CSS px content width (320 px outer window), home and recipe have 15–16 px excess; body overflow-x is hidden. Treat as a narrow-width layout follow-up, not a confirmed physical-phone failure."
+  },
+  "console": [
+    {
+      "level": "error",
+      "message": "%c%d font-size:0;color:transparent NaN",
+      "timestamp": "2026-10-17T10:36:23.938Z",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/av0/rch/vtcac/0x4AAAAAACHi4j28Zkx7tq97/light/fbE/new/normal?lang=auto"
+    },
+    {
+      "level": "error",
+      "message": "%c%d font-size:0;color:transparent NaN",
+      "timestamp": "2026-10-17T10:36:23.938Z",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/av0/rch/vtcac/0x4AAAAAACHi4j28Zkx7tq97/light/fbE/new/normal?lang=auto"
+    },
+    {
+      "level": "warn",
+      "message": "%c%d font-size:0;color:transparent NaN",
+      "timestamp": "2026-10-17T10:36:23.941Z",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/av0/rch/vtcac/0x4AAAAAACHi4j28Zkx7tq97/light/fbE/new/normal?lang=auto"
+    },
+    {
+      "level": "warn",
+      "message": "%c%d font-size:0;color:transparent NaN",
+      "timestamp": "2026-10-17T10:36:23.941Z",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/av0/rch/vtcac/0x4AAAAAACHi4j28Zkx7tq97/light/fbE/new/normal?lang=auto"
+    }
+  ],
+  "screenshots": [
+    "seo-production-mobile-filter.png",
+    "seo-production-mobile-recipe.png"
+  ]
+}

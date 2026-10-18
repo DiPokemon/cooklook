@@ -1,0 +1,86 @@
+Сводка
+Оптимизация сайта
+Эффективность
+Индексирование
+Инструменты
+Представление в поиске
+Услуги и предложения в поиске
+Ссылки
+Обучение
+Нейровебмастер
+5
+Заголовки и описания
+Работаем, чтобы всё работало ❤️
+В инструменте «Заголовки и описания» временно недоступна выгрузка данных. Наши инженеры заботятся о том, чтобы скорее восстановить работу.
+Подробнее о ситуации
+Одинаковые заголовки и описания страниц
+138 (4%) страниц содержат одинаковые title.
+244 (7%) страницы содержат одинаковые description. Когда описания отражают контент страницы, информативны и привлекательны, пользователям удобнее находить информацию в поисковой выдаче.
+Как это исправить?
+Если заголовки создаются автоматически, вы можете разнообразить их наполнение: добавить номер страницы, характеристики товара и пр.
+Если в URL есть GET-параметры, используйте директиву Clean-param.
+Если в URL встречается разный регистр, добавьте атрибут rel="canonical" или 301 редирект, чтобы указать, по какому адресу страницы должны быть в поиске.
+Используйте рекомендации по составлению заголовков и описаний.
+Дождитесь, когда робот посетит сайт и узнает об изменениях. В течение недели после этого информация обновится в Вебмастере.
+Совет
+
+Чтобы робот быстрее проверил изменения, отправьте наиболее важные страницы на переобход или настройте обход страниц со счётчиком Метрики.
+
+Если вы уже внесли исправления на страницы из примеров или их HTTP-код изменился, проверьте статус URL. Если в базе версия страницы старше, чем дата внесенных изменений, отправьте страницы на переобход или дождитесь, когда информация в Вебмастере обновится.
+
+Скачать таблицу с title
+XLS
+CSV
+title
+description
+Каталог рецептов. Блюда из баранины - COOK-LOOK — 5 таких заголовков	Дата обхода
+/recipe_category/blyuda-iz-baraniny-sousy-i-marinady/	26.09.2026
+/recipe_category/blyuda-iz-baraniny-salaty/	20.09.2026
+/recipe_category/blyuda-iz-baraniny-supy/	01.09.2026
+Показать еще
+Каталог рецептов. Блюда из овощей - COOK-LOOK — 4 таких заголовка	Дата обхода
+/recipe_category/blyuda-iz-ovoshhej-osnovnye-blyuda/	15.09.2026
+/recipe_category/blyuda-iz-ovoshhej-pasta-i-piczcza/	14.08.2026
+/recipe_category/blyuda-iz-ovoshhej-salaty/	03.08.2026
+Показать еще
+Каталог рецептов. Картошка с грибами - COOK-LOOK — 4 таких заголовка	Дата обхода
+/recipe_category/kartoshka-s-gribami/	06.09.2026
+/recipe_category/kartoshka-s-gribami-osnovnye-blyuda/	14.08.2026
+/recipe_category/kartoshka-s-gribami-zakuski/	13.08.2026
+Показать еще
+Каталог рецептов. Булочки - COOK-LOOK — 4 таких заголовка	Дата обхода
+/recipe_category/bulochki-zavtraki/	29.09.2026
+/recipe_category/bulochki-zakuski/	14.08.2026
+/recipe_category/bulochki-sendvichi/	14.08.2026
+Показать еще
+Каталог рецептов. Рататуй - COOK-LOOK — 3 таких заголовка	Дата обхода
+/recipe_category/ratatuj-osnovnye-blyuda/	15.09.2026
+/recipe_category/ratatuj-zakuski/	13.08.2026
+/recipe_category/ratatuj-salaty/	25.07.2026
+Каталог рецептов. Лапша - COOK-LOOK — 3 таких заголовка	Дата обхода
+/recipe_category/lapsha-zakuski/	23.09.2026
+/recipe_category/lapsha-supy/	14.08.2026
+/recipe_category/lapsha-osnovnye-blyuda/	30.07.2026
+Каталог рецептов. Вареники - COOK-LOOK — 3 таких заголовка	Дата обхода
+/recipe_category/vareniki-zavtraki/	08.09.2026
+/recipe_category/vareniki-osnovnye-blyuda/	07.09.2026
+/recipe_category/vareniki/	12.08.2026
+Каталог рецептов. Коктейли - COOK-LOOK — 3 таких заголовка	Дата обхода
+/recipe_category/koktejli-napitki/	12.09.2026
+/recipe_category/koktejli-osnovnye-blyuda/	14.08.2026
+/recipe_category/koktejli/	13.08.2026
+Каталог рецептов. Мусс - COOK-LOOK — 3 таких заголовка	Дата обхода
+/recipe_category/muss-napitki/	23.08.2026
+/recipe_category/muss-osnovnye-blyuda/	11.08.2026
+/recipe_category/muss-zakuski/	24.07.2026
+Каталог рецептов. Киш - COOK-LOOK — 3 таких заголовка	Дата обхода
+/recipe_category/kish-osnovnye-blyuda/	23.09.2026
+/recipe_category/kish-zakuski/	13.08.2026
+/recipe_category/kish/	26.07.2026
+Блог
+Пользовательское соглашение
+Политика конфиденциальности
+Правила рекомендаций
+RU
+EN
+© 2004–2026ООО «Яндекс»

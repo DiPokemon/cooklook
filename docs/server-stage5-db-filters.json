@@ -1,0 +1,232 @@
+{
+  "checked_at": "2026-10-17T15:52:42.348Z",
+  "cases": [
+    {
+      "case": "date_include_exclude",
+      "sql": "SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts WHERE 1=1 AND ( ( SELECT COUNT(1) FROM wp_term_relationships WHERE term_taxonomy_id IN (9) AND object_id = wp_posts.ID ) = 1 AND wp_posts.ID NOT IN ( SELECT object_id FROM wp_term_relationships WHERE term_taxonomy_id IN (8) ) ) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) GROUP BY wp_posts.ID ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11"
+    },
+    {
+      "case": "recipe_time_ingredients_and",
+      "sql": "SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id WHERE 1=1 AND ( ( SELECT COUNT(1) FROM wp_term_relationships WHERE term_taxonomy_id IN (8,9) AND object_id = wp_posts.ID ) = 2 ) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) GROUP BY wp_posts.ID ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11"
+    },
+    {
+      "case": "recipe_views_region_ingredient",
+      "sql": "SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id WHERE 1=1 AND ( ( SELECT COUNT(1) FROM wp_term_relationships WHERE term_taxonomy_id IN (9) AND object_id = wp_posts.ID ) = 1 ) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) AND wp_posts.ID IN (SELECT post_id FROM wp_postmeta WHERE meta_key = '_recipe_region' AND meta_value = 'Русская кухня') GROUP BY wp_posts.ID ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11"
+    }
+  ],
+  "sql": "SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts WHERE 1=1 AND ( ( SELECT COUNT(1) FROM wp_term_relationships WHERE term_taxonomy_id IN (9) AND object_id = wp_posts.ID ) = 1 AND wp_posts.ID NOT IN ( SELECT object_id FROM wp_term_relationships WHERE term_taxonomy_id IN (8) ) ) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) GROUP BY wp_posts.ID ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11;\nSELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id WHERE 1=1 AND ( ( SELECT COUNT(1) FROM wp_term_relationships WHERE term_taxonomy_id IN (8,9) AND object_id = wp_posts.ID ) = 2 ) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) GROUP BY wp_posts.ID ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11;\nSELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id WHERE 1=1 AND ( ( SELECT COUNT(1) FROM wp_term_relationships WHERE term_taxonomy_id IN (9) AND object_id = wp_posts.ID ) = 1 ) AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) AND wp_posts.ID IN (SELECT post_id FROM wp_postmeta WHERE meta_key = '_recipe_region' AND meta_value = 'Русская кухня') GROUP BY wp_posts.ID ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11;\nSELECT COUNT(*) AS public_recipes FROM wp_posts WHERE post_type='recipe' AND post_status='publish' AND post_password='';\nSELECT pm.meta_key,p.post_status,COUNT(*) AS rows_count FROM wp_postmeta pm JOIN wp_posts p ON p.ID=pm.post_id WHERE pm.meta_key IN ('_recipe_time','_recipe_region') AND p.post_type='recipe' GROUP BY pm.meta_key,p.post_status;",
+  "result": {
+    "messages": [
+      " Отображение строк 0 - 10 (11 всего, Запрос занял 0.0289 сек.) [ID: 41386... - 40697...]",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      " Отображение строк 0 - 10 (11 всего, Запрос занял 0.2070 сек.) [ID: 41419... - 40359...]",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      " Отображение строк 0 - 10 (11 всего, Запрос занял 0.2624 сек.) [ID: 16755... - 30832...]",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      "SQL-запрос успешно выполнен.",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      " Отображение строк 0 - 3 (4 всего, Запрос занял 0.6378 сек.)"
+    ],
+    "tables": [
+      [
+        [
+          "",
+          "ID",
+          ""
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41386"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41193"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41162"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41072"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41065"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41056"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41051"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "40996"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "40956"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "40872"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "40697"
+        ]
+      ],
+      [
+        [
+          "ID",
+          ""
+        ],
+        [
+          "41419"
+        ],
+        [
+          "40884"
+        ],
+        [
+          "40883"
+        ],
+        [
+          "40848"
+        ],
+        [
+          "40845"
+        ],
+        [
+          "40690"
+        ],
+        [
+          "40665"
+        ],
+        [
+          "40654"
+        ],
+        [
+          "40521"
+        ],
+        [
+          "40504"
+        ],
+        [
+          "40359"
+        ]
+      ],
+      [
+        [
+          "ID",
+          ""
+        ],
+        [
+          "16755"
+        ],
+        [
+          "16255"
+        ],
+        [
+          "16184"
+        ],
+        [
+          "2124"
+        ],
+        [
+          "36868"
+        ],
+        [
+          "37648"
+        ],
+        [
+          "16196"
+        ],
+        [
+          "21255"
+        ],
+        [
+          "32693"
+        ],
+        [
+          "40437"
+        ],
+        [
+          "30832"
+        ]
+      ],
+      [
+        [
+          "public_recipes",
+          ""
+        ],
+        [
+          "3740"
+        ]
+      ],
+      [
+        [
+          "meta_key",
+          "post_status",
+          "rows_count",
+          ""
+        ],
+        [
+          "_recipe_region",
+          "draft",
+          "37752"
+        ],
+        [
+          "_recipe_region",
+          "publish",
+          "3740"
+        ],
+        [
+          "_recipe_time",
+          "draft",
+          "27913"
+        ],
+        [
+          "_recipe_time",
+          "publish",
+          "3741"
+        ]
+      ]
+    ]
+  }
+}

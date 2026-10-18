@@ -1,0 +1,138 @@
+help_outline
+Справка
+manage_accounts
+Пользовательские настройки
+	
+notifications
+Сообщения
+38
+
+home
+Обзор
+lightbulb_2
+Статистика
+trending_up
+Эффективность
+keyboard_arrow_down
+search
+Проверка URL
+Индексирование
+keyboard_arrow_up
+file_copy
+Страницы
+account_tree
+Файлы Sitemap
+visibility_off
+Удаления
+Качество
+keyboard_arrow_up
+speed
+Core Web Vitals
+lock
+HTTPS
+Улучшения
+keyboard_arrow_up
+layers
+Строки навигации
+layers
+Рецепты
+layers
+Проверка кода
+Проблемы безопасности и меры, принятые вручную
+keyboard_arrow_down
+link_2
+Ссылки
+trophy
+Достижения
+settings
+Настройки
+feedback
+Отправить отзыв
+info
+Общие сведения о Search Console
+КонфиденциальностьУсловия использования
+Индексирование страниц
+
+Страница просканирована, но пока не проиндексирована
+
+ЭКСПОРТИРОВАТЬ
+
+ОТПРАВИТЬ
+Все обработанные страницы
+Все отправленные страницы
+Только страницы, которые не были отправлены
+https://cook-look.ru/recipe-sitemap.xml
+https://cook-look.ru/recipe-sitemap2.xml
+https://cook-look.ru/recipe_category-sitemap.xml
+https://cook-look.ru/recipe_tags-sitemap.xml
+https://cook-look.ru/recipe_tags-sitemap2.xml
+https://cook-look.ru/sitemap_index.xml
+Последнее обновление: 12.10.2026
+info
+Страница просканирована, но пока не проиндексирована
+Указанные ниже страницы не индексируются Google и не появляются в результатах поиска.
+ПОДРОБНЕЕ
+Дата выявления: 07.05.2024
+Устранена ли проблема?
+ПРОВЕРИТЬ ИСПРАВЛЕНИЕ
+Затронутые страницы
+2,32 тыс.
+19.07.2026
+30.07.2026
+10.08.2026
+21.08.2026
+01.09.2026
+12.09.2026
+23.09.2026
+04.10.2026
+3 тыс.
+2 тыс.
+1 тыс.
+0
+Примеры
+
+
+URL
+	
+Последнее сканирование
+
+https://cook-look.ru/recipe/uzbekskij-plov-s-baranim-salom/
+	14 окт. 2026 г.
+
+https://cook-look.ru/recipe_tags/konservirovannyj-zharenyj-perecz/
+	14 окт. 2026 г.
+
+https://cook-look.ru/recipe_tags/oranzh-bitter/
+	14 окт. 2026 г.
+
+https://cook-look.ru/recipe_tags/svezhie-drozhzhi/page/3/
+	13 окт. 2026 г.
+
+https://cook-look.ru/recipe/mindalnyj-tort/
+	13 окт. 2026 г.
+
+https://cook-look.ru/recipe_tags/svezhaya-myata/page/6/
+	13 окт. 2026 г.
+
+https://cook-look.ru/recipe_tags/paprika/
+	13 окт. 2026 г.
+
+https://cook-look.ru/recipe_tags/armanyak/
+	13 окт. 2026 г.
+
+https://cook-look.ru/recipe_tags/govyazhij-yazyk/
+	13 окт. 2026 г.
+
+https://cook-look.ru/recipe_tags/marinovannyj-imbir/
+	13 окт. 2026 г.
+Строк на странице:
+5
+10
+25
+50
+100
+250
+500
+1–10 из 1000
+
+Индексирование страниц

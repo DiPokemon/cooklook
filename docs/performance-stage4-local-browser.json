@@ -1,0 +1,197 @@
+{
+  "checkedAt": "2026-10-17T14:10:08.954Z",
+  "before": {
+    "cards": 11,
+    "client": 1265,
+    "scroll": 1265,
+    "styles": [
+      {
+        "href": null,
+        "id": "wp-img-auto-sizes-contain-inline-css"
+      },
+      {
+        "href": null,
+        "id": "wp-emoji-styles-inline-css"
+      },
+      {
+        "href": null,
+        "id": "wp-block-library-inline-css"
+      },
+      {
+        "href": null,
+        "id": "classic-theme-styles-inline-css"
+      },
+      {
+        "href": null,
+        "id": "global-styles-inline-css"
+      },
+      {
+        "href": "http://cooklook/wp-content/themes/cooklook/static/css/frontend.css?ver=1792234392",
+        "id": "style_min-css"
+      },
+      {
+        "href": "http://cooklook/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1705602109",
+        "id": "select2-css"
+      },
+      {
+        "href": "http://cooklook/wp-content/themes/cooklook/static/css/catalog.css?ver=1792101754",
+        "id": "cooklook-catalog-css"
+      },
+      {
+        "href": "http://cooklook/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.4",
+        "id": "relevanssi-live-search-css"
+      }
+    ],
+    "width": 1280
+  },
+  "after": {
+    "cards": 11,
+    "client": 1265,
+    "scroll": 1265,
+    "styles": [
+      {
+        "bytes": 135,
+        "href": null,
+        "id": "wp-img-auto-sizes-contain-inline-css"
+      },
+      {
+        "bytes": 340,
+        "href": null,
+        "id": "wp-emoji-styles-inline-css"
+      },
+      {
+        "bytes": 4274,
+        "href": null,
+        "id": "wp-block-library-inline-css"
+      },
+      {
+        "bytes": 350,
+        "href": null,
+        "id": "classic-theme-styles-inline-css"
+      },
+      {
+        "bytes": 9335,
+        "href": null,
+        "id": "global-styles-inline-css"
+      },
+      {
+        "bytes": 0,
+        "href": "http://cooklook/wp-content/themes/cooklook/static/css/frontend.css?ver=1792234392",
+        "id": "style_min-css"
+      },
+      {
+        "bytes": 0,
+        "href": "http://cooklook/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1705602109",
+        "id": "select2-css"
+      },
+      {
+        "bytes": 3402,
+        "href": null,
+        "id": "cooklook-catalog-inline-css"
+      },
+      {
+        "bytes": 1957,
+        "href": null,
+        "id": "relevanssi-live-search-inline-css"
+      }
+    ],
+    "width": 1280
+  },
+  "layouts": [
+    {
+      "client": 390,
+      "page": "catalog ingredient picker",
+      "scroll": 390,
+      "width": 390
+    },
+    {
+      "client": 305,
+      "page": "catalog filtered",
+      "scroll": 305,
+      "width": 320
+    },
+    {
+      "broken": [],
+      "client": 305,
+      "page": "recipe",
+      "scroll": 305,
+      "slickInitialized": true,
+      "slickStyles": true,
+      "width": 320
+    },
+    {
+      "client": 375,
+      "page": "recipe",
+      "scroll": 375,
+      "width": 390
+    },
+    {
+      "broken": [],
+      "client": 1265,
+      "page": "recipe",
+      "scroll": 1265,
+      "styles": [
+        {
+          "href": null,
+          "id": "wp-img-auto-sizes-contain-inline-css"
+        },
+        {
+          "href": null,
+          "id": "wp-emoji-styles-inline-css"
+        },
+        {
+          "href": null,
+          "id": "wp-block-library-inline-css"
+        },
+        {
+          "href": null,
+          "id": "classic-theme-styles-inline-css"
+        },
+        {
+          "href": null,
+          "id": "global-styles-inline-css"
+        },
+        {
+          "href": "http://cooklook/wp-content/themes/cooklook/static/css/frontend.css?ver=1792234392",
+          "id": "style_min-css"
+        },
+        {
+          "href": null,
+          "id": "slick-inline-css"
+        },
+        {
+          "href": null,
+          "id": "relevanssi-live-search-inline-css"
+        }
+      ],
+      "width": 1280
+    }
+  ],
+  "filter": {
+    "cards": [
+      "Яблочная каша",
+      "Молочная рисовая каша",
+      "Пшенная каша на молоке",
+      "Кукурузная каша",
+      "Гурьевская каша",
+      "Пшенная молочная каша с тыквой",
+      "Гречневая каша на молоке",
+      "Пшенная каша",
+      "Гречневая каша с молоком",
+      "Пшеничная каша",
+      "Пшеничная каша с молоком"
+    ],
+    "client": 375,
+    "scroll": 375,
+    "url": "http://cooklook/recipes/?include_ingredients%5B%5D=%25d0%25bc%25d0%25be%25d0%25bb%25d0%25be%25d0%25ba%25d0%25be",
+    "width": 390
+  },
+  "carousel": {
+    "before": [
+      "Гречневая каша на молоке"
+    ],
+    "after": [
+      "Кремлевская каша"
+    ]
+  }
+}

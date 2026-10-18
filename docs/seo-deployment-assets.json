@@ -1,0 +1,409 @@
+{
+  "checked_at": "2026-10-17T02:18:32.125Z",
+  "site": "https://cook-look.ru",
+  "release_sha256": "fa08fdffd2a171d491151f927d9d3230fc8ee4990ca2c02f5a95f49ccacc1dc3",
+  "method": "Sequential public GETs; exact published asset query strings; SHA-256 of response bytes against release manifest. No server file access.",
+  "assets": [
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+      "path": "static/js/script.js",
+      "status": 200,
+      "bytes": 1337,
+      "content_type": "application/javascript",
+      "expected_sha256": "d01c67e72af70cbf957049fd76d6fd0823179c678259c917bbc79cd58c8cd36a",
+      "actual_sha256": "d01c67e72af70cbf957049fd76d6fd0823179c678259c917bbc79cd58c8cd36a",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+      "path": "static/libs/slick/slick.min.js",
+      "status": 200,
+      "bytes": 42863,
+      "content_type": "application/javascript",
+      "expected_sha256": "0c7178cc6ca34fb18e30f070a5e7a1c287b2d7ccfcba2cfdf06e0f46eda55740",
+      "actual_sha256": "0c7178cc6ca34fb18e30f070a5e7a1c287b2d7ccfcba2cfdf06e0f46eda55740",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+      "path": "static/js/slick_init.js",
+      "status": 200,
+      "bytes": 1184,
+      "content_type": "application/javascript",
+      "expected_sha256": "2cc723210dec4f25774ac4eafb31965fcd17789e296349541a03405123326198",
+      "actual_sha256": "2cc723210dec4f25774ac4eafb31965fcd17789e296349541a03405123326198",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+      "path": "static/js/ajax-search.js",
+      "status": 200,
+      "bytes": 1773,
+      "content_type": "application/javascript",
+      "expected_sha256": "0fba1942bdd7065a8aee505a475dba365ee4f879fb47ff25fa16f1ab5d85923b",
+      "actual_sha256": "0fba1942bdd7065a8aee505a475dba365ee4f879fb47ff25fa16f1ab5d85923b",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+      "path": "static/js/search_modal.js",
+      "status": 200,
+      "bytes": 1817,
+      "content_type": "application/javascript",
+      "expected_sha256": "1ad6931ecdcda0a821298a4f35be42df27fef6003d1cf8916fdcb995d307fd3f",
+      "actual_sha256": "1ad6931ecdcda0a821298a4f35be42df27fef6003d1cf8916fdcb995d307fd3f",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+      "path": "js/navigation.js",
+      "status": 200,
+      "bytes": 2980,
+      "content_type": "application/javascript",
+      "expected_sha256": "8ee0654259fda0bbfeab4305b895e740659613080d90352bd36c1452fd426ef6",
+      "actual_sha256": "8ee0654259fda0bbfeab4305b895e740659613080d90352bd36c1452fd426ef6",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+      "path": "static/css/style.min.css",
+      "status": 200,
+      "bytes": 83520,
+      "content_type": "text/css",
+      "expected_sha256": "8f914bd7fc7a4f22d0f8f625d99f8e147d06e83ba5e527de81266c5112400e15",
+      "actual_sha256": "8f914bd7fc7a4f22d0f8f625d99f8e147d06e83ba5e527de81266c5112400e15",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+      "path": "static/css/layout.css",
+      "status": 200,
+      "bytes": 3574,
+      "content_type": "text/css",
+      "expected_sha256": "cb68add754d07bf6ad219e71ae4d4004b7c90524d906ea484d3179389850df02",
+      "actual_sha256": "cb68add754d07bf6ad219e71ae4d4004b7c90524d906ea484d3179389850df02",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+      "path": "static/libs/slick/slick.min.css",
+      "status": 200,
+      "bytes": 1286,
+      "content_type": "text/css",
+      "expected_sha256": "c4bb1bc94f5033ff9914ac88954765c4f0716791a5c2348bb653d38d846a8d72",
+      "actual_sha256": "c4bb1bc94f5033ff9914ac88954765c4f0716791a5c2348bb653d38d846a8d72",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+      "path": "static/libs/slick/slick-theme.min.css",
+      "status": 200,
+      "bytes": 2431,
+      "content_type": "text/css",
+      "expected_sha256": "efa90933615b2e675817369048e386abfc9e3fd2c8eb642fa3103a48eef76257",
+      "actual_sha256": "efa90933615b2e675817369048e386abfc9e3fd2c8eb642fa3103a48eef76257",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+      "path": "style.css",
+      "status": 200,
+      "bytes": 882,
+      "content_type": "text/css",
+      "expected_sha256": "5fdbdb6af22dfed44d67584d14e8579aed10b0576c939e9c78d5df94f5cf1491",
+      "actual_sha256": "5fdbdb6af22dfed44d67584d14e8579aed10b0576c939e9c78d5df94f5cf1491",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+      "path": "static/libs/select2/select2.full.min.js",
+      "status": 200,
+      "bytes": 76775,
+      "content_type": "application/javascript",
+      "expected_sha256": "be6c8c94cc0e34860b624598c95ca27502645c19cfe0282371e17a4371f07f7f",
+      "actual_sha256": "be6c8c94cc0e34860b624598c95ca27502645c19cfe0282371e17a4371f07f7f",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+      "path": "static/js/filter-ingridients.js",
+      "status": 200,
+      "bytes": 4818,
+      "content_type": "application/javascript",
+      "expected_sha256": "c272e37599a324e94e2efbd3ed2234179deeec979a0c9ad6aeab71fc2480a9f9",
+      "actual_sha256": "c272e37599a324e94e2efbd3ed2234179deeec979a0c9ad6aeab71fc2480a9f9",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+      "path": "static/js/filters.js",
+      "status": 200,
+      "bytes": 6990,
+      "content_type": "application/javascript",
+      "expected_sha256": "2692bcb88d9208bc187b75afde7f34cd3eb34a84303aedd1a351411555695c3e",
+      "actual_sha256": "2692bcb88d9208bc187b75afde7f34cd3eb34a84303aedd1a351411555695c3e",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+      "path": "static/libs/select2/select2.min.css",
+      "status": 200,
+      "bytes": 16265,
+      "content_type": "text/css",
+      "expected_sha256": "4a7641c6c583062a068c15438922a6ab5087da847d51d18b36929b013f106671",
+      "actual_sha256": "4a7641c6c583062a068c15438922a6ab5087da847d51d18b36929b013f106671",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+      "path": "static/css/catalog.css",
+      "status": 200,
+      "bytes": 3317,
+      "content_type": "text/css",
+      "expected_sha256": "18a260289154b56b2d65d3f666917815179c704df4ecb904e51dff019298595d",
+      "actual_sha256": "18a260289154b56b2d65d3f666917815179c704df4ecb904e51dff019298595d",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/css/account.css?ver=1792203035",
+      "path": "static/css/account.css",
+      "status": 200,
+      "bytes": 4524,
+      "content_type": "text/css",
+      "expected_sha256": "1d627f2ae6a7d08bc65490e126404d34bacc2a29dd7a53e7bb4b773989c3b3ad",
+      "actual_sha256": "1d627f2ae6a7d08bc65490e126404d34bacc2a29dd7a53e7bb4b773989c3b3ad",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+      "path": "static/js/recipe-views.js",
+      "status": 200,
+      "bytes": 1978,
+      "content_type": "application/javascript",
+      "expected_sha256": "eae917508f19ec8443c08a4bee1e4cb7c21743511b0e8ac01f57aa4280b99aca",
+      "actual_sha256": "eae917508f19ec8443c08a4bee1e4cb7c21743511b0e8ac01f57aa4280b99aca",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+      "path": "static/js/ajax-comment.js",
+      "status": 200,
+      "bytes": 1752,
+      "content_type": "application/javascript",
+      "expected_sha256": "99a7748c3ef5a1d27c2695b962508992fd535c7b474c8b2685f15e92015f3a39",
+      "actual_sha256": "99a7748c3ef5a1d27c2695b962508992fd535c7b474c8b2685f15e92015f3a39",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+      "path": "static/img/adv/main_categories-360.webp",
+      "status": 200,
+      "bytes": 43196,
+      "content_type": "image/webp",
+      "expected_sha256": "a1f00d8cf9e22486a184b0f961faeb1499fb807f3dc442661079b827dd6d7253",
+      "actual_sha256": "a1f00d8cf9e22486a184b0f961faeb1499fb807f3dc442661079b827dd6d7253",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-600.webp",
+      "path": "static/img/adv/main_categories-600.webp",
+      "status": 200,
+      "bytes": 86292,
+      "content_type": "image/webp",
+      "expected_sha256": "56f6d48af2eb81ccbc958606d1c65ad5dcd5f2e22b639418ad31c7e2bea5bbcb",
+      "actual_sha256": "56f6d48af2eb81ccbc958606d1c65ad5dcd5f2e22b639418ad31c7e2bea5bbcb",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_square_1-360.webp",
+      "path": "static/img/adv/main_square_1-360.webp",
+      "status": 200,
+      "bytes": 22520,
+      "content_type": "image/webp",
+      "expected_sha256": "3cb34fa51646f8f42cdb7dea7d3103508fbf1821225d7733ab7923f4d6860be2",
+      "actual_sha256": "3cb34fa51646f8f42cdb7dea7d3103508fbf1821225d7733ab7923f4d6860be2",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_square_1-600.webp",
+      "path": "static/img/adv/main_square_1-600.webp",
+      "status": 200,
+      "bytes": 42778,
+      "content_type": "image/webp",
+      "expected_sha256": "97d7f9ee89d87324f873c3af5210b09472bbec1feff7c2fe48dca58080254782",
+      "actual_sha256": "97d7f9ee89d87324f873c3af5210b09472bbec1feff7c2fe48dca58080254782",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_square_2-360.webp",
+      "path": "static/img/adv/main_square_2-360.webp",
+      "status": 200,
+      "bytes": 26686,
+      "content_type": "image/webp",
+      "expected_sha256": "298462dfac58a1d1b41f5f534a5d5de8526191f7cd96d38301823de866b3b144",
+      "actual_sha256": "298462dfac58a1d1b41f5f534a5d5de8526191f7cd96d38301823de866b3b144",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_square_2-720.webp",
+      "path": "static/img/adv/main_square_2-720.webp",
+      "status": 200,
+      "bytes": 67300,
+      "content_type": "image/webp",
+      "expected_sha256": "fb05f9f07215109b99a43b344a4510fd00627859d06fe6d9eff2adc5bf6b3958",
+      "actual_sha256": "fb05f9f07215109b99a43b344a4510fd00627859d06fe6d9eff2adc5bf6b3958",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_square_2-731.webp",
+      "path": "static/img/adv/main_square_2-731.webp",
+      "status": 200,
+      "bytes": 67962,
+      "content_type": "image/webp",
+      "expected_sha256": "7d3b27696e1f6810a26ee2bbcbec367ba210ce2d52849b9d7b50d792e45c3d20",
+      "actual_sha256": "7d3b27696e1f6810a26ee2bbcbec367ba210ce2d52849b9d7b50d792e45c3d20",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_square_3-360.webp",
+      "path": "static/img/adv/main_square_3-360.webp",
+      "status": 200,
+      "bytes": 23462,
+      "content_type": "image/webp",
+      "expected_sha256": "bce48902d0b880b7f232cbc315ef016a0c95699db9c231562d43e0ded80eea53",
+      "actual_sha256": "bce48902d0b880b7f232cbc315ef016a0c95699db9c231562d43e0ded80eea53",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_square_3-600.webp",
+      "path": "static/img/adv/main_square_3-600.webp",
+      "status": 200,
+      "bytes": 43620,
+      "content_type": "image/webp",
+      "expected_sha256": "90f2ee19208d9428e207d7eece2aea813b615c749a5ad36746d17d8accbc6fe2",
+      "actual_sha256": "90f2ee19208d9428e207d7eece2aea813b615c749a5ad36746d17d8accbc6fe2",
+      "matches_release": true
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/variants.json",
+      "path": "static/img/adv/variants.json",
+      "status": 200,
+      "bytes": 834,
+      "content_type": "application/json",
+      "expected_sha256": "c0db267e3e38e177dc0cfc9757a5b3f30e3917fc69c9729fcd8d6a7140ca1b28",
+      "actual_sha256": "c0db267e3e38e177dc0cfc9757a5b3f30e3917fc69c9729fcd8d6a7140ca1b28",
+      "matches_release": true
+    }
+  ],
+  "routes": [
+    {
+      "requested": "http://cook-look.ru/",
+      "chain": [
+        {
+          "url": "http://cook-look.ru/",
+          "status": 301,
+          "location": "https://cook-look.ru:443/",
+          "cache_control": null,
+          "x_robots_tag": null
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null,
+          "cache_control": null,
+          "x_robots_tag": null
+        }
+      ]
+    },
+    {
+      "requested": "http://www.cook-look.ru/",
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/",
+          "status": 301,
+          "location": "https://www.cook-look.ru:443/",
+          "cache_control": null,
+          "x_robots_tag": null
+        },
+        {
+          "url": "https://www.cook-look.ru/",
+          "status": 301,
+          "location": "https://cook-look.ru/",
+          "cache_control": null,
+          "x_robots_tag": null
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null,
+          "cache_control": null,
+          "x_robots_tag": null
+        }
+      ]
+    },
+    {
+      "requested": "https://www.cook-look.ru/",
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/",
+          "status": 301,
+          "location": "https://cook-look.ru/",
+          "cache_control": null,
+          "x_robots_tag": null
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null,
+          "cache_control": null,
+          "x_robots_tag": null
+        }
+      ]
+    },
+    {
+      "requested": "https://cook-look.ru/sitemap.xml",
+      "chain": [
+        {
+          "url": "https://cook-look.ru/sitemap.xml",
+          "status": 301,
+          "location": "https://cook-look.ru/sitemap_index.xml",
+          "cache_control": null,
+          "x_robots_tag": null
+        },
+        {
+          "url": "https://cook-look.ru/sitemap_index.xml",
+          "status": 200,
+          "location": null,
+          "cache_control": null,
+          "x_robots_tag": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "requested": "https://cook-look.ru/account/",
+      "chain": [
+        {
+          "url": "https://cook-look.ru/account/",
+          "status": 200,
+          "location": null,
+          "cache_control": "no-cache, must-revalidate, max-age=0, no-store, private",
+          "x_robots_tag": null
+        }
+      ]
+    },
+    {
+      "requested": "https://cook-look.ru/my-favorites/",
+      "chain": [
+        {
+          "url": "https://cook-look.ru/my-favorites/",
+          "status": 200,
+          "location": null,
+          "cache_control": "no-cache, must-revalidate, max-age=0, no-store, private",
+          "x_robots_tag": null
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "completed_at": "2026-10-17T02:19:12.590Z"
+}

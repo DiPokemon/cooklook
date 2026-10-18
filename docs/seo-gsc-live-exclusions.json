@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-17T12:23:09.372Z",
+  "pages": [
+    {
+      "url": "https://cook-look.ru/policy/",
+      "status": 404,
+      "title": "Страница не найдена - COOK-LOOK",
+      "robots": [
+        "<meta name='robots' content='noindex, follow' />"
+      ],
+      "canonical": []
+    },
+    {
+      "url": "https://cook-look.ru/account/",
+      "status": 200,
+      "title": "Личный кабинет - COOK-LOOK",
+      "robots": [
+        "<meta name='robots' content='noindex, follow' />"
+      ],
+      "canonical": []
+    },
+    {
+      "url": "https://cook-look.ru/my-favorites/",
+      "status": 200,
+      "title": "Избранные рецепты - COOK-LOOK",
+      "robots": [
+        "<meta name='robots' content='noindex, nofollow' />"
+      ],
+      "canonical": []
+    },
+    {
+      "url": "https://cook-look.ru/login/",
+      "status": 200,
+      "title": "Войти &lsaquo; COOK-LOOK &#8212; WordPress",
+      "robots": [
+        "<meta name='robots' content='noindex, follow' />"
+      ],
+      "canonical": []
+    }
+  ]
+}

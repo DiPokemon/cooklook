@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-17T13:58:21.218Z",
+  "analyticsScripts": [
+    {
+      "async": true,
+      "fetchPriority": "auto",
+      "id": "",
+      "src": "https://mc.yandex.ru/metrika/tag_phono.js"
+    },
+    {
+      "async": true,
+      "fetchPriority": "low",
+      "id": "cooklook-metrika",
+      "src": "https://mc.yandex.ru/metrika/tag.js"
+    },
+    {
+      "async": true,
+      "fetchPriority": "low",
+      "id": "cooklook-gtm",
+      "src": "https://www.googletagmanager.com/gtm.js?id=GTM-PZSGH5S5"
+    }
+  ],
+  "images": 0,
+  "searchSuggestions": [
+    {
+      "title": "Пышные блины на молоке",
+      "url": "https://cook-look.ru/recipe/pyshnye-bliny-na-moloke/"
+    },
+    {
+      "title": "Дрожжевые блины",
+      "url": "https://cook-look.ru/recipe/drozhzhevye-bliny/"
+    },
+    {
+      "title": "Простые тонкие блины",
+      "url": "https://cook-look.ru/recipe/prostye-tonkie-bliny/"
+    },
+    {
+      "title": "Вкусные блины на молоке",
+      "url": "https://cook-look.ru/recipe/vkusnye-bliny-na-moloke/"
+    },
+    {
+      "title": "Домашние блины с мясом",
+      "url": "https://cook-look.ru/recipe/domashnie-bliny-s-myasom/"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "checked_at": "2026-10-17T15:48:23.523Z",
+  "method": "One SELECT per catalog sort through phpMyAdmin. Existing buffers and possible server query cache retained; not full-page TTFB. FOUND_ROWS() results in phpMyAdmin are invalidated by its own intervening SQL and must not be used; public count is checked separately in db-filters.json.",
+  "cases": [
+    {
+      "case": "date_catalog",
+      "sql": "SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts WHERE 1=1 AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11"
+    },
+    {
+      "case": "recipe_time_catalog",
+      "sql": "SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id WHERE 1=1 AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11"
+    },
+    {
+      "case": "recipe_views_catalog",
+      "sql": "SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id WHERE 1=1 AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11"
+    }
+  ],
+  "sql": "SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts WHERE 1=1 AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11;\nSELECT FOUND_ROWS() AS found_rows;\nSELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id WHERE 1=1 AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11;\nSELECT FOUND_ROWS() AS found_rows;\nSELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id WHERE 1=1 AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11;\nSELECT FOUND_ROWS() AS found_rows;",
+  "result": {
+    "messages": [
+      " Отображение строк 0 - 10 (11 всего, Запрос занял 0.0118 сек.) [ID: 41460... - 41303...]",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      " Отображение строк 0 - 0 (1 всего, Запрос занял 0.0001 сек.)",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      " Отображение строк 0 - 10 (11 всего, Запрос занял 0.2031 сек.) [ID: 41419... - 40996...]",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      " Отображение строк 0 - 0 (1 всего, Запрос занял 0.0001 сек.)",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      " Отображение строк 0 - 10 (11 всего, Запрос занял 0.0419 сек.) [ID: 31255... - 32125...]",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      " Отображение строк 0 - 0 (1 всего, Запрос занял 0.0001 сек.)"
+    ],
+    "tables": [
+      [
+        [
+          "",
+          "ID",
+          ""
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41460"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41443"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41419"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41417"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41386"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41370"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41363"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41329"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41317"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41311"
+        ],
+        [
+          "",
+          " Изменить",
+          " Копировать",
+          " Удалить",
+          "41303"
+        ]
+      ],
+      [
+        [
+          "ID",
+          ""
+        ],
+        [
+          "41419"
+        ],
+        [
+          "41386"
+        ],
+        [
+          "41329"
+        ],
+        [
+          "41311"
+        ],
+        [
+          "41298"
+        ],
+        [
+          "41251"
+        ],
+        [
+          "41217"
+        ],
+        [
+          "41162"
+        ],
+        [
+          "41102"
+        ],
+        [
+          "41056"
+        ],
+        [
+          "40996"
+        ]
+      ],
+      [
+        [
+          "ID",
+          ""
+        ],
+        [
+          "31255"
+        ],
+        [
+          "31042"
+        ],
+        [
+          "16550"
+        ],
+        [
+          "37012"
+        ],
+        [
+          "35803"
+        ],
+        [
+          "40794"
+        ],
+        [
+          "41443"
+        ],
+        [
+          "33136"
+        ],
+        [
+          "32682"
+        ],
+        [
+          "36810"
+        ],
+        [
+          "32125"
+        ]
+      ]
+    ]
+  }
+}

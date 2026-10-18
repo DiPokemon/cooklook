@@ -1,0 +1,322 @@
+Проверка расширенных результатов
+
+Войти
+
+
+
+Результаты проверки
+
+ПОДЕЛИТЬСЯ
+check_circle
+Обнаружено 4 элемента без ошибок
+Элементы без ошибок могут показываться в виде расширенных результатов поиска Google. Подробнее
+ПОСМОТРЕТЬ ПРОВЕРЕННУЮ СТРАНИЦУ
+ПОСМОТРЕТЬ ПРИМЕРЫ РЕЗУЛЬТАТОВ
+Сведения
+Сканирование
+check_circle
+Просканировано: 17 окт. 2026 г., 15:12:23
+
+Обнаруженные структурированные данные
+check_circle
+Строки навигации
+Обнаружено 2 элемента без ошибок
+
+check_circle
+Рецепты
+Обнаружен 1 элемент без ошибок
+Есть мелкие проблемы
+
+check_circle
+Проверка кода
+Обнаружен 1 элемент без ошибок
+
+Дополнительная информация
+
+Проверьте, какие структурированные данные есть на всем сайте.
+ПЕРЕЙТИ В SEARCH CONSOLE
+КонфиденциальностьУсловия использования
+
+RECIPE DETAILS
+Проверка расширенных результатов
+
+Войти
+
+
+
+Результаты проверки
+
+Рецепты
+
+ПОДЕЛИТЬСЯ
+check_circle
+Обнаружен 1 элемент без ошибок
+Элементы без ошибок могут показываться в виде расширенных результатов поиска Google. Подробнее
+ПОСМОТРЕТЬ ПРОВЕРЕННУЮ СТРАНИЦУ
+ПОСМОТРЕТЬ ПРИМЕРЫ РЕЗУЛЬТАТОВ
+Сведения
+Сканирование
+check_circle
+Просканировано: 17 окт. 2026 г., 15:12:23
+
+Обнаруженные элементы
+check_circle
+Блины с водкой
+8 незначительных проблем
+
+
+Отсутствует поле "video" (необязательно)
+
+Отсутствует поле "nutrition" (необязательно)
+
+Отсутствует поле "cookTime" (необязательно)
+
+Отсутствует поле "prepTime" (необязательно)
+
+type
+Recipe
+id
+https://cook-look.ru/recipe/bliny-s-vodkoj/#recipe
+name
+Блины с водкой
+url
+https://cook-look.ru/recipe/bliny-s-vodkoj/
+author
+type
+Organization
+name
+CookLook
+url
+https://cook-look.ru/
+datePublished
+2024-07-13T21:30:09+03:00
+dateModified
+2024-07-19T01:55:36+03:00
+description
+Рецепт «Блины с водкой». Ингредиенты и пошаговое приготовление.
+image
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg
+recipeInstructions
+Отсутствует поле "name" (необязательно)
+
+Укажите "image" или "video". (необязательно)
+
+type
+HowToStep
+text
+Добавить яйца, соль и сахар в молоко. Перемешать все с помощью миксера. Затем постепенно добавить муку. Дать тесту отдохнуть в течение 30–40 минут.
+url
+https://cook-look.ru/recipe/bliny-s-vodkoj/#step_1
+recipeInstructions
+Отсутствует поле "name" (необязательно)
+
+Укажите "image" или "video". (необязательно)
+
+type
+HowToStep
+text
+Перед тем, как поставить в духовку, нужно добавить масло и водку в тесто, затем хорошо перемешать. Если нужно, дополнительно разбавить кипятком.
+url
+https://cook-look.ru/recipe/bliny-s-vodkoj/#step_2
+recipeIngredient
+Молоко ½ л
+recipeIngredient
+Куриное яйцо 2 штуки
+recipeIngredient
+Соль 1 чайная ложка
+recipeIngredient
+Сахар 2 столовые ложки
+recipeIngredient
+Пшеничная мука 10 столовых ложек
+recipeIngredient
+Растительное масло 3 столовые ложки
+recipeIngredient
+Водка 25 мл
+recipeYield
+4
+recipeCuisine
+Итальянская кухня
+recipeCategory
+Блины, Выпечка и десерты
+keywords
+Водка, Куриное яйцо, Молоко, Пшеничная мука, Растительное масло, Сахар, Соль
+aggregateRating
+type
+AggregateRating
+ratingValue
+1.7
+ratingCount
+3
+bestRating
+5
+worstRating
+0
+mainEntityOfPage
+type
+WebPage
+id
+https://cook-look.ru/recipe/bliny-s-vodkoj/
+url
+https://cook-look.ru/recipe/bliny-s-vodkoj/
+name
+Блины с водкой — пошаговый рецепт | COOK-LOOK
+isPartOf
+type
+WebSite
+id
+https://cook-look.ru/#website
+url
+https://cook-look.ru/
+name
+COOK-LOOK
+description
+Лучшие кулинарные рецепты с пошаговыми инструкциями.
+publisher
+type
+Organization
+id
+https://cook-look.ru/#organization
+name
+COOK-LOOK
+url
+https://cook-look.ru/
+logo
+type
+ImageObject
+inLanguage
+ru-RU
+url
+https://cook-look.ru/wp-content/uploads/2024/07/cropped-favicon.png
+contentUrl
+https://cook-look.ru/wp-content/uploads/2024/07/cropped-favicon.png
+width
+512
+height
+512
+caption
+COOK-LOOK
+id
+https://cook-look.ru/#/schema/logo/image/
+image
+type
+ImageObject
+inLanguage
+ru-RU
+url
+https://cook-look.ru/wp-content/uploads/2024/07/cropped-favicon.png
+contentUrl
+https://cook-look.ru/wp-content/uploads/2024/07/cropped-favicon.png
+width
+512
+height
+512
+caption
+COOK-LOOK
+id
+https://cook-look.ru/#/schema/logo/image/
+potentialAction
+type
+SearchAction
+target
+type
+EntryPoint
+urlTemplate
+https://cook-look.ru/?s={search_term_string}
+query-input
+type
+PropertyValueSpecification
+valueRequired
+http://schema.org/True
+valueName
+search_term_string
+inLanguage
+ru-RU
+primaryImageOfPage
+type
+ImageObject
+inLanguage
+ru-RU
+id
+https://cook-look.ru/recipe/bliny-s-vodkoj/#primaryimage
+url
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg
+contentUrl
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg
+width
+620
+height
+415
+image
+type
+ImageObject
+inLanguage
+ru-RU
+id
+https://cook-look.ru/recipe/bliny-s-vodkoj/#primaryimage
+url
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg
+contentUrl
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg
+width
+620
+height
+415
+thumbnailUrl
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg
+datePublished
+2024-07-13T18:30:09Z
+dateModified
+2024-07-18T22:55:36Z
+description
+Рецепт «Блины с водкой». Ингредиенты и пошаговое приготовление.
+breadcrumb
+type
+BreadcrumbList
+id
+https://cook-look.ru/recipe/bliny-s-vodkoj/#breadcrumb
+itemListElement
+type
+ListItem
+position
+1
+name
+Главная страница
+item
+type
+Thing
+id
+https://cook-look.ru/
+itemListElement
+type
+ListItem
+position
+2
+name
+Рецепты
+item
+type
+Thing
+id
+https://cook-look.ru/recipes/
+itemListElement
+type
+ListItem
+position
+3
+name
+Блины с водкой
+inLanguage
+ru-RU
+potentialAction
+type
+ReadAction
+target
+type
+EntryPoint
+urlTemplate
+https://cook-look.ru/recipe/bliny-s-vodkoj/
+Дополнительная информация
+
+Проверьте наличие структурированных данных из категории "Рецепты" на всем сайте.
+ПЕРЕЙТИ В SEARCH CONSOLE
+КонфиденциальностьУсловия использования

@@ -1,0 +1,88 @@
+{
+  "built_at": "2026-10-17T14:09:07+00:00",
+  "php": "8.1.9",
+  "archive": "build/release-20261017T140844Z-21ab62/cooklook.zip",
+  "extracted_theme": "build/release-20261017T140844Z-21ab62/extracted/cooklook",
+  "sha256": "2d6e134636d0802b7110152b898e5c3ece39054139e743facd1d09c703670d4a",
+  "bytes": 13483472,
+  "composer_lock_sha256": "61fb7730da09e50dd6cd30ac85b86f1d6cfb175040732b0252f09af9da828fb5",
+  "packages": {
+    "htmlburger/carbon-fields": {
+      "version": "v3.6.3",
+      "reference": "d913a5148cb9dc61ed239719c747f4ebb513003f"
+    },
+    "htmlburger/carbon-fields-yoast": {
+      "version": "v1.0.1",
+      "reference": "9fceee862838d36674086b285749816e3758feb6"
+    }
+  },
+  "development_vendor_unchanged": true,
+  "archive_integrity": true,
+  "file_count": 2909,
+  "comparedWith": "1.1.1",
+  "changedFiles": [
+    "functions-parts/styles_load.php",
+    "functions.php",
+    "style.css"
+  ],
+  "webpAndCloudflareUnchanged": true,
+  "wordpressCheck": {
+    "checked_at": "2026-10-17T14:09:57+00:00",
+    "wordpress": "7.1.3",
+    "php": "8.1.9",
+    "site": "http://cooklook/",
+    "method": "Read-only CLI boot of the extracted ZIP via process-local directory filters. Transients use the default in-memory WP_Object_Cache; wp-import-export-lite is excluded in this process because its bootstrap writes housekeeping data. Active theme/plugin options and site files unchanged. This is not a production, full plugin compatibility or browser measurement.",
+    "database_write_queries_allowed": false,
+    "loaded_from_release": {
+      "cooklook_recipe_query_args": "inc/recipe-query.php",
+      "cooklook_search_ingredients": "inc/recipe-ingredients.php",
+      "cooklook_recipe_schema": "template-parts/schema.php",
+      "cooklook_render_recipes": "inc/recipe-helpers.php",
+      "cooklook_generate_webp": "inc/media-webp.php",
+      "cooklook_webp_picture": "inc/media-webp.php",
+      "Carbon_Fields\\Carbon_Fields": "vendor/htmlburger/carbon-fields/core/Carbon_Fields.php",
+      "Carbon_Fields_Yoast\\Carbon_Fields_Yoast": "vendor/htmlburger/carbon-fields-yoast/core/Carbon_Fields_Yoast.php",
+      "Cooklook_Cached_Post_Meta_Datastore": "inc/class-cooklook-cached-post-meta-datastore.php"
+    },
+    "sorts": {
+      "date": {
+        "found": 80,
+        "cards": 11
+      },
+      "recipe_time": {
+        "found": 80,
+        "cards": 11
+      },
+      "recipe_views": {
+        "found": 80,
+        "cards": 11
+      }
+    },
+    "ingredient_search_results": 1,
+    "selected_options": 1,
+    "recipe_html_and_schema": 10,
+    "runtime_assets": [
+      "static/js/script.js",
+      "static/libs/slick/slick.min.js",
+      "static/js/slick_init.js",
+      "static/js/ajax-search.js",
+      "static/js/search_modal.js",
+      "static/libs/select2/select2.full.min.js",
+      "static/js/filter-ingridients.js",
+      "static/js/filters.js",
+      "static/js/favorite_recipes.js",
+      "static/js/recipe-rating.js",
+      "static/js/ajax-comment.js",
+      "static/css/fonts.css",
+      "static/css/frontend.css",
+      "static/libs/slick/cooklook-slick.css",
+      "static/css/account.css",
+      "static/libs/select2/select2.min.css",
+      "static/css/catalog.css",
+      "static/css/admin-styles.css",
+      "static/css/style.min.css",
+      "static/js/recipe-views.js"
+    ],
+    "development_packages": 0
+  }
+}

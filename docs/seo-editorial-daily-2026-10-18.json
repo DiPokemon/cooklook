@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-18",
+  "automationId": "cooklook-100",
+  "site": "https://cook-look.ru/",
+  "status": "blocked",
+  "finishedAt": "2026-10-18T07:02:26.4699595Z",
+  "saved": 0,
+  "verified": 0,
+  "prepared": 0,
+  "skippedRecipes": 0,
+  "entries": [],
+  "previousProcessedCount": 10,
+  "blocker": "Automatic approval review rejected reading the Chrome window because its active title was an unrelated Upwork page. WordPress access and authentication were not inspected. No production write attempted.",
+  "requiredAction": "Open and activate https://cook-look.ru/wp-admin/ in Chrome, sign in if needed, and request continuation.",
+  "filesystem": "Scoped escalation allowed creation and update of this report and ledger.",
+  "screenshot": "Not captured: no authorized WordPress view available; no website changes made."
+}

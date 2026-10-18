@@ -2,18 +2,16 @@
 defined( 'ABSPATH' ) || exit;
 
 function cooklook_enqueue_fonts() {
-	wp_enqueue_style( 'cooklook-fonts', 'https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap', array(), null );
+	$path = 'static/css/fonts.css';
+	wp_enqueue_style( 'cooklook-fonts', get_template_directory_uri() . '/' . $path, array(), cooklook_asset_version( $path ) );
 }
 
 function load_styles() {
-	cooklook_enqueue_fonts();
 	$styles = array(
-		'style_min' => 'static/css/style.min.css',
-		'cooklook-layout' => 'static/css/layout.css',
+		'style_min' => 'static/css/frontend.css',
 	);
 	if ( cooklook_has_recipe_slider() ) {
-		$styles['slick'] = 'static/libs/slick/slick.min.css';
-		$styles['slick_theme'] = 'static/libs/slick/slick-theme.min.css';
+		$styles['slick'] = 'static/libs/slick/cooklook-slick.css';
 	}
 	if ( is_page( 'account' ) || is_page_template( 'page-account.php' ) ) {
 		$styles['cooklook-account'] = 'static/css/account.css';
@@ -27,6 +25,32 @@ function load_styles() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'load_styles' );
+
+/**
+ * Let WordPress inline only the small, known render-blocking stylesheets.
+ * Core preserves their queue order, rewrites relative URLs and respects its
+ * total inline-size limit. Large styles keep their reusable browser cache.
+ */
+function cooklook_inline_small_styles() {
+	if ( version_compare( get_bloginfo( 'version' ), '5.9', '<' ) ) {
+		return;
+	}
+	$styles = wp_styles();
+	$files  = array(
+		'slick'            => array( get_template_directory(), get_template_directory_uri(), 'static/libs/slick/cooklook-slick.css' ),
+		'cooklook-catalog' => array( get_template_directory(), get_template_directory_uri(), 'static/css/catalog.css' ),
+		'relevanssi-live-search' => array( WP_PLUGIN_DIR, plugins_url(), 'relevanssi-live-ajax-search/assets/styles/style.css' ),
+	);
+	foreach ( $files as $handle => $file ) {
+		$path = $file[0] . '/' . $file[2];
+		$src  = $file[1] . '/' . $file[2];
+		// A replacement registered by a child theme/plugin must retain its own CSS.
+		if ( isset( $styles->registered[ $handle ] ) && wp_style_is( $handle, 'enqueued' ) && $src === $styles->registered[ $handle ]->src && is_readable( $path ) && filesize( $path ) <= 8192 ) {
+			wp_style_add_data( $handle, 'path', $path );
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'cooklook_inline_small_styles', 100 );
 
 function load_custom_admin_style( $hook ) {
 	if ( ! in_array( $hook, array( 'toplevel_page_recipe-manager', 'toplevel_page_search-moderation' ), true ) ) {

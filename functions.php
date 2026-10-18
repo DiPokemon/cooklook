@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.1.2' );
 }
 
 /**
@@ -177,10 +177,14 @@ add_action( 'widgets_init', 'cooklook_widgets_init' );
  * Enqueue scripts and styles.
  */
 function cooklook_scripts() {
-	wp_enqueue_style( 'cooklook-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'cooklook-style', 'rtl', 'replace' );
+	// Parent style.css contains metadata only; retain a child theme's real stylesheet.
+	if ( is_child_theme() ) {
+		wp_enqueue_style( 'cooklook-style', get_stylesheet_uri(), array( 'style_min' ), _S_VERSION );
+		wp_style_add_data( 'cooklook-style', 'rtl', 'replace' );
+	}
 
 	wp_enqueue_script( 'cooklook-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_script_add_data( 'cooklook-navigation', 'strategy', 'defer' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

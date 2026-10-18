@@ -1,0 +1,440 @@
+{
+  "checkedAt": "2026-10-17T12:51:11.877Z",
+  "site": "http://cooklook/",
+  "passed": true,
+  "pages": [
+    {
+      "description": "Каши — Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "h1": "Завтраки / Каши",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/",
+              "@type": "CollectionPage",
+              "breadcrumb": {
+                "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/#breadcrumb"
+              },
+              "description": "Каши — Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+              "image": {
+                "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/#primaryimage"
+              },
+              "inLanguage": "ru-RU",
+              "isPartOf": {
+                "@id": "http://cooklook/#website"
+              },
+              "name": "Каши — Завтраки — рецепты | Cook Look",
+              "primaryImageOfPage": {
+                "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/#primaryimage"
+              },
+              "thumbnailUrl": "http://cooklook/wp-content/uploads/2024/07/p_O-251.jpg",
+              "url": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/"
+            },
+            {
+              "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/#primaryimage",
+              "@type": "ImageObject",
+              "contentUrl": "http://cooklook/wp-content/uploads/2024/07/p_O-251.jpg",
+              "height": 415,
+              "inLanguage": "ru-RU",
+              "url": "http://cooklook/wp-content/uploads/2024/07/p_O-251.jpg",
+              "width": 375
+            },
+            {
+              "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/#breadcrumb",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "item": "http://cooklook/",
+                  "name": "Главная страница",
+                  "position": 1
+                },
+                {
+                  "@type": "ListItem",
+                  "item": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/",
+                  "name": "Завтраки",
+                  "position": 2
+                },
+                {
+                  "@type": "ListItem",
+                  "name": "Каши",
+                  "position": 3
+                }
+              ]
+            },
+            {
+              "@id": "http://cooklook/#website",
+              "@type": "WebSite",
+              "description": "Посмотри, как вкусно",
+              "inLanguage": "ru-RU",
+              "name": "Cook Look",
+              "potentialAction": [
+                {
+                  "@type": "SearchAction",
+                  "query-input": "required name=search_term_string",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "http://cooklook/?s={search_term_string}"
+                  }
+                }
+              ],
+              "publisher": {
+                "@id": "http://cooklook/#organization"
+              },
+              "url": "http://cooklook/"
+            },
+            {
+              "@id": "http://cooklook/#organization",
+              "@type": "Organization",
+              "image": {
+                "@id": "http://cooklook/#/schema/logo/image/"
+              },
+              "logo": {
+                "@id": "http://cooklook/#/schema/logo/image/",
+                "@type": "ImageObject",
+                "caption": "Cook Look",
+                "contentUrl": "http://cooklook/wp-content/uploads/2024/01/logo-e1704109339459.png",
+                "height": 20,
+                "inLanguage": "ru-RU",
+                "url": "http://cooklook/wp-content/uploads/2024/01/logo-e1704109339459.png",
+                "width": 161
+              },
+              "name": "Cook Look",
+              "url": "http://cooklook/"
+            }
+          ]
+        }
+      ],
+      "ogDescription": "Каши — Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "ogTitle": "Каши — Завтраки — рецепты | Cook Look",
+      "page2": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/page/2/",
+      "robots": "noindex, nofollow",
+      "title": "Каши — Завтраки — рецепты | Cook Look",
+      "url": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/"
+    },
+    {
+      "description": "Страница 2. Каши — Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "h1": "Завтраки / Каши",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/",
+              "@type": "CollectionPage",
+              "breadcrumb": {
+                "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/page/2/#breadcrumb"
+              },
+              "description": "Страница 2. Каши — Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+              "image": {
+                "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/page/2/#primaryimage"
+              },
+              "inLanguage": "ru-RU",
+              "isPartOf": {
+                "@id": "http://cooklook/#website"
+              },
+              "name": "Каши — Завтраки — рецепты — Страница 2 | Cook Look",
+              "primaryImageOfPage": {
+                "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/page/2/#primaryimage"
+              },
+              "thumbnailUrl": "http://cooklook/wp-content/uploads/2024/07/e4cce7e40e344f8d8baab1a23a62b8ef-4.jpg",
+              "url": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/page/2/"
+            },
+            {
+              "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/page/2/#primaryimage",
+              "@type": "ImageObject",
+              "contentUrl": "http://cooklook/wp-content/uploads/2024/07/e4cce7e40e344f8d8baab1a23a62b8ef-4.jpg",
+              "height": 415,
+              "inLanguage": "ru-RU",
+              "url": "http://cooklook/wp-content/uploads/2024/07/e4cce7e40e344f8d8baab1a23a62b8ef-4.jpg",
+              "width": 620
+            },
+            {
+              "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/page/2/#breadcrumb",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "item": "http://cooklook/",
+                  "name": "Главная страница",
+                  "position": 1
+                },
+                {
+                  "@type": "ListItem",
+                  "item": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/",
+                  "name": "Завтраки",
+                  "position": 2
+                },
+                {
+                  "@type": "ListItem",
+                  "name": "Каши",
+                  "position": 3
+                }
+              ]
+            },
+            {
+              "@id": "http://cooklook/#website",
+              "@type": "WebSite",
+              "description": "Посмотри, как вкусно",
+              "inLanguage": "ru-RU",
+              "name": "Cook Look",
+              "potentialAction": [
+                {
+                  "@type": "SearchAction",
+                  "query-input": "required name=search_term_string",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "http://cooklook/?s={search_term_string}"
+                  }
+                }
+              ],
+              "publisher": {
+                "@id": "http://cooklook/#organization"
+              },
+              "url": "http://cooklook/"
+            },
+            {
+              "@id": "http://cooklook/#organization",
+              "@type": "Organization",
+              "image": {
+                "@id": "http://cooklook/#/schema/logo/image/"
+              },
+              "logo": {
+                "@id": "http://cooklook/#/schema/logo/image/",
+                "@type": "ImageObject",
+                "caption": "Cook Look",
+                "contentUrl": "http://cooklook/wp-content/uploads/2024/01/logo-e1704109339459.png",
+                "height": 20,
+                "inLanguage": "ru-RU",
+                "url": "http://cooklook/wp-content/uploads/2024/01/logo-e1704109339459.png",
+                "width": 161
+              },
+              "name": "Cook Look",
+              "url": "http://cooklook/"
+            }
+          ]
+        }
+      ],
+      "ogDescription": "Страница 2. Каши — Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "ogTitle": "Каши — Завтраки — рецепты — Страница 2 | Cook Look",
+      "page2": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/",
+      "robots": "noindex, nofollow",
+      "title": "Каши — Завтраки — рецепты — Страница 2 | Cook Look",
+      "url": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8/page/2/"
+    },
+    {
+      "description": "Каши — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "h1": "Основные блюда / Каши",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0/",
+              "@type": "CollectionPage",
+              "breadcrumb": {
+                "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0/#breadcrumb"
+              },
+              "description": "Каши — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+              "image": {
+                "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0/#primaryimage"
+              },
+              "inLanguage": "ru-RU",
+              "isPartOf": {
+                "@id": "http://cooklook/#website"
+              },
+              "name": "Каши — Основные блюда — рецепты | Cook Look",
+              "primaryImageOfPage": {
+                "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0/#primaryimage"
+              },
+              "thumbnailUrl": "http://cooklook/wp-content/uploads/2024/07/p_O-252.jpg",
+              "url": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0/"
+            },
+            {
+              "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0/#primaryimage",
+              "@type": "ImageObject",
+              "contentUrl": "http://cooklook/wp-content/uploads/2024/07/p_O-252.jpg",
+              "height": 415,
+              "inLanguage": "ru-RU",
+              "url": "http://cooklook/wp-content/uploads/2024/07/p_O-252.jpg",
+              "width": 620
+            },
+            {
+              "@id": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0/#breadcrumb",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "item": "http://cooklook/",
+                  "name": "Главная страница",
+                  "position": 1
+                },
+                {
+                  "@type": "ListItem",
+                  "item": "http://cooklook/recipe_category/%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0/",
+                  "name": "Основные блюда",
+                  "position": 2
+                },
+                {
+                  "@type": "ListItem",
+                  "name": "Каши",
+                  "position": 3
+                }
+              ]
+            },
+            {
+              "@id": "http://cooklook/#website",
+              "@type": "WebSite",
+              "description": "Посмотри, как вкусно",
+              "inLanguage": "ru-RU",
+              "name": "Cook Look",
+              "potentialAction": [
+                {
+                  "@type": "SearchAction",
+                  "query-input": "required name=search_term_string",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "http://cooklook/?s={search_term_string}"
+                  }
+                }
+              ],
+              "publisher": {
+                "@id": "http://cooklook/#organization"
+              },
+              "url": "http://cooklook/"
+            },
+            {
+              "@id": "http://cooklook/#organization",
+              "@type": "Organization",
+              "image": {
+                "@id": "http://cooklook/#/schema/logo/image/"
+              },
+              "logo": {
+                "@id": "http://cooklook/#/schema/logo/image/",
+                "@type": "ImageObject",
+                "caption": "Cook Look",
+                "contentUrl": "http://cooklook/wp-content/uploads/2024/01/logo-e1704109339459.png",
+                "height": 20,
+                "inLanguage": "ru-RU",
+                "url": "http://cooklook/wp-content/uploads/2024/01/logo-e1704109339459.png",
+                "width": 161
+              },
+              "name": "Cook Look",
+              "url": "http://cooklook/"
+            }
+          ]
+        }
+      ],
+      "ogDescription": "Каши — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "ogTitle": "Каши — Основные блюда — рецепты | Cook Look",
+      "robots": "noindex, nofollow",
+      "title": "Каши — Основные блюда — рецепты | Cook Look",
+      "url": "http://cooklook/recipe_category/%d0%ba%d0%b0%d1%88%d0%b8-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%bd%d1%8b%d0%b5-%d0%b1%d0%bb%d1%8e%d0%b4%d0%b0/"
+    },
+    {
+      "description": "Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "h1": "Завтраки",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@id": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/",
+              "@type": "CollectionPage",
+              "breadcrumb": {
+                "@id": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/#breadcrumb"
+              },
+              "description": "Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+              "image": {
+                "@id": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/#primaryimage"
+              },
+              "inLanguage": "ru-RU",
+              "isPartOf": {
+                "@id": "http://cooklook/#website"
+              },
+              "name": "Завтраки — рецепты | Cook Look",
+              "primaryImageOfPage": {
+                "@id": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/#primaryimage"
+              },
+              "thumbnailUrl": "http://cooklook/wp-content/uploads/2024/07/p_O-251.jpg",
+              "url": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/"
+            },
+            {
+              "@id": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/#primaryimage",
+              "@type": "ImageObject",
+              "contentUrl": "http://cooklook/wp-content/uploads/2024/07/p_O-251.jpg",
+              "height": 415,
+              "inLanguage": "ru-RU",
+              "url": "http://cooklook/wp-content/uploads/2024/07/p_O-251.jpg",
+              "width": 375
+            },
+            {
+              "@id": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/#breadcrumb",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "item": "http://cooklook/",
+                  "name": "Главная страница",
+                  "position": 1
+                },
+                {
+                  "@type": "ListItem",
+                  "name": "Завтраки",
+                  "position": 2
+                }
+              ]
+            },
+            {
+              "@id": "http://cooklook/#website",
+              "@type": "WebSite",
+              "description": "Посмотри, как вкусно",
+              "inLanguage": "ru-RU",
+              "name": "Cook Look",
+              "potentialAction": [
+                {
+                  "@type": "SearchAction",
+                  "query-input": "required name=search_term_string",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "http://cooklook/?s={search_term_string}"
+                  }
+                }
+              ],
+              "publisher": {
+                "@id": "http://cooklook/#organization"
+              },
+              "url": "http://cooklook/"
+            },
+            {
+              "@id": "http://cooklook/#organization",
+              "@type": "Organization",
+              "image": {
+                "@id": "http://cooklook/#/schema/logo/image/"
+              },
+              "logo": {
+                "@id": "http://cooklook/#/schema/logo/image/",
+                "@type": "ImageObject",
+                "caption": "Cook Look",
+                "contentUrl": "http://cooklook/wp-content/uploads/2024/01/logo-e1704109339459.png",
+                "height": 20,
+                "inLanguage": "ru-RU",
+                "url": "http://cooklook/wp-content/uploads/2024/01/logo-e1704109339459.png",
+                "width": 161
+              },
+              "name": "Cook Look",
+              "url": "http://cooklook/"
+            }
+          ]
+        }
+      ],
+      "ogDescription": "Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "ogTitle": "Завтраки — рецепты | Cook Look",
+      "page2": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/page/2/",
+      "robots": "noindex, nofollow",
+      "title": "Завтраки — рецепты | Cook Look",
+      "url": "http://cooklook/recipe_category/%d0%b7%d0%b0%d0%b2%d1%82%d1%80%d0%b0%d0%ba%d0%b8/"
+    }
+  ]
+}

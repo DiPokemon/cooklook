@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-10-17T12:19:30.312Z",
+  "pages": [
+    {
+      "url": "https://cook-look.ru/recipe/vafelnoe-pechene/",
+      "status": 200,
+      "recipes": [
+        {
+          "name": "Вафельное печенье",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 0,
+            "ratingCount": 2,
+            "bestRating": 5,
+            "worstRating": 0
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/lnyanoe-moloko/",
+      "status": 200,
+      "recipes": [
+        {
+          "name": "Льняное молоко",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 0,
+            "ratingCount": 1,
+            "bestRating": 5,
+            "worstRating": 0
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/brauni-bez-yaicz-i-rastitelnogo-masla/",
+      "status": 200,
+      "recipes": [
+        {
+          "name": "Брауни без яиц и растительного масла",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 0,
+            "ratingCount": 1,
+            "bestRating": 5,
+            "worstRating": 0
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/kofejnyj-tort-muss/",
+      "status": 200,
+      "recipes": [
+        {
+          "name": "Кофейный торт-мусс",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 0,
+            "ratingCount": 1,
+            "bestRating": 5,
+            "worstRating": 0
+          }
+        }
+      ]
+    }
+  ]
+}

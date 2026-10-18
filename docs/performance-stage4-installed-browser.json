@@ -1,0 +1,132 @@
+{
+  "checkedAt": "2026-10-17T14:23:23.462Z",
+  "layouts": [
+    {
+      "client": 390,
+      "page": "catalog ingredients",
+      "scroll": 390,
+      "viewport": 390
+    },
+    {
+      "client": 305,
+      "page": "catalog filtered",
+      "scroll": 305,
+      "viewport": 320
+    },
+    {
+      "broken": [],
+      "client": 305,
+      "inlineCss": true,
+      "page": "recipe",
+      "scroll": 320,
+      "slick": true,
+      "viewport": 320
+    },
+    {
+      "client": 375,
+      "page": "recipe",
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "broken": [],
+      "client": 1265,
+      "page": "recipe",
+      "scroll": 1265,
+      "viewport": 1280
+    },
+    {
+      "client": 1265,
+      "page": "home",
+      "scroll": 1265,
+      "slick": false,
+      "viewport": 1280
+    },
+    {
+      "client": 305,
+      "page": "home",
+      "scroll": 305,
+      "viewport": 320
+    }
+  ],
+  "filter": {
+    "cards": [
+      "Каша рисовая с изюмом в мультиварке",
+      "Каша гречневая в мультиварке"
+    ],
+    "client": 375,
+    "scroll": 375,
+    "url": "https://cook-look.ru/recipes/?include_ingredients%5B%5D=moloko-25-noe"
+  },
+  "carousel": {
+    "before": [
+      "Пахлава армянская"
+    ],
+    "after": [
+      "Трубочки с ореховым кремом"
+    ]
+  },
+  "narrowCommentForm": {
+    "client": 305,
+    "iframes": [],
+    "scroll": 320,
+    "viewport": 320,
+    "wide": [
+      {
+        "class": "site-main",
+        "id": "primary",
+        "left": 0,
+        "right": 305,
+        "scroll": 320,
+        "tag": "MAIN",
+        "width": 305
+      },
+      {
+        "class": "post-16350 recipe type-recipe status-publish format-standard has-post-thumbnail hentry recipe_category-bliny recipe_category-pastries_desserts recipe_tags-vodka recipe_tags-kurinoe-yajczo recipe_tags-moloko recipe_tags-pshenichnaya-muka recipe_tags-rastitelnoe-maslo recipe_tags-sahar recipe_tags-sol",
+        "id": "post-16350",
+        "left": 0,
+        "right": 305,
+        "scroll": 320,
+        "tag": "ARTICLE",
+        "width": 305
+      },
+      {
+        "class": "comment-form",
+        "id": "commentform",
+        "left": 20,
+        "right": 285,
+        "scroll": 300,
+        "tag": "FORM",
+        "width": 265
+      }
+    ],
+    "details": [
+      {
+        "class": "form-submit",
+        "id": "",
+        "right": 285,
+        "scroll": 300,
+        "tag": "P",
+        "width": 265
+      },
+      {
+        "class": "",
+        "id": "",
+        "right": 285,
+        "scroll": 300,
+        "tag": "DIV",
+        "width": 265
+      },
+      {
+        "class": "",
+        "id": "",
+        "right": 285,
+        "scroll": 300,
+        "tag": "DIV",
+        "width": 265
+      }
+    ],
+    "source": "The existing Cloudflare Turnstile comment widget is configured data-size=normal in public HTML. At 320 viewport / 305 CSS client width its generated submit-area wrapper contributes 300px content, 15px document overflow. This excluded component was not modified."
+  },
+  "readOnly": "No comment, vote, login or settings submission."
+}

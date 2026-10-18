@@ -8,6 +8,10 @@ function cooklook_asset_version( $path ) {
 
 function cooklook_enqueue_script( $handle, $path, $dependencies = array( 'jquery' ) ) {
 	wp_enqueue_script( $handle, get_template_directory_uri() . '/' . $path, $dependencies, cooklook_asset_version( $path ), true );
+	if ( ! is_admin() ) {
+		// Core resolves dependency/inline-script constraints; do not rewrite script tags.
+		wp_script_add_data( $handle, 'strategy', 'defer' );
+	}
 }
 
 function cooklook_has_recipe_slider() {
@@ -16,6 +20,8 @@ function cooklook_has_recipe_slider() {
 
 function load_scripts() {
 	// WordPress owns jQuery and its noConflict mode.
+	wp_script_add_data( 'jquery-core', 'strategy', 'defer' );
+	wp_script_add_data( 'jquery-migrate', 'strategy', 'defer' );
 	cooklook_enqueue_script( 'script', 'static/js/script.js' );
 	if ( cooklook_has_recipe_slider() ) {
 		cooklook_enqueue_script( 'slick', 'static/libs/slick/slick.min.js' );
@@ -64,3 +70,11 @@ function load_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
+
+/** This installed plugin's client uses DOM-ready and localized data, so it can defer too. */
+function cooklook_defer_live_search() {
+	if ( wp_script_is( 'relevanssi-live-search-client', 'enqueued' ) ) {
+		wp_script_add_data( 'relevanssi-live-search-client', 'strategy', 'defer' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'cooklook_defer_live_search', 100 );

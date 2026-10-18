@@ -76,7 +76,7 @@
 
             <div class="right_side">
                 <div class="recipe_img_wrapper">
-                    <?php echo cooklook_post_image( $post_id, 'large', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '(max-width: 1023px) calc(100vw - 30px), 650px' ) ); ?>
+                    <?php echo cooklook_post_image( $post_id, 'large', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '(max-width: 1024px) calc(100vw - 40px), 650px' ) ); ?>
                     <?php if (is_user_logged_in()) : ?>
                         <a href="#" data-recipe-id="<?= get_the_ID(); ?>" class="bookmark <?= $favorite_class ?>">                    
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -136,7 +136,7 @@
             </div>
             <div class="qwert_block">
                 <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/1637470?erid=2bL9aMPo2e4BA5qnNGCKd2CCV5">
-                    <?php echo cooklook_banner( 'recipe_page' ); ?>
+                    <?php echo cooklook_banner( 'recipe_page', '(max-width: 1024px) calc(100vw - 40px), 552px' ); ?>
                 </a>
             </div>
         </div>

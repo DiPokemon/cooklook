@@ -1,0 +1,20 @@
+{
+    "checked_at": "2026-10-17T10:57:55+00:00",
+    "original_bytes": 150854,
+    "webp": {
+        "360": {
+            "bytes": 25596,
+            "sha256": "283a9fbc99e7dd3c856831cb73aeaf67b32ff497d6eea45520dcc68f89bbaab7"
+        },
+        "720": {
+            "bytes": 47400,
+            "sha256": "af4282c745a465de4412a69bb0eeb82de4914ce112a38e496a29cc0941716b14"
+        },
+        "1084": {
+            "bytes": 78670,
+            "sha256": "ab983532b70e27bf252000606ee5a42cfe02add868215f51fc3ae902a1f79066"
+        }
+    },
+    "database_writes": false,
+    "fixture_directory": "D:\\OSPanel\\domains\\cooklook\\wp-content\\themes\\cooklook/build/media-test-20261017-105754-26a8f6"
+}

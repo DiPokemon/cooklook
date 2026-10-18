@@ -1,0 +1,93 @@
+{
+  "checkedAt": "2026-10-17T13:00:46.082Z",
+  "pages": [
+    {
+      "url": "https://cook-look.ru/",
+      "status": 200,
+      "title": "Кулинарные рецепты - COOK-LOOK",
+      "description": "Пошаговые кулинарные рецепты. Все кухни мира, все виды блюд. Рецепты супов, гарниров, салатов, мясных блюд. Рецепты борща, окрошки, котлет, солянок.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/",
+      "ogTitle": "Кулинарные рецепты - COOK-LOOK",
+      "ogDescription": "Пошаговые кулинарные рецепты. Все кухни мира, все виды блюд. Рецепты супов, гарниров, салатов, мясных блюд. Рецепты борща, окрошки, котлет, солянок."
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-supy/",
+      "status": 200,
+      "title": "Блюда из баранины — Супы — рецепты | COOK-LOOK",
+      "description": "Блюда из баранины — Супы — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-supy/",
+      "ogTitle": "Блюда из баранины — Супы — рецепты | COOK-LOOK",
+      "ogDescription": "Блюда из баранины — Супы — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "collectionPage": {
+        "@type": "CollectionPage",
+        "@id": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-supy/",
+        "url": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-supy/",
+        "name": "Блюда из баранины — Супы — рецепты | COOK-LOOK",
+        "isPartOf": {
+          "@id": "https://cook-look.ru/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-supy/#primaryimage"
+        },
+        "image": {
+          "@id": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-supy/#primaryimage"
+        },
+        "thumbnailUrl": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-18991.jpg",
+        "description": "Блюда из баранины — Супы — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+        "breadcrumb": {
+          "@id": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-supy/#breadcrumb"
+        },
+        "inLanguage": "ru-RU"
+      },
+      "consistent": true
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-salaty/",
+      "status": 200,
+      "title": "Блюда из баранины — Салаты — рецепты | COOK-LOOK",
+      "description": "Блюда из баранины — Салаты — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-salaty/",
+      "ogTitle": "Блюда из баранины — Салаты — рецепты | COOK-LOOK",
+      "ogDescription": "Блюда из баранины — Салаты — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "collectionPage": {
+        "@type": "CollectionPage",
+        "@id": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-salaty/",
+        "url": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-salaty/",
+        "name": "Блюда из баранины — Салаты — рецепты | COOK-LOOK",
+        "isPartOf": {
+          "@id": "https://cook-look.ru/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-salaty/#primaryimage"
+        },
+        "image": {
+          "@id": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-salaty/#primaryimage"
+        },
+        "thumbnailUrl": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-19346.jpg",
+        "description": "Блюда из баранины — Салаты — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+        "breadcrumb": {
+          "@id": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-salaty/#breadcrumb"
+        },
+        "inLanguage": "ru-RU"
+      },
+      "consistent": true
+    },
+    {
+      "url": "https://cook-look.ru/policy/",
+      "status": 404,
+      "title": "Страница не найдена - COOK-LOOK",
+      "robots": "noindex, follow",
+      "ogTitle": "Страница не найдена - COOK-LOOK"
+    }
+  ],
+  "themeStyle": {
+    "url": "https://cook-look.ru/wp-content/themes/cooklook/style.css",
+    "status": 200,
+    "version": "1.1.1",
+    "sha256": "f8b0c033e27a815e391b740b3a033409435516134457e68e2769ba33d4ecb20b",
+    "matchesRelease": true
+  }
+}

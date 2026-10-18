@@ -1,0 +1,41 @@
+# COOK-LOOK production: https://cook-look.ru/robots.txt
+User-agent: *
+
+# WordPress service endpoints. Public CSS, JS, images and fonts remain crawlable.
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-login.php
+Disallow: /wp-signup.php
+Disallow: /wp-activate.php
+Disallow: /wp-cron.php
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /*?rest_route=
+Disallow: /*&rest_route=
+
+# Keep the existing crawl policy for author and user archives.
+Disallow: /author/
+Disallow: /users/
+
+# Feeds, trackbacks, embeds and comment moderation URLs.
+Disallow: /feed/
+Disallow: /rss/
+Disallow: /rss2/
+Disallow: /*/feed/
+Disallow: /*/rss/
+Disallow: /*/rss2/
+Disallow: /*/trackback/
+Disallow: /*/embed/
+Disallow: /*?feed=
+Disallow: /*&feed=
+Disallow: /*?unapproved=
+Disallow: /*&unapproved=
+Disallow: /*?moderation-hash=
+Disallow: /*&moderation-hash=
+
+# Search, catalog filters and account pages must be crawlable to read noindex.
+# Yandex: ignore tracking parameters only; keep all content/filter parameters.
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&openstat&_openstat
+
+Sitemap: https://cook-look.ru/sitemap_index.xml

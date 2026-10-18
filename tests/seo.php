@@ -31,8 +31,11 @@ function get_queried_object() { return $GLOBALS['test_object'] ?? get_post( 42 )
 function get_queried_object_id() { return get_queried_object()->ID; }
 function get_page_template_slug( $id ) { return get_post_meta( $id, '_wp_page_template' ); }
 function get_post_ancestors() { return array(); }
-function get_ancestors() { return array(); }
-function get_term( $id ) { return array( 1 => new WP_Term( 1 ), 2 => new WP_Term( 2, 1 ), 3 => new WP_Term( 3 ) )[ $id ] ?? null; }
+function get_ancestors( $id ) { return $GLOBALS['test_category_ancestors'][ $id ] ?? array(); }
+function get_term( $id ) { return $GLOBALS['test_category_terms'][ $id ] ?? ( array( 1 => new WP_Term( 1 ), 2 => new WP_Term( 2, 1 ), 3 => new WP_Term( 3 ) )[ $id ] ?? null ); }
+class WPSEO_Taxonomy_Meta {
+	static function get_term_meta( $term, $taxonomy, $field ) { return $GLOBALS['test_taxonomy_seo'][ $term->term_id ][ $field ] ?? ''; }
+}
 function term_is_ancestor_of( $parent, $child ) { return 1 === $parent && 2 === $child; }
 function get_term_link( $term ) { return home_url( '/recipe_category/' . $term->slug . '/' ); }
 function get_terms( $args ) { return array_values( array_intersect( $args['slug'], array( 'milk', 'egg', 'nuts', '%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be' ) ) ); }
@@ -217,6 +220,47 @@ test_case( 'Home, catalog and term metadata are descriptive and pagination is di
 	$GLOBALS['test_term_description'] = '<p>Отредактированное описание категории.</p>';
 	expect( cooklook_seo_description( '' ) === 'Отредактированное описание категории.', 'Term description lost' );
 	unset( $GLOBALS['test_object'], $GLOBALS['test_term_description'] );
+} );
+
+test_case( 'Homonymous category archives have distinct metadata across parent branches and pagination', function () {
+	$GLOBALS['test_conditionals'] = array( 'tax' => 'recipe_category' );
+	$soup = new WP_Term( 10 ); $soup->name = 'Супы';
+	$salad = new WP_Term( 20 ); $salad->name = 'Салаты';
+	$first = new WP_Term( 11, 10 ); $first->name = 'Блюда из баранины';
+	$second = new WP_Term( 21, 20 ); $second->name = $first->name;
+	$GLOBALS['test_category_terms'] = array( 10 => $soup, 20 => $salad );
+	$GLOBALS['test_category_ancestors'] = array( 11 => array( 10 ), 21 => array( 20 ) );
+	$GLOBALS['test_object'] = $first;
+	$first_meta = cooklook_seo_metadata_defaults();
+	$GLOBALS['test_object'] = $second;
+	$second_meta = cooklook_seo_metadata_defaults();
+	expect( $first_meta['title'] === 'Блюда из баранины — Супы — рецепты | Cook Look', 'Parent context missing from title' );
+	expect( $first_meta['title'] !== $second_meta['title'] && $first_meta['description'] !== $second_meta['description'], 'Distinct category branches still have duplicate metadata' );
+	$GLOBALS['test_query_vars']['paged'] = 2;
+	expect( strpos( cooklook_seo_title( '' ), 'Блюда из баранины — Салаты — рецепты — Страница 2' ) === 0 && strpos( cooklook_seo_description( '' ), 'Страница 2.' ) === 0, 'Category pagination loses context' );
+	$GLOBALS['test_category_ancestors'][21] = array( 20, 10, 999 );
+	expect( strpos( cooklook_seo_title( '' ), 'Блюда из баранины — Салаты — Супы' ) === 0, 'Deep hierarchy or missing ancestor handling failed' );
+	$GLOBALS['test_object'] = $soup;
+	$GLOBALS['test_query_vars'] = array();
+	expect( cooklook_seo_title( '' ) === 'Супы — рецепты | Cook Look', 'Root category changed unexpectedly' );
+	$GLOBALS['test_object'] = $first; $first->taxonomy = 'recipe_tags';
+	$GLOBALS['test_conditionals'] = array( 'tax' => 'recipe_tags' );
+	expect( cooklook_seo_title( '' ) === 'Рецепты с ингредиентом «Блюда из баранины» | Cook Look', 'Ingredient title inherited category ancestry' );
+	unset( $GLOBALS['test_object'], $GLOBALS['test_category_terms'], $GLOBALS['test_category_ancestors'] );
+} );
+
+test_case( 'Category context preserves editorial descriptions and explicit Yoast metadata', function () {
+	$GLOBALS['test_conditionals'] = array( 'tax' => 'recipe_category' );
+	$GLOBALS['test_object'] = new WP_Term( 2, 1 );
+	$GLOBALS['test_category_ancestors'] = array( 2 => array( 1 ) );
+	$GLOBALS['test_term_description'] = 'Описание редактора.';
+	expect( cooklook_seo_description( '' ) === 'Описание редактора.', 'Editorial category description was overwritten' );
+	$GLOBALS['test_taxonomy_seo'][2] = array( 'title' => 'Ручной title', 'desc' => 'Ручное описание' );
+	$presentation = (object) array( 'title' => 'Ручной title', 'meta_description' => 'Ручное описание', 'canonical' => 'https://example.test/category/', 'robots' => array( 'index' => 'noindex' ) );
+	$before = clone $presentation;
+	expect( cooklook_seo_title( $before->title ) === $before->title && cooklook_seo_description( $before->meta_description ) === $before->meta_description, 'Manual taxonomy SEO fields were overwritten' );
+	expect( cooklook_seo_presentation( $presentation ) == $before, 'Category defaults modified explicit presentation values' );
+	unset( $GLOBALS['test_object'], $GLOBALS['test_category_ancestors'], $GLOBALS['test_term_description'], $GLOBALS['test_taxonomy_seo'] );
 } );
 
 test_case( 'Yoast presentation shares defaults with the graph and preserves explicit editorial values', function () {

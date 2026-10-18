@@ -1,0 +1,2374 @@
+{
+  "version": 1,
+  "site": "https://cook-look.ru/",
+  "automationId": "cooklook-100",
+  "timezone": "Europe/Moscow",
+  "schedule": "Ежедневно в 10:00",
+  "selection": "Published recipes only; ascending production ID; empty excerpt; skip completed IDs and independent editorial text.",
+  "updatedAt": "2026-10-18T11:49:00.454Z",
+  "runs": [
+    {
+      "date": "2026-10-17",
+      "kind": "Initial explicitly requested transfer",
+      "saved": 10,
+      "published": 2,
+      "drafts": 8
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "Scheduled daily run",
+      "status": "blocked",
+      "saved": 0,
+      "verified": 0,
+      "report": "docs/seo-editorial-daily-2026-10-18.json",
+      "reason": "WordPress window not confirmed; automatic approval review rejected unrelated Chrome window read."
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "Resumed daily run after Chrome reconnection",
+      "status": "completed",
+      "saved": 100,
+      "verified": 100,
+      "published": 100,
+      "drafts": 0,
+      "skipped": 63,
+      "report": "docs/seo-editorial-daily-2026-10-18-resumed.json",
+      "completedAt": "2026-10-18T11:49:00.443Z"
+    }
+  ],
+  "entries": [
+    {
+      "productionId": 59,
+      "title": "Овсяная каша с сухофруктами",
+      "editUrl": "https://cook-look.ru/wp-admin/post.php?post=59&action=edit",
+      "url": null,
+      "postStatus": "Черновик",
+      "status": "saved",
+      "verifiedInAdmin": true,
+      "publicVerification": "not_applicable_draft",
+      "savedAt": "2026-10-17T13:32:47.784Z",
+      "excerpt": "Овсяная каша на молоке с курагой, изюмом и сливочным маслом. Сухофрукты добавляют в готовую кашу, затем оставляют её настояться; сахар в этом рецепте не добавляют.",
+      "sourceReport": "docs/seo-editorial-production-reviewed.json",
+      "resultReport": "docs/seo-editorial-production-applied.json"
+    },
+    {
+      "productionId": 21,
+      "title": "Пшенная молочная каша с тыквой",
+      "editUrl": "https://cook-look.ru/wp-admin/post.php?post=21&action=edit",
+      "url": "https://cook-look.ru/recipe/pshennaya-molochnaya-kasha-s-tykvoj/",
+      "postStatus": "Опубликовано",
+      "status": "verified",
+      "verifiedInAdmin": true,
+      "publicVerification": "passed",
+      "savedAt": "2026-10-17T13:33:23.937Z",
+      "excerpt": "Молочная пшённая каша с кусочками тыквы. Тыкву варят в молоке, затем добавляют пшено; в конце кашу выдерживают под крышкой на водяной бане или в духовке.",
+      "sourceReport": "docs/seo-editorial-production-reviewed.json",
+      "resultReport": "docs/seo-editorial-production-applied.json"
+    },
+    {
+      "productionId": 51,
+      "title": "Манная каша а-ля паннакотта",
+      "editUrl": "https://cook-look.ru/wp-admin/post.php?post=51&action=edit",
+      "url": null,
+      "postStatus": "Черновик",
+      "status": "saved",
+      "verifiedInAdmin": true,
+      "publicVerification": "not_applicable_draft",
+      "savedAt": "2026-10-17T13:33:55.344Z",
+      "excerpt": "Охлаждённый десерт из манной каши на молоке с ванильным сахаром. Кашу оставляют в форме в холодильнике на ночь, а перед подачей выкладывают на блюдце и дополняют вареньем по вкусу.",
+      "sourceReport": "docs/seo-editorial-production-reviewed.json",
+      "resultReport": "docs/seo-editorial-production-applied.json"
+    },
+    {
+      "productionId": 52,
+      "title": "Молочная манная каша",
+      "editUrl": "https://cook-look.ru/wp-admin/post.php?post=52&action=edit",
+      "url": null,
+      "postStatus": "Черновик",
+      "status": "saved",
+      "verifiedInAdmin": true,
+      "publicVerification": "not_applicable_draft",
+      "savedAt": "2026-10-17T13:34:12.407Z",
+      "excerpt": "Манная каша на молоке с сахаром и солью. Крупу варят на слабом огне при помешивании до загустения, затем добавляют сахар и соль.",
+      "sourceReport": "docs/seo-editorial-production-reviewed.json",
+      "resultReport": "docs/seo-editorial-production-applied.json"
+    },
+    {
+      "productionId": 53,
+      "title": "Сладкая манная каша",
+      "editUrl": "https://cook-look.ru/wp-admin/post.php?post=53&action=edit",
+      "url": "https://cook-look.ru/recipe/sladkaya-mannaya-kasha/",
+      "postStatus": "Опубликовано",
+      "status": "verified",
+      "verifiedInAdmin": true,
+      "publicVerification": "passed",
+      "savedAt": "2026-10-17T13:34:30.642Z",
+      "excerpt": "Сладкая манная каша на молоке для одной порции. Манку с сахаром и солью постепенно всыпают в молоко, а после варки дают каше настояться под крышкой.",
+      "sourceReport": "docs/seo-editorial-production-reviewed.json",
+      "resultReport": "docs/seo-editorial-production-applied.json"
+    },
+    {
+      "productionId": 54,
+      "title": "Манная каша на молоке",
+      "editUrl": "https://cook-look.ru/wp-admin/post.php?post=54&action=edit",
+      "url": null,
+      "postStatus": "Черновик",
+      "status": "saved",
+      "verifiedInAdmin": true,
+      "publicVerification": "not_applicable_draft",
+      "savedAt": "2026-10-17T13:34:56.093Z",
+      "excerpt": "Манная каша на смеси молока и воды с сахаром и сливочным маслом. Крупу всыпают при постоянном помешивании, затем дают каше настояться под крышкой и подают с ягодами или вареньем.",
+      "sourceReport": "docs/seo-editorial-production-reviewed.json",
+      "resultReport": "docs/seo-editorial-production-applied.json"
+    },
+    {
+      "productionId": 55,
+      "title": "Каша кукурузная в мультиварке",
+      "editUrl": "https://cook-look.ru/wp-admin/post.php?post=55&action=edit",
+      "url": null,
+      "postStatus": "Черновик",
+      "status": "saved",
+      "verifiedInAdmin": true,
+      "publicVerification": "not_applicable_draft",
+      "savedAt": "2026-10-17T13:35:12.544Z",
+      "excerpt": "Кукурузная молочная каша со сливочным маслом, сахаром и солью. Все ингредиенты смешивают в чаше мультиварки и готовят на программе «Молочная каша/Крупы».",
+      "sourceReport": "docs/seo-editorial-production-reviewed.json",
+      "resultReport": "docs/seo-editorial-production-applied.json"
+    },
+    {
+      "productionId": 56,
+      "title": "Овсяная каша в пароварке с карамелизованными фруктами",
+      "editUrl": "https://cook-look.ru/wp-admin/post.php?post=56&action=edit",
+      "url": null,
+      "postStatus": "Черновик",
+      "status": "saved",
+      "verifiedInAdmin": true,
+      "publicVerification": "not_applicable_draft",
+      "savedAt": "2026-10-17T13:35:24.672Z",
+      "excerpt": "Овсяная каша со сливками, приготовленная в пароварке. К ней подают персик и клубнику в карамели из сахара и сливочного масла.",
+      "sourceReport": "docs/seo-editorial-production-reviewed.json",
+      "resultReport": "docs/seo-editorial-production-applied.json"
+    },
+    {
+      "productionId": 57,
+      "title": "Гречневая каша с сыром и овощами",
+      "editUrl": "https://cook-look.ru/wp-admin/post.php?post=57&action=edit",
+      "url": null,
+      "postStatus": "Черновик",
+      "status": "saved",
+      "verifiedInAdmin": true,
+      "publicVerification": "not_applicable_draft",
+      "savedAt": "2026-10-17T13:36:25.014Z",
+      "excerpt": "Гречневая каша с адыгейским сыром, морковью и цветной капустой. Сыр и овощи обжаривают со специями, затем добавляют гречку и готовят под крышкой до впитывания воды.",
+      "sourceReport": "docs/seo-editorial-production-reviewed.json",
+      "resultReport": "docs/seo-editorial-production-applied.json"
+    },
+    {
+      "productionId": 58,
+      "title": "Каша карри из дикого риса с креветками",
+      "editUrl": "https://cook-look.ru/wp-admin/post.php?post=58&action=edit",
+      "url": null,
+      "postStatus": "Черновик",
+      "status": "saved",
+      "verifiedInAdmin": true,
+      "publicVerification": "not_applicable_draft",
+      "savedAt": "2026-10-17T13:36:38.453Z",
+      "excerpt": "Дикий рис с креветками в кокосовом молоке с карри, чесноком и чили. Предварительно отваренный рис тушат с соусом, а в конце добавляют креветки, лимонный сок и кинзу.",
+      "sourceReport": "docs/seo-editorial-production-reviewed.json",
+      "resultReport": "docs/seo-editorial-production-applied.json"
+    },
+    {
+      "productionId": 28,
+      "title": "Гречка с грибами",
+      "url": "https://cook-look.ru/recipe/grechka-s-gribami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Гречневая каша с обжаренными шампиньонами, луком и морковью. Крупу тушат с овощами, затем соединяют с отдельно обжаренными на смеси сливочного и растительного масла грибами и зеленью.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/grechka-s-gribami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 29,
+      "title": "Молочная рисовая каша",
+      "url": "https://cook-look.ru/recipe/molochnaya-risovaya-kasha/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Рисовая каша на молоке и воде с добавлением соли. Рис сначала варят в воде, затем постепенно подливают молоко, регулируя густоту, и доводят кашу до готовности при помешивании.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/molochnaya-risovaya-kasha/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 31,
+      "title": "Гречка по-купечески",
+      "url": "https://cook-look.ru/recipe/grechka-po-kupecheski/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Гречка со свининой, луком, морковью и томатной пастой. Крупу тушат вместе с обжаренным мясом и овощами, а перед подачей добавляют рубленую петрушку, укроп и чёрный перец.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/grechka-po-kupecheski/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 50,
+      "title": "Каша корично-яблочная",
+      "url": "https://cook-look.ru/recipe/kasha-korichno-yablochnaya/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Овсяная каша на воде с кусочками яблока, сахаром и корицей. Яблоко добавляют в уже сваренную горячую кашу, перемешивают, а корицей приправляют блюдо перед подачей к столу.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/kasha-korichno-yablochnaya/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 60,
+      "title": "Пшенная каша с молоком",
+      "url": "https://cook-look.ru/recipe/pshennaya-kasha-s-molokom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Молочная пшённая каша с сахаром и солью. Пшено варят в молоке на слабом огне, часто помешивая, а после добавления сахара и соли оставляют кашу упревать.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/pshennaya-kasha-s-molokom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 66,
+      "title": "Каша гречневая в мультиварке",
+      "url": "https://cook-look.ru/recipe/kasha-grechnevaya-v-multivarke/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Гречневая каша на молоке со сливочным маслом, сахаром и солью. Ингредиенты смешивают в чаше мультиварки, готовят на программе «Молочная каша/Крупы» и перемешивают после её завершения.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/kasha-grechnevaya-v-multivarke/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 70,
+      "title": "Перловая каша в горшочках с грибами",
+      "url": "https://cook-look.ru/recipe/perlovaya-kasha-v-gorshochkah-s-gribami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Перловая каша с шампиньонами, сушёными белыми грибами и луком. Отваренную крупу раскладывают по горшочкам, добавляют приготовленные грибы и немного соевого соуса, затем запекают под крышками.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/perlovaya-kasha-v-gorshochkah-s-gribami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 85,
+      "title": "Гречневая каша с потрошками",
+      "url": "https://cook-look.ru/recipe/grechnevaya-kasha-s-potroshkami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Гречневая каша с куриными сердцами и желудками в соусе из сливок и сметаны. Крупу томят на водяной бане, а потроха готовят отдельно и подают с чесночным маслом и зеленью.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/grechnevaya-kasha-s-potroshkami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 97,
+      "title": "Пшеничная каша-пицца с оливками",
+      "url": "https://cook-look.ru/recipe/pshenichnaya-kasha-piczcza-s-olivkami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Пшеничная каша с оливками без косточек и тёртым сыром. Оливки нарезают кружочками и вместе с сыром добавляют в готовую кашу, после чего перемешивают все ингредиенты.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/pshenichnaya-kasha-piczcza-s-olivkami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 98,
+      "title": "Овсяная каша с карамелизованным бананом",
+      "url": "https://cook-look.ru/recipe/ovsyanaya-kasha-s-karamelizovannym-bananom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Овсяная каша на воде с карамелизованным бананом, клубничным вареньем и ванильным мороженым. Банан готовят на сковороде с растопленным сахаром, выкладывают на кашу и дополняют подачу корицей.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/ovsyanaya-kasha-s-karamelizovannym-bananom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 107,
+      "title": "Овсяная каша с корицей",
+      "url": "https://cook-look.ru/recipe/ovsyanaya-kasha-s-koriczej/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Овсяная каша на молоке с корицей и ванильным сахаром. Готовую кашу подают с дольками апельсина и кружочками банана, которые выкладывают рядом с ней на тарелке.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/ovsyanaya-kasha-s-koriczej/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 112,
+      "title": "Манная каша на молоке",
+      "url": "https://cook-look.ru/recipe/mannaya-kasha-na-moloke/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Манная каша на молоке с сахаром и солью. Крупу всыпают тонкой струйкой при постоянном помешивании, варят на слабом огне до загустения, затем добавляют сахар и соль.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/mannaya-kasha-na-moloke/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 113,
+      "title": "Несладкая овсяная каша с пармезаном",
+      "url": "https://cook-look.ru/recipe/nesladkaya-ovsyanaya-kasha-s-parmezanom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Несладкая овсяная каша со сливками, пармезаном и трюфельным маслом. Хлопья слегка обжаривают на сливочном масле, варят в воде и подают с дополнительным сыром и чёрным перцем.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/nesladkaya-ovsyanaya-kasha-s-parmezanom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 119,
+      "title": "Каша манная с морковью",
+      "url": "https://cook-look.ru/recipe/kasha-mannaya-s-morkovyu/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Количество манной крупы противоречиво: ингредиенты — 2 стакана, шаги — 1 стакан.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 127,
+      "title": "Гороховая каша в мультиварке",
+      "url": "https://cook-look.ru/recipe/gorohovaya-kasha-v-multivarke/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Гороховая каша с копчёной грудинкой и ветчиной, приготовленная в мультиварке. Грудинку добавляют ближе к концу приготовления гороха, а ветчину прогревают вместе с готовой кашей на режиме «Подогрев».",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/gorohovaya-kasha-v-multivarke/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 163,
+      "title": "Перловая каша с белыми грибами",
+      "url": "https://cook-look.ru/recipe/perlovaya-kasha-s-belymi-gribami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Перловая каша с белыми грибами, луком и чесноком. Крупу готовят с белым вином, постепенно подливая горячий куриный бульон, а в конце добавляют сливки и по желанию пармезан.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/perlovaya-kasha-s-belymi-gribami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 189,
+      "title": "Овсяная каша в банке",
+      "url": "https://cook-look.ru/recipe/ovsyanaya-kasha-v-banke/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Овсяные хлопья с банановым пюре и семенами чиа, замоченные в молоке на ночь. Кашу готовят в банке в холодильнике и подают со свежими ягодами по вкусу.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/ovsyanaya-kasha-v-banke/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 193,
+      "title": "Персиковая манная каша с ломтиками сливы в сиропе",
+      "url": "https://cook-look.ru/recipe/persikovaya-mannaya-kasha-s-lomtikami-slivy-v-sirope/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Манная каша на молоке с персиковым пюре и имбирём. Сверху выкладывают половинки сливы, приготовленные в сахарном сиропе с корицей и красным сладким вином, и поливают оставшимся сиропом.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/persikovaya-mannaya-kasha-s-lomtikami-slivy-v-sirope/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 195,
+      "title": "Рисовая каша протертая",
+      "url": "https://cook-look.ru/recipe/risovaya-kasha-protertaya/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Вероятная ошибка единицы или количества молока: в составе указано ¾ мл; уточнение необходимо до описания.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 205,
+      "title": "Кукурузная каша с индейкой, вялеными помидорами и сулугуни",
+      "url": "https://cook-look.ru/recipe/kukuruznaya-kasha-s-indejkoj-vyalenymi-pomidorami-i-suluguni/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Кукурузная каша с индейкой, вялеными помидорами и сулугуни. Крупу готовят вместе с обжаренным мясом и луком, затем вмешивают сыр и сливочное масло, а перед подачей украшают розмарином.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/kukuruznaya-kasha-s-indejkoj-vyalenymi-pomidorami-i-suluguni/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 207,
+      "title": "Гречневая каша без варки с ягодным соусом",
+      "url": "https://cook-look.ru/recipe/grechnevaya-kasha-bez-varki-s-yagodnym-sousom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Гречневая каша без варки с бананом, ягодами и кардамоном. Замоченную на ночь крупу промывают и взбивают с молоком и фруктами, оставляя часть ягодного пюре для подачи.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/grechnevaya-kasha-bez-varki-s-yagodnym-sousom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 218,
+      "title": "Пшенная каша с тыквой в горшочках",
+      "url": "https://cook-look.ru/recipe/pshennaya-kasha-s-tykvoj-v-gorshochkah/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В названии и составе пшено, в шаге 2 указана гречка.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 231,
+      "title": "Мамалыга по-ямайски (кукурузная каша)",
+      "url": "https://cook-look.ru/recipe/mamalyga-po-yamajski-kukuruznaya-kasha/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Кукурузная каша на молоке со сгущённым и кокосовым молоком, сливками и ванилью. Корицу и мускатный орех добавляют во время приготовления, а готовые порции украшают цукатами.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/mamalyga-po-yamajski-kukuruznaya-kasha/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 241,
+      "title": "Каша рисовая с изюмом в мультиварке",
+      "url": "https://cook-look.ru/recipe/kasha-risovaya-s-izyumom-v-multivarke/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Молочная рисовая каша с изюмом, сливочным маслом, сахаром и солью. Ингредиенты соединяют в чаше мультиварки и готовят на программе «Молочная каша/Крупы», затем готовую кашу перемешивают.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/kasha-risovaya-s-izyumom-v-multivarke/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 242,
+      "title": "Каша с фруктами на завтрак",
+      "url": "https://cook-look.ru/recipe/kasha-s-fruktami-na-zavtrak/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Овсяная каша на молоке и воде с тушёными яблоками, курагой и изюмом. Фрукты готовят отдельно с корицей и выкладывают поверх каши при подаче на стол.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/kasha-s-fruktami-na-zavtrak/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 245,
+      "title": "Рисовая каша с корицей и яблоками",
+      "url": "https://cook-look.ru/recipe/risovaya-kasha-s-koriczej-i-yablokami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Корица присутствует в названии и шагах, но отсутствует в списке ингредиентов; требуется сверка состава.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 265,
+      "title": "Тыквенная овсяная каша с вяленой клюквой",
+      "url": "https://cook-look.ru/recipe/tykvennaya-ovsyanaya-kasha-s-vyalenoj-klyukvoj/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Овсяная каша на молоке с тыквенным пюре, корицей, имбирём, гвоздикой и мускатным орехом. Горячую кашу подают с вяленой клюквой и грецкими орехами, добавляя их по вкусу.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/tykvennaya-ovsyanaya-kasha-s-vyalenoj-klyukvoj/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 272,
+      "title": "Манная каша со взбитыми сливками и кофе",
+      "url": "https://cook-look.ru/recipe/mannaya-kasha-so-vzbitymi-slivkami-i-kofe/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Манная каша на молоке с растворимым кофе, сахаром и корицей. Готовую кашу раскладывают по порциям и подают горячей, украсив взбитыми сливками и посыпав молотой корицей.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/mannaya-kasha-so-vzbitymi-slivkami-i-kofe/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 313,
+      "title": "Овсяная каша со вкусом Earl Grey",
+      "url": "https://cook-look.ru/recipe/ovsyanaya-kasha-so-vkusom-earl-grey/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Овсяная каша на кокосовом молоке с ароматом чая Earl Grey. Молоко настаивают с чайными листьями и процеживают, а готовую кашу посыпают корицей и кокосовой стружкой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/ovsyanaya-kasha-so-vkusom-earl-grey/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 385,
+      "title": "Кокосовая овсяная каша с манго и засахаренным имбирем",
+      "url": "https://cook-look.ru/recipe/kokosovaya-ovsyanaya-kasha-s-mango-i-zasaharennym-imbirem/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Овсяная каша на кокосовом молоке с манго, молотым имбирём и соком лайма. В готовую кашу добавляют кокосовую стружку, а перед подачей украшают её кусочками засахаренного имбиря.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/kokosovaya-ovsyanaya-kasha-s-mango-i-zasaharennym-imbirem/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 551,
+      "title": "Гречневая каша с вешенками и белыми грибами от ресторана «Тарантино»",
+      "url": "https://cook-look.ru/recipe/grechnevaya-kasha-s-veshenkami-i-belymi-gribami-ot-restorana-tarantino/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Гречневая каша с вешенками, белыми грибами, чесноком и соевым соусом. Крупу соединяют с подготовленными грибами и подают горячей, посыпав хрустящими кольцами репчатого лука и зелёным луком.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/grechnevaya-kasha-s-veshenkami-i-belymi-gribami-ot-restorana-tarantino/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 723,
+      "title": "Мамалыга",
+      "url": "https://cook-look.ru/recipe/mamalyga/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Мамалыга из кукурузной муки грубого помола, сваренная на воде со сливочным маслом. Густую кашу доводят под крышкой, переворачивают на доску и подают горячей с брынзой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/mamalyga/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 728,
+      "title": "Ленивая овсянка",
+      "url": "https://cook-look.ru/recipe/lenivaya-ovsyanka/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Шаги не объясняют соус и использование большей части состава (тыква, свёкла, чиа, миндальное молоко и др.).",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 744,
+      "title": "Овсянка на воде с яблоками",
+      "url": "https://cook-look.ru/recipe/ovsyanka-na-vode-s-yablokami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В составе овсяная крупа, в шагах овсяные хлопья — требуется уточнение продукта.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 769,
+      "title": "Пряный апельсиновый кускус",
+      "url": "https://cook-look.ru/recipe/pryanyj-apelsinovyj-kuskus/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Кускус на курином бульоне с морковью, зелёным луком, апельсиновой цедрой и смесью «Пять специй». Крупу добавляют к горячему бульону с овощами и оставляют набухать под крышкой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/pryanyj-apelsinovyj-kuskus/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 834,
+      "title": "Омлет с помидорами",
+      "url": "https://cook-look.ru/recipe/omlet-s-pomidorami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В составе один помидор, в шагах используется половина; количество требует уточнения.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 844,
+      "title": "Омлет с ветчиной",
+      "url": "https://cook-look.ru/recipe/omlet-s-vetchinoj/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет с кусочками ветчины, приготовленный на кукурузном масле. Ветчину предварительно обжаривают, соединяют со взбитыми яйцами и готовят на сковороде до подрумянивания нижней стороны, затем сразу подают.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-vetchinoj/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 845,
+      "title": "Омлет с клубникой",
+      "url": "https://cook-look.ru/recipe/omlet-s-klubnikoj/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах используется сливочное масло, отсутствующее в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 848,
+      "title": "Омлет с креветками",
+      "url": "https://cook-look.ru/recipe/omlet-s-krevetkami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет из яиц и молока с отварными очищенными креветками. Креветки вмешивают в яичную смесь, приправляют солью и чёрным перцем и готовят на сковороде под крышкой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-krevetkami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 849,
+      "title": "Омлет с лососем и творожным сыром",
+      "url": "https://cook-look.ru/recipe/omlet-s-lososem-i-tvorozhnym-syrom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет со сливками, творожным сыром и слабосолёным лососем, свёрнутый в трубочку. При подаче его дополняют огурцом, бальзамическим кремом, кнелями из сыра, укропом и проростками зелёного гороха.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-lososem-i-tvorozhnym-syrom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 854,
+      "title": "Омлет с яблоками",
+      "url": "https://cook-look.ru/recipe/omlet-s-yablokami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет с тонкими ломтиками яблок, приготовленный на сковороде. Очищенные яблоки слегка обжаривают на растительном масле, затем заливают взбитыми яйцами и аккуратно перемешивают во время приготовления.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-yablokami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 859,
+      "title": "Омлет с тыквой и шпинатом",
+      "url": "https://cook-look.ru/recipe/omlet-s-tykvoj-i-shpinatom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Запечённый омлет с отварной тыквой, шпинатом, помидорами черри и рикоттой. Овощи соединяют с яйцами, доводят блюдо до готовности в духовке и перед подачей посыпают тёртым твёрдым сыром.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-tykvoj-i-shpinatom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 865,
+      "title": "Омлет с творогом и зеленью",
+      "url": "https://cook-look.ru/recipe/omlet-s-tvorogom-i-zelenyu/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет с обезжиренным творогом, молоком, укропом и петрушкой. Смесь готовят на сковороде под крышкой на слабом огне; по желанию в неё добавляют нарезанное отварное куриное филе.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-tvorogom-i-zelenyu/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 866,
+      "title": "Омлет с зеленым луком",
+      "url": "https://cook-look.ru/recipe/omlet-s-zelenym-lukom/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Растительное масло используется в шагах, но отсутствует в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 872,
+      "title": "Омлет с сухариками и колбасой",
+      "url": "https://cook-look.ru/recipe/omlet-s-suharikami-i-kolbasoj/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Масло для обжарки отсутствует в составе; яичная смесь не описана.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 890,
+      "title": "Омлет с лососем и страчателлой",
+      "url": "https://cook-look.ru/recipe/omlet-s-lososem-i-strachatelloj/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет со сливками, слабосолёным лососем и страчателлой. Яичную смесь приправляют солью и перцем, обжаривают с двух сторон, затем поверх готового омлета распределяют сыр и ломтики рыбы.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-lososem-i-strachatelloj/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 892,
+      "title": "Омлет «по-детсадовски»",
+      "url": "https://cook-look.ru/recipe/omlet-po-detsadovski/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Запечённый омлет с густой манной кашей на молоке. Остывшую кашу соединяют с яйцами, выкладывают в смазанную маслом форму и запекают, смазав поверхность молоком ближе к концу приготовления.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-po-detsadovski/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 893,
+      "title": "Омлет с колбаской в мультиварке",
+      "url": "https://cook-look.ru/recipe/omlet-s-kolbaskoj-v-multivarke/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет на сметане с варёной колбасой, сервелатом, помидорами и сладким перцем. Его готовят в мультиварке на режиме «Выпечка», а перед подачей посыпают мелко нарезанным укропом.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-kolbaskoj-v-multivarke/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 900,
+      "title": "Омлет из желтков",
+      "url": "https://cook-look.ru/recipe/omlet-iz-zheltkov/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет из яичных желтков с рубленой петрушкой и базиликом. Желтки смешивают с зеленью и солью, затем обжаривают с двух сторон на разогретой сухой сковороде без масла.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-iz-zheltkov/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 921,
+      "title": "Омлет с овощами и колбасой в мультиварке",
+      "url": "https://cook-look.ru/recipe/omlet-s-ovoshhami-i-kolbasoj-v-multivarke/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В ингредиентах 200 г сыра, но в шагах не указано его использование.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 930,
+      "title": "Омлет с луком-пореем и помидорами",
+      "url": "https://cook-look.ru/recipe/omlet-s-lukom-poreem-i-pomidorami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет из перепелиных яиц с молоком, луком-пореем и помидорами. Овощи предварительно обжаривают, заливают яичной смесью с петрушкой и доводят до готовности на сковороде под крышкой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-lukom-poreem-i-pomidorami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 944,
+      "title": "Омлет с беконом, помидорами, базиликом и орегано",
+      "url": "https://cook-look.ru/recipe/omlet-s-bekonom-pomidorami-bazilikom-i-oregano/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Оливковое масло для обжарки отсутствует в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 945,
+      "title": "Омлет из перепелиных яиц",
+      "url": "https://cook-look.ru/recipe/omlet-iz-perepelinyh-yaicz/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шаге 5 используется масло, которого нет в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 947,
+      "title": "Омлетное суфле с сыром стилтон",
+      "url": "https://cook-look.ru/recipe/omletnoe-sufle-s-syrom-stilton/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Сливочное масло указано в составе, но его использование в шагах отсутствует.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 958,
+      "title": "Омлет со сливками и морской солью",
+      "url": "https://cook-look.ru/recipe/omlet-so-slivkami-i-morskoj-solyu/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет со сливками, морской солью и чёрным перцем, приготовленный на сливочном масле. Яичную смесь перемешивают на сковороде, затем складывают омлет пополам и дают ему дойти за счёт остаточного тепла.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-so-slivkami-i-morskoj-solyu/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 964,
+      "title": "Омлет с тыквой, сыром и апельсиновым ликером",
+      "url": "https://cook-look.ru/recipe/omlet-s-tykvoj-syrom-i-apelsinovym-likerom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет со сливками, тыквой, сыром и апельсиновым ликёром. Яичную смесь готовят на тушёной тыкве, посыпают сыром и подают с отварной мини-спаржей и свежей клубникой на тарелке.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-tykvoj-syrom-i-apelsinovym-likerom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 969,
+      "title": "Омлет с копченым лососем, мацой и укропом",
+      "url": "https://cook-look.ru/recipe/omlet-s-kopchenym-lososem-maczoj-i-ukropom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет с копчёным лососем, размоченной мацой и пассерованным луком. Начинку смешивают с яйцами, готовят на сливочном масле и сразу подают, посыпав свежим укропом и приправив по вкусу.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-s-kopchenym-lososem-maczoj-i-ukropom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 978,
+      "title": "Омлет без молока с креветками, фетой и каперсами",
+      "url": "https://cook-look.ru/recipe/omlet-bez-moloka-s-krevetkami-fetoj-i-kapersami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Количество помидоров черри указано как 4 г при подаче дольками; вероятна ошибка единицы, нужна сверка.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 982,
+      "title": "Омлет со шпинатом и черри в духовке",
+      "url": "https://cook-look.ru/recipe/omlet-so-shpinatom-i-cherri-v-duhovke/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет из яиц и молока со шпинатом и помидорами черри, запечённый в духовке. Шпинат предварительно обжаривают, выкладывают в форму с помидорами и заливают яичной смесью.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/omlet-so-shpinatom-i-cherri-v-duhovke/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1047,
+      "title": "Круассаны с омлетом а-ля Аньес Сорель",
+      "url": "https://cook-look.ru/recipe/kruassany-s-omletom-a-lya-anes-sorel/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Сахар: 20 г в составе, щепотка в шагах; необходимо уточнение количества.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1067,
+      "title": "Воздушный французский омлет",
+      "url": "https://cook-look.ru/recipe/vozdushnyj-franczuzskij-omlet/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет со шпинатом, креветками и плавленым сыром под слоем взбитых белков. Его доводят до золотистой корочки в духовке, а перед подачей украшают микрозеленью и зелёным маслом.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/vozdushnyj-franczuzskij-omlet/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1069,
+      "title": "Воздушный омлет с трюфелем",
+      "url": "https://cook-look.ru/recipe/vozdushnyj-omlet-s-tryufelem/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет со взбитыми белками, приготовленный на оливковом масле и дополненный свежим трюфелем. После обжаривания с двух сторон его складывают пополам и посыпают натёртым трюфелем перед подачей.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/vozdushnyj-omlet-s-tryufelem/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1098,
+      "title": "Воздушный омлет с брынзой",
+      "url": "https://cook-look.ru/recipe/vozdushnyj-omlet-s-brynzoj/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет на молоке с брынзой и листьями зелёного салата. Нарезанные сыр и салат вмешивают в яйца, готовят под крышкой на сливочном масле и аккуратно сворачивают перед подачей.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/vozdushnyj-omlet-s-brynzoj/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1108,
+      "title": "Белковый омлет с овощами",
+      "url": "https://cook-look.ru/recipe/belkovyj-omlet-s-ovoshhami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Яичный белок указан как 3 г; растительное масло из шагов отсутствует в составе, сливочное из состава не уточнено.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1120,
+      "title": "Белковый омлет со шпинатом",
+      "url": "https://cook-look.ru/recipe/belkovyj-omlet-so-shpinatom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет из яичных белков с молоком и свежим шпинатом. Нарезанные листья аккуратно вмешивают во взбитую белковую массу, затем готовят на сковороде с растительным маслом с двух сторон.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/belkovyj-omlet-so-shpinatom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1124,
+      "title": "Императорский омлет «Кайзершмарн» (Kaiserschmarrn)",
+      "url": "https://cook-look.ru/recipe/imperatorskij-omlet-kajzershmarn-kaiserschmarrn/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Кайзершмарн — сладкий омлет на молоке с мукой, взбитыми белками и изюмом, вымоченным в роме. Его обжаривают на сливочном масле, делят на части и посыпают сахарной пудрой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/imperatorskij-omlet-kajzershmarn-kaiserschmarrn/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1134,
+      "title": "Апфельтатш (яблочный омлет по-гризонски)",
+      "url": "https://cook-look.ru/recipe/apfeltatsh-yablochnyj-omlet-po-grizonski/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Яблочный омлет по-гризонски из теста на молоке с мукой и взбитыми белками. Ломтики яблок вмешивают в тесто, жарят порциями в масле и подают с сахаром и корицей.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/apfeltatsh-yablochnyj-omlet-po-grizonski/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1135,
+      "title": "Яичница/омлет с курицей, зеленью и овощами",
+      "url": "https://cook-look.ru/recipe/yaichnicza-omlet-s-kuriczej-zelenyu-i-ovoshhami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Для варианта омлета в шагах требуется молоко, отсутствующее в составе и количествах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1139,
+      "title": "Тыквенный рулет-омлет с печенью",
+      "url": "https://cook-look.ru/recipe/tykvennyj-rulet-omlet-s-pechenyu/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Шампиньоны из состава не используются в шагах; растительное масло из шагов отсутствует в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1140,
+      "title": "Запеченный судак под сыром с омлетом",
+      "url": "https://cook-look.ru/recipe/zapechennyj-sudak-pod-syrom-s-omletom/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Пекинская капуста из состава не используется в шагах; необычный компонент «полевой хвощ» требует редакционной проверки.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1145,
+      "title": "Сырный омлет со шпинатом и соусом песто",
+      "url": "https://cook-look.ru/recipe/syrnyj-omlet-so-shpinatom-i-sousom-pesto/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Сырный омлет со шпинатом, моцареллой и пармезаном, приготовленный на сливочном масле. Его складывают пополам, доводят под крышкой и перед подачей покрывают соусом песто, приправляя чили по вкусу.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/syrnyj-omlet-so-shpinatom-i-sousom-pesto/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1153,
+      "title": "Зепеченный омлет с копченой колбасой, помидорами и луком",
+      "url": "https://cook-look.ru/recipe/zepechennyj-omlet-s-kopchenoj-kolbasoj-pomidorami-i-lukom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Запечённый омлет на молоке с салями, помидорами и зелёным луком. Начинку выкладывают в смазанную оливковым маслом форму, добавляют яичную смесь с солью и перцем и готовят в духовке.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/zepechennyj-omlet-s-kopchenoj-kolbasoj-pomidorami-i-lukom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1204,
+      "title": "Кайзершмаррн",
+      "url": "https://cook-look.ru/recipe/kajzershmarrn/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Сладкий омлет с изюмом, вымоченным в роме, ванилью и лимонной цедрой. Тесто на молоке со взбитыми белками обжаривают на сливочном масле, делят на кусочки и посыпают сахарной пудрой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/kajzershmarrn/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1206,
+      "title": "Щавель с яйцом",
+      "url": "https://cook-look.ru/recipe/shhavel-s-yajczom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Омлет со щавелем, шпинатом, репчатым луком и твёрдым сыром. Зелень обжаривают с луком на топлёном масле, заливают взбитыми яйцами и складывают омлет пополам после добавления сыра.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/shhavel-s-yajczom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1222,
+      "title": "Яичница по-французски",
+      "url": "https://cook-look.ru/recipe/yaichnicza-po-franczuzski/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Количество сметаны задано неопределённо («1 банка»), шаги предлагают выключить нагрев сразу после добавления яиц без критерия готовности.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1229,
+      "title": "Яичница с къалдом",
+      "url": "https://cook-look.ru/recipe/yaichnicza-s-kaldom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Яичница с помидорами и солёным творогом къалд. Помидоры обжаривают на сливочном масле, добавляют яйца и готовят с перемешиванием или без него, вмешивая творог ближе к концу.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/yaichnicza-s-kaldom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1236,
+      "title": "Яичница в шампиньонах",
+      "url": "https://cook-look.ru/recipe/yaichnicza-v-shampinonah/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Перепелиные яйца, приготовленные в шляпках шампиньонов на сковороде. У грибов удаляют ножки, в каждую шляпку добавляют по яйцу и готовят под крышкой, уменьшив нагрев до среднего.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/yaichnicza-v-shampinonah/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1240,
+      "title": "Яичница в томате",
+      "url": "https://cook-look.ru/recipe/yaichnicza-v-tomate/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах сыр и масло отсутствуют в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1242,
+      "title": "Яичница с заправками",
+      "url": "https://cook-look.ru/recipe/yaichnicza-s-zapravkami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Сливки: 100 мл в составе, по 4–6 столовых ложек на каждую из двух порций в шагах; количества не сходятся.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1248,
+      "title": "Яичница с чипсами",
+      "url": "https://cook-look.ru/recipe/yaichnicza-s-chipsami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Лимонный сок для авокадо отсутствует в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1249,
+      "title": "Яичница-болтунья со шпинатом",
+      "url": "https://cook-look.ru/recipe/yaichnicza-boltunya-so-shpinatom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Яичница-болтунья с молодым шпинатом и пармезаном, приготовленная на оливковом масле. Яйца перемешивают с обжаренным шпинатом, затем добавляют тёртый сыр и хлопья красного перца и сразу подают.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/yaichnicza-boltunya-so-shpinatom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1272,
+      "title": "Яичница с брынзой и грибами",
+      "url": "https://cook-look.ru/recipe/yaichnicza-s-brynzoj-i-gribami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Прованские травы из шага 3 отсутствуют в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1277,
+      "title": "Яичница с баклажанами и белым хлебом",
+      "url": "https://cook-look.ru/recipe/yaichnicza-s-baklazhanami-i-belym-hlebom/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Сливочное и оливковое масло используются в шагах, но отсутствуют в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1301,
+      "title": "Яичница с цыпленком в хлебе от Chicken Run",
+      "url": "https://cook-look.ru/recipe/yaichnicza-s-czyplenkom-v-hlebe-ot-chicken-run/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Зелёный Tabasco из состава не используется в шагах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1336,
+      "title": "Голубая яичница",
+      "url": "https://cook-look.ru/recipe/golubaya-yaichnicza/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Масло для сковороды отсутствует в составе; не указан этап доведения яиц до готовности.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1347,
+      "title": "Сытная яичница с овощами и базиликом",
+      "url": "https://cook-look.ru/recipe/sytnaya-yaichnicza-s-ovoshhami-i-bazilikom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Яичница из желтков с баклажаном, помидорами, чесноком и пармезаном. Овощи готовят с оливковым маслом и майонезом, добавляют желтки, а перед подачей дополняют блюдо базиликом и чили.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/sytnaya-yaichnicza-s-ovoshhami-i-bazilikom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1350,
+      "title": "Сочная луковая яичница с сыром",
+      "url": "https://cook-look.ru/recipe/sochnaya-lukovaya-yaichnicza-s-syrom/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Масло используется для обжарки, но отсутствует в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1367,
+      "title": "Азербайджанская чихиртма",
+      "url": "https://cook-look.ru/recipe/azerbajdzhanskaya-chihirtma/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Помидоры из состава нарезаются, но их добавление к блюду в шагах отсутствует.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1368,
+      "title": "Запеченные яйца в восточном стиле",
+      "url": "https://cook-look.ru/recipe/zapechennye-yajcza-v-vostochnom-stile/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Оливковое масло из шага 2 отсутствует в составе; добавление подготовленного чеснока не описано.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1402,
+      "title": "Завтрак «Весёлые яйца»",
+      "url": "https://cook-look.ru/recipe/zavtrak-vesyolye-yajcza/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Яичница в кольцах красного, жёлтого и зелёного сладкого перца. В каждое кольцо разбивают по яйцу и обжаривают на растительном масле, затем подают с листьями шпината.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/zavtrak-vesyolye-yajcza/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1406,
+      "title": "Яйца с беконом запеченные в хашбрауне",
+      "url": "https://cook-look.ru/recipe/yajcza-s-bekonom-zapechennye-v-hashbraune/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Яйца, запечённые на хашбрауне из тёртого картофеля и репчатого лука. Картофельный пласт обжаривают с двух сторон, добавляют яйца и доводят в духовке, а сверху выкладывают обжаренный бекон.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/yajcza-s-bekonom-zapechennye-v-hashbraune/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1415,
+      "title": "Скрэмбл со свекольным соком",
+      "url": "https://cook-look.ru/recipe/skrembl-so-svekolnym-sokom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Скрэмбл со свекольным соком, приготовленный на горчичном масле. Яйца аккуратно перемешивают на сковороде, затем выкладывают на тарелку и сразу подают с сумахом, соусом чили и пармезаном.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/skrembl-so-svekolnym-sokom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1416,
+      "title": "Яйца, запеченные с помидорами",
+      "url": "https://cook-look.ru/recipe/yajcza-zapechennye-s-pomidorami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Яйца, запечённые в помидорах с чесноком и оливковым маслом. Помидоры сначала доводят до мягкости в духовке, затем добавляют яйца, запекают под фольгой и посыпают петрушкой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/yajcza-zapechennye-s-pomidorami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1445,
+      "title": "Яйца с бататом",
+      "url": "https://cook-look.ru/recipe/yajcza-s-batatom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Яичница с бататом, помидорами и репчатым луком, приправленная прованскими травами. Овощи обжаривают и тушат до мягкости батата, затем добавляют яйца и подают блюдо сразу после приготовления.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/yajcza-s-batatom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1460,
+      "title": "Чечевичная каша с копчеными ребрами",
+      "url": "https://cook-look.ru/recipe/chechevichnaya-kasha-s-kopchenymi-rebrami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Название говорит о копчёных рёбрах, состав и шаги — о грудинке.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1461,
+      "title": "Пшенная каша в мультиварке",
+      "url": "https://cook-look.ru/recipe/pshennaya-kasha-v-multivarke/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Пшённая каша на воде со сливочным маслом, приготовленная в мультиварке. Промытое пшено обдают кипятком, готовят на режиме «Крупы», а оставшееся масло вмешивают после завершения программы.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/pshennaya-kasha-v-multivarke/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1480,
+      "title": "Сырники книжкою",
+      "url": "https://cook-look.ru/recipe/syrniki-knizhkoyu/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Дрожжевые блины на сыворотке с начинкой из подслащённого творога, сложенные вчетверо. Перед подачей их разогревают на сливочном масле и по желанию дополняют сметаной, мёдом или вареньем.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/syrniki-knizhkoyu/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1505,
+      "title": "Сырники с шоколадной помадкой",
+      "url": "https://cook-look.ru/recipe/syrniki-s-shokoladnoj-pomadkoj/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожные сырники с прослойкой из горького шоколада, сливочного масла и апельсинового сока. Обжаренные сырники остужают, разрезают пополам, смазывают шоколадной помадкой и перед подачей посыпают сахарной пудрой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/syrniki-s-shokoladnoj-pomadkoj/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1511,
+      "title": "Сырники с лимонным мармеладом",
+      "url": "https://cook-look.ru/recipe/syrniki-s-limonnym-marmeladom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Сырники из обезжиренного творога с кусочками лимонного мармелада и блинной мукой. Небольшие сырники формуют мокрыми руками, раскладывают на противне с пекарской бумагой и запекают до лёгкого золотистого цвета.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/syrniki-s-limonnym-marmeladom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1526,
+      "title": "Сырники со сметаной",
+      "url": "https://cook-look.ru/recipe/syrniki-so-smetanoj/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожные сырники с манной крупой и ванилином, которые подают со сметаной. Сформованные сырники обваливают в муке, обжаривают на смеси растительного и сливочного масла и доводят в духовке.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/syrniki-so-smetanoj/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1530,
+      "title": "Сырники на рисовой муке",
+      "url": "https://cook-look.ru/recipe/syrniki-na-risovoj-muke/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах используется растительное масло, отсутствующее в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1534,
+      "title": "Сырники с курагой и грецкими орехами",
+      "url": "https://cook-look.ru/recipe/syrniki-s-kuragoj-i-greczkimi-orehami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожные сырники с курагой и грецкими орехами, приготовленные с мукой и манной крупой. Их обжаривают с двух сторон на растительном масле и посыпают сахарной пудрой перед подачей.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/syrniki-s-kuragoj-i-greczkimi-orehami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1536,
+      "title": "Сырники из рикотты с ягодами",
+      "url": "https://cook-look.ru/recipe/syrniki-iz-rikotty-s-yagodami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Сливочное масло для сковороды отсутствует в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1550,
+      "title": "Сырники творожные по-быстрому",
+      "url": "https://cook-look.ru/recipe/syrniki-tvorozhnye-po-bystromu/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожные сырники с яйцами, мукой, сахаром и ванилином. Мягкое тесто с добавлением соды выкладывают на сковороду смоченной в воде ложкой и обжаривают на слабом огне до золотистой корочки.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/syrniki-tvorozhnye-po-bystromu/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1576,
+      "title": "Сырники от шеф-повара Кристиана Лоренцини",
+      "url": "https://cook-look.ru/recipe/syrniki-ot-shef-povara-kristiana-lorenczini/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожные сырники на яичном желтке с ванилином и сахарной пудрой. Их обваливают в муке, обжаривают на топлёном масле с обеих сторон и ненадолго ставят в духовку.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/syrniki-ot-shef-povara-kristiana-lorenczini/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1599,
+      "title": "Пышные сырники",
+      "url": "https://cook-look.ru/recipe/pyshnye-syrniki/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Сырники из рассыпчатого творога с яйцами и манной крупой. Заготовки обваливают в муке и обжаривают на сковороде с растительным маслом до золотистой корочки; сахар добавляют по вкусу.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/pyshnye-syrniki/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1611,
+      "title": "Миндальные сырники",
+      "url": "https://cook-look.ru/recipe/mindalnye-syrniki/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах используется растительное масло, которого нет в ингредиентах; количество сока лайма 0,3 мл требует уточнения.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1619,
+      "title": "Банановые сырники",
+      "url": "https://cook-look.ru/recipe/bananovye-syrniki/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Сырники из мягкого обезжиренного творога с банановым пюре, яйцом и пшеничной мукой. Из теста формируют небольшие шарики, выкладывают их на пергамент и запекают в духовке до золотистого цвета.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/bananovye-syrniki/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1626,
+      "title": "Овсяные сырники с яблоком и бананом",
+      "url": "https://cook-look.ru/recipe/ovsyanye-syrniki-s-yablokom-i-bananom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожные сырники с овсяными хлопьями, тёртыми яблоками и банановым пюре. В массу добавляют мёд, лимонный сок и корицу, затем формуют сырники влажными руками и запекают на пергаменте.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/ovsyanye-syrniki-s-yablokom-i-bananom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1633,
+      "title": "Ванильные кето-сырники",
+      "url": "https://cook-look.ru/recipe/vanilnye-keto-syrniki/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожные сырники на яичном желтке с кокосовой мукой, ванилином и эритритом. Их обжаривают на смеси сливочного и оливкового масла, а перед подачей посыпают измельчённым в пудру эритритом.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/vanilnye-keto-syrniki/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1635,
+      "title": "Творожные сырники с овсянкой",
+      "url": "https://cook-look.ru/recipe/tvorozhnye-syrniki-s-ovsyankoj/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В ингредиентах овсяная крупа, в шагах хлопья; оливковое масло из шагов отсутствует в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1647,
+      "title": "Отрубные сырники без сахара",
+      "url": "https://cook-look.ru/recipe/otrubnye-syrniki-bez-sahara/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожные сырники в панировке из отрубей, которые готовят на сковороде с антипригарным покрытием. Творог измельчают до однородности, формуют влажными руками и обжаривают сырники с обеих сторон.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/otrubnye-syrniki-bez-sahara/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1648,
+      "title": "Тыквенные сырники в сырном соусе",
+      "url": "https://cook-look.ru/recipe/tykvennye-syrniki-v-syrnom-souse/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Количество молока для соуса (2 столовые ложки на 4 столовые ложки муки) требует уточнения; распределение 7 ложек муки между тестом и соусом не обозначено.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1652,
+      "title": "Печеные ванильные сырники с шоколадным соусом",
+      "url": "https://cook-look.ru/recipe/pechenye-vanilnye-syrniki-s-shokoladnym-sousom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Запечённые сырники из мягкого творога с семенами ванили и тростниковым сахаром. Их готовят на смазанном оливковым маслом противне, подают с тёплым шоколадным соусом и украшают кокосовой стружкой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/pechenye-vanilnye-syrniki-s-shokoladnym-sousom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1653,
+      "title": "Ванильные сырники с шоколадным соусом и черешней",
+      "url": "https://cook-look.ru/recipe/vanilnye-syrniki-s-shokoladnym-sousom-i-chereshnej/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В названии указана черешня, но её нет ни в ингредиентах, ни в шагах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1677,
+      "title": "Самая вкусная творожная запеканка",
+      "url": "https://cook-look.ru/recipe/samaya-vkusnaya-tvorozhnaya-zapekanka/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах используются соль и масло для формы, отсутствующие в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1683,
+      "title": "Малокалорийная творожная запеканка",
+      "url": "https://cook-look.ru/recipe/malokalorijnaya-tvorozhnaya-zapekanka/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах используется маргарин для формы, которого нет в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1702,
+      "title": "Классическая творожная запеканка",
+      "url": "https://cook-look.ru/recipe/klassicheskaya-tvorozhnaya-zapekanka/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах используются соль и сухари, отсутствующие в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1703,
+      "title": "Низкокалорийная творожная запеканка",
+      "url": "https://cook-look.ru/recipe/nizkokalorijnaya-tvorozhnaya-zapekanka/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Масло для формы используется в шагах, но отсутствует в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1707,
+      "title": "Творожная запеканка с ягодным сиропом",
+      "url": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-yagodnym-siropom/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах отсутствует применение ягодного сиропа; соль и сухари из шагов не указаны в составе.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1709,
+      "title": "Творожная запеканка с гречневой мукой",
+      "url": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-grechnevoj-mukoj/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах используется масло для формы, не указанное в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1713,
+      "title": "Творожная запеканка за 5 минут",
+      "url": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-za-5-minut/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Количество сахара 35 г не согласуется с пояснением шага о меньшем объёме сахара относительно одной ложки муки.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1714,
+      "title": "Творожная запеканка с изюмом и курагой",
+      "url": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-izyumom-i-kuragoj/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожная запеканка с фруктовым йогуртом, овсяными отрубями, какао, изюмом и курагой. Её выпекают в силиконовой форме, после остывания смазывают оставшимся йогуртом и по желанию украшают орехами и сухофруктами.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-izyumom-i-kuragoj/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1721,
+      "title": "Запеканка творожная с ежевикой",
+      "url": "https://cook-look.ru/recipe/zapekanka-tvorozhnaya-s-ezhevikoj/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах нужны панировочные сухари, отсутствующие в составе; яйца сначала добавляют в тесто, затем требуется ещё яйцо для сметанной заливки без распределения количества.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1729,
+      "title": "Творожная запеканка с яблоками",
+      "url": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-yablokami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожная запеканка с манной крупой, ванильным сахаром и тонкими дольками яблока. В творожную массу аккуратно вмешивают взбитые белки, а яблоки распределяют внутри и в верхнем слое перед выпеканием.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-yablokami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1741,
+      "title": "Яблочно-творожная запеканка",
+      "url": "https://cook-look.ru/recipe/yablochno-tvorozhnaya-zapekanka/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В ингредиентах указаны 2 ложки творожного крема, а в соответствующем шаге — 2 ложки творога.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1750,
+      "title": "Запеканка творожная с гречкой в мультиварке",
+      "url": "https://cook-look.ru/recipe/zapekanka-tvorozhnaya-s-grechkoj-v-multivarke/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Запеканка из творога и приготовленной гречки с яйцами и изюмом. Смесь выкладывают в смазанную сливочным маслом чашу мультиварки, разравнивают и готовят под крышкой в режиме «Выпечка».",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/zapekanka-tvorozhnaya-s-grechkoj-v-multivarke/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1755,
+      "title": "Быстрая творожная запеканка с манкой",
+      "url": "https://cook-look.ru/recipe/bystraya-tvorozhnaya-zapekanka-s-mankoj/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожная запеканка с манной крупой, молоком, яйцами и сливочным маслом. Перед выпеканием смесь оставляют для набухания манки, затем готовят в духовке до появления золотистой корочки на поверхности.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/bystraya-tvorozhnaya-zapekanka-s-mankoj/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1760,
+      "title": "Творожная запеканка с клюквенным вареньем",
+      "url": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-klyukvennym-varenem/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожная запеканка с манной крупой и ванильным сахаром под слоем клюквенного варенья. Клюкву предварительно проваривают с частью сахара, остужают и распределяют по творожной массе перед выпеканием в духовке.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-klyukvennym-varenem/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1761,
+      "title": "Белковая творожная запеканка с ягодами",
+      "url": "https://cook-look.ru/recipe/belkovaya-tvorozhnaya-zapekanka-s-yagodami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Запеканка из мягкого творога на взбитых яичных белках с манной крупой, красной смородиной и смородиновым вареньем. Перед выпеканием её посыпают корицей; подают как тёплой, так и холодной.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/belkovaya-tvorozhnaya-zapekanka-s-yagodami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1770,
+      "title": "Творожная запеканка с картофелем, шпинатом и розмарином",
+      "url": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-kartofelem-shpinatom-i-rozmarinom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Несладкая творожная запеканка с картофельным пюре, шпинатом, розмарином и сушёным базиликом. Овощи соединяют с творогом, яйцами и мукой, затем запекают в смазанной оливковым маслом форме до лёгкой румяной корочки.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-kartofelem-shpinatom-i-rozmarinom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1783,
+      "title": "Творожная запеканка с ромом и лимонной цедрой",
+      "url": "https://cook-look.ru/recipe/tvorozhnaya-zapekanka-s-romom-i-limonnoj-czedroj/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Уксус для гашения соды и масло для формы отсутствуют в ингредиентах; применение ванильного сахара не описано.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1796,
+      "title": "Овсяно-творожная запеканка с тыквой и грецкими орехами",
+      "url": "https://cook-look.ru/recipe/ovsyano-tvorozhnaya-zapekanka-s-tykvoj-i-greczkimi-orehami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожная запеканка с овсяными хлопьями, грецкими орехами и тыквой, предварительно запечённой с мёдом. Орехи измельчают и обжаривают, соединяют с творожной смесью и тыквой, затем всё вместе запекают.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/ovsyano-tvorozhnaya-zapekanka-s-tykvoj-i-greczkimi-orehami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1840,
+      "title": "Запеканка из творога с вишней",
+      "url": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga-s-vishnej/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Творожная запеканка с кефиром, манной крупой, сливочным маслом и ванильным сахаром. Массу выкладывают в форму с пергаментом, распределяют сверху вишню и запекают в духовке до золотистой корочки.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga-s-vishnej/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1856,
+      "title": "Рисовая каша с тыквой на молоке",
+      "url": "https://cook-look.ru/recipe/risovaya-kasha-s-tykvoj-na-moloke/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Рисовая каша с кусочками тыквы на смеси молока и воды. Круглый рис варят вместе с тыквой до мягкости крупы, добавляя соль по вкусу в процессе приготовления.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/risovaya-kasha-s-tykvoj-na-moloke/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1861,
+      "title": "Молочная горохово-кукурузная каша с яблоком",
+      "url": "https://cook-look.ru/recipe/molochnaya-gorohovo-kukuruznaya-kasha-s-yablokom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Молочная каша из гороха и кукурузной крупы с яблоком. Заранее отваренный горох измельчают, соединяют с кукурузной кашей, добавляют сливочное масло и сахар, затем взбивают всё блендером.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/molochnaya-gorohovo-kukuruznaya-kasha-s-yablokom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1870,
+      "title": "Фриттата алла наполитана",
+      "url": "https://cook-look.ru/recipe/frittata-alla-napolitana/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Фриттата со спагетти, яйцами и тёртым пармезаном, приправленная чёрным перцем. Её готовят на оливковом масле, переворачивают с помощью тарелки и подрумянивают с двух сторон, затем подают тёплой порционными кусками.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/frittata-alla-napolitana/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1871,
+      "title": "Фриттата с креветками.",
+      "url": "https://cook-look.ru/recipe/frittata-s-krevetkami/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах используются сливочное масло и хлопья чили, отсутствующие в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1880,
+      "title": "Фриттата с брокколи в микроволновке",
+      "url": "https://cook-look.ru/recipe/frittata-s-brokkoli-v-mikrovolnovke/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Оливковое масло указано в ингредиентах, но его применение не описано в шагах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1886,
+      "title": "Фриттата с молодым картофелем и мятой",
+      "url": "https://cook-look.ru/recipe/frittata-s-molodym-kartofelem-i-myatoj/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах используются соль и перец, отсутствующие в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1887,
+      "title": "Фриттата с помидорами, шалотом и тимьяном",
+      "url": "https://cook-look.ru/recipe/frittata-s-pomidorami-shalotom-i-timyanom/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Чеснок указан в составе, но его использование не описано в шагах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1888,
+      "title": "Фриттата с расплавленным сыром и грибами",
+      "url": "https://cook-look.ru/recipe/frittata-s-rasplavlennym-syrom-i-gribami/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Фриттата с обжаренными грибами и эмменталем: часть сыра добавляют кубиками к яйцам, а оставшимся тёртым сыром посыпают сверху. Блюдо готовят на сковороде, доводят под грилем и подают с оставшимися грибами.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/frittata-s-rasplavlennym-syrom-i-gribami/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1892,
+      "title": "Фриттата с шампиньонами и ветчиной",
+      "url": "https://cook-look.ru/recipe/frittata-s-shampinonami-i-vetchinoj/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Название обещает шампиньоны, но их нет ни в ингредиентах, ни в шагах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1895,
+      "title": "Фриттата с маскарпоне, ветчиной и сыром",
+      "url": "https://cook-look.ru/recipe/frittata-s-maskarpone-vetchinoj-i-syrom/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Масло для смазывания формы отсутствует в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1936,
+      "title": "Ароматная холодная фриттата",
+      "url": "https://cook-look.ru/recipe/aromatnaya-holodnaya-frittata/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Все 4 столовые ложки масла расходуются в первом шаге, затем требуется дополнительное масло для сковороды; количество требует уточнения.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1938,
+      "title": "Фрикко (яблочно-сырная фриттата)",
+      "url": "https://cook-look.ru/recipe/frikko-yablochno-syrnaya-frittata/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Фрикко из тонких кружков яблока и ломтиков сыра, приправленных солью и чёрным перцем. Смесь обжаривают на сливочном масле до корочки, переворачивают и подрумянивают с другой стороны; подают горячей.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/frikko-yablochno-syrnaya-frittata/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1943,
+      "title": "Фритатта с брокколи и базиликом",
+      "url": "https://cook-look.ru/recipe/fritatta-s-brokkoli-i-bazilikom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Запечённая фриттата с брокколи, базиликом, помидорами черри и острыми перцами. К яйцам добавляют сливки и твёрдый сыр, сверху распределяют пармезан, а ближе к концу запекания посыпают кунжутом.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/fritatta-s-brokkoli-i-bazilikom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1962,
+      "title": "Драники украинские со сметаной",
+      "url": "https://cook-look.ru/recipe/draniki-ukrainskie-so-smetanoj/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Картофельные драники из мелко натёртого картофеля с солью. Их жарят на растительном масле с двух сторон до золотистой корочки и подают горячими, дополнив сметаной по вкусу.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/draniki-ukrainskie-so-smetanoj/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1971,
+      "title": "Драники из картофеля и тыквы в духовке",
+      "url": "https://cook-look.ru/recipe/draniki-iz-kartofelya-i-tykvy-v-duhovke/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Растительное масло для пергамента используется в шагах, но отсутствует в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 1980,
+      "title": "Классические белорусские драники",
+      "url": "https://cook-look.ru/recipe/klassicheskie-belorusskie-draniki/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Картофельные драники с репчатым луком, яйцом и пшеничной мукой, приправленные солью и чёрным перцем. Их обжаривают на растительном масле с двух сторон, затем доводят под крышкой на слабом огне.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/klassicheskie-belorusskie-draniki/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2001,
+      "title": "Колдуны",
+      "url": "https://cook-look.ru/recipe/kolduny/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В шагах используются перец и растительное масло, отсутствующие в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2003,
+      "title": "Драник с яйцом пашот",
+      "url": "https://cook-look.ru/recipe/dranik-s-yajczom-pashot/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Белый уксус для яйца пашот отсутствует в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2062,
+      "title": "Гранола с корицей и мускатным орехом",
+      "url": "https://cook-look.ru/recipe/granola-s-koriczej-i-muskatnym-orehom/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Соль из шагов отсутствует в составе; применение кокосовой стружки и овсяных хлопьев не описано.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2064,
+      "title": "Гранола со специями, орехами и медом",
+      "url": "https://cook-look.ru/recipe/granola-so-specziyami-orehami-i-medom/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "В составе указана овсяная крупа, но короткое запекание гранолы предполагает иной подготовленный продукт; требуется уточнить крупу или хлопья.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2072,
+      "title": "Медовая гранола",
+      "url": "https://cook-look.ru/recipe/medovaya-granola/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Гранола из овсяных хлопьев с фундуком, кешью, миндалём, изюмом, семенами льна и подсолнечника. Смесь с мёдом и оливковым маслом запекают, полностью остужают и нарезают или разламывают на кусочки.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/medovaya-granola/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2073,
+      "title": "Бананово-апельсиновая гранола",
+      "url": "https://cook-look.ru/recipe/bananovo-apelsinovaya-granola/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Количество банана указано как 1 г; апельсиновая цедра из состава не используется в шагах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2089,
+      "title": "Запеканка с брокколи",
+      "url": "https://cook-look.ru/recipe/zapekanka-s-brokkoli/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Запеканка из филе индейки и соцветий брокколи под яично-молочной заливкой с чесноком и специями. Перед отправкой в духовку её посыпают тёртым твёрдым сыром, равномерно распределяя его по поверхности.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/zapekanka-s-brokkoli/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2107,
+      "title": "Запеканка из кукурузы",
+      "url": "https://cook-look.ru/recipe/zapekanka-iz-kukuruzy/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Сливочное масло для формы отсутствует в ингредиентах.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2108,
+      "title": "Запеканка с капустой и рисом",
+      "url": "https://cook-look.ru/recipe/zapekanka-s-kapustoj-i-risom/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Слоёная запеканка с белокочанной капустой, рисом и мясным фаршем. В форму добавляют сметанно-томатную заливку с водой, солью и перцем, а рис закладывают сырым и готовят вместе с остальными ингредиентами.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/zapekanka-s-kapustoj-i-risom/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2118,
+      "title": "Запеканка с семгой и брокколи",
+      "url": "https://cook-look.ru/recipe/zapekanka-s-semgoj-i-brokkoli/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Запеканка из пенне, сёмги и брокколи под заливкой из яйца, молока и тёртого сыра с мускатным орехом. Рыбу предварительно маринуют с лимонным соком, солью и перцем.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/zapekanka-s-semgoj-i-brokkoli/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2124,
+      "title": "Запеканка из творога",
+      "url": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/",
+      "postStatus": "publish",
+      "status": "skipped",
+      "reason": "Для сладкой запеканки на 150 г творога указано 10 г соли; количество требует подтверждения перед публикацией описания.",
+      "verifiedInAdmin": false,
+      "publicVerification": null,
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2129,
+      "title": "Запеканка из брокколи и черри",
+      "url": "https://cook-look.ru/recipe/zapekanka-iz-brokkoli-i-cherri/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Овощная запеканка с брокколи, помидорами черри, луком и морковью под яичной заливкой. Лук и морковь предварительно обжаривают на оливковом масле, а перед запеканием овощи приправляют перцем и пряными травами.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/zapekanka-iz-brokkoli-i-cherri/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    },
+    {
+      "productionId": 2143,
+      "title": "Запеканка из обезжиренного творога с курагой",
+      "url": "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/",
+      "postStatus": "publish",
+      "status": "verified",
+      "excerpt": "Запеканка из обезжиренного творога с кусочками кураги на яичных белках. Подготовленную смесь выкладывают в форму с бумагой для выпечки и запекают, проверяя, чтобы середина не оставалась жидкой.",
+      "verifiedInAdmin": true,
+      "publicVerification": {
+        "intro": true,
+        "recipeDescription": true,
+        "canonical": "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/"
+      },
+      "resultReport": "docs/seo-editorial-daily-2026-10-18-resumed.json"
+    }
+  ]
+}

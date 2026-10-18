@@ -1,0 +1,14 @@
+# Add this block at the top of the SITE ROOT .htaccess, before cache/WordPress rules.
+# This is an addition, not a replacement for the existing .htaccess.
+# Keep HTTPS enforcement enabled in the hosting panel.
+# Only requests reaching Apache can be handled here.
+
+# BEGIN CookLook www redirect
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.cook-look\.ru(?::[0-9]+)?$ [NC]
+# Capture the original encoded path; Apache keeps the query string automatically.
+RewriteCond %{THE_REQUEST} "\s(/[^?\s]*)"
+RewriteRule ^ https://cook-look.ru%1 [R=301,L,NE]
+</IfModule>
+# END CookLook www redirect

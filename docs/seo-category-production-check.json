@@ -1,0 +1,561 @@
+{
+  "checkedAt": "2026-10-17T12:59:35.093Z",
+  "method": "Sequential GET of visible Yandex duplicate examples; no redirects followed. Not a full site crawl.",
+  "pages": [
+    {
+      "url": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-sousy-i-marinady/",
+      "status": 200,
+      "title": "Блюда из баранины — Соусы и маринады — рецепты | COOK-LOOK",
+      "description": "Блюда из баранины — Соусы и маринады — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-sousy-i-marinady/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-salaty/",
+      "status": 200,
+      "title": "Блюда из баранины — Салаты — рецепты | COOK-LOOK",
+      "description": "Блюда из баранины — Салаты — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-salaty/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-supy/",
+      "status": 200,
+      "title": "Блюда из баранины — Супы — рецепты | COOK-LOOK",
+      "description": "Блюда из баранины — Супы — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/blyuda-iz-baraniny-supy/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/blyuda-iz-ovoshhej-osnovnye-blyuda/",
+      "status": 200,
+      "title": "Блюда из овощей — Основные блюда — рецепты | COOK-LOOK",
+      "description": "Блюда из овощей — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/blyuda-iz-ovoshhej-osnovnye-blyuda/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/blyuda-iz-ovoshhej-pasta-i-piczcza/",
+      "status": 200,
+      "title": "Блюда из овощей — Паста и пицца — рецепты | COOK-LOOK",
+      "description": "Блюда из овощей — Паста и пицца — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/blyuda-iz-ovoshhej-pasta-i-piczcza/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/blyuda-iz-ovoshhej-salaty/",
+      "status": 200,
+      "title": "Блюда из овощей — Салаты — рецепты | COOK-LOOK",
+      "description": "Блюда из овощей — Салаты — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/blyuda-iz-ovoshhej-salaty/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/kartoshka-s-gribami/",
+      "status": 200,
+      "title": "Картошка с грибами — Выпечка и десерты — рецепты | COOK-LOOK",
+      "description": "Картошка с грибами — Выпечка и десерты — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/kartoshka-s-gribami/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/kartoshka-s-gribami-osnovnye-blyuda/",
+      "status": 200,
+      "title": "Картошка с грибами — Основные блюда — рецепты | COOK-LOOK",
+      "description": "Картошка с грибами — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/kartoshka-s-gribami-osnovnye-blyuda/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/kartoshka-s-gribami-zakuski/",
+      "status": 200,
+      "title": "Картошка с грибами — Закуски — рецепты | COOK-LOOK",
+      "description": "Картошка с грибами — Закуски — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/kartoshka-s-gribami-zakuski/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/bulochki-zavtraki/",
+      "status": 200,
+      "title": "Булочки — Завтраки — рецепты | COOK-LOOK",
+      "description": "Булочки — Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/bulochki-zavtraki/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/bulochki-zakuski/",
+      "status": 200,
+      "title": "Булочки — Закуски — рецепты | COOK-LOOK",
+      "description": "Булочки — Закуски — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/bulochki-zakuski/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/bulochki-sendvichi/",
+      "status": 200,
+      "title": "Булочки — Сэндвичи — рецепты | COOK-LOOK",
+      "description": "Булочки — Сэндвичи — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/bulochki-sendvichi/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/ratatuj-osnovnye-blyuda/",
+      "status": 200,
+      "title": "Рататуй — Основные блюда — рецепты | COOK-LOOK",
+      "description": "Рататуй — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/ratatuj-osnovnye-blyuda/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/ratatuj-zakuski/",
+      "status": 200,
+      "title": "Рататуй — Закуски — рецепты | COOK-LOOK",
+      "description": "Рататуй — Закуски — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/ratatuj-zakuski/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/ratatuj-salaty/",
+      "status": 200,
+      "title": "Рататуй — Салаты — рецепты | COOK-LOOK",
+      "description": "Рататуй — Салаты — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/ratatuj-salaty/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/lapsha-zakuski/",
+      "status": 200,
+      "title": "Лапша — Закуски — рецепты | COOK-LOOK",
+      "description": "Лапша — Закуски — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/lapsha-zakuski/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/lapsha-supy/",
+      "status": 200,
+      "title": "Лапша — Супы — рецепты | COOK-LOOK",
+      "description": "Лапша — Супы — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/lapsha-supy/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/lapsha-osnovnye-blyuda/",
+      "status": 200,
+      "title": "Лапша — Основные блюда — рецепты | COOK-LOOK",
+      "description": "Лапша — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/lapsha-osnovnye-blyuda/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/vareniki-zavtraki/",
+      "status": 200,
+      "title": "Вареники — Завтраки — рецепты | COOK-LOOK",
+      "description": "Вареники — Завтраки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/vareniki-zavtraki/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/vareniki-osnovnye-blyuda/",
+      "status": 200,
+      "title": "Вареники — Основные блюда — рецепты | COOK-LOOK",
+      "description": "Вареники — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/vareniki-osnovnye-blyuda/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/vareniki/",
+      "status": 200,
+      "title": "Вареники — Выпечка и десерты — рецепты | COOK-LOOK",
+      "description": "Вареники — Выпечка и десерты — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/vareniki/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/koktejli-napitki/",
+      "status": 200,
+      "title": "Коктейли — Напитки — рецепты | COOK-LOOK",
+      "description": "Коктейли — Напитки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/koktejli-napitki/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/koktejli-osnovnye-blyuda/",
+      "status": 200,
+      "title": "Коктейли — Основные блюда — рецепты | COOK-LOOK",
+      "description": "Коктейли — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/koktejli-osnovnye-blyuda/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/koktejli/",
+      "status": 200,
+      "title": "Коктейли — Выпечка и десерты — рецепты | COOK-LOOK",
+      "description": "Коктейли — Выпечка и десерты — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/koktejli/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/muss-napitki/",
+      "status": 200,
+      "title": "Мусс — Напитки — рецепты | COOK-LOOK",
+      "description": "Мусс — Напитки — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/muss-napitki/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/muss-osnovnye-blyuda/",
+      "status": 200,
+      "title": "Мусс — Основные блюда — рецепты | COOK-LOOK",
+      "description": "Мусс — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/muss-osnovnye-blyuda/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/muss-zakuski/",
+      "status": 200,
+      "title": "Мусс — Закуски — рецепты | COOK-LOOK",
+      "description": "Мусс — Закуски — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/muss-zakuski/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/kish-osnovnye-blyuda/",
+      "status": 200,
+      "title": "Киш — Основные блюда — рецепты | COOK-LOOK",
+      "description": "Киш — Основные блюда — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/kish-osnovnye-blyuda/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/kish-zakuski/",
+      "status": 200,
+      "title": "Киш — Закуски — рецепты | COOK-LOOK",
+      "description": "Киш — Закуски — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/kish-zakuski/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/kish/",
+      "status": 200,
+      "title": "Киш — Выпечка и десерты — рецепты | COOK-LOOK",
+      "description": "Киш — Выпечка и десерты — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe_category/kish/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/mannik-na-risovoj-manke/",
+      "status": 200,
+      "title": "Манник на рисовой манке — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Манник на рисовой манке». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/mannik-na-risovoj-manke/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/klyukvennyj-mors/",
+      "status": 200,
+      "title": "Клюквенный морс — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Клюквенный морс». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/klyukvennyj-mors/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/koktejl-pomidornyj/",
+      "status": 200,
+      "title": "Коктейль помидорный — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Коктейль помидорный». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/koktejl-pomidornyj/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/biskotti-s-orehami/",
+      "status": 200,
+      "title": "Бискотти с орехами — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Бискотти с орехами». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/biskotti-s-orehami/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/tort-s-chernoslivom/",
+      "status": 200,
+      "title": "Торт с черносливом — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Торт с черносливом». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/tort-s-chernoslivom/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/legkie-kabachki-s-krabovymi-palochkami/",
+      "status": 200,
+      "title": "Легкие кабачки с крабовыми палочками — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Легкие кабачки с крабовыми палочками». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/legkie-kabachki-s-krabovymi-palochkami/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/grechka-po-kupecheski/",
+      "status": 200,
+      "title": "Гречка по-купечески — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Гречка по-купечески». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/grechka-po-kupecheski/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/koktejl-kir-royal-kir-royal/",
+      "status": 200,
+      "title": "Коктейль «Кир-рояль» (Kir Royal) — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Коктейль «Кир-рояль» (Kir Royal)». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/koktejl-kir-royal-kir-royal/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/koktejl-zolotaya-zarya/",
+      "status": 200,
+      "title": "Коктейль «Золотая заря» — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Коктейль «Золотая заря»». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/koktejl-zolotaya-zarya/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/rybnye-kotlety/",
+      "status": 200,
+      "title": "Рыбные котлеты — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Рыбные котлеты». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/rybnye-kotlety/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/pryanyj-majonez-s-travami-i-specziyami/",
+      "status": 200,
+      "title": "Пряный майонез с травами и специями — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Пряный майонез с травами и специями». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/pryanyj-majonez-s-travami-i-specziyami/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/pesto-iz-cheremshi/",
+      "status": 200,
+      "title": "Песто из черемши — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Песто из черемши». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/pesto-iz-cheremshi/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/smetannyj-krem/",
+      "status": 200,
+      "title": "Сметанный крем — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Сметанный крем». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/smetannyj-krem/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/pryanoe-kakao-s-romom/",
+      "status": 200,
+      "title": "Пряное какао с ромом — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Пряное какао с ромом». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/pryanoe-kakao-s-romom/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/zharenye-pirozhki-s-kapustoj/",
+      "status": 200,
+      "title": "Жареные пирожки с капустой — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Жареные пирожки с капустой». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/zharenye-pirozhki-s-kapustoj/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/klassicheskij-brauni-s-mindalem/",
+      "status": 200,
+      "title": "Классический брауни с миндалем — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Классический брауни с миндалем». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/klassicheskij-brauni-s-mindalem/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/zemlyanichnye-kapkejki-s-kremom-iz-filadelfii/",
+      "status": 200,
+      "title": "Земляничные капкейки с кремом из филадельфии — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Земляничные капкейки с кремом из филадельфии». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/zemlyanichnye-kapkejki-s-kremom-iz-filadelfii/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/tart-s-czukini-tomatami-i-bazilikom/",
+      "status": 200,
+      "title": "Тарт с цукини, томатами и базиликом — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Тарт с цукини, томатами и базиликом». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/tart-s-czukini-tomatami-i-bazilikom/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/svezhaya-tomatnaya-salsa/",
+      "status": 200,
+      "title": "Свежая томатная сальса — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Свежая томатная сальса». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/svezhaya-tomatnaya-salsa/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/koktejl-alfonso-speshl-alfonso-special/",
+      "status": 200,
+      "title": "Коктейль «Альфонсо спешл» (Alfonso Special) — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Коктейль «Альфонсо спешл» (Alfonso Special)». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/koktejl-alfonso-speshl-alfonso-special/"
+    },
+    {
+      "url": "https://cook-look.ru/recipe/pasucz-dolma/",
+      "status": 200,
+      "title": "Пасуц-долма — пошаговый рецепт | COOK-LOOK",
+      "description": "Рецепт «Пасуц-долма». Ингредиенты и пошаговое приготовление.",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": "https://cook-look.ru/recipe/pasucz-dolma/"
+    }
+  ],
+  "groups": {
+    "title": [
+      {
+        "reported": "Каталог рецептов. Блюда из баранины - COOK-LOOK — 5 таких заголовков\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Каталог рецептов. Блюда из овощей - COOK-LOOK — 4 таких заголовка\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Каталог рецептов. Картошка с грибами - COOK-LOOK — 4 таких заголовка\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Каталог рецептов. Булочки - COOK-LOOK — 4 таких заголовка\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Каталог рецептов. Рататуй - COOK-LOOK — 3 таких заголовка\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Каталог рецептов. Лапша - COOK-LOOK — 3 таких заголовка\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Каталог рецептов. Вареники - COOK-LOOK — 3 таких заголовка\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Каталог рецептов. Коктейли - COOK-LOOK — 3 таких заголовка\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Каталог рецептов. Мусс - COOK-LOOK — 3 таких заголовка\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Каталог рецептов. Киш - COOK-LOOK — 3 таких заголовка\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      }
+    ],
+    "description": [
+      {
+        "reported": "Подготовить все необходимые ингредиенты. — 29 таких описаний\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Разогреть духовку до 180 градусов. — 9 таких описаний\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Подготовить все ингредиенты. — 6 таких описаний\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Лушчие рецепты в категории Блюда из баранины с пошаговыми инструкциями по приготовлению. — 5 таких описаний\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Провести подготовку всех необходимых ингредиентов. — 5 таких описаний\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Подготовить ингредиенты. — 5 таких описаний\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Лушчие рецепты в категории Блюда из овощей с пошаговыми инструкциями по приготовлению. — 4 таких описаний\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Лушчие рецепты в категории Картошка с грибами с пошаговыми инструкциями по приготовлению. — 4 таких описаний\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Разогреть духовку до 180 °C. — 4 таких описаний\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      },
+      {
+        "reported": "Подготовить все необходимые продукты. — 4 таких описаний\tДата обхода\n",
+        "sampledUrls": 3,
+        "indexableSample": 3,
+        "duplicates": [],
+        "missing": []
+      }
+    ]
+  },
+  "completedAt": "2026-10-17T13:00:21.577Z"
+}

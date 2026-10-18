@@ -1,0 +1,3086 @@
+{
+  "checked_at": "2026-10-17T02:14:31.777Z",
+  "site": "https://cook-look.ru",
+  "scope": "All sitemap files, stratified public URL sample; not a full crawl of every production page.",
+  "method": "Sequential guest GETs, fresh TCP/TLS per request, identity encoding, no cookies; ordinary recipe view counters may increment. Times are lab HTTP measurements from this workstation, not field CWV.",
+  "robots": {
+    "url": "https://cook-look.ru/robots.txt",
+    "status": 200,
+    "redirects": [],
+    "ttfb_ms": 669.43,
+    "total_ms": 671.05,
+    "html_bytes": 1960,
+    "text": "User-agent: *               \r\n                            \r\nDisallow: /cgi-bin         \r\nDisallow: /?                \r\nDisallow: /wp-              \r\n\r\nDisallow: *?unapproved=\r\nDisallow: *?moderation-hash=\r\nDisallow: *?s=              \r\nDisallow: *&s=              \r\nDisallow: /search/          \r\nDisallow: /author/          \r\nDisallow: /users/           \r\nDisallow: */trackback      \r\nDisallow: */feed           \r\nDisallow: */rss             \r\nDisallow: */embed           \r\nDisallow: /xmlrpc.php       \r\nDisallow: *utm*=            \r\nDisallow: *openstat=       \r\nAllow: */uploads            \r\n\r\nUser-agent: GoogleBot       \r\nDisallow: /cgi-bin\r\nDisallow: /?\r\nDisallow: /wp-\r\nDisallow: /wp/\r\nDisallow: *?unapproved=\r\nDisallow: *?moderation-hash=\r\nDisallow: *?s=\r\nDisallow: *&s=\r\nDisallow: /search/\r\nDisallow: /author/\r\nDisallow: /users/\r\nDisallow: */trackback\r\nDisallow: */feed\r\nDisallow: */rss\r\nDisallow: */embed\r\nDisallow: */wlwmanifest.xml\r\nDisallow: /xmlrpc.php\r\nDisallow: *utm*=\r\nDisallow: *openstat=\r\nAllow: */uploads\r\nAllow: /*/*.js             \r\nAllow: /*/*.css            \r\nAllow: /wp-*.png           \r\nAllow: /wp-*.jpg           \r\nAllow: /wp-*.jpeg          \r\nAllow: /wp-*.gif           \r\nAllow: /wp-admin/admin-ajax.php \r\n\r\nUser-agent: Yandex          \r\nDisallow: /cgi-bin\r\nDisallow: /?\r\nDisallow: /wp-\r\nDisallow: /wp/\r\nDisallow: *?unapproved=\r\nDisallow: *?moderation-hash=\r\nDisallow: *?s=\r\nDisallow: *&s=\r\nDisallow: /search/\r\nDisallow: /author/\r\nDisallow: /users/\r\nDisallow: */trackback\r\nDisallow: */feed\r\nDisallow: */rss\r\nDisallow: */embed\r\nDisallow: */wlwmanifest.xml\r\nDisallow: /xmlrpc.php\r\nAllow: */uploads\r\nAllow: /*/*.js\r\nAllow: /*/*.css\r\nAllow: /wp-*.png\r\nAllow: /wp-*.jpg\r\nAllow: /wp-*.jpeg\r\nAllow: /wp-*.gif\r\nAllow: /wp-admin/admin-ajax.php\r\nClean-Param: utm_source&utm_medium&utm_campaign\r\nClean-Param: unapproved&moderation-hash\r\n\r\n       \r\nClean-Param: openstat\r\n\r\nSitemap: https://cook-look.ru/sitemap.xml\r\n\r\nHost: https://cook-look.ru/"
+  },
+  "sitemaps": [
+    {
+      "url": "https://cook-look.ru/page-sitemap.xml",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 708.12,
+      "total_ms": 708.32,
+      "html_bytes": 711,
+      "urls": 1,
+      "foreign_hosts": 0,
+      "future_lastmod": [],
+      "service_urls": []
+    },
+    {
+      "url": "https://cook-look.ru/recipe-sitemap.xml",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 1480.74,
+      "total_ms": 1757.56,
+      "html_bytes": 260502,
+      "urls": 1001,
+      "foreign_hosts": 0,
+      "future_lastmod": [],
+      "service_urls": []
+    },
+    {
+      "url": "https://cook-look.ru/recipe-sitemap2.xml",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 1624.25,
+      "total_ms": 1934.33,
+      "html_bytes": 259634,
+      "urls": 1000,
+      "foreign_hosts": 0,
+      "future_lastmod": [],
+      "service_urls": []
+    },
+    {
+      "url": "https://cook-look.ru/recipe-sitemap3.xml",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 1598.51,
+      "total_ms": 1873.71,
+      "html_bytes": 259148,
+      "urls": 1000,
+      "foreign_hosts": 0,
+      "future_lastmod": [],
+      "service_urls": []
+    },
+    {
+      "url": "https://cook-look.ru/recipe-sitemap4.xml",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 1464.56,
+      "total_ms": 1683.52,
+      "html_bytes": 193084,
+      "urls": 740,
+      "foreign_hosts": 0,
+      "future_lastmod": [],
+      "service_urls": []
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category-sitemap.xml",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 1663.93,
+      "total_ms": 1800.48,
+      "html_bytes": 88035,
+      "urls": 659,
+      "foreign_hosts": 0,
+      "future_lastmod": [],
+      "service_urls": []
+    },
+    {
+      "url": "https://cook-look.ru/recipe_tags-sitemap.xml",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 1859.7,
+      "total_ms": 2028.14,
+      "html_bytes": 126841,
+      "urls": 1000,
+      "foreign_hosts": 0,
+      "future_lastmod": [],
+      "service_urls": []
+    },
+    {
+      "url": "https://cook-look.ru/recipe_tags-sitemap2.xml",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 2812.06,
+      "total_ms": 2989.01,
+      "html_bytes": 126118,
+      "urls": 1000,
+      "foreign_hosts": 0,
+      "future_lastmod": [],
+      "service_urls": []
+    },
+    {
+      "url": "https://cook-look.ru/recipe_tags-sitemap3.xml",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 1105.26,
+      "total_ms": 1115.56,
+      "html_bytes": 28208,
+      "urls": 221,
+      "foreign_hosts": 0,
+      "future_lastmod": [],
+      "service_urls": []
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://cook-look.ru/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 1702.31,
+      "total_ms": 2000.16,
+      "html_bytes": 335749,
+      "kind": "sitemap_sample",
+      "title": "Кулинарные рецепты - COOK-LOOK",
+      "h1": [
+        "Кулинарные рецепты с пошаговыми инструкциями"
+      ],
+      "description": [
+        "Пошаговые кулинарные рецепты. Все кухни мира, все виды блюд. Рецепты супов, гарниров, салатов, мясных блюд. Рецепты борща, окрошки, котлет, солянок."
+      ],
+      "social": {
+        "og:title": [
+          "Кулинарные рецепты - COOK-LOOK"
+        ],
+        "og:description": [
+          "Пошаговые кулинарные рецепты. Все кухни мира, все виды блюд. Рецепты супов, гарниров, салатов, мясных блюд. Рецепты борща, окрошки, котлет, солянок."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/",
+          "name": "Кулинарные рецепты - COOK-LOOK",
+          "description": "Пошаговые кулинарные рецепты. Все кухни мира, все виды блюд. Рецепты супов, гарниров, салатов, мясных блюд. Рецепты борща, окрошки, котлет, солянок."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 1,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 24,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipes/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 795.42,
+      "total_ms": 1018.08,
+      "html_bytes": 179350,
+      "kind": "template_or_negative_case",
+      "title": "Каталог рецептов по ингредиентам и категориям | COOK-LOOK",
+      "h1": [
+        "Каталог рецептов"
+      ],
+      "description": [
+        "Найдите рецепт по ингредиентам, категории блюда и кухне. Используйте фильтры, чтобы включить нужные продукты или исключить неподходящие."
+      ],
+      "social": {
+        "og:title": [
+          "Каталог рецептов по ингредиентам и категориям | COOK-LOOK"
+        ],
+        "og:description": [
+          "Найдите рецепт по ингредиентам, категории блюда и кухне. Используйте фильтры, чтобы включить нужные продукты или исключить неподходящие."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [
+        "https://cook-look.ru/recipes/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 18,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipes/page/2/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 853.32,
+      "total_ms": 1078.18,
+      "html_bytes": 177130,
+      "kind": "template_or_negative_case",
+      "title": "Каталог рецептов по ингредиентам и категориям — Страница 2 | COOK-LOOK",
+      "h1": [
+        "Каталог рецептов"
+      ],
+      "description": [
+        "Страница 2. Найдите рецепт по ингредиентам, категории блюда и кухне. Используйте фильтры, чтобы включить нужные продукты или исключить неподходящие."
+      ],
+      "social": {
+        "og:title": [
+          "Каталог рецептов по ингредиентам и категориям — Страница 2 | COOK-LOOK"
+        ],
+        "og:description": [
+          "Страница 2. Найдите рецепт по ингредиентам, категории блюда и кухне. Используйте фильтры, чтобы включить нужные продукты или исключить неподходящие."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [
+        "https://cook-look.ru/recipes/page/2/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 18,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/account/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 899.96,
+      "total_ms": 956.39,
+      "html_bytes": 42588,
+      "kind": "template_or_negative_case",
+      "title": "Личный кабинет - COOK-LOOK",
+      "h1": [
+        "Личный кабинет"
+      ],
+      "description": [],
+      "social": {
+        "og:title": [
+          "Личный кабинет - COOK-LOOK"
+        ],
+        "og:description": [],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/account/",
+          "name": "Личный кабинет - COOK-LOOK",
+          "description": ""
+        }
+      ],
+      "canonical": [],
+      "robots": [
+        "noindex, follow"
+      ],
+      "x_robots_tag": null,
+      "cache_control": "no-cache, must-revalidate, max-age=0, no-store, private",
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 3,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/account.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/my-favorites/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 800.13,
+      "total_ms": 898,
+      "html_bytes": 42202,
+      "kind": "template_or_negative_case",
+      "title": "Избранные рецепты - COOK-LOOK",
+      "h1": [
+        "Избранные рецепты"
+      ],
+      "description": [],
+      "social": {
+        "og:title": [
+          "Избранные рецепты - COOK-LOOK"
+        ],
+        "og:description": [],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/my-favorites/",
+          "name": "Избранные рецепты - COOK-LOOK",
+          "description": ""
+        }
+      ],
+      "canonical": [],
+      "robots": [
+        "noindex, nofollow"
+      ],
+      "x_robots_tag": null,
+      "cache_control": "no-cache, must-revalidate, max-age=0, no-store, private",
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 3,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/?s=%D0%BA%D0%B0%D1%88%D0%B0",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 994.18,
+      "total_ms": 1201.08,
+      "html_bytes": 142700,
+      "kind": "template_or_negative_case",
+      "title": "Вы искали каша - COOK-LOOK",
+      "h1": [
+        "Результаты поиска по запросу: «каша»"
+      ],
+      "description": [],
+      "social": {
+        "og:title": [
+          "Вы искали каша - COOK-LOOK"
+        ],
+        "og:description": [],
+        "twitter:title": [
+          "Вы искали каша - COOK-LOOK"
+        ],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [],
+      "robots": [
+        "noindex, follow"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 17,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipes/?sort_by=recipe_time",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 1355.44,
+      "total_ms": 1590.74,
+      "html_bytes": 177584,
+      "kind": "template_or_negative_case",
+      "title": "Каталог рецептов по ингредиентам и категориям | COOK-LOOK",
+      "h1": [
+        "Каталог рецептов"
+      ],
+      "description": [
+        "Найдите рецепт по ингредиентам, категории блюда и кухне. Используйте фильтры, чтобы включить нужные продукты или исключить неподходящие."
+      ],
+      "social": {
+        "og:title": [
+          "Каталог рецептов по ингредиентам и категориям | COOK-LOOK"
+        ],
+        "og:description": [
+          "Найдите рецепт по ингредиентам, категории блюда и кухне. Используйте фильтры, чтобы включить нужные продукты или исключить неподходящие."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [],
+      "robots": [
+        "noindex, follow"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 18,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipes/?sort_by=recipe_views",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 978.74,
+      "total_ms": 1212.56,
+      "html_bytes": 178833,
+      "kind": "template_or_negative_case",
+      "title": "Каталог рецептов по ингредиентам и категориям | COOK-LOOK",
+      "h1": [
+        "Каталог рецептов"
+      ],
+      "description": [
+        "Найдите рецепт по ингредиентам, категории блюда и кухне. Используйте фильтры, чтобы включить нужные продукты или исключить неподходящие."
+      ],
+      "social": {
+        "og:title": [
+          "Каталог рецептов по ингредиентам и категориям | COOK-LOOK"
+        ],
+        "og:description": [
+          "Найдите рецепт по ингредиентам, категории блюда и кухне. Используйте фильтры, чтобы включить нужные продукты или исключить неподходящие."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [],
+      "robots": [
+        "noindex, follow"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 18,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipes/?recipe_category=999999999",
+      "status": 404,
+      "redirects": [],
+      "ttfb_ms": 936.64,
+      "total_ms": 1012.35,
+      "html_bytes": 40891,
+      "kind": "template_or_negative_case",
+      "title": "Страница не найдена - COOK-LOOK",
+      "h1": [],
+      "description": [],
+      "social": {
+        "og:title": [
+          "Страница не найдена - COOK-LOOK"
+        ],
+        "og:description": [],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [],
+      "robots": [
+        "noindex, follow"
+      ],
+      "x_robots_tag": null,
+      "cache_control": "no-cache, must-revalidate, max-age=0, no-store, private",
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 4,
+        "missing_dimensions": 2,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipes/?include_ingredients=seo-audit-nonexistent",
+      "status": 404,
+      "redirects": [],
+      "ttfb_ms": 848.84,
+      "total_ms": 919.46,
+      "html_bytes": 40891,
+      "kind": "template_or_negative_case",
+      "title": "Страница не найдена - COOK-LOOK",
+      "h1": [],
+      "description": [],
+      "social": {
+        "og:title": [
+          "Страница не найдена - COOK-LOOK"
+        ],
+        "og:description": [],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [],
+      "robots": [
+        "noindex, follow"
+      ],
+      "x_robots_tag": null,
+      "cache_control": "no-cache, must-revalidate, max-age=0, no-store, private",
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 4,
+        "missing_dimensions": 2,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipes/page/999999/",
+      "status": 404,
+      "redirects": [],
+      "ttfb_ms": 825.89,
+      "total_ms": 898.34,
+      "html_bytes": 40891,
+      "kind": "template_or_negative_case",
+      "title": "Страница не найдена - COOK-LOOK",
+      "h1": [],
+      "description": [],
+      "social": {
+        "og:title": [
+          "Страница не найдена - COOK-LOOK"
+        ],
+        "og:description": [],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [],
+      "robots": [
+        "noindex, follow"
+      ],
+      "x_robots_tag": null,
+      "cache_control": "no-cache, must-revalidate, max-age=0, no-store, private",
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 4,
+        "missing_dimensions": 2,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/seo-audit-nonexistent/",
+      "status": 404,
+      "redirects": [],
+      "ttfb_ms": 782.78,
+      "total_ms": 829.04,
+      "html_bytes": 40891,
+      "kind": "template_or_negative_case",
+      "title": "Страница не найдена - COOK-LOOK",
+      "h1": [],
+      "description": [],
+      "social": {
+        "og:title": [
+          "Страница не найдена - COOK-LOOK"
+        ],
+        "og:description": [],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [],
+      "robots": [
+        "noindex, follow"
+      ],
+      "x_robots_tag": null,
+      "cache_control": "no-cache, must-revalidate, max-age=0, no-store, private",
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 4,
+        "missing_dimensions": 2,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 923.42,
+      "total_ms": 1155.19,
+      "html_bytes": 156267,
+      "kind": "recipe",
+      "title": "Блины с водкой — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Блины с водкой"
+      ],
+      "description": [
+        "Рецепт «Блины с водкой». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Блины с водкой — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Блины с водкой». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+          "name": "Блины с водкой — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Блины с водкой». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/bliny-s-vodkoj/#recipe",
+          "name": "Блины с водкой",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 7,
+          "step_count": 2,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/bliny-s-vodkoj/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 890.87,
+      "total_ms": 1092.83,
+      "html_bytes": 163003,
+      "kind": "recipe",
+      "title": "Сладкая творожная масса, запеченная в духовке — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Сладкая творожная масса, запеченная в духовке"
+      ],
+      "description": [
+        "Рецепт «Сладкая творожная масса, запеченная в духовке». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Сладкая творожная масса, запеченная в духовке — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Сладкая творожная масса, запеченная в духовке». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/",
+          "name": "Сладкая творожная масса, запеченная в духовке — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Сладкая творожная масса, запеченная в духовке». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/#recipe",
+          "name": "Сладкая творожная масса, запеченная в духовке",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-14280.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 8,
+          "step_count": 5,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 892.7,
+      "total_ms": 1119.95,
+      "html_bytes": 159531,
+      "kind": "recipe",
+      "title": "Крем брюле (Creme brûlée) — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Крем брюле (Creme brûlée)"
+      ],
+      "description": [
+        "Рецепт «Крем брюле (Creme brûlée)». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Крем брюле (Creme brûlée) — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Крем брюле (Creme brûlée)». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/",
+          "name": "Крем брюле (Creme brûlée) — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Крем брюле (Creme brûlée)». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/krem-bryule-creme-brulee/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/#recipe",
+          "name": "Крем брюле (Creme brûlée)",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16118.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 5,
+          "step_count": 8,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/krem-bryule-creme-brulee/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 853.62,
+      "total_ms": 1074.69,
+      "html_bytes": 158248,
+      "kind": "recipe",
+      "title": "Запеканка из творога — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Запеканка из творога"
+      ],
+      "description": [
+        "Рецепт «Запеканка из творога». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Запеканка из творога — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Запеканка из творога». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/",
+          "name": "Запеканка из творога — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Запеканка из творога». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/#recipe",
+          "name": "Запеканка из творога",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-12817.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 9,
+          "step_count": 4,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/zapekanka-iz-tvoroga/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 858.25,
+      "total_ms": 1073.06,
+      "html_bytes": 155878,
+      "kind": "recipe",
+      "title": "Запеканка из обезжиренного творога с курагой — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Запеканка из обезжиренного творога с курагой"
+      ],
+      "description": [
+        "Рецепт «Запеканка из обезжиренного творога с курагой». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Запеканка из обезжиренного творога с курагой — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Запеканка из обезжиренного творога с курагой». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/",
+          "name": "Запеканка из обезжиренного творога с курагой — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Запеканка из обезжиренного творога с курагой». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/#recipe",
+          "name": "Запеканка из обезжиренного творога с курагой",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-20068.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 3,
+          "step_count": 2,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/zapekanka-iz-obezzhirennogo-tvoroga-s-kuragoj/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/keksy-piczczy/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 917.72,
+      "total_ms": 1161.04,
+      "html_bytes": 157176,
+      "kind": "recipe",
+      "title": "Кексы-пиццы — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Кексы-пиццы"
+      ],
+      "description": [
+        "Рецепт «Кексы-пиццы». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Кексы-пиццы — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Кексы-пиццы». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/keksy-piczczy/",
+          "name": "Кексы-пиццы — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Кексы-пиццы». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/keksy-piczczy/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/keksy-piczczy/#recipe",
+          "name": "Кексы-пиццы",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-21027.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 9,
+          "step_count": 3,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/keksy-piczczy/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 857.39,
+      "total_ms": 1071.22,
+      "html_bytes": 163817,
+      "kind": "recipe",
+      "title": "Маффины с кусочками шоколада в медовом сиропе — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Маффины с кусочками шоколада в медовом сиропе"
+      ],
+      "description": [
+        "Рецепт «Маффины с кусочками шоколада в медовом сиропе». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Маффины с кусочками шоколада в медовом сиропе — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Маффины с кусочками шоколада в медовом сиропе». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/",
+          "name": "Маффины с кусочками шоколада в медовом сиропе — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Маффины с кусочками шоколада в медовом сиропе». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/#recipe",
+          "name": "Маффины с кусочками шоколада в медовом сиропе",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-10771.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 9,
+          "step_count": 10,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/maffiny-s-kusochkami-shokolada-v-medovom-sirope/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 874.3,
+      "total_ms": 1099.33,
+      "html_bytes": 161807,
+      "kind": "recipe",
+      "title": "Тыквенные маффины с грецкими орехами — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Тыквенные маффины с грецкими орехами"
+      ],
+      "description": [
+        "Рецепт «Тыквенные маффины с грецкими орехами». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Тыквенные маффины с грецкими орехами — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Тыквенные маффины с грецкими орехами». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/",
+          "name": "Тыквенные маффины с грецкими орехами — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Тыквенные маффины с грецкими орехами». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/#recipe",
+          "name": "Тыквенные маффины с грецкими орехами",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-26136.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 11,
+          "step_count": 5,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/tykvennye-maffiny-s-greczkimi-orehami/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 824,
+      "total_ms": 1018.95,
+      "html_bytes": 163087,
+      "kind": "recipe",
+      "title": "Чернично-лавандовое мороженое — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Чернично-лавандовое мороженое"
+      ],
+      "description": [
+        "Рецепт «Чернично-лавандовое мороженое». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Чернично-лавандовое мороженое — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Чернично-лавандовое мороженое». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/",
+          "name": "Чернично-лавандовое мороженое — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Чернично-лавандовое мороженое». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/#recipe",
+          "name": "Чернично-лавандовое мороженое",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-26706.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 8,
+          "step_count": 6,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/chernichno-lavandovoe-morozhenoe/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 891.27,
+      "total_ms": 1127.73,
+      "html_bytes": 160995,
+      "kind": "recipe",
+      "title": "Шоколадно-банановое мороженое — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Шоколадно-банановое мороженое"
+      ],
+      "description": [
+        "Рецепт «Шоколадно-банановое мороженое». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Шоколадно-банановое мороженое — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Шоколадно-банановое мороженое». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/",
+          "name": "Шоколадно-банановое мороженое — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Шоколадно-банановое мороженое». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/#recipe",
+          "name": "Шоколадно-банановое мороженое",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-19469.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 6,
+          "step_count": 10,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/shokoladno-bananovoe-morozhenoe/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/hachapuri-po-adzharski/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 841.56,
+      "total_ms": 1033.58,
+      "html_bytes": 158157,
+      "kind": "recipe",
+      "title": "Хачапури по-аджарски — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Хачапури по-аджарски"
+      ],
+      "description": [
+        "Рецепт «Хачапури по-аджарски». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Хачапури по-аджарски — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Хачапури по-аджарски». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/hachapuri-po-adzharski/",
+          "name": "Хачапури по-аджарски — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Хачапури по-аджарски». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/hachapuri-po-adzharski/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/hachapuri-po-adzharski/#recipe",
+          "name": "Хачапури по-аджарски",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-33678.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 8,
+          "step_count": 3,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/hachapuri-po-adzharski/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/sup-s-brisketom/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 847.95,
+      "total_ms": 1063.44,
+      "html_bytes": 165283,
+      "kind": "recipe",
+      "title": "Суп с брискетом — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Суп с брискетом"
+      ],
+      "description": [
+        "Рецепт «Суп с брискетом». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Суп с брискетом — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Суп с брискетом». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/sup-s-brisketom/",
+          "name": "Суп с брискетом — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Суп с брискетом». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/sup-s-brisketom/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/sup-s-brisketom/#recipe",
+          "name": "Суп с брискетом",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-21834.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 12,
+          "step_count": 6,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/sup-s-brisketom/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/aziatskij-salat-iz-marinovannoj-svekly-s-kunzhutom/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 867.06,
+      "total_ms": 1095.11,
+      "html_bytes": 157919,
+      "kind": "recipe",
+      "title": "Азиатский салат из маринованной свеклы с кунжутом — пошаговый рецепт | COOK-LOOK",
+      "h1": [
+        "Азиатский салат из маринованной свеклы с кунжутом"
+      ],
+      "description": [
+        "Рецепт «Азиатский салат из маринованной свеклы с кунжутом». Ингредиенты и пошаговое приготовление."
+      ],
+      "social": {
+        "og:title": [
+          "Азиатский салат из маринованной свеклы с кунжутом — пошаговый рецепт | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепт «Азиатский салат из маринованной свеклы с кунжутом». Ингредиенты и пошаговое приготовление."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [
+        {
+          "id": "https://cook-look.ru/recipe/aziatskij-salat-iz-marinovannoj-svekly-s-kunzhutom/",
+          "name": "Азиатский салат из маринованной свеклы с кунжутом — пошаговый рецепт | COOK-LOOK",
+          "description": "Рецепт «Азиатский салат из маринованной свеклы с кунжутом». Ингредиенты и пошаговое приготовление."
+        }
+      ],
+      "canonical": [
+        "https://cook-look.ru/recipe/aziatskij-salat-iz-marinovannoj-svekly-s-kunzhutom/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [
+        {
+          "id": "https://cook-look.ru/recipe/aziatskij-salat-iz-marinovannoj-svekly-s-kunzhutom/#recipe",
+          "name": "Азиатский салат из маринованной свеклы с кунжутом",
+          "image": [
+            "https://cook-look.ru/wp-content/uploads/2024/07/p_o-4396.jpg"
+          ],
+          "critical_missing": [],
+          "ingredient_count": 8,
+          "step_count": 5,
+          "author": {
+            "@type": "Organization",
+            "name": "CookLook",
+            "url": "https://cook-look.ru/"
+          },
+          "nutrition_present": false,
+          "main_entity_of_page": {
+            "@id": "https://cook-look.ru/recipe/aziatskij-salat-iz-marinovannoj-svekly-s-kunzhutom/"
+          },
+          "broken_step_anchors": []
+        }
+      ],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": true,
+      "steps_in_html": true,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 15,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick-theme.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/recipe-views.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/slick.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/slick_init.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-comment.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-includes/js/comment-reply.min.js?ver=7.1.3",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5",
+        "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cfturnstileOnload",
+        "https://cook-look.ru/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1792017634"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/avtorskaya-kuhnya/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 1024.43,
+      "total_ms": 1176.98,
+      "html_bytes": 88235,
+      "kind": "sitemap_sample",
+      "title": "Авторская кухня — рецепты | COOK-LOOK",
+      "h1": [
+        "Основные блюда / Авторская кухня"
+      ],
+      "description": [
+        "Авторская кухня — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+      ],
+      "social": {
+        "og:title": [
+          "Авторская кухня — рецепты | COOK-LOOK"
+        ],
+        "og:description": [
+          "Авторская кухня — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [
+        "https://cook-look.ru/recipe_category/avtorskaya-kuhnya/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 5,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe_category/adzhapsandal/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 866.62,
+      "total_ms": 1033.85,
+      "html_bytes": 87842,
+      "kind": "sitemap_sample",
+      "title": "Аджапсандал — рецепты | COOK-LOOK",
+      "h1": [
+        "Закуски / Аджапсандал"
+      ],
+      "description": [
+        "Аджапсандал — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+      ],
+      "social": {
+        "og:title": [
+          "Аджапсандал — рецепты | COOK-LOOK"
+        ],
+        "og:description": [
+          "Аджапсандал — рецепты. Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [
+        "https://cook-look.ru/recipe_category/adzhapsandal/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 3,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 5,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe_tags/5/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 834.51,
+      "total_ms": 987.79,
+      "html_bytes": 85227,
+      "kind": "sitemap_sample",
+      "title": "Рецепты с ингредиентом «5%» | COOK-LOOK",
+      "h1": [
+        "Рецепты с \"5%\""
+      ],
+      "description": [
+        "Рецепты с ингредиентом «5%». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+      ],
+      "social": {
+        "og:title": [
+          "Рецепты с ингредиентом «5%» | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепты с ингредиентом «5%». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [
+        "https://cook-look.ru/recipe_tags/5/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 5,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe_tags/nutella/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 818.38,
+      "total_ms": 973.38,
+      "html_bytes": 103760,
+      "kind": "sitemap_sample",
+      "title": "Рецепты с ингредиентом «Nutella®» | COOK-LOOK",
+      "h1": [
+        "Рецепты с \"Nutella®\""
+      ],
+      "description": [
+        "Рецепты с ингредиентом «Nutella®». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+      ],
+      "social": {
+        "og:title": [
+          "Рецепты с ингредиентом «Nutella®» | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепты с ингредиентом «Nutella®». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [
+        "https://cook-look.ru/recipe_tags/nutella/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 8,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe_tags/midii-v-rakushkah/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 829.49,
+      "total_ms": 1020.6,
+      "html_bytes": 96936,
+      "kind": "sitemap_sample",
+      "title": "Рецепты с ингредиентом «Мидии в ракушках» | COOK-LOOK",
+      "h1": [
+        "Рецепты с \"Мидии в ракушках\""
+      ],
+      "description": [
+        "Рецепты с ингредиентом «Мидии в ракушках». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+      ],
+      "social": {
+        "og:title": [
+          "Рецепты с ингредиентом «Мидии в ракушках» | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепты с ингредиентом «Мидии в ракушках». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [
+        "https://cook-look.ru/recipe_tags/midii-v-rakushkah/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 6,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe_tags/mizuna/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 807.6,
+      "total_ms": 947.92,
+      "html_bytes": 88016,
+      "kind": "sitemap_sample",
+      "title": "Рецепты с ингредиентом «Мизуна» | COOK-LOOK",
+      "h1": [
+        "Рецепты с \"Мизуна\""
+      ],
+      "description": [
+        "Рецепты с ингредиентом «Мизуна». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+      ],
+      "social": {
+        "og:title": [
+          "Рецепты с ингредиентом «Мизуна» | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепты с ингредиентом «Мизуна». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [
+        "https://cook-look.ru/recipe_tags/mizuna/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 5,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe_tags/file-beloj-ryby/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 792.67,
+      "total_ms": 943.76,
+      "html_bytes": 87226,
+      "kind": "sitemap_sample",
+      "title": "Рецепты с ингредиентом «Филе белой рыбы» | COOK-LOOK",
+      "h1": [
+        "Рецепты с \"Филе белой рыбы\""
+      ],
+      "description": [
+        "Рецепты с ингредиентом «Филе белой рыбы». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+      ],
+      "social": {
+        "og:title": [
+          "Рецепты с ингредиентом «Филе белой рыбы» | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепты с ингредиентом «Филе белой рыбы». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [
+        "https://cook-look.ru/recipe_tags/file-beloj-ryby/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 5,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe_tags/file-gorbushi/",
+      "status": 200,
+      "redirects": [],
+      "ttfb_ms": 831.17,
+      "total_ms": 986.4,
+      "html_bytes": 86838,
+      "kind": "sitemap_sample",
+      "title": "Рецепты с ингредиентом «Филе горбуши» | COOK-LOOK",
+      "h1": [
+        "Рецепты с \"Филе горбуши\""
+      ],
+      "description": [
+        "Рецепты с ингредиентом «Филе горбуши». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+      ],
+      "social": {
+        "og:title": [
+          "Рецепты с ингредиентом «Филе горбуши» | COOK-LOOK"
+        ],
+        "og:description": [
+          "Рецепты с ингредиентом «Филе горбуши». Выберите блюдо, посмотрите состав и пошаговый способ приготовления."
+        ],
+        "twitter:title": [],
+        "twitter:description": []
+      },
+      "webpages": [],
+      "canonical": [
+        "https://cook-look.ru/recipe_tags/file-gorbushi/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "x_robots_tag": null,
+      "cache_control": null,
+      "jsonld_errors": [],
+      "recipes": [],
+      "breadcrumbs": [
+        {
+          "count": 2,
+          "ordered": true,
+          "missing_intermediate_urls": []
+        }
+      ],
+      "website_count": 1,
+      "ingredients_in_html": false,
+      "steps_in_html": false,
+      "php_diagnostics": false,
+      "local_url_leak": false,
+      "images": {
+        "total": 5,
+        "missing_dimensions": 1,
+        "missing_alt": 0
+      },
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Mulish:wght@400..900&display=swap",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/style.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/layout.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/style.css?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5"
+      ],
+      "scripts": [
+        "https://cook-look.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://cook-look.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/ajax-search.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/search_modal.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.full.min.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filter-ingridients.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/js/filters.js?ver=1792203035",
+        "https://cook-look.ru/wp-content/themes/cooklook/js/navigation.js?ver=1.0.0",
+        "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/javascript/dist/script.min.js?ver=2.5"
+      ]
+    }
+  ],
+  "timings": [
+    {
+      "url": "https://cook-look.ru/",
+      "runs": [
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "redirects": [],
+          "ttfb_ms": 1745.12,
+          "total_ms": 2083.26,
+          "html_bytes": 335749
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "redirects": [],
+          "ttfb_ms": 945.32,
+          "total_ms": 1253.16,
+          "html_bytes": 335749
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "redirects": [],
+          "ttfb_ms": 976.5,
+          "total_ms": 1303.91,
+          "html_bytes": 335749
+        }
+      ],
+      "median_ttfb_ms": 976.5
+    },
+    {
+      "url": "https://cook-look.ru/recipes/",
+      "runs": [
+        {
+          "url": "https://cook-look.ru/recipes/",
+          "status": 200,
+          "redirects": [],
+          "ttfb_ms": 991.43,
+          "total_ms": 1203.6,
+          "html_bytes": 179350
+        },
+        {
+          "url": "https://cook-look.ru/recipes/",
+          "status": 200,
+          "redirects": [],
+          "ttfb_ms": 823.22,
+          "total_ms": 1057.06,
+          "html_bytes": 179350
+        },
+        {
+          "url": "https://cook-look.ru/recipes/",
+          "status": 200,
+          "redirects": [],
+          "ttfb_ms": 859.72,
+          "total_ms": 1088.93,
+          "html_bytes": 179350
+        }
+      ],
+      "median_ttfb_ms": 859.72
+    },
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "runs": [
+        {
+          "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+          "status": 200,
+          "redirects": [],
+          "ttfb_ms": 918.23,
+          "total_ms": 1152.72,
+          "html_bytes": 156268
+        },
+        {
+          "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+          "status": 200,
+          "redirects": [],
+          "ttfb_ms": 935.69,
+          "total_ms": 1143.73,
+          "html_bytes": 156267
+        },
+        {
+          "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+          "status": 200,
+          "redirects": [],
+          "ttfb_ms": 812.2,
+          "total_ms": 1018.79,
+          "html_bytes": 156267
+        }
+      ],
+      "median_ttfb_ms": 918.23
+    }
+  ],
+  "image_checks": [
+    {
+      "url": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg",
+      "status": 200,
+      "redirects": [],
+      "content_type": "image/jpeg",
+      "bytes": 91470
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-14280.jpg",
+      "status": 200,
+      "redirects": [],
+      "content_type": "image/jpeg",
+      "bytes": 59303
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16118.jpg",
+      "status": 200,
+      "redirects": [],
+      "content_type": "image/jpeg",
+      "bytes": 79784
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-12817.jpg",
+      "status": 200,
+      "redirects": [],
+      "content_type": "image/jpeg",
+      "bytes": 91850
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-20068.jpg",
+      "status": 200,
+      "redirects": [],
+      "content_type": "image/jpeg",
+      "bytes": 128883
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-21027.jpg",
+      "status": 200,
+      "redirects": [],
+      "content_type": "image/jpeg",
+      "bytes": 76864
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-10771.jpg",
+      "status": 200,
+      "redirects": [],
+      "content_type": "image/jpeg",
+      "bytes": 99098
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-26136.jpg",
+      "status": 200,
+      "redirects": [],
+      "content_type": "image/jpeg",
+      "bytes": 34839
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-26706.jpg",
+      "status": 200,
+      "redirects": [],
+      "content_type": "image/jpeg",
+      "bytes": 103149
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-19469.jpg",
+      "status": 200,
+      "redirects": [],
+      "content_type": "image/jpeg",
+      "bytes": 50910
+    }
+  ],
+  "errors": [],
+  "sitemap_index": {
+    "url": "https://cook-look.ru/sitemap_index.xml",
+    "status": 200,
+    "redirects": [],
+    "ttfb_ms": 1390.57,
+    "total_ms": 1390.78,
+    "html_bytes": 1409
+  },
+  "completed_at": "2026-10-17T02:16:05.013Z"
+}

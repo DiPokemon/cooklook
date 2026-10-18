@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-17T12:27:06.776Z",
+  "pages": [
+    {
+      "url": "https://cook-look.ru/recipe/veganskoe-morozhenoe-s-kivi/",
+      "status": 200,
+      "recipes": [
+        {
+          "name": "Веганское мороженое с киви",
+          "prepTime": "PT6H",
+          "cookTime": "PT20M",
+          "totalTime": "PT6H20M",
+          "description": "Рецепт «Веганское мороженое с киви». Ингредиенты и пошаговое приготовление."
+        }
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/zhele-iz-maczoni-s-yagodami-ili-tarhunom/",
+      "status": 200,
+      "recipes": [
+        {
+          "name": "Желе из мацони с ягодами или тархуном",
+          "prepTime": "PT2H",
+          "cookTime": "PT1H",
+          "totalTime": "PT3H",
+          "description": "Рецепт «Желе из мацони с ягодами или тархуном». Ингредиенты и пошаговое приготовление."
+        }
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/tvorozhnyj-chizkejk-bez-vypechki-i-sahara/",
+      "status": 200,
+      "recipes": [
+        {
+          "name": "Творожный чизкейк без выпечки и сахара",
+          "prepTime": "PT1H",
+          "cookTime": "PT1H",
+          "totalTime": "PT2H",
+          "description": "Рецепт «Творожный чизкейк без выпечки и сахара». Ингредиенты и пошаговое приготовление."
+        }
+      ]
+    }
+  ]
+}

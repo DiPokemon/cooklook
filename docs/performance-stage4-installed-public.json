@@ -1,0 +1,93 @@
+{
+  "checkedAt": "2026-10-17T14:16:56.497Z",
+  "version": "1.1.2",
+  "publicStyleMatchesZip": true,
+  "pages": [
+    {
+      "name": "home",
+      "url": "https://cook-look.ru/",
+      "status": 200,
+      "headers": {
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "server": "nginx"
+      },
+      "title": "Кулинарные рецепты - COOK-LOOK",
+      "canonical": "https://cook-look.ru/",
+      "htmlBytes": 345301,
+      "externalStyles": [
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792246499"
+      ],
+      "beforeExternalStyleCount": 3,
+      "afterExternalStyleCount": 1,
+      "removedBlockingRequests": 2,
+      "inlinedStyles": [
+        "slick-inline-css",
+        "relevanssi-live-search-inline-css"
+      ],
+      "knownCssContentPreserved": true,
+      "analyticsUnchanged": true
+    },
+    {
+      "name": "catalog",
+      "url": "https://cook-look.ru/recipes/",
+      "status": 200,
+      "headers": {
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "server": "nginx"
+      },
+      "title": "Каталог рецептов по ингредиентам и категориям | COOK-LOOK",
+      "canonical": "https://cook-look.ru/recipes/",
+      "htmlBytes": 189671,
+      "externalStyles": [
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792246499",
+        "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792246499"
+      ],
+      "beforeExternalStyleCount": 4,
+      "afterExternalStyleCount": 2,
+      "removedBlockingRequests": 2,
+      "inlinedStyles": [
+        "cooklook-catalog-inline-css",
+        "relevanssi-live-search-inline-css"
+      ],
+      "knownCssContentPreserved": true,
+      "analyticsUnchanged": true
+    },
+    {
+      "name": "recipe",
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "status": 200,
+      "headers": {
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "server": "nginx"
+      },
+      "title": "Блины с водкой — пошаговый рецепт | COOK-LOOK",
+      "canonical": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "htmlBytes": 166292,
+      "externalStyles": [
+        "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792246499"
+      ],
+      "beforeExternalStyleCount": 3,
+      "afterExternalStyleCount": 1,
+      "removedBlockingRequests": 2,
+      "inlinedStyles": [
+        "slick-inline-css",
+        "relevanssi-live-search-inline-css"
+      ],
+      "knownCssContentPreserved": true,
+      "analyticsUnchanged": true
+    }
+  ],
+  "normalizedCssAssets": [
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/ajax-loader.gif",
+      "status": 200
+    },
+    {
+      "url": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/fonts/slick.woff",
+      "status": 200
+    }
+  ]
+}

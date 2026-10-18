@@ -1,0 +1,723 @@
+{
+  "checked_at": "2026-10-17T15:57:23.499Z",
+  "method": "Public failure paths extracted offline from supplied logs. IP ownership was not verified: sandbox network attempts failed, then automatic approval review rejected sending log IPs to external DNS. No claims of verified crawler identity. Successful separate public GET checks are in server-stage5-public-check.json.",
+  "crawlers": {
+    "Googlebot": {
+      "unverified_timeout": {
+        "unique_addresses": 15,
+        "requests": 3243,
+        "status": {
+          "200": 2793,
+          "301": 115,
+          "302": 1,
+          "403": 164,
+          "404": 169,
+          "405": 1
+        },
+        "query_requests": 730,
+        "facet_requests": 0,
+        "public_404": {
+          "/recipe_category/kesadilya-zakuski/": 1
+        },
+        "robots": {
+          "200 /robots.txt": 52,
+          "301 /robots.txt": 13,
+          "200 /recipe-sitemap3.xml": 6,
+          "200 /recipe-sitemap.xml": 6,
+          "200 /recipe-sitemap2.xml": 2,
+          "200 /sitemap_index.xml": 6,
+          "200 /recipe_category-sitemap.xml": 8,
+          "200 /page-sitemap.xml": 2,
+          "200 /recipe_tags-sitemap.xml": 6,
+          "200 /recipe_tags-sitemap2.xml": 6,
+          "301 /sitemap.xml": 5,
+          "200 /recipe-sitemap4.xml": 1,
+          "200 /recipe_tags-sitemap3.xml": 1
+        }
+      },
+      "unverified_budget": {
+        "unique_addresses": 10,
+        "requests": 17,
+        "status": {
+          "200": 9,
+          "301": 3,
+          "403": 3,
+          "404": 2
+        },
+        "query_requests": 5,
+        "facet_requests": 0,
+        "public_404": {},
+        "robots": {
+          "200 /robots.txt": 5,
+          "301 /robots.txt": 3
+        }
+      }
+    },
+    "Yandex": {
+      "unverified_timeout": {
+        "unique_addresses": 57,
+        "requests": 422,
+        "status": {
+          "200": 398,
+          "301": 14,
+          "404": 10
+        },
+        "query_requests": 75,
+        "facet_requests": 0,
+        "public_404": {
+          "/recipe/rulet-iz-shhekoviny/": 1,
+          "/recipe/stejk-minon/": 1,
+          "/recipe/stejk-traj-tip/": 1,
+          "/recipe/leshh-farshirovannyj-kashej/": 1,
+          "/recipe/morskie-grebeshki-na-paru/": 1,
+          "/recipe/syrnyj-sous-na-majoneze/": 1,
+          "/recipe/farshirovannye-syrom-perczy-halapeno/": 1,
+          "/recipe/sochnyj-salat-k-myasu-i-rybe/": 1
+        },
+        "robots": {
+          "200 /robots.txt": 53,
+          "301 /robots.txt": 6,
+          "200 /recipe-sitemap3.xml": 2,
+          "301 /sitemap.xml": 2,
+          "200 /recipe_tags-sitemap2.xml": 1,
+          "200 /recipe-sitemap2.xml": 1,
+          "200 /recipe_category-sitemap.xml": 1,
+          "200 /sitemap_index.xml": 1,
+          "200 /recipe-sitemap.xml": 2,
+          "200 /page-sitemap.xml": 1,
+          "200 /recipe_tags-sitemap3.xml": 1
+        }
+      },
+      "unverified_budget": {
+        "unique_addresses": 370,
+        "requests": 756,
+        "status": {
+          "200": 739,
+          "301": 11,
+          "404": 6
+        },
+        "query_requests": 156,
+        "facet_requests": 0,
+        "public_404": {
+          "/recipe/bubert/": 1,
+          "/recipe/kuricza-zapechennaya-v-duhovke/": 1,
+          "/recipe/adzhapsandali-klassicheskij/": 1,
+          "/recipe/dieticheskie-syrniki-s-jogurtovo-limonnym-sousom/": 1,
+          "/recipe/batonchiki-myusli-s-yablokom-i-orehami/": 1,
+          "/recipe/pechenoe-veperevo-koleno-zapechennaya-svinaya-rulka/": 1
+        },
+        "robots": {
+          "200 /recipe_tags-sitemap.xml": 2,
+          "200 /robots.txt": 83,
+          "200 /recipe_tags-sitemap2.xml": 1,
+          "200 /sitemap_index.xml": 2,
+          "301 /robots.txt": 3,
+          "200 /recipe-sitemap4.xml": 3,
+          "301 /sitemap.xml": 1,
+          "200 /recipe-sitemap2.xml": 1,
+          "200 /recipe_category-sitemap.xml": 2,
+          "200 /page-sitemap.xml": 2,
+          "200 /recipe-sitemap.xml": 1,
+          "200 /recipe-sitemap3.xml": 1,
+          "200 /recipe_tags-sitemap3.xml": 1
+        }
+      }
+    }
+  },
+  "public_5xx_events": [
+    {
+      "time": "17/Oct/2026:13:53:32 +0300",
+      "method": "GET",
+      "path": "/recipe/kapustnye-kotlety-v-duhovke/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "16/Oct/2026:02:40:07 +0300",
+      "method": "GET",
+      "path": "/recipe/veganskoe-morozhenoe-s-kivi/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "16/Oct/2026:13:30:08 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/syr-rikotta/page/2/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "16/Oct/2026:22:40:53 +0300",
+      "method": "GET",
+      "path": "/recipes/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:04:03:50 +0300",
+      "method": "GET",
+      "path": "/recipe/krem-sup-iz-belyh-gribov-s-tryufelnym-maslom/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:05:48:18 +0300",
+      "method": "GET",
+      "path": "/recipe/klubnichnyj-dzhem-2/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:09:22:03 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/morkov/page/26/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:12:24:38 +0300",
+      "method": "GET",
+      "path": "/recipe/franczuzskie-bulochki/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:12:28:51 +0300",
+      "method": "GET",
+      "path": "/recipe/file-sibasa-zapechennoe-v-suharyah/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:12:29:59 +0300",
+      "method": "GET",
+      "path": "/recipe/bananovo-apelsinovaya-granola/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": true
+    },
+    {
+      "time": "07/Oct/2026:12:53:54 +0300",
+      "method": "GET",
+      "path": "/recipe/dieticheskij-kartofel-fri/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:12:59:28 +0300",
+      "method": "GET",
+      "path": "/recipe/czvetushhie-pirozhnye/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:12:59:29 +0300",
+      "method": "GET",
+      "path": "/recipe/mintaj-zapechennyj-s-kabachkovoj-ikroj/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:15:30:22 +0300",
+      "method": "GET",
+      "path": "/recipe_category/pirogi/page/15/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:15:30:26 +0300",
+      "method": "GET",
+      "path": "/recipe_category/pirogi/page/15/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "07/Oct/2026:19:06:41 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/klubnika/page/4/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:03:49:43 +0300",
+      "method": "GET",
+      "path": "/recipe/treska-zapechenaya-s-pomidorami-i-syrom/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:03:50:46 +0300",
+      "method": "GET",
+      "path": "/recipe/kartofelnye-kotlety-s-parmezanom-i-zelenyu-po-italyanski-subrich-di-patate/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:11:09:25 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/kurinoe-yajczo/page/93/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:11:34:58 +0300",
+      "method": "GET",
+      "path": "/recipe/kuricza-s-baklazhanami-v-soevom-marinade/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:11:34:58 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/belaya-ryba/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:11:37:59 +0300",
+      "method": "GET",
+      "path": "/recipe_category/ovoshhnye-salaty-zakuski/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:14:39:57 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/chesnok/page/19/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:14:46:56 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/chernichnyj-shrab/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:14:56:43 +0300",
+      "method": "GET",
+      "path": "/recipe/aziatskij-salat-iz-marinovannoj-svekly-s-kunzhutom/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:15:12:07 +0300",
+      "method": "GET",
+      "path": "/recipe_category/soups/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:18:52:20 +0300",
+      "method": "GET",
+      "path": "/recipe/zakusochnyj-pirog-iz-sloenogo-testa-s-fetoj-i-zelenyu/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:19:46:27 +0300",
+      "method": "GET",
+      "path": "/recipe/sendvich-s-yajczom-semgoj-i-avokado/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "14/Oct/2026:23:05:28 +0300",
+      "method": "GET",
+      "path": "/recipe/yaichnicza-po-franczuzski/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "15/Oct/2026:00:19:10 +0300",
+      "method": "GET",
+      "path": "/recipe_category-sitemap.xml",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:03:50:47 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/krasnyj-vinnyj-uksus/page/3/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:10:59:14 +0300",
+      "method": "GET",
+      "path": "/recipe/italyanskoe-pechene-torchetti-s-tvorogom/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:11:27:13 +0300",
+      "method": "GET",
+      "path": "/recipe/dorada-s-mussom-iz-pechyonyh-perczev/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:11:30:12 +0300",
+      "method": "GET",
+      "path": "/recipe/mindalnye-shariki-s-limonnoj-czedroj/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:11:30:13 +0300",
+      "method": "GET",
+      "path": "/recipe/zharenaya-kambala-so-slivochnym-maslom/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:12:31:31 +0300",
+      "method": "GET",
+      "path": "/recipe/tort-pancho-s-ananasami-i-greczkimi-orehami/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:12:31:31 +0300",
+      "method": "GET",
+      "path": "/recipe/omlet-s-lososem-i-tvorozhnym-syrom/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:12:31:32 +0300",
+      "method": "GET",
+      "path": "/recipe/yablochno-finikovoe-pirozhnoe/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:12:31:32 +0300",
+      "method": "GET",
+      "path": "/recipe/novogodnij-kryushon-s-dzhinom-shartrezom-i-elovoj-hvoej/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:12:31:34 +0300",
+      "method": "GET",
+      "path": "/recipe/vishnya-v-shokoladnom-souse/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:16:35:09 +0300",
+      "method": "GET",
+      "path": "/recipe/tartaletki-so-shpinatom-i-parmezanom/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:17:38:50 +0300",
+      "method": "GET",
+      "path": "/recipes/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:23:02:57 +0300",
+      "method": "GET",
+      "path": "/recipe/losos-gravlaks/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "14/Oct/2026:00:14:45 +0300",
+      "method": "GET",
+      "path": "/recipe/koktejl-french-75-french-75/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "12/Oct/2026:11:51:29 +0300",
+      "method": "GET",
+      "path": "/recipe/sytnaya-yaichnicza-s-ovoshhami-i-bazilikom/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "12/Oct/2026:11:51:29 +0300",
+      "method": "GET",
+      "path": "/recipe/teplyj-salat-s-ovoshhami-i-pechenyu-indejki/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "12/Oct/2026:12:05:23 +0300",
+      "method": "GET",
+      "path": "/recipe/pasta-s-shampinonami/",
+      "status": 502,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "12/Oct/2026:14:42:30 +0300",
+      "method": "GET",
+      "path": "/recipe_tags-sitemap2.xml",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "12/Oct/2026:15:13:50 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/seld/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "12/Oct/2026:21:59:29 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/belyj-hleb/page/2/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "13/Oct/2026:01:20:46 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/pasta-fettuchini/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "11/Oct/2026:05:22:51 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/soda/page/4/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "11/Oct/2026:14:33:50 +0300",
+      "method": "GET",
+      "path": "/recipe/zapechennaya-zolotistaya-pasta-s-syrom/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "11/Oct/2026:21:54:05 +0300",
+      "method": "GET",
+      "path": "/recipe/bystroe-bananovoe-molochnoe-morozhenoe/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "10/Oct/2026:15:28:47 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/farsh-iz-indejki/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "09/Oct/2026:05:00:09 +0300",
+      "method": "GET",
+      "path": "/recipe/avstrijskij-pirog/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "09/Oct/2026:08:52:29 +0300",
+      "method": "GET",
+      "path": "/recipe/keksy-piczczy/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "09/Oct/2026:12:46:44 +0300",
+      "method": "GET",
+      "path": "/recipe/granatovyj-vinegret/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "09/Oct/2026:22:04:44 +0300",
+      "method": "GET",
+      "path": "/recipe/imbirnyj-chaj/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "08/Oct/2026:03:36:11 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/lepestki-roz/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "08/Oct/2026:03:36:11 +0300",
+      "method": "GET",
+      "path": "/recipe/rozovyj-yablochnyj-zefir/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": true
+    },
+    {
+      "time": "08/Oct/2026:03:49:44 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/papajya/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "08/Oct/2026:04:02:47 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/sushenyj-shalfej/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "08/Oct/2026:16:27:43 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/griby-portobello/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "08/Oct/2026:21:06:23 +0300",
+      "method": "GET",
+      "path": "/recipe_tags/karri/page/3/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    },
+    {
+      "time": "08/Oct/2026:22:52:59 +0300",
+      "method": "GET",
+      "path": "/recipe/sladkaya-tvorozhnaya-massa-zapechennaya-v-duhovke/",
+      "status": 500,
+      "user_agent_claim": "other",
+      "had_query": false
+    }
+  ],
+  "live": [
+    {
+      "path": "/"
+    },
+    {
+      "path": "/robots.txt"
+    },
+    {
+      "path": "/sitemap_index.xml"
+    },
+    {
+      "path": "/recipe_category-sitemap.xml"
+    },
+    {
+      "path": "/recipe_tags-sitemap2.xml"
+    },
+    {
+      "path": "/recipes/"
+    },
+    {
+      "path": "/recipe/kapustnye-kotlety-v-duhovke/"
+    },
+    {
+      "path": "/recipe/rulet-iz-shhekoviny/"
+    },
+    {
+      "path": "/recipe/syrnyj-sous-na-majoneze/"
+    },
+    {
+      "path": "/recipe/stejk-traj-tip/"
+    },
+    {
+      "path": "/recipe/stejk-minon/"
+    },
+    {
+      "path": "/recipe/batonchiki-myusli-s-yablokom-i-orehami/"
+    },
+    {
+      "path": "/recipe/sochnyj-salat-k-myasu-i-rybe/"
+    },
+    {
+      "path": "/recipe/adzhapsandali-klassicheskij/"
+    },
+    {
+      "path": "/recipe/dieticheskie-syrniki-s-jogurtovo-limonnym-sousom/"
+    },
+    {
+      "path": "/recipe/bubert/"
+    },
+    {
+      "path": "/recipe/farshirovannye-syrom-perczy-halapeno/"
+    },
+    {
+      "path": "/recipe/pechenoe-veperevo-koleno-zapechennaya-svinaya-rulka/"
+    },
+    {
+      "path": "/recipe/morskie-grebeshki-na-paru/"
+    },
+    {
+      "path": "/recipe/kuricza-zapechennaya-v-duhovke/"
+    },
+    {
+      "path": "/recipe/leshh-farshirovannyj-kashej/"
+    }
+  ],
+  "dns_limit_seconds": 30
+}

@@ -1,0 +1,29 @@
+{
+  "status": "configured",
+  "cloudThreadId": "6ad4b86f-4e8c-83eb-860d-1c509c15b5b8",
+  "cloudThreadUrl": "https://chatgpt.com/c/6ad4b86f-4e8c-83eb-860d-1c509c15b5b8",
+  "localAutomationId": "cooklook-100",
+  "localAutomationStatus": "PAUSED",
+  "requestedSchedule": "Daily 10:00 Europe/Moscow",
+  "firstScheduledDate": "2026-10-19",
+  "transferredEntries": 173,
+  "separateExistingAutomationId": "6ad00aa7f74081919183deb0c70560a9",
+  "separateExistingAutomationAction": "left_unchanged",
+  "readinessChecks": [
+    "cloud WordPress login",
+    "published ID2143 excerpt and public Recipe.description",
+    "durable cloud ledger",
+    "cloud schedule confirmed"
+  ],
+  "updatedAt": "2026-10-18T12:30:18.254Z",
+  "cloudAutomationId": "6ad4bafb8cb881919f419593fa07c083",
+  "cloudAutomationStatus": "ACTIVE",
+  "cloudJournalLibraryId": "libfile_7a5a0fa4757481919e3cf656b2be547b",
+  "nextRunMoscow": "2026-10-19T10:00:00+03:00",
+  "verification": "Cloud task reports WordPress login, published ID2143 excerpt/public Recipe.description match, 173 unique ledger IDs and same-file Library update/read-back. Active daily 10:00 Moscow schedule independently verified in web UI.",
+  "screenshot": "docs/seo-editorial-cloud-schedule-proof.png",
+  "cloudReadinessConfirmed": true,
+  "cloudJournalVersion": 2,
+  "cloudJournalUrl": "https://chatgpt.com/api/library/files/libfile_7a5a0fa4757481919e3cf656b2be547b/download",
+  "nextRunEvidence": "Web UI: tomorrow at 10; cloud task confirms DTSTART/RRULE first run 2026-10-19 10:00 Europe/Moscow. Service next_run_time null at setup."
+}

@@ -1,0 +1,73 @@
+{
+  "checkedOn": "2026-10-17",
+  "timezone": "Europe/Moscow",
+  "method": "One public PageSpeed Insights mobile run per URL, Lighthouse 13.5.0, Moto G Power, slow 4G",
+  "pages": [
+    {
+      "url": "https://cook-look.ru/",
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru/p4d1x9f4hq?form_factor=mobile",
+      "timeMsk": "13:26",
+      "performance": 86,
+      "accessibility": 78,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 2.7,
+      "lcpSeconds": 2.9,
+      "tbtMs": 230,
+      "cls": 0.055,
+      "speedIndexSeconds": 3.0,
+      "estimatedImageSavingsKiB": 473,
+      "estimatedRenderBlockingSavingsMs": 1770
+    },
+    {
+      "url": "https://cook-look.ru/recipes/",
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/tbonk1ee8c?form_factor=mobile",
+      "timeMsk": "13:27",
+      "performance": 67,
+      "accessibility": 71,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 2.7,
+      "lcpSeconds": 8.4,
+      "tbtMs": 30,
+      "cls": 0,
+      "speedIndexSeconds": 5.5,
+      "estimatedImageSavingsKiB": 607,
+      "estimatedRenderBlockingSavingsMs": 1650
+    },
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/7y122jsprw?form_factor=mobile",
+      "timeMsk": "13:28",
+      "performance": 59,
+      "accessibility": 82,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 3.5,
+      "lcpSeconds": 11.8,
+      "tbtMs": 240,
+      "cls": 0,
+      "speedIndexSeconds": 5.8,
+      "estimatedImageSavingsKiB": 954,
+      "estimatedRenderBlockingSavingsMs": 1520
+    }
+  ],
+  "fieldData": {
+    "scope": "origin fallback for all three URLs; URL-specific data unavailable",
+    "origin": "https://cook-look.ru",
+    "window": "preceding 28 days; includes time before the release",
+    "assessmentDisplayed": "passed",
+    "lcpSeconds": 2.3,
+    "cls": 0.07,
+    "inpMs": null,
+    "fcpSeconds": 2.3,
+    "ttfbSeconds": 1.2
+  },
+  "limitations": [
+    "Single lab runs do not establish a statistically reliable before/after improvement.",
+    "Origin field data do not establish performance of each tested URL or today's release.",
+    "INP is unavailable; TBT is a lab metric and does not replace INP.",
+    "Estimated savings are diagnostic opportunities, not guaranteed additive improvements.",
+    "Lighthouse SEO 100 does not confirm indexing, complete technical SEO, or rich-result eligibility."
+  ]
+}

@@ -1,14 +1,15 @@
 <?php
 /** Responsive images without moving or rewriting existing media URLs. */
 defined( 'ABSPATH' ) || exit;
+require_once __DIR__ . '/media-webp.php';
 
 function cooklook_post_image( $post_id, $size = 'medium_large', $attributes = array() ) {
 	static $placeholder_size;
 	$id = get_post_thumbnail_id( $post_id );
-	$attributes = array_merge( array( 'loading' => 'lazy', 'decoding' => 'async', 'sizes' => '(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 45vw, 360px' ), $attributes );
+	$attributes = array_merge( array( 'loading' => 'lazy', 'decoding' => 'async', 'sizes' => '(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) calc((100vw - 60px) / 2), 360px' ), $attributes );
 	if ( $id && wp_attachment_is_image( $id ) ) {
 		$attributes['alt'] = get_post_meta( $id, '_wp_attachment_image_alt', true ) ?: get_the_title( $post_id );
-		return wp_get_attachment_image( $id, $size, false, $attributes );
+		return cooklook_webp_picture( $id, $size, $attributes, wp_get_attachment_image( $id, $size, false, $attributes ) );
 	}
 	// A placeholder is decorative and must not claim to depict the dish.
 	$path = '/static/img/no_image.png';
@@ -29,7 +30,7 @@ function cooklook_category_image( $term_id, $priority = false ) {
 }
 
 /** Static banner geometry and optional prebuilt WebP variants; JPEG stays as fallback. */
-function cooklook_banner( $name, $sizes = '(max-width: 767px) calc(100vw - 30px), 360px', $loading = 'lazy' ) {
+function cooklook_banner( $name, $sizes = '(max-width: 1024px) calc(100vw - 40px), 360px', $loading = 'lazy' ) {
 	static $manifest;
 	if ( null === $manifest ) {
 		$file = get_template_directory() . '/static/img/adv/variants.json';

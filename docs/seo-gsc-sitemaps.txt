@@ -1,0 +1,85 @@
+help_outline
+Справка
+manage_accounts
+Пользовательские настройки
+	
+notifications
+Сообщения
+38
+
+home
+Обзор
+lightbulb_2
+Статистика
+trending_up
+Эффективность
+keyboard_arrow_down
+search
+Проверка URL
+Индексирование
+keyboard_arrow_up
+file_copy
+Страницы
+account_tree
+Файлы Sitemap
+visibility_off
+Удаления
+Качество
+keyboard_arrow_up
+speed
+Core Web Vitals
+lock
+HTTPS
+Улучшения
+keyboard_arrow_up
+layers
+Строки навигации
+layers
+Рецепты
+layers
+Проверка кода
+Проблемы безопасности и меры, принятые вручную
+keyboard_arrow_down
+link_2
+Ссылки
+trophy
+Достижения
+settings
+Настройки
+feedback
+Отправить отзыв
+info
+Общие сведения о Search Console
+КонфиденциальностьУсловия использования
+Файлы Sitemap
+Добавьте файл Sitemap
+URL файла Sitemap
+ОТПРАВИТЬ
+Файлы Sitemap на проверке
+
+Sitemap
+	Тип
+	Отправлено
+	Дата последней обработки
+	Статус
+	
+Количество выявленных страниц	
+Количество выявленных видео	
+https://cook-look.ru/sitemap_index.xml	Файл индекса Sitemap	27 окт. 2024 г.	10 окт. 2026 г.	Успешно	6 557	0	
+https://cook-look.ru/recipe_tags-sitemap2.xml	Sitemap	27 окт. 2024 г.	11 окт. 2026 г.	Успешно	1 000	0	
+https://cook-look.ru/recipe_tags-sitemap.xml	Sitemap	27 окт. 2024 г.	15 окт. 2026 г.	Успешно	1 000	0	
+https://cook-look.ru/recipe_category-sitemap.xml	Sitemap	27 окт. 2024 г.	17 окт. 2026 г.	Успешно	659	0	
+https://cook-look.ru/recipe-sitemap2.xml	Sitemap	27 окт. 2024 г.	11 окт. 2026 г.	Успешно	1 000	0	
+https://cook-look.ru/recipe-sitemap.xml	Sitemap	27 окт. 2024 г.	12 окт. 2026 г.	Успешно	1 001	0	
+Строк на странице:
+5
+10
+25
+50
+100
+250
+500
+1–6 из 6
+
+Файлы Sitemap
+Файлы Sitemap

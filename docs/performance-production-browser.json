@@ -1,0 +1,226 @@
+{
+  "checkedAt": "2026-10-17T12:00:44.021Z",
+  "site": "https://cook-look.ru",
+  "themeVersion": "1.1.0",
+  "method": "Chromium IAB desktop viewport resize; scrollbar uses 15 CSS px. Not a physical mobile device.",
+  "layouts": [
+    {
+      "client": 305,
+      "page": "/",
+      "scroll": 305,
+      "width": 320
+    },
+    {
+      "client": 375,
+      "page": "/",
+      "scroll": 375,
+      "width": 390
+    },
+    {
+      "client": 753,
+      "page": "/",
+      "scroll": 753,
+      "width": 768
+    },
+    {
+      "client": 1265,
+      "page": "/",
+      "scroll": 1265,
+      "width": 1280
+    },
+    {
+      "client": 305,
+      "page": "/recipes/",
+      "scroll": 305,
+      "width": 320
+    },
+    {
+      "client": 375,
+      "page": "/recipes/",
+      "scroll": 375,
+      "width": 390
+    },
+    {
+      "client": 753,
+      "page": "/recipes/",
+      "scroll": 753,
+      "width": 768
+    },
+    {
+      "client": 1265,
+      "page": "/recipes/",
+      "scroll": 1265,
+      "width": 1280
+    },
+    {
+      "client": 305,
+      "page": "/recipe/bliny-s-vodkoj/",
+      "scroll": 320,
+      "width": 320
+    },
+    {
+      "client": 375,
+      "page": "/recipe/bliny-s-vodkoj/",
+      "scroll": 375,
+      "width": 390
+    },
+    {
+      "client": 753,
+      "page": "/recipe/bliny-s-vodkoj/",
+      "scroll": 753,
+      "width": 768
+    },
+    {
+      "client": 1265,
+      "page": "/recipe/bliny-s-vodkoj/",
+      "scroll": 1265,
+      "width": 1280
+    }
+  ],
+  "search": {
+    "term": "блины",
+    "suggestions": 5,
+    "fullResults": true
+  },
+  "filter": {
+    "ajax": {
+      "cards": [
+        "https://cook-look.ru/recipe/belgijskie-vafli-s-morozhennym-i-vzbitymi-slivkami/",
+        "https://cook-look.ru/recipe/kapkejki-s-tvorozhnym-kremom-i-shokoladnoj-nachinkoj/",
+        "https://cook-look.ru/recipe/kish-loren-so-shpinatom/",
+        "https://cook-look.ru/recipe/tvorozhnoe-zamorozhennoe-krem-bryule/",
+        "https://cook-look.ru/recipe/tvorozhno-biskvitnyj-sloyonyj-desert-s-chernikoj-i-orehami/",
+        "https://cook-look.ru/recipe/yaichnye-lepeshki-v-lavashe-s-syrom-i-tomatami/",
+        "https://cook-look.ru/recipe/syrnoe-sufle-s-muskatnym-orehom/",
+        "https://cook-look.ru/recipe/sufle-iz-syra-s-vetchinoj/",
+        "https://cook-look.ru/recipe/sufle-s-makaronami-i-syrom/",
+        "https://cook-look.ru/recipe/sufle-iz-gryujera/",
+        "https://cook-look.ru/recipe/shokoladnyj-muss-s-perczem/"
+      ],
+      "client": 375,
+      "scroll": 375,
+      "url": "https://cook-look.ru/recipes/?include_ingredients%5B%5D=moloko&exclude_ingredients%5B%5D=sahar"
+    },
+    "reload": {
+      "cards": [
+        "https://cook-look.ru/recipe/belgijskie-vafli-s-morozhennym-i-vzbitymi-slivkami/",
+        "https://cook-look.ru/recipe/kapkejki-s-tvorozhnym-kremom-i-shokoladnoj-nachinkoj/",
+        "https://cook-look.ru/recipe/kish-loren-so-shpinatom/",
+        "https://cook-look.ru/recipe/tvorozhnoe-zamorozhennoe-krem-bryule/",
+        "https://cook-look.ru/recipe/tvorozhno-biskvitnyj-sloyonyj-desert-s-chernikoj-i-orehami/",
+        "https://cook-look.ru/recipe/yaichnye-lepeshki-v-lavashe-s-syrom-i-tomatami/",
+        "https://cook-look.ru/recipe/syrnoe-sufle-s-muskatnym-orehom/",
+        "https://cook-look.ru/recipe/sufle-iz-syra-s-vetchinoj/",
+        "https://cook-look.ru/recipe/sufle-s-makaronami-i-syrom/",
+        "https://cook-look.ru/recipe/sufle-iz-gryujera/",
+        "https://cook-look.ru/recipe/shokoladnyj-muss-s-perczem/"
+      ],
+      "url": "https://cook-look.ru/recipes/?include_ingredients%5B0%5D=moloko&exclude_ingredients%5B0%5D=sahar"
+    },
+    "equal": true
+  },
+  "sort": {
+    "ajax": {
+      "cards": [
+        "https://cook-look.ru/recipe/belgijskie-vafli-s-morozhennym-i-vzbitymi-slivkami/",
+        "https://cook-look.ru/recipe/kish-loren-so-shpinatom/",
+        "https://cook-look.ru/recipe/sufle-iz-syra-s-vetchinoj/",
+        "https://cook-look.ru/recipe/sufle-iz-gryujera/",
+        "https://cook-look.ru/recipe/holodnyj-tykvennyj-chizkejk/",
+        "https://cook-look.ru/recipe/krem-karamel/",
+        "https://cook-look.ru/recipe/jorkshirskij-puding-s-syrom-i-ovoshhami/",
+        "https://cook-look.ru/recipe/maffiny-s-bulgurom/",
+        "https://cook-look.ru/recipe/oladushki-s-suhofruktami-orehami-i-semechkami/",
+        "https://cook-look.ru/recipe/oladi-iz-tykvy/",
+        "https://cook-look.ru/recipe/kofejnoe-morozhenoe/"
+      ],
+      "url": "https://cook-look.ru/recipes/?include_ingredients%5B%5D=moloko&exclude_ingredients%5B%5D=sahar&sort_by=recipe_time"
+    },
+    "reload": {
+      "cards": [
+        "https://cook-look.ru/recipe/belgijskie-vafli-s-morozhennym-i-vzbitymi-slivkami/",
+        "https://cook-look.ru/recipe/kish-loren-so-shpinatom/",
+        "https://cook-look.ru/recipe/sufle-iz-syra-s-vetchinoj/",
+        "https://cook-look.ru/recipe/sufle-iz-gryujera/",
+        "https://cook-look.ru/recipe/holodnyj-tykvennyj-chizkejk/",
+        "https://cook-look.ru/recipe/krem-karamel/",
+        "https://cook-look.ru/recipe/jorkshirskij-puding-s-syrom-i-ovoshhami/",
+        "https://cook-look.ru/recipe/maffiny-s-bulgurom/",
+        "https://cook-look.ru/recipe/oladushki-s-suhofruktami-orehami-i-semechkami/",
+        "https://cook-look.ru/recipe/oladi-iz-tykvy/",
+        "https://cook-look.ru/recipe/kofejnoe-morozhenoe/"
+      ],
+      "url": "https://cook-look.ru/recipes/?include_ingredients%5B0%5D=moloko&exclude_ingredients%5B0%5D=sahar&sort_by=recipe_time"
+    },
+    "equal": true
+  },
+  "recipe": {
+    "banners": [
+      {
+        "currentSrc": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/recipe_page-360.webp",
+        "loading": "lazy",
+        "sizes": ""
+      },
+      {
+        "currentSrc": "",
+        "loading": "lazy",
+        "sizes": ""
+      }
+    ],
+    "brokenLoadedImages": [],
+    "hero": [
+      {
+        "complete": true,
+        "currentSrc": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg",
+        "loading": "eager",
+        "priority": "high",
+        "sizes": "(max-width: 1024px) calc(100vw - 40px), 650px",
+        "src": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg",
+        "srcset": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg 620w, https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956-300x201.jpg 300w",
+        "width": 350
+      }
+    ]
+  },
+  "anchorTop": 119.53125,
+  "remainingOverflow": {
+    "page": "/recipe/bliny-s-vodkoj/",
+    "windowWidth": 320,
+    "clientWidth": 305,
+    "scrollWidth": 320,
+    "element": ".cf-turnstile-comments",
+    "configuredSize": "normal",
+    "widgetWidth": 300,
+    "containerWidth": 265,
+    "screenshot": "performance-production-turnstile-320.png"
+  },
+  "console": [
+    {
+      "level": "error",
+      "message": "%c%d font-size:0;color:transparent NaN",
+      "timestamp": "2026-10-17T11:58:32.239Z",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/av0/rch/z3shb/0x4AAAAAACHi4j28Zkx7tq97/light/fbE/new/normal?lang=auto"
+    },
+    {
+      "level": "error",
+      "message": "%c%d font-size:0;color:transparent NaN",
+      "timestamp": "2026-10-17T11:58:32.239Z",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/av0/rch/z3shb/0x4AAAAAACHi4j28Zkx7tq97/light/fbE/new/normal?lang=auto"
+    },
+    {
+      "level": "warn",
+      "message": "%c%d font-size:0;color:transparent NaN",
+      "timestamp": "2026-10-17T11:58:32.240Z",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/av0/rch/z3shb/0x4AAAAAACHi4j28Zkx7tq97/light/fbE/new/normal?lang=auto"
+    },
+    {
+      "level": "warn",
+      "message": "%c%d font-size:0;color:transparent NaN",
+      "timestamp": "2026-10-17T11:58:32.240Z",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/av0/rch/z3shb/0x4AAAAAACHi4j28Zkx7tq97/light/fbE/new/normal?lang=auto"
+    }
+  ],
+  "limitations": [
+    "No comment posted, account login or rating submission performed.",
+    "Public checks cannot inspect production image queue or server logs."
+  ]
+}

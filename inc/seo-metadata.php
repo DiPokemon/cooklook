@@ -35,6 +35,18 @@ function cooklook_recipe_summary( $post_id ) {
 	return wp_strip_all_tags( $text );
 }
 
+/** Distinguish equally named categories by their actual taxonomy ancestry. */
+function cooklook_seo_category_label( $term ) {
+	$names = array( $term->name );
+	foreach ( get_ancestors( $term->term_id, 'recipe_category', 'taxonomy' ) as $id ) {
+		$parent = get_term( $id, 'recipe_category' );
+		if ( $parent instanceof WP_Term ) {
+			$names[] = $parent->name;
+		}
+	}
+	return implode( ' — ', $names );
+}
+
 function cooklook_seo_metadata_defaults( $page = null ) {
 	$title = ''; $description = '';
 	if ( is_404() || is_search() ) { return array(); }
@@ -46,7 +58,7 @@ function cooklook_seo_metadata_defaults( $page = null ) {
 		$description = cooklook_recipe_summary( get_queried_object_id() );
 	} elseif ( is_tax( array( 'recipe_category', 'recipe_tags' ) ) ) {
 		$term = get_queried_object();
-		$title = 'recipe_tags' === $term->taxonomy ? sprintf( __( 'Рецепты с ингредиентом «%s»', 'cooklook' ), $term->name ) : $term->name . ' — ' . __( 'рецепты', 'cooklook' );
+		$title = 'recipe_tags' === $term->taxonomy ? sprintf( __( 'Рецепты с ингредиентом «%s»', 'cooklook' ), $term->name ) : cooklook_seo_category_label( $term ) . ' — ' . __( 'рецепты', 'cooklook' );
 		$description = wp_trim_words( cooklook_recipe_plain_text( term_description( $term->term_id, $term->taxonomy ) ), 40, '…' );
 		if ( '' === trim( $description ) ) {
 			$description = $title . '. ' . __( 'Выберите блюдо, посмотрите состав и пошаговый способ приготовления.', 'cooklook' );

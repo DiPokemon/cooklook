@@ -1,0 +1,225 @@
+{
+  "checkedOn": "2026-10-17",
+  "timeMsk": "14:53–14:57",
+  "themeVersion": "1.1.0",
+  "method": "Three public PageSpeed Insights mobile runs per URL; Lighthouse 13.5.0, Moto G Power, slow 4G. One desktop result per URL from third report. Values recorded from visible reports; rounded as displayed.",
+  "baseline": "seo-production-pagespeed.json",
+  "mobileRuns": [
+    {
+      "page": "home",
+      "run": 1,
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru/myb4x8jgri?form_factor=mobile",
+      "performance": 71,
+      "accessibility": 78,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 1.5,
+      "lcpSeconds": 6.5,
+      "tbtMs": 120,
+      "cls": 0,
+      "speedIndexSeconds": 5.5,
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=1517&LCP=6457&TBT=120&CLS=0&SI=5462&TTI=6480&device=mobile&version=13.5.0"
+    },
+    {
+      "page": "catalog",
+      "run": 1,
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/po7d5y5str?form_factor=mobile",
+      "performance": 70,
+      "accessibility": 71,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 1.4,
+      "lcpSeconds": 6.6,
+      "tbtMs": 200,
+      "cls": 0,
+      "speedIndexSeconds": 4.8,
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=1361&LCP=6603&TBT=199&CLS=0&SI=4831&TTI=6625&device=mobile&version=13.5.0"
+    },
+    {
+      "page": "recipe",
+      "run": 1,
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/k96x1l1gyn?form_factor=mobile",
+      "performance": 67,
+      "accessibility": 82,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 2.4,
+      "lcpSeconds": 11,
+      "tbtMs": 90,
+      "cls": 0,
+      "speedIndexSeconds": 5.6,
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=2376&LCP=10954&TBT=91&CLS=0&SI=5640&TTI=11082&device=mobile&version=13.5.0"
+    },
+    {
+      "page": "home",
+      "run": 2,
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru/bihkgztov0?form_factor=mobile",
+      "performance": 91,
+      "accessibility": 78,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 1.1,
+      "lcpSeconds": 2.2,
+      "tbtMs": 290,
+      "cls": 0.092,
+      "speedIndexSeconds": 2.2,
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=1051&LCP=2176&TBT=286&CLS=0.09&SI=2238&TTI=5587&device=mobile&version=13.5.0"
+    },
+    {
+      "page": "catalog",
+      "run": 2,
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/75ud4y88h6?form_factor=mobile",
+      "performance": 73,
+      "accessibility": 71,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 1.4,
+      "lcpSeconds": 6.5,
+      "tbtMs": 70,
+      "cls": 0,
+      "speedIndexSeconds": 4.9,
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=1359&LCP=6479&TBT=67&CLS=0&SI=4940&TTI=6502&device=mobile&version=13.5.0"
+    },
+    {
+      "page": "recipe",
+      "run": 2,
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/61pmsvdytk?form_factor=mobile",
+      "performance": 58,
+      "accessibility": 82,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 2.5,
+      "lcpSeconds": 10.8,
+      "tbtMs": 390,
+      "cls": 0,
+      "speedIndexSeconds": 5.4,
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=2458&LCP=10811&TBT=389&CLS=0&SI=5443&TTI=10909&device=mobile&version=13.5.0"
+    },
+    {
+      "page": "home",
+      "run": 3,
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru/jyhdd3zog7?form_factor=mobile",
+      "performance": 91,
+      "accessibility": 78,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 1.1,
+      "lcpSeconds": 3.1,
+      "tbtMs": 90,
+      "cls": 0.092,
+      "speedIndexSeconds": 2.4,
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=1051&LCP=3076&TBT=94&CLS=0.09&SI=2435&TTI=5466&device=mobile&version=13.5.0"
+    },
+    {
+      "page": "catalog",
+      "run": 3,
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/0rhs60grox?form_factor=mobile",
+      "performance": 74,
+      "accessibility": 71,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 1.4,
+      "lcpSeconds": 6.5,
+      "tbtMs": 60,
+      "cls": 0,
+      "speedIndexSeconds": 4.8,
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=1358&LCP=6467&TBT=61&CLS=0&SI=4787&TTI=6489&device=mobile&version=13.5.0"
+    },
+    {
+      "page": "recipe",
+      "run": 3,
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/794zq9mm3x?form_factor=mobile",
+      "performance": 68,
+      "accessibility": 82,
+      "bestPractices": 96,
+      "seo": 100,
+      "fcpSeconds": 1.8,
+      "lcpSeconds": 10.4,
+      "tbtMs": 250,
+      "cls": 0.002,
+      "speedIndexSeconds": 3.6,
+      "calculator": "https://googlechrome.github.io/lighthouse/scorecalc/#FCP=1823&LCP=10448&TBT=254&CLS=0&SI=3577&TTI=10539&device=mobile&version=13.5.0"
+    }
+  ],
+  "comparison": [
+    {
+      "page": "home",
+      "before": 86,
+      "performanceMedian": 91,
+      "performanceRange": [
+        71,
+        91
+      ],
+      "fcpMedian": 1.1,
+      "lcpMedian": 3.1
+    },
+    {
+      "page": "catalog",
+      "before": 67,
+      "performanceMedian": 73,
+      "performanceRange": [
+        70,
+        74
+      ],
+      "fcpMedian": 1.4,
+      "lcpMedian": 6.5
+    },
+    {
+      "page": "recipe",
+      "before": 59,
+      "performanceMedian": 67,
+      "performanceRange": [
+        58,
+        68
+      ],
+      "fcpMedian": 2.4,
+      "lcpMedian": 10.8
+    }
+  ],
+  "desktop": [
+    {
+      "page": "home",
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru/jyhdd3zog7?form_factor=desktop",
+      "performance": 98,
+      "fcpSeconds": 0.3,
+      "lcpSeconds": 0.6,
+      "tbtMs": 120,
+      "cls": 0.007
+    },
+    {
+      "page": "catalog",
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/0rhs60grox?form_factor=desktop",
+      "performance": 100,
+      "fcpSeconds": 0.3,
+      "lcpSeconds": 0.7,
+      "tbtMs": 50,
+      "cls": 0.002
+    },
+    {
+      "page": "recipe",
+      "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/794zq9mm3x?form_factor=desktop",
+      "performance": 98,
+      "fcpSeconds": 0.3,
+      "lcpSeconds": 0.6,
+      "tbtMs": 130,
+      "cls": 0.003
+    }
+  ],
+  "fieldData": {
+    "scope": "origin fallback, not URL specific",
+    "window": "preceding 28 days",
+    "lcpSeconds": 2.3,
+    "cls": 0.07,
+    "inpMs": null,
+    "fcpSeconds": 2.3,
+    "ttfbSeconds": 1.2,
+    "assessmentDisplayed": "passed"
+  },
+  "limitations": [
+    "Before baseline has only one run per URL; three after runs are a small sample and not a controlled causal experiment.",
+    "Performance scores vary; all runs retained, not just the best.",
+    "28-day field data cannot establish impact of this deployment; INP unavailable.",
+    "Main recipe photo still JPEG in all checks. Background WebP conversion works on some images but queue/cache completion is not verified.",
+    "SEO 100 is an automated audit score and does not confirm indexing or all technical SEO tasks."
+  ]
+}

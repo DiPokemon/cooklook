@@ -1,0 +1,58 @@
+[
+  {
+    "Banner": "recipe_archive_1",
+    "Width": 360,
+    "JpegBytes": 122214,
+    "WebpBytes": 25780,
+    "ReductionPercent": 78.9
+  },
+  {
+    "Banner": "recipe_archive_1",
+    "Width": 542,
+    "JpegBytes": 122214,
+    "WebpBytes": 43198,
+    "ReductionPercent": 64.7
+  },
+  {
+    "Banner": "recipe_page",
+    "Width": 360,
+    "JpegBytes": 150854,
+    "WebpBytes": 11986,
+    "ReductionPercent": 92.1
+  },
+  {
+    "Banner": "recipe_page",
+    "Width": 720,
+    "JpegBytes": 150854,
+    "WebpBytes": 33342,
+    "ReductionPercent": 77.9
+  },
+  {
+    "Banner": "recipe_page",
+    "Width": 1084,
+    "JpegBytes": 150854,
+    "WebpBytes": 56810,
+    "ReductionPercent": 62.3
+  },
+  {
+    "Banner": "recipe_page_square",
+    "Width": 360,
+    "JpegBytes": 160821,
+    "WebpBytes": 26124,
+    "ReductionPercent": 83.8
+  },
+  {
+    "Banner": "recipe_page_square",
+    "Width": 720,
+    "JpegBytes": 160821,
+    "WebpBytes": 66552,
+    "ReductionPercent": 58.6
+  },
+  {
+    "Banner": "recipe_page_square",
+    "Width": 878,
+    "JpegBytes": 160821,
+    "WebpBytes": 83742,
+    "ReductionPercent": 47.9
+  }
+]

@@ -1,0 +1,185 @@
+{
+  "checkedAt": "2026-10-17T13:53:14.702Z",
+  "phase": "before",
+  "pages": [
+    {
+      "name": "home",
+      "url": "https://cook-look.ru/",
+      "status": 200,
+      "htmlBytes": 339490,
+      "headers": {
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "server": "nginx",
+        "vary": "Accept-Encoding"
+      },
+      "title": "Кулинарные рецепты - COOK-LOOK",
+      "canonical": "https://cook-look.ru/",
+      "analytics": [
+        {
+          "type": "text/javascript",
+          "defer": false,
+          "async": false,
+          "inline": "\r\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\r\n   m[i].l=1*new Date();\r\n   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}\r\n   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\r\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\r\n\r\n   ym(97204680, \"init\", {\r\n        clickmap:true,\r\n        trackLinks:true,\r\n        accurateTrackBounce:true\r\n   });\r\n"
+        },
+        {
+          "defer": false,
+          "async": false,
+          "inline": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\r\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\r\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\r\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\r\n})(window,document,'script','dataLayer','GTM-PZSGH5S5');"
+        }
+      ],
+      "headHasNoscript": true,
+      "styles": [
+        {
+          "rel": "stylesheet",
+          "id": "style_min-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792241872",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "slick-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/cooklook-slick.css?ver=1792241873",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "relevanssi-live-search-css",
+          "href": "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5",
+          "media": "all"
+        }
+      ],
+      "hero": []
+    },
+    {
+      "name": "catalog",
+      "url": "https://cook-look.ru/recipes/",
+      "status": 200,
+      "htmlBytes": 184508,
+      "headers": {
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "server": "nginx",
+        "vary": "Accept-Encoding"
+      },
+      "title": "Каталог рецептов по ингредиентам и категориям | COOK-LOOK",
+      "canonical": "https://cook-look.ru/recipes/",
+      "analytics": [
+        {
+          "type": "text/javascript",
+          "defer": false,
+          "async": false,
+          "inline": "\r\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\r\n   m[i].l=1*new Date();\r\n   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}\r\n   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\r\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\r\n\r\n   ym(97204680, \"init\", {\r\n        clickmap:true,\r\n        trackLinks:true,\r\n        accurateTrackBounce:true\r\n   });\r\n"
+        },
+        {
+          "defer": false,
+          "async": false,
+          "inline": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\r\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\r\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\r\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\r\n})(window,document,'script','dataLayer','GTM-PZSGH5S5');"
+        }
+      ],
+      "headHasNoscript": true,
+      "styles": [
+        {
+          "rel": "stylesheet",
+          "id": "style_min-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792241872",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "select2-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792241873",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "cooklook-catalog-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792241872",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "relevanssi-live-search-css",
+          "href": "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5",
+          "media": "all"
+        }
+      ],
+      "hero": [
+        {
+          "width": "620",
+          "height": "415",
+          "src": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170.jpg",
+          "class": "attachment-medium_large size-medium_large",
+          "alt": "Пахлава армянская",
+          "loading": "eager",
+          "decoding": "async",
+          "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) calc((100vw - 60px) / 2), 360px",
+          "fetchpriority": "high",
+          "srcset": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170.jpg 620w, https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170-300x201.jpg 300w"
+        }
+      ]
+    },
+    {
+      "name": "recipe",
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "status": 200,
+      "htmlBytes": 160482,
+      "headers": {
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "server": "nginx",
+        "vary": "Accept-Encoding"
+      },
+      "title": "Блины с водкой — пошаговый рецепт | COOK-LOOK",
+      "canonical": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "analytics": [
+        {
+          "type": "text/javascript",
+          "defer": false,
+          "async": false,
+          "inline": "\r\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\r\n   m[i].l=1*new Date();\r\n   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}\r\n   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\r\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\r\n\r\n   ym(97204680, \"init\", {\r\n        clickmap:true,\r\n        trackLinks:true,\r\n        accurateTrackBounce:true\r\n   });\r\n"
+        },
+        {
+          "defer": false,
+          "async": false,
+          "inline": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\r\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\r\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\r\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\r\n})(window,document,'script','dataLayer','GTM-PZSGH5S5');"
+        }
+      ],
+      "headHasNoscript": true,
+      "styles": [
+        {
+          "rel": "stylesheet",
+          "id": "style_min-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792241872",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "slick-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/cooklook-slick.css?ver=1792241873",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "relevanssi-live-search-css",
+          "href": "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5",
+          "media": "all"
+        }
+      ],
+      "hero": [
+        {
+          "width": "620",
+          "height": "415",
+          "src": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg",
+          "class": "attachment-large size-large",
+          "alt": "Блины с водкой",
+          "loading": "eager",
+          "decoding": "async",
+          "sizes": "(max-width: 1024px) calc(100vw - 40px), 650px",
+          "fetchpriority": "high",
+          "srcset": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg 620w, https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956-300x201.jpg 300w"
+        }
+      ]
+    }
+  ]
+}

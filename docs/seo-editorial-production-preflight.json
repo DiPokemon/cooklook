@@ -1,0 +1,337 @@
+{
+  "checkedAt": "2026-10-17T13:26:15.992Z",
+  "productionWrites": false,
+  "pages": [
+    {
+      "localId": 9885,
+      "url": "https://cook-look.ru/recipe/pshennaya-molochnaya-kasha-s-tykvoj/",
+      "localTitle": "Пшенная молочная каша с тыквой",
+      "proposedExcerpt": "Молочная пшённая каша с кусочками тыквы. Тыкву варят в молоке, затем добавляют пшено; в конце кашу выдерживают под крышкой на водяной бане или в духовке.",
+      "localIngredients": [
+        {
+          "name": "Пшено",
+          "value": "1 стакан",
+          "text": "Пшено 1 стакан"
+        },
+        {
+          "name": "Молоко",
+          "value": "3 стакана",
+          "text": "Молоко 3 стакана"
+        },
+        {
+          "name": "Тыква",
+          "value": "500 г",
+          "text": "Тыква 500 г"
+        },
+        {
+          "name": "Сахар",
+          "value": "1 чайная ложка",
+          "text": "Сахар 1 чайная ложка"
+        },
+        {
+          "name": "Соль",
+          "value": "½ чайные ложки",
+          "text": "Соль ½ чайные ложки"
+        }
+      ],
+      "localSteps": [
+        "Разрежь тыкву и избавь ее от семян, затем нарежь мякоть на небольшие кубики.",
+        "Нагрейте молоко в кастрюле, добавьте туда тыкву и варите на среднем огне в течение 10–15 минут.",
+        "Промой пшено и помести его в кастрюлю, затем добавь сахар, соль и вари, помешивая, еще 15-20 минут до толстой консистенции.",
+        "Накройте сваренную кашу крышкой или плотно заверните в фольгу. Поставьте на водяную баню или в духовой шкаф, предварительно разогретый до 80 градусов, и оставьте на 25-30 минут."
+      ],
+      "productionRecipe": {
+        "@type": "Recipe",
+        "@id": "https://cook-look.ru/recipe/pshennaya-molochnaya-kasha-s-tykvoj/#recipe",
+        "name": "Пшенная молочная каша с тыквой",
+        "url": "https://cook-look.ru/recipe/pshennaya-molochnaya-kasha-s-tykvoj/",
+        "author": {
+          "@type": "Organization",
+          "name": "CookLook",
+          "url": "https://cook-look.ru/"
+        },
+        "datePublished": "2024-07-13T20:49:57+03:00",
+        "dateModified": "2025-06-04T23:08:25+03:00",
+        "description": "Рецепт «Пшенная молочная каша с тыквой». Ингредиенты и пошаговое приготовление.",
+        "image": [
+          "https://cook-look.ru/wp-content/uploads/2024/07/p_o-1064.jpg"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Тыкву очистить от кожуры и семян, мякоть нарезать небольшими кубиками.",
+            "url": "https://cook-look.ru/recipe/pshennaya-molochnaya-kasha-s-tykvoj/#step_1"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "В кастрюле разогреть молоко, добавить тыкву и варить на среднем огне 10–15 минут до мягкости.",
+            "url": "https://cook-look.ru/recipe/pshennaya-molochnaya-kasha-s-tykvoj/#step_2"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Пшено тщательно промыть, всыпать в кастрюлю. Добавить сахар и щепотку соли. Варить, периодически помешивая, ещё 15–20 минут до загустения.",
+            "url": "https://cook-look.ru/recipe/pshennaya-molochnaya-kasha-s-tykvoj/#step_3"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Готовую кашу накрыть крышкой или плотно затянуть фольгой. Поставить на водяную баню или в духовку, разогретую до 80 °C, на 25–30 минут для упревания.",
+            "url": "https://cook-look.ru/recipe/pshennaya-molochnaya-kasha-s-tykvoj/#step_4"
+          }
+        ],
+        "recipeIngredient": [
+          "Пшено 1 стакан",
+          "Молоко 3 стакана",
+          "Тыква 500 г",
+          "Сахар 1 чайная ложка",
+          "Соль ½ чайные ложки"
+        ],
+        "recipeYield": "4",
+        "recipeCuisine": "Русская кухня",
+        "recipeCategory": "Завтраки, Каши",
+        "keywords": "Молоко, Пшено, Сахар, Соль, Тыква",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": 4.3,
+          "ratingCount": 171,
+          "bestRating": 5,
+          "worstRating": 0
+        },
+        "mainEntityOfPage": {
+          "@id": "https://cook-look.ru/recipe/pshennaya-molochnaya-kasha-s-tykvoj/"
+        }
+      }
+    },
+    {
+      "localId": 9917,
+      "url": "https://cook-look.ru/recipe/sladkaya-mannaya-kasha/",
+      "localTitle": "Сладкая манная каша",
+      "proposedExcerpt": "Сладкая манная каша на молоке для одной порции. Манку с сахаром и солью постепенно всыпают в молоко, а после варки дают каше настояться под крышкой.",
+      "localIngredients": [
+        {
+          "name": "Молоко",
+          "value": "1 стакан",
+          "text": "Молоко 1 стакан"
+        },
+        {
+          "name": "Манная крупа",
+          "value": "4 чайные ложки",
+          "text": "Манная крупа 4 чайные ложки"
+        },
+        {
+          "name": "Соль",
+          "value": "щепотка",
+          "text": "Соль щепотка"
+        },
+        {
+          "name": "Сахар",
+          "value": "2 чайные ложки",
+          "text": "Сахар 2 чайные ложки"
+        }
+      ],
+      "localSteps": [
+        "Положите манную крупу, соль и сахар в отдельную мисочку.",
+        "Перед тем как молоко закипит, аккуратно добавьте манку вместе с сахаром и солью, чтобы они стекали тонкой струйкой.",
+        "После закипания нужно помешивать кашу на медленном огне в течение 2-3 минут, затем накрыть кастрюлю крышкой, обернуть ее полотенцем и оставить на 10-15 минут.",
+        "Внести масло."
+      ],
+      "productionRecipe": {
+        "@type": "Recipe",
+        "@id": "https://cook-look.ru/recipe/sladkaya-mannaya-kasha/#recipe",
+        "name": "Сладкая манная каша",
+        "url": "https://cook-look.ru/recipe/sladkaya-mannaya-kasha/",
+        "author": {
+          "@type": "Organization",
+          "name": "CookLook",
+          "url": "https://cook-look.ru/"
+        },
+        "datePublished": "2024-07-13T20:49:59+03:00",
+        "dateModified": "2024-12-28T21:20:45+03:00",
+        "description": "Рецепт «Сладкая манная каша». Ингредиенты и пошаговое приготовление.",
+        "image": [
+          "https://cook-look.ru/wp-content/uploads/2024/07/p_o-15906.jpg"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "Манную крупу, соль и сахар сложить в отдельную мисочку.",
+            "url": "https://cook-look.ru/recipe/sladkaya-mannaya-kasha/#step_1"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "Перед закипанием молока тонкой струйкой постепенно всыпать смесь манки с сахаром и солью, тщательно помешивая, чтобы избежать комков.",
+            "url": "https://cook-look.ru/recipe/sladkaya-mannaya-kasha/#step_2"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "После закипания продолжать помешивать кашу на медленном огне в течение 2–3 минут. Затем накрыть кастрюлю крышкой, укутать полотенцем и оставить на 10–15 минут, чтобы каша дошла.",
+            "url": "https://cook-look.ru/recipe/sladkaya-mannaya-kasha/#step_3"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "В готовую кашу добавить масло и перемешать.",
+            "url": "https://cook-look.ru/recipe/sladkaya-mannaya-kasha/#step_4"
+          }
+        ],
+        "recipeIngredient": [
+          "Молоко 1 стакан",
+          "Манная крупа 4 чайные ложки",
+          "Соль щепотка",
+          "Сахар 2 чайные ложки"
+        ],
+        "recipeYield": "1",
+        "recipeCuisine": "Русская кухня",
+        "recipeCategory": "Завтраки, Каши",
+        "keywords": "Манная крупа, Молоко, Сахар, Соль",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": 4.4,
+          "ratingCount": 353,
+          "bestRating": 5,
+          "worstRating": 0
+        },
+        "mainEntityOfPage": {
+          "@id": "https://cook-look.ru/recipe/sladkaya-mannaya-kasha/"
+        }
+      }
+    },
+    {
+      "localId": 9918,
+      "url": "https://cook-look.ru/recipe/mannaya-kasha-na-moloke/",
+      "localTitle": "Манная каша на молоке",
+      "proposedExcerpt": "Манная каша на смеси молока и воды с сахаром и сливочным маслом. Крупу всыпают при постоянном помешивании, затем дают каше настояться под крышкой и подают с ягодами или вареньем.",
+      "localIngredients": [
+        {
+          "name": "Манная крупа",
+          "value": "70 г",
+          "text": "Манная крупа 70 г"
+        },
+        {
+          "name": "Молоко",
+          "value": "300 мл",
+          "text": "Молоко 300 мл"
+        },
+        {
+          "name": "Вода",
+          "value": "300 мл",
+          "text": "Вода 300 мл"
+        },
+        {
+          "name": "Сахар",
+          "value": "10 г",
+          "text": "Сахар 10 г"
+        },
+        {
+          "name": "Соль",
+          "value": "по вкусу",
+          "text": "Соль по вкусу"
+        },
+        {
+          "name": "Сливочное масло",
+          "value": "50 г",
+          "text": "Сливочное масло 50 г"
+        },
+        {
+          "name": "Свежие ягоды",
+          "value": "по вкусу",
+          "text": "Свежие ягоды по вкусу"
+        }
+      ],
+      "localSteps": [
+        "Проведите подготовительные мероприятия, собрав все необходимые компоненты.",
+        "Довести до кипения смесь молока и воды в сотейнике.",
+        "Положить в смесь соль и сахар.",
+        "Добавьте постепенно манную крупу в молоко, аккуратно перемешивая ее венчиком. Кипятите смесь в течение 5 минут, не забывая постоянно помешивать, чтобы избежать образования комков.",
+        "Дайте приготовленной каши настояться на выключенной конфорке под крышкой еще несколько минут.",
+        "Разместить манную кашу в различные тарелки.",
+        "Положить в кастрюлю кубики сливочного масла.",
+        "Подавайте манную кашу с ягодами или вашим любимым вареньем."
+      ],
+      "productionRecipe": {
+        "@type": "Recipe",
+        "@id": "https://cook-look.ru/recipe/mannaya-kasha-na-moloke/#recipe",
+        "name": "Манная каша на молоке",
+        "url": "https://cook-look.ru/recipe/mannaya-kasha-na-moloke/",
+        "author": {
+          "@type": "Organization",
+          "name": "CookLook",
+          "url": "https://cook-look.ru/"
+        },
+        "datePublished": "2024-07-13T20:50:03+03:00",
+        "dateModified": "2025-02-12T08:13:45+03:00",
+        "description": "Рецепт «Манная каша на молоке». Ингредиенты и пошаговое приготовление.",
+        "image": [
+          "https://cook-look.ru/wp-content/uploads/2024/07/p_o-7083.jpg"
+        ],
+        "recipeInstructions": [
+          {
+            "@type": "HowToStep",
+            "text": "В кипящее молоко постепенно всыпать крупу тонкой струйкой, постоянно помешивая. Варить на слабом огне 10–15 минут до загустения. Затем добавить сахар и соль, тщательно перемешать.",
+            "url": "https://cook-look.ru/recipe/mannaya-kasha-na-moloke/#step_1"
+          },
+          {
+            "@type": "HowToStep",
+            "text": "При желании в готовую кашу добавить 1–2 столовые ложки масла, а также фрукты по вкусу (например, мандарин).",
+            "url": "https://cook-look.ru/recipe/mannaya-kasha-na-moloke/#step_2"
+          }
+        ],
+        "recipeIngredient": [
+          "Манная крупа 1 стакан",
+          "Молоко 5 стаканов",
+          "Сахар 1 столовая ложка",
+          "Соль ½ чайные ложки"
+        ],
+        "recipeYield": "4",
+        "recipeCuisine": "Русская кухня",
+        "recipeCategory": "Завтраки, Каши",
+        "keywords": "Манная крупа, Молоко, Сахар, Соль",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": 4.6,
+          "ratingCount": 27,
+          "bestRating": 5,
+          "worstRating": 0
+        },
+        "mainEntityOfPage": {
+          "@id": "https://cook-look.ru/recipe/mannaya-kasha-na-moloke/"
+        }
+      }
+    }
+  ],
+  "unmatchedLocalIds": [
+    {
+      "id": 9915,
+      "title": "Манная каша а-ля паннакотта",
+      "status": "No matching URL found in current public recipe sitemaps; admin lookup still required."
+    },
+    {
+      "id": 9916,
+      "title": "Молочная манная каша",
+      "status": "No matching URL found in current public recipe sitemaps; admin lookup still required."
+    },
+    {
+      "id": 9919,
+      "title": "Каша кукурузная в мультиварке",
+      "status": "No matching URL found in current public recipe sitemaps; admin lookup still required."
+    },
+    {
+      "id": 9920,
+      "title": "Овсяная каша в пароварке с карамелизованными фруктами",
+      "status": "No matching URL found in current public recipe sitemaps; admin lookup still required."
+    },
+    {
+      "id": 9921,
+      "title": "Гречневая каша с сыром и овощами",
+      "status": "No matching URL found in current public recipe sitemaps; admin lookup still required."
+    },
+    {
+      "id": 9922,
+      "title": "Каша карри из дикого риса с креветками",
+      "status": "No matching URL found in current public recipe sitemaps; admin lookup still required."
+    },
+    {
+      "id": 9923,
+      "title": "Овсяная каша с сухофруктами",
+      "status": "No matching URL found in current public recipe sitemaps; admin lookup still required."
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "checked_at": "2026-10-17T15:45:44.795Z",
+  "sql": "EXPLAIN SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts WHERE 1=1 AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) ORDER BY wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11;\nEXPLAIN SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_time' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id WHERE 1=1 AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) ORDER BY COALESCE(cooklook_sort.value, 0) ASC, wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11;\nEXPLAIN SELECT SQL_CALC_FOUND_ROWS wp_posts.ID FROM wp_posts LEFT JOIN (SELECT post_id, MAX(CAST(meta_value AS DECIMAL(20,4))) AS value FROM wp_postmeta WHERE meta_key = '_recipe_views' GROUP BY post_id) AS cooklook_sort ON wp_posts.ID = cooklook_sort.post_id WHERE 1=1 AND wp_posts.post_password = '' AND wp_posts.post_type = 'recipe' AND ((wp_posts.post_status = 'publish')) ORDER BY COALESCE(cooklook_sort.value, 0) DESC, wp_posts.post_date DESC, wp_posts.ID DESC LIMIT 0, 11;\nSELECT tt.taxonomy,t.term_id,tt.term_taxonomy_id,t.name,tt.count FROM wp_term_taxonomy tt JOIN wp_terms t ON t.term_id=tt.term_id WHERE tt.taxonomy IN ('recipe_category','recipe_tags') ORDER BY tt.count DESC LIMIT 12;",
+  "result": {
+    "messages": [
+      "\n    \n        \n        \n        \n        \n        Ваш браузер содержит настройки phpMyAdmin для данного домена. Хотите импортировать их для текущей сессии?        \n        Да\n        / Нет\n        / Удалить настройки\n    \n",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      "SQL-запрос успешно выполнен.",
+      " Note: #1003 /* select#1 */ select sql_calc_found_rows `u2752426_cook`.`wp_posts`.`ID` AS `ID` from `u2752426_cook`.`wp_posts` where ((`u2752426_cook`.`wp_posts`.`post_password` = '') and (`u2752426_cook`.`wp_posts`.`post_type` = 'recipe') and (`u2752426_cook`.`wp_posts`.`post_status` = 'publish')) order by `u2752426_cook`.`wp_posts`.`post_date` desc,`u2752426_cook`.`wp_posts`.`ID` desc limit 0,11",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      "SQL-запрос успешно выполнен.",
+      " Note: #1003 /* select#1 */ select sql_calc_found_rows `u2752426_cook`.`wp_posts`.`ID` AS `ID` from `u2752426_cook`.`wp_posts` left join (/* select#2 */ select `u2752426_cook`.`wp_postmeta`.`post_id` AS `post_id`,max(cast(`u2752426_cook`.`wp_postmeta`.`meta_value` as decimal(20,4))) AS `value` from `u2752426_cook`.`wp_postmeta` where (`u2752426_cook`.`wp_postmeta`.`meta_key` = '_recipe_time') group by `u2752426_cook`.`wp_postmeta`.`post_id`) `cooklook_sort` on((`cooklook_sort`.`post_id` = `u2752426_cook`.`wp_posts`.`ID`)) where ((`u2752426_cook`.`wp_posts`.`post_password` = '') and (`u2752426_cook`.`wp_posts`.`post_type` = 'recipe') and (`u2752426_cook`.`wp_posts`.`post_status` = 'publish')) order by coalesce(`cooklook_sort`.`value`,0),`u2752426_cook`.`wp_posts`.`post_date` desc,`u2752426_cook`.`wp_posts`.`ID` desc limit 0,11",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      "SQL-запрос успешно выполнен.",
+      " Note: #1003 /* select#1 */ select sql_calc_found_rows `u2752426_cook`.`wp_posts`.`ID` AS `ID` from `u2752426_cook`.`wp_posts` left join (/* select#2 */ select `u2752426_cook`.`wp_postmeta`.`post_id` AS `post_id`,max(cast(`u2752426_cook`.`wp_postmeta`.`meta_value` as decimal(20,4))) AS `value` from `u2752426_cook`.`wp_postmeta` where (`u2752426_cook`.`wp_postmeta`.`meta_key` = '_recipe_views') group by `u2752426_cook`.`wp_postmeta`.`post_id`) `cooklook_sort` on((`cooklook_sort`.`post_id` = `u2752426_cook`.`wp_posts`.`ID`)) where ((`u2752426_cook`.`wp_posts`.`post_password` = '') and (`u2752426_cook`.`wp_posts`.`post_type` = 'recipe') and (`u2752426_cook`.`wp_posts`.`post_status` = 'publish')) order by coalesce(`cooklook_sort`.`value`,0) desc,`u2752426_cook`.`wp_posts`.`post_date` desc,`u2752426_cook`.`wp_posts`.`ID` desc limit 0,11",
+      " Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. ",
+      " Отображение строк 0 - 11 (12 всего, Запрос занял 0.0084 сек.) [count: 1832... - 580...]",
+      " Отображение строк 0 - 24 (3078144 всего, Запрос занял 0.0002 сек.)"
+    ],
+    "sqlNavigation": [
+      {
+        "href": "index.php?route=/",
+        "text": "Сервер: MySQL 5.7"
+      },
+      {
+        "href": "index.php?route=/table/sql&db=u2752426_cook&table=wp_postmeta",
+        "text": " SQL"
+      }
+    ],
+    "tables": [
+      {
+        "id": "",
+        "rows": [
+          [
+            "id",
+            "select_type",
+            "table",
+            "partitions",
+            "type",
+            "possible_keys",
+            "key",
+            "key_len",
+            "ref",
+            "rows",
+            "filtered",
+            "Extra",
+            ""
+          ],
+          [
+            "1",
+            "SIMPLE",
+            "wp_posts",
+            "NULL",
+            "ref",
+            "type_status_date,type_status_author",
+            "type_status_date",
+            "164",
+            "const,const",
+            "6876",
+            "10.00",
+            "Using where"
+          ]
+        ]
+      },
+      {
+        "id": "",
+        "rows": [
+          [
+            "id",
+            "select_type",
+            "table",
+            "partitions",
+            "type",
+            "possible_keys",
+            "key",
+            "key_len",
+            "ref",
+            "rows",
+            "filtered",
+            "Extra",
+            ""
+          ],
+          [
+            "1",
+            "PRIMARY",
+            "wp_posts",
+            "NULL",
+            "ref",
+            "type_status_date,type_status_author",
+            "type_status_date",
+            "164",
+            "const,const",
+            "6876",
+            "10.00",
+            "Using where; Using temporary; Using filesort"
+          ],
+          [
+            "1",
+            "PRIMARY",
+            "<derived2>",
+            "NULL",
+            "ref",
+            "<auto_key0>",
+            "<auto_key0>",
+            "8",
+            "u2752426_cook.wp_posts.ID",
+            "10",
+            "100.00",
+            "NULL"
+          ],
+          [
+            "2",
+            "DERIVED",
+            "wp_postmeta",
+            "NULL",
+            "ref",
+            "post_id,meta_key",
+            "meta_key",
+            "767",
+            "const",
+            "62072",
+            "100.00",
+            "Using where; Using temporary; Using filesort"
+          ]
+        ]
+      },
+      {
+        "id": "",
+        "rows": [
+          [
+            "id",
+            "select_type",
+            "table",
+            "partitions",
+            "type",
+            "possible_keys",
+            "key",
+            "key_len",
+            "ref",
+            "rows",
+            "filtered",
+            "Extra",
+            ""
+          ],
+          [
+            "1",
+            "PRIMARY",
+            "wp_posts",
+            "NULL",
+            "ref",
+            "type_status_date,type_status_author",
+            "type_status_date",
+            "164",
+            "const,const",
+            "6876",
+            "10.00",
+            "Using where; Using temporary; Using filesort"
+          ],
+          [
+            "1",
+            "PRIMARY",
+            "<derived2>",
+            "NULL",
+            "ref",
+            "<auto_key0>",
+            "<auto_key0>",
+            "8",
+            "u2752426_cook.wp_posts.ID",
+            "10",
+            "100.00",
+            "NULL"
+          ],
+          [
+            "2",
+            "DERIVED",
+            "wp_postmeta",
+            "NULL",
+            "ref",
+            "post_id,meta_key",
+            "meta_key",
+            "767",
+            "const",
+            "3679",
+            "100.00",
+            "Using where; Using temporary; Using filesort"
+          ]
+        ]
+      },
+      {
+        "id": "",
+        "rows": [
+          [
+            "taxonomy",
+            "term_id",
+            "term_taxonomy_id",
+            "name",
+            "count  1",
+            ""
+          ],
+          [
+            "recipe_tags",
+            "9",
+            "9",
+            "Соль",
+            "1832"
+          ],
+          [
+            "recipe_tags",
+            "26",
+            "26",
+            "Куриное яйцо",
+            "1195"
+          ],
+          [
+            "recipe_category",
+            "7653",
+            "7653",
+            "Выпечка и десерты",
+            "1187"
+          ],
+          [
+            "recipe_tags",
+            "8",
+            "8",
+            "Сахар",
+            "1101"
+          ],
+          [
+            "recipe_tags",
+            "27",
+            "27",
+            "Сливочное масло",
+            "1036"
+          ],
+          [
+            "recipe_tags",
+            "81",
+            "81",
+            "Пшеничная мука",
+            "1025"
+          ],
+          [
+            "recipe_tags",
+            "21",
+            "21",
+            "Молотый черный перец",
+            "909"
+          ],
+          [
+            "recipe_category",
+            "8367",
+            "8367",
+            "Основные блюда",
+            "818"
+          ],
+          [
+            "recipe_tags",
+            "16",
+            "16",
+            "Чеснок",
+            "767"
+          ],
+          [
+            "recipe_tags",
+            "50",
+            "50",
+            "Оливковое масло",
+            "677"
+          ],
+          [
+            "recipe_tags",
+            "14",
+            "14",
+            "Репчатый лук",
+            "602"
+          ],
+          [
+            "recipe_tags",
+            "22",
+            "22",
+            "Растительное масло",
+            "580"
+          ]
+        ]
+      }
+    ]
+  },
+  "ui_note": "CodeMirror retained a default SELECT for wp_postmeta; its result values were excluded from collection. Subsequent editor entries explicitly clear and verify visible SQL before execution."
+}

@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-17T12:53:09.4874686Z",
+  "version": "1.1.1",
+  "productionInstalled": false,
+  "archive": "build/release-20261017T125005Z-995ab0/cooklook.zip",
+  "sha256": "77d63e583df73c5e212c5d770056579adb4978fb1a22f0139fd15f5945f4941b",
+  "bytes": 13482977,
+  "fileCount": 2909,
+  "archiveIntegrity": true,
+  "developmentVendorUnchanged": true,
+  "comparedWith": "build/release-20261017T110226Z-a8513e/cooklook.zip",
+  "changedRuntimeFiles": [
+    "functions.php",
+    "inc/seo-metadata.php",
+    "style.css"
+  ],
+  "removedRuntimeFiles": [],
+  "webpAndCloudflareUnchanged": true,
+  "tests": {
+    "seoUnitPassed": 21,
+    "generalUnitPassed": 18,
+    "phpLint": "passed",
+    "securityPhpcs": "passed",
+    "diffCheck": "passed",
+    "localCategories": 16,
+    "localHomonymousGroups": 3,
+    "localDuplicateDefaultTitles": 0,
+    "browserPages": 4,
+    "htmlOpenGraphCollectionPageAgree": true,
+    "localNoindexPreserved": true,
+    "extractedReleaseWordPress": "passed",
+    "wordpress": "7.1.3",
+    "php": "8.1.9",
+    "sqlWritesAllowedInCliTests": false,
+    "sorts": 3,
+    "recipesPerSort": 80,
+    "cardsPerSort": 11,
+    "recipeHtmlSchema": 10,
+    "runtimeAssetPaths": 20,
+    "developmentPackages": 0
+  },
+  "limitations": [
+    "Production deployment and category recheck are pending.",
+    "Local taxonomy has 16 categories; this is not a full production taxonomy verification.",
+    "Known Yoast early translation notice remains in CLI.",
+    "Yandex reports are delayed; full export and fresh recrawl results remain pending."
+  ]
+}

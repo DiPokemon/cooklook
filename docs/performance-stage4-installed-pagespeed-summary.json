@@ -1,0 +1,138 @@
+{
+  "checkedAt": "2026-10-17T14:23:23.462Z",
+  "version": "1.1.2",
+  "method": "Three mobile PageSpeed runs for each URL after user installed ZIP and cleared cache. Same Lighthouse 13.5.0, Moto G Power, slow 4G as baseline; no runs discarded. Compared with original analytics baseline, not reverted analytics experiment.",
+  "baseline": {
+    "catalog": {
+      "runs": [
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/bnxqpni4o6?form_factor=mobile",
+          "score": 98,
+          "fcpSeconds": 0.9,
+          "lcpSeconds": 1.8,
+          "tbtMs": 140
+        },
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/kw7z404zqo?form_factor=mobile",
+          "score": 99,
+          "fcpSeconds": 1.2,
+          "lcpSeconds": 2.2,
+          "tbtMs": 20
+        },
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/vl7jbwlk7q?form_factor=mobile",
+          "score": 71,
+          "fcpSeconds": 1.4,
+          "lcpSeconds": 6.6,
+          "tbtMs": 160
+        }
+      ],
+      "median": {
+        "score": 98,
+        "lcpSeconds": 2.2,
+        "tbtMs": 140
+      }
+    },
+    "recipe": {
+      "runs": [
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/k1yols04t2?form_factor=mobile",
+          "score": 72,
+          "fcpSeconds": 1.8,
+          "lcpSeconds": 9.6,
+          "tbtMs": 70
+        },
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/zuabtkor95?form_factor=mobile",
+          "score": 69,
+          "fcpSeconds": 1.8,
+          "lcpSeconds": 7.1,
+          "tbtMs": 270
+        },
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/mi6933hup3?form_factor=mobile",
+          "score": 67,
+          "fcpSeconds": 1.8,
+          "lcpSeconds": 9.4,
+          "tbtMs": 270
+        }
+      ],
+      "median": {
+        "score": 69,
+        "lcpSeconds": 9.4,
+        "tbtMs": 270
+      }
+    }
+  },
+  "installed": {
+    "catalog": {
+      "runs": [
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/xf5g9gf7aj?form_factor=mobile",
+          "score": 99,
+          "fcpSeconds": 0.9,
+          "lcpSeconds": 1.7,
+          "tbtMs": 80
+        },
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/2a5pse73ve?form_factor=mobile",
+          "score": 96,
+          "fcpSeconds": 0.9,
+          "lcpSeconds": 2.7,
+          "tbtMs": 70
+        },
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/6c0e6zcm1g?form_factor=mobile",
+          "score": 73,
+          "fcpSeconds": 1.4,
+          "lcpSeconds": 6.4,
+          "tbtMs": 90
+        }
+      ],
+      "median": {
+        "score": 96,
+        "lcpSeconds": 2.7,
+        "tbtMs": 80
+      },
+      "lcpRangeSeconds": [
+        1.7,
+        6.4
+      ]
+    },
+    "recipe": {
+      "runs": [
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/flfgc6otaw?form_factor=mobile",
+          "score": 70,
+          "fcpSeconds": 1.8,
+          "lcpSeconds": 9.5,
+          "tbtMs": 190
+        },
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/fucndbakfj?form_factor=mobile",
+          "score": 95,
+          "fcpSeconds": 1.2,
+          "lcpSeconds": 2.4,
+          "tbtMs": 180
+        },
+        {
+          "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/kbnkb5k5k8?form_factor=mobile",
+          "score": 97,
+          "fcpSeconds": 1.2,
+          "lcpSeconds": 2.3,
+          "tbtMs": 130
+        }
+      ],
+      "median": {
+        "score": 95,
+        "lcpSeconds": 2.4,
+        "tbtMs": 180
+      },
+      "lcpRangeSeconds": [
+        2.3,
+        9.5
+      ]
+    }
+  },
+  "conclusion": "Deployment and removal of two CSS requests confirmed. Recipe median improved in this series; catalog median did not. Large variation and only three runs prevent attributing the whole score/LCP change to the CSS change or claiming stable LCP."
+}

@@ -1,0 +1,129 @@
+{
+  "checkedOn": "2026-10-17",
+  "site": "http://cooklook/",
+  "method": "Chromium responsive viewport, desktop scrollbars take 15px; local development theme",
+  "layouts": [
+    {
+      "broken": [],
+      "client": 305,
+      "page": "home",
+      "scroll": 305,
+      "viewport": 320
+    },
+    {
+      "broken": [],
+      "client": 345,
+      "page": "home",
+      "scroll": 345,
+      "viewport": 360
+    },
+    {
+      "broken": [],
+      "client": 375,
+      "page": "home",
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "broken": [],
+      "client": 753,
+      "page": "home",
+      "scroll": 753,
+      "viewport": 768
+    },
+    {
+      "broken": [],
+      "client": 1265,
+      "page": "home",
+      "scroll": 1265,
+      "viewport": 1280
+    },
+    {
+      "client": 305,
+      "page": "recipe",
+      "scroll": 305,
+      "viewport": 320
+    },
+    {
+      "client": 345,
+      "page": "recipe",
+      "scroll": 345,
+      "viewport": 360
+    },
+    {
+      "client": 375,
+      "page": "recipe",
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 753,
+      "page": "recipe",
+      "scroll": 753,
+      "viewport": 768
+    },
+    {
+      "client": 1265,
+      "page": "recipe",
+      "scroll": 1265,
+      "viewport": 1280
+    },
+    {
+      "client": 305,
+      "page": "catalog",
+      "scroll": 305,
+      "viewport": 320
+    },
+    {
+      "client": 345,
+      "page": "catalog",
+      "scroll": 345,
+      "viewport": 360
+    },
+    {
+      "client": 375,
+      "page": "catalog",
+      "scroll": 375,
+      "viewport": 390
+    },
+    {
+      "client": 753,
+      "page": "catalog",
+      "scroll": 753,
+      "viewport": 768
+    },
+    {
+      "client": 1265,
+      "page": "catalog",
+      "scroll": 1265,
+      "viewport": 1280
+    }
+  ],
+  "filterAjaxEqualsReload": true,
+  "filterCards": 11,
+  "sortAjaxEqualsReload": true,
+  "searchSuggestions": 5,
+  "recipeAnchor": {
+    "hash": "#instructions",
+    "top": 119.953125
+  },
+  "recipe": {
+    "blockingHeadScripts": [],
+    "bodyFont": "Mulish",
+    "hero": [
+      {
+        "fetchPriority": "high",
+        "loading": "eager",
+        "naturalWidth": 349,
+        "source": "http://cooklook/wp-content/uploads/cooklook-webp/10051-9ef6c38940359d333193-360.webp",
+        "width": 335
+      }
+    ],
+    "styles": [
+      "http://cooklook/wp-content/themes/cooklook/static/css/frontend.css?ver=1792234392",
+      "http://cooklook/wp-content/themes/cooklook/static/libs/slick/cooklook-slick.css?ver=1792234392",
+      "http://cooklook/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.4"
+    ]
+  },
+  "console": []
+}

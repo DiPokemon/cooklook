@@ -1,0 +1,2063 @@
+{
+  "reviewedAt": "2026-10-17T13:31:17.310Z",
+  "site": "https://cook-look.ru/",
+  "entries": [
+    {
+      "localId": 9915,
+      "productionId": 51,
+      "before": {
+        "content": "",
+        "editUrl": "https://cook-look.ru/wp-admin/post.php?post=51&action=edit",
+        "excerpt": "",
+        "fields": [
+          {
+            "name": "carbon_fields_compact_input[_recipe_portions]",
+            "value": "2"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_time]",
+            "value": "10"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_prep]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_id]",
+            "value": "34387"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_likes]",
+            "value": "34"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_dislikes]",
+            "value": "2"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_views]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_rating]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_url]",
+            "value": "https://eda.ru/recepty/vypechka-deserty/mannaja-kasha-a-lja-pannakotta-34387"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_reviewer]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_adaptation_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_change_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_serving_mass]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_calories]",
+            "value": "225"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_protein]",
+            "value": "5"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_fat]",
+            "value": "4"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_carbs]",
+            "value": "43"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_region]",
+            "value": "Японская кухня"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_name]",
+            "value": "Манная крупа"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_value]",
+            "value": "2 столовые ложки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_name]",
+            "value": "Молоко"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_value]",
+            "value": "1 стакан"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_name]",
+            "value": "Ванильный сахар"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_value]",
+            "value": "1 столовая ложка"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_name]",
+            "value": "Сахар"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_value]",
+            "value": "2 столовые ложки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_name]",
+            "value": "Соль"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_value]",
+            "value": "по вкусу"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_name]",
+            "value": "Варенье"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_value]",
+            "value": "по вкусу"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][0][_recipe_step_text]",
+            "value": "Приготовим манную кашу, после чего в ней добавим сахар, ванильный сахар и щепотку соли, дозируя все ингредиенты в соответствии с собственными вкусовыми предпочтениями."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][1][_recipe_step_text]",
+            "value": "Наполняем креманку или чашку кашей, даем немного остыть, покрываем крышкой или пленкой и ставим в холодильник на ночь."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][2][_recipe_step_text]",
+            "value": "Утром налили жидкость в чашку, после чего помеханили ножом вдоль края чашки и аккуратно переложили содержимое на блюдце, как если бы это был куличик. Затем можно по желанию добавить варенье, фрукты или что-то еще."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][0][_original_recipe_step_text]",
+            "value": "Варим манную кашу, добавляем сахар, ванильный сахар, соль. Все — по вкусу."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][1][_original_recipe_step_text]",
+            "value": "Заливаем кашу в креманку или чашку, чуть остужаем, накрываем крышкой или пищевой пленкой и оставляем в холодильнике на ночь."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][2][_original_recipe_step_text]",
+            "value": "Утром, если залили в чашку, то проводим ножом по бортам чашки и, как куличик, достаем на блюдце. Затем можно добавить все, что угодно: варенье, фрукты и т. д. и т. п."
+          }
+        ],
+        "permalink": "",
+        "status": "Черновик",
+        "title": "Манная каша а-ля паннакотта"
+      },
+      "comparison": {
+        "localId": 9915,
+        "productionId": 51,
+        "title": "Манная каша а-ля паннакотта",
+        "status": "Черновик",
+        "excerpt": "",
+        "ingredientsMatch": true,
+        "stepsMatch": true,
+        "productionIngredients": [
+          "Манная крупа 2 столовые ложки",
+          "Молоко 1 стакан",
+          "Ванильный сахар 1 столовая ложка",
+          "Сахар 2 столовые ложки",
+          "Соль по вкусу",
+          "Варенье по вкусу"
+        ],
+        "productionSteps": [
+          "Приготовим манную кашу, после чего в ней добавим сахар, ванильный сахар и щепотку соли, дозируя все ингредиенты в соответствии с собственными вкусовыми предпочтениями.",
+          "Наполняем креманку или чашку кашей, даем немного остыть, покрываем крышкой или пленкой и ставим в холодильник на ночь.",
+          "Утром налили жидкость в чашку, после чего помеханили ножом вдоль края чашки и аккуратно переложили содержимое на блюдце, как если бы это был куличик. Затем можно по желанию добавить варенье, фрукты или что-то еще."
+        ]
+      },
+      "proposedExcerpt": "Охлаждённый десерт из манной каши на молоке с ванильным сахаром. Кашу оставляют в форме в холодильнике на ночь, а перед подачей выкладывают на блюдце и дополняют вареньем по вкусу."
+    },
+    {
+      "localId": 9885,
+      "productionId": 21,
+      "before": {
+        "content": "",
+        "editUrl": "https://cook-look.ru/wp-admin/post.php?post=21&action=edit",
+        "excerpt": "",
+        "fields": [
+          {
+            "name": "carbon_fields_compact_input[_recipe_portions]",
+            "value": "4"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_time]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_prep]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_id]",
+            "value": "15110"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_likes]",
+            "value": "146"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_dislikes]",
+            "value": "25"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_views]",
+            "value": "183"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_rating]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_url]",
+            "value": "https://eda.ru/recepty/zavtraki/pshennaya-molochnaya-kasha-s-tykvoy-15110"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_reviewer]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_adaptation_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_change_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_serving_mass]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_calories]",
+            "value": "313"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_protein]",
+            "value": "12"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_fat]",
+            "value": "7"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_carbs]",
+            "value": "54"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_region]",
+            "value": "Русская кухня"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_name]",
+            "value": "Пшено"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_value]",
+            "value": "1 стакан"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_name]",
+            "value": "Молоко"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_value]",
+            "value": "3 стакана"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_name]",
+            "value": "Тыква"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_value]",
+            "value": "500 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_name]",
+            "value": "Сахар"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_value]",
+            "value": "1 чайная ложка"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_name]",
+            "value": "Соль"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_value]",
+            "value": "½ чайные ложки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][0][_recipe_step_text]",
+            "value": "Тыкву очистить от кожуры и семян, мякоть нарезать небольшими кубиками."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][1][_recipe_step_text]",
+            "value": "В кастрюле разогреть молоко, добавить тыкву и варить на среднем огне 10–15 минут до мягкости."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][2][_recipe_step_text]",
+            "value": "Пшено тщательно промыть, всыпать в кастрюлю. Добавить сахар и щепотку соли. Варить, периодически помешивая, ещё 15–20 минут до загустения."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][3][_recipe_step_text]",
+            "value": "Готовую кашу накрыть крышкой или плотно затянуть фольгой. Поставить на водяную баню или в духовку, разогретую до 80 °C, на 25–30 минут для упревания."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][0][_original_recipe_step_text]",
+            "value": "Тыкву очистить и нарезать небольшими кубиками."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][1][_original_recipe_step_text]",
+            "value": "В кастрюле разогреть молоко, бросить туда тыкву и варить в течение 10–15 минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][2][_original_recipe_step_text]",
+            "value": "Промыть пшено и всыпать его в кастрюлю, добавить сахар и соль и варить, помешивая, еще 15–20 минут до загустения."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][3][_original_recipe_step_text]",
+            "value": "Сваренную кашу накрыть крышкой или плотно затянуть фольгой, поставить на 25–30 минут на водяную баню или в духовой шкаф, разогретый до 80 градусов, на 25–30 минут."
+          }
+        ],
+        "permalink": "",
+        "status": "Опубликовано",
+        "title": "Пшенная молочная каша с тыквой"
+      },
+      "comparison": {
+        "localId": 9885,
+        "productionId": 21,
+        "title": "Пшенная молочная каша с тыквой",
+        "status": "Опубликовано",
+        "excerpt": "",
+        "ingredientsMatch": true,
+        "stepsMatch": false,
+        "productionIngredients": [
+          "Пшено 1 стакан",
+          "Молоко 3 стакана",
+          "Тыква 500 г",
+          "Сахар 1 чайная ложка",
+          "Соль ½ чайные ложки"
+        ],
+        "productionSteps": [
+          "Тыкву очистить от кожуры и семян, мякоть нарезать небольшими кубиками.",
+          "В кастрюле разогреть молоко, добавить тыкву и варить на среднем огне 10–15 минут до мягкости.",
+          "Пшено тщательно промыть, всыпать в кастрюлю. Добавить сахар и щепотку соли. Варить, периодически помешивая, ещё 15–20 минут до загустения.",
+          "Готовую кашу накрыть крышкой или плотно затянуть фольгой. Поставить на водяную баню или в духовку, разогретую до 80 °C, на 25–30 минут для упревания."
+        ]
+      },
+      "proposedExcerpt": "Молочная пшённая каша с кусочками тыквы. Тыкву варят в молоке, затем добавляют пшено; в конце кашу выдерживают под крышкой на водяной бане или в духовке."
+    },
+    {
+      "localId": 9916,
+      "productionId": 52,
+      "before": {
+        "content": "",
+        "editUrl": "https://cook-look.ru/wp-admin/post.php?post=52&action=edit",
+        "excerpt": "",
+        "fields": [
+          {
+            "name": "carbon_fields_compact_input[_recipe_portions]",
+            "value": "4"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_time]",
+            "value": "30"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_prep]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_id]",
+            "value": "15102"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_likes]",
+            "value": "77"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_dislikes]",
+            "value": "15"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_views]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_rating]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_url]",
+            "value": "https://eda.ru/recepty/zavtraki/mannaya-kasha-15102"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_reviewer]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_adaptation_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_change_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_serving_mass]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_calories]",
+            "value": "340"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_protein]",
+            "value": "13"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_fat]",
+            "value": "10"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_carbs]",
+            "value": "53"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_region]",
+            "value": "Русская кухня"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_name]",
+            "value": "Молоко"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_value]",
+            "value": "5 стаканов"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_name]",
+            "value": "Манная крупа"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_value]",
+            "value": "1 стакан"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_name]",
+            "value": "Сахар"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_value]",
+            "value": "1 столовая ложка"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_name]",
+            "value": "Соль"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_value]",
+            "value": "½ чайные ложки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][0][_recipe_step_text]",
+            "value": "Добавьте мелко крупу в кипящее молоко и продолжайте помешивать. Варите смесь на медленном огне в течение 10–15 минут, пока она не загустеет. Затем добавьте сахар и соль, и хорошо все перемешайте."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][1][_recipe_step_text]",
+            "value": "В кашу можно добавить 1–2 столовые ложки масла."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][0][_original_recipe_step_text]",
+            "value": "В кипящее молоко тонкой струйкой всыпать крупу и, непрерывно помешивая, варить на слабом огне 10–15 минут до загустения. После этого положить сахар, соль и размешать."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][1][_original_recipe_step_text]",
+            "value": "В кашу можно положить 1–2 столовые ложки масла."
+          }
+        ],
+        "permalink": "",
+        "status": "Черновик",
+        "title": "Молочная манная каша"
+      },
+      "comparison": {
+        "localId": 9916,
+        "productionId": 52,
+        "title": "Молочная манная каша",
+        "status": "Черновик",
+        "excerpt": "",
+        "ingredientsMatch": true,
+        "stepsMatch": true,
+        "productionIngredients": [
+          "Молоко 5 стаканов",
+          "Манная крупа 1 стакан",
+          "Сахар 1 столовая ложка",
+          "Соль ½ чайные ложки"
+        ],
+        "productionSteps": [
+          "Добавьте мелко крупу в кипящее молоко и продолжайте помешивать. Варите смесь на медленном огне в течение 10–15 минут, пока она не загустеет. Затем добавьте сахар и соль, и хорошо все перемешайте.",
+          "В кашу можно добавить 1–2 столовые ложки масла."
+        ]
+      },
+      "proposedExcerpt": "Манная каша на молоке с сахаром и солью. Крупу варят на слабом огне при помешивании до загустения, затем добавляют сахар и соль."
+    },
+    {
+      "localId": 9917,
+      "productionId": 53,
+      "before": {
+        "content": "",
+        "editUrl": "https://cook-look.ru/wp-admin/post.php?post=53&action=edit",
+        "excerpt": "",
+        "fields": [
+          {
+            "name": "carbon_fields_compact_input[_recipe_portions]",
+            "value": "1"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_time]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_prep]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_id]",
+            "value": "39102"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_likes]",
+            "value": "312"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_dislikes]",
+            "value": "41"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_views]",
+            "value": "165"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_rating]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_url]",
+            "value": "https://eda.ru/recepty/zavtraki/sladkaja-mannaja-kasha-39102"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_reviewer]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_adaptation_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_change_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_serving_mass]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_calories]",
+            "value": "323"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_protein]",
+            "value": "11"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_fat]",
+            "value": "8"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_carbs]",
+            "value": "55"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_region]",
+            "value": "Русская кухня"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_name]",
+            "value": "Молоко"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_value]",
+            "value": "1 стакан"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_name]",
+            "value": "Манная крупа"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_value]",
+            "value": "4 чайные ложки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_name]",
+            "value": "Соль"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_value]",
+            "value": "щепотка"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_name]",
+            "value": "Сахар"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_value]",
+            "value": "2 чайные ложки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][0][_recipe_step_text]",
+            "value": "Манную крупу, соль и сахар сложить в отдельную мисочку."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][1][_recipe_step_text]",
+            "value": "Перед закипанием молока тонкой струйкой постепенно всыпать смесь манки с сахаром и солью, тщательно помешивая, чтобы избежать комков."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][2][_recipe_step_text]",
+            "value": "После закипания продолжать помешивать кашу на медленном огне в течение 2–3 минут. Затем накрыть кастрюлю крышкой, укутать полотенцем и оставить на 10–15 минут, чтобы каша дошла."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][3][_recipe_step_text]",
+            "value": "В готовую кашу добавить масло и перемешать."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][0][_original_recipe_step_text]",
+            "value": "Манную крупу, соль, сахар положить в отдельную мисочку."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][1][_original_recipe_step_text]",
+            "value": "За несколько секунд до закипания молока тонкой струйкой высыпать манку с сахаром и солью."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][2][_original_recipe_step_text]",
+            "value": "После закипания помешивать кашу 2–3 минуты на медленном огне, затем закрыть крышкой и укутать полотенцем, оставить на 10–15 минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][3][_original_recipe_step_text]",
+            "value": "Добавить масло."
+          }
+        ],
+        "permalink": "",
+        "status": "Опубликовано",
+        "title": "Сладкая манная каша"
+      },
+      "comparison": {
+        "localId": 9917,
+        "productionId": 53,
+        "title": "Сладкая манная каша",
+        "status": "Опубликовано",
+        "excerpt": "",
+        "ingredientsMatch": true,
+        "stepsMatch": false,
+        "productionIngredients": [
+          "Молоко 1 стакан",
+          "Манная крупа 4 чайные ложки",
+          "Соль щепотка",
+          "Сахар 2 чайные ложки"
+        ],
+        "productionSteps": [
+          "Манную крупу, соль и сахар сложить в отдельную мисочку.",
+          "Перед закипанием молока тонкой струйкой постепенно всыпать смесь манки с сахаром и солью, тщательно помешивая, чтобы избежать комков.",
+          "После закипания продолжать помешивать кашу на медленном огне в течение 2–3 минут. Затем накрыть кастрюлю крышкой, укутать полотенцем и оставить на 10–15 минут, чтобы каша дошла.",
+          "В готовую кашу добавить масло и перемешать."
+        ]
+      },
+      "proposedExcerpt": "Сладкая манная каша на молоке для одной порции. Манку с сахаром и солью постепенно всыпают в молоко, а после варки дают каше настояться под крышкой."
+    },
+    {
+      "localId": 9918,
+      "productionId": 54,
+      "before": {
+        "content": "",
+        "editUrl": "https://cook-look.ru/wp-admin/post.php?post=54&action=edit",
+        "excerpt": "",
+        "fields": [
+          {
+            "name": "carbon_fields_compact_input[_recipe_portions]",
+            "value": "3"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_time]",
+            "value": "10"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_prep]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_id]",
+            "value": "91461"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_likes]",
+            "value": "52"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_dislikes]",
+            "value": "13"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_views]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_rating]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_url]",
+            "value": "https://eda.ru/recepty/zavtraki/mannaya-kasha-molochnaya-91461"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_reviewer]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_adaptation_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_change_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_serving_mass]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_calories]",
+            "value": "279"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_protein]",
+            "value": "6"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_fat]",
+            "value": "18"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_carbs]",
+            "value": "25"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_region]",
+            "value": "Русская кухня"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_name]",
+            "value": "Манная крупа"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_value]",
+            "value": "70 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_name]",
+            "value": "Молоко"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_value]",
+            "value": "300 мл"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_name]",
+            "value": "Вода"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_value]",
+            "value": "300 мл"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_name]",
+            "value": "Сахар"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_value]",
+            "value": "10 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_name]",
+            "value": "Соль"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_value]",
+            "value": "по вкусу"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_name]",
+            "value": "Сливочное масло"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_value]",
+            "value": "50 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][6][_ingridient_name]",
+            "value": "Свежие ягоды"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][6][_ingridient_value]",
+            "value": "по вкусу"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][0][_recipe_step_text]",
+            "value": "Проведите подготовительные мероприятия, собрав все необходимые компоненты."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][1][_recipe_step_text]",
+            "value": "Довести до кипения смесь молока и воды в сотейнике."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][2][_recipe_step_text]",
+            "value": "Положить в смесь соль и сахар."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][3][_recipe_step_text]",
+            "value": "Добавьте постепенно манную крупу в молоко, аккуратно перемешивая ее венчиком. Кипятите смесь в течение 5 минут, не забывая постоянно помешивать, чтобы избежать образования комков."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][4][_recipe_step_text]",
+            "value": "Дайте приготовленной каши настояться на выключенной конфорке под крышкой еще несколько минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][5][_recipe_step_text]",
+            "value": "Разместить манную кашу в различные тарелки."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][6][_recipe_step_text]",
+            "value": "Положить в кастрюлю кубики сливочного масла."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][7][_recipe_step_text]",
+            "value": "Подавайте манную кашу с ягодами или вашим любимым вареньем."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][0][_original_recipe_step_text]",
+            "value": "Подготовить все ингредиенты."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][1][_original_recipe_step_text]",
+            "value": "Вскипятить в сотейнике молоко, разбавленное водой."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][2][_original_recipe_step_text]",
+            "value": "Добавить соль и сахар."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][3][_original_recipe_step_text]",
+            "value": "Быстро всыпать в молоко тонкой струйкой манную крупу, перемешивая венчиком. Варить 5 минут, постоянно помешивая, чтобы не было комков."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][4][_original_recipe_step_text]",
+            "value": "Готовую кашу оставить на выключенной конфорке под крышкой еще на несколько минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][5][_original_recipe_step_text]",
+            "value": "Разложить манную кашу по тарелкам."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][6][_original_recipe_step_text]",
+            "value": "Добавить кубики сливочного масла."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][7][_original_recipe_step_text]",
+            "value": "Подавать манную кашу с ягодами или любимым вареньем."
+          }
+        ],
+        "permalink": "",
+        "status": "Черновик",
+        "title": "Манная каша на молоке"
+      },
+      "comparison": {
+        "localId": 9918,
+        "productionId": 54,
+        "title": "Манная каша на молоке",
+        "status": "Черновик",
+        "excerpt": "",
+        "ingredientsMatch": true,
+        "stepsMatch": true,
+        "productionIngredients": [
+          "Манная крупа 70 г",
+          "Молоко 300 мл",
+          "Вода 300 мл",
+          "Сахар 10 г",
+          "Соль по вкусу",
+          "Сливочное масло 50 г",
+          "Свежие ягоды по вкусу"
+        ],
+        "productionSteps": [
+          "Проведите подготовительные мероприятия, собрав все необходимые компоненты.",
+          "Довести до кипения смесь молока и воды в сотейнике.",
+          "Положить в смесь соль и сахар.",
+          "Добавьте постепенно манную крупу в молоко, аккуратно перемешивая ее венчиком. Кипятите смесь в течение 5 минут, не забывая постоянно помешивать, чтобы избежать образования комков.",
+          "Дайте приготовленной каши настояться на выключенной конфорке под крышкой еще несколько минут.",
+          "Разместить манную кашу в различные тарелки.",
+          "Положить в кастрюлю кубики сливочного масла.",
+          "Подавайте манную кашу с ягодами или вашим любимым вареньем."
+        ]
+      },
+      "proposedExcerpt": "Манная каша на смеси молока и воды с сахаром и сливочным маслом. Крупу всыпают при постоянном помешивании, затем дают каше настояться под крышкой и подают с ягодами или вареньем."
+    },
+    {
+      "localId": 9919,
+      "productionId": 55,
+      "before": {
+        "content": "",
+        "editUrl": "https://cook-look.ru/wp-admin/post.php?post=55&action=edit",
+        "excerpt": "",
+        "fields": [
+          {
+            "name": "carbon_fields_compact_input[_recipe_portions]",
+            "value": "4"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_time]",
+            "value": "40"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_prep]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_id]",
+            "value": "51401"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_likes]",
+            "value": "4"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_dislikes]",
+            "value": "1"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_views]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_rating]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_url]",
+            "value": "https://eda.ru/recepty/zavtraki/kasha-kukuruznaja-v-multivarke-51401"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_reviewer]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_adaptation_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_change_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_serving_mass]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_calories]",
+            "value": "229"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_protein]",
+            "value": "7"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_fat]",
+            "value": "9"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_carbs]",
+            "value": "30"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_region]",
+            "value": "Мексиканская кухня"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_name]",
+            "value": "Кукурузная крупа"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_value]",
+            "value": "100 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_name]",
+            "value": "Молоко 2,5%-ное"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_value]",
+            "value": "750 мл"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_name]",
+            "value": "Сливочное масло"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_value]",
+            "value": "20 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_name]",
+            "value": "Соль"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_value]",
+            "value": "5 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_name]",
+            "value": "Сахар"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_value]",
+            "value": "10 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][0][_recipe_step_text]",
+            "value": "Положите крупу в чашу мультиварки, залейте молоком, положите сливочное масло, соль, сахар и тщательно перемешайте."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][1][_recipe_step_text]",
+            "value": "Прикройте крышку. Переведите паровой клапан в положение «III». Выберите программу «Молочная каша/Крупы» и установите время приготовления на 40 минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][2][_recipe_step_text]",
+            "value": "Нажмите на кнопку «Старт», затем дождитесь завершения программы. После того, как программа завершится, перемешайте готовую кашу."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][0][_original_recipe_step_text]",
+            "value": "Крупу выложить в чашу мультиварки, залить молоком, добавить сливочное масло, соль, сахар и тщательно перемешать."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][1][_original_recipe_step_text]",
+            "value": "Закрыть крышку. Паровой клапан установить в положение «III». Установить программу «Молочная каша/Крупы», время приготовления 40 минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][2][_original_recipe_step_text]",
+            "value": "Нажать кнопку «Старт». Готовить до окончания программы. Готовую кашу перемешать."
+          }
+        ],
+        "permalink": "",
+        "status": "Черновик",
+        "title": "Каша кукурузная в мультиварке"
+      },
+      "comparison": {
+        "localId": 9919,
+        "productionId": 55,
+        "title": "Каша кукурузная в мультиварке",
+        "status": "Черновик",
+        "excerpt": "",
+        "ingredientsMatch": true,
+        "stepsMatch": true,
+        "productionIngredients": [
+          "Кукурузная крупа 100 г",
+          "Молоко 2,5%-ное 750 мл",
+          "Сливочное масло 20 г",
+          "Соль 5 г",
+          "Сахар 10 г"
+        ],
+        "productionSteps": [
+          "Положите крупу в чашу мультиварки, залейте молоком, положите сливочное масло, соль, сахар и тщательно перемешайте.",
+          "Прикройте крышку. Переведите паровой клапан в положение «III». Выберите программу «Молочная каша/Крупы» и установите время приготовления на 40 минут.",
+          "Нажмите на кнопку «Старт», затем дождитесь завершения программы. После того, как программа завершится, перемешайте готовую кашу."
+        ]
+      },
+      "proposedExcerpt": "Кукурузная молочная каша со сливочным маслом, сахаром и солью. Все ингредиенты смешивают в чаше мультиварки и готовят на программе «Молочная каша/Крупы»."
+    },
+    {
+      "localId": 9920,
+      "productionId": 56,
+      "before": {
+        "content": "",
+        "editUrl": "https://cook-look.ru/wp-admin/post.php?post=56&action=edit",
+        "excerpt": "",
+        "fields": [
+          {
+            "name": "carbon_fields_compact_input[_recipe_portions]",
+            "value": "2"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_time]",
+            "value": "20"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_prep]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_id]",
+            "value": "151293"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_likes]",
+            "value": "1"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_dislikes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_views]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_rating]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_url]",
+            "value": "https://eda.ru/recepty/zavtraki/ovsyanaya-kasha-v-parovarke-s-karamelizovannymi-fruktami-151293"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_reviewer]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_adaptation_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_change_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_serving_mass]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_calories]",
+            "value": "713"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_protein]",
+            "value": "9"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_fat]",
+            "value": "42"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_carbs]",
+            "value": "83"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_region]",
+            "value": "Европейская кухня"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_name]",
+            "value": "Овсяная крупа"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_value]",
+            "value": "6 столовых ложек"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_name]",
+            "value": "Вода"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_value]",
+            "value": "150 мл"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_name]",
+            "value": "Сливки 35%-ные"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_value]",
+            "value": "150 мл"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_name]",
+            "value": "Сахар"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_value]",
+            "value": "70 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_name]",
+            "value": "Сливочное масло"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_value]",
+            "value": "30 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_name]",
+            "value": "Персики"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_value]",
+            "value": "1 штука"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][6][_ingridient_name]",
+            "value": "Клубника"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][6][_ingridient_value]",
+            "value": "50 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][7][_ingridient_name]",
+            "value": "Соль"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][7][_ingridient_value]",
+            "value": "щепотка"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][0][_recipe_step_text]",
+            "value": "Налить воду на овсяные хлопья, распределить их в порционных тарелках и поместить в пароварку на 10 минут для приготовления."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][1][_recipe_step_text]",
+            "value": "Через 10 минут после этого добавьте сливки к овсянке и верните всё обратно в пароварку на еще 10 минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][2][_recipe_step_text]",
+            "value": "Нарежь персики и клубнику на дольки."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][3][_recipe_step_text]",
+            "value": "В ингредиенты для приготовления начинают с добавления сахара в сотейник, за которым следует вливание немного воды (2 столовые ложки). После этого смесь нагревают до полного растворения сахара, а затем продолжают разогревать, чтобы сахар немного поджарился."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][4][_recipe_step_text]",
+            "value": "Венчиком перемешайте сливочное масло и щепотку соли до получения однородной карамели."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][5][_recipe_step_text]",
+            "value": "Положите фрукты в карамель и варите их в ней в течение 2 минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][6][_recipe_step_text]",
+            "value": "Обжарьте кешью на сухой сковороде до появления золотистого оттенка."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][7][_recipe_step_text]",
+            "value": "Разложите карамелизованные фрукты и орехи на готовую овсянку и подайте сразу."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][0][_original_recipe_step_text]",
+            "value": "Овсяные хлопья залить водой прямо в порционных тарелках и поставить в пароварку на 10 минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][1][_original_recipe_step_text]",
+            "value": "Спустя 10 минут добавить к овсянке сливки и вернуть в пароварку еще на 10 минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][2][_original_recipe_step_text]",
+            "value": "Персики и клубнику нарезать дольками."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][3][_original_recipe_step_text]",
+            "value": "В сотейник всыпать сахар, добавить немного воды (2 столовых ложки), подогреть до растворения сахара и продолжить греть, чтобы сахар немного потемнел."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][4][_original_recipe_step_text]",
+            "value": "Добавить сливочное масло и щепотку соли, венчиком перемешать до однородной карамели."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][5][_original_recipe_step_text]",
+            "value": "Добавить в карамель фрукты и поварить их в ней 2 минуты."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][6][_original_recipe_step_text]",
+            "value": "На сухой сковороде обжарить кешью до золотистого цвета."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][7][_original_recipe_step_text]",
+            "value": "На готовую овсянку выложить карамелизованные фрукты и орехи, тут же подавать."
+          }
+        ],
+        "permalink": "",
+        "status": "Черновик",
+        "title": "Овсяная каша в пароварке с карамелизованными фруктами"
+      },
+      "comparison": {
+        "localId": 9920,
+        "productionId": 56,
+        "title": "Овсяная каша в пароварке с карамелизованными фруктами",
+        "status": "Черновик",
+        "excerpt": "",
+        "ingredientsMatch": true,
+        "stepsMatch": true,
+        "productionIngredients": [
+          "Овсяная крупа 6 столовых ложек",
+          "Вода 150 мл",
+          "Сливки 35%-ные 150 мл",
+          "Сахар 70 г",
+          "Сливочное масло 30 г",
+          "Персики 1 штука",
+          "Клубника 50 г",
+          "Соль щепотка"
+        ],
+        "productionSteps": [
+          "Налить воду на овсяные хлопья, распределить их в порционных тарелках и поместить в пароварку на 10 минут для приготовления.",
+          "Через 10 минут после этого добавьте сливки к овсянке и верните всё обратно в пароварку на еще 10 минут.",
+          "Нарежь персики и клубнику на дольки.",
+          "В ингредиенты для приготовления начинают с добавления сахара в сотейник, за которым следует вливание немного воды (2 столовые ложки). После этого смесь нагревают до полного растворения сахара, а затем продолжают разогревать, чтобы сахар немного поджарился.",
+          "Венчиком перемешайте сливочное масло и щепотку соли до получения однородной карамели.",
+          "Положите фрукты в карамель и варите их в ней в течение 2 минут.",
+          "Обжарьте кешью на сухой сковороде до появления золотистого оттенка.",
+          "Разложите карамелизованные фрукты и орехи на готовую овсянку и подайте сразу."
+        ]
+      },
+      "proposedExcerpt": "Овсяная каша со сливками, приготовленная в пароварке. К ней подают персик и клубнику в карамели из сахара и сливочного масла."
+    },
+    {
+      "localId": 9921,
+      "productionId": 57,
+      "before": {
+        "content": "",
+        "editUrl": "https://cook-look.ru/wp-admin/post.php?post=57&action=edit",
+        "excerpt": "",
+        "fields": [
+          {
+            "name": "carbon_fields_compact_input[_recipe_portions]",
+            "value": "4"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_time]",
+            "value": "60"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_prep]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_id]",
+            "value": "44086"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_likes]",
+            "value": "19"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_dislikes]",
+            "value": "3"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_views]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_rating]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_url]",
+            "value": "https://eda.ru/recepty/osnovnye-blyuda/grechnevaja-kasha-s-sirom-i-ovoshhami-44086"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_reviewer]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_adaptation_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_change_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_serving_mass]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_calories]",
+            "value": "300"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_protein]",
+            "value": "16"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_fat]",
+            "value": "8"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_carbs]",
+            "value": "38"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_region]",
+            "value": "Русская кухня"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_name]",
+            "value": "Морковь"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_value]",
+            "value": "100 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_name]",
+            "value": "Гречневая крупа"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_value]",
+            "value": "200 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_name]",
+            "value": "Адыгейский сыр"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_value]",
+            "value": "200 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_name]",
+            "value": "Куркума"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_value]",
+            "value": "½ чайные ложки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_name]",
+            "value": "Цветная капуста"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_value]",
+            "value": "200 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_name]",
+            "value": "Смесь перцев"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_value]",
+            "value": "½ чайные ложки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][6][_ingridient_name]",
+            "value": "Соль"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][6][_ingridient_value]",
+            "value": "по вкусу"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][0][_recipe_step_text]",
+            "value": "Нарежьте овощи и адыгейский сыр на небольшие кубики."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][1][_recipe_step_text]",
+            "value": "Также можно применять различные овощи, такие как кабачок, баклажан, стручковую фасоль и белокочанную капусту."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][2][_recipe_step_text]",
+            "value": "Подогрейте масло на сковороде, затем добавьте специи, сыр и овощи через несколько секунд."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][3][_recipe_step_text]",
+            "value": "Продолжайте жарить все ингредиенты на среднем огне в течение 5 минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][4][_recipe_step_text]",
+            "value": "Ополосните гречку и затем поместите ее в овощи."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][5][_recipe_step_text]",
+            "value": "Добавьте немного воды, приправьте солью, тщательно перемешайте, закройте крышкой и варите до полного впитывания жидкости, пока блюдо не будет готово."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][0][_original_recipe_step_text]",
+            "value": "Овощи и адыгейский сыр нарежьте небольшими кубиками."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][1][_original_recipe_step_text]",
+            "value": "Можно так же использовать любые овощи — кабачок, баклажан, фасоль стручковую, белокочанную капусту."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][2][_original_recipe_step_text]",
+            "value": "Разогрейте на сковороде масло, добавьте в него специи и через пару секунд сыр и овощи."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][3][_original_recipe_step_text]",
+            "value": "Обжаривайте все на среднем огне 5 минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][4][_original_recipe_step_text]",
+            "value": "Промойте гречку и добавьте ее в овощи."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][5][_original_recipe_step_text]",
+            "value": "Залейте небольшим количеством воды, посолите, перемешайте, накройте крышкой и варите до готовности — пока вся вода не впитается."
+          }
+        ],
+        "permalink": "",
+        "status": "Черновик",
+        "title": "Гречневая каша с сыром и овощами"
+      },
+      "comparison": {
+        "localId": 9921,
+        "productionId": 57,
+        "title": "Гречневая каша с сыром и овощами",
+        "status": "Черновик",
+        "excerpt": "",
+        "ingredientsMatch": true,
+        "stepsMatch": true,
+        "productionIngredients": [
+          "Морковь 100 г",
+          "Гречневая крупа 200 г",
+          "Адыгейский сыр 200 г",
+          "Куркума ½ чайные ложки",
+          "Цветная капуста 200 г",
+          "Смесь перцев ½ чайные ложки",
+          "Соль по вкусу"
+        ],
+        "productionSteps": [
+          "Нарежьте овощи и адыгейский сыр на небольшие кубики.",
+          "Также можно применять различные овощи, такие как кабачок, баклажан, стручковую фасоль и белокочанную капусту.",
+          "Подогрейте масло на сковороде, затем добавьте специи, сыр и овощи через несколько секунд.",
+          "Продолжайте жарить все ингредиенты на среднем огне в течение 5 минут.",
+          "Ополосните гречку и затем поместите ее в овощи.",
+          "Добавьте немного воды, приправьте солью, тщательно перемешайте, закройте крышкой и варите до полного впитывания жидкости, пока блюдо не будет готово."
+        ]
+      },
+      "proposedExcerpt": "Гречневая каша с адыгейским сыром, морковью и цветной капустой. Сыр и овощи обжаривают со специями, затем добавляют гречку и готовят под крышкой до впитывания воды."
+    },
+    {
+      "localId": 9922,
+      "productionId": 58,
+      "before": {
+        "content": "",
+        "editUrl": "https://cook-look.ru/wp-admin/post.php?post=58&action=edit",
+        "excerpt": "",
+        "fields": [
+          {
+            "name": "carbon_fields_compact_input[_recipe_portions]",
+            "value": "6"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_time]",
+            "value": "50"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_prep]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_id]",
+            "value": "23339"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_likes]",
+            "value": "66"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_dislikes]",
+            "value": "8"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_views]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_rating]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_url]",
+            "value": "https://eda.ru/recepty/zavtraki/kasha-karri-iz-dikogo-risa-s-krevetkami-23339"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_reviewer]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_adaptation_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_change_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_serving_mass]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_calories]",
+            "value": "288"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_protein]",
+            "value": "14"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_fat]",
+            "value": "18"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_carbs]",
+            "value": "18"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_region]",
+            "value": "Индийская кухня"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_name]",
+            "value": "Дикий рис"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_value]",
+            "value": "300 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_name]",
+            "value": "Королевские креветки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_value]",
+            "value": "300 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_name]",
+            "value": "Красный карри порошок"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_value]",
+            "value": "1 столовая ложка"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_name]",
+            "value": "Кокосовое молоко"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_value]",
+            "value": "400 мл"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_name]",
+            "value": "Чеснок"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_value]",
+            "value": "4 зубчика"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_name]",
+            "value": "Красный лук"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_value]",
+            "value": "1 головка"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][6][_ingridient_name]",
+            "value": "Перец чили"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][6][_ingridient_value]",
+            "value": "2 штуки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][7][_ingridient_name]",
+            "value": "Соевый соус"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][7][_ingridient_value]",
+            "value": "2 столовые ложки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][8][_ingridient_name]",
+            "value": "Оливковое масло"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][8][_ingridient_value]",
+            "value": "2 столовые ложки"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][9][_ingridient_name]",
+            "value": "Лимон"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][9][_ingridient_value]",
+            "value": "1 штука"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][10][_ingridient_name]",
+            "value": "Кинза"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][10][_ingridient_value]",
+            "value": "30 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][11][_ingridient_name]",
+            "value": "Соль"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][11][_ingridient_value]",
+            "value": "по вкусу"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][0][_recipe_step_text]",
+            "value": "Перелейте дикий рис на толщину три-четыре пальца в подсоленную воду и готовьте на медленном огне в течение сорока минут. Если за это время вода полностью выкипит, добавьте еще."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][1][_recipe_step_text]",
+            "value": "Начните, обжарив лук на оливковом (или другом растительном) масле в глубоком сотейнике. Как только лук станет мягким, внесите чеснок и жарьте еще полминуты. Затем добавьте карри-порошок, хорошо перемешайте и продолжайте жарить овощи и специи еще две-три минуты."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][2][_recipe_step_text]",
+            "value": "Излийте воду из кастрюли с диким рисом, затем перелейте рис в сковороду. Добавьте туда кокосовое молоко и соевый соус, хорошо перемешайте и тушите на медленном огне под закрытой крышкой от пяти до семи минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][3][_recipe_step_text]",
+            "value": "После этого добавьте креветки в кастрюлю — можно использовать как очищенные, так и целые с панцирем. Очищенные креветки лучше подойдут для блюда, так как их можно есть без необходимости в дополнительных процедурах, в то время как в целых креветках больше сохраняется аромат благодаря китиновому панциру. Выбор остается за вами."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][4][_recipe_step_text]",
+            "value": "К креветкам следует добавить лимонный сок, тонко нарезанный перец чили, крупно нарубленную кинзу, хорошо перемешать и тушить на медленном огне еще три-четыре минуты."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][5][_recipe_step_text]",
+            "value": "В любом случае рис будет оставаться упругим и немного жестковатым на вкус, поэтому его можно варить длительное время, даже более часа. Однако важно избегать переваривания креветок, так как если упругость риса считается признаком качества, то резиновые креветки – это настоящая неудача."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][0][_original_recipe_step_text]",
+            "value": "Дикий рис залить на три-четыре пальца сверху подсоленной водой и варить на медленном огне сорок минут. Если вода умудрится полностью выкипеть за это время, добавить еще."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][1][_original_recipe_step_text]",
+            "value": "В глубоком сотейнике на оливковом (или другом растительном) масле обжарить мелко нарезанный лук. Когда лук станет мягким, добавить чеснок, жарить еще полминуты, после ­чего добавить карри-порошок, перемешать и жарить овощи и специи еще две-три минуты."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][2][_original_recipe_step_text]",
+            "value": "Слить воду из кастрюли с диким рисом и высыпать рис в сотейник, вылить туда же банку кокосового молока и соевый соус, тщательно перемешать и на медленном огне под крышкой томить еще пять-семь ­минут."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][3][_original_recipe_step_text]",
+            "value": "После чего высыпать туда же креветки — очищенные или в панцире; очищенные лучше дополняют жанр каши, так как их поедание не требует дополнительных ритуалов, зато в неочищенных больше креветоч­ного вкуса за счет хитинового панциря, так что решайте сами."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][4][_original_recipe_step_text]",
+            "value": "Добавить к креветкам лимонный сок, наструганный тонкими кольцами перец чили, крупно нарубленную кинзу, перемешать и варить на медленном огне еще три-четыре минуты."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][5][_original_recipe_step_text]",
+            "value": "Рис в любом случае будет упруг и жестковат на вкус, так что варить его можно хоть час и даже больше, а вот передерживать креветки не стоит. Если упругость риса — это комплимент, то резиновая креветка — это катастрофа."
+          }
+        ],
+        "permalink": "",
+        "status": "Черновик",
+        "title": "Каша карри из дикого риса с креветками"
+      },
+      "comparison": {
+        "localId": 9922,
+        "productionId": 58,
+        "title": "Каша карри из дикого риса с креветками",
+        "status": "Черновик",
+        "excerpt": "",
+        "ingredientsMatch": true,
+        "stepsMatch": true,
+        "productionIngredients": [
+          "Дикий рис 300 г",
+          "Королевские креветки 300 г",
+          "Красный карри порошок 1 столовая ложка",
+          "Кокосовое молоко 400 мл",
+          "Чеснок 4 зубчика",
+          "Красный лук 1 головка",
+          "Перец чили 2 штуки",
+          "Соевый соус 2 столовые ложки",
+          "Оливковое масло 2 столовые ложки",
+          "Лимон 1 штука",
+          "Кинза 30 г",
+          "Соль по вкусу"
+        ],
+        "productionSteps": [
+          "Перелейте дикий рис на толщину три-четыре пальца в подсоленную воду и готовьте на медленном огне в течение сорока минут. Если за это время вода полностью выкипит, добавьте еще.",
+          "Начните, обжарив лук на оливковом (или другом растительном) масле в глубоком сотейнике. Как только лук станет мягким, внесите чеснок и жарьте еще полминуты. Затем добавьте карри-порошок, хорошо перемешайте и продолжайте жарить овощи и специи еще две-три минуты.",
+          "Излийте воду из кастрюли с диким рисом, затем перелейте рис в сковороду. Добавьте туда кокосовое молоко и соевый соус, хорошо перемешайте и тушите на медленном огне под закрытой крышкой от пяти до семи минут.",
+          "После этого добавьте креветки в кастрюлю — можно использовать как очищенные, так и целые с панцирем. Очищенные креветки лучше подойдут для блюда, так как их можно есть без необходимости в дополнительных процедурах, в то время как в целых креветках больше сохраняется аромат благодаря китиновому панциру. Выбор остается за вами.",
+          "К креветкам следует добавить лимонный сок, тонко нарезанный перец чили, крупно нарубленную кинзу, хорошо перемешать и тушить на медленном огне еще три-четыре минуты.",
+          "В любом случае рис будет оставаться упругим и немного жестковатым на вкус, поэтому его можно варить длительное время, даже более часа. Однако важно избегать переваривания креветок, так как если упругость риса считается признаком качества, то резиновые креветки – это настоящая неудача."
+        ]
+      },
+      "proposedExcerpt": "Дикий рис с креветками в кокосовом молоке с карри, чесноком и чили. Предварительно отваренный рис тушат с соусом, а в конце добавляют креветки, лимонный сок и кинзу."
+    },
+    {
+      "localId": 9923,
+      "productionId": 59,
+      "before": {
+        "content": "",
+        "editUrl": "https://cook-look.ru/wp-admin/post.php?post=59&action=edit",
+        "excerpt": "",
+        "fields": [
+          {
+            "name": "carbon_fields_compact_input[_recipe_portions]",
+            "value": "2"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_time]",
+            "value": "20"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_prep]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_id]",
+            "value": "46765"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_likes]",
+            "value": "3"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_dislikes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_views]",
+            "value": "0"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_rating]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_url]",
+            "value": "https://eda.ru/recepty/zavtraki/ovsjanaja-kasha-s-suhofruktami-46765"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_reviewer]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_adaptation_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_public_change_notes]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_serving_mass]",
+            "value": ""
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_calories]",
+            "value": "450"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_protein]",
+            "value": "12"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_fat]",
+            "value": "16"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_carbs]",
+            "value": "66"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_region]",
+            "value": "Европейская кухня"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_name]",
+            "value": "Молоко"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][0][_ingridient_value]",
+            "value": "1,5 стаканов"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_name]",
+            "value": "Геркулес"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][1][_ingridient_value]",
+            "value": "½ стакана"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_name]",
+            "value": "Курага"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][2][_ingridient_value]",
+            "value": "5 штук"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_name]",
+            "value": "Сливочное масло"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][3][_ingridient_value]",
+            "value": "20 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_name]",
+            "value": "Изюм"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][4][_ingridient_value]",
+            "value": "50 г"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_name]",
+            "value": "Соль"
+          },
+          {
+            "name": "carbon_fields_compact_input[_ingridients][5][_ingridient_value]",
+            "value": "по вкусу"
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][0][_recipe_step_text]",
+            "value": "Доведите молоко до кипения, затем посолите его."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][1][_recipe_step_text]",
+            "value": "Добавить крупу в молоко и тушить на плите в течение 3-20 минут в зависимости от вида крупы."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][2][_recipe_step_text]",
+            "value": "Начнем с того, что промоем и обсушим курагу и изюм с помощью бумажного полотенца. После этого нарежем курагу на небольшие кубики."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][3][_recipe_step_text]",
+            "value": "Добавьте сухофрукты в уже приготовленную кашу и тщательно перемешайте."
+          },
+          {
+            "name": "carbon_fields_compact_input[_recipe_step][4][_recipe_step_text]",
+            "value": "Пролейте масло в кашу и оставьте настояться в течение 10 минут. Не нужно добавлять сахар, так как сухофрукты придадут достаточно сладости."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][0][_original_recipe_step_text]",
+            "value": "Молоко довести до кипения, посолить."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][1][_original_recipe_step_text]",
+            "value": "Высыпать крупу в молоко. Варить 3–20 минут (зависит от категории крупы)."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][2][_original_recipe_step_text]",
+            "value": "Курагу и изюм помыть и обсушить бумажным полотенцем. Курагу нарезать на небольшие кубики."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][3][_original_recipe_step_text]",
+            "value": "В готовую кашу положить сухофрукты. Перемешать."
+          },
+          {
+            "name": "carbon_fields_compact_input[_original_recipe_step][4][_original_recipe_step_text]",
+            "value": "Положить масло и дать каше настояться 10 минут. Сахар добавлять не стоит, сухофрукты дают достаточно сладости."
+          }
+        ],
+        "permalink": "",
+        "status": "Черновик",
+        "title": "Овсяная каша с сухофруктами"
+      },
+      "comparison": {
+        "localId": 9923,
+        "productionId": 59,
+        "title": "Овсяная каша с сухофруктами",
+        "status": "Черновик",
+        "excerpt": "",
+        "ingredientsMatch": true,
+        "stepsMatch": true,
+        "productionIngredients": [
+          "Молоко 1,5 стаканов",
+          "Геркулес ½ стакана",
+          "Курага 5 штук",
+          "Сливочное масло 20 г",
+          "Изюм 50 г",
+          "Соль по вкусу"
+        ],
+        "productionSteps": [
+          "Доведите молоко до кипения, затем посолите его.",
+          "Добавить крупу в молоко и тушить на плите в течение 3-20 минут в зависимости от вида крупы.",
+          "Начнем с того, что промоем и обсушим курагу и изюм с помощью бумажного полотенца. После этого нарежем курагу на небольшие кубики.",
+          "Добавьте сухофрукты в уже приготовленную кашу и тщательно перемешайте.",
+          "Пролейте масло в кашу и оставьте настояться в течение 10 минут. Не нужно добавлять сахар, так как сухофрукты придадут достаточно сладости."
+        ]
+      },
+      "proposedExcerpt": "Овсяная каша на молоке с курагой, изюмом и сливочным маслом. Сухофрукты добавляют в готовую кашу, затем оставляют её настояться; сахар в этом рецепте не добавляют."
+    }
+  ]
+}

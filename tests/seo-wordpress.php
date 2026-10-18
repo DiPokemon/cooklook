@@ -27,7 +27,7 @@ p2_check( strpos( $html, '<span>P2-SHORTCODE</span>' ) !== false, 'Core the_cont
 p2_check( get_post_field( 'post_content', $id ) === $original_content, 'Stored content is unchanged' );
 $dom = new DOMDocument(); @$dom->loadHTML( '<?xml encoding="utf-8" ?>' . $html );
 $xpath = new DOMXPath( $dom );
-$hero = $xpath->query( '//div[contains(@class,"recipe_img_wrapper")]/img' )->item( 0 );
+$hero = $xpath->query( '//div[contains(@class,"recipe_img_wrapper")]//img' )->item( 0 );
 p2_check( $hero && $hero->getAttribute( 'width' ) && $hero->getAttribute( 'height' ) && $hero->getAttribute( 'srcset' ) && $hero->getAttribute( 'sizes' ), 'Hero has intrinsic dimensions and responsive sources' );
 p2_check( 'eager' === $hero->getAttribute( 'loading' ) && 'high' === $hero->getAttribute( 'fetchpriority' ), 'Hero loading priority is explicit' );
 foreach ( array( 'recipe_category', 'recipe_tags' ) as $taxonomy ) {

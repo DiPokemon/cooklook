@@ -38,6 +38,7 @@
   "scripts": {
     "watch": "node tools/build-css.cjs --watch",
     "compile:css": "node tools/build-css.cjs",
+    "compile:frontend": "node tools/build-frontend-css.cjs",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style \"static/css/**/*.scss\"",
     "lint:js": "wp-scripts lint-js \"js/*.js\" \"static/js/*.js\"",

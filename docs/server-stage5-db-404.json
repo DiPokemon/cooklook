@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-17T16:00:51.129Z",
+  "sql": "SELECT post_name,post_type,post_status FROM wp_posts WHERE post_type='recipe' AND post_name IN ('rulet-iz-shhekoviny','syrnyj-sous-na-majoneze','stejk-traj-tip','batonchiki-myusli-s-yablokom-i-orehami','stejk-minon','sochnyj-salat-k-myasu-i-rybe','adzhapsandali-klassicheskij','dieticheskie-syrniki-s-jogurtovo-limonnym-sousom','bubert','farshirovannye-syrom-perczy-halapeno','pechenoe-veperevo-koleno-zapechennaya-svinaya-rulka','morskie-grebeshki-na-paru','kuricza-zapechennaya-v-duhovke','leshh-farshirovannyj-kashej') ORDER BY post_name;",
+  "result": {
+    "messages": [
+      " MySQL вернула пустой результат (т.е. ноль строк). (Запрос занял 0.0010 сек.)"
+    ],
+    "tables": [
+      [
+        [
+          "",
+          "post_name",
+          "post_type",
+          "post_status",
+          ""
+        ]
+      ]
+    ]
+  }
+}

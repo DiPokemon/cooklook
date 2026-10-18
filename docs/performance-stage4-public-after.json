@@ -1,0 +1,167 @@
+{
+  "checkedAt": "2026-10-17T13:56:41.450Z",
+  "phase": "after",
+  "pages": [
+    {
+      "name": "home",
+      "url": "https://cook-look.ru/",
+      "status": 200,
+      "htmlBytes": 339698,
+      "headers": {
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "server": "nginx",
+        "vary": "Accept-Encoding"
+      },
+      "title": "Кулинарные рецепты - COOK-LOOK",
+      "canonical": "https://cook-look.ru/",
+      "analytics": [
+        {
+          "defer": false,
+          "async": false,
+          "inline": "\r\n(function () {\r\nwindow.ym = window.ym || function () {\r\n    (window.ym.a = window.ym.a || []).push(arguments);\r\n};\r\nwindow.ym.l = window.ym.l || Date.now();\r\nym(97204680, \"init\", {\r\n    clickmap: true,\r\n    trackLinks: true,\r\n    accurateTrackBounce: true\r\n});\r\nwindow.dataLayer = window.dataLayer || [];\r\nwindow.dataLayer.push({ \"gtm.start\": Date.now(), event: \"gtm.js\" });\r\nfunction loadAnalytics() {\r\n    [\r\n        [\"cooklook-metrika\", \"https://mc.yandex.ru/metrika/tag.js\"],\r\n        [\"cooklook-gtm\", \"https://www.googletagmanager.com/gtm.js?id=GTM-PZSGH5S5\"]\r\n    ].forEach(function (resource) {\r\n        if (document.getElementById(resource[0]) || document.querySelector('script[src=\"' + resource[1] + '\"]')) return;\r\n        var script = document.createElement(\"script\");\r\n        script.id = resource[0];\r\n        script.async = true;\r\n        script.fetchPriority = \"low\";\r\n        script.src = resource[1];\r\n        document.head.appendChild(script);\r\n    });\r\n}\r\nif (document.readyState === \"loading\") {\r\n    document.addEventListener(\"DOMContentLoaded\", loadAnalytics, { once: true });\r\n} else {\r\n    loadAnalytics();\r\n}\r\n}());\r\n"
+        }
+      ],
+      "headHasNoscript": false,
+      "styles": [
+        {
+          "rel": "stylesheet",
+          "id": "style_min-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792241872",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "slick-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/cooklook-slick.css?ver=1792241873",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "relevanssi-live-search-css",
+          "href": "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5",
+          "media": "all"
+        }
+      ],
+      "hero": []
+    },
+    {
+      "name": "catalog",
+      "url": "https://cook-look.ru/recipes/",
+      "status": 200,
+      "htmlBytes": 184716,
+      "headers": {
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "server": "nginx",
+        "vary": "Accept-Encoding"
+      },
+      "title": "Каталог рецептов по ингредиентам и категориям | COOK-LOOK",
+      "canonical": "https://cook-look.ru/recipes/",
+      "analytics": [
+        {
+          "defer": false,
+          "async": false,
+          "inline": "\r\n(function () {\r\nwindow.ym = window.ym || function () {\r\n    (window.ym.a = window.ym.a || []).push(arguments);\r\n};\r\nwindow.ym.l = window.ym.l || Date.now();\r\nym(97204680, \"init\", {\r\n    clickmap: true,\r\n    trackLinks: true,\r\n    accurateTrackBounce: true\r\n});\r\nwindow.dataLayer = window.dataLayer || [];\r\nwindow.dataLayer.push({ \"gtm.start\": Date.now(), event: \"gtm.js\" });\r\nfunction loadAnalytics() {\r\n    [\r\n        [\"cooklook-metrika\", \"https://mc.yandex.ru/metrika/tag.js\"],\r\n        [\"cooklook-gtm\", \"https://www.googletagmanager.com/gtm.js?id=GTM-PZSGH5S5\"]\r\n    ].forEach(function (resource) {\r\n        if (document.getElementById(resource[0]) || document.querySelector('script[src=\"' + resource[1] + '\"]')) return;\r\n        var script = document.createElement(\"script\");\r\n        script.id = resource[0];\r\n        script.async = true;\r\n        script.fetchPriority = \"low\";\r\n        script.src = resource[1];\r\n        document.head.appendChild(script);\r\n    });\r\n}\r\nif (document.readyState === \"loading\") {\r\n    document.addEventListener(\"DOMContentLoaded\", loadAnalytics, { once: true });\r\n} else {\r\n    loadAnalytics();\r\n}\r\n}());\r\n"
+        }
+      ],
+      "headHasNoscript": false,
+      "styles": [
+        {
+          "rel": "stylesheet",
+          "id": "style_min-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792241872",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "select2-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/select2/select2.min.css?ver=1792241873",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "cooklook-catalog-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/css/catalog.css?ver=1792241872",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "relevanssi-live-search-css",
+          "href": "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5",
+          "media": "all"
+        }
+      ],
+      "hero": [
+        {
+          "width": "620",
+          "height": "415",
+          "src": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170.jpg",
+          "class": "attachment-medium_large size-medium_large",
+          "alt": "Пахлава армянская",
+          "loading": "eager",
+          "decoding": "async",
+          "sizes": "(max-width: 768px) calc(100vw - 40px), (max-width: 1024px) calc((100vw - 60px) / 2), 360px",
+          "fetchpriority": "high",
+          "srcset": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170.jpg 620w, https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170-300x201.jpg 300w"
+        }
+      ]
+    },
+    {
+      "name": "recipe",
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "status": 200,
+      "htmlBytes": 160690,
+      "headers": {
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "server": "nginx",
+        "vary": "Accept-Encoding"
+      },
+      "title": "Блины с водкой — пошаговый рецепт | COOK-LOOK",
+      "canonical": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "analytics": [
+        {
+          "defer": false,
+          "async": false,
+          "inline": "\r\n(function () {\r\nwindow.ym = window.ym || function () {\r\n    (window.ym.a = window.ym.a || []).push(arguments);\r\n};\r\nwindow.ym.l = window.ym.l || Date.now();\r\nym(97204680, \"init\", {\r\n    clickmap: true,\r\n    trackLinks: true,\r\n    accurateTrackBounce: true\r\n});\r\nwindow.dataLayer = window.dataLayer || [];\r\nwindow.dataLayer.push({ \"gtm.start\": Date.now(), event: \"gtm.js\" });\r\nfunction loadAnalytics() {\r\n    [\r\n        [\"cooklook-metrika\", \"https://mc.yandex.ru/metrika/tag.js\"],\r\n        [\"cooklook-gtm\", \"https://www.googletagmanager.com/gtm.js?id=GTM-PZSGH5S5\"]\r\n    ].forEach(function (resource) {\r\n        if (document.getElementById(resource[0]) || document.querySelector('script[src=\"' + resource[1] + '\"]')) return;\r\n        var script = document.createElement(\"script\");\r\n        script.id = resource[0];\r\n        script.async = true;\r\n        script.fetchPriority = \"low\";\r\n        script.src = resource[1];\r\n        document.head.appendChild(script);\r\n    });\r\n}\r\nif (document.readyState === \"loading\") {\r\n    document.addEventListener(\"DOMContentLoaded\", loadAnalytics, { once: true });\r\n} else {\r\n    loadAnalytics();\r\n}\r\n}());\r\n"
+        }
+      ],
+      "headHasNoscript": false,
+      "styles": [
+        {
+          "rel": "stylesheet",
+          "id": "style_min-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792241872",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "slick-css",
+          "href": "https://cook-look.ru/wp-content/themes/cooklook/static/libs/slick/cooklook-slick.css?ver=1792241873",
+          "media": "all"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "relevanssi-live-search-css",
+          "href": "https://cook-look.ru/wp-content/plugins/relevanssi-live-ajax-search/assets/styles/style.css?ver=2.5",
+          "media": "all"
+        }
+      ],
+      "hero": [
+        {
+          "width": "620",
+          "height": "415",
+          "src": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg",
+          "class": "attachment-large size-large",
+          "alt": "Блины с водкой",
+          "loading": "eager",
+          "decoding": "async",
+          "sizes": "(max-width: 1024px) calc(100vw - 40px), 650px",
+          "fetchpriority": "high",
+          "srcset": "https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956.jpg 620w, https://cook-look.ru/wp-content/uploads/2024/07/p_o-16956-300x201.jpg 300w"
+        }
+      ]
+    }
+  ]
+}

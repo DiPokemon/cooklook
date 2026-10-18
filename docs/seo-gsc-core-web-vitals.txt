@@ -1,0 +1,322 @@
+help_outline
+Справка
+manage_accounts
+Пользовательские настройки
+	
+notifications
+Сообщения
+39
+
+home
+Обзор
+lightbulb_2
+Статистика
+trending_up
+Эффективность
+keyboard_arrow_down
+search
+Проверка URL
+Индексирование
+keyboard_arrow_up
+file_copy
+Страницы
+account_tree
+Файлы Sitemap
+visibility_off
+Удаления
+Качество
+keyboard_arrow_up
+speed
+Core Web Vitals
+lock
+HTTPS
+Улучшения
+keyboard_arrow_up
+layers
+Строки навигации
+layers
+Рецепты
+layers
+Проверка кода
+Проблемы безопасности и меры, принятые вручную
+keyboard_arrow_down
+link_2
+Ссылки
+trophy
+Достижения
+settings
+Настройки
+feedback
+Отправить отзыв
+info
+Общие сведения о Search Console
+КонфиденциальностьУсловия использования
+Core Web Vitals
+Источник: Отчет об удобстве пользования браузером Chrome
+
+Обновлено 15.10.2026
+Мобильный
+ОТКРЫТЬ ОТЧЕТ
+
+0 неэффективных URL-адресов
+Нужно увеличить скорость 0 URL
+302 эффективных URL-адреса
+19.07.2026
+30.07.2026
+10.08.2026
+21.08.2026
+01.09.2026
+12.09.2026
+23.09.2026
+04.10.2026
+15.10.2026
+375
+250
+125
+0
+ПК
+ОТКРЫТЬ ОТЧЕТ
+
+За последние 90 дней собрано недостаточно данных об использовании устройства этого типа.
+Подробнее…
+Попробуйте PageSpeed Insights
+
+MOBILE DETAIL
+help_outline
+Справка
+manage_accounts
+Пользовательские настройки
+	
+notifications
+Сообщения
+39
+
+home
+Обзор
+lightbulb_2
+Статистика
+trending_up
+Эффективность
+keyboard_arrow_down
+search
+Проверка URL
+Индексирование
+keyboard_arrow_up
+file_copy
+Страницы
+account_tree
+Файлы Sitemap
+visibility_off
+Удаления
+Качество
+keyboard_arrow_up
+speed
+Core Web Vitals
+lock
+HTTPS
+Улучшения
+keyboard_arrow_up
+layers
+Строки навигации
+layers
+Рецепты
+layers
+Проверка кода
+Проблемы безопасности и меры, принятые вручную
+keyboard_arrow_down
+link_2
+Ссылки
+trophy
+Достижения
+settings
+Настройки
+feedback
+Отправить отзыв
+info
+Общие сведения о Search Console
+КонфиденциальностьУсловия использования
+Core Web Vitals
+
+Мобильный
+
+ЭКСПОРТИРОВАТЬ
+Источник: Отчет об удобстве пользования браузером Chrome
+
+Последнее обновление: 15.10.2026
+
+Низкая скорость
+0
+Проблем нет
+
+Нужно увеличить скорость
+0
+Проблем нет
+
+Хорошо
+302
+
+URL-адреса
+19.07.2026
+30.07.2026
+10.08.2026
+21.08.2026
+01.09.2026
+12.09.2026
+23.09.2026
+04.10.2026
+15.10.2026
+3
+2
+1
+0
+check_circle
+Посмотреть данные об эффективных URL
+
+Отлично!
+Проблем за последние 90 дней не обнаружено.
+Core Web Vitals
+
+GROUP METRICS
+help_outline
+Справка
+manage_accounts
+Пользовательские настройки
+	
+notifications
+Сообщения
+39
+
+home
+Обзор
+lightbulb_2
+Статистика
+trending_up
+Эффективность
+keyboard_arrow_down
+search
+Проверка URL
+Индексирование
+keyboard_arrow_up
+file_copy
+Страницы
+account_tree
+Файлы Sitemap
+visibility_off
+Удаления
+Качество
+keyboard_arrow_up
+speed
+Core Web Vitals
+lock
+HTTPS
+Улучшения
+keyboard_arrow_up
+layers
+Строки навигации
+layers
+Рецепты
+layers
+Проверка кода
+Проблемы безопасности и меры, принятые вручную
+keyboard_arrow_down
+link_2
+Ссылки
+trophy
+Достижения
+settings
+Настройки
+feedback
+Отправить отзыв
+info
+Общие сведения о Search Console
+КонфиденциальностьУсловия использования
+Core Web Vitals
+
+Мобильный
+
+эффективные URL
+
+ЭКСПОРТИРОВАТЬ
+
+ОТПРАВИТЬ
+Источник: Отчет об удобстве пользования браузером Chrome
+
+Последнее обновление: 15.10.2026
+check_circle
+эффективные URL
+Страницы по указанным ниже URL удобны для пользователей.
+ПОДРОБНЕЕ
+эффективные URL
+302
+19.07.2026
+30.07.2026
+11.08.2026
+23.08.2026
+03.09.2026
+15.09.2026
+27.09.2026
+09.10.2026
+375
+250
+125
+0
+Группы URL
+
+
+Пример URL
+
+	
+Размер группы
+
+
+
+https://cook-look.ru/recipe/imbirnyj-chaj/
+
+
+	302
+Строк на странице:
+5
+10
+25
+50
+100
+250
+500
+1–1 из 1
+
+Закрыть
+В этой группе 302 URL
+
+Группа LCP
+2,3 с.
+Группа CLS
+0,07
+Группа INP
+-
+Статус
+Хорошо
+Оценивается удобство использования не отдельных URL, а их групп. Подробнее
+Примеры URL из этой группы
+
+В этой группе только URL, о которых мало информации. Подробнее
+https://cook-look.ru/recipe/imbirnyj-chaj/
+https://cook-look.ru/recipe/trubach-tushenyj-v-slivkah/
+https://cook-look.ru/recipe/koktejl-klover-klab-clover-club/
+https://cook-look.ru/recipe/kazandibi/
+https://cook-look.ru/recipe/letnij-salat-s-lnyanym-maslom/
+https://cook-look.ru/recipe/slivochnoe-poleno/
+https://cook-look.ru/recipe/tort-iz-gotovyh-biskvitnyh-korzhej-s-kivi-i-bananami/
+https://cook-look.ru/recipe/karamelizovannye-tykvennye-semechki/
+https://cook-look.ru/recipe/kostnyj-bulon/
+https://cook-look.ru/recipe/sup-syake-tyadzuke-s-lososem-i-risom/
+https://cook-look.ru/recipe/gruzinskij-salat-iz-otvarnoj-svekly-s-greczkimi-orehami-i-specziyami-phali-iz-svekly/
+https://cook-look.ru/recipe/morkovnyj-pirog-na-kefire/
+https://cook-look.ru/recipe/zapechenyj-turneps-i-slivochnom-souse/
+https://cook-look.ru/recipe/oblegchennyj-variant-supa-harcho-pri-diabete/
+https://cook-look.ru/recipe/slivy-zapechennye-s-chesnokom-i-rozmarinom/
+https://cook-look.ru/recipe/zharenaya-kolrabi-s-pripravami/
+https://cook-look.ru/recipe/salat-iz-mangolda-i-kapusty/
+https://cook-look.ru/recipe/zharenaya-hamsa/
+https://cook-look.ru/recipe/smuzi-iz-ananasa-so-shhavelem/
+https://cook-look.ru/recipe/imperatorskij-omlet-kajzershmarn-kaiserschmarrn/
+https://cook-look.ru/recipe/lnyanoe-moloko/

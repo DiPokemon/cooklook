@@ -16,6 +16,7 @@ function compile() {
 			fs.writeFileSync(path.join(directory, name.replace(/\.scss$/, suffix)), result.css);
 		}
 	}
+	require('./build-frontend-css.cjs')();
 }
 try { compile(); } catch (error) { console.error(error.message); process.exit(1); }
 if (process.argv.includes('--watch')) {

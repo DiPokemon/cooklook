@@ -1,0 +1,111 @@
+help_outline
+Справка
+manage_accounts
+Пользовательские настройки
+	
+notifications
+Сообщения
+38
+
+home
+Обзор
+lightbulb_2
+Статистика
+trending_up
+Эффективность
+keyboard_arrow_down
+search
+Проверка URL
+Индексирование
+keyboard_arrow_up
+file_copy
+Страницы
+account_tree
+Файлы Sitemap
+visibility_off
+Удаления
+Качество
+keyboard_arrow_up
+speed
+Core Web Vitals
+lock
+HTTPS
+Улучшения
+keyboard_arrow_up
+layers
+Строки навигации
+layers
+Рецепты
+layers
+Проверка кода
+Проблемы безопасности и меры, принятые вручную
+keyboard_arrow_down
+link_2
+Ссылки
+trophy
+Достижения
+settings
+Настройки
+feedback
+Отправить отзыв
+info
+Общие сведения о Search Console
+КонфиденциальностьУсловия использования
+https://cook-look.ru/recipe/uzbekskij-plov-s-baranim-salom/
+Проверка URL
+ПРОВЕРИТЬ СТРАНИЦУ НА САЙТЕ
+check_circle
+URL есть в индексе Google
+При отсутствии запросов на удаление и мер, принятых вручную, страница может появляться в результатах поиска Google с любыми подходящими улучшениями. Подробнее
+ИЗУЧИТЬ ПРОСКАНИРОВАННУЮ СТРАНИЦУ
+Страница изменена?
+ЗАПРОСИТЬ ИНДЕКСИРОВАНИЕ
+check_circle
+Индексирование страниц
+Эта страница проиндексирована
+
+Как обнаружено
+Файлы Sitemap
+Временная ошибка при обработке
+Ссылающаяся страница
+https://cook-look.ru/recipe/tefteli-v-multivarke/
+https://cook-look.ru/recipe_tags/ris/page/4/
+https://cook-look.ru/recipe/utinaya-pechen-s-gribami/
+https://cook-look.ru/recipe/morskie-grebeshki-v-belom-vine/
+Сканирование
+Последнее сканирование
+14 окт. 2026 г., 04:37:15
+Робот, выполнивший сканирование
+Робот Googlebot для смартфонов
+Сканирование разрешено?
+Да
+Получение страницы
+Успешно
+Индексирование разрешено?
+Да
+Индексирование
+Каноническая страница, выбранная пользователем
+https://cook-look.ru/recipe/uzbekskij-plov-s-baranim-salom/
+Каноническая страница, выбранная Google
+
+Проверенный URL
+ПОДРОБНЕЕ...
+ОТКРЫТЬ ОТЧЕТ
+Улучшения и удобство для пользователей
+check_circle
+HTTPS
+Страница передается через HTTPS
+
+check_circle
+Строки навигации
+Обнаружено 2 элемента без ошибок
+
+check_circle
+Рецепты
+Обнаружен 1 элемент без ошибок
+Есть мелкие проблемы
+
+check_circle
+Проверка кода
+Обнаружен 1 элемент без ошибок
+

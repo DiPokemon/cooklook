@@ -1,0 +1,366 @@
+Проверка расширенных результатов
+
+Войти
+
+
+
+Результаты проверки
+
+ПОДЕЛИТЬСЯ
+check_circle
+Обнаружено 4 элемента без ошибок
+Элементы без ошибок могут показываться в виде расширенных результатов поиска Google. Подробнее
+ПОСМОТРЕТЬ ПРОВЕРЕННУЮ СТРАНИЦУ
+ПОСМОТРЕТЬ ПРИМЕРЫ РЕЗУЛЬТАТОВ
+Сведения
+Сканирование
+check_circle
+Просканировано: 17 окт. 2026 г., 15:13:36
+
+Обнаруженные структурированные данные
+check_circle
+Строки навигации
+Обнаружено 2 элемента без ошибок
+
+check_circle
+Рецепты
+Обнаружен 1 элемент без ошибок
+Есть мелкие проблемы
+
+check_circle
+Проверка кода
+Обнаружен 1 элемент без ошибок
+
+Дополнительная информация
+
+Проверьте, какие структурированные данные есть на всем сайте.
+ПЕРЕЙТИ В SEARCH CONSOLE
+КонфиденциальностьУсловия использования
+
+RECIPE DETAILS
+Проверка расширенных результатов
+
+Войти
+
+
+
+Результаты проверки
+
+Рецепты
+
+ПОДЕЛИТЬСЯ
+check_circle
+Обнаружен 1 элемент без ошибок
+Элементы без ошибок могут показываться в виде расширенных результатов поиска Google. Подробнее
+ПОСМОТРЕТЬ ПРОВЕРЕННУЮ СТРАНИЦУ
+ПОСМОТРЕТЬ ПРИМЕРЫ РЕЗУЛЬТАТОВ
+Сведения
+Сканирование
+check_circle
+Просканировано: 17 окт. 2026 г., 15:13:36
+
+Обнаруженные элементы
+check_circle
+Пахлава армянская
+14 незначительных проблем
+
+
+Отсутствует поле "video" (необязательно)
+
+Отсутствует поле "nutrition" (необязательно)
+
+type
+Recipe
+id
+https://cook-look.ru/recipe/pahlava-armyanskaya/#recipe
+name
+Пахлава армянская
+url
+https://cook-look.ru/recipe/pahlava-armyanskaya/
+author
+type
+Organization
+name
+CookLook
+url
+https://cook-look.ru/
+datePublished
+2024-07-14T00:02:41+03:00
+dateModified
+2024-07-28T23:22:33+03:00
+description
+Рецепт «Пахлава армянская». Ингредиенты и пошаговое приготовление.
+image
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170.jpg
+recipeInstructions
+Отсутствует поле "name" (необязательно)
+
+Укажите "image" или "video". (необязательно)
+
+type
+HowToStep
+text
+Белок отделить от желтка и поставить в холодильник. Орехи мелко нарезать ножом, а тесто раскатать.
+url
+https://cook-look.ru/recipe/pahlava-armyanskaya/#step_1
+recipeInstructions
+Отсутствует поле "name" (необязательно)
+
+Укажите "image" или "video". (необязательно)
+
+type
+HowToStep
+text
+Выпекать тесто в духовке, разогретой до 200 градусов, сначала только две полоски теста. Выпекать 15–20 минут, пока тесто не поднимется и не станет румяным. Еще две полоски теста пока не использовать.
+url
+https://cook-look.ru/recipe/pahlava-armyanskaya/#step_2
+recipeInstructions
+Отсутствует поле "name" (необязательно)
+
+Укажите "image" или "video". (необязательно)
+
+type
+HowToStep
+text
+К нарезанным орехам добавить 200 грамм сахарного песка и корицу.
+url
+https://cook-look.ru/recipe/pahlava-armyanskaya/#step_3
+recipeInstructions
+Отсутствует поле "name" (необязательно)
+
+Укажите "image" или "video". (необязательно)
+
+type
+HowToStep
+text
+Для безе взбить миксером охлажденный белок. Добавить 200 грамм сахарного песка и взбить до полной густоты, чтобы при переворачивании миски безе оставалось на месте.
+url
+https://cook-look.ru/recipe/pahlava-armyanskaya/#step_4
+recipeInstructions
+Отсутствует поле "name" (необязательно)
+
+Укажите "image" или "video". (необязательно)
+
+type
+HowToStep
+text
+На противень выложить бумагу для выпечки. Сверху положить сырую полоску теста. Намазать безе, посыпать орехами с сахаром и корицей. Накрыть испеченной полоской теста. Повторить слои: безе, орехи, тесто. Затем снова безе и орехи. Закрыть пахлаву сырой полоской теста, залепить края. Надрезать пахлаву, смазать желтком, украсить грецкими орехами и поставить в духовку на десять минут.
+url
+https://cook-look.ru/recipe/pahlava-armyanskaya/#step_5
+recipeInstructions
+Отсутствует поле "name" (необязательно)
+
+Укажите "image" или "video". (необязательно)
+
+type
+HowToStep
+text
+Пока пахлава подрумянивается, на плите разогреть мед со сливочным маслом. Затем вынуть пахлаву из духовки, еще раз надрезать по старым надрезам и аккуратно влить в них мед. Печь 30 минут.
+url
+https://cook-look.ru/recipe/pahlava-armyanskaya/#step_6
+recipeIngredient
+Грецкие орехи 600 г
+recipeIngredient
+Бездрожжевое слоеное тесто 4 штуки
+recipeIngredient
+Сахар 400 г
+recipeIngredient
+Куриное яйцо 6 штук
+recipeIngredient
+Молотая корица 2 чайные ложки
+recipeIngredient
+Мед 6 столовых ложек
+recipeIngredient
+Сливочное масло 50 г
+cookTime
+PT4H
+totalTime
+PT4H
+recipeYield
+15
+recipeCuisine
+Армянская кухня
+recipeCategory
+Выпечка и десерты, Пахлава
+keywords
+Бездрожжевое слоеное тесто, Грецкие орехи, Куриное яйцо, Мед, Молотая корица, Сахар, Сливочное масло
+aggregateRating
+type
+AggregateRating
+ratingValue
+4.2
+ratingCount
+6
+bestRating
+5
+worstRating
+0
+mainEntityOfPage
+type
+WebPage
+id
+https://cook-look.ru/recipe/pahlava-armyanskaya/
+url
+https://cook-look.ru/recipe/pahlava-armyanskaya/
+name
+Пахлава армянская — пошаговый рецепт | COOK-LOOK
+isPartOf
+type
+WebSite
+id
+https://cook-look.ru/#website
+url
+https://cook-look.ru/
+name
+COOK-LOOK
+description
+Лучшие кулинарные рецепты с пошаговыми инструкциями.
+publisher
+type
+Organization
+id
+https://cook-look.ru/#organization
+name
+COOK-LOOK
+url
+https://cook-look.ru/
+logo
+type
+ImageObject
+inLanguage
+ru-RU
+url
+https://cook-look.ru/wp-content/uploads/2024/07/cropped-favicon.png
+contentUrl
+https://cook-look.ru/wp-content/uploads/2024/07/cropped-favicon.png
+width
+512
+height
+512
+caption
+COOK-LOOK
+id
+https://cook-look.ru/#/schema/logo/image/
+image
+type
+ImageObject
+inLanguage
+ru-RU
+url
+https://cook-look.ru/wp-content/uploads/2024/07/cropped-favicon.png
+contentUrl
+https://cook-look.ru/wp-content/uploads/2024/07/cropped-favicon.png
+width
+512
+height
+512
+caption
+COOK-LOOK
+id
+https://cook-look.ru/#/schema/logo/image/
+potentialAction
+type
+SearchAction
+target
+type
+EntryPoint
+urlTemplate
+https://cook-look.ru/?s={search_term_string}
+query-input
+type
+PropertyValueSpecification
+valueRequired
+http://schema.org/True
+valueName
+search_term_string
+inLanguage
+ru-RU
+primaryImageOfPage
+type
+ImageObject
+inLanguage
+ru-RU
+id
+https://cook-look.ru/recipe/pahlava-armyanskaya/#primaryimage
+url
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170.jpg
+contentUrl
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170.jpg
+width
+620
+height
+415
+image
+type
+ImageObject
+inLanguage
+ru-RU
+id
+https://cook-look.ru/recipe/pahlava-armyanskaya/#primaryimage
+url
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170.jpg
+contentUrl
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170.jpg
+width
+620
+height
+415
+thumbnailUrl
+https://cook-look.ru/wp-content/uploads/2024/07/p_o-18170.jpg
+datePublished
+2024-07-13T21:02:41Z
+dateModified
+2024-07-28T20:22:33Z
+description
+Рецепт «Пахлава армянская». Ингредиенты и пошаговое приготовление.
+breadcrumb
+type
+BreadcrumbList
+id
+https://cook-look.ru/recipe/pahlava-armyanskaya/#breadcrumb
+itemListElement
+type
+ListItem
+position
+1
+name
+Главная страница
+item
+type
+Thing
+id
+https://cook-look.ru/
+itemListElement
+type
+ListItem
+position
+2
+name
+Рецепты
+item
+type
+Thing
+id
+https://cook-look.ru/recipes/
+itemListElement
+type
+ListItem
+position
+3
+name
+Пахлава армянская
+inLanguage
+ru-RU
+potentialAction
+type
+ReadAction
+target
+type
+EntryPoint
+urlTemplate
+https://cook-look.ru/recipe/pahlava-armyanskaya/
+Дополнительная информация
+
+Проверьте наличие структурированных данных из категории "Рецепты" на всем сайте.
+ПЕРЕЙТИ В SEARCH CONSOLE
+КонфиденциальностьУсловия использования

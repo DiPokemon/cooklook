@@ -1,0 +1,76 @@
+{
+  "checkedOn": "2026-10-17",
+  "agent": "Google Inspection Tool smartphone",
+  "method": "Public URL tests through official Google Rich Results Test",
+  "results": [
+    {
+      "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "report": "https://search.google.com/test/rich-results/result?id=XSdSjAmSEnj2WdHAPG2jnA",
+      "scannedAtMsk": "15:12:23",
+      "validItems": 4,
+      "types": {
+        "BreadcrumbList": 2,
+        "Recipe": 1,
+        "ReviewSnippet": 1
+      },
+      "recipeWarnings": 8,
+      "warnings": [
+        "video absent",
+        "nutrition absent",
+        "cookTime absent",
+        "prepTime absent",
+        "HowToStep name absent ×2",
+        "HowToStep image or video absent ×2"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipe/pahlava-armyanskaya/",
+      "report": "https://search.google.com/test/rich-results/result?id=nBe6b54fII0W1uALhJukLA",
+      "scannedAtMsk": "15:13:36",
+      "validItems": 4,
+      "types": {
+        "BreadcrumbList": 2,
+        "Recipe": 1,
+        "ReviewSnippet": 1
+      },
+      "recipeWarnings": 14,
+      "warnings": [
+        "video absent",
+        "nutrition absent",
+        "HowToStep name absent ×6",
+        "HowToStep image or video absent ×6"
+      ]
+    },
+    {
+      "url": "https://cook-look.ru/recipes/page/2/",
+      "report": "https://search.google.com/test/rich-results/result?id=BDDoliKAySWGd_S0vupmJA",
+      "scannedAtMsk": "15:14:04",
+      "validItems": 2,
+      "types": {
+        "BreadcrumbList": 2
+      }
+    },
+    {
+      "url": "https://cook-look.ru/recipe/vafelnoe-pechene/",
+      "report": "https://search.google.com/test/rich-results/result?id=uOfhNFRs2TybgtlLRIyRLQ",
+      "scannedAtMsk": "15:19:54",
+      "validItems": 4,
+      "types": {
+        "BreadcrumbList": 2,
+        "Recipe": 1,
+        "ReviewSnippet": 1
+      },
+      "ratingRangeVerified": {
+        "ratingValue": 0,
+        "worstRating": 0,
+        "bestRating": 5
+      },
+      "recipeWarnings": "Non-critical warnings present; details not counted in this test"
+    }
+  ],
+  "limitations": [
+    "Sampled URLs only, not all recipes.",
+    "Eligible structured data do not guarantee indexing or rich result display.",
+    "Warnings are optional properties; missing factual content must not be invented."
+  ]
+}

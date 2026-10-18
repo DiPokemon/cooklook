@@ -1,0 +1,132 @@
+{
+  "checkedAt": "2026-10-17T14:11:10.787Z",
+  "method": "Three mobile PageSpeed Insights runs per URL before and during the analytics experiment; Moto G Power, slow 4G, Lighthouse 13.5.0. No runs discarded.",
+  "experimentRetained": false,
+  "finalProductionState": "Original analytics script bodies restored byte-for-byte; only noscript markup moved from HEAD to BODY. Theme CSS optimization remains local until ZIP 1.1.2 is installed.",
+  "metrics": {
+    "before": {
+      "catalog": {
+        "runs": [
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/bnxqpni4o6?form_factor=mobile",
+            "score": 98,
+            "fcpSeconds": 0.9,
+            "lcpSeconds": 1.8,
+            "tbtMs": 140
+          },
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/kw7z404zqo?form_factor=mobile",
+            "score": 99,
+            "fcpSeconds": 1.2,
+            "lcpSeconds": 2.2,
+            "tbtMs": 20
+          },
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/vl7jbwlk7q?form_factor=mobile",
+            "score": 71,
+            "fcpSeconds": 1.4,
+            "lcpSeconds": 6.6,
+            "tbtMs": 160
+          }
+        ],
+        "median": {
+          "score": 98,
+          "lcpSeconds": 2.2,
+          "tbtMs": 140
+        }
+      },
+      "recipe": {
+        "runs": [
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/k1yols04t2?form_factor=mobile",
+            "score": 72,
+            "fcpSeconds": 1.8,
+            "lcpSeconds": 9.6,
+            "tbtMs": 70
+          },
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/zuabtkor95?form_factor=mobile",
+            "score": 69,
+            "fcpSeconds": 1.8,
+            "lcpSeconds": 7.1,
+            "tbtMs": 270
+          },
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/mi6933hup3?form_factor=mobile",
+            "score": 67,
+            "fcpSeconds": 1.8,
+            "lcpSeconds": 9.4,
+            "tbtMs": 270
+          }
+        ],
+        "median": {
+          "score": 69,
+          "lcpSeconds": 9.4,
+          "tbtMs": 270
+        }
+      }
+    },
+    "after": {
+      "catalog": {
+        "runs": [
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/r4sqvvidfg?form_factor=mobile",
+            "score": 71,
+            "fcpSeconds": 1.4,
+            "lcpSeconds": 8,
+            "tbtMs": 50
+          },
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/o9mnein535?form_factor=mobile",
+            "score": 98,
+            "fcpSeconds": 1.4,
+            "lcpSeconds": 2.2,
+            "tbtMs": 100
+          },
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipes/5ossv7q7se?form_factor=mobile",
+            "score": 72,
+            "fcpSeconds": 1.4,
+            "lcpSeconds": 7.9,
+            "tbtMs": 20
+          }
+        ],
+        "median": {
+          "score": 72,
+          "lcpSeconds": 7.9,
+          "tbtMs": 50
+        }
+      },
+      "recipe": {
+        "runs": [
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/lark4vdrmb?form_factor=mobile",
+            "score": 60,
+            "fcpSeconds": 1.8,
+            "lcpSeconds": 10.3,
+            "tbtMs": 520
+          },
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/fjdpsb4ur1?form_factor=mobile",
+            "score": 73,
+            "fcpSeconds": 1.8,
+            "lcpSeconds": 10.2,
+            "tbtMs": 40
+          },
+          {
+            "report": "https://pagespeed.web.dev/analysis/https-cook-look-ru-recipe-bliny-s-vodkoj/f4qq3xsxof?form_factor=mobile",
+            "score": 97,
+            "fcpSeconds": 0.9,
+            "lcpSeconds": 2.4,
+            "tbtMs": 110
+          }
+        ],
+        "median": {
+          "score": 73,
+          "lcpSeconds": 10.2,
+          "tbtMs": 110
+        }
+      }
+    }
+  }
+}

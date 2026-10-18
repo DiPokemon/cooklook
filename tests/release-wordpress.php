@@ -45,7 +45,7 @@ $GLOBALS['wp_filter']['query'][ PHP_INT_MAX ][] = array(
 require ( getenv( 'COOKLOOK_WP_ROOT' ) ?: dirname( __DIR__, 4 ) ) . '/wp-load.php';
 release_wp_check( 'cooklook' === get_template() && $release_theme === get_template_directory(), 'Unexpected active theme.' );
 $loaded = array();
-foreach ( array( 'cooklook_recipe_query_args', 'cooklook_search_ingredients', 'cooklook_recipe_schema', 'cooklook_render_recipes' ) as $function ) {
+foreach ( array( 'cooklook_recipe_query_args', 'cooklook_search_ingredients', 'cooklook_recipe_schema', 'cooklook_render_recipes', 'cooklook_generate_webp', 'cooklook_webp_picture' ) as $function ) {
 	$file = str_replace( '\\', '/', ( new ReflectionFunction( $function ) )->getFileName() );
 	release_wp_check( 0 === strpos( $file, $release_theme . '/' ), 'Function did not load from release: ' . $function );
 	$loaded[ $function ] = substr( $file, strlen( $release_theme ) + 1 );

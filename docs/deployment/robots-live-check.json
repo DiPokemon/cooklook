@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-10-17T02:31:17.766Z",
+  "url": "https://cook-look.ru/robots.txt",
+  "status": 200,
+  "content_type": "text/plain",
+  "location": null,
+  "cache_control": null,
+  "bytes": 1209,
+  "utf8_bom": false,
+  "sha256": "46c250764244d2f202937170126d38317be1924e952cadb76834f20132cc3c27",
+  "expected_sha256": "1600957c4227888ffb18635ae1267a4ec4b7b6cd88ee6949c5dfd1174fac5725",
+  "byte_identical": false,
+  "matches_ignoring_line_endings": true,
+  "validated_url_cases": 107,
+  "rule_validation": "Published contents compared with the file used for the prior 107-case validation; no requests from verified crawler IPs.",
+  "sitemap": {
+    "url": "https://cook-look.ru/sitemap_index.xml",
+    "status": 200,
+    "content_type": "text/xml; charset=UTF-8",
+    "location": null,
+    "is_sitemap_index": true,
+    "child_sitemaps": [
+      "https://cook-look.ru/page-sitemap.xml",
+      "https://cook-look.ru/recipe-sitemap.xml",
+      "https://cook-look.ru/recipe-sitemap2.xml",
+      "https://cook-look.ru/recipe-sitemap3.xml",
+      "https://cook-look.ru/recipe-sitemap4.xml",
+      "https://cook-look.ru/recipe_category-sitemap.xml",
+      "https://cook-look.ru/recipe_tags-sitemap.xml",
+      "https://cook-look.ru/recipe_tags-sitemap2.xml",
+      "https://cook-look.ru/recipe_tags-sitemap3.xml"
+    ]
+  }
+}

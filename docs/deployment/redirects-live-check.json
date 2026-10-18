@@ -1,0 +1,471 @@
+{
+  "checked_at": "2026-10-17T09:18:57.780Z",
+  "site": "https://cook-look.ru",
+  "method": "Sequential public GETs with fresh connections, TLS certificate verification enabled, redirects followed only on the two site hosts, maximum four hops. No cookies or authentication.",
+  "cases": [
+    {
+      "requested": "http://www.cook-look.ru/",
+      "expected_final_url": "https://cook-look.ru/",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/",
+          "status": 301,
+          "location": "https://www.cook-look.ru:443/"
+        },
+        {
+          "url": "https://www.cook-look.ru/",
+          "status": 301,
+          "location": "http://cook-look.ru/"
+        },
+        {
+          "url": "http://cook-look.ru/",
+          "status": 301,
+          "location": "https://cook-look.ru:443/"
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": false,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://www.cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_final_url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 301,
+          "location": "https://www.cook-look.ru:443/recipes/page/2/?sort_by=recipe_time"
+        },
+        {
+          "url": "https://www.cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 301,
+          "location": "http://cook-look.ru/recipes/page/2/?sort_by=recipe_time"
+        },
+        {
+          "url": "http://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 301,
+          "location": "https://cook-look.ru:443/recipes/page/2/?sort_by=recipe_time"
+        },
+        {
+          "url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": false,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://www.cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_final_url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 301,
+          "location": "https://www.cook-look.ru:443/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo"
+        },
+        {
+          "url": "https://www.cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 301,
+          "location": "http://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo"
+        },
+        {
+          "url": "http://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 301,
+          "location": "https://cook-look.ru:443/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo"
+        },
+        {
+          "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": false,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://www.cook-look.ru/seo-audit-nonexistent/",
+      "expected_final_url": "https://cook-look.ru/seo-audit-nonexistent/",
+      "expected_status": 404,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/seo-audit-nonexistent/",
+          "status": 301,
+          "location": "https://www.cook-look.ru:443/seo-audit-nonexistent/"
+        },
+        {
+          "url": "https://www.cook-look.ru/seo-audit-nonexistent/",
+          "status": 301,
+          "location": "http://cook-look.ru/seo-audit-nonexistent/"
+        },
+        {
+          "url": "http://cook-look.ru/seo-audit-nonexistent/",
+          "status": 301,
+          "location": "https://cook-look.ru:443/seo-audit-nonexistent/"
+        },
+        {
+          "url": "https://cook-look.ru/seo-audit-nonexistent/",
+          "status": 404,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": false,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "https://www.cook-look.ru/",
+      "expected_final_url": "https://cook-look.ru/",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/",
+          "status": 301,
+          "location": "http://cook-look.ru/"
+        },
+        {
+          "url": "http://cook-look.ru/",
+          "status": 301,
+          "location": "https://cook-look.ru:443/"
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": false,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "https://www.cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_final_url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 301,
+          "location": "http://cook-look.ru/recipes/page/2/?sort_by=recipe_time"
+        },
+        {
+          "url": "http://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 301,
+          "location": "https://cook-look.ru:443/recipes/page/2/?sort_by=recipe_time"
+        },
+        {
+          "url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": false,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "https://www.cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_final_url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 301,
+          "location": "http://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo"
+        },
+        {
+          "url": "http://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 301,
+          "location": "https://cook-look.ru:443/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo"
+        },
+        {
+          "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": false,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "https://www.cook-look.ru/seo-audit-nonexistent/",
+      "expected_final_url": "https://cook-look.ru/seo-audit-nonexistent/",
+      "expected_status": 404,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/seo-audit-nonexistent/",
+          "status": 301,
+          "location": "http://cook-look.ru/seo-audit-nonexistent/"
+        },
+        {
+          "url": "http://cook-look.ru/seo-audit-nonexistent/",
+          "status": 301,
+          "location": "https://cook-look.ru:443/seo-audit-nonexistent/"
+        },
+        {
+          "url": "https://cook-look.ru/seo-audit-nonexistent/",
+          "status": 404,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": false,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/",
+      "expected_final_url": "https://cook-look.ru/",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/",
+          "status": 301,
+          "location": "https://cook-look.ru:443/"
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": true,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_final_url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 301,
+          "location": "https://cook-look.ru:443/recipes/page/2/?sort_by=recipe_time"
+        },
+        {
+          "url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": true,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_final_url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 301,
+          "location": "https://cook-look.ru:443/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo"
+        },
+        {
+          "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": true,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/seo-audit-nonexistent/",
+      "expected_final_url": "https://cook-look.ru/seo-audit-nonexistent/",
+      "expected_status": 404,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/seo-audit-nonexistent/",
+          "status": 301,
+          "location": "https://cook-look.ru:443/seo-audit-nonexistent/"
+        },
+        {
+          "url": "https://cook-look.ru/seo-audit-nonexistent/",
+          "status": 404,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": true,
+        "permanent_redirects": true,
+        "no_explicit_443": false,
+        "path_and_query_preserved": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "https://cook-look.ru/",
+      "expected_final_url": "https://cook-look.ru/",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "path_and_query_preserved": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_final_url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "path_and_query_preserved": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_final_url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 200,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "path_and_query_preserved": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/seo-audit-nonexistent/",
+      "expected_final_url": "https://cook-look.ru/seo-audit-nonexistent/",
+      "expected_status": 404,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/seo-audit-nonexistent/",
+          "status": 404,
+          "location": null
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "expected_redirect_count": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "path_and_query_preserved": true
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "completed_at": "2026-10-17T09:19:33.339Z",
+  "summary": {
+    "cases": 16,
+    "passed": 4,
+    "failed": 12,
+    "errors": 0
+  }
+}
