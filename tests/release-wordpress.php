@@ -45,7 +45,7 @@ $GLOBALS['wp_filter']['query'][ PHP_INT_MAX ][] = array(
 require ( getenv( 'COOKLOOK_WP_ROOT' ) ?: dirname( __DIR__, 4 ) ) . '/wp-load.php';
 release_wp_check( 'cooklook' === get_template() && $release_theme === get_template_directory(), 'Unexpected active theme.' );
 $loaded = array();
-foreach ( array( 'cooklook_recipe_query_args', 'cooklook_search_ingredients', 'cooklook_recipe_schema', 'cooklook_render_recipes', 'cooklook_generate_webp', 'cooklook_webp_picture' ) as $function ) {
+foreach ( array( 'cooklook_recipe_query_args', 'cooklook_search_ingredients', 'cooklook_recipe_schema', 'cooklook_render_recipes', 'cooklook_generate_webp', 'cooklook_webp_picture', 'cooklook_ad', 'cooklook_ads_settings' ) as $function ) {
 	$file = str_replace( '\\', '/', ( new ReflectionFunction( $function ) )->getFileName() );
 	release_wp_check( 0 === strpos( $file, $release_theme . '/' ), 'Function did not load from release: ' . $function );
 	$loaded[ $function ] = substr( $file, strlen( $release_theme ) + 1 );
@@ -83,7 +83,7 @@ wp_reset_postdata();
 
 // All literal runtime asset paths from the enqueue modules must exist in the extracted ZIP.
 $assets = array();
-foreach ( array( 'functions-parts/scripts_load.php', 'functions-parts/styles_load.php', 'inc/recipe-views.php' ) as $file ) {
+foreach ( array( 'functions-parts/scripts_load.php', 'functions-parts/styles_load.php', 'inc/recipe-views.php', 'inc/advertising.php', 'inc/advertising-admin.php' ) as $file ) {
 	preg_match_all( '~[\'\"]/?(static/[^\'\"]+\.(?:css|js))[\'\"]~', file_get_contents( $release_theme . '/' . $file ), $matches );
 	foreach ( $matches[1] as $asset ) {
 		release_wp_check( is_file( $release_theme . '/' . $asset ), 'Runtime asset missing: ' . $asset );

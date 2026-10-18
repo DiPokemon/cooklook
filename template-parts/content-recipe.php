@@ -134,11 +134,7 @@
                     <?php endif ?>
                 </div>
             </div>
-            <div class="qwert_block">
-                <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/1637470?erid=2bL9aMPo2e4BA5qnNGCKd2CCV5">
-                    <?php echo cooklook_banner( 'recipe_page', '(max-width: 1024px) calc(100vw - 40px), 552px' ); ?>
-                </a>
-            </div>
+            <?php echo cooklook_ad( 'recipe_page', 'qwert_block' ); ?>
         </div>
     </section>
 
@@ -224,11 +220,7 @@
                         </div>
                     <?php endif; ?>
 
-                    <div class="recipe_comments_wrapper_right">
-                        <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/2075248?erid=2bL9aMPo2e4BA5qnNJLpeahqHh">
-                            <?php echo cooklook_banner( 'recipe_page_square' ); ?>
-                        </a>
-                    </div>
+                    <?php echo cooklook_ad( 'recipe_page_square', 'recipe_comments_wrapper_right' ); ?>
                 </div>                
         </div>
     </section>
@@ -279,20 +271,9 @@
         endif;
     ?>
 
-    <section>
-        <div class="container">
-            <div class="qwert_block">                
-                <div id="voehw_R-A-8833792-7"></div>
-                <script>
-                    (window.yaContextCb = window.yaContextCb || []).push(() => {
-                    Ya.Context.AdvManager.render({
-                        "blockId": "R-A-8833792-7",
-                        "renderTo": "voehw_R-A-8833792-7"
-                    })
-                })
-                </script>
-            </div>
-        </div>
-    </section>
+    <?php $recipe_bottom_ad = cooklook_ad( 'recipe_bottom', 'qwert_block' ); ?>
+    <?php if ( $recipe_bottom_ad ) : ?>
+        <section><div class="container"><?php echo $recipe_bottom_ad; // Escaped by cooklook_ad(). ?></div></section>
+    <?php endif; ?>
 
 </article>

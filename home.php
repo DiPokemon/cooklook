@@ -39,11 +39,7 @@ get_header();
                             get_template_part('template-parts/category-loop-item', null, array('current_cat_id' => $cat_id, 'priority' => $counter === 1));
                             if($counter == 3) {
                         ?>
-                                <div class="category_item category_item-adv">                                    
-                                    <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/1637509?erid=2bL9aMPo2e4BA5qnNGCKd2CXSG">
-                                        <?php echo cooklook_banner( 'main_categories', '(max-width: 767px) 45vw, 260px', 'eager' ); ?>
-                                    </a>
-                                </div>
+                                <?php echo cooklook_ad( 'main_categories', 'category_item category_item-adv' ); ?>
                         <?php   
                             }
                         }
@@ -86,27 +82,16 @@ get_header();
             </div>			
 		</section>
 
+        <?php $home_banner_strip = cooklook_ad( 'main_square_1' ) . cooklook_ad( 'main_square_2' ) . cooklook_ad( 'main_square_3' ); ?>
+        <?php if ( $home_banner_strip ) : ?>
         <section>
             <div class="container">
                 <div class="main_bigadv_block">
-                    
-                        <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/2075290?erid=2bL9aMPo2e4BA5qnNJLpeahqfd">
-                            <?php echo cooklook_banner( 'main_square_1' ); ?>
-                        </a>
-                    
-                   
-                        <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/1637501?erid=2bL9aMPo2e4BA5qnNGCKd2CXS8">
-                            <?php echo cooklook_banner( 'main_square_2' ); ?>
-                        </a>
-                    
-                    
-                        <a class="adv_block" rel="sponsored" href="https://kursy-tut.ru/2075326?erid=2bL9aMPo2e4BA5qnNJLpeaiAcm">
-                            <?php echo cooklook_banner( 'main_square_3' ); ?>
-                        </a>
-                    
-                </div>                
+                    <?php echo $home_banner_strip; // Escaped by cooklook_ad(). ?>
+                </div>
             </div>
         </section>
+        <?php endif; ?>
 
         <section>
             <div class="container">
@@ -185,22 +170,10 @@ get_header();
             </div>
         </section>
 
-        <section>
-            <div class="container">
-                <div class="qwert_block">                    
-                    <div id="gfgret_R-A-8833792-9"></div>
-                    <script>
-                        (window.yaContextCb = window.yaContextCb || []).push(() => {
-                        Ya.Context.AdvManager.render({
-                            "blockId": "R-A-8833792-9",
-                            "renderTo": "gfgret_R-A-8833792-9"
-                        })
-                    })
-                    </script>
-                </div>
-                
-            </div>
-        </section>
+        <?php $home_bottom_ad = cooklook_ad( 'main_bottom', 'qwert_block' ); ?>
+        <?php if ( $home_bottom_ad ) : ?>
+            <section><div class="container"><?php echo $home_bottom_ad; // Escaped by cooklook_ad(). ?></div></section>
+        <?php endif; ?>
 
 		
 

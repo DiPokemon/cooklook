@@ -43,7 +43,7 @@
     "lint:scss": "wp-scripts lint-style \"static/css/**/*.scss\"",
     "lint:js": "wp-scripts lint-js \"js/*.js\" \"static/js/*.js\"",
     "bundle": "php tools/build-release.php",
-    "test": "php tests/run.php && php tests/account.php && php tests/seo.php && php tests/recipe-schema.php && php tests/recipe-views.php && php tests/recipe-regions.php && php tests/recipe-ingredients.php && node tests/filters.test.cjs && node tests/comments.test.cjs && node tests/recipe-views.test.cjs && node tests/recipe-ingredients.test.cjs && node tests/run-js.cjs"
+    "test": "php tests/run.php && php tests/account.php && php tests/seo.php && php tests/recipe-schema.php && php tests/recipe-views.php && php tests/recipe-regions.php && php tests/recipe-ingredients.php && php tests/advertising.php && node tests/filters.test.cjs && node tests/comments.test.cjs && node tests/recipe-views.test.cjs && node tests/recipe-ingredients.test.cjs && node tests/advertising.test.cjs && node tests/run-js.cjs"
   },
   "dependencies": {
     "@fontsource/mulish": "^5.0.16"

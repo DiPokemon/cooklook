@@ -13,6 +13,8 @@
 	<file>inc/seo-metadata.php</file>
 	<file>inc/media.php</file>
 	<file>inc/media-webp.php</file>
+	<file>inc/advertising.php</file>
+	<file>inc/advertising-admin.php</file>
 	<file>recipe_manager.php</file>
 	<file>recipe_importer.php</file>
 	<file>filters-handler.php</file>

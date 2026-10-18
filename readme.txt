@@ -3,7 +3,7 @@ Contributors: dimitriy
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 License: GPL-2.0-or-later
 License URI: LICENSE
-Stable tag: 1.0.0
+Stable tag: 1.2.0
 
 Классическая тема WordPress для сайта рецептов Cook-look.ru.
 
@@ -12,6 +12,13 @@ Stable tag: 1.0.0
 Установите тему вместе с runtime-зависимостями vendor/. Подготовка зависимостей,
 модель данных, ограничения импорта и команды проверки описаны в README.md.
 Для проверки интеграций используйте копию действующей базы.
+
+== Changelog ==
+
+= 1.2.0 =
+Управление девятью рекламными местами через меню «Реклама»: баннеры из медиатеки,
+Яндекс РСЯ, общий выключатель и выключатели типов. Прежние объявления сохранены
+как начальные настройки. Загрузка, сохранение и переключение проверены локально.
 
 == Dependencies ==
 

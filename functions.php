@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.2' );
+	define( '_S_VERSION', '1.2.0' );
 }
 
 /**
@@ -119,6 +119,10 @@ require_once get_template_directory() . '/inc/recipe-seo.php';
 require_once get_template_directory() . '/inc/seo.php';
 require_once get_template_directory() . '/inc/seo-metadata.php';
 require_once get_template_directory() . '/inc/media.php';
+require_once get_template_directory() . '/inc/advertising.php';
+if ( is_admin() ) {
+	require_once get_template_directory() . '/inc/advertising-admin.php';
+}
 require_once get_template_directory() . '/inc/account.php';
 require_once( get_template_directory().'/functions-parts/breadcrumbs.php' );
 require_once( get_template_directory().'/functions-parts/navmenu.php' );

@@ -29,7 +29,7 @@
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
         "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
         "make-pot": "wp i18n make-pot . languages/cooklook.pot",
-        "test": ["@php tests/run.php", "@php tests/account.php", "@php tests/seo.php", "@php tests/recipe-schema.php", "@php tests/recipe-views.php", "@php tests/recipe-regions.php", "@php tests/recipe-ingredients.php"],
+        "test": ["@php tests/run.php", "@php tests/account.php", "@php tests/seo.php", "@php tests/recipe-schema.php", "@php tests/recipe-views.php", "@php tests/recipe-regions.php", "@php tests/recipe-ingredients.php", "@php tests/advertising.php"],
         "test:wordpress": "@php tests/wordpress-core.php",
         "lint:security": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs --standard=phpcs-security.xml.dist"
     },

@@ -30,7 +30,7 @@ function cooklook_category_image( $term_id, $priority = false ) {
 }
 
 /** Static banner geometry and optional prebuilt WebP variants; JPEG stays as fallback. */
-function cooklook_banner( $name, $sizes = '(max-width: 1024px) calc(100vw - 40px), 360px', $loading = 'lazy' ) {
+function cooklook_banner( $name, $sizes = '(max-width: 1024px) calc(100vw - 40px), 360px', $loading = 'lazy', $alt = '' ) {
 	static $manifest;
 	if ( null === $manifest ) {
 		$file = get_template_directory() . '/static/img/adv/variants.json';
@@ -48,5 +48,5 @@ function cooklook_banner( $name, $sizes = '(max-width: 1024px) calc(100vw - 40px
 		}
 		$html .= '<source type="image/webp" srcset="' . esc_attr( implode( ', ', $sources ) ) . '" sizes="' . esc_attr( $sizes ) . '">';
 	}
-	return $html . '<img src="' . esc_url( get_template_directory_uri() . $path ) . '" alt="" width="' . (int) $dimensions[0] . '" height="' . (int) $dimensions[1] . '" loading="' . esc_attr( $loading ) . '" decoding="async"></picture>';
+	return $html . '<img src="' . esc_url( get_template_directory_uri() . $path ) . '" alt="' . esc_attr( $alt ) . '" width="' . (int) $dimensions[0] . '" height="' . (int) $dimensions[1] . '" loading="' . esc_attr( $loading ) . '" decoding="async"></picture>';
 }

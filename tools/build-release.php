@@ -116,7 +116,7 @@ try {
 		$files[ $name ] = hash_file( 'sha256', $file->getPathname() );
 	}
 	ksort( $files );
-	foreach ( array( 'style.css', 'index.php', 'functions.php', 'vendor/autoload.php', 'static/css/style.min.css', 'static/js/filter-ingridients.js', 'static/js/recipe-views.js' ) as $name ) {
+	foreach ( array( 'style.css', 'index.php', 'functions.php', 'vendor/autoload.php', 'static/css/style.min.css', 'static/js/filter-ingridients.js', 'static/js/recipe-views.js', 'inc/advertising.php', 'inc/advertising-admin.php', 'static/js/advertising.js', 'static/js/advertising-admin.js', 'static/css/advertising-admin.css' ) as $name ) {
 		release_check( isset( $files[ $name ] ), 'Missing required runtime file: ' . $name );
 	}
 	$archive = $work . '/cooklook.zip';
