@@ -31,7 +31,8 @@ get_header();
                 <div class="section_header">
                     <h2 class="section_title"><?= esc_html($popular_cats_title) ?></h2>
                 </div>				
-                <div class="popular_categories-grid">
+                <?php $category_ad = count( $popular_cats_ids ) >= 3 ? cooklook_ad( 'main_categories', 'category_item category_item-adv' ) : ''; ?>
+                <div class="popular_categories-grid<?php echo $category_ad ? '' : ' popular_categories-grid--without-ad'; ?>">
                     <?php
                         $counter = 0;
                         foreach($popular_cats_ids as $cat_id) {   
@@ -39,7 +40,7 @@ get_header();
                             get_template_part('template-parts/category-loop-item', null, array('current_cat_id' => $cat_id, 'priority' => $counter === 1));
                             if($counter == 3) {
                         ?>
-                                <?php echo cooklook_ad( 'main_categories', 'category_item category_item-adv' ); ?>
+                                <?php echo $category_ad; // Escaped by cooklook_ad(). ?>
                         <?php   
                             }
                         }
