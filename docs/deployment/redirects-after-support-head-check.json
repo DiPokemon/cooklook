@@ -1,0 +1,80 @@
+{
+  "checked_at": "2026-10-18T18:22:27.859Z",
+  "method": "Sequential public HEAD requests, no redirect following, no-cache request header, TLS verification enabled, no cookies.",
+  "results": [
+    {
+      "url": "http://www.cook-look.ru/",
+      "status": 301,
+      "location": "https://cook-look.ru/",
+      "x_redirect_by": null,
+      "server": "nginx",
+      "content_type": "text/html; charset=iso-8859-1",
+      "response_date": "Sun, 18 Oct 2026 18:22:28 GMT"
+    },
+    {
+      "url": "http://cook-look.ru/",
+      "status": 301,
+      "location": "https://cook-look.ru/",
+      "x_redirect_by": "WordPress",
+      "server": "nginx",
+      "content_type": "text/html; charset=UTF-8",
+      "response_date": "Sun, 18 Oct 2026 18:22:30 GMT"
+    },
+    {
+      "url": "http://cook-look.ru/recipes/",
+      "status": 200,
+      "location": null,
+      "x_redirect_by": null,
+      "server": "nginx",
+      "content_type": "text/html; charset=UTF-8",
+      "response_date": "Sun, 18 Oct 2026 18:22:31 GMT"
+    },
+    {
+      "url": "http://cook-look.ru/recipe/bliny-s-vodkoj/",
+      "status": 200,
+      "location": null,
+      "x_redirect_by": null,
+      "server": "nginx",
+      "content_type": "text/html; charset=UTF-8",
+      "response_date": "Sun, 18 Oct 2026 18:22:31 GMT"
+    },
+    {
+      "url": "http://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "status": 200,
+      "location": null,
+      "x_redirect_by": null,
+      "server": "nginx",
+      "content_type": "text/html; charset=UTF-8",
+      "response_date": "Sun, 18 Oct 2026 18:22:32 GMT"
+    },
+    {
+      "url": "http://cook-look.ru/robots.txt",
+      "status": 200,
+      "location": null,
+      "x_redirect_by": null,
+      "server": "nginx",
+      "content_type": "text/plain",
+      "response_date": "Sun, 18 Oct 2026 18:22:32 GMT"
+    },
+    {
+      "url": "http://www.cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+      "status": 200,
+      "location": null,
+      "x_redirect_by": null,
+      "server": "nginx",
+      "content_type": "text/css",
+      "response_date": "Sun, 18 Oct 2026 18:22:32 GMT"
+    },
+    {
+      "url": "https://www.cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+      "status": 200,
+      "location": null,
+      "x_redirect_by": null,
+      "server": "nginx",
+      "content_type": "text/css",
+      "response_date": "Sun, 18 Oct 2026 18:22:33 GMT"
+    }
+  ],
+  "errors": [],
+  "completed_at": "2026-10-18T18:22:33.403Z"
+}

@@ -1,0 +1,1294 @@
+{
+  "checked_at": "2026-10-18T18:21:08.915Z",
+  "site": "https://cook-look.ru",
+  "method": "Sequential public GETs, fresh connections, no-cache request header, TLS verification enabled. No cookies/authentication. Redirects restricted to the two site hosts, maximum four hops.",
+  "previous_report": "redirects-after-htaccess-check.json",
+  "release_asset_reference": "docs/performance-production-assets.json",
+  "purpose": "Verify the hosting support reply after the panel redirect was disabled; include the published version 1.1.0 assets.",
+  "cases": [
+    {
+      "requested": "http://www.cook-look.ru/",
+      "expected_final_url": "https://cook-look.ru/",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/",
+          "status": 301,
+          "location": "https://cook-look.ru/",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:09 GMT",
+          "bytes": 229,
+          "sha256": "dbfb25adb67060841ffc0b7181ab009ad58d29688d3b4fe657d1ab866c9e5822"
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:10 GMT",
+          "bytes": 345566,
+          "sha256": "019df41e019b129a85a394c8198641a9580f68f91aa0cabaaf84a1e2f6b4d587"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "http://www.cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_final_url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 301,
+          "location": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:11 GMT",
+          "bytes": 264,
+          "sha256": "4b0195aa7825103c4152472a693e4e500c3d4f415543e2e2f7f8129a6a0e90ff"
+        },
+        {
+          "url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:12 GMT",
+          "bytes": 189829,
+          "sha256": "cedc3c0a240de021ad4f0b9e9b0f6c2bc5c2f9839aadf3342b5baf617849aa1d"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "http://www.cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_final_url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 301,
+          "location": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:13 GMT",
+          "bytes": 296,
+          "sha256": "dd51f850b063dbc1f89dea9d2d092ed4584d2ac843285449da2044210296023f"
+        },
+        {
+          "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:15 GMT",
+          "bytes": 166338,
+          "sha256": "0e027d6bcbc51a6e4ee6b1cded664aa05081b98aed9b72d3fa1a89d47d103dc3"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "http://www.cook-look.ru/seo-audit-nonexistent/",
+      "expected_final_url": "https://cook-look.ru/seo-audit-nonexistent/",
+      "expected_status": 404,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/seo-audit-nonexistent/",
+          "status": 301,
+          "location": "https://cook-look.ru/seo-audit-nonexistent/",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:15 GMT",
+          "bytes": 251,
+          "sha256": "46d5865a8bdeeb056cd4423df949b2769946fd69c4fdc4c12ed8eb8053af2b29"
+        },
+        {
+          "url": "https://cook-look.ru/seo-audit-nonexistent/",
+          "status": 404,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:17 GMT",
+          "bytes": 42495,
+          "sha256": "742618e71a86db9f8c084a5478daafdc187a641c8f6697ee5cc9070e67a43ff7"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "http://www.cook-look.ru/robots.txt",
+      "expected_final_url": "https://cook-look.ru/robots.txt",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/robots.txt",
+          "status": 301,
+          "location": "https://cook-look.ru/robots.txt",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:17 GMT",
+          "bytes": 239,
+          "sha256": "735c757a088bcb8f7af19622d08d52c144785a1fd14ac14a67780483b0937456"
+        },
+        {
+          "url": "https://cook-look.ru/robots.txt",
+          "status": 200,
+          "location": null,
+          "content_type": "text/plain",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:18 GMT",
+          "bytes": 1209,
+          "sha256": "46c250764244d2f202937170126d38317be1924e952cadb76834f20132cc3c27"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_prepared_robots": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "http://www.cook-look.ru/sitemap_index.xml",
+      "expected_final_url": "https://cook-look.ru/sitemap_index.xml",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/sitemap_index.xml",
+          "status": 301,
+          "location": "https://cook-look.ru/sitemap_index.xml",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:18 GMT",
+          "bytes": 246,
+          "sha256": "ff43ccee138fd36bb73b3bcfd6c9473daa36d1a9805b1f66d335eedfd7fa9150"
+        },
+        {
+          "url": "https://cook-look.ru/sitemap_index.xml",
+          "status": 200,
+          "location": null,
+          "content_type": "text/xml; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:20 GMT",
+          "bytes": 1409,
+          "sha256": "e123dd0a7f5979d20cdc0f83bc9893c0995b44c6352b4d2ad9c0712ce19398fb"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "http://www.cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+          "status": 200,
+          "location": null,
+          "content_type": "text/css",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:20 GMT",
+          "bytes": 89972,
+          "sha256": "29baaae3ef8dcf29192653de9ddf4be30548c3487ff9d28c9c6acf595e4ad774"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://www.cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+          "status": 200,
+          "location": null,
+          "content_type": "application/javascript",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:21 GMT",
+          "bytes": 1337,
+          "sha256": "d01c67e72af70cbf957049fd76d6fd0823179c678259c917bbc79cd58c8cd36a"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://www.cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://www.cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+          "status": 301,
+          "location": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:21 GMT",
+          "bytes": 295,
+          "sha256": "43c6af567ae74cc89375cd33a136e04d76aa7f3e0d9b121e63e6f857442cdc10"
+        },
+        {
+          "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+          "status": 200,
+          "location": null,
+          "content_type": "image/webp",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:21 GMT",
+          "bytes": 43196,
+          "sha256": "a1f00d8cf9e22486a184b0f961faeb1499fb807f3dc442661079b827dd6d7253"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://www.cook-look.ru/",
+      "expected_final_url": "https://cook-look.ru/",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/",
+          "status": 301,
+          "location": "https://cook-look.ru/",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:22 GMT",
+          "bytes": 229,
+          "sha256": "dbfb25adb67060841ffc0b7181ab009ad58d29688d3b4fe657d1ab866c9e5822"
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:23 GMT",
+          "bytes": 345566,
+          "sha256": "019df41e019b129a85a394c8198641a9580f68f91aa0cabaaf84a1e2f6b4d587"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://www.cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_final_url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 301,
+          "location": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:24 GMT",
+          "bytes": 264,
+          "sha256": "4b0195aa7825103c4152472a693e4e500c3d4f415543e2e2f7f8129a6a0e90ff"
+        },
+        {
+          "url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:25 GMT",
+          "bytes": 189829,
+          "sha256": "cedc3c0a240de021ad4f0b9e9b0f6c2bc5c2f9839aadf3342b5baf617849aa1d"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://www.cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_final_url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 301,
+          "location": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:26 GMT",
+          "bytes": 296,
+          "sha256": "dd51f850b063dbc1f89dea9d2d092ed4584d2ac843285449da2044210296023f"
+        },
+        {
+          "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:26 GMT",
+          "bytes": 166339,
+          "sha256": "eb298c727abd20703b3cdee0c9194e4f78d667533640c9e5c58a99f03de65d19"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://www.cook-look.ru/seo-audit-nonexistent/",
+      "expected_final_url": "https://cook-look.ru/seo-audit-nonexistent/",
+      "expected_status": 404,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/seo-audit-nonexistent/",
+          "status": 301,
+          "location": "https://cook-look.ru/seo-audit-nonexistent/",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:27 GMT",
+          "bytes": 251,
+          "sha256": "46d5865a8bdeeb056cd4423df949b2769946fd69c4fdc4c12ed8eb8053af2b29"
+        },
+        {
+          "url": "https://cook-look.ru/seo-audit-nonexistent/",
+          "status": 404,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:27 GMT",
+          "bytes": 42495,
+          "sha256": "742618e71a86db9f8c084a5478daafdc187a641c8f6697ee5cc9070e67a43ff7"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://www.cook-look.ru/robots.txt",
+      "expected_final_url": "https://cook-look.ru/robots.txt",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/robots.txt",
+          "status": 301,
+          "location": "https://cook-look.ru/robots.txt",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:28 GMT",
+          "bytes": 239,
+          "sha256": "735c757a088bcb8f7af19622d08d52c144785a1fd14ac14a67780483b0937456"
+        },
+        {
+          "url": "https://cook-look.ru/robots.txt",
+          "status": 200,
+          "location": null,
+          "content_type": "text/plain",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:28 GMT",
+          "bytes": 1209,
+          "sha256": "46c250764244d2f202937170126d38317be1924e952cadb76834f20132cc3c27"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_prepared_robots": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://www.cook-look.ru/sitemap_index.xml",
+      "expected_final_url": "https://cook-look.ru/sitemap_index.xml",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/sitemap_index.xml",
+          "status": 301,
+          "location": "https://cook-look.ru/sitemap_index.xml",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:29 GMT",
+          "bytes": 246,
+          "sha256": "ff43ccee138fd36bb73b3bcfd6c9473daa36d1a9805b1f66d335eedfd7fa9150"
+        },
+        {
+          "url": "https://cook-look.ru/sitemap_index.xml",
+          "status": 200,
+          "location": null,
+          "content_type": "text/xml; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:29 GMT",
+          "bytes": 1409,
+          "sha256": "e123dd0a7f5979d20cdc0f83bc9893c0995b44c6352b4d2ad9c0712ce19398fb"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://www.cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+          "status": 200,
+          "location": null,
+          "content_type": "text/css",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:30 GMT",
+          "bytes": 89972,
+          "sha256": "29baaae3ef8dcf29192653de9ddf4be30548c3487ff9d28c9c6acf595e4ad774"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "https://www.cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+          "status": 200,
+          "location": null,
+          "content_type": "application/javascript",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:31 GMT",
+          "bytes": 1337,
+          "sha256": "d01c67e72af70cbf957049fd76d6fd0823179c678259c917bbc79cd58c8cd36a"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "https://www.cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://www.cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+          "status": 301,
+          "location": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+          "content_type": "text/html; charset=iso-8859-1",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:31 GMT",
+          "bytes": 295,
+          "sha256": "43c6af567ae74cc89375cd33a136e04d76aa7f3e0d9b121e63e6f857442cdc10"
+        },
+        {
+          "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+          "status": 200,
+          "location": null,
+          "content_type": "image/webp",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:32 GMT",
+          "bytes": 43196,
+          "sha256": "a1f00d8cf9e22486a184b0f961faeb1499fb807f3dc442661079b827dd6d7253"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "http://cook-look.ru/",
+      "expected_final_url": "https://cook-look.ru/",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/",
+          "status": 301,
+          "location": "https://cook-look.ru/",
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": "WordPress",
+          "response_date": "Sun, 18 Oct 2026 18:21:32 GMT",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:33 GMT",
+          "bytes": 345566,
+          "sha256": "019df41e019b129a85a394c8198641a9580f68f91aa0cabaaf84a1e2f6b4d587"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "http://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_final_url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:35 GMT",
+          "bytes": 189803,
+          "sha256": "00f1da65d3b6a4a6e130d9f7bc75c1d5c6f7b9d49023802e94b9c5390099fad9"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_final_url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:35 GMT",
+          "bytes": 166311,
+          "sha256": "4ec689422803bc5f34f6d0522a28803f7030be7337c69367e8c39f1e71fbdc92"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/seo-audit-nonexistent/",
+      "expected_final_url": "https://cook-look.ru/seo-audit-nonexistent/",
+      "expected_status": 404,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/seo-audit-nonexistent/",
+          "status": 404,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:36 GMT",
+          "bytes": 42483,
+          "sha256": "f296c28dade3899955737fc8a30b553521dac81006b6acaf5e73ef8d8e22fa90"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/robots.txt",
+      "expected_final_url": "https://cook-look.ru/robots.txt",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/robots.txt",
+          "status": 200,
+          "location": null,
+          "content_type": "text/plain",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:37 GMT",
+          "bytes": 1209,
+          "sha256": "46c250764244d2f202937170126d38317be1924e952cadb76834f20132cc3c27"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_prepared_robots": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/sitemap_index.xml",
+      "expected_final_url": "https://cook-look.ru/sitemap_index.xml",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/sitemap_index.xml",
+          "status": 200,
+          "location": null,
+          "content_type": "text/xml; charset=UTF-8",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:37 GMT",
+          "bytes": 1372,
+          "sha256": "826e019ccebfd8ca52008bb410dd87a0e7aa0dc1927dc0eda3ea971dadb64c16"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+          "status": 200,
+          "location": null,
+          "content_type": "text/css",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:38 GMT",
+          "bytes": 89972,
+          "sha256": "29baaae3ef8dcf29192653de9ddf4be30548c3487ff9d28c9c6acf595e4ad774"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+          "status": 200,
+          "location": null,
+          "content_type": "application/javascript",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:38 GMT",
+          "bytes": 1337,
+          "sha256": "d01c67e72af70cbf957049fd76d6fd0823179c678259c917bbc79cd58c8cd36a"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "http://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "http://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+          "status": 200,
+          "location": null,
+          "content_type": "image/webp",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:39 GMT",
+          "bytes": 43196,
+          "sha256": "a1f00d8cf9e22486a184b0f961faeb1499fb807f3dc442661079b827dd6d7253"
+        }
+      ],
+      "checks": {
+        "expected_final_url": false,
+        "expected_status": true,
+        "single_redirect_to_canonical": false,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": false
+    },
+    {
+      "requested": "https://cook-look.ru/",
+      "expected_final_url": "https://cook-look.ru/",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:40 GMT",
+          "bytes": 345566,
+          "sha256": "019df41e019b129a85a394c8198641a9580f68f91aa0cabaaf84a1e2f6b4d587"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_final_url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/recipes/page/2/?sort_by=recipe_time",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:41 GMT",
+          "bytes": 189829,
+          "sha256": "cedc3c0a240de021ad4f0b9e9b0f6c2bc5c2f9839aadf3342b5baf617849aa1d"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_final_url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/recipe/bliny-s-vodkoj/?utm_source=redirect-check&utm_medium=seo",
+          "status": 200,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:42 GMT",
+          "bytes": 166337,
+          "sha256": "319aa4c4479e605a13c3b0ba128ae5753de1046b72e74c33b9d5e0df95d00a27"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/seo-audit-nonexistent/",
+      "expected_final_url": "https://cook-look.ru/seo-audit-nonexistent/",
+      "expected_status": 404,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/seo-audit-nonexistent/",
+          "status": 404,
+          "location": null,
+          "content_type": "text/html; charset=UTF-8",
+          "server": "nginx",
+          "hsts": null,
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:43 GMT",
+          "bytes": 42495,
+          "sha256": "742618e71a86db9f8c084a5478daafdc187a641c8f6697ee5cc9070e67a43ff7"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/robots.txt",
+      "expected_final_url": "https://cook-look.ru/robots.txt",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/robots.txt",
+          "status": 200,
+          "location": null,
+          "content_type": "text/plain",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:43 GMT",
+          "bytes": 1209,
+          "sha256": "46c250764244d2f202937170126d38317be1924e952cadb76834f20132cc3c27"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_prepared_robots": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/sitemap_index.xml",
+      "expected_final_url": "https://cook-look.ru/sitemap_index.xml",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/sitemap_index.xml",
+          "status": 200,
+          "location": null,
+          "content_type": "text/xml; charset=UTF-8",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:44 GMT",
+          "bytes": 1409,
+          "sha256": "e123dd0a7f5979d20cdc0f83bc9893c0995b44c6352b4d2ad9c0712ce19398fb"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846",
+          "status": 200,
+          "location": null,
+          "content_type": "text/css",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:45 GMT",
+          "bytes": 89972,
+          "sha256": "29baaae3ef8dcf29192653de9ddf4be30548c3487ff9d28c9c6acf595e4ad774"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/wp-content/themes/cooklook/static/js/script.js?ver=1792237847",
+          "status": 200,
+          "location": null,
+          "content_type": "application/javascript",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:46 GMT",
+          "bytes": 1337,
+          "sha256": "d01c67e72af70cbf957049fd76d6fd0823179c678259c917bbc79cd58c8cd36a"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": true
+    },
+    {
+      "requested": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+      "expected_final_url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+      "expected_status": 200,
+      "chain": [
+        {
+          "url": "https://cook-look.ru/wp-content/themes/cooklook/static/img/adv/main_categories-360.webp",
+          "status": 200,
+          "location": null,
+          "content_type": "image/webp",
+          "server": "nginx",
+          "hsts": "max-age=31536000;",
+          "x_redirect_by": null,
+          "response_date": "Sun, 18 Oct 2026 18:21:46 GMT",
+          "bytes": 43196,
+          "sha256": "a1f00d8cf9e22486a184b0f961faeb1499fb807f3dc442661079b827dd6d7253"
+        }
+      ],
+      "checks": {
+        "expected_final_url": true,
+        "expected_status": true,
+        "single_redirect_to_canonical": true,
+        "permanent_redirects": true,
+        "no_explicit_443": true,
+        "no_https_downgrade": true,
+        "path_and_query_preserved": true,
+        "expected_content_type": true,
+        "matches_release": true
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "completed_at": "2026-10-18T18:21:46.733Z",
+  "summary": {
+    "cases": 36,
+    "passed": 24,
+    "failed": 12,
+    "errors": 0
+  }
+}

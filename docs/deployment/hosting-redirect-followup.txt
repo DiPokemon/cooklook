@@ -1,0 +1,15 @@
+Здравствуйте! Спасибо, для главной один 301 подтвердился.
+Однако проверка 18.10.2026 в 21:22 МСК показывает, что внутренние
+страницы и статические файлы всё ещё доступны по неосновным адресам.
+
+Эти запросы возвращают 200 без Location, хотя ожидается 301:
+curl -I "http://cook-look.ru/recipes/"
+curl -I "http://cook-look.ru/recipe/bliny-s-vodkoj/"
+curl -I "http://www.cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846"
+curl -I "https://www.cook-look.ru/wp-content/themes/cooklook/static/css/frontend.css?ver=1792237846"
+
+Прошу настроить единый 301 на HTTPS без www для всех HTTP-адресов
+и HTTPS с www, включая внутренние страницы и статические файлы.
+Путь и параметры запроса должны сохраняться, основной HTTPS-адрес
+не должен перенаправляться. Нужно учесть существующий блок .htaccess
+и сохранить SSL, HSTS и продление сертификата.
