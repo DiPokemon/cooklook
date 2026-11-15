@@ -1,16 +1,28 @@
 jQuery(function ($) {
 	var form = $('#editable-steps-form'), message = $('#manager-message');
+	var publication = $('#manager-publication');
+	var publicationKey = 'cooklook-manager-publication:' + window.location.pathname + ':' + cooklookManager.user_id;
 	var busy = false, loaded = false;
+
+	function showPublication(receipt) {
+		publication.text(receipt).prop('hidden', !receipt);
+	}
+
+	try {
+		showPublication(window.sessionStorage.getItem(publicationKey) || '');
+	} catch (error) {
+		// The page can still show confirmations when session storage is unavailable.
+	}
+
 	function setBusy(value) {
 		busy = value;
 		form.find('button').prop('disabled', value);
 		$('#save-steps').prop('disabled', value || !loaded);
 	}
 	function failure(xhr) { message.text(xhr.responseJSON && xhr.responseJSON.data || 'Не удалось выполнить запрос. Повторите попытку.'); }
-	function load(preserveMessage) {
+	function load() {
 		if (busy) return;
-		var savedMessage = preserveMessage ? message.text() : '';
-		message.text(savedMessage);
+		message.empty();
 		loaded = false;
 		$('#current-recipe-id').val('');
 		$('#recipe-title, #recipe-ingredients, #steps-table-body, #recipe_time').empty();
@@ -18,12 +30,13 @@ jQuery(function ($) {
 		setBusy(true);
 		$.post(cooklookManager.ajax_url, { action: 'get_random_draft_recipe', nonce: cooklookManager.nonce }, null, 'json')
 			.done(function (response) {
-				if (!response.success) { message.text((savedMessage ? savedMessage + ' ' : '') + response.data); return; }
+				if (!response.success) { message.text(response.data); return; }
 				var recipe = response.data;
 				loaded = true;
-				message.text(savedMessage);
 				$('#current-recipe-id').val(recipe.ID);
-				$('#recipe-title').append($('<a>', { href: recipe.edit_link, target: '_blank', rel: 'noopener' }).text(recipe.title));
+				$('#recipe-title')
+					.append($('<a>', { href: recipe.edit_link, target: '_blank', rel: 'noopener' }).text(recipe.title))
+					.append($('<small>').text(' (ID ' + recipe.ID + ')'));
 				$('#recipe-ingredients').text('Ингредиенты: ' + recipe.ingredients.join(', '));
 				if (recipe.image) $('#recipe-image').attr('src', recipe.image).prop('hidden', false);
 				var count = Math.max(recipe.steps.length, recipe.original_steps.length, 1);
@@ -42,18 +55,29 @@ jQuery(function ($) {
 	form.on('submit', function (event) {
 		event.preventDefault();
 		if (busy || !loaded || !this.reportValidity()) return;
+		var recipeId = $('#current-recipe-id').val();
+		var recipeTitle = $('#recipe-title a').text();
 		var data = form.serializeArray();
 		data.push({ name: 'action', value: 'save_recipe_steps' }, { name: 'nonce', value: cooklookManager.nonce });
+		message.empty();
 		setBusy(true);
 		var saved = false;
 		$.post(cooklookManager.ajax_url, data, null, 'json').done(function (response) {
 			saved = response.success;
-			message.text(response.data);
-			if (saved) {
-				$('#manager-draft-count').text(Math.max(0, Number($('#manager-draft-count').text()) - 1));
-				$('#manager-published-count').text(Number($('#manager-published-count').text()) + 1);
+			if (!saved) {
+				message.text(response.data);
+				return;
 			}
-		}).fail(failure).always(function () { setBusy(false); if (saved) load(true); });
+			var receipt = response.data + ' ID ' + recipeId + ' — ' + recipeTitle;
+			showPublication(receipt);
+			try {
+				window.sessionStorage.setItem(publicationKey, receipt);
+			} catch (error) {
+				// The confirmation is already visible on the page.
+			}
+			$('#manager-draft-count').text(Math.max(0, Number($('#manager-draft-count').text()) - 1));
+			$('#manager-published-count').text(Number($('#manager-published-count').text()) + 1);
+		}).fail(failure).always(function () { setBusy(false); if (saved) load(); });
 	});
 	$('#skip-recipe').on('click', function () { load(); });
 	load();

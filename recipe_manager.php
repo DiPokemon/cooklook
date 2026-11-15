@@ -12,7 +12,11 @@ function cooklook_manager_scripts( $hook ) {
 		return;
 	}
 	cooklook_enqueue_script( 'cooklook-manager', 'static/js/recipe-manager.js' );
-	wp_localize_script( 'cooklook-manager', 'cooklookManager', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'nonce' => wp_create_nonce( 'cooklook_manager' ) ) );
+	wp_localize_script( 'cooklook-manager', 'cooklookManager', array(
+		'ajax_url' => admin_url( 'admin-ajax.php' ),
+		'nonce' => wp_create_nonce( 'cooklook_manager' ),
+		'user_id' => get_current_user_id(),
+	) );
 }
 add_action( 'admin_enqueue_scripts', 'cooklook_manager_scripts' );
 
@@ -25,6 +29,7 @@ function recipe_manager_page() {
 	<div class="wrap cooklook-recipe-manager">
 		<h1><?php esc_html_e( 'Управление рецептами', 'cooklook' ); ?></h1>
 		<p><?php esc_html_e( 'Черновиков:', 'cooklook' ); ?> <span id="manager-draft-count"><?php echo esc_html( $counts->draft ); ?></span> | <?php esc_html_e( 'Опубликовано:', 'cooklook' ); ?> <span id="manager-published-count"><?php echo esc_html( $counts->publish ); ?></span></p>
+		<p id="manager-publication" role="status" hidden></p>
 		<div id="manager-message" role="status"></div>
 		<div id="recipe-info">
 			<img id="recipe-image" alt="" width="100" hidden>
@@ -127,7 +132,7 @@ function save_recipe_steps() {
             carbon_set_post_meta( $post_id, $key, $value );
         }
         $published = wp_update_post( array( 'ID' => $post_id, 'post_status' => 'publish' ), true );
-        if ( is_wp_error( $published ) ) {
+        if ( is_wp_error( $published ) || 'publish' !== get_post_status( $post_id ) ) {
             return new WP_Error( 'publish_failed', __( 'Шаги сохранены, но публикация не удалась.', 'cooklook' ) );
         }
         return __( 'Рецепт опубликован.', 'cooklook' );
