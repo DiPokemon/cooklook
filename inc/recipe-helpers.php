@@ -34,6 +34,19 @@ function cooklook_recipe_positive_integer( $value ) {
 	return false === $value ? 0 : $value;
 }
 
+/** Keep the editor and public recipe on the same ingredient list. */
+function cooklook_recipe_ingredients( $post_id ) {
+	$ingredients = array();
+	foreach ( cooklook_recipe_rows( $post_id, 'ingridients' ) as $row ) {
+		$name = cooklook_recipe_plain_text( $row['ingridient_name'] ?? '' );
+		$value = cooklook_recipe_plain_text( $row['ingridient_value'] ?? '' );
+		if ( '' !== $name ) {
+			$ingredients[] = array( 'name' => $name, 'value' => $value, 'text' => trim( $name . ' ' . $value ) );
+		}
+	}
+	return $ingredients;
+}
+
 /** One source for visible facts, ingredients, instructions and Recipe JSON-LD. */
 function cooklook_recipe_facts( $post_id ) {
 	$cook = cooklook_recipe_positive_integer( cooklook_recipe_value( $post_id, 'recipe_time' ) );
@@ -43,15 +56,8 @@ function cooklook_recipe_facts( $post_id ) {
 		'portions' => cooklook_recipe_positive_integer( cooklook_recipe_value( $post_id, 'recipe_portions' ) ),
 		'serving_mass' => cooklook_recipe_positive_integer( cooklook_recipe_value( $post_id, 'recipe_serving_mass' ) ),
 		'cuisine' => cooklook_recipe_plain_text( cooklook_recipe_value( $post_id, 'recipe_region' ) ),
-		'ingredients' => array(), 'steps' => array(),
+		'ingredients' => cooklook_recipe_ingredients( $post_id ), 'steps' => array(),
 	);
-	foreach ( cooklook_recipe_rows( $post_id, 'ingridients' ) as $row ) {
-		$name = cooklook_recipe_plain_text( $row['ingridient_name'] ?? '' );
-		$value = cooklook_recipe_plain_text( $row['ingridient_value'] ?? '' );
-		if ( '' !== $name ) {
-			$facts['ingredients'][] = array( 'name' => $name, 'value' => $value, 'text' => trim( $name . ' ' . $value ) );
-		}
-	}
 	foreach ( cooklook_recipe_rows( $post_id, 'recipe_step' ) as $index => $row ) {
 		$raw = $row['recipe_step_text'] ?? '';
 		$text = cooklook_recipe_plain_text( $raw );

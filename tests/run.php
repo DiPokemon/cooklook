@@ -110,6 +110,32 @@ test_case( 'Manager validates all fields before writing and blocks stale drafts'
 	$GLOBALS['test_caps']['manage_options'] = false; expect( response_from( 'get_random_draft_recipe' )->status === 403, 'Draft disclosed to subscriber' );
 	$GLOBALS['test_caps']['manage_options'] = true; $_POST['recipe_time'] = '15'; $GLOBALS['test_posts'][42]->post_status = 'publish'; expect( response_from( 'save_recipe_steps' )->status === 409, 'Published recipe overwritten' );
 } );
+test_case( 'Manager loads successive drafts with real ingredients and reports the end of a pass', function () {
+	$draft = $GLOBALS['test_posts'][42];
+	$draft->post_status = 'draft';
+	$GLOBALS['test_meta'][42]['_ingridients'] = array( array( 'ingridient_name' => 'Яйцо', 'ingridient_value' => '1 шт.' ) );
+	$GLOBALS['test_terms'][42]['recipe_tags'] = array( (object) array( 'name' => 'Пирожки' ) );
+	$GLOBALS['test_query_result'] = function ( $query ) use ( $draft ) {
+		expect( 'ID' === $query->get( 'orderby' ) && 'ASC' === $query->get( 'order' ), 'Draft order is unstable' );
+		$where = cooklook_manager_draft_after_id( 'WHERE 1=1', $query );
+		if ( $query->get( 'cooklook_manager_after_id' ) ) {
+			expect( 'WHERE 1=1 AND wp_posts.ID > 42' === $where, 'Query can return the skipped draft' );
+			return array();
+		}
+		expect( 'WHERE 1=1' === $where, 'Initial query incorrectly restricts IDs' );
+		return array( $draft );
+	};
+	$_POST['after_id'] = '0';
+	$response = response_from( 'get_random_draft_recipe' );
+	expect( $response->success && $response->data['ID'] === 42, 'Initial draft did not load' );
+	expect( array( 'Яйцо 1 шт.' ) === $response->data['ingredients'], 'Tags were shown in place of ingredients' );
+	$_POST['after_id'] = '42';
+	$response = response_from( 'get_random_draft_recipe' );
+	expect( $response->success && true === $response->data['pass_complete'], 'Earlier drafts were reported as an empty queue' );
+	$GLOBALS['test_query_result'] = function () { return array(); };
+	$response = response_from( 'get_random_draft_recipe' );
+	expect( ! $response->success && 'Нет подходящих черновиков.' === $response->data, 'Empty queue was not distinguished from end of pass' );
+} );
 test_case( 'CSV parses BOM, quoted commas and rows longer than 1000 bytes', function () {
 	$path = tempnam( sys_get_temp_dir(), 'cooklook-test-' );
 	try {

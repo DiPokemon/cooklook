@@ -80,6 +80,7 @@ function get_posts( $args ) {
 function get_the_terms( $id, $taxonomy ) { return isset( $GLOBALS['test_terms'][ $id ][ $taxonomy ] ) ? $GLOBALS['test_terms'][ $id ][ $taxonomy ] : false; }
 function wp_list_pluck( $list, $key ) { return array_map( function ( $row ) use ( $key ) { return is_object( $row ) ? $row->$key : $row[ $key ]; }, $list ); }
 function get_the_title( $id ) { return ( is_object( $id ) ? $id : get_post( $id ) )->post_title; }
+function get_edit_post_link( $id, $context = 'display' ) { return 'https://example.test/subsite/wp-admin/post.php?post=' . $id; }
 function get_permalink( $id = null ) { return 'https://example.test/subsite/recipe/' . ( $id ?: 42 ) . '/'; }
 function get_the_author_meta() { return 'Author'; }
 function get_the_date() { return '2026-10-15T12:00:00+03:00'; }
@@ -93,7 +94,12 @@ function get_template_part( $part ) { $GLOBALS['test_rendered'][] = $part; }
 function wp_reset_postdata() { $GLOBALS['test_reset'] = true; }
 class WP_Query {
 	public $query_vars; public $max_num_pages = 3; public $posts = array(); private $index = 0;
-	function __construct( $args = array() ) { $this->query_vars = $args; }
+	function __construct( $args = array() ) {
+		$this->query_vars = $args;
+		if ( isset( $GLOBALS['test_query_result'] ) ) {
+			$this->posts = ( $GLOBALS['test_query_result'] )( $this );
+		}
+	}
 	function get( $key ) { return isset( $this->query_vars[ $key ] ) ? $this->query_vars[ $key ] : ''; }
 	function have_posts() { return $this->index < count( $this->posts ); }
 	function the_post() { $this->index++; }
@@ -118,6 +124,7 @@ class Test_DB {
 }
 $GLOBALS['wpdb'] = new Test_DB();
 function reset_fixture() {
+	unset( $GLOBALS['test_query_result'] );
 	$GLOBALS['test_user_id'] = 7;
 	$GLOBALS['test_caps'] = array( 'manage_options' => true, 'edit_post' => true, 'publish_posts' => true, 'upload_files' => true );
 	$GLOBALS['test_posts'] = array( 42 => (object) array( 'ID' => 42, 'post_type' => 'recipe', 'post_status' => 'publish', 'post_password' => '', 'post_title' => 'Суп "с сыром" </script>', 'post_excerpt' => '', 'post_content' => '', 'post_author' => 7 ) );

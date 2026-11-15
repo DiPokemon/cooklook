@@ -40,7 +40,9 @@ function recipe_manager_page() {
 			<div id="recipe_time"></div>
 			<table class="widefat cooklook-manager-steps"><thead><tr><th scope="col">Оригинальные шаги</th><th scope="col">Редактируемые шаги</th></tr></thead><tbody id="steps-table-body"></tbody></table>
 			<p><button type="submit" id="save-steps" class="button button-primary" disabled>Сохранить и опубликовать</button>
-			<button type="button" id="skip-recipe" class="button">Пропустить</button></p>
+			<button type="button" id="skip-recipe" class="button" disabled>Пропустить</button>
+			<span id="manager-retry-action" hidden><button type="button" id="retry-recipe" class="button">Повторить загрузку</button></span>
+			<span id="manager-restart-action" hidden><button type="button" id="restart-recipe-pass" class="button">Начать просмотр сначала</button></span></p>
 		</form>
 	</div>
 	<?php
@@ -53,17 +55,40 @@ function cooklook_manager_authorize() {
 	}
 }
 
-function get_random_draft_recipe() {
-	cooklook_manager_authorize();
+function cooklook_manager_draft_after_id( $where, $query ) {
+	$after_id = (int) $query->get( 'cooklook_manager_after_id' );
+	if ( $after_id <= 0 ) {
+		return $where;
+	}
+	global $wpdb;
+	return $where . $wpdb->prepare( " AND {$wpdb->posts}.ID > %d", $after_id );
+}
+add_filter( 'posts_where', 'cooklook_manager_draft_after_id', 10, 2 );
+
+function cooklook_manager_find_draft( $after_id ) {
 	$query = new WP_Query( array(
 		'post_type' => 'recipe', 'post_status' => 'draft', 'posts_per_page' => 1,
-		'orderby' => 'rand', 'no_found_rows' => true,
+		'orderby' => null === $after_id ? 'rand' : 'ID', 'order' => 'ASC', 'no_found_rows' => true,
+		'cooklook_manager_after_id' => $after_id,
 		'meta_query' => array( array( 'key' => '_thumbnail_id', 'compare' => 'EXISTS' ) ),
 	) );
-	if ( ! $query->posts ) {
+	return $query->posts[0] ?? null;
+}
+
+function get_random_draft_recipe() {
+	cooklook_manager_authorize();
+	// Older clients omit the cursor and keep the original random selection.
+	$after_id = isset( $_POST['after_id'] ) ? cooklook_request_id( $_POST, 'after_id' ) : null;
+	$post = cooklook_manager_find_draft( $after_id );
+	if ( ! $post ) {
+		if ( $after_id && cooklook_manager_find_draft( 0 ) ) {
+			wp_send_json_success( array(
+				'pass_complete' => true,
+				'message' => __( 'Конец текущего прохода. В списке остались более ранние черновики.', 'cooklook' ),
+			) );
+		}
 		wp_send_json_error( __( 'Нет подходящих черновиков.', 'cooklook' ) );
 	}
-	$post = $query->posts[0];
 	if ( ! current_user_can( 'edit_post', $post->ID ) ) {
 		wp_send_json_error( __( 'Недостаточно прав.', 'cooklook' ), 403 );
 	}
@@ -71,7 +96,7 @@ function get_random_draft_recipe() {
 		'ID' => $post->ID, 'title' => get_the_title( $post ),
 		'original_steps' => wp_list_pluck( cooklook_recipe_rows( $post->ID, 'original_recipe_step' ), 'original_recipe_step_text' ),
 		'steps' => wp_list_pluck( cooklook_recipe_rows( $post->ID, 'recipe_step' ), 'recipe_step_text' ),
-		'ingredients' => wp_list_pluck( cooklook_recipe_terms( $post->ID, 'recipe_tags' ), 'name' ),
+		'ingredients' => wp_list_pluck( cooklook_recipe_ingredients( $post->ID ), 'text' ),
 		'edit_link' => get_edit_post_link( $post->ID, 'raw' ),
 		'image' => get_the_post_thumbnail_url( $post, 'medium' ),
 		'time' => max( 0, (int) cooklook_recipe_value( $post->ID, 'recipe_time' ) ),
