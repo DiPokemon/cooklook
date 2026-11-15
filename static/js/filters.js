@@ -24,7 +24,7 @@ jQuery(function ($) {
 			sort_by: $('#sort_by').val() || 'date'
 		};
 	}
-	function pageURL(state, page) {
+	function pageURL(state, page, pageLink) {
 		var url = new URL(filter_obj.base_url, window.location.href);
 		var keys = ['recipe_category', 'recipe_subcategory', 'recipe_region', 'category_id', 'subcategory_id', 'region', 'sort_by', 'paged', 'page', 'include_ingredients', 'exclude_ingredients'];
 		// PHP serializes [] as [0], [1], etc. Remove every form before rebuilding.
@@ -36,23 +36,19 @@ jQuery(function ($) {
 			if (Array.isArray(value)) value.forEach(function (item) { url.searchParams.append(key + '[]', item); });
 			else if (value && value !== 'all' && value !== '0' && !(key === 'sort_by' && value === 'date')) url.searchParams.set(key, value);
 		});
-		if (page > 1) url.searchParams.set('paged', page);
 		Object.keys(filter_obj.route_query || {}).forEach(function (key) {
 			url.searchParams.set(key, filter_obj.route_query[key]);
 		});
-		// PHP supplies the permalink pattern, including subdirectory/index.php settings.
-		if (filter_obj.pagination) {
-			url.searchParams.delete('paged');
-			var pattern = filter_obj.pagination;
-			var target = new URL(pattern.base.replace('%_%', page > 1 ? pattern.format.replace('%#%', page) : ''), window.location.href);
-			url.pathname = target.pathname;
-			if (target.searchParams.has('paged')) url.searchParams.set('paged', target.searchParams.get('paged'));
+		// Use the route WordPress generated while keeping the current form values.
+		if (pageLink) {
+			url.pathname = pageLink.pathname;
+			if (page > 1 && pageLink.searchParams.has('paged')) url.searchParams.set('paged', page);
 		}
 		return url;
 	}
-	function load(page) {
+	function load(page, pageLink) {
 		page = Math.max(1, Math.floor(Number(page)) || 1);
-		var state = values(), url = pageURL(state, page), sequence = ++requestNumber;
+		var state = values(), url = pageURL(state, page, pageLink), sequence = ++requestNumber;
 		if (pending) pending.abort();
 		error.prop('hidden', true);
 		$('#response').attr('aria-busy', 'true');
@@ -123,7 +119,7 @@ jQuery(function ($) {
 		var url = new URL(this.href);
 		var parts = url.pathname.replace(/\/$/, '').split('/');
 		var page = parts[parts.length - 2] === (filter_obj.pagination_base || 'page') ? parts[parts.length - 1] : 1;
-		load(url.searchParams.get('paged') || page);
+		load(url.searchParams.get('paged') || page, url);
 	});
 	// Server rendering restores both controls and results on browser history navigation.
 	window.addEventListener('popstate', function () { window.location.reload(); });

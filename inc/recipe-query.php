@@ -265,7 +265,7 @@ function cooklook_prepare_recipe_archive( $query ) {
 }
 add_action( 'pre_get_posts', 'cooklook_prepare_recipe_archive' );
 
-/** Shared by server links and the browser; also accepts an AJAX page URL. */
+/** Build the server-side paginate_links() template from a catalog or AJAX page URL. */
 function cooklook_recipe_pagination_pattern( $base_url = '' ) {
 	global $wp_rewrite;
 	$url = remove_query_arg( array( 'paged', 'page' ), $base_url ?: get_pagenum_link( 1, false ) );

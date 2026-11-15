@@ -47,7 +47,6 @@ function load_scripts() {
 			'nonce' => wp_create_nonce( 'cooklook_catalog' ),
 			'filters' => cooklook_recipe_filters( $_GET ),
 			'base_url' => remove_query_arg( array( 'paged', 'page' ), get_pagenum_link( 1, false ) ),
-			'pagination' => cooklook_recipe_pagination_pattern(),
 			'pagination_base' => $GLOBALS['wp_rewrite']->pagination_base,
 			'route_query' => cooklook_catalog_route_args(),
 			'page_metadata' => cooklook_catalog_browser_metadata(),
