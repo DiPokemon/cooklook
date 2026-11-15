@@ -59,7 +59,13 @@ function is_user_logged_in() { return get_current_user_id() > 0; }
 function current_user_can( $capability, $id = 0 ) { return ! empty( $GLOBALS['test_caps'][ $capability ] ); }
 function check_ajax_referer( $action, $key, $die ) { return isset( $_REQUEST[ $key ] ) && $_REQUEST[ $key ] === 'test-valid'; }
 function get_post_type_object() { return (object) array( 'cap' => (object) array( 'publish_posts' => 'publish_posts' ) ); }
-function wp_update_post( $data, $error = false ) { $GLOBALS['test_posts'][ $data['ID'] ]->post_status = $data['post_status']; return $data['ID']; }
+function wp_update_post( $data, $error = false ) {
+	$GLOBALS['test_posts'][ $data['ID'] ]->post_status = $data['post_status'];
+	foreach ( $data['meta_input'] ?? array() as $key => $value ) {
+		update_post_meta( $data['ID'], $key, $value );
+	}
+	return $data['ID'];
+}
 function wp_cache_delete() {}
 function wp_doing_ajax() { return ! empty( $GLOBALS['test_ajax'] ); }
 function wp_handle_comment_submission() { return $GLOBALS['test_comment']; }

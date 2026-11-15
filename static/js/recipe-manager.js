@@ -5,14 +5,16 @@ jQuery(function ($) {
 	var scope = window.location.pathname + ':' + cooklookManager.user_id;
 	var publicationKey = 'cooklook-manager-publication:' + scope;
 	var cursorKey = 'cooklook-manager-after-id:' + scope;
+	var hasServerPublication = typeof cooklookManager.last_publication === 'string';
 	var busy = false, loaded = false, afterId = 0;
 
 	function showPublication(receipt) {
 		publication.text(receipt).prop('hidden', !receipt);
 	}
 
+	if (hasServerPublication) showPublication(cooklookManager.last_publication);
 	try {
-		showPublication(window.sessionStorage.getItem(publicationKey) || '');
+		if (!hasServerPublication) showPublication(window.sessionStorage.getItem(publicationKey) || '');
 		var storedAfterId = Number(window.sessionStorage.getItem(cursorKey));
 		if (Number.isSafeInteger(storedAfterId) && storedAfterId > 0) afterId = storedAfterId;
 	} catch (error) {
@@ -100,10 +102,12 @@ jQuery(function ($) {
 			}
 			var receipt = response.data + ' ID ' + recipeId + ' — ' + recipeTitle;
 			showPublication(receipt);
-			try {
-				window.sessionStorage.setItem(publicationKey, receipt);
-			} catch (error) {
-				// The confirmation is already visible on the page.
+			if (!hasServerPublication) {
+				try {
+					window.sessionStorage.setItem(publicationKey, receipt);
+				} catch (error) {
+					// The confirmation is already visible on the page.
+				}
 			}
 			rememberPosition(recipeId);
 			$('#manager-draft-count').text(Math.max(0, Number($('#manager-draft-count').text()) - 1));

@@ -7,6 +7,44 @@ function recipe_manager_menu() {
 }
 add_action( 'admin_menu', 'recipe_manager_menu' );
 
+function cooklook_manager_attempt_key() {
+	global $wpdb;
+	return $wpdb->prefix . 'cooklook_manager_last_publication';
+}
+
+/** Recover the last server-side attempt even when the browser lost its AJAX response. */
+function cooklook_manager_last_publication() {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return '';
+	}
+	$attempt = get_user_meta( get_current_user_id(), cooklook_manager_attempt_key(), true );
+	if ( ! is_array( $attempt ) || empty( $attempt['post_id'] ) || empty( $attempt['token'] ) || empty( $attempt['started_at'] ) ) {
+		return '';
+	}
+	$post_id = (int) $attempt['post_id'];
+	if ( 'recipe' !== get_post_type( $post_id ) || ! current_user_can( 'edit_post', $post_id ) ) {
+		return '';
+	}
+	$status = get_post_status( $post_id );
+	if ( 'publish' === $status ) {
+		$message = $attempt['token'] === get_post_meta( $post_id, '_cooklook_manager_publication_attempt', true )
+			? __( 'Рецепт опубликован.', 'cooklook' )
+			: __( 'Текущий статус в WordPress — опубликован. Подтверждение этой попытки отсутствует.', 'cooklook' );
+	} elseif ( 'draft' === $status ) {
+		$message = __( 'Текущий статус в WordPress — черновик. Публикация не подтверждена.', 'cooklook' );
+	} else {
+		$message = __( 'Публикация этой попытки не подтверждена.', 'cooklook' );
+	}
+	return sprintf(
+		/* translators: %1$s: date and time; %2$d: recipe ID; %3$s: recipe title; %4$s: publication result. */
+		__( 'Последняя попытка публикации (%1$s). ID %2$d — %3$s. %4$s', 'cooklook' ),
+		wp_date( 'd.m.Y H:i:s', (int) $attempt['started_at'] ),
+		$post_id,
+		get_the_title( $post_id ),
+		$message
+	);
+}
+
 function cooklook_manager_scripts( $hook ) {
 	if ( 'toplevel_page_recipe-manager' !== $hook ) {
 		return;
@@ -16,6 +54,7 @@ function cooklook_manager_scripts( $hook ) {
 		'ajax_url' => admin_url( 'admin-ajax.php' ),
 		'nonce' => wp_create_nonce( 'cooklook_manager' ),
 		'user_id' => get_current_user_id(),
+		'last_publication' => cooklook_manager_last_publication(),
 	) );
 }
 add_action( 'admin_enqueue_scripts', 'cooklook_manager_scripts' );
@@ -152,11 +191,25 @@ function save_recipe_steps() {
         }
         $steps = cooklook_updated_recipe_steps( cooklook_recipe_rows( $post_id, 'recipe_step' ), $texts );
         if ( is_wp_error( $steps ) ) { return $steps; }
+
+        $attempt = array(
+            'post_id' => $post_id,
+            'token' => wp_generate_uuid4(),
+            'started_at' => time(),
+        );
+        if ( ! update_user_meta( get_current_user_id(), cooklook_manager_attempt_key(), $attempt ) ) {
+            return new WP_Error( 'attempt_failed', __( 'Не удалось записать попытку публикации. Рецепт остаётся черновиком.', 'cooklook' ) );
+        }
+
         carbon_set_post_meta( $post_id, 'recipe_step', $steps );
         foreach ( $times as $key => $value ) {
             carbon_set_post_meta( $post_id, $key, $value );
         }
-        $published = wp_update_post( array( 'ID' => $post_id, 'post_status' => 'publish' ), true );
+        $published = wp_update_post( array(
+            'ID' => $post_id,
+            'post_status' => 'publish',
+            'meta_input' => array( '_cooklook_manager_publication_attempt' => $attempt['token'] ),
+        ), true );
         if ( is_wp_error( $published ) || 'publish' !== get_post_status( $post_id ) ) {
             return new WP_Error( 'publish_failed', __( 'Шаги сохранены, но публикация не удалась.', 'cooklook' ) );
         }

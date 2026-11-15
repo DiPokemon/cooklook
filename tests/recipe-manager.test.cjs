@@ -59,7 +59,7 @@ function element(tag) {
 	};
 }
 
-function openManager(storage = new Map(), { drafts = 10, published = 21 } = {}) {
+function openManager(storage = new Map(), { drafts = 10, published = 21, lastPublication } = {}) {
 	const nodes = new Map();
 	const requests = [];
 	const sessionStorage = {
@@ -123,7 +123,7 @@ function openManager(storage = new Map(), { drafts = 10, published = 21 } = {}) 
 	runInNewContext(script, {
 		window: { location, sessionStorage },
 		jQuery,
-		cooklookManager: { ajax_url: ajaxUrl, nonce: 'test-nonce', user_id: 7 }
+		cooklookManager: { ajax_url: ajaxUrl, nonce: 'test-nonce', user_id: 7, last_publication: lastPublication }
 	});
 
 	return {
@@ -214,6 +214,24 @@ function checkPublicationAndResume() {
 	openManager(storage).chooseDraft(42);
 }
 
+function checkServerPublicationReceipt() {
+	const lastPublication = 'Предыдущая попытка. Рецепт опубликован. ID 43 — Хлеб.';
+	const options = { drafts: 9, published: 22, lastPublication };
+	const storage = new Map([['cooklook-manager-publication:/wp-admin/admin.php:7', 'Рецепт опубликован. ID 42 — Пирожки.']]);
+	for (const page of [openManager(new Map(), options), openManager(storage, options)]) {
+		assert.equal(page.node('#manager-publication').text(), lastPublication);
+		assert.equal(page.node('#manager-publication').prop('hidden'), false);
+		assert.equal(page.node('#manager-draft-count').text(), '9');
+		assert.equal(page.node('#manager-published-count').text(), '22');
+		page.chooseDraft(0).succeed(draft(44, 'Кекс'));
+		assert.match(page.node('#recipe-title').text(), /\b44\b/);
+		page.checkIdle();
+	}
+
+	const withoutReceipt = openManager(storage, { lastPublication: '' });
+	assert.equal(withoutReceipt.node('#manager-publication').prop('hidden'), true);
+}
+
 function checkTerminalStates() {
 	const empty = openManager();
 	const emptyMessage = 'Нет подходящих черновиков.';
@@ -234,5 +252,6 @@ function checkTerminalStates() {
 
 checkSkipAndResume();
 checkPublicationAndResume();
+checkServerPublicationReceipt();
 checkTerminalStates();
 console.log('PASS: recipe queue resumes after failed loads, resets on request, and preserves confirmed publications.');

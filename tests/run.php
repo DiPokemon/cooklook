@@ -11,6 +11,11 @@ function get_term( $id, $taxonomy ) { return array( 1 => new WP_Term( 1, 0 ), 2 
 function get_terms( $args ) {
 	return array_values( array_filter( array( get_term( 1, 'recipe_category' ), get_term( 2, 'recipe_category' ), get_term( 3, 'recipe_category' ) ), function ( $term ) use ( $args ) { return $term->parent === $args['parent']; } ) );
 }
+function wp_generate_uuid4() {
+	static $attempt = 0;
+	return sprintf( '10000000-2000-4000-8000-%012x', ++$attempt );
+}
+function wp_date( $format, $timestamp = null ) { return gmdate( $format, $timestamp ?? time() ); }
 test_case( 'Category dropdowns preserve accepted nested and parentless selections', function () {
 	expect( wp_list_pluck( cooklook_recipe_category_choices( 0, 2 ), 'term_id' ) === array( 1, 2 ), 'Nested category cannot be selected after reload' );
 	expect( wp_list_pluck( cooklook_recipe_category_choices( null, 2 ), 'term_id' ) === array( 2 ), 'Subcategory without parent cannot be restored' );
@@ -107,8 +112,49 @@ test_case( 'Manager validates all fields before writing and blocks stale drafts'
 	$GLOBALS['test_posts'][42]->post_status = 'draft';
 	$_POST = array( 'recipe_id' => 42, 'steps_texts' => array( 'New text' ), 'recipe_time' => '-1' );
 	expect( response_from( 'save_recipe_steps' )->status === 400 && carbon_get_post_meta( 42, 'recipe_step' ) === '', 'Invalid time caused partial write' );
+	expect( '' === cooklook_manager_last_publication(), 'Rejected input was recorded as a publication attempt' );
 	$GLOBALS['test_caps']['manage_options'] = false; expect( response_from( 'get_random_draft_recipe' )->status === 403, 'Draft disclosed to subscriber' );
 	$GLOBALS['test_caps']['manage_options'] = true; $_POST['recipe_time'] = '15'; $GLOBALS['test_posts'][42]->post_status = 'publish'; expect( response_from( 'save_recipe_steps' )->status === 409, 'Published recipe overwritten' );
+} );
+test_case( 'Manager recovers the previous publication from its saved attempt', function () {
+	global $wpdb;
+	$draft = $GLOBALS['test_posts'][42];
+	$draft->post_title = 'Пирожки с яблоками';
+	expect( '' === cooklook_manager_last_publication(), 'Old published recipe was mistaken for a confirmed attempt' );
+
+	$draft->post_status = 'draft';
+	$_POST = array( 'recipe_id' => 42, 'steps_texts' => array( 'Bake the pies' ) );
+	expect( response_from( 'save_recipe_steps' )->success, 'Publication failed' );
+
+	// A later page load can recover the result without using the POST response.
+	$_POST = array();
+	$receipt = cooklook_manager_last_publication();
+	expect( false !== strpos( $receipt, 'Рецепт опубликован.' ) && false !== strpos( $receipt, '42' ) && false !== strpos( $receipt, $draft->post_title ), 'Publication receipt unavailable on the next page load' );
+	$attempt = get_user_meta( 7, $wpdb->prefix . 'cooklook_manager_last_publication', true );
+	expect( $attempt['token'] === get_post_meta( 42, '_cooklook_manager_publication_attempt', true ), 'Publication was not linked to the accepted attempt' );
+
+	$GLOBALS['test_user_id'] = 8;
+	expect( '' === cooklook_manager_last_publication(), 'Previous attempt was exposed to another account' );
+	$GLOBALS['test_user_id'] = 7;
+	$GLOBALS['test_caps']['edit_post'] = false;
+	expect( '' === cooklook_manager_last_publication(), 'Receipt bypassed the recipe edit permission' );
+	$GLOBALS['test_caps']['edit_post'] = true;
+
+	$prefix = $wpdb->prefix;
+	try {
+		$wpdb->prefix = 'wp_2_';
+		expect( '' === cooklook_manager_last_publication(), 'Previous attempt was exposed to another site' );
+	} finally {
+		$wpdb->prefix = $prefix;
+	}
+
+	$draft->post_status = 'draft';
+	$receipt = cooklook_manager_last_publication();
+	expect( false === strpos( $receipt, 'Рецепт опубликован.' ) && false !== strpos( $receipt, '42' ), 'An unpublished recipe was still reported as confirmed' );
+	$draft->post_status = 'publish';
+	update_post_meta( 42, '_cooklook_manager_publication_attempt', 'another-attempt' );
+	$receipt = cooklook_manager_last_publication();
+	expect( false === strpos( $receipt, 'Рецепт опубликован.' ) && false !== strpos( $receipt, '42' ), 'An unrelated publication was attributed to the original attempt' );
 } );
 test_case( 'Manager loads successive drafts with real ingredients and reports the end of a pass', function () {
 	$draft = $GLOBALS['test_posts'][42];
