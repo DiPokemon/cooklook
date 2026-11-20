@@ -22,7 +22,7 @@ function breadcrumbs( $page = null ) {
 	}
 	$items = array( array( __( 'Главная', 'cooklook' ), home_url( '/' ) ) );
 	$title = '';
-	if ( is_singular( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags' ) ) ) {
+	if ( is_singular( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags', 'recipe_collection' ) ) ) {
 		$items[] = array( __( 'Каталог рецептов', 'cooklook' ), get_post_type_archive_link( 'recipe' ) );
 	}
 	if ( is_singular() ) {

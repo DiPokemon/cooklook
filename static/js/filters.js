@@ -57,6 +57,7 @@ jQuery(function ($) {
 			data: $.extend({}, state, {
 				action: 'filter_recipes', nonce: filter_obj.nonce, paged: page,
 				current_category: filter_obj.current_category, current_tag: filter_obj.current_tag,
+				current_collection: filter_obj.current_collection || 0,
 				page_url: url.href
 			})
 		}).done(function (response) {

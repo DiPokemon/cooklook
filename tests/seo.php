@@ -28,21 +28,24 @@ function is_category() { return false; }
 function is_tag() { return false; }
 function get_query_var( $key ) { return $GLOBALS['test_query_vars'][ $key ] ?? ''; }
 function get_queried_object() { return $GLOBALS['test_object'] ?? get_post( 42 ); }
-function get_queried_object_id() { return get_queried_object()->ID; }
+function get_queried_object_id() { $object = get_queried_object(); return $object->term_id ?? $object->ID; }
 function get_page_template_slug( $id ) { return get_post_meta( $id, '_wp_page_template' ); }
 function get_post_ancestors() { return array(); }
 function get_ancestors( $id ) { return $GLOBALS['test_category_ancestors'][ $id ] ?? array(); }
-function get_term( $id ) { return $GLOBALS['test_category_terms'][ $id ] ?? ( array( 1 => new WP_Term( 1 ), 2 => new WP_Term( 2, 1 ), 3 => new WP_Term( 3 ) )[ $id ] ?? null ); }
+function get_term( $id, $taxonomy = 'recipe_category' ) { return 'recipe_collection' === $taxonomy ? ( $GLOBALS['test_collection_terms'][ $id ] ?? null ) : ( $GLOBALS['test_category_terms'][ $id ] ?? ( array( 1 => new WP_Term( 1 ), 2 => new WP_Term( 2, 1 ), 3 => new WP_Term( 3 ) )[ $id ] ?? null ) ); }
 class WPSEO_Taxonomy_Meta {
 	static function get_term_meta( $term, $taxonomy, $field ) { return $GLOBALS['test_taxonomy_seo'][ $term->term_id ][ $field ] ?? ''; }
 }
 function term_is_ancestor_of( $parent, $child ) { return 1 === $parent && 2 === $child; }
-function get_term_link( $term ) { return home_url( '/recipe_category/' . $term->slug . '/' ); }
+function get_term_link( $term ) { return home_url( ( 'recipe_collection' === $term->taxonomy ? '/collections/' : '/recipe_category/' ) . $term->slug . '/' ); }
 function get_terms( $args ) { return array_values( array_intersect( $args['slug'], array( 'milk', 'egg', 'nuts', '%d0%bc%d0%be%d0%bb%d0%be%d0%ba%d0%be' ) ) ); }
 function get_search_query() { return 'каша'; }
 function get_post_type_archive_link() { return home_url( '/recipes/' ); }
 function get_pagenum_link() { return $GLOBALS['test_page_link'] ?? home_url( '/recipes/' ); }
 function remove_query_arg( $keys, $url ) { $parts = parse_url( $url ); parse_str( $parts['query'] ?? '', $query ); foreach ( (array) $keys as $key ) unset( $query[ $key ] ); return preg_replace( '/\?.*$/', '', $url ) . ( $query ? '?' . http_build_query( $query ) : '' ); }
+function wp_validate_redirect( $url, $fallback ) { return 'example.test' === parse_url( $url, PHP_URL_HOST ) ? $url : $fallback; }
+function paginate_links( $args ) { $GLOBALS['test_paginate_args'] = $args; return 'pages'; }
+function is_admin() { return false; }
 $GLOBALS['wpdb'] = new class extends Test_DB {
 	function get_var( $sql ) { if ( strpos( $sql, 'SELECT 1 FROM' ) === 0 ) return strpos( $sql, "pm.meta_value = 'Русская'" ) !== false ? '1' : null; return parent::get_var( $sql ); }
 };
@@ -172,6 +175,65 @@ test_case( 'AJAX returns 404 for invalid facets and out-of-range pages', functio
 	expect( response_from( 'filter_recipes' )->status === 404, 'AJAX accepted unknown region' );
 	$_GET = array( 'paged' => '4' );
 	expect( response_from( 'filter_recipes' )->status === 404, 'AJAX accepted an absent page' );
+} );
+test_case( 'AJAX rejects malformed and missing collections before querying', function () {
+	$GLOBALS['test_query_result'] = function () { throw new RuntimeException( 'Invalid collection reached the query' ); };
+	foreach ( array( 'missing', '-77', 'all', '', array( 77 ), 999, 1 ) as $collection ) {
+		$_GET = array( 'current_collection' => $collection );
+		expect( 404 === response_from( 'filter_recipes' )->status, 'Invalid collection widened the catalog: ' . json_encode( $collection ) );
+	}
+} );
+test_case( 'AJAX sorting and pagination stay inside the selected collection', function () {
+	$collection = new WP_Term( 77 ); $collection->taxonomy = 'recipe_collection';
+	$GLOBALS['test_collection_terms'] = array( 77 => $collection );
+	$GLOBALS['wp_rewrite'] = new class { function using_permalinks() { return false; } };
+	try {
+		$GLOBALS['test_query_result'] = function ( $query ) {
+			$args = $query->query_vars;
+			expect( 2 === $args['paged'] && 11 === $args['posts_per_page'] && '_recipe_time' === $args['cooklook_sort_meta'], 'Collection pagination or sort lost' );
+			expect( 77 === $args['tax_query'][1]['terms'] && 'recipe_collection' === $args['tax_query'][1]['taxonomy'], 'AJAX escaped the collection' );
+			expect( 'recipe_category' === $args['tax_query'][0]['taxonomy'] && 'NOT IN' === $args['tax_query'][2]['operator'], 'Collection dropped other facets' );
+			return array();
+		};
+		$_GET = array( 'current_collection' => 77, 'category_id' => 1, 'exclude_ingredients' => array( 'nuts' ), 'sort_by' => 'recipe_time', 'paged' => 2, 'page_url' => home_url( '/collections/christmas/?sort_by=recipe_time' ) );
+		expect( response_from( 'filter_recipes' )->success, 'Valid collection request rejected' );
+		expect( false !== strpos( $GLOBALS['test_paginate_args']['base'], '/collections/christmas/' ) && 2 === $GLOBALS['test_paginate_args']['current'], 'Collection pagination lost its URL or current page' );
+	} finally { unset( $GLOBALS['test_collection_terms'], $GLOBALS['wp_rewrite'], $GLOBALS['test_paginate_args'] ); }
+} );
+test_case( 'Server rendering applies collection scope before building the archive query', function () {
+	$query = new class extends WP_Query {
+		function is_main_query() { return true; }
+		function is_post_type_archive() { return false; }
+		function is_tax( $taxonomies ) { return in_array( 'recipe_collection', (array) $taxonomies, true ); }
+		function get_queried_object_id() { return 77; }
+		function is_search() { return false; }
+		function set( $key, $value ) { $this->query_vars[ $key ] = $value; }
+	};
+	$query->set( 'paged', 2 );
+	$_GET = array( 'category_id' => 1, 'exclude_ingredients' => array( 'nuts' ), 'sort_by' => 'recipe_views' );
+	cooklook_prepare_recipe_archive( $query );
+	$args = $query->query_vars;
+	expect( 2 === $args['paged'] && 11 === $args['posts_per_page'] && '_recipe_views' === $args['cooklook_sort_meta'], 'Server archive lost pagination or sorting' );
+	expect( 'recipe_collection' === $args['tax_query'][1]['taxonomy'] && 77 === $args['tax_query'][1]['terms'], 'Server archive escaped the collection' );
+} );
+test_case( 'Collection archives retain their route, metadata and ordinary indexing policy', function () {
+	$collection = new WP_Term( 77 ); $collection->taxonomy = 'recipe_collection'; $collection->name = 'Рождественская выпечка'; $collection->slug = 'rozhdestvenskaya-vypechka';
+	$GLOBALS['test_object'] = $collection;
+	$GLOBALS['test_conditionals'] = array( 'tax' => 'recipe_collection' );
+	$GLOBALS['test_term_description'] = '<p>Пироги и печенье к Рождеству.</p>';
+	$GLOBALS['wp_rewrite'] = new class { function using_permalinks() { return false; } };
+	try {
+		expect( cooklook_is_recipe_catalog() && 77 === cooklook_recipe_context()['current_collection'], 'Collection archive context missing' );
+		expect( array( 'recipe_collection' => 'rozhdestvenskaya-vypechka' ) === cooklook_catalog_route_args(), 'Plain collection URL lost its taxonomy route' );
+		expect( 'Рождественская выпечка | Cook Look' === cooklook_seo_title( '' ) && 'Пироги и печенье к Рождеству.' === cooklook_seo_description( '' ), 'Collection metadata inherited category or ingredient labels' );
+		expect( ! cooklook_seo_noindex(), 'Ordinary collection archive closed' );
+		$_GET = array( 'sort_by' => 'recipe_time' );
+		expect( cooklook_seo_noindex(), 'Filtered collection violates existing noindex policy' );
+		$GLOBALS['test_query_vars'] = array( 'paged' => 2 );
+		expect( 'Рождественская выпечка — Страница 2 | Cook Look' === cooklook_seo_title( '' ), 'Collection pagination metadata lost' );
+		ob_start(); breadcrumbs(); $html = ob_get_clean();
+		expect( false !== strpos( $html, 'Каталог рецептов' ) && false !== strpos( $html, 'Рождественская выпечка' ) && false !== strpos( $html, 'Страница 2' ), 'Collection breadcrumbs lost context' );
+	} finally { unset( $GLOBALS['test_object'], $GLOBALS['test_term_description'], $GLOBALS['wp_rewrite'] ); }
 } );
 test_case( 'Every intermediate breadcrumb has a URL on archives and comment pagination', function () {
 	foreach ( array( 'archive', 'recipe', 'tax', 'search' ) as $kind ) {

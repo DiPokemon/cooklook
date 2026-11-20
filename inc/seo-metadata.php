@@ -56,9 +56,13 @@ function cooklook_seo_metadata_defaults( $page = null ) {
 	} elseif ( is_singular( 'recipe' ) && ! post_password_required() ) {
 		$title = get_the_title( get_queried_object_id() ) . ' — ' . __( 'пошаговый рецепт', 'cooklook' );
 		$description = cooklook_recipe_summary( get_queried_object_id() );
-	} elseif ( is_tax( array( 'recipe_category', 'recipe_tags' ) ) ) {
+	} elseif ( is_tax( array( 'recipe_category', 'recipe_tags', 'recipe_collection' ) ) ) {
 		$term = get_queried_object();
-		$title = 'recipe_tags' === $term->taxonomy ? sprintf( __( 'Рецепты с ингредиентом «%s»', 'cooklook' ), $term->name ) : cooklook_seo_category_label( $term ) . ' — ' . __( 'рецепты', 'cooklook' );
+		if ( 'recipe_collection' === $term->taxonomy ) {
+			$title = $term->name;
+		} else {
+			$title = 'recipe_tags' === $term->taxonomy ? sprintf( __( 'Рецепты с ингредиентом «%s»', 'cooklook' ), $term->name ) : cooklook_seo_category_label( $term ) . ' — ' . __( 'рецепты', 'cooklook' );
+		}
 		$description = wp_trim_words( cooklook_recipe_plain_text( term_description( $term->term_id, $term->taxonomy ) ), 40, '…' );
 		if ( '' === trim( $description ) ) {
 			$description = $title . '. ' . __( 'Выберите блюдо, посмотрите состав и пошаговый способ приготовления.', 'cooklook' );

@@ -136,7 +136,7 @@ function cooklook_ad( $name, $classes = '' ) {
 function cooklook_ads_enqueue() {
 	$group = '';
 	if ( is_front_page() || is_home() || is_page_template( 'home.php' ) ) { $group = 'home'; }
-	if ( is_post_type_archive( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags' ) ) || is_page_template( 'archive.php' ) ) { $group = 'catalog'; }
+	if ( is_post_type_archive( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags', 'recipe_collection' ) ) || is_page_template( 'archive.php' ) ) { $group = 'catalog'; }
 	if ( is_singular( 'recipe' ) && ! post_password_required() ) { $group = 'recipe'; }
 	if ( ! $group ) { return; }
 	$settings = cooklook_ads_settings();

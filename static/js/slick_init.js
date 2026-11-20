@@ -1,4 +1,18 @@
 jQuery(function ($) {
+	$('.seasonal_recipes').not('.slick-initialized').each(function () {
+		var recipes = $(this);
+		var controls = recipes.closest('.seasonal_collection').find('.collection_slider-controls');
+		recipes.on('init reInit afterChange breakpoint', function (event, slick) {
+			controls.prop('hidden', slick.slideCount <= slick.options.slidesToShow);
+			controls.find('.collection_slider-count').text((slick.currentSlide + 1) + ' / ' + slick.slideCount);
+		});
+		recipes.slick({
+			infinite: false, autoplay: false, adaptiveHeight: true, dots: false, arrows: true, slidesToShow: 3, slidesToScroll: 1,
+			prevArrow: controls.find('.collection_slider-prev'), nextArrow: controls.find('.collection_slider-next'),
+			speed: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300,
+			responsive: [{ breakpoint: 1024, settings: { slidesToShow: 2 } }, { breakpoint: 768, settings: { slidesToShow: 1 } }]
+		});
+	});
 	$('.related_recipes.recipes_slider').not('.slick-initialized').slick({
 		infinite: true, autoplay: true, dots: false, arrows: true, slidesToShow: 3, slidesToScroll: 1,
 		responsive: [{ breakpoint: 1024, settings: { slidesToShow: 2 } }, { breakpoint: 768, settings: { slidesToShow: 1 } }]

@@ -194,7 +194,7 @@
                 <?php endif ?>          
             </div>
 
-            <?php foreach ( array( 'recipe_category' => __( 'Категории', 'cooklook' ), 'recipe_tags' => __( 'Ингредиенты', 'cooklook' ) ) as $taxonomy => $label ) : ?>
+            <?php foreach ( array( 'recipe_category' => __( 'Категории', 'cooklook' ), 'recipe_tags' => __( 'Ингредиенты', 'cooklook' ), 'recipe_collection' => __( 'Подборки', 'cooklook' ) ) as $taxonomy => $label ) : ?>
                 <?php $terms = cooklook_recipe_terms( $post_id, $taxonomy ); if ( ! $terms ) { continue; } ?>
                 <div class="recipe_tags" data-taxonomy="<?= esc_attr( $taxonomy ) ?>">
                     <h3 class="recipe_tags-title"><?= esc_html( $label ) ?>:</h3>

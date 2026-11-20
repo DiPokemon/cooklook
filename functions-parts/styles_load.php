@@ -16,7 +16,7 @@ function load_styles() {
 	if ( is_page( 'account' ) || is_page_template( 'page-account.php' ) ) {
 		$styles['cooklook-account'] = 'static/css/account.css';
 	}
-	if ( is_post_type_archive( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags' ) ) || is_page_template( 'archive.php' ) ) {
+	if ( is_post_type_archive( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags', 'recipe_collection' ) ) || is_page_template( 'archive.php' ) ) {
 		$styles['select2'] = 'static/libs/select2/select2.min.css';
 		$styles['cooklook-catalog'] = 'static/css/catalog.css';
 	}

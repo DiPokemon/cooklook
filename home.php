@@ -49,6 +49,8 @@ get_header();
 			</div>
 		</section>
 
+		<?php get_template_part( 'template-parts/home-collection', null, array( 'settings_id' => $settings_id ) ); ?>
+
 		<section>
             <div class="container">
                 <div class="section_header flex">
@@ -170,6 +172,23 @@ get_header();
                 </div>
             </div>
         </section>
+
+        <?php $collections = get_terms( array( 'taxonomy' => 'recipe_collection', 'hide_empty' => true, 'orderby' => 'name' ) ); ?>
+        <?php if ( ! is_wp_error( $collections ) && $collections ) : ?>
+        <section class="recipe_collections">
+            <div class="container">
+                <div class="section_header">
+                    <h2 class="section_title"><?= esc_html__( 'Подборки рецептов', 'cooklook' ) ?></h2>
+                </div>
+                <ul class="recipe_collections-list">
+                    <?php foreach ( $collections as $collection ) : ?>
+                        <?php $collection_url = get_term_link( $collection ); if ( is_wp_error( $collection_url ) || ! $collection->count ) { continue; } ?>
+                        <li><a href="<?= esc_url( $collection_url ) ?>"><?= esc_html( $collection->name ) ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </section>
+        <?php endif; ?>
 
         <?php $home_bottom_ad = cooklook_ad( 'main_bottom', 'qwert_block' ); ?>
         <?php if ( $home_bottom_ad ) : ?>

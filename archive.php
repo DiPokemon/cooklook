@@ -10,7 +10,7 @@
 
 get_header();
 global $wp_query;
-if ( ! is_post_type_archive( 'recipe' ) && ! is_tax( array( 'recipe_category', 'recipe_tags' ) ) && ! is_page_template( 'archive.php' ) ) {
+if ( ! is_post_type_archive( 'recipe' ) && ! is_tax( array( 'recipe_category', 'recipe_tags', 'recipe_collection' ) ) && ! is_page_template( 'archive.php' ) ) {
     echo '<main id="primary" class="site-main"><div class="container">';
     the_archive_title( '<h1 class="page_title">', '</h1>' );
     while ( have_posts() ) {
@@ -48,13 +48,15 @@ $catalog_query = cooklook_catalog_query();
                             }
                         } elseif (is_tax('recipe_tags')) {
                             echo '<h1 class="page_title">' . __('Рецепты с "', 'cooklook') . esc_html(single_term_title('', false)) . '"</h1>';
+                        } elseif (is_tax('recipe_collection')) {
+                            echo '<h1 class="page_title">' . esc_html(single_term_title('', false)) . '</h1>';
                         } else {
                             echo '<h1 class="page_title">' . __('Архив', 'cooklook') . '</h1>';
                         }
                     }
                     ?>
                         <div class="archive_description" <?php if ( is_paged() ) { echo 'hidden'; } ?>>
-                            <?php if ( is_tax( array( 'recipe_category', 'recipe_tags' ) ) ) : ?>
+                            <?php if ( is_tax( array( 'recipe_category', 'recipe_tags', 'recipe_collection' ) ) ) : ?>
                                 <?= wp_kses_post( term_description() ) ?>
                             <?php else : ?>
                                 <p><?= esc_html( cooklook_catalog_intro() ) ?></p>

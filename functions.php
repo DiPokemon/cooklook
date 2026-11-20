@@ -111,6 +111,7 @@ function change_logo_class( $html ) {
 }
 
 require_once get_template_directory() . '/inc/recipe-helpers.php';
+require_once get_template_directory() . '/inc/recipe-collections.php';
 require_once get_template_directory() . '/inc/recipe-regions.php';
 require_once get_template_directory() . '/inc/recipe-query.php';
 require_once get_template_directory() . '/inc/recipe-ingredients.php';

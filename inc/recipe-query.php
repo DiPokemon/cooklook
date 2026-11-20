@@ -31,7 +31,7 @@ function cooklook_recipe_filter_request( $request, $query = null ) {
 function cooklook_catalog_route_args() {
 	global $wp_rewrite;
 	if ( $wp_rewrite->using_permalinks() ) { return array(); }
-	if ( is_tax( array( 'recipe_category', 'recipe_tags' ) ) ) {
+	if ( is_tax( array( 'recipe_category', 'recipe_tags', 'recipe_collection' ) ) ) {
 		$term = get_queried_object();
 		return array( $term->taxonomy => $term->slug );
 	}
@@ -56,6 +56,7 @@ function cooklook_recipe_context() {
 	return array(
 		'current_category' => is_tax( 'recipe_category' ) ? get_queried_object_id() : 0,
 		'current_tag'      => is_tax( 'recipe_tags' ) ? get_queried_object()->slug : '',
+		'current_collection' => is_tax( 'recipe_collection' ) ? get_queried_object_id() : 0,
 	);
 }
 
@@ -71,14 +72,14 @@ function cooklook_recipe_category_choices( $parent, $selected = 0 ) {
 }
 
 function cooklook_is_recipe_catalog() {
-	return is_post_type_archive( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags' ) ) || is_page_template( 'archive.php' );
+	return is_post_type_archive( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags', 'recipe_collection' ) ) || is_page_template( 'archive.php' );
 }
 
 /** Validate before answering either a full-page request or an AJAX request. */
 function cooklook_validate_recipe_filters( $request, $filters, $context = array() ) {
 	$request = cooklook_recipe_filter_request( $request );
 	$invalid = new WP_Error( 'invalid_recipe_filters', __( 'Такое сочетание фильтров недоступно. Выберите существующие категории и ингредиенты.', 'cooklook' ) );
-	foreach ( array( 'category_id', 'subcategory_id', 'recipe_category', 'recipe_subcategory', 'paged', 'current_category' ) as $key ) {
+	foreach ( array( 'category_id', 'subcategory_id', 'recipe_category', 'recipe_subcategory', 'paged', 'current_category', 'current_collection' ) as $key ) {
 		if ( ! isset( $request[ $key ] ) ) {
 			continue;
 		}
@@ -87,6 +88,9 @@ function cooklook_validate_recipe_filters( $request, $filters, $context = array(
 			return $invalid;
 		}
 		if ( 'paged' === $key && ( '' === (string) $value || ! ctype_digit( (string) $value ) || (int) $value < 1 ) ) {
+			return $invalid;
+		}
+		if ( 'current_collection' === $key && ! ctype_digit( (string) $value ) ) {
 			return $invalid;
 		}
 	}
@@ -128,6 +132,12 @@ function cooklook_validate_recipe_filters( $request, $filters, $context = array(
 	foreach ( $categories as $id ) {
 		$term = get_term( $id, 'recipe_category' );
 		if ( ! $term || is_wp_error( $term ) ) {
+			return $invalid;
+		}
+	}
+	if ( ! empty( $context['current_collection'] ) ) {
+		$collection = get_term( absint( $context['current_collection'] ), 'recipe_collection' );
+		if ( ! ( $collection instanceof WP_Term ) || 'recipe_collection' !== $collection->taxonomy ) {
 			return $invalid;
 		}
 	}
@@ -197,6 +207,9 @@ function cooklook_recipe_query_args( $filters, $context = array() ) {
 	if ( ! empty( $context['current_tag'] ) ) {
 		$tax_query[] = array( 'taxonomy' => 'recipe_tags', 'field' => 'slug', 'terms' => $context['current_tag'] );
 	}
+	if ( ! empty( $context['current_collection'] ) ) {
+		$tax_query[] = array( 'taxonomy' => 'recipe_collection', 'field' => 'term_id', 'terms' => absint( $context['current_collection'] ), 'include_children' => false );
+	}
 	foreach ( array( 'include_ingredients' => 'AND', 'exclude_ingredients' => 'NOT IN' ) as $key => $operator ) {
 		if ( $filters[ $key ] ) {
 			$tax_query[] = array( 'taxonomy' => 'recipe_tags', 'field' => 'slug', 'terms' => $filters[ $key ], 'operator' => $operator );
@@ -250,10 +263,11 @@ function cooklook_prepare_recipe_archive( $query ) {
 	if ( is_admin() || ! $query->is_main_query() ) {
 		return;
 	}
-	if ( $query->is_post_type_archive( 'recipe' ) || $query->is_tax( array( 'recipe_category', 'recipe_tags' ) ) ) {
+	if ( $query->is_post_type_archive( 'recipe' ) || $query->is_tax( array( 'recipe_category', 'recipe_tags', 'recipe_collection' ) ) ) {
 		$filters = cooklook_recipe_filters( cooklook_recipe_filter_request( $_GET, $query ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only public filters.
 		$filters['paged'] = max( $filters['paged'], absint( $query->get( 'paged' ) ) );
-		foreach ( cooklook_recipe_query_args( $filters ) as $key => $value ) {
+		$context = $query->is_tax( 'recipe_collection' ) ? array( 'current_collection' => $query->get_queried_object_id() ) : array();
+		foreach ( cooklook_recipe_query_args( $filters, $context ) as $key => $value ) {
 			$query->set( $key, $value );
 		}
 	}

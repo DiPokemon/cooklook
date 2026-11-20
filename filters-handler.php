@@ -8,6 +8,7 @@ function filter_recipes() {
 	$context = array(
 		'current_category' => cooklook_request_id( $request, 'current_category' ),
 		'current_tag'      => cooklook_request_slug( $request, 'current_tag' ),
+		'current_collection' => cooklook_request_id( $request, 'current_collection' ),
 	);
 	$valid = cooklook_validate_recipe_filters( $request, $filters, $context );
 	if ( is_wp_error( $valid ) ) {

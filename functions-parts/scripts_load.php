@@ -34,7 +34,7 @@ function load_scripts() {
 	) );
 	cooklook_enqueue_script( 'search_modal', 'static/js/search_modal.js', array() );
 
-	if ( is_post_type_archive( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags' ) ) || is_page_template( 'archive.php' ) ) {
+	if ( is_post_type_archive( 'recipe' ) || is_tax( array( 'recipe_category', 'recipe_tags', 'recipe_collection' ) ) || is_page_template( 'archive.php' ) ) {
 		cooklook_enqueue_script( 'select2', 'static/libs/select2/select2.full.min.js' );
 		cooklook_enqueue_script( 'filter-ingridients', 'static/js/filter-ingridients.js', array( 'jquery', 'select2' ) );
 		wp_localize_script( 'filter-ingridients', 'cooklookIngredients', array(

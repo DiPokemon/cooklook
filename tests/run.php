@@ -44,6 +44,15 @@ test_case( 'Numeric ordering retains recipes with missing metadata', function ()
 	$clauses = cooklook_recipe_sort_clauses( array( 'join' => '', 'orderby' => '' ), $query );
 	expect( strpos( $clauses['join'], 'LEFT JOIN' ) !== false && strpos( $clauses['orderby'], 'ASC' ) !== false, 'Missing values excluded or wrong order' );
 } );
+test_case( 'Collection constraints remain in the full paginated catalog with every sort', function () {
+	foreach ( array( 'date', 'recipe_views', 'recipe_time' ) as $sort ) {
+		$args = cooklook_recipe_query_args( cooklook_recipe_filters( array( 'category_id' => 1, 'include_ingredients' => array( 'egg' ), 'exclude_ingredients' => array( 'nuts' ), 'paged' => 2, 'sort_by' => $sort ) ), array( 'current_collection' => 77 ) );
+		$collections = array_values( array_filter( $args['tax_query'], function ( $clause ) { return is_array( $clause ) && 'recipe_collection' === $clause['taxonomy']; } ) );
+		expect( count( $collections ) === 1 && $collections[0]['terms'] === 77 && false === $collections[0]['include_children'], 'Collection scope lost or widened to another collection' );
+		expect( 'AND' === $args['tax_query']['relation'] && 2 === $args['paged'] && 11 === $args['posts_per_page'], 'Collection became a ten-recipe list or lost pagination' );
+		expect( 5 === count( $args['tax_query'] ) && 'publish' === $args['post_status'] && false === $args['has_password'], 'Facets or public visibility lost within collection' );
+	}
+} );
 test_case( 'All cards survive advertising and post data is restored', function () {
 	$query = new WP_Query(); $query->posts = range( 1, 11 ); $GLOBALS['test_rendered'] = array(); $GLOBALS['test_reset'] = false;
 	cooklook_render_recipes( $query, true );
